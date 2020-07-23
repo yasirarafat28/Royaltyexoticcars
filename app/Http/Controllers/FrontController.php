@@ -18,4 +18,10 @@ class FrontController extends Controller
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');
     }
+    public function bugattiRentals() {
+        return view('frontView.las-vegas-nv.bugatti-rentals');
+    }
+    public function lamborghiniRentals() {
+        return view('frontView.las-vegas-nv.lamborghini-rentals');
+    }
 }

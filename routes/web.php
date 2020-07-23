@@ -23,6 +23,8 @@ Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 
 Route::get('/suv-rentals', 'FrontController@suvRentals');
+Route::get('/bugatti-rentals', 'FrontController@bugattiRentals');
+Route::get('/lamborghini-rentals', 'FrontController@lamborghiniRentals');
 
 Auth::routes();
 

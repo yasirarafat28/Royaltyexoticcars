@@ -218,7 +218,7 @@
 												class="quicklinks__list quicklinks__list--grid w-dyn-items">
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/bugatti-rentals.html"
+														id="Nav-Quicklink" href="/bugatti-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
 															alt="Bugatti" class="quicklinks__logo" />
@@ -229,7 +229,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/lamborghini-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
 															alt="Lamborghini" class="quicklinks__logo" />
@@ -241,7 +241,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/ferrari-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
 															alt="Ferrari" class="quicklinks__logo" />
@@ -252,7 +252,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/mclaren-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
 															alt="McLaren" class="quicklinks__logo" />
@@ -263,7 +263,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/porsche-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
 															alt="Porsche" class="quicklinks__logo" />
@@ -274,7 +274,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/acura-nsx-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
 															alt="Acura" class="quicklinks__logo" />
@@ -285,7 +285,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/nissan-gtr-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
 															alt="Nissan" class="quicklinks__logo" />
@@ -296,7 +296,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/corvette-z06-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
 															alt="Corvette" class="quicklinks__logo" />
@@ -307,7 +307,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/aston-martin.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
 															alt="Aston Martin" class="quicklinks__logo" />
@@ -318,7 +318,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/rolls-royce-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
 															alt="Rolls-Royce" class="quicklinks__logo" />
@@ -329,7 +329,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/bentley-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
 															alt="Bentley" class="quicklinks__logo" />
@@ -340,7 +340,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/mercedes-amg.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
 															alt="Mercedes-AMG" class="quicklinks__logo" />
@@ -351,7 +351,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/bmw-i8-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
 															alt="BMW-i" class="quicklinks__logo" />
@@ -362,7 +362,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/jeep-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
 															alt="Jeep" class="quicklinks__logo" />
@@ -373,7 +373,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/slingshot-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
 															alt="Slingshot" class="quicklinks__logo" />
@@ -384,7 +384,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/vanderhall-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53cb2_vanderhall-light.svg"
 															alt="Vanderhall" class="quicklinks__logo" />
@@ -395,7 +395,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/ducati-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5ce85390000019d730d_ducati-light-bg.svg"
 															alt="Ducati" class="quicklinks__logo" />
@@ -406,7 +406,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/bmw-motorrad-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5415b_BMW-web.svg"
 															alt="BMW Motorrad" class="quicklinks__logo" />
@@ -417,7 +417,7 @@
 													</a></div>
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="las-vegas-nv/indian-rentals.html"
+														id="Nav-Quicklink" href="/lamborghini-rentals"
 														class="quicklinks__link w-inline-block"><img
 															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed69d489f4600012fb1b7_indian-light-bg.svg"
 															alt="Indian" class="quicklinks__logo" />
