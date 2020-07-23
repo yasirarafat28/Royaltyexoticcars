@@ -1,8 +1,6 @@
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="www.royaltyexoticcars.com" data-wf-page="5eab2e688db14a5dd693300b"
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
-<!-- Mirrored from www.royaltyexoticcars.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:35:37 GMT -->
-
 <head>
 	<meta charset="utf-8" />
 	<title>Royalty Exotic Cars - Las Vegas</title>
