@@ -39,59 +39,7 @@
 		rel="shortcut icon" type="image/x-icon" />
 	<link href="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
 		rel="apple-touch-icon" /><!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-K5RHN52');</script>
-	<!-- End Google Tag Manager -->
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-{
-  "@type" : "BreadcrumbList",
-  "@context" : "http://schema.org",
-  "itemListElement" : [ {
-    "position" : 1,
-    "item" : {
-      "name" : "Home",
-      "id" : "{{url('')}}"
-    },
-    "@type" : "ListItem"
-  } ]
-}
-</script>
-	<script type="application/ld+json">
-{
-  "@type" : "AutoRental",
-  "@context" : "http://schema.org",
-  "name" : "Royalty Exotic Cars: Las Vegas Strip",
-  "address" : "4305 Dean Martin Dr. #120, Las Vegas, NV 89135",
-  "telephone" : "+1-702-872-3853",
-  "priceRange" : "$$",
-  "url" : "{{url('')}}",
-  "image" : "https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bac3a7e93003930b3050168_proxy.duckduckgo.jpg",
-  "description" : "Royalty Exotic Cars has many convenient exotic car rental locations throughout Las Vegas including a showroom on right off the Strip on Dean Martin, The Linq, and Fashion Show Mall. Reserve your car today!",
-  "areaServed" : [ {
-      "@type" : "City",
-      "name" : "Las Vegas"
-    }, {
-      "@type" : "State",
-      "name" : "Nevada"
-    } ],
-  "branchOf" : {
-    "@type" : "Organization",
-    "name" : "Royalty Exotic Cars"
-  },
-  "logo" : {
-    "@type" : "ImageObject",
-    "url" : "https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533d8_webclip.png"
-  }
-}
-</script>
-	<!-- End Structured Data -->
+
 	<script
 		type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {
 			"currencyCode": "USD",
@@ -2242,7 +2190,6 @@
 		type="text/javascript"></script>
 	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
-<!-- Mirrored from www.royaltyexoticcars.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:37:15 GMT -->
 
 @yield('script')
 </html>
