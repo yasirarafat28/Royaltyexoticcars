@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/', 'FrontController@index');
+
 <<<<<<< HEAD
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
