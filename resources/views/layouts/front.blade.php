@@ -185,7 +185,7 @@
 											<div class="nav__categories--desc">From fully custom off-road vehicles to
 												luxury suvs and more!</div>
 										</div>
-									</a><a href="las-vegas-nv/autocycle-rentals.html" id="Nav-Autocycle-Rentals-Link"
+									</a><a href="/car-rentals" id="Nav-Autocycle-Rentals-Link"
 										class="nav__categories--link w-inline-block">
 										<div class="nav__categories--graphic"><img
 												src="/frontEnd/5bb4211cc7a86b01713f61e0_2018-polaris-slingshot-matte-orange-isolated-front-angle-royalty-exotic-cars.png"
@@ -198,7 +198,7 @@
 											<div class="nav__categories--desc">3-wheelers with two seats and faster than
 												most sports cars!</div>
 										</div>
-									</a><a href="las-vegas-nv/motorcycle-rentals.html" id="Nav-Motorcycle-Rentals-Link"
+									</a><a href="/car-rentals" id="Nav-Motorcycle-Rentals-Link"
 										class="nav__categories--link w-inline-block">
 										<div class="nav__categories--graphic"><img
 												src="/frontEnd/5bb420d3f487b462f499b7e2_2017-ducati-1299-panigale-red-isolated-profile-royalty-exotic-cars.png"
