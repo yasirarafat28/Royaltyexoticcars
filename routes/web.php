@@ -22,6 +22,8 @@ Route::get('/', 'FrontController@index');
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 
+Route::get('/suv-rentals', 'FrontController@suvRentals');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

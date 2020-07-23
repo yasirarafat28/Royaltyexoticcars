@@ -226,7 +226,7 @@
 											<div class="nav__categories--desc">Ranging from American muscle to European
 												masterpieces.</div>
 										</div>
-									</a><a href="las-vegas-nv/suv-rentals.html" id="Nav-SUV-Rentals-Link"
+									</a><a href="/suv-rentals" id="Nav-SUV-Rentals-Link"
 										class="nav__categories--link w-inline-block">
 										<div class="nav__categories--graphic"><img
 												src="/frontEnd/5abda7fc38a916291e1647d3_2018-jeep-wrangler-white-isolated-front-angle-royalty-exotic-cars.png"

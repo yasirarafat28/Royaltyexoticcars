@@ -15,4 +15,7 @@ class FrontController extends Controller
     public function carRentals() {
         return view('frontView.las-vegas-nv.car-rentals');
     }
+    public function suvRentals() {
+        return view('frontView.las-vegas-nv.suv-rentals');
+    }
 }
