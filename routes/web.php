@@ -20,11 +20,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontController@index');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 =======
+=======
+>>>>>>> 6238f1c377a834c8063c8e418619cd0a7e7ed6ce
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+>>>>>>> 6238f1c377a834c8063c8e418619cd0a7e7ed6ce
+=======
 >>>>>>> 6238f1c377a834c8063c8e418619cd0a7e7ed6ce
