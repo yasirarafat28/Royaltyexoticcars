@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<main class="main">
+	<main class="main">
 		<section class="hero">
 			<div class="hero__content">
 				<div class="card card__hero">
@@ -28,8 +28,50 @@
 			</div>
 			<div class="banner__collection w-dyn-list">
 				<div role="list" class="banner__list w-dyn-items">
-					<div style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5f00cf57f95f1b13ee60b466_Banner%20Q3%20-%20Heli.html)"
-						role="listitem" class="banner__item w-dyn-item"></div>
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:800px; height:400px;"
+						role="listitem" class="banner__item w-dyn-item mySlides">
+					</div>
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg); width:800px; height:400px;"
+						role="listitem" class="banner__item w-dyn-item mySlides"> 
+					</div>
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:800px; height:400px;"
+						role="listitem" class="banner__item w-dyn-item mySlides">
+					</div>
+					<div class="div-properties-inside-nav-bar" style="padding: 8px; width: 100%; display: inline-flex; justify-content: center;">
+						<span class="dot" style="text-align:center;
+												 cursor: pointer; 
+						                         height: 15px;
+												 width: 15px;
+												 margin: 0 2px;
+												 background-color: #bbb;
+												 border-radius: 50%;
+												 display: inline-block;
+												 transition: background-color 0.6s ease;
+												 float:left;" 
+  												onclick="currentSlide(1)"></span>
+						<span class="dot" style="text-align:center;
+												 cursor: pointer; 
+						                         height: 15px;
+												 width: 15px;
+												 margin: 0 2px;
+												 background-color: #bbb;
+												 border-radius: 50%;
+												 display: inline-block;
+												 transition: background-color 0.6s ease;
+												 float:left;" 
+												  onclick="currentSlide(2)"></span>
+						<span class="dot" style="text-align:center;
+												 cursor: pointer; 
+						                         height: 15px;
+												 width: 15px;
+												 margin: 0 2px;
+												 background-color: #bbb;
+												 border-radius: 50%;
+												 display: inline-block;
+												 transition: background-color 0.6s ease;
+												 float:left;" 
+												  onclick="currentSlide(3)"></span> 
+					</div>
 				</div>
 			</div>
 		</section>
@@ -136,12 +178,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c1c68f1cc77f9bb8451e_Exterior%20(%20Hero%20)%20.jpg"
+										src="/frontEnd/5e18c1c68f1cc77f9bb8451e_Exterior%20(%20Hero%20)%20.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c1bbb04093d1772364e2_Exterior%20(%20rear%20quarter%20)%20.jpg"
+										src="/frontEnd/5e18c1bbb04093d1772364e2_Exterior%20(%20rear%20quarter%20)%20.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c1d48f1cc7477bb85107_Exterior%20(%20Side%20Profile%20)%20.jpg"
+											src="/frontEnd/5e18c1d48f1cc7477bb85107_Exterior%20(%20Side%20Profile%20)%20.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -195,12 +237,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4d00138c15114e253c7df_2018-mclaren-720s-bright-orange-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5af4d00138c15114e253c7df_2018-mclaren-720s-bright-orange-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4cffc38c1513c6b53c7dc_2018-mclaren-720s-bright-orange-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5af4cffc38c1513c6b53c7dc_2018-mclaren-720s-bright-orange-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4d00ba3698787f466150d_2018-mclaren-720s-bright-orange-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5af4d00ba3698787f466150d_2018-mclaren-720s-bright-orange-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -255,12 +297,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e347b1abefcbc12ec7ee0ae_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e347b1abefcbc12ec7ee0ae_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e347b0c7c2199789067629e_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e347b0c7c2199789067629e_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e347b577c21991f2e6789a9_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e347b577c21991f2e6789a9_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -314,12 +356,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c293d73f97017d30c18e_Exterior%20(%20Front%20Angle%20)%20.jpg"
+										src="/frontEnd/5e18c293d73f97017d30c18e_Exterior%20(%20Front%20Angle%20)%20.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c2893fa32147ddb3e822_Exterior%20(%20Rear%20Angle%20).jpg"
+										src="/frontEnd/5e18c2893fa32147ddb3e822_Exterior%20(%20Rear%20Angle%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c29b3fa321b380b3edb4_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e18c29b3fa321b380b3edb4_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -373,12 +415,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2caeea48350f6d45ce5483_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e2caeea48350f6d45ce5483_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2caedc4a5de281b32cae60_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e2caedc4a5de281b32cae60_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2caef69552f70410c06bee_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e2caef69552f70410c06bee_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -432,12 +474,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5429f_2017-ferrari-488-red-convertible-car-hero-image-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a5429f_2017-ferrari-488-red-convertible-car-hero-image-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a545cc_2017-ferrari-488-convertible-red-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a545cc_2017-ferrari-488-convertible-red-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a545d3_2017-ferrari-488-convertible-red-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a545d3_2017-ferrari-488-convertible-red-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -491,12 +533,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a548f3_2017-ferrari-488-gtb-coupe-red-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a548f3_2017-ferrari-488-gtb-coupe-red-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54928_2017-ferrari-488-gtb-coupe-red-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a54928_2017-ferrari-488-gtb-coupe-red-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54926_2017-ferrari-488-gtb-coupe-red-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a54926_2017-ferrari-488-gtb-coupe-red-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -551,12 +593,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4be5feee5104947ba2c94_2018-ferrari-488-spyder-white-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5af4be5feee5104947ba2c94_2018-ferrari-488-spyder-white-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4be5bdbb1e30fb82db835_2018-ferrari-488-spyder-white-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5af4be5bdbb1e30fb82db835_2018-ferrari-488-spyder-white-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4be6682b39068f655eb64_2018-ferrari-488-spyder-white-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5af4be6682b39068f655eb64_2018-ferrari-488-spyder-white-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -611,12 +653,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a471eb496c56d2e70b5ca__0018_SPD06399.jpg"
+										src="/frontEnd/5b3a471eb496c56d2e70b5ca__0018_SPD06399.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a471804200910c9fc9cc5__0017_SPD06407.jpg"
+										src="/frontEnd/5b3a471804200910c9fc9cc5__0017_SPD06407.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a468d0420090a46fc9c77__0002_Layer%201.jpg"
+											src="/frontEnd/5b3a468d0420090a46fc9c77__0002_Layer%201.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -671,12 +713,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c6a72ac2dbfc0e3f6d03_Exterior%20(%20Front%20Angle%20).jpg"
+										src="/frontEnd/5e18c6a72ac2dbfc0e3f6d03_Exterior%20(%20Front%20Angle%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a542a5_2017-lamborghini-huracan-convertible-red-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a542a5_2017-lamborghini-huracan-convertible-red-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a542b7_2017-lamborghini-huracan-convertible-red-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a542b7_2017-lamborghini-huracan-convertible-red-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -730,12 +772,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4892184bdd4152129a23__0003_Layer%202.jpg"
+										src="/frontEnd/5b3a4892184bdd4152129a23__0003_Layer%202.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a48c6042009717afc9dfe__0009_SPD00156.jpg"
+										src="/frontEnd/5b3a48c6042009717afc9dfe__0009_SPD00156.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a48cf52b2dc73071bb1e1__0010_SPD00150.jpg"
+											src="/frontEnd/5b3a48cf52b2dc73071bb1e1__0010_SPD00150.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -790,12 +832,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5419d_2017-lamborghini-huracan-spyder-orange-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a5419d_2017-lamborghini-huracan-spyder-orange-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5419c_2017-lamborghini-huracan-spyder-orange-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a5419c_2017-lamborghini-huracan-spyder-orange-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -849,12 +891,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2ce7be20fab2b3cb97bdcb_Exterior%20(%20Front%20Angle%20).jpg"
+										src="/frontEnd/5e2ce7be20fab2b3cb97bdcb_Exterior%20(%20Front%20Angle%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2ce7b6d12a962e9cc03b7d_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e2ce7b6d12a962e9cc03b7d_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2ce7c7d12a9600b5c04100_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e2ce7c7d12a9600b5c04100_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -908,12 +950,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4cd5938c1514ed053c1d9__0002_Rosso%20Huracan%20Body%20Kit%205.jpg"
+										src="/frontEnd/5af4cd5938c1514ed053c1d9__0002_Rosso%20Huracan%20Body%20Kit%205.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4cd7e8ec18dcad3a582f1__0005_Rosso%20Huracan%20Body%20Kit%203.jpg"
+										src="/frontEnd/5af4cd7e8ec18dcad3a582f1__0005_Rosso%20Huracan%20Body%20Kit%203.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4cd774aa963a986f497bd__0004_Rosso%20Huracan%20Body%20Kit%204.jpg"
+											src="/frontEnd/5af4cd774aa963a986f497bd__0004_Rosso%20Huracan%20Body%20Kit%204.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -967,12 +1009,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c7b1d73f9787bc32f367_2016-lamborghini-huracan-610-4-orange-car-hero-image-royalty-exotic-cars.jpg"
+										src="/frontEnd/5e18c7b1d73f9787bc32f367_2016-lamborghini-huracan-610-4-orange-car-hero-image-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c78f0d00d9684728fb77_2016-lamborghini-huracan-610-4-orange-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5e18c78f0d00d9684728fb77_2016-lamborghini-huracan-610-4-orange-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c7c2d3815c0e49d021da_2016-lamborghini-huracan-610-4-orange-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5e18c7c2d3815c0e49d021da_2016-lamborghini-huracan-610-4-orange-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1026,12 +1068,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a45c8b496c5652970b51e__0015_SPD00051.jpg"
+										src="/frontEnd/5b3a45c8b496c5652970b51e__0015_SPD00051.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a45ba184bddbfb9129758__0013_SPD00056.jpg"
+										src="/frontEnd/5b3a45ba184bddbfb9129758__0013_SPD00056.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4555042009343cfc9be0__0002_Layer%201.jpg"
+											src="/frontEnd/5b3a4555042009343cfc9be0__0002_Layer%201.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1085,12 +1127,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e5597793b181b5728ca36a4_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e5597793b181b5728ca36a4_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e55976e8dbb6d13b58cf8ca_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e55976e8dbb6d13b58cf8ca_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e5597869c46514ce5936f70_Exterior%20(%20Side%20Profile%20)%20.jpg"
+											src="/frontEnd/5e5597869c46514ce5936f70_Exterior%20(%20Side%20Profile%20)%20.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1151,12 +1193,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5eff678e2ecec55d5a910a1c_Exterior%20(%20Front%20Quarter%20)%20.jpg"
+										src="/frontEnd/5eff678e2ecec55d5a910a1c_Exterior%20(%20Front%20Quarter%20)%20.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5eff6795476402617d259f75_Exterior%20(%20Rear%20Quarter%20)%20.jpg"
+										src="/frontEnd/5eff6795476402617d259f75_Exterior%20(%20Rear%20Quarter%20)%20.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5eff6875d50fbda6fc059b61_Exterior%20(%20Side%20Profile%20)%20.jpg"
+											src="/frontEnd/5eff6875d50fbda6fc059b61_Exterior%20(%20Side%20Profile%20)%20.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1211,12 +1253,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e55594574aed6fde03988e8_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e55594574aed6fde03988e8_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e55593bb4728823dc5e571e_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e55593bb4728823dc5e571e_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e555b227b3c450a220caa5a_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e555b227b3c450a220caa5a_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1270,11 +1312,11 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54541_2017-mclaren-570s-orange-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a54541_2017-mclaren-570s-orange-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img src="#" alt=""
 										class="rentals__photo rentals__photo--mobile w-dyn-bind-empty" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54571_2017-mclaren-570s-orange-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a54571_2017-mclaren-570s-orange-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1328,12 +1370,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54981_2016-porsche-gt3-rs-orange-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a54981_2016-porsche-gt3-rs-orange-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5497d_2016-porsche-gt3-rs-orange-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a5497d_2016-porsche-gt3-rs-orange-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5497e_2016-porsche-gt3-rs-orange-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a5497e_2016-porsche-gt3-rs-orange-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1387,12 +1429,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bd27bc53ed808601a8cce23__0020_DSC09852.jpg"
+										src="/frontEnd/5bd27bc53ed808601a8cce23__0020_DSC09852.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bd27bed42c5472bfa55e8af__0025_DSC09839.jpg"
+										src="/frontEnd/5bd27bed42c5472bfa55e8af__0025_DSC09839.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bd27be817a13e2fac478959__0024_DSC09841-v2.jpg"
+											src="/frontEnd/5bd27be817a13e2fac478959__0024_DSC09841-v2.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1453,12 +1495,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54990_2016-nissan-gt-r-black-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a54990_2016-nissan-gt-r-black-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae7901bd99a3dbe45d6444e_2016-nissan-gt-r-black-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5ae7901bd99a3dbe45d6444e_2016-nissan-gt-r-black-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5498a_2016-nissan-gt-r-black-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a5498a_2016-nissan-gt-r-black-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1512,12 +1554,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bd806d71eb0c776181df_Exterior%20(%20Front%20Angle%20)%20.jpg"
+										src="/frontEnd/5e18bd806d71eb0c776181df_Exterior%20(%20Front%20Angle%20)%20.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bd746d71eb45396178b8_Exterior%20(%20Rear%20Angle%20).jpg"
+										src="/frontEnd/5e18bd746d71eb45396178b8_Exterior%20(%20Rear%20Angle%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bddad3815cb0f5caaaf5_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e18bddad3815cb0f5caaaf5_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1571,12 +1613,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e213f59e13699335a11e7c7_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e213f59e13699335a11e7c7_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e213d01bd02cf7d13acb57a_Exterior%20(%20Rear%20Quater%20(.jpg"
+										src="/frontEnd/5e213d01bd02cf7d13acb57a_Exterior%20(%20Rear%20Quater%20(.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e213adf4ea44a50e1a306e8_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e213adf4ea44a50e1a306e8_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1637,12 +1679,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b689428f109cf5df5d9f9f2__0015_SPD00875.jpg"
+										src="/frontEnd/5b689428f109cf5df5d9f9f2__0015_SPD00875.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b6894165fc94ccc5d49b9d5__0012_SPD00905.jpg"
+										src="/frontEnd/5b6894165fc94ccc5d49b9d5__0012_SPD00905.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b6893c80512e92bacb55bb4__0003_Layer%202.jpg"
+											src="/frontEnd/5b6893c80512e92bacb55bb4__0003_Layer%202.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1696,12 +1738,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a541da_2015-bentley-continental-gtc-red-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a541da_2015-bentley-continental-gtc-red-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a541de_2015-bentley-continental-gtc-red-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a541de_2015-bentley-continental-gtc-red-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1755,12 +1797,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae78dc1d99a3d27fdd6435f_2016-mercedes-amg-s63-gray-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5ae78dc1d99a3d27fdd6435f_2016-mercedes-amg-s63-gray-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae78db8d99a3d0138d6435b_2016-mercedes-amg-s63-gray-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5ae78db8d99a3d0138d6435b_2016-mercedes-amg-s63-gray-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae78dcfd99a3d54d8d6436a_2016-mercedes-amg-s63-gray-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5ae78dcfd99a3d54d8d6436a_2016-mercedes-amg-s63-gray-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1820,12 +1862,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c08a1b4704641fdece38_Exterior%20(%20Front%20Angle%20).jpg"
+										src="/frontEnd/5e18c08a1b4704641fdece38_Exterior%20(%20Front%20Angle%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c077d3815c7ee2cc2e8e_Exterior%20(%20Rear%20Angle%20).jpg"
+										src="/frontEnd/5e18c077d3815c7ee2cc2e8e_Exterior%20(%20Rear%20Angle%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18c09e0d00d9cee2262d07_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e18c09e0d00d9cee2262d07_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1878,12 +1920,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bf94d9e0a547bf5af71c_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e18bf94d9e0a547bf5af71c_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bf85a9c7eb7a7635dd6e_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e18bf85a9c7eb7a7635dd6e_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e18bfa00d00d976e7251e7f_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e18bfa00d00d976e7251e7f_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1936,12 +1978,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e272c42e721dd24daf84540_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e272c42e721dd24daf84540_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e272c3992320b318693444b_Exterior%20(%20Rear%20quarter%20).jpg"
+										src="/frontEnd/5e272c3992320b318693444b_Exterior%20(%20Rear%20quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e272c4ee721dd1426f8495d_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e272c4ee721dd1426f8495d_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -1994,12 +2036,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e4ee01db12387372e1d7714_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e4ee01db12387372e1d7714_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e4ee00a6ad29a472726d6b9_Exterior%20(%20Rear%20Quarter%20)%20.jpg"
+										src="/frontEnd/5e4ee00a6ad29a472726d6b9_Exterior%20(%20Rear%20Quarter%20)%20.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e4ee02ad1a7a37783fbeab4_Exterior%20(%20Side%20Profile%20)%20(1).jpg"
+											src="/frontEnd/5e4ee02ad1a7a37783fbeab4_Exterior%20(%20Side%20Profile%20)%20(1).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2053,12 +2095,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5aa9b03b01bb9a35c9646980_2018-jeep-wrangler-white-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5aa9b03b01bb9a35c9646980_2018-jeep-wrangler-white-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5aa9b028d568d6f7399a09cd_2018-jeep-wrangler-white-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5aa9b028d568d6f7399a09cd_2018-jeep-wrangler-white-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5aa9b042d568d643a79a09db_2018-jeep-wrangler-white-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5aa9b042d568d643a79a09db_2018-jeep-wrangler-white-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2112,12 +2154,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4c79c0be082a8e15acf0__0014_SPD06704.jpg"
+										src="/frontEnd/5b3a4c79c0be082a8e15acf0__0014_SPD06704.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4ca352b2dc32fd1bb9e0__0018_SPD06684b.jpg"
+										src="/frontEnd/5b3a4ca352b2dc32fd1bb9e0__0018_SPD06684b.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4c5fb496c519c870c4ab__0011_SPD06745.jpg"
+											src="/frontEnd/5b3a4c5fb496c519c870c4ab__0011_SPD06745.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2179,12 +2221,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae7aadafc4f30af57f91c33_2018-vanderhall-venice-white-exterior-front-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5ae7aadafc4f30af57f91c33_2018-vanderhall-venice-white-exterior-front-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae7aad43d23f076c1f4fdec_2018-vanderhall-venice-white-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5ae7aad43d23f076c1f4fdec_2018-vanderhall-venice-white-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5ae7aae0ee38f131efb7ef20_2018-vanderhall-venice-white-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5ae7aae0ee38f131efb7ef20_2018-vanderhall-venice-white-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2239,12 +2281,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b3a4f1fc0be080a7f15b11b_icon-white-exterior-front-angle.jpg"
+										src="/frontEnd/5b3a4f1fc0be080a7f15b11b_icon-white-exterior-front-angle.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4b85f8e26d5e6c489982a_2018-slingshot-sl-icon-white-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5af4b85f8e26d5e6c489982a_2018-slingshot-sl-icon-white-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5af4b878eee51091b2ba2850_2018-slingshot-sl-icon-white-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5af4b878eee51091b2ba2850_2018-slingshot-sl-icon-white-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2298,12 +2340,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a541f8_2016-polaris-slingshot-green-car-hero-image-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a541f8_2016-polaris-slingshot-green-car-hero-image-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54367_2016-polaris-slingshot-green-exterior-back-angle-royalty-exotic-cars.jpg"
+										src="/frontEnd/5a10aaa4d85f4b0001a54367_2016-polaris-slingshot-green-exterior-back-angle-royalty-exotic-cars.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54365_2016-polaris-slingshot-green-exterior-profile-royalty-exotic-cars.jpg"
+											src="/frontEnd/5a10aaa4d85f4b0001a54365_2016-polaris-slingshot-green-exterior-profile-royalty-exotic-cars.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2365,12 +2407,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1d46a2f06023257c5a96_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e2f1d46a2f06023257c5a96_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1d3ce16b537e42f187d4_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e2f1d3ce16b537e42f187d4_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1d4a8dbc2f6af7dcdeb6_Exterior%20(%20Side%20Profile%20).jpg"
+											src="/frontEnd/5e2f1d4a8dbc2f6af7dcdeb6_Exterior%20(%20Side%20Profile%20).jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2424,12 +2466,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e18858cad063c8586924__0012__DSC4700b.jpg"
+										src="/frontEnd/5b75e18858cad063c8586924__0012__DSC4700b.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e1488166ba06e5372ceb__0005__DSC4710b.jpg"
+										src="/frontEnd/5b75e1488166ba06e5372ceb__0005__DSC4710b.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e17f5122a974d5a69374__0011__DSC4701b.jpg"
+											src="/frontEnd/5b75e17f5122a974d5a69374__0011__DSC4701b.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2483,12 +2525,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b760493dccee446dd8e200b__0011__DSC4715b.jpg"
+										src="/frontEnd/5b760493dccee446dd8e200b__0011__DSC4715b.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b76045134de1d27089c1096__0005__DSC4722b.jpg"
+										src="/frontEnd/5b76045134de1d27089c1096__0005__DSC4722b.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b76046edccee480ff8e1fff__0008__DSC4718b.jpg"
+											src="/frontEnd/5b76046edccee480ff8e1fff__0008__DSC4718b.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2542,12 +2584,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1ce3b0305a3ef65d5ed1_Exterior%20(%20Front%20Quarter%20).jpg"
+										src="/frontEnd/5e2f1ce3b0305a3ef65d5ed1_Exterior%20(%20Front%20Quarter%20).jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1cdc89f8d44f3f3c8b26_Exterior%20(%20Rear%20Quarter%20).jpg"
+										src="/frontEnd/5e2f1cdc89f8d44f3f3c8b26_Exterior%20(%20Rear%20Quarter%20).jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2f1ce98dbc2f3e92dc806e_Side%20Profile.jpg"
+											src="/frontEnd/5e2f1ce98dbc2f3e92dc806e_Side%20Profile.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2602,12 +2644,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e1ec9d41c1e1532a3350__0011__DSC4742b.jpg"
+										src="/frontEnd/5b75e1ec9d41c1e1532a3350__0011__DSC4742b.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e1c38166ba46a2372fad__0004__DSC4749b.jpg"
+										src="/frontEnd/5b75e1c38166ba46a2372fad__0004__DSC4749b.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b75e1e78166baa525372fcf__0010__DSC4743b.jpg"
+											src="/frontEnd/5b75e1e78166baa525372fcf__0010__DSC4743b.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2661,12 +2703,12 @@
 									</div>
 								</div>
 								<div class="rentals__photos"><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b749bff2c58c54bbb28d5d8__0007__DSC4730b.jpg"
+										src="/frontEnd/5b749bff2c58c54bbb28d5d8__0007__DSC4730b.jpg"
 										alt="" class="rentals__photo" /><img
-										src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b749bf416d8f23b31c4e4bf__0003__DSC4738b.jpg"
+										src="/frontEnd/5b749bf416d8f23b31c4e4bf__0003__DSC4738b.jpg"
 										alt="" class="rentals__photo rentals__photo--mobile" />
 									<div class="rentals__photo rentals__photo--mobile rentals__thumb--mobile--cta"><img
-											src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5b749c0cb2d7ee63f818ea9d__0005__DSC4732b.jpg"
+											src="/frontEnd/5b749c0cb2d7ee63f818ea9d__0005__DSC4732b.jpg"
 											alt="" class="rentals__photo rentals__photo--mobile rentals__photo--blur" />
 										<div class="rentals__photo--overlay"></div>
 									</div>
@@ -2699,4 +2741,34 @@
 			</div>
 		</div>
 	</main>
+@endsection
+@section('script')
+<script>
+						var slideIndex = 1;
+						showSlides(slideIndex);
+
+						function plusSlides(n) {
+						showSlides(slideIndex += n);
+						}
+
+						function currentSlide(n) {
+						showSlides(slideIndex = n);
+						}
+
+						function showSlides(n) {
+						var i;
+						var slides = document.getElementsByClassName("mySlides");
+						var dots = document.getElementsByClassName("dot");
+						if (n > slides.length) {slideIndex = 1}    
+						if (n < 1) {slideIndex = slides.length}
+						for (i = 0; i < slides.length; i++) {
+							slides[i].style.display = "none";  
+						}
+						for (i = 0; i < dots.length; i++) {
+							dots[i].className = dots[i].className.replace(" active", "");
+						}
+						slides[slideIndex-1].style.display = "block";  
+						dots[slideIndex-1].className += " active";
+						}
+					</script>
 @endsection
