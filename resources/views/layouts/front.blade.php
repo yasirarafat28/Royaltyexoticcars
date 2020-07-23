@@ -29,7 +29,7 @@
 	<meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
 	<link href="/frontEnd/css/royaltyexoticcars.16f3cbba0.min.css"
 		rel="stylesheet" type="text/css" />
-	<script src="../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+	<script src="../frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
 	<script
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
@@ -213,7 +213,7 @@
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
 								alt="" class="nav__dropdown--arrow" />
 							<div class="nav__dropdown--pane">
-								<div class="nav__categories"><a href="las-vegas-nv/car-rentals.html"
+								<div class="nav__categories"><a href="/car-rentals"
 										id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 										<div class="nav__categories--graphic"><img
 												src="/frontEnd/5b6224522898679a9952b073_2017-lamborghini-aventador-roadster-green-isolated-front-angle-royalty-exotic-cars-v2.png"
@@ -1728,24 +1728,24 @@
 			<div class="team__members w-dyn-list">
 				<div role="list" class="team__list w-dyn-items">
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="team/houston.html" class="team__link w-inline-block"><img
-								src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png"
+							href="frontView/team/houston.html" class="team__link w-inline-block"><img
+								src="/frontEnd/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Houston</div>
 							<div class="team__text">, </div>
 							<div class="team__text">Owner/CEO</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="team/tony.html" class="team__link w-inline-block"><img
-								src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5baa89209d2e93204bc68826_tony-catchings-showroom-manager.png"
+							href="frontView/team/tony.html" class="team__link w-inline-block"><img
+								src="/frontEnd/5baa89209d2e93204bc68826_tony-catchings-showroom-manager.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Tony</div>
 							<div class="team__text">, </div>
 							<div class="team__text">Operations Director</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="team/mario.html" class="team__link w-inline-block"><img
-								src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png"
+							href="frontView/team/mario.html" class="team__link w-inline-block"><img
+								src="/frontEnd/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png"
 								alt="" sizes="(max-width: 479px) 45vw, 22vw"
 								srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png 600w"
 								class="team__photo" />
@@ -1754,8 +1754,8 @@
 							<div class="team__text">Media &amp; Marketing Director</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="team/attwood.html" class="team__link w-inline-block"><img
-								src="../assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bd21e36dc7d0dc24c414bbd_attwood-2.png"
+							href="frontView/team/attwood.html" class="team__link w-inline-block"><img
+								src="/frontEnd/5bd21e36dc7d0dc24c414bbd_attwood-2.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Attwood</div>
 							<div class="team__text">, </div>
@@ -2166,7 +2166,7 @@
 				</form>
 				<div class="badge__form badge__form--success w-form-done">
 					<div class="badge__form--wrapper"><img
-							src="../assets-global.website-files.com/5d46f4403a861d655c89616b/5dc204e33f9395a70d214f28_green-check-animated.gif"
+							src="../frontEnd/5dc204e33f9395a70d214f28_green-check-animated.gif"
 							alt="" class="badge__success--check" />
 						<div class="badge__success--heading">Thanks for reaching out!</div>
 						<div class="badge__success--message">We&#x27;ll send you an invite email to join our private
@@ -2236,7 +2236,7 @@
 			</div>
 		</div>
 	</footer>
-	<script src="../d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
+	<script src="frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
 		type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous"></script>
 	<script src="/frontEnd/js/royaltyexoticcars.af38aa331.js"
