@@ -28,14 +28,14 @@
 			</div>
 			<div class="banner__collection w-dyn-list">
 				<div role="list" class="banner__list w-dyn-items">
-					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:800px; height:400px;"
-						role="listitem" class="banner__item w-dyn-item mySlides">
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:900px; height:420px;"
+						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(1)">
 					</div>
-					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg); width:800px; height:400px;"
-						role="listitem" class="banner__item w-dyn-item mySlides"> 
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg); width:900px; height:420px;"
+						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(1)"> 
 					</div>
-					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:800px; height:400px;"
-						role="listitem" class="banner__item w-dyn-item mySlides">
+					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:900px; height:420px;"
+						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(1)">
 					</div>
 					<div class="div-properties-inside-nav-bar" style="padding: 8px; width: 100%; display: inline-flex; justify-content: center;">
 						<span class="dot" style="text-align:center;
@@ -48,7 +48,7 @@
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
 												 float:left;" 
-  												onclick="currentSlide(1)"></span>
+  												onmouseover="currentSlide(1)"></span>
 						<span class="dot" style="text-align:center;
 												 cursor: pointer; 
 						                         height: 15px;
@@ -59,7 +59,7 @@
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
 												 float:left;" 
-												  onclick="currentSlide(2)"></span>
+												  onmouseover="currentSlide(2)"></span>
 						<span class="dot" style="text-align:center;
 												 cursor: pointer; 
 						                         height: 15px;
@@ -70,7 +70,7 @@
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
 												 float:left;" 
-												  onclick="currentSlide(3)"></span> 
+												  onmouseover="currentSlide(3)"></span> 
 					</div>
 				</div>
 			</div>
