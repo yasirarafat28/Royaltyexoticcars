@@ -143,7 +143,7 @@
 				</div>
 			</div>
 			<div class="nav">
-				<div class="nav__brand"><a href="index.html" id="Header-Brand-Link" aria-current="page"
+				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
 						<div class="brand__icon"></div>
 						<div class="brand__text">Royalty Exotic Cars</div>
@@ -722,16 +722,16 @@
 											</div>
 										</div>
 									</div>
-									<div class="nav__about--column about__column--links"><a href="faqs.html"
+									<div class="nav__about--column about__column--links"><a href="/faqs"
 											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a><a
-											href="team.html" id="Nav-Team-Link"
-											class="nav__about--link w-dropdown-link">Team</a><a href="team.html"
+											href="/faqs" id="Nav-Team-Link"
+											class="nav__about--link w-dropdown-link">Team</a><a href="/faqs"
 											id="Nav-Jobs-Link" class="nav__about--link w-dropdown-link">Jobs</a><a
-											href="terms.html" id="Nav-Privacy-Link"
-											class="nav__about--link w-dropdown-link">Privacy</a><a href="terms.html"
+											href="/faqs" id="Nav-Privacy-Link"
+											class="nav__about--link w-dropdown-link">Privacy</a><a href="/faqs"
 											id="Nav-Terms-Link" class="nav__about--link w-dropdown-link">Terms</a><a
-											href="terms.html" id="Nav-Cookies-Link"
-											class="nav__about--link w-dropdown-link">Cookies</a><a href="survey.html"
+											href="/faqs" id="Nav-Cookies-Link"
+											class="nav__about--link w-dropdown-link">Cookies</a><a href="/faqs"
 											id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 									</div>
 								</div>
