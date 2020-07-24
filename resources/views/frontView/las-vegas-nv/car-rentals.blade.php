@@ -11,7 +11,7 @@
 								alt="" class="crumbsbar__icon" />
 						</div>
 						<nav class="crumbsbar__pane w-dropdown-list">
-							<div class="crumbsbar__list"><a href="car-rentals.html" aria-current="page"
+							<div class="crumbsbar__list"><a href="/car-rentals" aria-current="page"
 									class="crumbsbar__link crumbsbar__link--inline w-inline-block w--current">
 									<div>Las Vegas, NV</div>
 								</a></div>
@@ -30,11 +30,11 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-										<div role="listitem" class="w-dyn-item"><a href="suv-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/suv-rentals"
 												class="crumbsbar__link w-dropdown-link">SUVs</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="autocycle-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Autocycle</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="motorcycle-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Motorcycles</a></div>
 									</div>
 								</div>
@@ -54,15 +54,15 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-										<div role="listitem" class="w-dyn-item"><a href="hypercar-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Hypercars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="supercar-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Supercars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="exotic-car-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Exotic Cars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="sports-car-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Sports Cars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="luxury-car-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Luxury Cars</a></div>
 									</div>
 								</div>
@@ -82,13 +82,13 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-										<div role="listitem" class="w-dyn-item"><a href="bugatti-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Bugatti</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="lamborghini-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Lamborghini</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="ferrari-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Ferrari</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="mclaren-rentals.html"
+										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">McLaren</a></div>
 										<div role="listitem" class="w-dyn-item"><a href="porsche-rentals.html"
 												class="crumbsbar__link w-dropdown-link">Porsche</a></div>
@@ -137,7 +137,7 @@
 					</div>
 					<div class="quicklinks quicklinks__browse w-dyn-list">
 						<div role="list" class="w-dyn-items">
-							<div role="listitem" class="w-dyn-item"><a href="bugatti-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
 										alt="Bugatti" class="quicklinks__logo" />
@@ -146,7 +146,7 @@
 										<div class="quicklinks__desc">Veyron</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="lamborghini-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
 										alt="Lamborghini" class="quicklinks__logo" />
@@ -155,7 +155,7 @@
 										<div class="quicklinks__desc">Aventador, Huracán, Gallardo</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="ferrari-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
 										alt="Ferrari" class="quicklinks__logo" />
