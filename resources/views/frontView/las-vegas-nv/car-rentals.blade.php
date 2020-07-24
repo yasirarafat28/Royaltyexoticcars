@@ -164,7 +164,7 @@
 										<div class="quicklinks__desc">488, 458</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="mclaren-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
 										alt="McLaren" class="quicklinks__logo" />
@@ -173,7 +173,7 @@
 										<div class="quicklinks__desc">720S, 650S, 570S</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="porsche-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
 										alt="Porsche" class="quicklinks__logo" />
@@ -182,7 +182,7 @@
 										<div class="quicklinks__desc">911 GT3-RS</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="acura-nsx-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
 										alt="Acura" class="quicklinks__logo" />
@@ -191,7 +191,7 @@
 										<div class="quicklinks__desc">NSX</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="nissan-gtr-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
 										alt="Nissan" class="quicklinks__logo" />
@@ -209,7 +209,7 @@
 										<div class="quicklinks__desc">Z06</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="aston-martin.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
 										alt="Aston Martin" class="quicklinks__logo" />
@@ -218,7 +218,7 @@
 										<div class="quicklinks__desc">Vantage</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="rolls-royce-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
 										alt="Rolls-Royce" class="quicklinks__logo" />
@@ -227,7 +227,7 @@
 										<div class="quicklinks__desc">Ghost</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="bentley-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
 										alt="Bentley" class="quicklinks__logo" />
@@ -236,7 +236,7 @@
 										<div class="quicklinks__desc">Continental GTC</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="mercedes-amg.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
 										alt="Mercedes-AMG" class="quicklinks__logo" />
@@ -245,7 +245,7 @@
 										<div class="quicklinks__desc">S63</div>
 									</div>
 								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="bmw-i8-rentals.html"
+							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
 										alt="BMW-i" class="quicklinks__logo" />
