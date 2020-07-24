@@ -1,12 +1,12 @@
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="www.royaltyexoticcars.com" data-wf-page="5eab2e688db14aa896933055"
   data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
-<!-- Mirrored from www.royaltyexoticcars.com/frontView/team/houston by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:44:30 GMT -->
+<!-- Mirrored from www.royaltyexoticcars.com/frontView/team/attwood by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:44:31 GMT -->
 
 <head>
   <meta charset="utf-8" />
-  <title>Team - Houston</title>
-  <meta content="Owner/CEO - @HoustonCrosta" name="description" />
+  <title>Team - Attwood</title>
+  <meta content="Outside Location Specialist - @ajexotics52" name="description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
   <link href="/frontEnd/css/royaltyexoticcars.16f3cbba0.min.css" rel="stylesheet" type="text/css" />
@@ -28,7 +28,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-K5RHN52');</script>
   <!-- End Google Tag Manager -->
   <script
-    type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "$init": true, "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
+    type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "$init": true, "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "@{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} @{{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} @{{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
 </head>
 
 <body>
@@ -862,88 +862,85 @@
   <div class="main">
     <section class="team1">
       <div
-        style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png_)"
+        style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bd21e36dc7d0dc24c414bbd_attwood-2.png_)"
         class="team__photoz"><img
           src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5ac2b218ae740c49604e1c2a_placeholder-1000x666.svg"
           alt="" class="placeholder" /></div>
       <div class="team__details">
-        <h1 class="team__details--name">Houston</h1>
-        <div class="team__details--title">Owner/CEO</div>
-        <div class="team__details--links"><a href="https://www.instagram.com/houstoncrosta/" target="_blank"
-            class="team__detials--links-link">Instagram</a><a href="mailto:houston@royaltyexoticcars.com?subject=Hello!"
+        <h1 class="team__details--name">Attwood</h1>
+        <div class="team__details--title">Outside Location Specialist</div>
+        <div class="team__details--links"><a href="https://www.instagram.com/ajexotics52/" target="_blank"
+            class="team__detials--links-link">Instagram</a><a href="mailto:attwood@royaltyexoticcars.com?subject=Hello!"
             class="team__detials--links-link">Email</a></div>
         <div class="team__info--full-bio w-richtext">
-          <h2>About Houston</h2>
-          <p>Houston is living an American Dream. Exotic automobiles are his passion. But it took years of hard work in
-            different careers to achieve his current status. He’s turned a lifetime interest in cars into a successful
-            business as the founder of the country’s largest exotic car rental company.</p>
-          <p>Accessible to employees and customers, Houston takes pride in his adaptability while working in an arena of
-            constant change. And since the automobile industry is continually evolving, Houston approaches running
-            Royalty Exotic in the same manner.</p>
-          <p>“The constant evolution of the automotive is what I like to replicate my business after,” Houston says.
-            “It's never being in a stalemate. It'a continually making something good great.”</p>
-          <p>With the success of Royalty Exotic Cars, Houston has arrived in an admirable place in his business world
-            and personal life.</p>
-          <p>“Thankfully, I put myself in a position to get paid for what I love to do,” he says. “To help people
-            experience their dream cars, work with dream cars and drive the most desirable cars in the world. So I guess
-            my motivation is to get paid for what I love to do, rather than do it even if I don’t get paid.”</p>
-          <p>As a husband and father of a daughter, a sense of family is an integral component of success. The
-            importance of family extends to the employees at Royalty, whom Houston considers part of his family. The
-            contentment of family and the work environment operating in sync helps provide Houston with another
-            strength.</p>
-          <p>"The most surprising thing that I am good at is adapting to any environment,” he says. “I don’t find myself
-            uncomfortable in any situation. I always feel that if I find myself in a situation, I will come out of it
-            successfully.”</p>
+          <h2>About Attwood</h2>
+          <p>As a student-athlete, collegiate football taught Attwood about team play and time management. Although his
+            desire for a career in the National Football League didn’t materialize, Attwood's talents have served him
+            well at Royalty Exotic Cars.</p>
+          <p>Attwood works directly with customers as manager of social accounts and internet marketing.</p>
+          <p>“I am good at communicating to our clients when they are in need of special treatment,” he says. “I try to
+            accommodate everyone and make sure they feel special, no matter the request. I enjoy putting people at ease
+            with the service they are receiving with Royalty.”</p>
+          <p>Now working in the exotic car industry for three years, Attwood's career has quickly advanced. He began
+            with Royalty as a backpack billboard carrier on the Las Vegas Strip. But after studying and earning
+            certifications for online marketing, he’s embraced new challenges.</p>
+          <p>“With communication changing so much over the years, I enjoy growing with the times and being able to
+            interact with almost anyone around the world instantaneously,” he says. “The wealth of information, direct
+            line of communication and opportunity to grow so quickly really satisfies me.”</p>
+          <p>Brand awareness, an active and expanding social media presence, digital marketing and promotion are all
+            integral components of a successful business. Attwood welcomes all of it.</p>
+          <p>“The more people who know about us, the better,” Attwood says. “The internet has taken over as the main
+            source of advertising for our generation.”</p>
+          <p>Attwood's athletic experience has also helped foster his business career in other ways. When quick
+            decisions are required, he can take charge with confidence, knowing his employers trust him.</p>
+          <p>“I came a long way, and technology has become so advanced in such a short time,” he says. “I think it’s a
+            testament to my dedication to the craft. I’m willing to adapt to any situation and take the lead in the
+            absence of my superiors. I am thankful they trust in me to be a leader when they’re not present.”</p>
           <h2>Q&amp;A</h2>
           <h3>What are you most passionate about professionally? Personally?</h3>
-          <p>Being the founder of a company like Royalty Exotic Cars, there is so much overlap in my life, so
-            professionally and personally I am extremely passionate about cars. The constant evolution of the automotive
-            business is what I like to replicate my business after, never being in a stalemate and constantly making
-            something good, great. Outside of vehicles, my main passion is family. My wife, my daughter and of course
-            the employees that work here at Royalty because I do consider them my family. &nbsp;</p>
+          <p>Professionally, I would say I am most passionate about expanding the Royalty Brand and brand awareness
+            through social media, digital marketing and promotions. The more people that know about us, the better and
+            the internet has taken over as the main source of advertising for our generation. My personal passion will
+            always be football and athletics. Being brought up around football really taught me the team aspect of life
+            and it also provided with the opportunity to be a student athlete and play Division II football. </p>
           <h3>What would you do even if you didn't get paid to do it?</h3>
-          <p>Thankfully, I put myself in a position to get paid for what I love to do. Help people experience their
-            dream cars, work with dream cars and drive the most desirable cars in the world. So I guess my motivation is
-            to get paid for what I love to do, rather than do it even if I don’t get paid. &nbsp;</p>
+          <p>Even if I didn’t get paid to do it, I would be involved in social media interaction. With communication
+            changing so much over the years, I enjoy growing with the times and being able to interact with almost
+            anyone around the world instantaneously. The wealth of information, direct line of communication and
+            opportunity to grow so quickly, really satisfies me. </p>
           <h3>What are you surprisingly good at?</h3>
-          <p>The most surprising thing that I am good at is adapting to any environment. I don’t find myself
-            uncomfortable in any situation and I always feel that if I find myself in a situation I will come out of it
-            successful. &nbsp;</p>
+          <p>I am surprisingly good at drawing. I have been drawing for a long time now and it helps me work on my
+            patience. </p>
           <h3>What's the biggest proof that you're good at what you do?</h3>
-          <p>The biggest proof that I am good at what I do is that I started from installing cable, to renting scooters
-            on the Las Vegas Strip and being a cable guy to founding the largest exotic car rental company in the United
-            States, creating an immensely popular YouTube channel and building my own vehicle. People tell me its the
-            American Dream on the daily basis but it took a lot of hard work, long days and dedication.</p>
+          <p>I believe the best proof that I am good at my job was the evolution of my position. My position started
+            with Royalty as a backpack billboard carrier on the Las Vegas Strip, but now I am in charge of our social
+            accounts and internet marketing.</p>
           <h3>How long have you been working in your field?</h3>
-          <p>I have been involved with cars my entire life. About 4 years ago, I decided to make my hobby a career and
-            haven’t looked back. &nbsp;</p>
+          <p>I have been working in the exotic field for 3 years, but as far as the internet based marketing, I got into
+            that about 4 years ago!</p>
           <h3>What's your biggest accomplishment?</h3>
-          <p>I would say that my biggest accomplishment would be starting something so small, like scooter rentals, to
-            becoming the largest exotic car rental company in the US. Not only is it a pretty big accomplishment as a
-            business, but I have managed to provide my friends and family with a position that they can not only grow
-            into, but grow with. &nbsp;</p>
-          <h3>How does your education connect to your professional career? What about personal experiences?</h3>
-          <p>The typical educational route just wasn’t for me, as it is not for many people, so I made my own path and
-            decided to venture into business for myself. My personal experiences have been the best teacher. Learning
-            how businesses work, how people work has been most beneficial to my growth. &nbsp;</p>
+          <p>I would say my biggest accomplishment would be earning my certifications for online marketing. I came a
+            long way and technology has become so advanced in such a short time, I think its a testament to my
+            dedication to the craft. </p>
+          <h3>What problems do you consistently solve at work?</h3>
+          <p>I am pretty good at communicating to our clients when they are in need of special treatment. I try to
+            accommodate everyone and make sure they feel special, no matter the request. I enjoy putting people at ease
+            with the service they are receiving with Royalty. </p>
           <h3>What are you complimented on most in your work?</h3>
-          <p>At work, I am complimented most about how approachable I am. Most Founders/CEO’s don't come in to the
-            office on a daily basis, so being able to come in and see me and interact is very unique. I have made myself
-            very accessible to clients and people seem to like that!</p>
+          <p>I am complimented the most about my willingness to adapt to any situation and take the lead in the absence
+            of my superiors. I am thankful that they put the trust in me to be a leader when they are not around. </p>
           <h3>What do you like to do when you're not at work?</h3>
-          <p>Well, when am I NOT at work? When I am not in the office, my favorite thing to do is hang out with my wife
-            and daughter. Those 2 have changed my entire outlook on life and really put into perspective what is
-            important to me. My other hobbies are taking the team to the movies, I enjoy going shooting, filming for our
-            YouTube Channel, doing builds on cars and tryin new foods (which is an amazing thing to do in Vegas) </p>
-          <h3>What is your plan for your life after your time at Royalty Exotic Cars?</h3>
-          <p>I have no plan to leave Royalty Exotic Cars, but my direction for expansion is continuously evolving. Next,
-            we plan to tackle Royalty Air, our own private airline that skips TSA and gives a customer service feel that
-            will be unmatched! </p>
+          <p>When I am not at work, I enjoy doing anything sports related. Sports played a big part of my life and I
+            really enjoy the competitive nature of sports. I also enjoy drawing, music and being around my family and
+            friends... And my cats.</p>
+          <h3>What is your plan for your life after your time at royalty exotic cars?</h3>
+          <p>In the long run, I would like to open up my own social media management company and be able to display the
+            skills that I learned with Royalty. I never openly plan on leaving Royalty, I would just want to use my
+            skills to build another form of income, alongside my Royalty Family. </p>
           <h3>If you could do anything with your time and talent, what would you do and why?</h3>
-          <p>Every day I try and use my time to better our lives here at Royalty, not only do I want to live the best
-            life possible, but I want to be able to provide that to everyone around me. So the use of my time is not
-            only important to me, but those around me.</p>
-          <p>‍</p>
+          <p>If I could use my time and talent for anything, it would be playing in the NFL. I have always had a dream
+            of playing professional football. Other than that, if I could, I would use the time to continue to study my
+            craft and excel.</p>
         </div>
       </div>
     </section>
@@ -1640,7 +1637,7 @@
       <div class="team__members w-dyn-list">
         <div role="list" class="team__list w-dyn-items">
           <div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item" href="houston.html"
-              aria-current="page" class="team__link w-inline-block w--current"><img
+              class="team__link w-inline-block"><img
                 src="/frontEnd/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png" alt=""
                 class="team__photo" />
               <div class="team__text">Houston</div>
@@ -1666,8 +1663,8 @@
               <div class="team__text">Media &amp; Marketing Director</div>
             </a></div>
           <div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item" href="attwood.html"
-              class="team__link w-inline-block"><img src="/frontEnd/5bd21e36dc7d0dc24c414bbd_attwood-2.png" alt=""
-                class="team__photo" />
+              aria-current="page" class="team__link w-inline-block w--current"><img
+                src="/frontEnd/5bd21e36dc7d0dc24c414bbd_attwood-2.png" alt="" class="team__photo" />
               <div class="team__text">Attwood</div>
               <div class="team__text">, </div>
               <div class="team__text">Outside Location Specialist</div>
@@ -1681,79 +1678,79 @@
     <div class="brands w-dyn-list">
       <div role="list" class="brands__list w-dyn-items">
         <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53cb2_vanderhall-light.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2a79adbe4a74307320a38f_brand-dodge-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8624535753b900012ffb11_brand-viper-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e545206ad46c93ea33479a1_brand-ford.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8736c957c38e00015b588d_brand-r8-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5ce85390000019d730d_ducati-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed69d489f4600012fb1b7_indian-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5415b_BMW-web.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8628345753b900013000ee_brand-hummer-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86288f5e69d200011ed8c0_brand-range-rover.svg"
-            alt="" class="brands__logo" /></div>
-        <div role="listitem" class="brands__item w-dyn-item"><img
-            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
             alt="" class="brands__logo" /></div>
         <div role="listitem" class="brands__item w-dyn-item"><img
             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
             alt="" class="brands__logo" /></div>
         <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86288f5e69d200011ed8c0_brand-range-rover.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e545206ad46c93ea33479a1_brand-ford.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2a79adbe4a74307320a38f_brand-dodge-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5ce85390000019d730d_ducati-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8736c957c38e00015b588d_brand-r8-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5415b_BMW-web.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed69d489f4600012fb1b7_indian-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53cb2_vanderhall-light.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8624535753b900012ffb11_brand-viper-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
+            alt="" class="brands__logo" /></div>
+        <div role="listitem" class="brands__item w-dyn-item"><img
+            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
             alt="" class="brands__logo" /></div>
       </div>
     </div>
@@ -2038,8 +2035,7 @@
           </div>
         </form>
         <div class="badge__form badge__form--success w-form-done">
-          <div class="badge__form--wrapper"><img
-              src="../../frontEnd/5dc204e33f9395a70d214f28_green-check-animated.gif"
+          <div class="badge__form--wrapper"><img src="../../frontEnd/5dc204e33f9395a70d214f28_green-check-animated.gif"
               alt="" class="badge__success--check" />
             <div class="badge__success--heading">Thanks for reaching out!</div>
             <div class="badge__success--message">We&#x27;ll send you an invite email to join our private beta when
@@ -2104,12 +2100,13 @@
       </div>
     </div>
   </footer>
-  <script src="../frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
+  <script
+    src="../frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
     type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
   <script src="/frontEnd/js/royaltyexoticcars.af38aa331.js" type="text/javascript"></script>
   <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
-<!-- Mirrored from www.royaltyexoticcars.com/frontView/team/houston by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:44:30 GMT -->
+<!-- Mirrored from www.royaltyexoticcars.com/frontView/team/attwood by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jul 2020 16:44:31 GMT -->
 
 </html>

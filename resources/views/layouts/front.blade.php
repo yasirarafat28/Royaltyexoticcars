@@ -1674,7 +1674,7 @@
 			<div class="team__members w-dyn-list">
 				<div role="list" class="team__list w-dyn-items">
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="frontView/team/houston.html" class="team__link w-inline-block"><img
+							href="/team/houston" class="team__link w-inline-block"><img
 								src="/frontEnd/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Houston</div>
@@ -1682,7 +1682,7 @@
 							<div class="team__text">Owner/CEO</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="frontView/team/tony.html" class="team__link w-inline-block"><img
+							href="/team/houston" class="team__link w-inline-block"><img
 								src="/frontEnd/5baa89209d2e93204bc68826_tony-catchings-showroom-manager.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Tony</div>
@@ -1690,7 +1690,7 @@
 							<div class="team__text">Operations Director</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="frontView/team/mario.html" class="team__link w-inline-block"><img
+							href="/team/houston" class="team__link w-inline-block"><img
 								src="/frontEnd/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png"
 								alt="" sizes="(max-width: 479px) 45vw, 22vw"
 								srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png 600w"
@@ -1700,7 +1700,7 @@
 							<div class="team__text">Media &amp; Marketing Director</div>
 						</a></div>
 					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="frontView/team/attwood.html" class="team__link w-inline-block"><img
+							href="/team/houston" class="team__link w-inline-block"><img
 								src="/frontEnd/5bd21e36dc7d0dc24c414bbd_attwood-2.png"
 								alt="" class="team__photo" />
 							<div class="team__text">Attwood</div>
@@ -1711,7 +1711,7 @@
 			</div>
 			<div class="team__family">*Royalty Exotic Cars is owned and operated by a small team of just 10
 				people.<br />Some of us are related by blood, others by sweat and tears — <a id="Footer-Family-Link"
-					href="team.html"><strong>together we&#x27;re family→</strong></a><strong><br /></strong></div>
+					href="/team"><strong>together we&#x27;re family→</strong></a><strong><br /></strong></div>
 		</div>
 		<div class="brands w-dyn-list">
 			<div role="list" class="brands__list w-dyn-items">
@@ -1831,11 +1831,11 @@
 			</div>
 			<nav class="sitemap">
 				<div class="sitemap__column">
-					<div class="sitemap__header">Company</div><a id="Home-Link-Footer" href="index.html" target="_blank"
+					<div class="sitemap__header">Company</div><a id="Home-Link-Footer" href="/" target="_blank"
 						aria-current="page" class="sitemap__link w--current">Home</a><a href="#"
 						class="sitemap__link">Vlog</a><a href="https://shop.royaltyexoticcars.com/" target="_blank"
-						class="sitemap__link">Shop</a><a href="team.html" class="sitemap__link">Team</a><a
-						href="faqs.html" class="sitemap__link">FAQs</a>
+						class="sitemap__link">Shop</a><a href="/team" class="sitemap__link">Team</a><a
+						href="/faqs" class="sitemap__link">FAQs</a>
 				</div>
 				<div class="sitemap__column">
 					<div class="sitemap__header">Legal</div><a href="privacy.html" id="Privacy-Link-Footer"
@@ -1878,81 +1878,81 @@
 					<div class="sitemap__collection w-dyn-list">
 						<div role="list" class="w-dyn-items">
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/car-rentals.html" class="sitemap__link">Cars</a></div>
+									href="/car-rentals" class="sitemap__link">Cars</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/suv-rentals.html" class="sitemap__link">SUVs</a></div>
+									href="/car-rentals" class="sitemap__link">SUVs</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/autocycle-rentals.html" class="sitemap__link">Autocycle</a></div>
+									href="/car-rentals" class="sitemap__link">Autocycle</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/motorcycle-rentals.html" class="sitemap__link">Motorcycles</a>
+									href="/car-rentals" class="sitemap__link">Motorcycles</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/hypercar-rentals.html" class="sitemap__link">Hypercars</a></div>
+									href="/car-rentals" class="sitemap__link">Hypercars</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/supercar-rentals.html" class="sitemap__link">Supercars</a></div>
+									href="/car-rentals" class="sitemap__link">Supercars</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/exotic-car-rentals.html" class="sitemap__link">Exotic Cars</a>
+									href="/car-rentals" class="sitemap__link">Exotic Cars</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/sports-car-rentals.html" class="sitemap__link">Sports Cars</a>
+									href="/car-rentals" class="sitemap__link">Sports Cars</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/luxury-car-rentals.html" class="sitemap__link">Luxury Cars</a>
+									href="/car-rentals" class="sitemap__link">Luxury Cars</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/classic-car-rentals.html" class="sitemap__link">Classic Cars</a>
+									href="/car-rentals" class="sitemap__link">Classic Cars</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/offroad-suv-rentals.html" class="sitemap__link">Offroad SUVs</a>
+									href="/car-rentals" class="sitemap__link">Offroad SUVs</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/open-air-roadster-rentals.html" class="sitemap__link">Open Air
+									href="/car-rentals" class="sitemap__link">Open Air
 									Roadsters</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/luxury-suv-rentals.html" class="sitemap__link">Luxury SUVs</a>
+									href="l/car-rentals" class="sitemap__link">Luxury SUVs</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/three-wheel-motorcycle-rentals.html"
+									href="/car-rentals"
 									class="sitemap__link">Three-wheel Motorcycle</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/superbike-rentals.html" class="sitemap__link">Superbikes</a>
+									href="/car-rentals" class="sitemap__link">Superbikes</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/sport-bike-rentals.html" class="sitemap__link">Sport Bikes</a>
+									href="/car-rentals" class="sitemap__link">Sport Bikes</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/cruiser-rentals.html" class="sitemap__link">Cruisers</a></div>
+									href="/car-rentals" class="sitemap__link">Cruisers</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/touring-rentals.html" class="sitemap__link">Touring Bikes</a>
+									href="/car-rentals" class="sitemap__link">Touring Bikes</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/bugatti-rentals.html" class="sitemap__link">Bugatti</a></div>
+									href="/car-rentals" class="sitemap__link">Bugatti</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/lamborghini-rentals.html" class="sitemap__link">Lamborghini</a>
+									href="/car-rentals" class="sitemap__link">Lamborghini</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/ferrari-rentals.html" class="sitemap__link">Ferrari</a></div>
+									href="/car-rentals" class="sitemap__link">Ferrari</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/mclaren-rentals.html" class="sitemap__link">McLaren</a></div>
+									href="/car-rentals" class="sitemap__link">McLaren</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/porsche-rentals.html" class="sitemap__link">Porsche</a></div>
+									href="/car-rentals" class="sitemap__link">Porsche</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/audi-r8-rentals.html" class="sitemap__link">Audi R8</a></div>
+									href="/car-rentals" class="sitemap__link">Audi R8</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/acura-nsx-rentals.html" class="sitemap__link">Acura NSX</a></div>
+									href="/car-rentals" class="sitemap__link">Acura NSX</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/nissan-gtr-rentals.html" class="sitemap__link">Nissan GT-R</a>
+									href="/car-rentals" class="sitemap__link">Nissan GT-R</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/corvette-z06-rentals.html" class="sitemap__link">Corvette Z06</a>
+									href="/car-rentals" class="sitemap__link">Corvette Z06</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/aston-martin.html" class="sitemap__link">Aston Martin</a></div>
+									href="/car-rentals" class="sitemap__link">Aston Martin</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/rolls-royce-rentals.html" class="sitemap__link">Rolls Royce</a>
+									href="/car-rentals" class="sitemap__link">Rolls Royce</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/bentley-rentals.html" class="sitemap__link">Bentley</a></div>
+									href="/car-rentals" class="sitemap__link">Bentley</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
 									href="las-vegas-nv/mercedes-amg.html" class="sitemap__link">Mercedes-AMG</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
@@ -1965,12 +1965,12 @@
 									href="las-vegas-nv/vanderhall-rentals.html" class="sitemap__link">Vanderhall</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/ducati-rentals.html" class="sitemap__link">Ducati</a></div>
+									href="/car-rentals" class="sitemap__link">Ducati</a></div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
 									href="las-vegas-nv/bmw-motorrad-rentals.html" class="sitemap__link">BMW Motorrad</a>
 							</div>
 							<div role="listitem" class="w-dyn-item"><a id="Footer-Sitemap-Link"
-									href="las-vegas-nv/indian-rentals.html" class="sitemap__link">Indian</a></div>
+									href="/car-rentals" class="sitemap__link">Indian</a></div>
 						</div>
 					</div>
 				</div>

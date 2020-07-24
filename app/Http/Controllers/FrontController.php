@@ -28,4 +28,10 @@ class FrontController extends Controller
     public function carRentalsLamborghiniAventador() {
         return view('frontView.car-rentals.lamborghini-aventador');
     }
+    public function team() {
+        return view('frontView.team');
+    }
+    public function teamMembers() {
+        return view('frontView.team.houston');
+    }
 }
