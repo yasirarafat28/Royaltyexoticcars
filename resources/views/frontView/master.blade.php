@@ -127,22 +127,22 @@
 		</div>
 		<div class="rentals">
 			<h2 class="home__h2">Browse our fleet</h2>
-			<div class="rent__nav"><a id="Browse-Supercar-Rentals-Link" href="las-vegas-nv/car-rentals.html"
+			<div class="rent__nav"><a id="Browse-Supercar-Rentals-Link" href="/car-rentals"
 					class="rent__nav--link w-inline-block"><img
 						src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg"
 						alt="" />
 					<div class="rent__nav--label">Car Rentals</div>
-				</a><a id="Browse-SUV-Rentals-Link" href="las-vegas-nv/suv-rentals.html"
+				</a><a id="Browse-SUV-Rentals-Link" href="/suv-rentals"
 					class="rent__nav--link w-inline-block"><img
 						src="/frontEnd/5d3f3e92ffba056a84408ad3_002-suv.jpg"
 						alt="" />
 					<div class="rent__nav--label">SUV Rentals</div>
-				</a><a id="Browse-Slingshot-Rentals-Link" href="las-vegas-nv/autocycle-rentals.html"
+				</a><a id="Browse-Slingshot-Rentals-Link" href="/car-rentals"
 					class="rent__nav--link w-inline-block"><img
 						src="/frontEnd/5d3f3e7d23fb0f428fb98133_004-autocycle.jpg"
 						alt="" />
 					<div class="rent__nav--label">Autocycle Rentals</div>
-				</a><a id="Browse-Motorcycle-Rentals-Link" href="las-vegas-nv/motorcycle-rentals.html"
+				</a><a id="Browse-Motorcycle-Rentals-Link" href="/car-rentals"
 					class="rent__nav--link w-inline-block"><img
 						src="/frontEnd/5d3f3e8725d7f1e6c2db4edb_003-motorcycles.jpg"
 						alt="" />
@@ -153,7 +153,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list rent__list--super w-dyn-items">
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/lamborghini-aventador.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -212,7 +212,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2018-mclaren-720s-bright-orange.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
@@ -272,7 +272,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2016-lamborghini-huracan-twin-turbo-1000-hp-black.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -331,7 +331,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2020-lamborghini-huracan-evo.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -390,7 +390,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2018-lamborghini-huracan-perfomante.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -449,7 +449,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2017-ferrari-488-red-convertible.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
@@ -508,7 +508,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2017-ferrari-488-gtb-red.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
@@ -568,7 +568,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2018-ferrari-488-spyder-white-convertible.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
@@ -628,7 +628,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2017-lamborghini-huracan-yellow-convertible.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -688,7 +688,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2018-lamborghini-huracan-green-convertible.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -747,7 +747,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2018-lamborghini-huracan-spider-white.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -807,7 +807,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2017-lamborghini-huracan-orange-convertible.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -866,7 +866,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/lamborghini-huracan.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -925,7 +925,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2015-lamborghini-huracan-red.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -984,7 +984,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-lamborghini-huracan-orange.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -1043,7 +1043,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-lamborghini-huracan-green-coupe.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -1102,7 +1102,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rent__item--super w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/lamborghini-huracan-2.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -1168,7 +1168,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list cards__exotic w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--exotic w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/mclaren-570s-spider.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
@@ -1228,7 +1228,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--exotic w-dyn-item"><a
 								id="Supercar-Rental-Item"
-								href="car-rentals/2015-ferrari-458-italia-yellow-convertible.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
@@ -1287,7 +1287,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--exotic w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2018-mclaren-570s-orange.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
@@ -1345,7 +1345,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--exotic w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-porsche-911-gt3-rs-orange.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
@@ -1404,7 +1404,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--exotic w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2019-aston-martin-vantage.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
@@ -1470,7 +1470,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list cards__sports w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--sports w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-nissan-gt-r-black.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
@@ -1529,7 +1529,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--sports w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/dodge-challenger-hellcat.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e2a79adbe4a74307320a38f_brand-dodge-light-bg.svg"
@@ -1588,7 +1588,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--sports w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-corvette-z06-red-convertible.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
@@ -1654,7 +1654,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list cards__luxury w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--luxury w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2014-rolls-royce-ghost-v-spec-black.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
@@ -1713,7 +1713,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--luxury w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2015-bentley-continental-gtc-red.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
@@ -1772,7 +1772,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--luxury w-dyn-item"><a
-								id="Supercar-Rental-Item" href="car-rentals/2016-mercedes-amg-s63-gray.html"
+								id="Supercar-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
@@ -1838,7 +1838,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list cards__suvs w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/lamborghini-urus.html" class="rentals__link w-inline-block">
+								href="/car-rentals/lamborghini-aventador" class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
 										alt="" class="rentals__logo" />
@@ -1896,7 +1896,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/mercedes-g550.html" class="rentals__link w-inline-block">
+								href="/car-rentals/lamborghini-aventador" class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
 										alt="" class="rentals__logo" />
@@ -1954,7 +1954,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/ford-raptor.html" class="rentals__link w-inline-block">
+								href="/car-rentals/lamborghini-aventador" class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e545206ad46c93ea33479a1_brand-ford.svg"
 										alt="" class="rentals__logo" />
@@ -2012,7 +2012,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/range-rover-supercharged.html" class="rentals__link w-inline-block">
+								href="/car-rentals/lamborghini-aventador" class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86288f5e69d200011ed8c0_brand-range-rover.svg"
 										alt="" class="rentals__logo" />
@@ -2070,7 +2070,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/2018-jeep-wrangler-white-upgraded.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
@@ -2129,7 +2129,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--suvs w-dyn-item"><a id="SUV-Rental-Item"
-								href="suv-rentals/2018-jeep-wrangler-red-upgraded.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
@@ -2196,7 +2196,7 @@
 					<div role="list" class="rent__list cards__auto w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--auto w-dyn-item"><a
 								id="Autocycle-Rental-Item"
-								href="autocycle-rentals/2018-vanderhall-venice-white-red.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53cb2_vanderhall-light.svg"
@@ -2256,7 +2256,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--auto w-dyn-item"><a
 								id="Autocycle-Rental-Item"
-								href="autocycle-rentals/2018-slingshot-sl-icon-white-manual.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
@@ -2315,7 +2315,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--auto w-dyn-item"><a
-								id="Autocycle-Rental-Item" href="autocycle-rentals/2016-slingshot-green-automatic.html"
+								id="Autocycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
@@ -2374,7 +2374,7 @@
 								</div>
 							</a></div>
 					</div>
-				</div><a id="Browse-All-Autocycles-Link" href="las-vegas-nv/autocycle-rentals.html"
+				</div><a id="Browse-All-Autocycles-Link" href="/car-rentals"
 					class="rentals__browse--link">Browse all 21 Autocycles</a>
 			</div>
 			<div id="motorcycle-rentals" class="rentals__section">
@@ -2382,7 +2382,7 @@
 				<div class="rent__collection w-dyn-list">
 					<div role="list" class="rent__list cards__moto w-dyn-items">
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
-								id="Motorcycle-Rental-Item" href="motorcycle-rentals/2018-indian-chieftain-white.html"
+								id="Motorcycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed78e9074a700013f8a5e_indian-dark-bg.svg"
@@ -2441,7 +2441,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
-								id="Motorcycle-Rental-Item" href="motorcycle-rentals/2018-ducati-1299-panigale-red.html"
+								id="Motorcycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5d160d9820001d80ab0_ducati-dark-bg.svg"
@@ -2500,7 +2500,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
-								id="Motorcycle-Rental-Item" href="motorcycle-rentals/2018-bmw-s1000rr-white-blue.html"
+								id="Motorcycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5415b_BMW-web.svg"
@@ -2559,7 +2559,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
-								id="Motorcycle-Rental-Item" href="motorcycle-rentals/2018-indian-chieftain-black.html"
+								id="Motorcycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed78e9074a700013f8a5e_indian-dark-bg.svg"
@@ -2619,7 +2619,7 @@
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
 								id="Motorcycle-Rental-Item"
-								href="motorcycle-rentals/2018-ducati-959-panigale-white.html"
+								href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5d160d9820001d80ab0_ducati-dark-bg.svg"
@@ -2678,7 +2678,7 @@
 								</div>
 							</a></div>
 						<div role="listitem" class="rent__item rentals__item--moto w-dyn-item"><a
-								id="Motorcycle-Rental-Item" href="motorcycle-rentals/2018-ducati-959-panigale-red.html"
+								id="Motorcycle-Rental-Item" href="/car-rentals/lamborghini-aventador"
 								class="rentals__link w-inline-block">
 								<div class="rentals__header"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5d160d9820001d80ab0_ducati-dark-bg.svg"

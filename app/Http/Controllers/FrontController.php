@@ -24,4 +24,8 @@ class FrontController extends Controller
     public function lamborghiniRentals() {
         return view('frontView.las-vegas-nv.lamborghini-rentals');
     }
+
+    public function carRentalsLamborghiniAventador() {
+        return view('frontView.car-rentals.lamborghini-aventador');
+    }
 }

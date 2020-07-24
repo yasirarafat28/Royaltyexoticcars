@@ -26,6 +26,8 @@ Route::get('/suv-rentals', 'FrontController@suvRentals');
 Route::get('/bugatti-rentals', 'FrontController@bugattiRentals');
 Route::get('/lamborghini-rentals', 'FrontController@lamborghiniRentals');
 
+Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamborghiniAventador');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
