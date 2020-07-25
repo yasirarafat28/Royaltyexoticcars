@@ -29,13 +29,13 @@
 			<div class="banner__collection w-dyn-list">
 				<div role="list" class="banner__list w-dyn-items">
 					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:900px; height:420px;"
-						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(1)">
+						role="listitem" class="banner__item w-dyn-item mySlides">
 					</div>
 					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg); width:900px; height:420px;"
-						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(2)"> 
+						role="listitem" class="banner__item w-dyn-item mySlides"> 
 					</div>
 					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:900px; height:420px;"
-						role="listitem" class="banner__item w-dyn-item mySlides" onmouseover="currentSlide(3)">
+						role="listitem" class="banner__item w-dyn-item mySlides">
 					</div>
 					<div class="div-properties-inside-nav-bar" style="padding: 8px; width: 100%; display: inline-flex; justify-content: center;">
 						<span class="dot" style="text-align:center;
@@ -2769,6 +2769,9 @@
 		}
 		slides[slideIndex-1].style.display = "block";  
 		dots[slideIndex-1].className += " active";
+		$(".mySlides:nth-child(1)").mouseover(function() {
+    	currentSlide(1);
+	});
 	}
 </script>
 @endsection
