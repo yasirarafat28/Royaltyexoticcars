@@ -696,7 +696,7 @@
                 <div class="drawer__location--info"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a690c68ae5eb70001f01b94_rec_logo_icon_black.svg"
                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
-                  <div class="drawer__location--title">Royalty Exotic Car Rentals</div>
+                  <div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
                   <div class="drawer__location--desc">4305 Dean Martin Drive, Suite 120<br />Las Vegas, NV
                     89103<br />9:00am to 7:00pm Daily</div>
                 </div>
