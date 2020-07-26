@@ -3,18 +3,18 @@
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Royalty Exotic Cars - Las Vegas</title>
+	<title>Rental Exotic Beasts - Las Vegas</title>
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		name="description" />
-	<meta content="Royalty Exotic Cars - Las Vegas" property="og:title" />
+	<meta content="Rental Exotic Beasts - Las Vegas" property="og:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="og:description" />
 	<meta
 		content="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a823c1c32f0d300017e7fa0_Royalty%20Exotic%20Cars%20Website%20Banner%20-%20small.gif"
 		property="og:image" />
-	<meta content="Royalty Exotic Cars - Las Vegas" property="twitter:title" />
+	<meta content="Rental Exotic Beasts - Las Vegas" property="twitter:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="twitter:description" />
@@ -63,7 +63,7 @@
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
 						href="mailto:reservations+toursengine@royaltyexoticcars.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 						onclick="this.href = this.href.replace('[sub]',window.location)">
-						Reservations@RoyaltyExoticCars.com
+						Reservations@Rentalexoticsbeasts.com
 					</a></div><a
 					href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
@@ -146,7 +146,7 @@
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
 						<div class="brand__icon"></div>
-						<div class="brand__text">Royalty Exotic Cars</div>
+						<div class="brand__text">Rental Exotic Beasts</div>
 					</a></div>
 				<div class="nav__links">
 					<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
@@ -652,7 +652,7 @@
 														$1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
 														failure due to customer mis-use or gross negligence operating
 														the vehicle. You are fully responsible for your own actions
-														while operating a Royalty Exotic Cars vehicle.</div>
+														while operating a Rental Exotic Beasts vehicle.</div>
 													<div class="table__dropdown--arrow"></div>
 												</nav>
 											</div>
@@ -766,8 +766,8 @@
 							<div class="drawer__location">
 								<div class="drawer__location--info"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a690c68ae5eb70001f01b94_rec_logo_icon_black.svg"
-										alt="Royalty Exotic Cars Logo" class="drawer__location--logo" />
-									<div class="drawer__location--title">Royalty Exotic Car Rentals</div>
+										alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
+									<div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
 									<div class="drawer__location--desc">4305 Dean Martin Drive, Suite 120<br />Las
 										Vegas, NV 89103<br />9:00am to 7:00pm Daily</div>
 								</div>
@@ -874,7 +874,7 @@
 													<div class="navdrawer__link--icon"><img
 															src="https://global-uploads.webflow.com/5a10aaa4d85f4b0001a53292/5a839b0c4c065e000105ad90_icon-skype-white.svg"
 															alt="Skype Call" class="navdrawer__link--image"></div>
-													<div>Skype: Royalty Exotic Cars</div>
+													<div>Skype: Rental Exotic Beasts</div>
 												</a></div><a id="Drawer-Call-WhatsApp-Link" href="#"
 												class="navdrawer__link navdrawer__link--no-border w-inline-block">
 												<div class="navdrawer__link--icon"><img
@@ -1147,7 +1147,7 @@
 								<div>Covers cost of Mechanical Parts due to wear and tear, tow charges, and loss of
 									rental time up to $1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
 									failure due to customer mis-use or gross negligence operating the vehicle. You are
-									fully responsible for your own actions while operating a Royalty Exotic Cars
+									fully responsible for your own actions while operating a Rental Exotic Beasts
 									vehicle.</div>
 								<div class="table__dropdown--arrow"></div>
 							</nav>
@@ -1195,7 +1195,7 @@
 									<p><strong>No.</strong></p>
 									<p>Although we have a 99% perfect track record for reservation accuracy, the world
 										is a wild and dynamic place, especially Las Vegas and, sadly, booking a rental
-										with Royalty Exotic Cars does <strong>NOT</strong> guarantee your vehicle
+										with Rental Exotic Beasts does <strong>NOT</strong> guarantee your vehicle
 										selection, make &amp; model, time frame, price, availability or any other
 										detail.</p>
 									<p>We reserve the right to amend your reservation at any time, with or without
@@ -1709,7 +1709,7 @@
 						</a></div>
 				</div>
 			</div>
-			<div class="team__family">*Royalty Exotic Cars is owned and operated by a small team of just 10
+			<div class="team__family">*Rental Exotic Beasts is owned and operated by a small team of just 10
 				people.<br />Some of us are related by blood, others by sweat and tears — <a id="Footer-Family-Link"
 					href="/team"><strong>together we&#x27;re family→</strong></a><strong><br /></strong></div>
 		</div>
@@ -1794,7 +1794,7 @@
 		</div>
 		<div class="container container__small"><img
 				src="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
-				alt="Royalty Exotic Cars Logo" class="footer__logo" />
+				alt="Rental Exotic Beasts Logo" class="footer__logo" />
 			<div id="VIP" class="vip w-form">
 				<form id="VIP-Form" name="wf-form-VIP-Form" data-name="VIP Form" data-reach-subscribe="VIP"
 					class="vip__form"><img
@@ -1825,7 +1825,7 @@
 				<div class="motto__brand"><a href="index.html" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
 						<div class="brand__icon"></div>
-						<div class="brand__text">Royalty Exotic Cars</div>
+						<div class="brand__text">Rental Exotic Beasts</div>
 					</a></div>
 				<div class="motto__text">Perfect Experience, Every Time.</div>
 			</div>
@@ -1990,7 +1990,7 @@
 					<div class="w-embed"><a id="Email-Link-Footer" class="copyright__link"
 							href="mailto:reservations+toursengine@royaltyexoticcars.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 							onclick="this.href = this.href.replace('[sub]',window.location)">
-							Reservations@RoyaltyExoticCars.com
+							Reservations@Rentalexoticsbeasts.com
 						</a></div>
 				</div>
 				<div class="copyright__bar">|</div>
