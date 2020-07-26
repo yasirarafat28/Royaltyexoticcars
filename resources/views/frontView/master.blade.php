@@ -9,7 +9,7 @@
 							id="Hero-TripAdvisor-Link" target="_blank" class="hero__rating--highlight">TripAdvisor</a>
 					</div>
 					<h1 class="hero__h1">Exotic Car Rentals at the lowest prices!</h1>
-					<p class="hero__description">Royalty Exotic Cars has the largest selection of <strong>exotic
+					<p class="hero__description">Rental Exotic Beasts has the largest selection of <strong>exotic
 							cars</strong>, <strong>suvs</strong>, <strong>autocycles</strong> &amp;
 						<strong>motorcycles</strong> for rent</p>
 				</div>
@@ -32,14 +32,14 @@
 						role="listitem" class="banner__item w-dyn-item mySlides">
 					</div>
 					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a541d8_2015-bentley-continental-gtc-red-car-hero-2-image-royalty-exotic-cars.jpg); width:900px; height:420px;"
-						role="listitem" class="banner__item w-dyn-item mySlides"> 
+						role="listitem" class="banner__item w-dyn-item mySlides">
 					</div>
 					<div style="background-image:url(/frontEnd/5a10aaa4d85f4b0001a5419a_2017-lamborghini-huracan-spyder-orange-exterior-front-angle-royalty-exotic-cars.jpg); width:900px; height:420px;"
 						role="listitem" class="banner__item w-dyn-item mySlides">
 					</div>
 					<div class="div-properties-inside-nav-bar" style="padding: 8px; width: 100%; display: inline-flex; justify-content: center;">
 						<span class="dot" style="text-align:center;
-												 cursor: pointer; 
+												 cursor: pointer;
 						                         height: 15px;
 												 width: 15px;
 												 margin: 0 2px;
@@ -47,10 +47,10 @@
 												 border-radius: 50%;
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
-												 float:left;" 
+												 float:left;"
   												onmouseover="currentSlide(1)"></span>
 						<span class="dot" style="text-align:center;
-												 cursor: pointer; 
+												 cursor: pointer;
 						                         height: 15px;
 												 width: 15px;
 												 margin: 0 2px;
@@ -58,10 +58,10 @@
 												 border-radius: 50%;
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
-												 float:left;" 
+												 float:left;"
 												  onmouseover="currentSlide(2)"></span>
 						<span class="dot" style="text-align:center;
-												 cursor: pointer; 
+												 cursor: pointer;
 						                         height: 15px;
 												 width: 15px;
 												 margin: 0 2px;
@@ -69,8 +69,8 @@
 												 border-radius: 50%;
 												 display: inline-block;
 												 transition: background-color 0.6s ease;
-												 float:left;" 
-												  onmouseover="currentSlide(3)"></span> 
+												 float:left;"
+												  onmouseover="currentSlide(3)"></span>
 					</div>
 				</div>
 			</div>
@@ -2759,15 +2759,15 @@
 		var i;
 		var slides = document.getElementsByClassName("mySlides");
 		var dots = document.getElementsByClassName("dot");
-		if (n > slides.length) {slideIndex = 1}    
+		if (n > slides.length) {slideIndex = 1}
 		if (n < 1) {slideIndex = slides.length}
 		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";  
+			slides[i].style.display = "none";
 		}
 		for (i = 0; i < dots.length; i++) {
 			dots[i].className = dots[i].className.replace(" active", "");
 		}
-		slides[slideIndex-1].style.display = "block";  
+		slides[slideIndex-1].style.display = "block";
 		dots[slideIndex-1].className += " active";
 		$(".mySlides:nth-child(1)").mouseover(function() {
     	currentSlide(1);
