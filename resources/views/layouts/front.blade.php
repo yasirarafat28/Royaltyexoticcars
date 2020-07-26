@@ -49,6 +49,19 @@
 			"template": "@{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} @{{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} @{{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}",
             "hideDecimalForWholeNumbers": false };</script>
 
+    <style>
+        .nav__brand .logo{
+            height:60px !important;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            .nav__brand .logo {
+                height: 38px !important;
+            }
+        }
+    </style>
+
 
 @yield('style')
 </head>
@@ -145,7 +158,8 @@
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
-						<div class="brand__icon"></div>
+                        <img src="/logo.png" class="logo" alt="">
+						<!--<div class="brand__icon"></div>-->
 						<div class="brand__text">Rental Exotic Beasts</div>
 					</a></div>
 				<div class="nav__links">
