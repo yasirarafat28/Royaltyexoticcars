@@ -34,4 +34,7 @@ class FrontController extends Controller
     public function teamMembers() {
         return view('frontView.team.houston');
     }
+    public function terms() {
+        return view('frontView.terms');
+    }
 }

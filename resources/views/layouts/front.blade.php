@@ -2062,10 +2062,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="policies"><a id="Privacy-Policy-Link" href="privacy.html"
-					class="footer__docs--link">Privacy</a><a id="Terms-of-Use-Link" href="terms.html"
-					class="footer__docs--link">Terms</a><a id="Disclaimer-Link" href="disclaimer.html"
-					class="footer__docs--link">Disclaimer</a><a id="Cookies-Policy-Link" href="cookies.html"
+			<div class="policies"><a id="Privacy-Policy-Link" href="/terms"
+					class="footer__docs--link">Privacy</a><a id="Terms-of-Use-Link" href="/terms"
+					class="footer__docs--link">Terms</a><a id="Disclaimer-Link" href="/terms"
+					class="footer__docs--link">Disclaimer</a><a id="Cookies-Policy-Link" href="/terms"
 					class="footer__docs--link">Cookies</a>
 				<div class="footer__embed w-embed"><button id="Preferences-Link" class="footer__docs--link"
 						type="button"
