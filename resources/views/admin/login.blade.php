@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="{{url('admin/vendors/themify-icons/css/themify-icons.css')}}">
       <link rel="stylesheet" href="{{url('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
       <link rel="stylesheet" href="{{url('admin/vendors/selectFX/css/cs-skin-elastic.css')}}">
-      <link rel="stylesheet" href="{{('public/admin/assets/css/style.css')}}">
+      <link rel="stylesheet" href="{{url('admin/assets/css/style.css')}}">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
    </head>
    <body class="bg-dark">

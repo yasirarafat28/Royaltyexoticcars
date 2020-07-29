@@ -4,8 +4,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="{{('public/guidebook/assets/css/vendor.css')}}" />
-      <link rel="stylesheet" href="{{('public/guidebook/assets/css/style.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/vendor.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/style.css')}}" />
       <title>Documentation - Introduction</title>
    </head>
    <body data-spy="scroll" data-target="#toc">
@@ -99,7 +99,7 @@
             
          </div>
       </footer>
-      <script src="{{('public/guidebook/assets/js/vendor.js')}}"></script>
-      <script src="{{('public/guidebook/assets/js/app.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/vendor.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/app.js')}}"></script>
    </body>
 </html>
