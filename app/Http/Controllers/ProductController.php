@@ -100,7 +100,7 @@ class ProductController extends Controller {
                 return $category->id;
             })
             ->editColumn('thumbnail', function ($category) {
-                return asset('public/upload/product')."/".$category->basic_image;
+                return asset('upload/product')."/".$category->basic_image;
             })
               ->editColumn('name', function ($category) {
                 return $category->name;
@@ -172,7 +172,7 @@ class ProductController extends Controller {
                 return $category->id;
             })
             ->editColumn('thumbnail', function ($category) {
-                return asset('public/upload/product')."/".$category->basic_image;
+                return asset('upload/product')."/".$category->basic_image;
             })
               ->editColumn('name', function ($category) {
                 return $category->name;

@@ -36,19 +36,19 @@
                                 <div class="row">
                                        @if(isset($data[0]))
                                         <div class="col-md-4 banner-1 mrg30">
-                                            <img src="{{asset('public/upload/offer/image').'/'.$data[0]}}" alt="" class="img-responsive">
+                                            <img src="{{asset('upload/offer/image').'/'.$data[0]}}" alt="" class="img-responsive">
                                             <div class="banner-text"></div>
                                         </div>
                                         @endif
                                         @if(isset($data[1]))
                                         <div class=" col-md-4 banner-2 mrg30">
-                                            <img src="{{asset('public/upload/offer/image').'/'.$data[1]}}" alt="" class="img-responsive" >
+                                            <img src="{{asset('upload/offer/image').'/'.$data[1]}}" alt="" class="img-responsive" >
                                             <div class="banner-text"></div>
                                         </div>
                                         @endif
                                         @if(isset($data[2]))
                                         <div class=" col-md-4 banner-2 mrg30">
-                                            <img src="{{asset('public/upload/offer/image').'/'.$data[2]}}" alt="" class="img-responsive">
+                                            <img src="{{asset('upload/offer/image').'/'.$data[2]}}" alt="" class="img-responsive">
                                             <div class="banner-text"></div>
                                         </div>
                                         @endif

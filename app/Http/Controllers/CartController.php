@@ -65,7 +65,7 @@ class CartController extends Controller {
                 $txt=$txt.'<div class="cart-pop_up-content"><div class="cart-pop_up-imgbox">';
                     foreach($productdata as $hs){
                         if($hs->id==$item->id){
-                            $txt=$txt.'<img src="'.asset('public/upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
+                            $txt=$txt.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
                 $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
@@ -82,7 +82,7 @@ class CartController extends Controller {
             $txt=$txt.'</div>';
        }
        else{
-           $txt='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('public/Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
+           $txt='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
        }
        $data=array("content"=>$txt,"totalcart"=>$cartCollection->count());
        return json_encode($data);
@@ -105,7 +105,7 @@ class CartController extends Controller {
        $txt='<tr class="pro-heading" style="background:'.Session::get("site_color").' !important"><th>'.__("messages.del").'</th><th>'.__("messages.images").'</th><th>'.__("messages.product").'</th><th>'.__("messages.stock_status").'</th><th>'.__("messages.price").'</th><th></th></tr>';
        if(count($getwish)!=0){
            foreach($getwish as $mw){
-                   $txt=$txt.'<tr><td class="Delete-icon"><a href="javascript:;" onclick="deletewish('.$mw->product_id.')"><i class="fa fa-trash-o" aria-hidden="true"></i></a><span>'.__('messages.del').':</span></td><td class="cart-img"><img src='.asset('public/upload/product').'/'.$mw->productdata->basic_image.'><span>'.__('messages.images').' :</span></td><td class="place-text"><div class="text-a"><span>'.__('messages.product').' :</span><h1>'.$mw->productdata->name.'</h1></div></td><td class="Stock-text">';
+                   $txt=$txt.'<tr><td class="Delete-icon"><a href="javascript:;" onclick="deletewish('.$mw->product_id.')"><i class="fa fa-trash-o" aria-hidden="true"></i></a><span>'.__('messages.del').':</span></td><td class="cart-img"><img src='.asset('upload/product').'/'.$mw->productdata->basic_image.'><span>'.__('messages.images').' :</span></td><td class="place-text"><div class="text-a"><span>'.__('messages.product').' :</span><h1>'.$mw->productdata->name.'</h1></div></td><td class="Stock-text">';
                    if($mw->productdata->stock=='0'){
                        $txt=$txt.__("messages.outstock");
                    }
@@ -128,7 +128,7 @@ class CartController extends Controller {
                 $txtcart=$txtcart.'<div class="cart-pop_up-content"><div class="cart-pop_up-imgbox">';
                     foreach($productdata as $hs){
                         if($hs->id==$item->id){
-                            $txtcart=$txtcart.'<img src="'.asset('public/upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
+                            $txtcart=$txtcart.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
                 $txtcart=$txtcart.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
@@ -145,7 +145,7 @@ class CartController extends Controller {
             $txtcart=$txtcart.'</div>';
        }
        else{
-           $txtcart='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('public/Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
+           $txtcart='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
        }
        $data=array("content"=>$txt,"total"=>count($getwish),"totalcart"=>$cartCollection->count(),"cartcontent"=>$txtcart);
        Session::flash('message',__('messages_error_success.product_add_success')); 
@@ -242,7 +242,7 @@ class CartController extends Controller {
                 $txt=$txt.'<div class="cart-pop_up-content"><div class="cart-pop_up-imgbox">';
                     foreach($productdata as $hs){
                         if($hs->id==$item->id){
-                            $txt=$txt.'<img src="'.asset('public/upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
+                            $txt=$txt.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
                 $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
@@ -258,7 +258,7 @@ class CartController extends Controller {
             $txt=$txt.'</div>';
        }
        else{
-           $txt='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('public/Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
+           $txt='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
        }
        $showcount=0;
        $i=0;
@@ -268,7 +268,7 @@ class CartController extends Controller {
                $mycarttotal=$mycarttotal.'<tr><td class="Delete-icon"><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o" aria-hidden="true"></i><span>'.__('messages.del').' :</span></a></td><td class="cart-img">';
                foreach($productdata as $hs){
                    if($hs->id==$item->id){
-                       $mycarttotal=$mycarttotal.'<img src="'.asset('public/upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
+                       $mycarttotal=$mycarttotal.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                    }
                }
                $total=$item->price*$item->quantity;

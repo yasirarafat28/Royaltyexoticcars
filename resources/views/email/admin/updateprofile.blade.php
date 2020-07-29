@@ -63,7 +63,7 @@
                            <label for="file" class=" form-control-label">  
                            {{__('messages.profile_picture')}}
                            </label>
-                           <img src="{{asset('public/upload/profile/'.'/'.$data->profile_pic)}}" class="imgsize1" />
+                           <img src="{{asset('upload/profile/'.'/'.$data->profile_pic)}}" class="imgsize1" />
                            <div>
                               <input type="file" id="file" name="file" class="form-control-file">
                            </div>

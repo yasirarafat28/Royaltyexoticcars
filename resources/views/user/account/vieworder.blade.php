@@ -173,7 +173,7 @@
                <span>{{__('messages.order_id')}}</span>
             </td>
             <td class="cart-img">
-               <img src="{{asset('public/upload/product').'/'.$od->productdata->basic_image}}">
+               <img src="{{asset('upload/product').'/'.$od->productdata->basic_image}}">
                <span>{{__('messages.images')}} :</span>
             </td>
             <td class="place-text">

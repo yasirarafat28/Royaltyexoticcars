@@ -49,17 +49,17 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Throwable $exception)
-{
-    //check the specific exception
-    if ($e instanceof PayPalConnectionException) {
-        //return with errors and with at the form data
-        Session::flash('message',__('messages.error_in_paypal')); 
-       Session::flash('alert-class', 'alert-danger');
-        return Redirect::back();
-    }
+    {
+        //check the specific exception
+        if ($exception instanceof PayPalConnectionException) {
+            //return with errors and with at the form data
+            Session::flash('message',__('messages.error_in_paypal')); 
+        Session::flash('alert-class', 'alert-danger');
+            return Redirect::back();
+        } 
 
-    return parent::render($request, $e);
-} 
+        return parent::render($request, $exception);
+    } 
     
     
 }

@@ -12,11 +12,11 @@
          <div class="col-md-12 col-lg-4">
             <div class="profile">
                <div class="profile-img">
-                  <?php $external_link = asset('public/upload/profile'.'/'.Session::get("profile_pic"));
+                  <?php $external_link = asset('upload/profile'.'/'.Session::get("profile_pic"));
                      if (Session::get("profile_pic")!="") {
                            $image = $external_link;
                      } else {
-                              $image = asset('public/Ecommerce/images/profile.png');
+                              $image = asset('Ecommerce/images/profile.png');
                      }?>
                   <img src="{{$image}}">
                </div>
@@ -97,7 +97,7 @@
                @endif
                @if(count($myorder)==0)
                <div class="order-em">
-                  <img src="{{asset('public/Ecommerce/images/empty.png')}}">
+                  <img src="{{asset('Ecommerce/images/empty.png')}}">
                   <h1>{{__('messages.no_order')}}</h1>
                </div>
                @endif
@@ -110,11 +110,11 @@
                   <form action="{{url('updateuserprofile')}}" method="post" enctype="multipart/form-data">
                      {{csrf_field()}}
                      <div class="personal-form">
-                        <?php $external_link = asset('public/upload/profile'.'/'.Session::get("profile_pic"));
+                        <?php $external_link = asset('upload/profile'.'/'.Session::get("profile_pic"));
                            if (Session::get("profile_pic")!="") {
                                  $image = $external_link;
                            } else {
-                                    $image = asset('public/Ecommerce/images/profile.png');
+                                    $image = asset('Ecommerce/images/profile.png');
                            }?>
                         <img src="{{$image}}">
                         <label class="per-text">{{__('messages.profile_picture')}}

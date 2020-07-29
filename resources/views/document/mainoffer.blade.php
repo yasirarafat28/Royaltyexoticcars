@@ -4,8 +4,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/vendor.css')}}" />
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/style.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/vendor.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/style.css')}}" />
       <title>Documentation - Introduction</title>
    </head>
    <body data-spy="scroll" data-target="#toc">
@@ -79,13 +79,13 @@
                            <p>Main offers are two types <b>Category and Product</b></p>
                             <p>if you select category then offer add base on percentage </p>
                             <p>offers on product then you add offer price.</p>
-                           <a class="lightbox" href="{{asset('public/doc/m1.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/m1.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/m1.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/m1.png')}}" alt="brand">
                            </a>
                            <pre></pre>
                            <p>In Web main header silder,here you can see you main offer.</p>
-                           <a class="lightbox" href="{{asset('public/doc/m2.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/m2.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/m2.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/m2.png')}}" alt="brand">
                            </a>
                         </section>
                        
@@ -112,7 +112,7 @@
          <div class="container">
          </div>
       </footer>
-      <script src="{{url('public/guidebook/assets/js/vendor.js')}}"></script>
-      <script src="{{url('public/guidebook/assets/js/app.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/vendor.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/app.js')}}"></script>
    </body>
 </html>

@@ -9,32 +9,32 @@
       <meta name="description" content="{{__('messages.site_name')}}">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="apple-touch-icon" href="apple-icon.png">
-      <link rel="shortcut icon" href="{{asset('public/upload/favicon.ico')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/font-awesome/css/font-awesome.min.css')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/themify-icons/css/themify-icons.css')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/selectFX/css/cs-skin-elastic.css')}}">
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/jqvmap/dist/jqvmap.min.css')}}">
+      <link rel="shortcut icon" href="{{asset('upload/favicon.ico')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/themify-icons/css/themify-icons.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/selectFX/css/cs-skin-elastic.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/jqvmap/dist/jqvmap.min.css')}}">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
       <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
       <script src='https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js'></script>
       <link rel='stylesheet' href='https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css'>
       <input type="hidden" id="url_path" value="{{url('/')}}">
-      <script src="{{asset('public/uikit/tests/js/test.js')}}"></script>
+      <script src="{{asset('uikit/tests/js/test.js')}}"></script>
        @if(Session::get("is_rtl")==0)
-      <link rel="stylesheet" href="{{asset('public/admin/assets/css/style.css').'?v=2'}}">
+      <link rel="stylesheet" href="{{asset('admin/assets/css/style.css').'?v=2'}}">
       @else
-       <link rel="stylesheet" href="{{asset('public/admin/assets/css/Rtl.css').'?v=2'}}">
+       <link rel="stylesheet" href="{{asset('admin/assets/css/Rtl.css').'?v=2'}}">
       @endif
      
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="{{asset('public/admin/vendors/chosen/chosen.min.css')}}">
+      <link rel="stylesheet" href="{{asset('admin/vendors/chosen/chosen.min.css')}}">
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.3/css/selectize.default.min.css'>
       <script>UPLOADCARE_PUBLIC_KEY = '7b7f57c2b9e95d9770ed';</script>
       
-      <script type="text/javascript" src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
+      <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -359,7 +359,7 @@
       <input type="hidden" id="offer_price_error" value="{{__('messages_error_success.offer_price_error')}}">
       <input type="hidden" id="pass_mus" value="{{__('passwords.pass_mus')}}">
       <input type="hidden" id="requiredfields" value="{{__('messages_error_success.required_field')}}">
-      <input type="hidden" id="soundnotify" value="{{asset('public/sound/notification/notification.mp3')}}">
+      <input type="hidden" id="soundnotify" value="{{asset('sound/notification/notification.mp3')}}">
       <input type="hidden" id="orders_pending" value="{{__('messages.orders_pending')}}">
       <input type="hidden" id="you_have" value="{{__('messages.you_have')}}">
       <input type="hidden" id="new_order" value="{{__('messages.new_order')}}">
@@ -369,12 +369,12 @@
         <input type="hidden" id="no_realted_msg" value="{{__('messages.no_realted')}}"/>
       <input type="hidden" id="coupon_vaild_max" value="{{__('messages.coupon_vaild_max')}}"/>
       <input type="hidden" id="image_invaild" value="{{__('messages.img_invaild')}}"/>
-      <script src="{{asset('public/admin/vendors/jquery/dist/jquery.min.js')}}"></script>
-      <script src="{{asset('public/admin/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
-      <script src="{{asset('public/admin/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-      <script src="{{asset('public/admin/assets/js/main.js')}}"></script>
-      <script src="{{asset('public/admin/vendors/chosen/chosen.jquery.min.js')}}"></script>
-      <script src="{{asset('public/admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+      <script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>
+      <script src="{{asset('admin/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
+      <script src="{{asset('admin/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+      <script src="{{asset('admin/assets/js/main.js')}}"></script>
+      <script src="{{asset('admin/vendors/chosen/chosen.jquery.min.js')}}"></script>
+      <script src="{{asset('admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
        <script src='https://code.jquery.com/jquery-1.12.3.js'></script>
       
      
@@ -388,7 +388,7 @@
       <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
       <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
       <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
-      <script type="text/javascript" src="{{asset('public/js/admin.js').'?v=45454'}}"></script>
+      <script type="text/javascript" src="{{asset('js/admin.js').'?v=45454'}}"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.js'></script>
       @yield('footer')
    </body>

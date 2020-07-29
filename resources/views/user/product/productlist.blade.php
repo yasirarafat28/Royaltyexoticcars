@@ -203,7 +203,7 @@
                     @endif
                      <div class="pro-img">
                           <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$p->id}}"> <img src="{{asset('public/upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.$p->id}}"> <img src="{{asset('upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$p->id}}')">
                                 {{__('messages.Quick View')}}
@@ -238,7 +238,7 @@
                         ({{$p->total_review}} {{__('messages.review')}})
                         </span>
                         <span class="compare_icon"> 
-                           <a href="javascript:addcomapre('<?=$p->id?>','productfiltercompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                           <a href="javascript:addcomapre('<?=$p->id?>','productfiltercompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                         </span>
                         <div class="price">
                            <h2>{{Session::get("currency")}}{{$p->price}}</h2>

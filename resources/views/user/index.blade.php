@@ -6,23 +6,23 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
        @if(Session::get("is_rtl")==0)
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/style.css').'?v=45'}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/style.css').'?v=45'}}">
       @else
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/rtl.css').'?v=44'}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/rtl.css').'?v=44'}}">
       @endif
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/bootstrap.min.css').'?v=17'}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/bootstrap.min.css').'?v=17'}}">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
       <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/responsive.css').'?v=28'}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/responsivertl.css').'?v=56'}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('public/Ecommerce/css/animate.min.css')}}">
-      <script type="text/javascript" src="{{asset('public/Ecommerce/js/bootstrap.min.js')}}"></script>
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/responsive.css').'?v=28'}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/responsivertl.css').'?v=56'}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('Ecommerce/css/animate.min.css')}}">
+      <script type="text/javascript" src="{{asset('Ecommerce/js/bootstrap.min.js')}}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" />
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-      <script type="text/javascript" src="{{asset('public/Ecommerce/js/aos.js')}}"></script>
+      <script type="text/javascript" src="{{asset('Ecommerce/js/aos.js')}}"></script>
       <script type="text/javascript" src="{{ URL::to('public/js/zoomsl.js') }}"></script>
    </head>
    <style type="text/css">
@@ -146,14 +146,14 @@
                               @if(Session::get("facebook_active"))
                               <div class="button-facebook">
                                  <a href="{{ url('auth/facebook') }}">
-                                 <img src="{{asset('public/Ecommerce/images/facebook.png')}}">
+                                 <img src="{{asset('Ecommerce/images/facebook.png')}}">
                                  </a>
                               </div>
                               @endif
                               @if(Session::get("google_active"))
                               <div class="button-facebook">
                                  <a href="{{ url('auth/google') }}">
-                                 <img src="{{asset('public/Ecommerce/images/google.png')}}">
+                                 <img src="{{asset('Ecommerce/images/google.png')}}">
                                  </a>
                               </div>
                               @endif
@@ -300,7 +300,7 @@
                                           <div class="cart-pop_up-imgbox">
                                              @foreach($productdata as $hs)
                                              @if($hs->id==$item->id)
-                                             <img src="{{asset('public/upload/product').'/'.$hs->basic_image}}" width="75" height="auto">
+                                             <img src="{{asset('upload/product').'/'.$hs->basic_image}}" width="75" height="auto">
                                              @endif
                                              @endforeach
                                           </div>
@@ -360,7 +360,7 @@
                                      <div class="cart-pop_up-content">
                                        <div class="cart-pop_up-content empty">
                                           <div class="cart-pop_up-imgbox">
-                                             <img src="{{asset('public/Ecommerce/images/empty.png')}}">
+                                             <img src="{{asset('Ecommerce/images/empty.png')}}">
                                              <h1>{{__('messages.cart_empty')}}</h1>
                                           </div>
                                        </div>
@@ -378,7 +378,7 @@
                         </div>
                      </a>
                      <a class="compare" href="{{url('compare')}}"> 
-                        <img src="{{asset('public/Ecommerce/images/compareheader.png')}}">
+                        <img src="{{asset('Ecommerce/images/compareheader.png')}}">
                          <div class="e-nav-cricle comparesp" style="background: <?= Session::get('site_color') ?> !important">
                            <?php $arr=explode(",",Session::get("compare"));?>
                            <h1 id="totalcompare">{{count(array_filter($arr))}}</h1>
@@ -574,10 +574,10 @@
                      </div>
                   </div>
                   <div class="pay">
-                     <a href="#"><img src="{{asset('public/Ecommerce/images/pay-1.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('public/Ecommerce/images/pay-2.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('public/Ecommerce/images/pay-3.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('public/Ecommerce/images/pay-4.jpg')}}"></a>
+                     <a href="#"><img src="{{asset('Ecommerce/images/pay-1.jpg')}}"></a>
+                     <a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
+                     <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
+                     <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>
                      <span>{{date('Y')}} {{__('messages.footer_note')}}</span>
                   </div>
                </div>
@@ -603,7 +603,7 @@
       <input type="hidden" id="email_not_lang" value="{{__('messages.Your Entered Email Not Exist')}}"> 
       <input type="hidden" id="email_req_lang" value="{{__('messages.Entered Your Email')}}">
       <input type="hidden" id="site_color_store" value="{{Session::get('site_color')}}">
-      <script type="text/javascript" src="{{ asset('public/js/select.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/select.js') }}"></script>
       <input type="hidden" id="quick_view_lang" value="{{__('messages.Quick View')}}">
       <input type="hidden" id="user_register" value="{{__('messages.user_register')}}"/>
       <input type="hidden" id="compare_add_lang" value="{{__('messages.The product has been added to your compare list')}}">

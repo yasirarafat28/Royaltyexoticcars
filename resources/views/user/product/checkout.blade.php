@@ -227,7 +227,7 @@
                   </div>
                   <div class="payment-text">
                      <div class="pay">
-                        <a href="#"><img src="{{asset('public/Ecommerce/images/pay-1.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('Ecommerce/images/pay-1.jpg')}}"></a>
                      </div>
                   </div>
                </div>
@@ -239,9 +239,9 @@
                   </div>
                   <div class="payment-text">
                      <div class="pay">
-                        <a href="#"><img src="{{asset('public/Ecommerce/images/pay-2.jpg')}}"></a>
-                        <a href="#"><img src="{{asset('public/Ecommerce/images/pay-3.jpg')}}"></a>
-                        <a href="#"><img src="{{asset('public/Ecommerce/images/pay-4.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>
                      </div>
                   </div>
                </div>
@@ -315,7 +315,7 @@
                      data-name="{{__('messages.site_name')}}"
                      data-label="{{__('messages.place_order')}}"
                      data-description=""
-                     data-image="{{asset('public/Ecommerce/images/logo.png')}}"
+                     data-image="{{asset('Ecommerce/images/logo.png')}}"
                      data-locale="auto"></script>
                      @endif
                </form>

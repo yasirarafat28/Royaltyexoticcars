@@ -4,8 +4,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/vendor.css')}}" />
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/style.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/vendor.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/style.css')}}" />
       <title>Documentation - Introduction</title>
    </head>
    <body data-spy="scroll" data-target="#toc">
@@ -77,19 +77,19 @@
                         <section id="step1">
                            <h2 class="section-title-2">Information<a href="#step1" class="clipboard"></a></h2>
                            <p>In offer section you can add Normal Offers</p>
-                           <a class="lightbox" href="{{asset('public/doc/n1.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/n1.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/n1.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/n1.png')}}" alt="brand">
                            </a>
                            <pre></pre>
                            <p>You can add normal offers by subcategory,product and coupon.if you want to add normal offers base on coupon then you need to add coupon in coupon section then you can add this coupon in normal offers section</p>
-                           <a class="lightbox" href="{{asset('public/doc/n2.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/n2.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/n2.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/n2.png')}}" alt="brand">
                            </a>
                            <pre></pre>
                            
                            <p>In Web Offers page,you can see all normal offers which are vaild </p>
-                           <a class="lightbox" href="{{asset('public/doc/n3.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/n3.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/n3.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/n3.png')}}" alt="brand">
                            </a>
                         </section>
                      
@@ -114,7 +114,7 @@
          <div class="container">
          </div>
       </footer>
-      <script src="{{url('public/guidebook/assets/js/vendor.js')}}"></script>
-      <script src="{{url('public/guidebook/assets/js/app.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/vendor.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/app.js')}}"></script>
    </body>
 </html>

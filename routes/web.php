@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,11 @@ Route::get('config-cache', function() {
      echo "php clear cache";
 });
 Route::get('/', function() {
-    Artisan::call('config:cache');
+   // Artisan::call('config:cache');
   return redirect('home');
+});
+Route::get('/testing', function() {
+  return 5;
 });
 
 Route::get("privacy_policy","Admincontroller@privacy");

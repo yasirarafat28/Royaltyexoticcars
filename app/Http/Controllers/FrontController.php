@@ -75,7 +75,7 @@ class FrontController extends Controller {
           Session::put("currency",$res_curr[1]);
          Session::put("google_active",$setting->google_active);
          Session::put("facebook_active",$setting->facebook_active); 
-         Session::put("logo",asset('public/Ecommerce/images/')."/".$setting->logo);
+         Session::put("logo",asset('Ecommerce/images/')."/".$setting->logo);
          Session::put("set_show",$setting->set_show);
          Session::put("is_rtl",$setting->is_rtl);
          Session::put("is_web",$setting->is_web); 

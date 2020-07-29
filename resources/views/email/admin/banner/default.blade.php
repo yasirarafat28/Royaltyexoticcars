@@ -31,7 +31,7 @@
                         if(empty($img1)){ ?>
                                 <img id="thumbImg1" src="{{asset('demo.jpg')}}" class=" z-depth-1-half thumb-pic" alt="">
                                 <?php  }else{?>
-                                    <img id="thumbImg1" src="{{asset('public/upload/banner/image').'/'.$img1}}" class=" z-depth-1-half thumb-pic" alt="">
+                                    <img id="thumbImg1" src="{{asset('upload/banner/image').'/'.$img1}}" class=" z-depth-1-half thumb-pic" alt="">
                                     <?php }  ?>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -40,7 +40,7 @@
                            if(empty($img1)){ ?>
                                     <img id="thumbImg2" src="{{asset('demo-1.jpg')}}" class=" z-depth-1-half thumb-pic" alt="">
                                     <?php  }else{?>
-                                        <img id="thumbImg2" src="{{asset('public/upload/banner/image').'/'.$img2}}" class=" z-depth-1-half thumb-pic" alt="">
+                                        <img id="thumbImg2" src="{{asset('upload/banner/image').'/'.$img2}}" class=" z-depth-1-half thumb-pic" alt="">
                                         <?php }  ?>
                             </div>
                             <div class="banner3 b2">
@@ -48,7 +48,7 @@
                            if(empty($img1)){ ?>
                                     <img id="thumbImg3" src="{{asset('demo-1.jpg')}}" class=" z-depth-1-half thumb-pic" alt="">
                                     <?php  }else{?>
-                                        <img id="thumbImg3" src="{{asset('public/upload/banner/image').'/'.$img3}}" class=" z-depth-1-half thumb-pic" alt="">
+                                        <img id="thumbImg3" src="{{asset('upload/banner/image').'/'.$img3}}" class=" z-depth-1-half thumb-pic" alt="">
                                         <?php }  ?>
                             </div>
                         </div>

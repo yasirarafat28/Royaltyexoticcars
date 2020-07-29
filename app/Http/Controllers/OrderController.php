@@ -131,7 +131,7 @@ class OrderController extends Controller {
       $html='<style type="text/css">*{font-family: Verdana, Arial, sans-serif;}table{
         font-size: x-small;}tfoot tr td{font-weight: bold;font-size: x-small;}.gray {
         background-color: lightgray}</style><table width="100%"><tr>
-        <td valign="top"><img src="'.asset('public/Ecommerce/images/')."/".$setting->logo.'" alt="" width="150"/></td>
+        <td valign="top"><img src="'.asset('Ecommerce/images/')."/".$setting->logo.'" alt="" width="150"/></td>
         <td align="right" style="width:60%">';
         $html=$html.'<h3>'.$setting->company_name.'</h3>';
           $html=$html.$setting->address.'<pre></pre>'.$setting->email.'<pre></pre>'.$setting->phone.'</pre>     

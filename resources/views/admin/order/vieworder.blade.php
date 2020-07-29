@@ -26,7 +26,7 @@
 
         <div class="col-md-12">
             <div class="card">
-                <iframe src="{{asset('public/pdf/').'/'.$pdfname}}" name="ifrm" id="ifrm" class="disno"></iframe>
+                <iframe src="{{asset('pdf/').'/'.$pdfname}}" name="ifrm" id="ifrm" class="disno"></iframe>
                 <div class="card-header">
                     <strong class="card-title">{{__('messages.view_order')}}</strong>
 

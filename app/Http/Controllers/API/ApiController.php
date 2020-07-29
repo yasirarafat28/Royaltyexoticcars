@@ -507,7 +507,7 @@ class ApiController extends Controller {
                         
                         $dat['id']=$getproduct->id;
                         $dat['name']=$getproduct->name;
-                        $dat['image']=asset('public/upload/product/').'/'.$getproduct->basic_image;
+                        $dat['image']=asset('upload/product/').'/'.$getproduct->basic_image;
                         $dat['MRP']=$getproduct->MRP;
                         $dat['ratting']=round($avgStar);
                         $dat['totalreview']=count($total);
@@ -598,13 +598,13 @@ class ApiController extends Controller {
                  
                   
                   $img=array();
-          $img[0]=asset('public/upload/product/').'/'.$product->basic_image;
+          $img[0]=asset('upload/product/').'/'.$product->basic_image;
           if($product->additional_image!=""){
                  
                  $images=explode(",",$product->additional_image);
                  $i=1;
                   foreach ($images as $k) {
-                      $img[$i]=asset('public/upload/product/').'/'.$k;
+                      $img[$i]=asset('upload/product/').'/'.$k;
                       $i++;
                   }
                  
@@ -657,7 +657,7 @@ class ApiController extends Controller {
                   else{
                      $avgStar=round($avgStar);
                   }
-                  $product->basic_image=asset('public/upload/product/').'/'.$product->basic_image;
+                  $product->basic_image=asset('upload/product/').'/'.$product->basic_image;
                   $product->avgStar=$avgStar;
                   $cat=Categories::find($product->category);
                   $sub=Categories::find($product->subcategory);
@@ -1111,7 +1111,7 @@ class ApiController extends Controller {
                if(count($data)!=0){
                   foreach ($data as $k) {
                      $product=Product::where("id",$k->product_id)->where("status",'1')->where("is_deleted",'0')->select("id","name","basic_image","selling_price")->first();
-                     $product->basic_image=asset('public/upload/product/').'/'.$product->basic_image;
+                     $product->basic_image=asset('upload/product/').'/'.$product->basic_image;
 
                      $k->product=$product;
                     
@@ -1381,7 +1381,7 @@ class ApiController extends Controller {
                          $k->wish=count($wish);
                          $re=Review::where("product_id",$k->id)->get();
                          $k->totalreview=count($re);
-                         $k->basic_image=asset('public/upload/product/').'/'.$k->basic_image;
+                         $k->basic_image=asset('upload/product/').'/'.$k->basic_image;
                          $k->price=$k->selling_price;
                          
                          unset($k->selling_price);

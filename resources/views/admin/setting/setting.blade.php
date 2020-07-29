@@ -55,10 +55,10 @@
                                    <input type="hidden" name="real_logo" id="real_logo" value="<?= isset($data->logo)?$data->logo:""?>"/>
                                                    <?php 
                                                          if(isset($data->logo)){
-                                                             $path=asset('public/Ecommerce/images/')."/".$data->logo;
+                                                             $path=asset('Ecommerce/images/')."/".$data->logo;
                                                          }
                                                          else{
-                                                             $path=asset('public/Ecommerce/images/logo1.png');
+                                                             $path=asset('Ecommerce/images/logo1.png');
                                                          }
                                                    ?>
                                                 <img src="{{$path}}" alt="..." class="img-thumbnail"  id="img_logo" >

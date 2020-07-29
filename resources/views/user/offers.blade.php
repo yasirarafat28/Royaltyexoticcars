@@ -80,7 +80,7 @@
                   <div class="img-background" >
                     
                        <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$fe->id}}"> <img src="{{asset('public/upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.$fe->id}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->id}}')">
                               Quick View
@@ -118,7 +118,7 @@
                      ({{$fe->total_review}} {{__('messages.review')}})
                      </span>
                      <span class="compare_icon"> 
-                        <a href="javascript:addcomapre('<?=$fe->id?>','offercompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                        <a href="javascript:addcomapre('<?=$fe->id?>','offercompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get('currency').$fe->selling_price}}</h2>

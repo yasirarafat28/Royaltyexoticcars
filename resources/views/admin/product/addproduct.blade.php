@@ -225,10 +225,10 @@
                                                    <input type="hidden" name="real_basic_img" id="real_basic_img" value="<?= isset($data->basic_image)?$data->basic_image:""?>"/>
                                                    <?php 
                                                          if(isset($data->basic_image)){
-                                                             $path=asset('public/upload/product')."/".$data->basic_image;
+                                                             $path=asset('upload/product')."/".$data->basic_image;
                                                          }
                                                          else{
-                                                             $path=asset('public/admin/images/imgplaceholder.png');
+                                                             $path=asset('admin/images/imgplaceholder.png');
                                                          }
                                                    ?>
                                                 <img src="{{$path}}" alt="..." class="img-thumbnail imgsize"  id="basic_img" >
@@ -249,9 +249,9 @@
                                                    @foreach($imagels as $imls)
                                                       <div id="imgid{{$i}}" class="add-img">
                                                          <input type="hidden" name="add_real_img[]" value="{{$imls}}"/>
-                                                         <img src="{{asset('public/upload/product').'/'.$imls}}" class="img-thumbnail imgsize" id="additional_img{{$i}}" name="arrimg[]" />
+                                                         <img src="{{asset('upload/product').'/'.$imls}}" class="img-thumbnail imgsize" id="additional_img{{$i}}" name="arrimg[]" />
                                                             <div class="add-box">
-                                                               <input type="hidden" id="additionalimg{{$i}}" name="additional_img[]" value="{{asset('public/upload/product').'/'.$imls}}"/>
+                                                               <input type="hidden" id="additionalimg{{$i}}" name="additional_img[]" value="{{asset('upload/product').'/'.$imls}}"/>
                                                                <input type="button" id="removeImage1" value="x" class="btn-rmv1" onclick="removeimg('{{$i}}')" />
                                                             </div>
                                                       </div>
@@ -261,7 +261,7 @@
                                              </div>
                                              <div class="upload-btn-wrapper">
                                                       <button class="btn imgcatlog">
-                                                      <img src="{{asset('public/admin/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
+                                                      <img src="{{asset('admin/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
                                                       </button>
                                                       <input type="file" name="add_image" id="add_image" />
                                                    </div>
@@ -436,7 +436,7 @@
 <input type="hidden" id="sku_already" value="{{__('messages_error_success.sku_already')}}">
 @stop 
 @section('footer')
-<script type="text/javascript" src="{{asset('public/js/product.js').'?v=wewe3'}}"></script>
+<script type="text/javascript" src="{{asset('js/product.js').'?v=wewe3'}}"></script>
 <script>
    CKEDITOR.replace('description');
 

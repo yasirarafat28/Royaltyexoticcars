@@ -4,8 +4,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/vendor.css')}}" />
-      <link rel="stylesheet" href="{{url('public/guidebook/assets/css/style.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/vendor.css')}}" />
+      <link rel="stylesheet" href="{{url('guidebook/assets/css/style.css')}}" />
       <title>Documentation - Introduction</title>
    </head>
    <body data-spy="scroll" data-target="#toc">
@@ -83,22 +83,22 @@
                                  <div class="owl-stage" style="transform: translate3d(-1357px, 0px, 0px); transition: all 0.25s ease 0s; width: 2037px;">
                                     <div class="owl-item" style="width: 658.813px; margin-right: 20px;">
                                        <figure class="photo">
-                                          <a class="lightbox" href="{{asset('public/doc/1.png')}}" title="Cateogry">
-                                          <img src="{{asset('public/doc/1.png')}}" alt="cateogry">
+                                          <a class="lightbox" href="{{asset('doc/1.png')}}" title="Cateogry">
+                                          <img src="{{asset('doc/1.png')}}" alt="cateogry">
                                           </a>
                                        </figure>
                                     </div>
                                     <div class="owl-item" style="width: 658.813px; margin-right: 20px;">
                                        <figure class="photo">
-                                          <a class="lightbox" href="{{asset('public/doc/2.png')}}" title="Subcategory">
-                                          <img src="{{asset('public/doc/2.png')}}" alt="subcategory">
+                                          <a class="lightbox" href="{{asset('doc/2.png')}}" title="Subcategory">
+                                          <img src="{{asset('doc/2.png')}}" alt="subcategory">
                                           </a>
                                        </figure>
                                     </div>
                                     <div class="owl-item active" style="width: 658.813px; margin-right: 20px;">
                                        <figure class="photo">
-                                          <a class="lightbox" href="{{asset('public/doc/3.png')}}" title="Brand">
-                                          <img src="{{asset('public/doc/3.png')}}" alt="brand">
+                                          <a class="lightbox" href="{{asset('doc/3.png')}}" title="Brand">
+                                          <img src="{{asset('doc/3.png')}}" alt="brand">
                                           </a>
                                        </figure>
                                     </div>
@@ -111,8 +111,8 @@
                         <section id="template">
                            <h2 class="section-title-2">Taxes <a href="#template" class="clipboard"></a></h2>
                            <p>You need add tax for your product.</p>
-                           <a class="lightbox" href="{{asset('public/doc/4.png')}}" title="Tax Dashboard">
-                           <img src="{{asset('public/doc/4.png')}}" alt="brand">
+                           <a class="lightbox" href="{{asset('doc/4.png')}}" title="Tax Dashboard">
+                           <img src="{{asset('doc/4.png')}}" alt="brand">
                            </a>
                            <pre></pre>
                         </section>
@@ -124,15 +124,15 @@
                                  <div class="owl-stage" style="transform: translate3d(-1357px, 0px, 0px); transition: all 0.25s ease 0s; width: 2037px;">
                                     <div class="owl-item" style="width: 658.813px; margin-right: 20px;">
                                        <figure class="photo">
-                                          <a class="lightbox" href="{{asset('public/doc/5.png')}}" title="Option">
-                                          <img src="{{asset('public/doc/5.png')}}" alt="Option Dashboard">
+                                          <a class="lightbox" href="{{asset('doc/5.png')}}" title="Option">
+                                          <img src="{{asset('doc/5.png')}}" alt="Option Dashboard">
                                           </a>
                                        </figure>
                                     </div>
                                     <div class="owl-item" style="width: 658.813px; margin-right: 20px;">
                                        <figure class="photo">
-                                          <a class="lightbox" href="{{asset('public/doc/6.png')}}" title="Add/edit section">
-                                          <img src="{{asset('public/doc/6.png')}}" alt="subcategory">
+                                          <a class="lightbox" href="{{asset('doc/6.png')}}" title="Add/edit section">
+                                          <img src="{{asset('doc/6.png')}}" alt="subcategory">
                                           </a>
                                        </figure>
                                     </div>
@@ -180,7 +180,7 @@
          <div class="container">
          </div>
       </footer>
-      <script src="{{url('public/guidebook/assets/js/vendor.js')}}"></script>
-      <script src="{{url('public/guidebook/assets/js/app.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/vendor.js')}}"></script>
+      <script src="{{url('guidebook/assets/js/app.js')}}"></script>
    </body>
 </html>

@@ -29,7 +29,7 @@
                <th class="product-name">{{__('messages.Product Image')}}</th>
                @foreach($comparedata as $d)
                <td class="item-row">
-                  <img src="{{asset('public/upload/product/').'/'.$d->basic_image}}" alt="product" class="   featured-image">
+                  <img src="{{asset('upload/product/').'/'.$d->basic_image}}" alt="product" class="   featured-image">
                   <div class="product-price product_price"><strong>{{__('messages.On Sale')}}: </strong><span>{{Session::get('currency').$d->selling_price}}</span></div>
                   <form class="variants clearfix">
                      <input type="hidden">

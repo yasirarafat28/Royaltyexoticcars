@@ -43,11 +43,11 @@
             <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" />
             <div class="col-lg-6 col-md-6">
              <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
-  <div class="carousel-cell"><img class="block__pic" src="{{asset('public/upload/product').'/'.$product->basic_image}}"/></div>
+  <div class="carousel-cell"><img class="block__pic" src="{{asset('upload/product').'/'.$product->basic_image}}"/></div>
             <?php $i=1;$add_img=explode(",",$product->additional_image);?>
             @if(!empty(array_filter($add_img)))
                 @foreach($add_img as $ad)
-                     <div class="carousel-cell"><img class="block__pic" src="{{asset('public/upload/product').'/'.$ad}}"/></div>
+                     <div class="carousel-cell"><img class="block__pic" src="{{asset('upload/product').'/'.$ad}}"/></div>
                 <?php $i++;?>
                 @endforeach
             @endif
@@ -56,11 +56,11 @@
 
 <div class="carousel carousel-nav"
   data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
-  <div class="carousel-cell"><img class="thumbimg"  src="{{asset('public/upload/product').'/'.$product->basic_image}}"/></div>
+  <div class="carousel-cell"><img class="thumbimg"  src="{{asset('upload/product').'/'.$product->basic_image}}"/></div>
             <?php $i=1;$add_img=explode(",",$product->additional_image);?>
              @if(!empty(array_filter($add_img)))
             @foreach($add_img as $ad)
-                 <div class="carousel-cell"><img class="thumbimg"  src="{{asset('public/upload/product').'/'.$ad}}"/></div>
+                 <div class="carousel-cell"><img class="thumbimg"  src="{{asset('upload/product').'/'.$ad}}"/></div>
             <?php $i++;?>
             @endforeach
                @endif
@@ -232,7 +232,7 @@
                                     <p>{{__('messages.add_to_wishlist')}}</p>
                                   </br>
                                     <span>
-                                      <a href="javascript:addcomapre('<?=$product->id?>','msgrev')"><img src="{{asset('public/Ecommerce/images/compare.png')}}" class="compareimg"></a>
+                                      <a href="javascript:addcomapre('<?=$product->id?>','msgrev')"><img src="{{asset('Ecommerce/images/compare.png')}}" class="compareimg"></a>
                                      </span>
                                     <p class="pd10com">{{__('messages.Compare')}}</p>
 
@@ -355,7 +355,7 @@
                            if (@GetImageSize($external_link)) {
                                  $image = $external_link;
                            } else {
-                                    $image = asset('public/Ecommerce/images/profile.png');
+                                    $image = asset('Ecommerce/images/profile.png');
                            }?>
                                     <img src="{{$image}}" width="100px" height="75px">
                             </div>
@@ -447,7 +447,7 @@
                                                  </div>
                                                 @endif
                             <div class="img-background">
-                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('public/upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
+                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
                                 <div class="img-text">
                                     <label class="fancy-checkbox">
                                         @if(Auth::id()!="")
@@ -480,7 +480,7 @@
                         <?php }?>
                         </span>
                          <span class="compare_icon"> 
-                        <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                        <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                                 </div>
                                   @if($realt->stock=='1')
@@ -504,7 +504,7 @@
                                                  </div>
                                                 @endif
                                             <div class="img-background">
-                                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('public/upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
+                                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
                                                 <div class="img-text">
                                                     <label class="fancy-checkbox">
                                                         @if(Auth::id()!="")
@@ -533,7 +533,7 @@
                      ({{$realt->total_review}} {{__('messages.review')}})
                      </span>
                      <span class="compare_icon"> 
-                        <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                        <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get("currency")}}{{$realt->selling_price}}</h2>

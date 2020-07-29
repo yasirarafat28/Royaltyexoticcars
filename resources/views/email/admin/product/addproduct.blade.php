@@ -1,5 +1,5 @@
 @extends('admin.index') @section('content')
-<!-- <script src="{{asset('public/js/bootstrap.min.js')}}"></script>-->
+<!-- <script src="{{asset('js/bootstrap.min.js')}}"></script>-->
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <div class="breadcrumbs">
    <div class="col-sm-4 float-right-1">
@@ -303,7 +303,7 @@
 <input type="hidden" id="sku_already" value="{{__('messages_error_success.sku_already')}}">
 @stop 
 @section('footer')
-<script type="text/javascript" src="{{asset('public/js/product.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/product.js')}}"></script>
 <script>
    CKEDITOR.replace('description');
 </script>

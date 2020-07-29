@@ -30,7 +30,7 @@
             ?>
          @if($fd->offer_type==1)
          <div class="carousel-item {{$active}}">
-            <div class="offer-img" style="background-image:url('{{asset('public/upload/offer/image').'/'.$fd->banner}}')">
+            <div class="offer-img" style="background-image:url('{{asset('upload/offer/image').'/'.$fd->banner}}')">
                <div class="off-text">
                      <div class="real-text">
                         <h1 class="animated slideInDown" style="color: <?= Session::get('site_color') ?> !important">{{$fd->title}}</h1>
@@ -71,7 +71,7 @@
    <div class="row nor-b">
       @foreach($offerdata as $fd)
       @if($fd->offer_type==2&&$fd->offer_id!=0)
-      <?php $img_url=asset('public/upload/offer/image').'/'.$fd->offer->banner;?>
+      <?php $img_url=asset('upload/offer/image').'/'.$fd->offer->banner;?>
       <div class="col-md-4 col-12">
          <div class="normal1 text-off overlay_main" style="background-image:url('{{$img_url}}')">
             <div class="overlay">
@@ -134,7 +134,7 @@
          @if($ba->id==1)
          <div class="col-md-6">
             <div class="sale-banner-1 overlay_main_2">
-               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('public/upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
+               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
                <div class="overlay_2">
                </div>
                <div class="sale-b-text">
@@ -150,7 +150,7 @@
             @foreach($banner as $ba)
             @if($ba->id!=1&&$ba->id!=3)
             <div class="sale-banner-2 col-md-12 p-0 overlay_main_2">
-               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('public/upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
+               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
                <div class="overlay_2">
                </div>
                <div class="sale-b-text">
@@ -162,7 +162,7 @@
             @endif   
             @if($ba->id!=1&&$ba->id!=2)
             <div class="sale-banner-3 col-md-12 p-0 overlay_main_2">
-               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('public/upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
+               <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
                <div class="overlay_2">
                </div>
                <div class="sale-b-text">
@@ -205,7 +205,7 @@
 
                      <figure class="preview-image">
                         
-                        <a href="{{url('viewproduct/').'/'.$bt['id']}}"> <img src="{{asset('public/upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.$bt['id']}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
                       
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('<?=$bt["id"]?>')">
@@ -246,7 +246,7 @@
                         ({{$bt['total_review']}} {{__('messages.review')}})
                         </span>
                         <span class="compare_icon"> 
-                           <a href="javascript:addcomapre('<?=$bt['id']?>','bestcompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                           <a href="javascript:addcomapre('<?=$bt['id']?>','bestcompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                         </span>
                         <div class="price">
                            <h2>{{Session::get("currency")}}{{$bt['price']}}</h2>
@@ -267,7 +267,7 @@
    </div>
 </div>
 @if($sen_offer)
-<?php $coll_img=asset('public/upload/offer/image').'/'.$sen_offer->banner;?>
+<?php $coll_img=asset('upload/offer/image').'/'.$sen_offer->banner;?>
 <div class="summer-banner" style="background-image: url('{{$coll_img}}')">
    <div class="container sum-box">
       <div class="summer-text">
@@ -286,7 +286,7 @@
             <div id="demo1" class="carousel slide slides" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
-                     <a href="{{url('productslist').'/'.$sepical_cat->category_id.'/0/0/0'}}"> <img src="{{asset('public/upload/category/image/').'/'.$sepical_cat->image}}" alt="Los Angeles" class="img-responsive"></a>
+                     <a href="{{url('productslist').'/'.$sepical_cat->category_id.'/0/0/0'}}"> <img src="{{asset('upload/category/image/').'/'.$sepical_cat->image}}" alt="Los Angeles" class="img-responsive"></a>
                   </div>
                </div>
             </div>
@@ -328,7 +328,7 @@
                   <div class="home-bg">
                   <div class="img-background" >
                      <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$fe->productdata->id}}"> <img src="{{asset('public/upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.$fe->productdata->id}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
                               {{__('messages.Quick View')}}
@@ -364,7 +364,7 @@
                      ({{$fe->total_review}} {{__('messages.review')}})
                      </span>
                      <span class="compare_icon"> 
-                        <a href="javascript:addcomapre('<?=$fe->product_id?>','featurecompare')"><img src="{{asset('public/Ecommerce/images/compare.png')}}"></a>
+                        <a href="javascript:addcomapre('<?=$fe->product_id?>','featurecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get("currency")}}{{$fe->productdata->selling_price}}</h2>

@@ -29,7 +29,7 @@
             <td class="cart-img">
                @foreach($productdata as $hs)
                @if($hs->id==$item->id)
-               <img src="{{asset('public/upload/product').'/'.$hs->basic_image}}" width="75" height="auto">
+               <img src="{{asset('upload/product').'/'.$hs->basic_image}}" width="75" height="auto">
                @endif
                @endforeach
                <span>{{__('messages.images')}} :</span>

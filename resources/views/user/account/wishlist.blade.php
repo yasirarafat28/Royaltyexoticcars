@@ -27,7 +27,7 @@
                <span>{{__('messages.del')}} :</span>
             </td>
             <td class="cart-img">
-               <img src="{{asset('public/upload/product').'/'.$mw->productdata->basic_image}}">
+               <img src="{{asset('upload/product').'/'.$mw->productdata->basic_image}}">
                <span>{{__('messages.images')}} :</span>
             </td>
             <td class="place-text">
