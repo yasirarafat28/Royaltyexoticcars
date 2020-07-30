@@ -24,6 +24,19 @@ Route::get('/', function() {
    // Artisan::call('config:cache');
   return redirect('home');
 });
+Route::get('/faqs', 'FrontController@faqs');
+Route::get('/car-rentals', 'FrontController@carRentals');
+
+Route::get('/suv-rentals', 'FrontController@suvRentals');
+Route::get('/bugatti-rentals', 'FrontController@bugattiRentals');
+Route::get('/lamborghini-rentals', 'FrontController@lamborghiniRentals');
+
+Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamborghiniAventador');
+
+Route::get('/team', 'FrontController@team');
+Route::get('/team/houston', 'FrontController@teamMembers');
+Route::get('/terms', 'FrontController@terms');
+Route::get("shop","FrontController@shop");
 
 Route::get("privacy_policy","Admincontroller@privacy");
 

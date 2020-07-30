@@ -756,7 +756,7 @@
 					</a><a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
 						target="_blank" class="nav__link w-inline-block">
 						<div>Vlog</div>
-					</a><a id="Shop-Link-Nav" href="#" class="nav__link w-inline-block">
+					</a><a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 						<div>Shop</div>
 					</a>
 				</div>

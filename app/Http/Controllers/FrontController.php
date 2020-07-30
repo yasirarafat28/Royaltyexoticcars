@@ -117,6 +117,84 @@ class FrontController extends Controller {
         return redirect()->back();
     }
     public function home(){
+        /* $setting=Setting::find(1);
+        Session::put("is_web",$setting->is_web); 
+        if($setting->is_web=='2'){
+            return redirect('admin/');
+        }
+        $deals=Deal::with("offer")->get();  
+        $sepcat=Sepicalcategories::where("is_active","1")->first();    
+        $sen_offer=Seasonaloffer::where("is_active","1")->first();  
+        $setting=Setting::find(1);
+        $shiping=Shipping::find(1);
+        $res_curr=explode("-",$setting->default_currency); 
+        
+        
+        $bestselling=$this->getbestsellingpro();  
+        $getcat=$this->getheadermenu();  
+        $productdata=$this->getproductlist();  
+        $banner=Banner::all();
+        $fdata=array();
+        $featurepro=FeatureProduct::with('productdata')->orderby('id','DESC')->get();
+        foreach ($featurepro as $k) {
+            if($k->productdata->is_deleted=='0'){
+                 $k->productdata->name=substr($k->productdata->name, 0,15);
+                 $getreview=Review::where("product_id",$k->product_id)->where("is_deleted",'0')->get();
+                 $k->total_review=count($getreview);
+                 $avgStar = Review::where("product_id",$k->product_id)->avg('ratting');
+                 $wish=Wishlist::where("product_id",$k->product_id)->where("user_id",Auth::id())->get();
+                 $k->wish=count($wish);
+                 $k->avgStar=round($avgStar);
+                 $fdata[]=$k;
+            }
+            
+        }
+
+        $featurepro=$fdata;
+         $date=date("Y-m-d");
+         $best=array();
+         $bestoffer=Offer::where("offer_type","1")->orderby('id',"DESC")->get();
+         foreach ($bestoffer as $bo) {
+          $start_date=date("Y-m-d",strtotime($bo->start_date)); 
+          $end_date=date("Y-m-d",strtotime($bo->end_date));
+          if(($date>=$start_date)&&($date<=$end_date)){
+                  $best[]=$bo;
+          }
+        }
+        $pay=PaymentMethod::find(1);
+        $mywish=Wishlist::where("user_id",Auth::id())->get(); */
+        return view("frontView.master");
+        // return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
+    }
+    public function faqs() {
+        return view('frontView.faqs');
+    }
+    public function carRentals() {
+        return view('frontView.las-vegas-nv.car-rentals');
+    }
+    public function suvRentals() {
+        return view('frontView.las-vegas-nv.suv-rentals');
+    }
+    public function bugattiRentals() {
+        return view('frontView.las-vegas-nv.bugatti-rentals');
+    }
+    public function lamborghiniRentals() {
+        return view('frontView.las-vegas-nv.lamborghini-rentals');
+    }
+
+    public function carRentalsLamborghiniAventador() {
+        return view('frontView.car-rentals.lamborghini-aventador');
+    }
+    public function team() {
+        return view('frontView.team');
+    }
+    public function teamMembers() {
+        return view('frontView.team.houston');
+    }
+    public function terms() {
+        return view('frontView.terms');
+    }
+    public function shop(){
         $setting=Setting::find(1);
         Session::put("is_web",$setting->is_web); 
         if($setting->is_web=='2'){
@@ -164,7 +242,7 @@ class FrontController extends Controller {
         $pay=PaymentMethod::find(1);
         $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
-  }
+    }
   
   
   public function productupdate(){      
