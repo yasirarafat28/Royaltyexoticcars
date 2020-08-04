@@ -267,7 +267,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-aventador">
                         <div class="trending__wrapper">
                           <img
@@ -279,7 +279,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-aventador" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -331,7 +331,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2020-lamborghini-huracan-evo">
                         <div class="trending__wrapper">
                           <img
@@ -343,7 +343,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2020-lamborghini-huracan-evo" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -395,7 +395,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-perfomante">
                         <div class="trending__wrapper">
                           <img
@@ -407,7 +407,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-perfomante" data-reach-trending-hide>Coupe
                       </div>
                     </div>
@@ -459,7 +459,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-huracan">
                         <div class="trending__wrapper">
                           <img
@@ -471,7 +471,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-huracan" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -522,7 +522,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-huracan-2">
                         <div class="trending__wrapper">
                           <img
@@ -534,7 +534,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="lamborghini-huracan-2" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -586,7 +586,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-twin-turbo-1000-hp-black">
                         <div class="trending__wrapper">
                           <img
@@ -598,7 +598,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-twin-turbo-1000-hp-black"
                         data-reach-trending-hide>Coupe</div>
                     </div>
@@ -651,7 +651,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-green-convertible">
                         <div class="trending__wrapper">
                           <img
@@ -663,7 +663,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-green-convertible" data-reach-trending-hide>
                         Convertible</div>
                     </div>
@@ -716,7 +716,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2017-lamborghini-huracan-yellow-convertible">
                         <div class="trending__wrapper">
                           <img
@@ -728,7 +728,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2017-lamborghini-huracan-yellow-convertible" data-reach-trending-hide>
                         Convertible</div>
                     </div>
@@ -780,7 +780,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-spider-white">
                         <div class="trending__wrapper">
                           <img
@@ -792,7 +792,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2018-lamborghini-huracan-spider-white" data-reach-trending-hide>
                         Convertible</div>
                     </div>
@@ -844,7 +844,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2017-lamborghini-huracan-orange-convertible">
                         <div class="trending__wrapper">
                           <img
@@ -856,7 +856,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2017-lamborghini-huracan-orange-convertible" data-reach-trending-hide>
                         Convertible</div>
                     </div>
@@ -909,7 +909,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2015-lamborghini-huracan-red">
                         <div class="trending__wrapper">
                           <img
@@ -921,7 +921,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2015-lamborghini-huracan-red" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -973,7 +973,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-orange">
                         <div class="trending__wrapper">
                           <img
@@ -985,7 +985,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-orange" data-reach-trending-hide>Coupe</div>
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -1037,7 +1037,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-green-coupe">
                         <div class="trending__wrapper">
                           <img
@@ -1049,7 +1049,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
                         data-reach-trending-slug="2016-lamborghini-huracan-green-coupe" data-reach-trending-hide>Coupe
                       </div>
                     </div>
@@ -1104,7 +1104,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="lamborghini-urus">
                         <div class="trending__wrapper">
                           <img
@@ -1116,7 +1116,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="lamborghini-urus" data-reach-trending-hide></div>All Wheel Drive
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>

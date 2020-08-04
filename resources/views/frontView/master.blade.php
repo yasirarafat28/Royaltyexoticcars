@@ -160,7 +160,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-aventador">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -172,7 +172,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-aventador" data-reach-trending-hide>
 											Coupe</div>
 									</div>
@@ -219,7 +219,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-mclaren-720s-bright-orange">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -231,7 +231,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-mclaren-720s-bright-orange"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -279,7 +279,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-twin-turbo-1000-hp-black">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -291,7 +291,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-twin-turbo-1000-hp-black"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -338,7 +338,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2020-lamborghini-huracan-evo">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -350,7 +350,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2020-lamborghini-huracan-evo"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -397,7 +397,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-perfomante">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -409,7 +409,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-perfomante"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -456,7 +456,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-ferrari-488-red-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -468,7 +468,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-ferrari-488-red-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -515,7 +515,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-ferrari-488-gtb-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -527,7 +527,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-ferrari-488-gtb-red"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -575,7 +575,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-ferrari-488-spyder-white-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -587,7 +587,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-ferrari-488-spyder-white-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -635,7 +635,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-lamborghini-huracan-yellow-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -647,7 +647,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-lamborghini-huracan-yellow-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -695,7 +695,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-green-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -707,7 +707,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-green-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -754,7 +754,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-spider-white">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -766,7 +766,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-lamborghini-huracan-spider-white"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -814,7 +814,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-lamborghini-huracan-orange-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -826,7 +826,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2017-lamborghini-huracan-orange-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -873,7 +873,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-huracan">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -885,7 +885,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-huracan" data-reach-trending-hide>
 											Coupe</div>
 									</div>
@@ -932,7 +932,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-lamborghini-huracan-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -944,7 +944,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-lamborghini-huracan-red"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -991,7 +991,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-orange">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1003,7 +1003,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-orange"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1050,7 +1050,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-green-coupe">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1062,7 +1062,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-lamborghini-huracan-green-coupe"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1109,7 +1109,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-huracan-2">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1121,7 +1121,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="lamborghini-huracan-2" data-reach-trending-hide>
 											Coupe</div>
 									</div>
@@ -1175,7 +1175,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="mclaren-570s-spider">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1187,7 +1187,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="mclaren-570s-spider" data-reach-trending-hide>
 											Convertible</div>
 									</div>
@@ -1235,7 +1235,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-ferrari-458-italia-yellow-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1247,7 +1247,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-ferrari-458-italia-yellow-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -1294,7 +1294,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-mclaren-570s-orange">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1306,7 +1306,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2018-mclaren-570s-orange"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1352,7 +1352,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-porsche-911-gt3-rs-orange">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1364,7 +1364,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-porsche-911-gt3-rs-orange"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1411,7 +1411,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2019-aston-martin-vantage">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1423,7 +1423,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2019-aston-martin-vantage"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1477,7 +1477,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-nissan-gt-r-black">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1489,7 +1489,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-nissan-gt-r-black" data-reach-trending-hide>
 											4-Seater Coupe</div>
 									</div>
@@ -1536,7 +1536,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="dodge-challenger-hellcat">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1548,7 +1548,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="dodge-challenger-hellcat"
 											data-reach-trending-hide>Coupe</div>
 									</div>
@@ -1595,7 +1595,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-corvette-z06-red-convertible">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1607,7 +1607,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-corvette-z06-red-convertible"
 											data-reach-trending-hide>Convertible</div>
 									</div>
@@ -1661,7 +1661,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2014-rolls-royce-ghost-v-spec-black">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1673,7 +1673,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2014-rolls-royce-ghost-v-spec-black"
 											data-reach-trending-hide>Sedan</div>
 									</div>
@@ -1720,7 +1720,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-bentley-continental-gtc-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1732,7 +1732,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2015-bentley-continental-gtc-red"
 											data-reach-trending-hide>4-Seater Convertible</div>
 									</div>
@@ -1779,7 +1779,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-mercedes-amg-s63-gray">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1791,7 +1791,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/car-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/car-rentals"
 											data-reach-trending-slug="2016-mercedes-amg-s63-gray"
 											data-reach-trending-hide>Sedan</div>
 									</div>
@@ -1844,7 +1844,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="lamborghini-urus">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1856,7 +1856,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="lamborghini-urus" data-reach-trending-hide></div>
 										All Wheel Drive
 									</div>
@@ -1902,7 +1902,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="mercedes-g550">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1914,7 +1914,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="mercedes-g550" data-reach-trending-hide></div>All
 										Wheel Drive
 									</div>
@@ -1960,7 +1960,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="ford-raptor">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -1972,7 +1972,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="ford-raptor" data-reach-trending-hide></div>All
 										Wheel Drive
 									</div>
@@ -2018,7 +2018,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="range-rover-supercharged">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2030,7 +2030,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="range-rover-supercharged"
 											data-reach-trending-hide></div>All Wheel Drive
 									</div>
@@ -2077,7 +2077,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="2018-jeep-wrangler-white-upgraded">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2089,7 +2089,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="2018-jeep-wrangler-white-upgraded"
 											data-reach-trending-hide></div>4WD (4x4)
 									</div>
@@ -2136,7 +2136,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="2018-jeep-wrangler-red-upgraded">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2148,7 +2148,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
 											data-reach-trending-slug="2018-jeep-wrangler-red-upgraded"
 											data-reach-trending-hide></div>4WD (4x4)
 									</div>
@@ -2203,7 +2203,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2018-vanderhall-venice-white-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2215,7 +2215,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2018-vanderhall-venice-white-red"
 											data-reach-trending-hide>Automatic</div>
 									</div>
@@ -2263,7 +2263,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2018-slingshot-sl-icon-white-manual">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2275,7 +2275,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2018-slingshot-sl-icon-white-manual"
 											data-reach-trending-hide>Manual</div>
 									</div>
@@ -2322,7 +2322,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2016-slingshot-green-automatic">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2334,7 +2334,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/autocycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/autocycle-rentals"
 											data-reach-trending-slug="2016-slingshot-green-automatic"
 											data-reach-trending-hide>Automatic</div>
 									</div>
@@ -2389,7 +2389,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-indian-chieftain-white">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2401,7 +2401,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-indian-chieftain-white"
 											data-reach-trending-hide>1811cc 111 V-Twin</div>
 									</div>
@@ -2448,7 +2448,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-1299-panigale-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2460,7 +2460,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-1299-panigale-red"
 											data-reach-trending-hide>1285cc V2</div>
 									</div>
@@ -2507,7 +2507,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-bmw-s1000rr-white-blue">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2519,7 +2519,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-bmw-s1000rr-white-blue"
 											data-reach-trending-hide>1000cc I4</div>
 									</div>
@@ -2566,7 +2566,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-indian-chieftain-black">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2578,7 +2578,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-indian-chieftain-black"
 											data-reach-trending-hide>1811cc 111 V-Twin</div>
 									</div>
@@ -2626,7 +2626,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-959-panigale-white">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2638,7 +2638,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-959-panigale-white"
 											data-reach-trending-hide>955cc V2</div>
 									</div>
@@ -2685,7 +2685,7 @@
 										alt="" class="rentals__logo" />
 									<div class="trending__embed w-embed">
 										<div class="trending"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-959-panigale-red">
 											<div class="trending__wrapper">
 												<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
@@ -2697,7 +2697,7 @@
 										</div>
 
 										<div class="rentals__label"
-											data-reach-trending-directory="www.royaltyexoticcars.com/motorcycle-rentals"
+											data-reach-trending-directory="www.rentalexoticsbeasts.com/motorcycle-rentals"
 											data-reach-trending-slug="2018-ducati-959-panigale-red"
 											data-reach-trending-hide>955cc V2</div>
 									</div>

@@ -131,7 +131,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="2018-jeep-wrangler-white-upgraded">
                         <div class="trending__wrapper">
                           <img
@@ -143,7 +143,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="2018-jeep-wrangler-white-upgraded" data-reach-trending-hide></div>4WD
                       (4x4)
                     </div>
@@ -196,7 +196,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="2018-jeep-wrangler-red-upgraded">
                         <div class="trending__wrapper">
                           <img
@@ -208,7 +208,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="2018-jeep-wrangler-red-upgraded" data-reach-trending-hide></div>4WD
                       (4x4)
                     </div>
@@ -259,7 +259,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="lamborghini-urus">
                         <div class="trending__wrapper">
                           <img
@@ -271,7 +271,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="lamborghini-urus" data-reach-trending-hide></div>All Wheel Drive
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -322,7 +322,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="mercedes-g550">
                         <div class="trending__wrapper">
                           <img
@@ -334,7 +334,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="mercedes-g550" data-reach-trending-hide></div>All Wheel Drive
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -385,7 +385,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e545206ad46c93ea33479a1_brand-ford.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="ford-raptor">
                         <div class="trending__wrapper">
                           <img
@@ -397,7 +397,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="ford-raptor" data-reach-trending-hide></div>All Wheel Drive
                     </div>
                     <div class="rentals__label w-condition-invisible">Unavailable</div>
@@ -448,7 +448,7 @@
                       src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86288f5e69d200011ed8c0_brand-range-rover.svg"
                       alt="" class="rentals__logo" />
                     <div class="trending__embed w-embed">
-                      <div class="trending" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="trending" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="range-rover-supercharged">
                         <div class="trending__wrapper">
                           <img
@@ -460,7 +460,7 @@
                         </div>
                       </div>
 
-                      <div class="rentals__label" data-reach-trending-directory="www.royaltyexoticcars.com/suv-rentals"
+                      <div class="rentals__label" data-reach-trending-directory="www.rentalexoticsbeasts.com/suv-rentals"
                         data-reach-trending-slug="range-rover-supercharged" data-reach-trending-hide></div>All Wheel
                       Drive
                     </div>

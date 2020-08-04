@@ -1,5 +1,5 @@
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
-<html data-wf-domain="www.royaltyexoticcars.com" data-wf-page="5eab2e688db14a5dd693300b"
+<html data-wf-domain="www.rentalexoticsbeasts.com" data-wf-page="5eab2e688db14a5dd693300b"
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 	<meta content="summary_large_image" name="twitter:card" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
-	<link href="/frontEnd/css/royaltyexoticcars.16f3cbba0.min.css"
+	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css"
 		rel="stylesheet" type="text/css" />
 	<script src="../frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
 	<script
@@ -33,7 +33,7 @@
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
 	<script
 		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
-	<link href="/frontEnd/5a10aaa4d85f4b0001a53493_favicon.png"
+	<link href="/favicon.ico"
 		rel="shortcut icon" type="image/x-icon" />
 	<link href="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
 		rel="apple-touch-icon" /><!-- Google Tag Manager -->
@@ -74,7 +74,7 @@
 				<div class="info__callout">We Beat competitor&#x27;s prices</div><a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
-						href="mailto:reservations+toursengine@royaltyexoticcars.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
+						href="mailto:reservations+toursengine@rentalexoticsbeasts.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 						onclick="this.href = this.href.replace('[sub]',window.location)">
 						Reservations@Rentalexoticsbeasts.com
 					</a></div><a
@@ -824,7 +824,7 @@
 						</div>
 					</div>
 					<div class="drawer__section">
-						<div class="card"><a id="Drawer-Shop-Button" href="https://shop.royaltyexoticcars.com/"
+						<div class="card"><a id="Drawer-Shop-Button" href="https://shop.rentalexoticsbeasts.com/"
 								target="_blank" class="navdrawer__shop--button w-inline-block"><img
 									src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
 									alt="" class="navdrawer__shop--icon" />
@@ -853,12 +853,12 @@
 												<div>Call Toll Free: </div>
 												<div>+1-866-984-1187</div>
 											</a><a
-												href="mailto:reservations@royaltyexoticcars.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
+												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
 												id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
 												<div class="navdrawer__link--icon"><img
 														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
 														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@royaltyexoticcars.com</div>
+												<div>reservations@rentalexoticsbeasts.com</div>
 											</a><a href="tel:17022976539" id="Drawer-Fax-Link"
 												class="navdrawer__link navdrawer__link--no-border w-inline-block">
 												<div class="navdrawer__link--icon"><img
@@ -897,12 +897,12 @@
 												</div>
 												<div>What&#x27;s App: @RoyaltyExoticCars</div>
 											</a><a
-												href="mailto:reservations@royaltyexoticcars.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
+												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
 												id="Drawer-Email-Intl-Link" class="navdrawer__link w-inline-block">
 												<div class="navdrawer__link--icon"><img
 														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
 														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@royaltyexoticcars.com</div>
+												<div>reservations@rentalexoticsbeasts.com</div>
 											</a>
 										</div><a id="Drawer-Translate-Button" href="#"
 											class="navdrawer__link navdrawer__link--centered addthis_button_googletranslate w-inline-block">
@@ -919,7 +919,7 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div class="navdrawer__links--wrapper"><a
-									href="https://www.instagram.com/royaltyexoticcars/" target="_blank"
+									href="https://www.instagram.com/rentalexoticsbeasts/" target="_blank"
 									id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
@@ -965,7 +965,7 @@
 							</a>
 						</div>
 					</div><a
-						href="mailto:happiness@royaltyexoticcars.com?subject=I%20have%20an%20idea%20that%20can%20improve%20Royalty%20Exotic%20Cars!%20%3A)"
+						href="mailto:happiness@rentalexoticsbeasts.com?subject=I%20have%20an%20idea%20that%20can%20improve%20Royalty%20Exotic%20Cars!%20%3A)"
 						id="Drawer-Feedback-Button" class="navdrawer__button w-button">How can we improve?</a>
 				</div>
 			</nav>
@@ -1190,11 +1190,11 @@
 			<div id="faqs" class="faqs">
 				<div class="faqs__header">
 					<h4 class="footer__h4 footer__h4--faqs">Frequently asked Questions</h4><a
-						href="mailto:reservations@royaltyexoticcars.com?subject=I%20have%20a%20question%20about%20renting%20an%20exotic%20car%20%3A)"
+						href="mailto:reservations@rentalexoticsbeasts.com?subject=I%20have%20a%20question%20about%20renting%20an%20exotic%20car%20%3A)"
 						id="Footer-Email-Button" class="faqs__cta w-inline-block"><img
 							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a70fd0132b5030001ecab9a_icon-email-white.svg"
 							alt="" class="faqs__cta--icon" />
-						<div>reservations@royaltyexoticcars.com</div>
+						<div>reservations@rentalexoticsbeasts.com</div>
 					</a>
 				</div>
 				<div class="faqs__collection w-dyn-list">
@@ -1291,7 +1291,7 @@
 										existing functionality outweighs the benefits of older browser support (plus,
 										the site wouldn't be as cool!) </p>
 									<p>However, if you are seeing any issues with the site, please <a
-											href="mailto:happiness@royaltyexoticcars.com" data-rt-link-type="email">let
+											href="mailto:happiness@rentalexoticsbeasts.com" data-rt-link-type="email">let
 											us know</a> and we'll send you a free pair of sunglasses! 😎</p>
 								</div>
 							</div>
@@ -1319,7 +1319,7 @@
 									<p data-new-link="true">All rentals come with NO mileage limit but must stay within
 										the county rented from.</p>
 									<p data-new-link="true">Need to drive further away? <a
-											href="mailto:reservations@royaltyexoticcars.com"
+											href="mailto:reservations@rentalexoticsbeasts.com"
 											data-rt-link-type="email">Let us know</a>.</p>
 								</div>
 							</div>
@@ -1394,7 +1394,7 @@
 									<p data-new-link="true"><strong>Yes.</strong>&nbsp;</p>
 									<p data-new-link="true">We have corporate event packages available upon request for
 										reservations of 6 rentals or more. Please <a
-											href="mailto:reservations@royaltyexoticcars.com"
+											href="mailto:reservations@rentalexoticsbeasts.com"
 											data-rt-link-type="email">contact our reservations team</a> for more
 										information.</p>
 								</div>
@@ -1423,7 +1423,7 @@
 									<p data-new-link="true"><strong>Yes.</strong>&nbsp;</p>
 									<p data-new-link="true">The minimum rental period is 4 hours. The maximum rental
 										period is 7 days. Need to rent a car for more than 7 days? <a
-											href="mailto:reservations@royaltyexoticcars.com"
+											href="mailto:reservations@rentalexoticsbeasts.com"
 											data-rt-link-type="email">Let us know</a>.</p>
 								</div>
 							</div>
@@ -1653,7 +1653,7 @@
 					<div class="shop__heading">Shop<br />Apparel</div>
 					<div class="shop__text">Browse our selection of hoodies, tshirts, hats and other apparel!</div>
 					<div class="spacer"></div><a id="Footer-Browse-Apparel-Button"
-						href="https://shop.royaltyexoticcars.com/" target="_blank" class="button">Browse Apparel</a>
+						href="https://shop.rentalexoticsbeasts.com/" target="_blank" class="button">Browse Apparel</a>
 				</div>
 			</div>
 			<div class="shop__item">
@@ -1673,7 +1673,7 @@
 					<div class="shop__heading">Shop<br />Exhausts</div>
 					<div class="shop__text">100% titanium, hand made, proprietary exhaust systems!</div>
 					<div class="spacer"></div><a id="Footer-Browse-Exhausts-Button"
-						href="https://shop.royaltyexoticcars.com/collections/exhausts" target="_blank"
+						href="https://shop.rentalexoticsbeasts.com/collections/exhausts" target="_blank"
 						class="button">Browse Exhausts</a>
 				</div>
 			</div>
@@ -1847,7 +1847,7 @@
 				<div class="sitemap__column">
 					<div class="sitemap__header">Company</div><a id="Home-Link-Footer" href="/" target="_blank"
 						aria-current="page" class="sitemap__link w--current">Home</a><a href="#"
-						class="sitemap__link">Vlog</a><a href="https://shop.royaltyexoticcars.com/" target="_blank"
+						class="sitemap__link">Vlog</a><a href="https://shop.rentalexoticsbeasts.com/" target="_blank"
 						class="sitemap__link">Shop</a><a href="/team" class="sitemap__link">Team</a><a
 						href="/faqs" class="sitemap__link">FAQs</a>
 				</div>
@@ -1879,7 +1879,7 @@
 					<div class="sitemap__header">Social</div><a
 						href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" id="Youtube-Link-Footer"
 						target="_blank" class="sitemap__link">Youtube</a><a
-						href="https://www.instagram.com/royaltyexoticcars/" id="Instagram-Link-Footer" target="_blank"
+						href="https://www.instagram.com/rentalexoticsbeasts/" id="Instagram-Link-Footer" target="_blank"
 						class="sitemap__link">Instagram</a><a id="Facebook-Link-Footer"
 						href="https://www.facebook.com/Royalty-Exotic-Cars-1803379263252624/" target="_blank"
 						class="sitemap__link">Facebook</a><a href="https://twitter.com/RoyaltyExotics"
@@ -2002,7 +2002,7 @@
 						class="copyright__link">+1-866-984-1187</a>
 					<div class="space__em"></div>
 					<div class="w-embed"><a id="Email-Link-Footer" class="copyright__link"
-							href="mailto:reservations+toursengine@royaltyexoticcars.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
+							href="mailto:reservations+toursengine@rentalexoticsbeasts.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 							onclick="this.href = this.href.replace('[sub]',window.location)">
 							Reservations@Rentalexoticsbeasts.com
 						</a></div>
@@ -2198,7 +2198,7 @@
 	</footer>
 	<script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
 		type="text/javascript" ></script>
-	<script src="/frontEnd/js/royaltyexoticcars.af38aa331.js"
+	<script src="/frontEnd/js/rentalexoticsbeasts.af38aa331.js"
 		type="text/javascript"></script>
 	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
