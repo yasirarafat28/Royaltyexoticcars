@@ -101,8 +101,13 @@
                      </a>
                      <ul class="sub-menu children dropdown-menu">
                          <li>
-                             <a href="{{url('admin/vehicle-category')}}">
+                             <a href="{{url('admin/vehiclecategory')}}">
                                  {{__('messages.category')}}
+                             </a>
+                         </li>
+                         <li>
+                             <a href="{{url('admin/vehicle-brand')}}">
+                                 Brands
                              </a>
                          </li>
                         <li>

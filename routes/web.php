@@ -145,27 +145,12 @@ Route::group(['prefix' => 'admin'], function () {
       //end password change
 
       //categories
-        Route::get("vehiclecategory","VehicleCategoryController@index")->name("vehiclecategory");
-      Route::get("vehiclecategorydatatable","VehicleCategoryController@categorydatatable")->name('vehiclecategorydatatable');
-      Route::post("addvehiclecategory","VehicleCategoryController@addcategory")->name("addvehiclecategory");
-      Route::get("getvehiclecategorybyid/{id}","VehicleCategoryController@getcategorybyid")->name("getvehiclecategorybyid");
-      Route::post("updatevehiclecategory","VehicleCategoryController@updatecategory")->name("updatevehiclecategory");
-      Route::get("deletevehiclecategory/{id}","VehicleCategoryController@deletecategory")->name("deletevehiclecategory");
-      Route::get("deletevehiclebrand/{id}","VehicleCategoryController@deletebrand")->name("deletevehiclebrand");
 
-        //sub category
-        Route::get("subvehiclecategory/{id}","VehicleCategoryController@subindex")->name("subvehiclecategory");
-        Route::get("subvehiclecategorydatatable/{id}","VehicleCategoryController@subdatatable")->name("subvehiclecategorydatatable");
-        Route::post("subaddvehiclecategory","VehicleCategoryController@subaddcategory")->name("subaddvehiclecategory");
-
-        Route::get("vehiclebrand/{id}","VehicleCategoryController@brandindex")->name("vehiclebrand");
-        Route::get("vehiclebranddatatable/{id}","VehicleCategoryController@branddatatable")->name('vehiclebranddatatable');
-        Route::post("addvehiclebrand","VehicleCategoryController@addbrand")->name("addvehiclebrand");
-        Route::get("getvehiclebrandbyname/{id}","VehicleCategoryController@getbrandbyname")->name("getvehiclebrandbyid");
-        Route::post("updatevehiclebrand","VehicleCategoryController@updatebrand")->name("updatevehiclebrand");
-        Route::get("viewscategory","VehicleCategoryController@viewcategory")->name("viewvehiclecategory");
-        Route::get("getallsubcategory","VehicleCategoryController@getallsubcategory");
-
+        Route::get('vehiclecategory/{level?}/{parent_id?}', 'VehicleCategoryController@CategoryIndex');
+        Route::post('vehiclecategory/store', 'VehicleCategoryController@CategoryStore');
+        Route::post('vehiclecategory/update', 'VehicleCategoryController@CategoryUpdate');
+        Route::get('vehiclecategory_entry/delete/{id}', 'VehicleCategoryController@CategoryDelete');
+        Route::resource('vehicle-brand', 'VehicleBrandController');
 
 
         Route::get("category","Categorycontroller@index")->name("category");
