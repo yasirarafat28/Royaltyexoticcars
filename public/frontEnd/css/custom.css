@@ -1,0 +1,118 @@
+
+
+/* car list */
+.single-car-wrap {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    color: #7f7f7f;
+    line-height: 1.8;
+}
+
+.single-car-info{
+    padding: 25px;
+}
+.car-list-style .single-car-info{
+    padding: 10px;
+}
+.single-car-info .rating {
+    right: 25px;
+    top: 72px;
+}
+
+
+.single-car-wrap:last-child {
+    margin-bottom: 0;
+}
+
+.single-car-thumb img {
+    width: 100%;
+    min-height: 250px !important;
+}
+
+.single-car-info {
+    padding-right: 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.single-car-info h2 a {
+    color: darkorange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.single-car-info h5 {
+    border-bottom: 1px solid #ddd;
+    color: #7f7f7f;
+    font-size: 15px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.car-info-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+    list-style: none;
+}
+
+.car-info-list li {
+    border: 1px solid #ccc;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    padding: 3px;
+    position: relative;
+}
+
+.car-info-list li::before {
+    color: #ffd000;
+    content: "\f14a";
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.car-info-list li + li {
+    border-left: 0;
+}
+
+.rating {
+    color: #ffd000;
+    font-size: 13px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.rating i:hover {
+    cursor: pointer;
+}
+
+.rating i.unmark:hover {
+    color: #ffd000;
+}
+
+.rating i.unmark {
+    color: #ddd;
+}
+
+.car-list-content .col-lg-6 .single-car-wrap {
+    margin-bottom: 30px;
+}
+
+.car-list-content .col-lg-6:last-child .single-car-wrap {
+    margin-bottom: 0;
+}
+
+.rentals__link, a{
+    color: #222 ;
+}

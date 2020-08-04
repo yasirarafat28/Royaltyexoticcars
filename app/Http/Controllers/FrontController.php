@@ -51,7 +51,7 @@ class FrontController extends Controller {
          parent::callschedule();
          $setting=Setting::find(1);
          $shiping=Shipping::find(1);
-        
+
          Session::forget('currency');
          Session::forget('logo');
          Session::forget('site_address');
@@ -66,7 +66,7 @@ class FrontController extends Controller {
           Session::forget('is_rtl');
           Session::flush();
          $res_curr=explode("-",$setting->default_currency);
-         Session::put("site_address",$setting->address);   
+         Session::put("site_address",$setting->address);
          Session::put("site_email",$setting->email);
          Session::put("site_phone",$setting->phone);
          Session::put("site_workinghour",$setting->working_day);
@@ -74,11 +74,11 @@ class FrontController extends Controller {
          Session::put("site_newsletter",$setting->newsletter);
           Session::put("currency",$res_curr[1]);
          Session::put("google_active",$setting->google_active);
-         Session::put("facebook_active",$setting->facebook_active); 
+         Session::put("facebook_active",$setting->facebook_active);
          Session::put("logo",asset('Ecommerce/images/')."/".$setting->logo);
          Session::put("set_show",$setting->set_show);
          Session::put("is_rtl",$setting->is_rtl);
-         Session::put("is_web",$setting->is_web); 
+         Session::put("is_web",$setting->is_web);
          if(Session::get("site_color")==""){
              Session::put("site_color","#f07f13");
              Session::put("colorid",'1');
@@ -104,35 +104,35 @@ class FrontController extends Controller {
     public function newsletter(Request $request){
        $getemail=Newsletter::where("email",$request->get("newsletter"))->first();
        if($getemail){
-            Session::flash('message1',__('messages.messages_error_success.email_already_error'));  
+            Session::flash('message1',__('messages.messages_error_success.email_already_error'));
             Session::flash('alert-class', 'alert-danger');
        }
        else{
           $store=new Newsletter();
           $store->email=$request->get("newsletter");
           $store->save();
-          Session::flash('message1',__('messages_error_success.newsletter_note')); 
+          Session::flash('message1',__('messages_error_success.newsletter_note'));
           Session::flash('alert-class', 'alert-danger');
        }
         return redirect()->back();
     }
     public function home(){
         /* $setting=Setting::find(1);
-        Session::put("is_web",$setting->is_web); 
+        Session::put("is_web",$setting->is_web);
         if($setting->is_web=='2'){
             return redirect('admin/');
         }
-        $deals=Deal::with("offer")->get();  
-        $sepcat=Sepicalcategories::where("is_active","1")->first();    
-        $sen_offer=Seasonaloffer::where("is_active","1")->first();  
+        $deals=Deal::with("offer")->get();
+        $sepcat=Sepicalcategories::where("is_active","1")->first();
+        $sen_offer=Seasonaloffer::where("is_active","1")->first();
         $setting=Setting::find(1);
         $shiping=Shipping::find(1);
-        $res_curr=explode("-",$setting->default_currency); 
-        
-        
-        $bestselling=$this->getbestsellingpro();  
-        $getcat=$this->getheadermenu();  
-        $productdata=$this->getproductlist();  
+        $res_curr=explode("-",$setting->default_currency);
+
+
+        $bestselling=$this->getbestsellingpro();
+        $getcat=$this->getheadermenu();
+        $productdata=$this->getproductlist();
         $banner=Banner::all();
         $fdata=array();
         $featurepro=FeatureProduct::with('productdata')->orderby('id','DESC')->get();
@@ -147,7 +147,7 @@ class FrontController extends Controller {
                  $k->avgStar=round($avgStar);
                  $fdata[]=$k;
             }
-            
+
         }
 
         $featurepro=$fdata;
@@ -155,7 +155,7 @@ class FrontController extends Controller {
          $best=array();
          $bestoffer=Offer::where("offer_type","1")->orderby('id',"DESC")->get();
          foreach ($bestoffer as $bo) {
-          $start_date=date("Y-m-d",strtotime($bo->start_date)); 
+          $start_date=date("Y-m-d",strtotime($bo->start_date));
           $end_date=date("Y-m-d",strtotime($bo->end_date));
           if(($date>=$start_date)&&($date<=$end_date)){
                   $best[]=$bo;
@@ -163,14 +163,14 @@ class FrontController extends Controller {
         }
         $pay=PaymentMethod::find(1);
         $mywish=Wishlist::where("user_id",Auth::id())->get(); */
-        return view("frontView.master");
+        return view("frontView.index");
         // return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
     }
     public function faqs() {
         return view('frontView.faqs');
     }
     public function carRentals() {
-        return view('frontView.las-vegas-nv.car-rentals');
+        return view('frontView.vehicle-browse');
     }
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');
@@ -196,21 +196,21 @@ class FrontController extends Controller {
     }
     public function shop(){
         $setting=Setting::find(1);
-        Session::put("is_web",$setting->is_web); 
+        Session::put("is_web",$setting->is_web);
         if($setting->is_web=='2'){
             return redirect('admin/');
         }
-        $deals=Deal::with("offer")->get();  
-        $sepcat=Sepicalcategories::where("is_active","1")->first();    
-        $sen_offer=Seasonaloffer::where("is_active","1")->first();  
+        $deals=Deal::with("offer")->get();
+        $sepcat=Sepicalcategories::where("is_active","1")->first();
+        $sen_offer=Seasonaloffer::where("is_active","1")->first();
         $setting=Setting::find(1);
         $shiping=Shipping::find(1);
-        $res_curr=explode("-",$setting->default_currency); 
-        
-        
-        $bestselling=$this->getbestsellingpro();  
-        $getcat=$this->getheadermenu();  
-        $productdata=$this->getproductlist();  
+        $res_curr=explode("-",$setting->default_currency);
+
+
+        $bestselling=$this->getbestsellingpro();
+        $getcat=$this->getheadermenu();
+        $productdata=$this->getproductlist();
         $banner=Banner::all();
         $fdata=array();
         $featurepro=FeatureProduct::with('productdata')->orderby('id','DESC')->get();
@@ -225,7 +225,7 @@ class FrontController extends Controller {
                  $k->avgStar=round($avgStar);
                  $fdata[]=$k;
             }
-            
+
         }
 
         $featurepro=$fdata;
@@ -233,7 +233,7 @@ class FrontController extends Controller {
          $best=array();
          $bestoffer=Offer::where("offer_type","1")->orderby('id',"DESC")->get();
          foreach ($bestoffer as $bo) {
-          $start_date=date("Y-m-d",strtotime($bo->start_date)); 
+          $start_date=date("Y-m-d",strtotime($bo->start_date));
           $end_date=date("Y-m-d",strtotime($bo->end_date));
           if(($date>=$start_date)&&($date<=$end_date)){
                   $best[]=$bo;
@@ -243,9 +243,9 @@ class FrontController extends Controller {
         $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
     }
-  
-  
-  public function productupdate(){      
+
+
+  public function productupdate(){
          $product=Product::all();
          foreach ($product as $k) {
             if($k->special_price!=""){
@@ -279,31 +279,31 @@ class FrontController extends Controller {
                                         $disper=((int)$dis_price/(int)$k->MRP)*100;
                                 }
                                 $k->discount=(int)floor($disper);
-                                $k->selling_price=(int)$k->price;   
+                                $k->selling_price=(int)$k->price;
                                 $k->save();
             }
-                          
-                          
+
+
          }
-        
+
   }
-    
+
   public function colorchange(Request $request){
       Session::put("site_color",$request->get("colorvalue"));
       Session::put("colorid",$request->get("color_id"));
       return $request->get("colorvalue");
-  }  
+  }
   public function showoffers(){
       $date=date("Y-m-d");
       $best=array();
       $normal=array();
       $getcat=$this->getheadermenu();
-      $productdata=$this->getproductlist(); 
+      $productdata=$this->getproductlist();
       $mywish=Wishlist::where("user_id",Auth::id())->get();
-      $getoffers=$this->getproductoffers(); 
+      $getoffers=$this->getproductoffers();
       $bestoffer=Offer::where("offer_type","1")->orderby('id',"DESC")->get();
       foreach ($bestoffer as $bo) {
-          $start_date=date("Y-m-d",strtotime($bo->start_date)); 
+          $start_date=date("Y-m-d",strtotime($bo->start_date));
           $end_date=date("Y-m-d",strtotime($bo->end_date));
           if(($date>=$start_date)&&($date<=$end_date)){
                   $best[]=$bo;
@@ -311,7 +311,7 @@ class FrontController extends Controller {
         }
       $normaloffer=Offer::where("offer_type","2")->orderby('id',"DESC")->get();
       foreach ($normaloffer as $bo) {
-          $start_date=date("Y-m-d",strtotime($bo->start_date)); 
+          $start_date=date("Y-m-d",strtotime($bo->start_date));
           $end_date=date("Y-m-d",strtotime($bo->end_date));
           if(($date>=$start_date)&&($date<=$end_date)){
               if($bo->is_product=='3'){
@@ -321,7 +321,7 @@ class FrontController extends Controller {
                       $bo->coupon_code=$getcoupon->code;
                   }
               }
-            
+
                   $normal[]=$bo;
           }
       }
@@ -329,12 +329,12 @@ class FrontController extends Controller {
   }
 
   public function getproductoffers(){
-      $date=date("Y-m-d"); 
+      $date=date("Y-m-d");
       $data=array();
       $product=Product::where("special_price","!=","")->where("status","1")->where("is_deleted","0")->get();
       foreach ($product as $k) {
-          $start_date=date("Y-m-d",strtotime($k->special_price_start)); 
-          $end_date=date("Y-m-d",strtotime($k->special_price_to)); 
+          $start_date=date("Y-m-d",strtotime($k->special_price_start));
+          $end_date=date("Y-m-d",strtotime($k->special_price_to));
           if(($date>=$start_date)&&($date<=$end_date)){
               $k->name=substr($k->name, 0,15);
               $getreview=Review::where("product_id",$k->id)->get();
@@ -346,8 +346,8 @@ class FrontController extends Controller {
               $k->disper=$k->discount;
               $k->price=$k->selling_price;
               $data[]=$k;
-          } 
-      } 
+          }
+      }
     return $data;
   }
   public function forgotpassword(Request $request){
@@ -398,12 +398,12 @@ class FrontController extends Controller {
       $pay=PaymentMethod::find(2);
       Session::put("stripe_key",$pay->payment_key);
       Session::put("stripe_secert",$pay->payment_secret);
-      $cartCollection = Cart::getContent(); 
+      $cartCollection = Cart::getContent();
       if($cartCollection->count()==0){
             return redirect("/");
       }
-      $getproducttax=array();  
-      $tax=array();  
+      $getproducttax=array();
+      $tax=array();
       foreach ($cartCollection as $item) {
            $gettotal=array();
            $subtotal=$item->price*$item->quantity;
@@ -436,26 +436,26 @@ class FrontController extends Controller {
             $delivery_type=$ship[0];
             $delivery_charge=$ship[1];
         }
-       
-        $productdata=$this->getproductlist(); 
+
+        $productdata=$this->getproductlist();
         $paymet=PaymentMethod::all();
-        $mywish=Wishlist::where("user_id",Auth::id())->get();   
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.product.checkout")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("delivery_type",$delivery_type)->with("check_discount_type",$request->get("check_discount_type"))->with("check_discount_value",$request->get("check_discount_value"))->with("check_free_shipping",$request->get("check_free_shipping"))->with("check_coupon_value",$request->get("check_coupon_value"))->with("check_couponcode",$request->get("check_couponcode"))->with("product_tax",$finalarray)->with("payment_method",$paymet)->with("delivery_charge",$delivery_charge)->with("check_delivery",$request->get("check_delivery"));
   }
 
 
     public function help(){
-        $gettext=QueryTopic::with("Question")->where("page_id",'1')->get();      
+        $gettext=QueryTopic::with("Question")->where("page_id",'1')->get();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
-        $mywish=Wishlist::where("user_id",Auth::id())->get();   
+        $productdata=$this->getproductlist();
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.help")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("getquestion",$gettext);
     }
 
     public function mywishlist(){
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
-        $mywish=Wishlist::with('productdata')->where("user_id",Auth::id())->get();   
+        $productdata=$this->getproductlist();
+        $mywish=Wishlist::with('productdata')->where("user_id",Auth::id())->get();
         return view("user.account.wishlist")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish);
     }
 
@@ -463,27 +463,27 @@ class FrontController extends Controller {
         $order=Order::with('userdata')->find($id);
         $orderdata=OrderData::with('productdata')->where("order_id",$id)->get();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
-        $mywish=Wishlist::with('productdata')->where("user_id",Auth::id())->get();   
+        $productdata=$this->getproductlist();
+        $mywish=Wishlist::with('productdata')->where("user_id",Auth::id())->get();
         return view("user.account.vieworder")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("order",$order)->with("orderdata",$orderdata);
     }
-   
-    public function searchproduct(Request $request){    
+
+    public function searchproduct(Request $request){
       $ca=$request->get("search_cat");
       $se=$request->get("search_product");
       $findproduct=Product::where("name",$request->get("search_product"))->first();
-      
+
         return redirect("productslist/0/0/0/0/"."?s=".$se."&ca=".$ca);
-        
+
     }
     public function getheadermenu(){
-        $main_array=array();  
-             
+        $main_array=array();
+
         $category=Categories::where("parent_category",'0')->where('is_delete','0')->get();
-        foreach ($category as $ke) {          
-            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();            
+        foreach ($category as $ke) {
+            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();
             $sub_arr=array();
-            foreach ($subcategory as $sub) {    
+            foreach ($subcategory as $sub) {
                 $brand=Brand::where("category_id",$sub->id)->where('is_delete','0')->get();
                 $sub->brand=$brand;
                 $sub_arr[]=$sub;
@@ -491,7 +491,7 @@ class FrontController extends Controller {
             $ke->subcategory=$sub_arr;
             $main_array[]=$ke;
         }
-        
+
         return $main_array;
     }
     public function getproductlist(){
@@ -510,37 +510,37 @@ class FrontController extends Controller {
     public function termscondition(){
         $gettext=QueryTopic::with("Question")->where("page_id",'2')->get();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
-        $mywish=Wishlist::where("user_id",Auth::id())->get();      
+        $productdata=$this->getproductlist();
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.terms")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("getquestion",$gettext);
     }
   public function aboutus(){
         $page=Pages::find(1);
-        $mywish=Wishlist::where("user_id",Auth::id())->get();   
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
+        $productdata=$this->getproductlist();
         return view("user.aboutus")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("page",$page);
     }
 
-   
+
     public function contactus(){
       $getcat=$this->getheadermenu();
-      $productdata=$this->getproductlist(); 
-      $mywish=Wishlist::where("user_id",Auth::id())->get();   
+      $productdata=$this->getproductlist();
+      $mywish=Wishlist::where("user_id",Auth::id())->get();
       return view("user.contactus")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish);
     }
 
-    
+
 
     public function myaccount(){
         $getcat=$this->getheadermenu();
         $productdata=$this->getproductlist();
         $user=Auth::user();
         $myorder=Order::where("user_id",Auth::id())->orderby("id","DESC")->get();
-       
+
         foreach ($myorder as $k) {
             $getdata=OrderData::where('order_id',$k->id)->get();
-          
+
              $item=0;
             foreach($getdata as $ge){
                 $item=$item+$ge->quantity;
@@ -548,14 +548,14 @@ class FrontController extends Controller {
 
             $k->total_item=$item;
         }
-       
+
         Session::put("profile_pic",$user->profile_pic);
         Session::put("name",$user->first_name);
         Session::put("email",$user->email);
          $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.account.myaccount")->with("header_menu",$getcat)->with("userdata",$user)->with("productdata",$productdata)->with("mywish",$mywish)->with("myorder",$myorder);
     }
-    
+
     public function storecontact(Request $request){
         $store=new ContactUs();
         $store->name=$request->get("name");
@@ -564,19 +564,19 @@ class FrontController extends Controller {
         $store->phone=$request->get("phone");
         $store->message=$request->get("message");
         $store->save();
-        Session::flash('message',__('messages.contact_success')); 
+        Session::flash('message',__('messages.contact_success'));
         Session::flash('alert-class', 'alert-success');
         return redirect()->back();
     }
        public function viewproduct($id){
-          $product=$this->getproductdetails($id);   
-          
+          $product=$this->getproductdetails($id);
+
           if(empty($product)){
              return redirect("/");
-          }      
-          $setting=Setting::find(1);   
-          $user=Auth::user();   
-          $res_curr=explode("-",$setting->default_currency);                   
+          }
+          $setting=Setting::find(1);
+          $user=Auth::user();
+          $res_curr=explode("-",$setting->default_currency);
           $getcat=$this->getheadermenu();
           $productdata=$this->getproductlist();
           $prorat=0;
@@ -589,11 +589,11 @@ class FrontController extends Controller {
           }
           $name=strip_tags($product->description);
           $product->new_desc=substr($name,0,175);
-          
+
           $product->wish=count(Wishlist::where("product_id",$id)->where("user_id",Auth::id())->get());
           $product->totalreview=count(Review::where("product_id",$id)->get());
            $mywish=Wishlist::where("user_id",Auth::id())->get();
-          
+
           return view("user.product.viewproduct")->with("header_menu",$getcat)->with("product",$product)->with("currency",$res_curr[1])->with("userdata",$user)->with("productstar",$avgStar)->with("productdata",$productdata)->with("mywish",$mywish);
        }
 
@@ -606,13 +606,13 @@ public function getproductdetails($id){
           $product->category=$product->categoryls->name;
           $product->subcategory=$product->subcategoryls->name;
           $product->brand=$product->brandls->brand_name;
-         
+
           $main_array=array();
           $attributearr=array();
           $attribute_set=array();
           $data=array();
           if($product->related_product!=""){
-              $relat=explode(",",$product->related_product);          
+              $relat=explode(",",$product->related_product);
               foreach ($relat as $ky) {
               	     $avgStar = Review::where("product_id",$ky)->avg('ratting');
                      if(empty($avgStar)){
@@ -625,18 +625,18 @@ public function getproductdetails($id){
                       $ts=Product::find($ky);
                       $ts->avgStar=$avgStar;
                       $ts->total_review=count(Review::where("product_id",$ky)->get());
-                      
+
                       $ts->name=$this->headreadMoreHelper($product->name,25);
                       $ts->wish=count($wish);
-                      
+
                   $data[]=$ts;
               }
               $product->related_product=$data;
           }
-         
+
           $product->attributes=ProductAttributes::where("product_id",$id)->get();
-          
-        
+
+
           $product->options=ProductOption::where("product_id",$id)->first();
           $product->review=Review::with('userdata')->where("product_id",$id)->where("is_deleted",'0')->orderby("id","DESC")->orwhere("user_id",Auth::id())->take(5)->get();
           }
@@ -647,14 +647,14 @@ public function getproductdetails($id){
           else{
              $avgStar=round($avgStar);
           }
-        
+
           if($product){
               $product->avgStar=$avgStar;
           }
           else{
               //$product->avgStar=0;
           }
-          
+
           return $product;
        }
 
@@ -663,7 +663,7 @@ public function getbestsellingpro(){
     $orderdata=DB::table('order_data')
                  ->select('product_id', DB::raw('count(*) as total'))
                  ->orderby('total','DESC')
-                 ->groupBy('product_id')                 
+                 ->groupBy('product_id')
                  ->paginate(10);
     foreach ($orderdata as $p) {
           $product=Product::where('status','1')->where('is_deleted','0')->where("id",$p->product_id)->first();
@@ -683,26 +683,26 @@ public function getbestsellingpro(){
                 $array_ob['total_review']=$total;
                 $array_ob['stock']=$product->stock;
                 $main_array[]=$array_ob;
-            }     
+            }
           }
-        
-    return $main_array;             
+
+    return $main_array;
 }
 function headreadMoreHelper($story_desc, $chars =35) {
-    $story_desc = substr($story_desc,0,$chars);  
-    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));  
-    $story_desc = $story_desc;  
-    return $story_desc;  
-}  
+    $story_desc = substr($story_desc,0,$chars);
+    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+    $story_desc = $story_desc;
+    return $story_desc;
+}
 
 function readMoreHelper($story_desc, $chars =35) {
-    $story_desc = substr($story_desc,0,$chars);  
-    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));  
-    $story_desc = $story_desc.'...';  
-    return $story_desc;  
-} 
+    $story_desc = substr($story_desc,0,$chars);
+    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+    $story_desc = $story_desc.'...';
+    return $story_desc;
+}
 
-     
+
 
 public function gethelpresult(Request $request){
       $gettopic=QueryTopic::with("Question")->where("topic",$request->get("search"))->where("page_id","1")->get();
@@ -726,11 +726,11 @@ public function gethelpresult(Request $request){
         if($k->selling_price!=""){
             $k->selling_price=round($k->selling_price/70);
         }
-        $k->save();        
+        $k->save();
      }
      echo "done";
 
-  }    
+  }
 
   public function getallcategory(){
      $category=Categories::where("parent_category",0)->where("is_delete",'0')->get();
@@ -750,10 +750,10 @@ public function gethelpresult(Request $request){
                 $product->attributes=ProductAttributes::where("product_id",$key)->get();
                 $datalist[]=$product;
             }
-            
-             
+
+
               $attribute_set=array();
-              foreach ($datalist as $k) {                    
+              foreach ($datalist as $k) {
                     foreach ($k->attributes as $att) {
                         $attribute_set[]=$att["attributename"];
                     }
@@ -764,12 +764,12 @@ public function gethelpresult(Request $request){
                 $attr_name[]=$dt['name'];
               }
               $attr_name=array_values(array_unique($attr_name));
-          
+
        }
 
-        $mywish=Wishlist::where("user_id",Auth::id())->get();   
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
+        $productdata=$this->getproductlist();
         return view("user.compare")->with("comparedata",$datalist)->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("attr_name",$attr_name);
     }
 
@@ -789,9 +789,9 @@ public function gethelpresult(Request $request){
 
     public function deletecomapreitem($id){
         if(Session::get("compare")!=""){
-           $arr=explode(',', Session::get("compare"));          
+           $arr=explode(',', Session::get("compare"));
            unset($arr[array_search($id,$arr)]);
-           
+
            Session::put("compare",implode(",",array_values(array_unique($arr))));
            return count(array_values(array_unique($arr)));
        }

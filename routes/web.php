@@ -24,6 +24,8 @@ Route::get('/', function() {
    // Artisan::call('config:cache');
   return redirect('home');
 });
+
+Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 
@@ -36,7 +38,8 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 Route::get('/team', 'FrontController@team');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
-Route::get("shop","FrontController@shop");
+
+
 
 Route::get("privacy_policy","Admincontroller@privacy");
 
@@ -53,6 +56,7 @@ Route::get("mainofferdoc","Admincontroller@mainofferdoc");
 Route::get("normalofferdoc","Admincontroller@normalofferdoc");
 Route::get("dealofferdoc","Admincontroller@dealofferdoc");
 Route::group(['prefix' => '/'], function (){
+    Route::get("shop","FrontController@shop");
      Route::get("compare","FrontController@getcompare");
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get("getallhelp","QuestionSupportController@getallhelp");
@@ -64,7 +68,6 @@ Route::group(['prefix' => '/'], function (){
      Route::get("resetpassword/{code}","FrontController@resetpassword");
      Route::any("resetnewpwd","FrontController@resetnewpwd");
      Route::get("confirmregister/{id}","UserController@confirmregister")->name("confirmregister");
-     Route::get("/home","FrontController@home");
      Route::get("getallproduct","ProductController@getallproduct")->name("getallproduct");
      Route::get('helpsupport',"FrontController@help");
      Route::get("termscondition","FrontController@termscondition");
@@ -107,7 +110,7 @@ Route::group(['prefix' => '/'], function (){
           Route::post('paypal', array('as' => 'paypal','uses' => 'PaypalController@postPaymentWithpaypal',));
           Route::get('paypal', array('as' => 'status','uses' => 'PaypalController@getPaymentStatus',));
 
-        
+
      });
 });
 
@@ -123,13 +126,13 @@ Route::group(['prefix' => 'admin'], function () {
       //logout
       Route::get("logout","Admincontroller@showlogout")->name("logout");
 
-      //start profile 
+      //start profile
       Route::get("editprofile","Admincontroller@editprofile")->name("editprofile")->middleware('admincheckexiste');
       Route::post("updateprofile","Admincontroller@updateprofile")->name("updateprofile")->middleware('admincheckexiste');
       //end profile
-       
+
       Route::get("checktotalproduct","ProductController@checktotalproduct");
-      //password change 
+      //password change
       Route::get("changepassword","Admincontroller@changepassword")->name("changepassword")->middleware('admincheckexiste');
       Route::get("samepwd/{id}","Admincontroller@check_password_same");
       Route::post("updatepassword","Admincontroller@updatepassword");
@@ -188,7 +191,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
      Route::get("savecatalog/{id}/{tab}","ProductController@showaddcatalog")->name("addcatalog");
-     
+
        Route::get("editproduct/{id}","ProductController@editproduct")->name("editproduct");
        Route::post("saveadditionalinfo","ProductController@saveadditionalinfo")->name("saveadditionalinfo");
        Route::get("getattibutevalue/{id}","ProductController@getattibutevalue")->name("getattibutevalue");
@@ -216,10 +219,10 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get("attribute","ProductController@showattribute")->name("attribute");
         Route::get("attributedatatable","ProductController@attributedatatable")->name("attributedatatable");
-        Route::get("addattribute","ProductController@showaddattribute")->name("showaddattribute");   
+        Route::get("addattribute","ProductController@showaddattribute")->name("showaddattribute");
         route::post("saveattribute","ProductController@saveattribute")->name("saveattribute");
-        Route::get("editattribute/{id}","ProductController@editattribute")->name("editattribute");  
-        Route::post("updateattribute","ProductController@updateattribute")->name("updateattribute"); 
+        Route::get("editattribute/{id}","ProductController@editattribute")->name("editattribute");
+        Route::post("updateattribute","ProductController@updateattribute")->name("updateattribute");
 
        Route::get("review","ProductController@showreview");
        Route::get("reviewdatatable/{id}","ProductController@reviewdatatable")->name("reviewdatatable");
@@ -300,17 +303,17 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("edittaxes/{id}","TaxesController@edittaxes")->name("edittaxes");
         Route::post("updatetaxdata","TaxesController@updatetaxdata")->name("updatetaxdata");
 
-        Route::get("translations","TaxesController@showtranslations")->name("translations");  
+        Route::get("translations","TaxesController@showtranslations")->name("translations");
         Route::get("translationdatatable","TaxesController@translationdatatable")->name("translationdatatable");
         Route::get("getdatatranslation/{id}","TaxesController@getdatatranslation")->name("getdatatranslation");
         Route::post("updatetranslation","TaxesController@updatetranslation")->name("updatetranslation");
- 
+
         Route::get("setting","SettingController@editsetting")->name("setting");
         Route::get("getcountrylist","SettingController@getcountrylist")->name("getcountrylist");
         Route::get("getlanglist","SettingController@getlanglist")->name("getlanglist");
         Route::post("updatesetting","SettingController@updatesetting")->name("updatesetting");
         route::post("savegeneralsetting","SettingController@updatesetting")->name("savegeneralsetting");
-          
+
         Route::get("order","OrderController@showorder")->name("order");
         Route::get("orderdatatable","OrderController@orderdatatable")->name("orderdatatable");
 
@@ -369,7 +372,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get("datatable","ComplainController@datatabletest");
         Route::get("changesettingstatus/{field}","SettingController@changesettingstatus");
-     
+
     });
 
 });

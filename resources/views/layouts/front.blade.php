@@ -25,18 +25,38 @@
 	<meta content="summary_large_image" name="twitter:card" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
-	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css"
-		rel="stylesheet" type="text/css" />
+	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css" rel="stylesheet" type="text/css" />
+	<link href="/frontEnd/css/custom.css" rel="stylesheet" type="text/css" />
+	<link href="/frontEnd/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<script src="../frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
 	<script
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
 	<script
 		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
-	<link href="/favicon.ico"
-		rel="shortcut icon" type="image/x-icon" />
-	<link href="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
-		rel="apple-touch-icon" /><!-- Google Tag Manager -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
 
 	<script
 		type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {
@@ -59,6 +79,19 @@
             .nav__brand .logo {
                 height: 38px !important;
             }
+        }
+
+        .slider-left-content{
+
+            background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
+        }
+        .carousel-caption{
+            bottom: 20% !important;
+        }
+        .slider-left-content .heading{
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
     </style>
 
@@ -1593,6 +1626,8 @@
 					id="Feedback-Very-Good" title="Very Good" href="#" class="feedback__icon">😁</a>
 			</div>
 		</div>
+
+        <!--
 		<div class="shop">
 			<div class="shop__item">
 				<div data-poster-url="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-poster-00001.jpg"
@@ -1726,7 +1761,7 @@
 			<div class="team__family">*Rental Exotic Beasts is owned and operated by a small team of just 10
 				people.<br />Some of us are related by blood, others by sweat and tears — <a id="Footer-Family-Link"
 					href="/team"><strong>together we&#x27;re family→</strong></a><strong><br /></strong></div>
-		</div>
+		</div> -->
 		<div class="brands w-dyn-list">
 			<div role="list" class="brands__list w-dyn-items">
 				<div role="listitem" class="brands__item w-dyn-item"><img
@@ -1806,7 +1841,8 @@
 						alt="" class="brands__logo" /></div>
 			</div>
 		</div>
-		<div class="container container__small"><img
+        <div class="container container__small">
+            <!--<img
 				src="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
 				alt="Rental Exotic Beasts Logo" class="footer__logo" />
 			<div id="VIP" class="vip w-form">
@@ -1834,7 +1870,7 @@
 				<div class="w-form-fail">
 					<div>Oops! Something went wrong while submitting the form.</div>
 				</div>
-			</div>
+			</div>-->
 			<div class="motto">
 				<div class="motto__brand"><a href="index.html" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
