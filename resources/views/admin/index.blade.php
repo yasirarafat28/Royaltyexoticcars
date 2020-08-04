@@ -97,9 +97,33 @@
                   <li class="menu-item-has-children dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <i class="menu-icon  fa fa-cube"></i>
-                     {{__('messages.product')}}
+                         Rental Catalogue
                      </a>
                      <ul class="sub-menu children dropdown-menu">
+                         <li>
+                             <a href="{{url('admin/vehicle-category')}}">
+                                 {{__('messages.category')}}
+                             </a>
+                         </li>
+                        <li>
+                           <a href="{{url('admin/vehicles')}}">
+                               Vehicles
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                   <li class="menu-item-has-children dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="menu-icon  fa fa-cube"></i>
+                         Shop Catalogues
+                     </a>
+                     <ul class="sub-menu children dropdown-menu">
+                        <li>
+                           <a href="{{url('admin/product')}}">
+                               {{__('messages.product')}}
+                           </a>
+                        </li>
                         <li>
                            <a href="{{url('admin/category')}}">
                            {{__('messages.category')}}
@@ -132,12 +156,12 @@
                         </li>
                      </ul>
                   </li>
-                  <li class="active">
+                  <!--<li class="active">
                      <a href="{{url('admin/product')}}"  aria-haspopup="true" aria-expanded="false">
                          <i class="menu-icon  fa fa-linode"></i>
                          {{__('messages.add')}} {{__('messages.catalog')}}
                      </a>
-                  </li>
+                  </li>-->
                   <li class="menu-item-has-children dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <i class="menu-icon  fa fa-gift"></i>

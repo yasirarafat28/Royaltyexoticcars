@@ -57,7 +57,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
 
-
+<!--
 	<script
 		type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {
 			"currencyCode": "USD",
@@ -68,6 +68,8 @@
 			"group": ",",
 			"template": "@{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} @{{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} @{{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}",
             "hideDecimalForWholeNumbers": false };</script>
+
+    -->
 
     <style>
         .nav__brand .logo{
@@ -2122,108 +2124,7 @@
 						onclick="event.stopPropagation(); window.consentManager.openConsentManager()">Preferences</button>
 				</div>
 			</div>
-			<div id="Reach" class="badge w-form">
-				<form id="Reach-Badge-Form" name="wf-form-Reach-Badge-Form" data-name="Reach Badge Form"
-					data-reach-lead="Reach" class="badge__form"><a id="Reach-Badge-Trigger"
-						data-w-id="65630cf1-d1c9-c040-7675-57646bb4ee08" href="#"
-						class="badge__trigger w-inline-block"><img
-							src="https://assets-global.website-files.com/5d39dac1eeeaad5a4d0f7bd7/5ddccedc0169080076b5d809_bolt-white.svg"
-							alt="" class="badge__icon" />
-						<div>Powered by Reach.</div>
-					</a>
-					<div class="badge__form--wrapper"><img
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e5551cad93d993d9750c81d_logo-wordmark.svg"
-							alt="" class="badge__logo" />
-						<div class="badge__heading">Reach is a marketing engine that powers small businesses.</div>
-						<div class="badge__subheading">We&#x27;re currently in private beta but would love to hear from
-							you! Let us know more about your marketing goals and we&#x27;ll reach out when we&#x27;re
-							ready!</div>
-						<div class="badge__fields"><input type="text" class="badge__input badge__input--topleft w-input"
-								maxlength="256" name="Name---Reach" data-reach-input="name" data-name="Name - Reach"
-								placeholder="Name" id="Name-Reach" required="" /><input type="text"
-								class="badge__input badge__input--topright w-input" maxlength="256" name="Email---Reach"
-								data-reach-input="email" data-name="Email - Reach" placeholder="Email" id="Email-Reach"
-								required="" /><input type="tel" class="badge__input badge__input--middle w-input"
-								maxlength="256" name="Phone---Reach" data-reach-input="phone" data-name="Phone - Reach"
-								placeholder="Phone" id="Phone-Reach" required="" /><input type="text"
-								class="badge__input badge__input--middle w-input" maxlength="256" name="URL---Reach"
-								data-reach-input="url" data-name="URL - Reach" placeholder="Company URL" id="URL-Reach"
-								required="" /><textarea placeholder="How can we help your marketing efforts?"
-								maxlength="5000" id="Message-Reach" name="Message" data-name="Message"
-								data-reach-input="message"
-								class="badge__input badge__input--textarea w-input"></textarea>
-							<div class="badge__embed w-embed"><input type="hidden" data-reach-input="agency"
-									value="5e14cf824cc369d24b1497e5" />
-								<input type="hidden" data-reach-input="business" value="5e14cfc84cc369d24b1497e6" />
-							</div><input type="submit" value="Get Invite" data-wait="Requesting..."
-								class="badge__submit w-button" />
-						</div>
-					</div>
-				</form>
-				<div class="badge__form badge__form--success w-form-done">
-					<div class="badge__form--wrapper"><img
-							src="../frontEnd/5dc204e33f9395a70d214f28_green-check-animated.gif"
-							alt="" class="badge__success--check" />
-						<div class="badge__success--heading">Thanks for reaching out!</div>
-						<div class="badge__success--message">We&#x27;ll send you an invite email to join our private
-							beta when we&#x27;re ready. In the meantime, please don&#x27;t hesitate to email us anytime
-							with questions or feature requests!</div><a
-							href="mailto:hello@choosereach.com?subject=Hello!%20I&#x27;d%20like%20to%20know%20more%20about%20Reach%20and%20your%20marketing%20services!"
-							class="badge__success--email">Hello@ChooseReach.com</a><img
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e5551cad93d993d9750c81d_logo-wordmark.svg"
-							alt="" class="badge__success--logo" />
-					</div>
-				</div>
-				<div class="badge__error w-form-fail">
-					<div class="badge__error--text">Oops! Something went wrong while submitting the form.<br />Please
-						try again or contact us directly at <a
-							href="mailto:support@choosereach.com?subject=Help!%20Your%20invite%20form%20is%20not%20working%20for%20some%20reason!"
-							class="badge__error--link">support@choosereach.com</a></div>
-				</div>
-			</div>
-			<div class="beacon"><a id="Beacon-Open-Icon" href="#"
-					class="beacon__toggle beacon__toggle--open w-inline-block"></a><a id="Beacon-Close-Icon" href="#"
-					class="beacon__toggle beacon__toggle--close w-inline-block"></a>
-				<div class="beacon__pane">
-					<div class="beacon__header">
-						<div class="beacon__heading">Send me a message</div><img
-							src="/frontEnd/5dadeb034156d0c60f817531_maria-office-manager.jpg"
-							alt="" class="beacon__avatar" />
-						<div class="beacon__text">I usually respond within a few minutes<br />9am-7pm Daily</div>
-					</div>
-					<div class="beacon__body w-form">
-						<form id="Beacon-Form" name="wf-form-Beacon-Form" data-name="Beacon Form"
-							data-reach-lead="Beacon" class="beacon__form">
-							<div class="beacon__fields"><input type="text"
-									class="beacon__input beacon__input--top w-input" maxlength="256" name="Name"
-									data-reach-input="name" data-name="Name" placeholder="Name" id="Name-Beacon"
-									required="" /><input type="email" class="beacon__input form__input--email w-input"
-									maxlength="256" name="Email" data-reach-input="email" data-name="Email"
-									placeholder="Email" id="Email-Beacon" required="" /><input type="tel"
-									class="beacon__input form__input--phone w-input" maxlength="256" name="Phone"
-									data-reach-input="phone" data-name="Phone" placeholder="Phone"
-									id="Phone-Beacon" /><textarea placeholder="How can we help you?" maxlength="5000"
-									id="Message-Beacon" name="Message" data-name="Message" required=""
-									data-reach-input="message"
-									class="beacon__input beacon__input--text w-input"></textarea><input type="submit"
-									value="Send Message" data-wait="Securely Sending..."
-									class="beacon__input beacon__input--submit w-button" /></div>
-						</form>
-						<div class="beacon__form w-form-done">
-							<div class="beacon__success">
-								<div class="beacon__success--heading">Success!</div>
-								<div class="beacon__success--text">Your message has been received. You should receive a
-									follow up email or call shortly.</div>
-								<div class="beacon__success--cta">Need a faster response?<br />Give us a call at <a
-										href="tel:+18669841187" id="Beacon-Success-CTA">866-984-1187</a><br /></div>
-							</div>
-						</div>
-						<div class="beacon__error w-form-fail">
-							<div class="beacon__error--text">Error. Please refresh page and try again.</div>
-						</div><a href="#Reach" class="beacon__brand">Powered by Reach.</a>
-					</div>
-				</div>
-			</div>
+
 			<div id="consent-manager" class="cookies">
 				<div class="css-1d3ybkx cookies__hidden">
 					<div>By using our website, you agree to our </div>

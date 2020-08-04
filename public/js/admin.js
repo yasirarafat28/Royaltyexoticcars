@@ -26,7 +26,7 @@
 
          return true;
       }
-      
+
       $(document).ready(function() {
            var _URL = window.URL || window.webkitURL;
             $('#upload_image_logo').on('change', function(e) {
@@ -35,7 +35,7 @@
             img = new Image();
             var flag=0;
             img.onload = function() {
-                
+
                 if(this.width == 128 && this.height == 61)
                 {
                      flag=1;
@@ -52,14 +52,14 @@
         }
 
 
-                   
+
             });
      });
-     function readURL(input,field) {  
-        
+     function readURL(input,field) {
+
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            
+
             reader.onload = function (e) {
                 $("#logo").val(e.target.result);
                 $('#'+field).attr('src', e.target.result);
@@ -103,7 +103,7 @@
             else{
                  window.location.href =url;
             }
-          
+
         } else {
             window.location.reload();
         }
@@ -123,6 +123,23 @@ $(document).ready(function() {
             processing: true,
             serverSide: true,
             ajax: $("#url_path").val()+'/admin/categorydatatable',
+            columns: [{
+                data: 'id',
+                name: 'id'
+            }, {
+                data: 'name',
+                name: 'name'
+            }, {
+                data: 'action',
+                name: 'action'
+            }],
+        });
+    });
+$(document).ready(function() {
+        $('#vehiclecategoryTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: $("#url_path").val()+'/admin/vehiclecategorydatatable',
             columns: [{
                 data: 'id',
                 name: 'id'
@@ -195,6 +212,24 @@ $(document).ready(function() {
             processing: true,
             serverSide: true,
             ajax: $("#url_path").val()+'/admin/subcategorydatatable' + "/" + parent_id,
+            columns: [{
+                data: 'id',
+                name: 'id'
+            }, {
+                data: 'name',
+                name: 'name'
+            }, {
+                data: 'action',
+                name: 'action'
+            }],
+        });
+    });
+$(document).ready(function() {
+        var parent_id = $("#parent_id").val();
+        $('#subvehicleCategoryTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: $("#url_path").val()+'/admin/subvehiclecategorydatatable' + "/" + parent_id,
             columns: [{
                 data: 'id',
                 name: 'id'
@@ -330,7 +365,7 @@ function editcategory(id) {
                         }
                     });
                 }
-            }    
+            }
  function Savecouponstep3() {
                 var coupon_id = $("#coupon_id").val();
                 var per_coupon = $("#per_coupon").val();
@@ -357,11 +392,11 @@ function editcategory(id) {
                                 alert($("#data_save_success").val());
                                 window.location.href = $("#url_path").val()+"/admin/coupon";
                             }
-                       }); 
+                       });
                     }
-                   
+
                 }
-            }   
+            }
 var element = jQuery("#product");
             $.ajax({
                 url: $("#url_path").val()+"/admin/getallproduct",
@@ -402,7 +437,7 @@ var element = jQuery("#product");
                     });
                 }
             });
-           
+
             var element = jQuery("#category");
             $.ajax({
                 url:$("#url_path").val()+"/admin/getallsubcategory",
@@ -444,7 +479,7 @@ var element = jQuery("#product");
                 }
             });
           function changeproductdiv(){
-          
+
               if(document.getElementById("coupon_on").checked == true){
                 document.getElementById("productcoupon").style.display="block";
                 document.getElementById("categorycoupon").style.display="none";
@@ -452,7 +487,7 @@ var element = jQuery("#product");
                 document.getElementById("productcoupon").style.display="none";
                 document.getElementById("categorycoupon").style.display="block";
               }
-          } 
+          }
             $(document).ready(function() {
             $('#couponmainTable').DataTable({
                 processing: true,
@@ -482,7 +517,7 @@ var element = jQuery("#product");
         });
         function addcoupon() {
             window.location.href = $("#url_path").val()+"/admin/addcoupon";
-        }   
+        }
 $(document).ready(function() {
             $('#featuretable').DataTable({
                 processing: true,
@@ -559,13 +594,13 @@ $(document).ready(function() {
                 }],
                  order:[[0,"DESC"]]
             });
-        });  
+        });
 function chnagevalue(val) {
-               
+
                         var totalrow = $("#totalrow").val();
                         for (var i = 1; i <= totalrow; i++) {
                             if ($("#editval" + i).length != 0) {
-                                
+
                                 $.ajax({
                                     url: $("#url_path").val()+"/admin/getdatatranslation" + "/" + i,
                                     data: {},
@@ -588,8 +623,8 @@ function chnagevalue(val) {
                             }
                         });
 
-               
-            
+
+
         }
 
         function closeedit() {
@@ -636,10 +671,10 @@ function chnagevalue(val) {
                             });
                  }
                 else{
-                       alert('This function is currently disable as it is only a demo website, in your admin it will work perfect'); 
-                        closeedit();    
-                }          
-        }      
+                       alert('This function is currently disable as it is only a demo website, in your admin it will work perfect');
+                        closeedit();
+                }
+        }
 $('#fixed_form').keypress(function(event) {
         var keycode = event.which;
         if (!(event.shiftKey == false && (keycode == 46 || keycode == 8 || keycode == 37 || keycode == 39 || (keycode >= 48 && keycode <= 57)))) {
@@ -651,7 +686,7 @@ $('#fixed_form').keypress(function(event) {
         if (!(event.shiftKey == false && (keycode == 46 || keycode == 8 || keycode == 37 || keycode == 39 || (keycode >= 48 && keycode <= 57)))) {
             event.preventDefault();
         }
-    });    
+    });
 function editdeal(deal_id, offer_id) {
             console.log(offer_id);
             document.getElementById("editdeal").style.display = "block";
@@ -707,7 +742,7 @@ function editdeal(deal_id, offer_id) {
                          }else{
                                 return "";
                          }
-                       
+
                     }
                 }, {
                     targets: 2,
@@ -717,10 +752,10 @@ function editdeal(deal_id, offer_id) {
                              var str = data.split(",");
                              var url = $("#url_path").val()+'/admin/editoffer' + "/" + str[1];
                              return '<a href=' + url + ' style="text-decoration: underline;color: blue;">' + str[0] + '</a>';
-                        }   
+                        }
                         else{
                             return "";
-                        }                    
+                        }
                     }
                 }],
                  order:[[0,"DESC"]]
@@ -768,7 +803,7 @@ function editdeal(deal_id, offer_id) {
                          }else{
                                 return "";
                          }
-                       
+
                     }
                 }, {
                     targets: 2,
@@ -778,10 +813,10 @@ function editdeal(deal_id, offer_id) {
                              var str = data.split(",");
                              var url = $("#url_path").val()+'/admin/editoffer/' + "/" + str[1];
                              return '<a href=' + url + ' style="text-decoration: underline;color: blue;">' + str[0] + '</a>';
-                        }   
+                        }
                         else{
                             return "";
-                        }                    
+                        }
                     }
                 }],
                  order:[[0,"DESC"]]
@@ -796,8 +831,8 @@ function editdeal(deal_id, offer_id) {
             else{
                   alert($("#offer_deal_lang").val());
             }
-            
-        }    
+
+        }
  function addoffer(val) {
             window.location.href = $("#url_path").val()+"/admin/addoffersection" + "/" + val;
         }
@@ -851,7 +886,7 @@ function editdeal(deal_id, offer_id) {
         if (!(event.shiftKey == false && (keycode == 46 || keycode == 8 || keycode == 37 || keycode == 39 || (keycode >= 48 && keycode <= 57)))) {
             event.preventDefault();
         }
-    });        
+    });
 
     function getproductprice(val){
          $.ajax({
@@ -864,9 +899,9 @@ function editdeal(deal_id, offer_id) {
             });
     }
     function changeofferdiv(val){
-      
+
         if(val==1){
-           
+
             $("#category_id").attr("required",true);
             $("#fixed").attr("required",true);
             $("#product_id").attr("required",false);
@@ -874,7 +909,7 @@ function editdeal(deal_id, offer_id) {
             document.getElementById("categorydiv").style.display="block";
             document.getElementById("productdiv").style.display="none";
             document.getElementById("coupondiv").style.display="none";
-            
+
         }
         if(val==3){
             $("#category_id").attr("required",false);
@@ -908,12 +943,12 @@ function editdeal(deal_id, offer_id) {
                      method:"GET",
                      data: { },
                      success: function( str ) {
-                         var data = JSON.parse(str); 
-                         $("#coupon_discount_value").val(data.value);                          
+                         var data = JSON.parse(str);
+                         $("#coupon_discount_value").val(data.value);
                          $("#start_date").val(data.start_date);
                          $("#end_date").val(data.end_date);
                        }
-                    }); 
+                    });
     }
     function checkofferprice(val){
         var sel_price=$("#mrp").val();
@@ -932,7 +967,7 @@ function editdeal(deal_id, offer_id) {
           alert($("#offer_price_error").val());
            $("#offer_price").val("");
         }
-    }   
+    }
  $(document).ready(function () {
            $('#normalofferTable').DataTable({
               processing: true,
@@ -953,12 +988,12 @@ function editdeal(deal_id, offer_id) {
                   render: function(data) {
                         return '<img src="'+data+'" style="height:50px">';
                   }
-                }   
+                }
             ],
              order:[[0,"DESC"]]
           });
-       });  
-         
+       });
+
          function addsensonal() {
             window.location.href = $("#url_path").val()+"/admin/add_sensonal_offer";
         }
@@ -991,7 +1026,7 @@ function editdeal(deal_id, offer_id) {
                 }],
                  order:[[0,"DESC"]]
             });
-        });           
+        });
 function change_record(data) {
             if (confirm($("#confirm_alert").val())) {
                 window.location.href =data;
@@ -1053,8 +1088,8 @@ $(document).ready(function() {
             else{
                 window.location.href = $("#url_path").val()+"/admin/changeorderstatus" + "/" + order_id + "/" + status_id;
             }
-            
-        }    
+
+        }
   $(document).ready(function() {
             $('#order2myTable').DataTable({
                 processing: true,
@@ -1082,7 +1117,7 @@ $(document).ready(function() {
         });
           function printDiv() {
         window.frames['ifrm'].print();
-    }   
+    }
      function addrowattribute() {
         var lastrow=$("#totalrow").val();
         var newrow=parseInt(lastrow)+1;
@@ -1091,7 +1126,7 @@ $(document).ready(function() {
         $("#totalrow").val(newrow);
     }
 
-   
+
      function saveoption(){
          var set_id=$("#set_id").val();
          var name=$("#name").val();
@@ -1115,8 +1150,8 @@ $(document).ready(function() {
          else{
              alert($("#requiredfields").val());
          }
-         
-    }  
+
+    }
     function addoptionrow() {
         var lastrow=$("#totalrow").val();
         var newrow=parseInt(lastrow)+1;
@@ -1145,8 +1180,8 @@ $(document).ready(function() {
          else{
              alert($("#requiredfields").val());
          }
-         
-    }   
+
+    }
 
  $(document).ready(function () {
        $('#attributeTable').DataTable({
@@ -1163,8 +1198,8 @@ $(document).ready(function() {
           order:[[0,"DESC"]]
       });
    });
-    
-   
+
+
    function addattribute(){
       window.location.href=$("#url_path").val()+"/admin/addattribute";
    }
@@ -1181,7 +1216,7 @@ $(document).ready(function() {
           order:[[0,"DESC"]]
       });
    });
-  
+
 
     function editset(id){
        $.ajax( {
@@ -1191,7 +1226,7 @@ $(document).ready(function() {
              $('#id').val(id);
              $("#edit_set").val(data);
            }
-        }); 
+        });
     }
       $(document).ready(function () {
        $('#optionsTable').DataTable({
@@ -1207,8 +1242,8 @@ $(document).ready(function() {
           order:[[0,"DESC"]]
       });
    });
-  
-   
+
+
    function addoption(){
       window.location.href=$("#url_path").val()+"/admin/addoption";
    }
@@ -1229,12 +1264,12 @@ $(document).ready(function() {
               render: function(data) {
                     return '<img src="'+data+'" style="height:50px">';
               }
-            }   
+            }
         ],
          order:[[0,"DESC"]]
       });
    });
-   
+
    function addcatlog(){
      window.location.href=$("#url_path").val()+"/admin/savecatalog/0/1";
    }
@@ -1275,12 +1310,12 @@ $(document).ready(function() {
               render: function(data) {
                     return '<img src="'+data+'" style="height:50px">';
               }
-            }   
+            }
         ],
          order:[[0,"DESC"]]
       });
    });
-    
+
     $(document).ready(function () {
        $('#pageTable').DataTable({
           processing: true,
@@ -1324,7 +1359,7 @@ $(document).ready(function() {
                          $.ajax( {
                          url: $("#url_path").val()+"/admin/savegeneralsetting",
                          method:"post",
-                         data: { 
+                         data: {
                             email:email,
                             phone:phone,
                             address:address,
@@ -1347,9 +1382,9 @@ $(document).ready(function() {
                             $('a[href="#general"]').removeClass('active');
                             $('a[href="#login"]').addClass('active');
                             $("#login").addClass('in show active');
-    
+
                          }
-                       });  
+                       });
                   }
                   else{
                         alert($("#requiredfields").val());
@@ -1360,7 +1395,7 @@ $(document).ready(function() {
                  var facebook_id=$("#facebook_id").val();
                  var facebook_secret=$("#facebook_secret").val();
                  var google_id=$("#google_id").val();
-                 var google_secret=$("#google_secret").val();                
+                 var google_secret=$("#google_secret").val();
                  var is_facebook_required=0;
                  var is_google_required=0;
                  if ($("#is_google_required").prop("checked")) {
@@ -1369,11 +1404,11 @@ $(document).ready(function() {
                  if ($("#is_facebook_required").prop("checked")) {
                             is_facebook_required=1;
                  }
-                 
+
                          $.ajax( {
                          url: $("#url_path").val()+"/admin/savesoicalsetting",
                          method:"post",
-                         data: { 
+                         data: {
                             facebook_id:facebook_id,
                             facebook_secret:facebook_secret,
                             google_id:google_id,
@@ -1386,10 +1421,10 @@ $(document).ready(function() {
                             $('a[href="#login"]').removeClass('active');
                             $('a[href="#shipping"]').addClass('active');
                             $("#shipping").addClass('in show active');
-    
+
                          }
-                       });  
-               
+                       });
+
                }
                   $(document).ready(function () {
                        $('#shippingTable').DataTable({
@@ -1410,18 +1445,18 @@ $(document).ready(function() {
                      url: $("#url_path").val()+"/admin/editshipping"+"/"+id,
                      data: { },
                      success: function( str ) {
-                         var data = JSON.parse(str);                           
+                         var data = JSON.parse(str);
                          $('#id').val(id);
                          $("#label").val(data.label);
                          $("#cost").val(data.cost);
                        }
-                    }); 
+                    });
                 }
 
                 function changepayment(val){
                     var payment_id=val;
                     var label=$("#pay"+val+"_label").val();
-                    var description=$("#pay"+val+"_desc").val();                    
+                    var description=$("#pay"+val+"_desc").val();
                     var status=0;
                     var key="";
                     var secret="";
@@ -1446,7 +1481,7 @@ $(document).ready(function() {
                          $.ajax( {
                                          url: $("#url_path").val()+"/admin/savepaymentdata",
                                          method:"post",
-                                         data: { 
+                                         data: {
                                             id:payment_id,
                                             label:label,
                                             description:description,
@@ -1469,14 +1504,14 @@ $(document).ready(function() {
                                             $('a[href="#pay'+fd+'"]').removeClass('active');
                                             $('a[href="#pay'+sd+'"]').addClass('active');
                                             $("#pay"+sd).addClass('in show active');
-                    
+
                                          }
-                       });  
+                       });
                   }
                   else{
                         alert($("#requiredfields").val());
                   }
-                }   
+                }
  $(document).ready(function () {
        $('#QuestionTable').DataTable({
           processing: true,
@@ -1486,10 +1521,10 @@ $(document).ready(function() {
             {data: 'id'    , name: 'id'},
             {data: 'topic'  , name: 'topic'},
             {data: 'action', name:'action'}
-         ],         
+         ],
       });
    });
-   
+
    function editsupport(id){
        $.ajax( {
                      url: $("#url_path").val()+ "/admin/editsupport"+"/"+id,
@@ -1500,7 +1535,7 @@ $(document).ready(function() {
                          $("#edit_topicname").val(data.topic);
                      }
                  });
-   }   
+   }
     $(document).ready(function () {
        $('#quesdatatable').DataTable({
           processing: true,
@@ -1511,11 +1546,11 @@ $(document).ready(function() {
             {data: 'ques'  , name: 'ques'},
             {data: 'ans'  , name: 'ans'},
             {data: 'action', name:'action'}
-         ],  
+         ],
           order:[[0,"DESC"]]
       });
    });
-   
+
    function editques(id){
        $.ajax( {
                      url: $("#url_path").val()+"/admin/editques"+"/"+id,
@@ -1527,7 +1562,7 @@ $(document).ready(function() {
                          $("#edit_ans").val(data.answer);
                      }
                  });
-   }             
+   }
      function checkbothpwd(val){
         var password=$("#password").val();
         if(val!=password){
@@ -1547,11 +1582,11 @@ $(document).ready(function() {
             {data: 'email'  , name: 'email'},
             {data: 'phone'  , name: 'phone'},
             {data: 'action', name:'action'}
-         ],   
+         ],
           order:[[0,"DESC"]]
       });
    });
-   
+
    function edituser(id){
        $.ajax( {
                      url: $("#url_path").val()+"/admin/edituser"+"/"+id,
@@ -1577,7 +1612,7 @@ $(document).ready(function() {
             {data: 'email'  , name: 'email'},
             {data: 'phone'  , name: 'phone'},
             {data: 'action', name:'action'}
-         ],  
+         ],
           order:[[0,"DESC"]]
       });
    });
@@ -1614,15 +1649,15 @@ $(document).ready(function() {
             {data: 'subject'  , name: 'subject'},
             {data: 'message'  , name: 'message'},
             {data: 'action', name:'action'}
-         ],    
+         ],
           order:[[0,"DESC"]]
       });
    });
    $(document).ready(function () {
        $('#roleTable').DataTable({
-        
+
       });
-   }); 
+   });
       $(document).ready(function () {
                                $('#latestorderTable').DataTable({
                                   processing: true,
@@ -1655,7 +1690,7 @@ $(document).ready(function() {
                                  ],
                                  order:[[0,"DESC"]]
                               });
-                           });                 
+                           });
    $('#coupon_report').DataTable({
                         processing: true,
                         serverSide: true,
@@ -1666,13 +1701,13 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order', name:'order'},
                           {data: 'total', name:'total'},
-                       ],  
+                       ],
                         dom: 'Bfrtip',
                         buttons: [
                            'excel', 'pdf'
-                        ]       
+                        ]
                 });
-   
+
     function filterreport(report_id){
        var txt="";
        $("#coupon_report").dataTable().fnDestroy()
@@ -1688,7 +1723,7 @@ $(document).ready(function() {
        $("#add_coupon_report").dataTable().fnDestroy()
         if(report_id==1){
               txt=txt+'<div class="form-group has-success"><label for="start_date" class="control-label mb-1">'+$("#start_date_txt").val()+'</label><input type="text" class="form-control" name="start_date" id="start_date" ></div><div class="form-group has-success" ><label for="start_date" class="control-label mb-1">'+$("#end_date_txt").val()+'</label><input type="text" class="form-control" name="end_date" id="end_date"></div><div class="form-group has-success"><label for="status" class="control-label mb-1">'+$("#order_status_txt").val()+'</label><select name="order_status" id="order_status" class="form-control"><option value="">'+$("#select_txt").val()+'</option><option value="6">'+$("#canceled_txt").val()+'</option><option value="5">'+$("#completed_txt").val()+'</option><option value="2">'+$("#on_hold_txt").val()+'</option><option value="3">'+$("#pending_txt").val()+'</option><option value="1">'+$("#processing_txt").val()+'</option><option value="7">'+$("#refunded_txt").val()+'</option><option value="4">'+$("#out_of_delivery_txt").val()+'</option></select></div><div class="form-group has-success"><label for="coupon_code" class="control-label mb-1"> '+$("#coupon_code_txt").val()+'</label><input type="text" name="coupon_code" id="coupon_code" class="form-control"></div>';
-                
+
                 $('#coupon_report').DataTable({
                         processing: true,
                         serverSide: true,
@@ -1699,13 +1734,13 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order', name:'order'},
                           {data: 'total', name:'total'},
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excel', 'pdf'
-                        ]         
+                        ]
                 });
-            
+
         }
         else if(report_id==2){
               txt=txt+'<div class=" form-group has-success"><label for="start_date" class="control-label mb-1">'+$("#start_date_txt").val()+'</label><input type="text" class="form-control" name="start_date" id="start_date" ></div><div class=" form-group has-success" ><label for="start_date" class="control-label mb-1">'+$("#end_date_txt").val()+'</label><input type="text" class="form-control" name="end_date" id="end_date"></div> <div class=" form-group has-success"><label for="status" class="control-label mb-1">'+$("#order_status_txt").val()+'</label><select name="order_status" id="order_status" class="form-control"><option value="">'+$("#select_txt").val()+'</option><option value="6">'+$("#canceled_txt").val()+'</option><option value="5">'+$("#completed_txt").val()+'</option><option value="2">'+$("#on_hold_txt").val()+'</option><option value="3">'+$("#pending_txt").val()+'</option><option value="1">'+$("#processing_txt").val()+'</option><option value="7">'+$("#refunded_txt").val()+'</option><option value="4">'+$("#out_of_delivery_txt").val()+'</option></select></div><div class="form-group has-success"><div class=" form-group has-success"><label for="customer_name" class="control-label mb-1">'+$("#cus_name_txt").val()+'</label><input type="text" name="customer_name" id="customer_name" class="form-control"></div> <div class=" form-group has-success"><label for="status" class="control-label mb-1">'+$("#cus_email_txt").val()+'</label><input type="text" name="customer_email" id="customer_email" class="form-control"></div>';
@@ -1719,14 +1754,14 @@ $(document).ready(function() {
                           {data: 'email' , name: 'email'},
                           {data: 'order' , name:  'order'},
                           {data: 'total' , name:'total'},
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excel', 'pdf'
-                        ]  
+                        ]
 
                 });
-               
+
         }
         else if(report_id==3){
               txt=txt+'<div class=" form-group has-success"><label for="start_date" class="control-label mb-1">'+$("#start_date_txt").val()+'</label><input type="text" class="form-control" name="start_date" id="start_date" ></div><div class=" form-group has-success" ><label for="start_date" class="control-label mb-1">'+$("#end_date_txt").val()+'</label><input type="text" class="form-control" name="end_date" id="end_date"></div> <div class=" form-group has-success"><label for="status" class="control-label mb-1">'+$("#order_status_txt").val()+'</label><select name="order_status" id="order_status" class="form-control"><option value="">'+$("#select_txt").val()+'</option><option value="6">'+$("#canceled_txt").val()+'</option><option value="5">'+$("#completed_txt").val()+'</option><option value="2">'+$("#on_hold_txt").val()+'</option><option value="3">'+$("#pending_txt").val()+'</option><option value="1">'+$("#processing_txt").val()+'</option><option value="7">'+$("#refunded_txt").val()+'</option><option value="4">'+$("#out_of_delivery_txt").val()+'</option></select></div><div class=" form-group has-success"><label for="product_name" class="control-label mb-1">'+$("#product_txt").val()+'</label><input type="text" name="product_name" id="product_name" class="form-control"></div><div class=" form-group has-success"><label for="status" class="control-label mb-1">'+$("#SKU_txt").val()+'</label><input type="text" name="sku" id="sku" class="form-control"></div>';
@@ -1738,11 +1773,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'product'  , name: 'product'},
                           {data: 'qty' , name: 'qty'}
-                       ],     
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]     
+                        ]
                 });
         }
         else if(report_id==4){
@@ -1755,11 +1790,11 @@ $(document).ready(function() {
                           {data: 'product'  , name: 'product'},
                           {data:'sku',name:'sku'},
                           {data: 'stock'  , name: 'stock'}
-                       ],    
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]      
+                        ]
                 });
         }
         else if(report_id==5){
@@ -1776,11 +1811,11 @@ $(document).ready(function() {
                           {data: 'shipping' , name: 'shipping'},
                           {data: 'tax' , name: 'tax'},
                           {data: 'total' , name: 'total'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==6){
@@ -1794,11 +1829,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order' , name: 'order'},
                           {data: 'total' , name: 'total'}
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]        
+                        ]
                 });
         }
         else if(report_id==7){
@@ -1812,11 +1847,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order' , name: 'order'},
                           {data: 'total' , name: 'total'}
-                       ],    
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]      
+                        ]
                 });
         }
         else if(report_id==8){
@@ -1829,11 +1864,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'name'  , name: 'name'},
                           {data: 'email' , name: 'email'}
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]        
+                        ]
                 });
         }
         else if(report_id==9){
@@ -1847,11 +1882,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'sku'   , name: 'sku'},
                           {data: 'order'  ,name: 'order'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==10){
@@ -1864,11 +1899,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'name'  , name: 'name'},
                           {data: 'email' , name: 'email'}
-                       ],   
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]       
+                        ]
                 });
         }
         else if(report_id==11){
@@ -1882,11 +1917,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'code' , name: 'code'},
                           {data: 'rate' , name: 'rate'}
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]        
+                        ]
                 });
         }
         else{
@@ -1900,19 +1935,19 @@ $(document).ready(function() {
                             dateFormat: "MM dd,yy",
                         });
                         function customRange(input) {
-                    
+
                         if (input.id == 'end_date') {
                             var minDate = new Date($('#start_date').val());
                             minDate.setDate(minDate.getDate() + 1)
-                    
+
                             return {
                                 minDate: minDate
-                    
+
                             };
                         }
-                    
+
                         return {}
-                    
+
                     }
                   if(report_id==1){
                       document.getElementById("coupon_report").style.display="inline-table";
@@ -1982,7 +2017,7 @@ $(document).ready(function() {
                   }
     }
 
-       
+
 
 
     function filterdata(){
@@ -1996,7 +2031,7 @@ $(document).ready(function() {
                 start_date="abc";
                 end_date="abc";
             }
-            
+
             if(orderstatus==""){
                 orderstatus=0;
             }
@@ -2014,11 +2049,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order', name:'order'},
                           {data: 'total', name:'total'},
-                       ],   
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]       
+                        ]
                 });
         }
         else if(report_id==2){
@@ -2051,13 +2086,13 @@ $(document).ready(function() {
                           {data: 'email' , name: 'email'},
                           {data: 'order', name:'order'},
                           {data: 'total', name:'total'},
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
-            
+
         }
         else if(report_id==3){
             var start_date=$("#start_date").val();
@@ -2087,11 +2122,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'product'  , name: 'product'},
                           {data: 'qty' , name: 'qty'}
-                       ],     
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]     
+                        ]
                 });
 
         }
@@ -2117,11 +2152,11 @@ $(document).ready(function() {
                           {data: 'product'  , name: 'product'},
                           {data:'sku',name:'sku'},
                           {data: 'stock'  , name: 'stock'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==5){
@@ -2148,16 +2183,16 @@ $(document).ready(function() {
                           {data: 'shipping' , name: 'shipping'},
                           {data: 'tax' , name: 'tax'},
                           {data: 'total' , name: 'total'}
-                       ],   
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]       
+                        ]
                 });
         }
         else if(report_id==6){
             var start_date=$("#start_date").val();
-            var end_date=$("#end_date").val();            
+            var end_date=$("#end_date").val();
             var shipping_type=$("#shipping_type").val();
             if(start_date==""&&end_date==""){
                 start_date="abc";
@@ -2176,11 +2211,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'order' , name: 'order'},
                           {data: 'total' , name: 'total'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==7){
@@ -2204,11 +2239,11 @@ $(document).ready(function() {
                           {data: 'tax_name'  , name: 'tax_name'},
                           {data: 'order' , name: 'order'},
                           {data: 'total' , name: 'total'}
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]        
+                        ]
                 });
 
         }
@@ -2228,11 +2263,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'name'  , name: 'name'},
                           {data: 'email' , name: 'email'}
-                       ],   
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]       
+                        ]
                 });
         }
         else if(report_id==9){
@@ -2252,11 +2287,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'sku'   , name: 'sku'},
                           {data: 'order'  ,name: 'order'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==10){
@@ -2275,11 +2310,11 @@ $(document).ready(function() {
                           {data: 'date'  , name: 'date'},
                           {data: 'name'  , name: 'name'},
                           {data: 'email' , name: 'email'}
-                       ], 
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]         
+                        ]
                 });
         }
         else if(report_id==11){
@@ -2299,11 +2334,11 @@ $(document).ready(function() {
                           {data: 'name'  , name: 'name'},
                           {data: 'code' , name: 'code'},
                           {data: 'rate' , name: 'rate'}
-                       ],  
+                       ],
                        dom: 'Bfrtip',
                         buttons: [
                            'excelFlash', 'excel', 'pdf'
-                        ]        
+                        ]
                 });
         }
         else{
@@ -2381,8 +2416,8 @@ function play_sound() {
             var audioElement = document.createElement('audio');
             audioElement.autoplay = true;
             audioElement.load();
-            audioElement.addEventListener("load", function() { 
-                audioElement.play(); 
+            audioElement.addEventListener("load", function() {
+                audioElement.play();
             }, true);
             audioElement.src = source;
         }
@@ -2394,7 +2429,7 @@ function play_sound() {
                     dataType:"json",
                     success:function(resp) {
                         var data = resp.response;
-                      
+
                         if(resp.status == 200){
                             if(data.total > 0){
                                 document.getElementById("ordercount").innerHTML=data.total;
@@ -2402,12 +2437,12 @@ function play_sound() {
                                 $('#bell-animation').addClass('icon-anim-pulse');
                                 $('.notification-badge').addClass('badge-danger');
                                 play_sound();
-                               
+
                             } else{
                                 document.getElementById("ordercount").innerHTML=0;
                                 document.getElementById("notificationmsg").innerHTML=$("#orders_pending").val();
                                    document.getElementById("notificationshow").style.display="none";
-                               
+
                             }
                         } else {
                              document.getElementById("ordercount").innerHTML=0;
@@ -2424,7 +2459,7 @@ function play_sound() {
                 have_notification();
             },5000);
         });
-      
+
          function checknotify(){
                 $.ajax({
                     url:$("#url_path").val()+"/admin/notification/1",
@@ -2438,16 +2473,16 @@ function play_sound() {
                             $('.notification-badge').removeClass('badge-danger');
                         }
                     }
-                });       
+                });
          }
-         
+
           function demofun(){
             alert('This function is currently disable as it is only a demo website, in your admin it will work perfect');
          }
          function setupemail(){
              alert($("#setemail").val());
          }
-         
+
          function changeboxoption(val,fields){
              if($("#isemailset").val()==0){
                  $("#"+fields).attr("checked",false);
@@ -2455,4 +2490,4 @@ function play_sound() {
              }
          }
         // load new notifications
-       
+

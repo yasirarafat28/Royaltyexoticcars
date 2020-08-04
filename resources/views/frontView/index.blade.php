@@ -252,7 +252,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -266,7 +266,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -280,7 +280,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -294,7 +294,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -308,7 +308,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -322,7 +322,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
@@ -340,7 +340,7 @@
                     <div class="car-list-content">
                         <div class="row">
                             @for($i=0;$i<8;$i++)
-                                <div class="col-md-3 mb-3 mt-3">
+                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
                                     @include('frontView.partials.vehicle-list')
                                 </div>
                             @endfor
