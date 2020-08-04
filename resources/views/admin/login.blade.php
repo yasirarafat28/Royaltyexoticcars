@@ -8,12 +8,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="apple-touch-icon" href="apple-icon.png">
       <link rel="shortcut icon" href="favicon.ico">
-      <link rel="stylesheet" href="{{url('admin/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
-      <link rel="stylesheet" href="{{url('admin/vendors/font-awesome/css/font-awesome.min.css')}}">
-      <link rel="stylesheet" href="{{url('admin/vendors/themify-icons/css/themify-icons.css')}}">
-      <link rel="stylesheet" href="{{url('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-      <link rel="stylesheet" href="{{url('admin/vendors/selectFX/css/cs-skin-elastic.css')}}">
-      <link rel="stylesheet" href="{{url('admin/assets/css/style.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/vendors/font-awesome/css/font-awesome.min.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/vendors/themify-icons/css/themify-icons.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/vendors/selectFX/css/cs-skin-elastic.css')}}">
+      <link rel="stylesheet" href="{{url('admin-asset/assets/css/style.css')}}">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
    </head>
    <body class="bg-dark">
@@ -57,14 +57,14 @@
                         <a href="{{url('document')}}" style="color: blue !important;float: right;">{{__('messages.document')}}</a>
                      </div>
                   </form>
-                   
+
                </div>
             </div>
          </div>
       </div>
-      <script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>
-      <script src="{{asset('admin/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
-      <script src="{{asset('admin/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-      <script src="{{asset('admin/assets/js/main.js')}}"></script>
+      <script src="{{asset('admin-asset/vendors/jquery/dist/jquery.min.js')}}"></script>
+      <script src="{{asset('admin-asset/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
+      <script src="{{asset('admin-asset/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+      <script src="{{asset('admin-asset/assets/js/main.js')}}"></script>
    </body>
 </html>

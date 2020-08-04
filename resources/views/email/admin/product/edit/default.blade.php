@@ -34,7 +34,7 @@
                 </div>
                 <div class="card-body">
                     <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" />
-                  
+
                     <div class="tab-content pl-3 p-1" id="myTabContent">
                         <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="cmr1">
@@ -140,8 +140,8 @@
                                                                 </button>
                                                                @else
                                                                          <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="button" onclick="Savegeneralinfo()">{{__('messages.save')}}</button>
-                                                               @endif                                     
-                                                            
+                                                               @endif
+
                                                         </div>
                                                     </div>
                                                 </form>
@@ -181,8 +181,8 @@
                                                                 </button>
                                                                @else
                                                                        <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="button" onclick="saveproductprice()">{{__('messages.save')}}</button>
-                                                               @endif 
-                                                      
+                                                               @endif
+
                                                     </div>
 
                                                 </form>
@@ -218,8 +218,8 @@
                                                                 </button>
                                                                @else
                                                                     <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="button" onclick="SaveInventory()">{{__('messages.save')}}</button>
-                                                               @endif 
-                                                       
+                                                               @endif
+
                                                     </div>
 
                                                 </form>
@@ -231,12 +231,12 @@
                                                     <h4 class="orderdiv">{{__('messages.basic_img')}}</h4>
                                                     <div id="uploaded_image">
 
-                                                        <?php     
+                                                        <?php
                                                             if (isset($product->basic_image)) {
                                                                 $image1=asset('upload/product').'/'.$product->basic_image;
                                                             }
                                                             else{
-                                                                $image1=asset('admin/images/imgplaceholder.png');
+                                                                $image1=asset('admin-asset/images/imgplaceholder.png');
                                                             }
                                                         ?>
                                                             <div class="upload-btn-wrapper">
@@ -284,8 +284,8 @@
                                                                 </button>
                                                                @else
                                                                   <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="button" onclick="saveimages()">{{__('messages.save')}}</button>
-                                                               @endif 
-                                                   
+                                                               @endif
+
                                                 </div>
                                                 </form>
                                             </div>
@@ -338,7 +338,7 @@
                                                 </table>
                                             </div>
                                                 <div id="container"></div>
-                                              
+
                                                     <button type="button" class="btn btn-outline-secondary fleft" onclick="addrow()">{{__('messages.add_new_row')}}</button>
                                                       @if(Session::get("is_demo")=='1')
                                                                  <button type="button" onclick="return alert('This function is currently disable as it is only a demo website, in your admin it will work perfect')" class="btn btn-primary florig">
@@ -346,9 +346,9 @@
                                                                 </button>
                                                                @else
                                                                    <button type="button" class="btn btn-primary florig" onclick="saveattibute()">{{__('messages.save')}}</button>
-                                                               @endif 
-                                                 
-                                               
+                                                               @endif
+
+
                                             </form>
                                         </div>
                                         <div class="tab-pane fade pd10" id="custom-nav-option" role="tabpanel" aria-labelledby="custom-nav-option-tab">
@@ -362,7 +362,7 @@
                                                     <button type="button" class="btn btn-primary florig sav" onclick="SaveRelatedproduct()">{{__('messages.save')}}</button>
                                                 </div>
                                                 <input type="hidden" id="rel_pro" value="{{$product->related_product}}" />
-                                           
+
                                                 <table id="related_product" class="table table-striped table-bordered dttablewidth">
                                                     <thead>
                                                         <tr>
@@ -382,7 +382,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>

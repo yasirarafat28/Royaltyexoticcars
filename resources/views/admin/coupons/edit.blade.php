@@ -3,7 +3,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
 
-    <link href="{{asset('admin/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin-asset/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet" />
 
 @endsection
 
@@ -165,8 +165,8 @@
 
 
 @section('script')
-    <script src="{{asset('admin/plugins/momentjs/moment.js')}}"></script> <!-- Moment Plugin Js -->
-    <script src="{{asset('admin/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
+    <script src="{{asset('admin-asset/plugins/momentjs/moment.js')}}"></script> <!-- Moment Plugin Js -->
+    <script src="{{asset('admin-asset/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
     <script>
         function generate_code(id) {
             var result           = 'G';

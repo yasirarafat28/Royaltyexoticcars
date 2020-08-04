@@ -44,7 +44,7 @@
                                     <a class="nav-item nav-link tabdiv" id="custom-nav-imgls-tab" data-toggle="tab" href="#custom-nav-imgls" role="tab" aria-controls="custom-nav-imgls" aria-selected="false">{{__('messages.images')}}</a>
                                     <a class="nav-item nav-link  tabdiv" id="custom-nav-attribute-tab" data-toggle="tab" href="#custom-nav-attribute" role="tab" aria-controls="custom-nav-attribute" aria-selected="true">{{__('messages.attribute')}}</a>
                                     <a class="nav-item nav-link tabdiv" id="custom-nav-option-tab" data-toggle="tab" href="#custom-nav-option" role="tab" aria-controls="custom-nav-option" aria-selected="false">{{__('messages.option')}}</a>
-                                    <a onclick="checkrelpro()" class="nav-item nav-link tabdiv" id="custom-nav-rel_pro-tab" data-toggle="tab" href="#custom-nav-rel_pro" role="tab" aria-controls="custom-nav-rel_pro" aria-selected="false">{{__('messages.realted_product')}}</a>     
+                                    <a onclick="checkrelpro()" class="nav-item nav-link tabdiv" id="custom-nav-rel_pro-tab" data-toggle="tab" href="#custom-nav-rel_pro" role="tab" aria-controls="custom-nav-rel_pro" aria-selected="false">{{__('messages.realted_product')}}</a>
                                  </div>
                               </nav>
                               <div class="tab-content col-md-12 p-0 " id="nav-tabContent">
@@ -127,12 +127,12 @@
                                           <div class="col-md-12 form-group rowset">
                                               @if(Session::get("is_demo")=='1')
                                                <button type="button" onclick="return alert('This function is currently disable as it is only a demo website, in your admin it will work perfect')" class="btn btn-primary btn-flat m-b-30 m-t-30">
-                                                    {{__('messages.save')}} 
+                                                    {{__('messages.save')}}
                                               </button>
                                              @else
                                                  <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="button" onclick="Savegeneralinfo()">{{__('messages.save')}}</button>
-                                             @endif 
-                                           
+                                             @endif
+
                                           </div>
                                        </div>
                                     </form>
@@ -208,7 +208,7 @@
                                           <div id="uploaded_image">
                                              <div class="upload-btn-wrapper">
                                                 <button class="btn imgcatlog">
-                                                <img src="{{asset('admin/images/imgplaceholder.png')}}" alt="..." class="img-thumbnail imgsize" id="basic_img" >
+                                                <img src="{{asset('admin-asset/images/imgplaceholder.png')}}" alt="..." class="img-thumbnail imgsize" id="basic_img" >
                                                 </button>
                                                 <input type="file" name="upload_image" id="upload_image" />
                                              </div>
@@ -220,7 +220,7 @@
                                        <div id="additional_image" class="fleft"></div>
                                        <div class="upload-btn-wrapper">
                                           <button class="btn imgcatlog" >
-                                          <img src="{{asset('admin/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
+                                          <img src="{{asset('admin-asset/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
                                           </button>
                                           <input type="file" name="add_image" id="add_image" />
                                        </div>
@@ -301,7 +301,7 @@
 <input type="hidden" id="up_pro" value="0" />
 <input type="hidden" id="cross_pro" value="0" />
 <input type="hidden" id="sku_already" value="{{__('messages_error_success.sku_already')}}">
-@stop 
+@stop
 @section('footer')
 <script type="text/javascript" src="{{asset('js/product.js')}}"></script>
 <script>

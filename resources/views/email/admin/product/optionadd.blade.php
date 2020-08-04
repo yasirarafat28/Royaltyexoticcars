@@ -1,4 +1,4 @@
-<script src="{{asset('admin/uikit/tests/js/test.js')}}"></script>
+<script src="{{asset('admin-asset/uikit/tests/js/test.js')}}"></script>
 <form>
    <div class="row">
       <div class="col-md-12">
@@ -65,8 +65,8 @@
                                         </button>
                                      @else
                                       <button type="button" class="btn btn-primary fleft" onclick="saveoptions()">{{__('messages.save')}}</button>
-                                     @endif 
-         
+                                     @endif
+
       </div>
    </div>
 </form>

@@ -11,7 +11,7 @@
    <div class="col-sm-8 float-left-1">
       <div class="page-header float-right float-left-1">
          <div class="page-title">
-            <ol class="breadcrumb text-right">               
+            <ol class="breadcrumb text-right">
                <li><a href="{{url('admin/product')}}">{{__('messages.catalog')}}</a></li>
                <li class="active">{{__('messages.save')}} {{__('messages.catalog')}}</li>
             </ol>
@@ -49,7 +49,7 @@
                                     <a class="nav-item nav-link <?= $tab==4?"active":"tabdiv" ?>" id="custom-nav-imgls-tab" data-toggle="tab" href="#custom-nav-imgls" role="tab" aria-controls="custom-nav-imgls" aria-selected="false">{{__('messages.images')}}</a>
                                     <a class="nav-item nav-link <?= $tab==5?"active":"tabdiv" ?>" id="custom-nav-attribute-tab" data-toggle="tab" href="#custom-nav-attribute" role="tab" aria-controls="custom-nav-attribute" aria-selected="true">{{__('messages.attribute')}}</a>
                                     <a class="nav-item nav-link <?= $tab==6?"active":"tabdiv" ?>" id="custom-nav-option-tab" data-toggle="tab" href="#custom-nav-option" role="tab" aria-controls="custom-nav-option" aria-selected="false">{{__('messages.option')}}</a>
-                                    <a class="nav-item nav-link tabdiv <?= $tab==7?"active":"tabdiv" ?>" id="custom-nav-rel_pro-tab" data-toggle="tab" href="#custom-nav-rel_pro" role="tab" aria-controls="custom-nav-rel_pro" aria-selected="false">{{__('messages.realted_product')}}</a>     
+                                    <a class="nav-item nav-link tabdiv <?= $tab==7?"active":"tabdiv" ?>" id="custom-nav-rel_pro-tab" data-toggle="tab" href="#custom-nav-rel_pro" role="tab" aria-controls="custom-nav-rel_pro" aria-selected="false">{{__('messages.realted_product')}}</a>
                                  </div>
                               </nav>
                               <div class="tab-content col-md-12 p-0 " id="nav-tabContent">
@@ -129,15 +129,15 @@
                                              </label>
                                              <input type="text" name="colorname" id="colorname"  value="<?= isset($data->color_name)?$data->color_name:""?>" value="" class=" form-control" >
                                           </div>
-                                          
+
                                           <div class="col-md-12 form-group rowset">
                                              @if(Session::get("is_demo")=='1')
                                              <button type="button" onclick="return alert('This function is currently disable as it is only a demo website, in your admin it will work perfect')" class="btn btn-primary btn-flat m-b-30 m-t-30">
-                                             {{__('messages.save')}} 
+                                             {{__('messages.save')}}
                                              </button>
                                              @else
                                              <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="submit">{{__('messages.save')}}</button>
-                                             @endif 
+                                             @endif
                                           </div>
                                        </div>
                                     </form>
@@ -213,7 +213,7 @@
                                  <div class="tab-pane fade <?= $tab==4?"show active":"" ?> pd10" id="custom-nav-imgls" role="tabpanel" aria-labelledby="custom-nav-imgls-tab">
                                     <h3>{{__('messages.images')}}</h3>
                                     <div class="tabdivcatlog"></div>
-                                    <form action="{{url('admin/saveproductimage')}}" method="post">                                   
+                                    <form action="{{url('admin/saveproductimage')}}" method="post">
                                        {{csrf_field()}}
                                         <input type="hidden" name="product_id" id="product1" value
                                        ="{{$product_id}}"/>
@@ -223,12 +223,12 @@
                                              <div class="upload-btn-wrapper">
                                                 <button class="btn imgcatlog">
                                                    <input type="hidden" name="real_basic_img" id="real_basic_img" value="<?= isset($data->basic_image)?$data->basic_image:""?>"/>
-                                                   <?php 
+                                                   <?php
                                                          if(isset($data->basic_image)){
                                                              $path=asset('upload/product')."/".$data->basic_image;
                                                          }
                                                          else{
-                                                             $path=asset('admin/images/imgplaceholder.png');
+                                                             $path=asset('admin-asset/images/imgplaceholder.png');
                                                          }
                                                    ?>
                                                 <img src="{{$path}}" alt="..." class="img-thumbnail imgsize"  id="basic_img" >
@@ -238,10 +238,10 @@
                                              </div>
                                           </div>
                                        </div>
-                                   
+
                                     <div class="mar20">
                                        <h4 class="orderdiv">{{__('messages.add_img')}}</h4>
-                                     
+
                                              <div id="additional_image" class="fleft">
                                                 <?php $i=0;?>
                                                 @if(isset($data->additional_image))
@@ -257,15 +257,15 @@
                                                       </div>
                                                       <?php $i++;?>
                                                    @endforeach
-                                                @endif                                                                                           
+                                                @endif
                                              </div>
                                              <div class="upload-btn-wrapper">
                                                       <button class="btn imgcatlog">
-                                                      <img src="{{asset('admin/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
+                                                      <img src="{{asset('admin-asset/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
                                                       </button>
                                                       <input type="file" name="add_image" id="add_image" />
                                                    </div>
-                                      </div>       
+                                      </div>
                                     <input type="hidden" name="add_total_img" id="add_total_img" value="{{$i}}" />
                                     <div class="row form-group col-md-12" style="margin-top: 15px;margin-left: 10px;">
                                           <button class="btn btn-primary btn-flat m-b-30 m-t-30" type="submit">{{__('messages.save')}}</button>
@@ -275,7 +275,7 @@
                                  <div class="tab-pane fade <?= $tab==5?"show active":"" ?>  pd10" id="custom-nav-attribute" role="tabpanel" aria-labelledby="custom-nav-attribute-tab">
                                     <h3>{{__('messages.attribute')}}</h3>
                                     <div class="tabdivcatlog"></div>
-                                     <form action="{{url('admin/saveproductattibute')}}" method="post">                                   
+                                     <form action="{{url('admin/saveproductattibute')}}" method="post">
                                        {{csrf_field()}}
                                         <input type="hidden" name="product_id" id="product1" value
                                        ="{{$product_id}}"/>
@@ -304,7 +304,7 @@
                                                                      </tr>
                                                                   </thead>
                                                                   <tbody id="morerow{{$i}}">
-                                                                     <?php 
+                                                                     <?php
                                                                            $label=explode(',',$da->attribute);
                                                                            $value=explode(",",$da->value);
                                                                      ?>
@@ -359,7 +359,7 @@
                                                                         <td><input required class="form-control" type="text" name="attributeset[0][value][]"></td>
                                                                         <td><button onclick="removeattrrow(0,1)" class="btn btn-danger"><i class="fa fa-trash f-s-25"></i></button></td>
                                                                      </tr>
-                                                                    
+
                                                                   </tbody>
                                                                </table>
                                                                <input type="hidden" name="totalattr0" id="totalattr0" value="0"/>
@@ -377,7 +377,7 @@
                                              @endif
                                           </div>
                                        </div>
-                                     
+
                                        <div id="container"></div>
                                        <div class="col-md-12 p-0">
                                           <button type="button" class="btn btn-outline-secondary fleft" onclick="addrow()">{{__('messages.add_new_row')}}</button>
@@ -393,7 +393,7 @@
                                  <div class="tab-pane fade <?= $tab==7?"show active":"" ?> pd10" id="custom-nav-rel_pro" role="tabpanel" aria-labelledby="custom-nav-rel_pro-tab">
                                     <h3>{{__('messages.realted_product')}}</h3>
                                     <div class="tabdivcatlog"></div>
-                                   <form action="{{url('admin/saverealtedprice')}}" method="post">                                   
+                                   <form action="{{url('admin/saverealtedprice')}}" method="post">
                                        {{csrf_field()}}
                                         <input type="hidden" name="product_id" id="product1" value
                                        ="{{$product_id}}"/>
@@ -434,13 +434,13 @@
 <input type="hidden" id="up_pro" value="0" />
 <input type="hidden" id="cross_pro" value="0" />
 <input type="hidden" id="sku_already" value="{{__('messages_error_success.sku_already')}}">
-@stop 
+@stop
 @section('footer')
 <script type="text/javascript" src="{{asset('js/product.js').'?v=wewe3'}}"></script>
 <script>
    CKEDITOR.replace('description');
 
-   
- 
+
+
 </script>
 @stop
