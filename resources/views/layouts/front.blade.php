@@ -738,14 +738,14 @@
 									</div>
 									<div class="nav__about--column about__column--links"><a href="/faqs"
 											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a><a
-											href="/faqs" id="Nav-Team-Link"
-											class="nav__about--link w-dropdown-link">Team</a><a href="/faqs"
+											href="/team" id="Nav-Team-Link"
+											class="nav__about--link w-dropdown-link">Team</a><a href="/jobs"
 											id="Nav-Jobs-Link" class="nav__about--link w-dropdown-link">Jobs</a><a
-											href="/faqs" id="Nav-Privacy-Link"
-											class="nav__about--link w-dropdown-link">Privacy</a><a href="/faqs"
+											href="/privacy" id="Nav-Privacy-Link"
+											class="nav__about--link w-dropdown-link">Privacy</a><a href="/terms"
 											id="Nav-Terms-Link" class="nav__about--link w-dropdown-link">Terms</a><a
-											href="/faqs" id="Nav-Cookies-Link"
-											class="nav__about--link w-dropdown-link">Cookies</a><a href="/faqs"
+											href="/cookies" id="Nav-Cookies-Link"
+											class="nav__about--link w-dropdown-link">Cookies</a><a href="/feedback"
 											id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 									</div>
 								</div>
@@ -756,7 +756,7 @@
 					</a><a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
 						target="_blank" class="nav__link w-inline-block">
 						<div>Vlog</div>
-					</a><a id="Shop-Link-Nav" href="#" class="nav__link w-inline-block">
+					</a><a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 						<div>Shop</div>
 					</a>
 				</div>
@@ -2076,10 +2076,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="policies"><a id="Privacy-Policy-Link" href="privacy.html"
-					class="footer__docs--link">Privacy</a><a id="Terms-of-Use-Link" href="terms.html"
-					class="footer__docs--link">Terms</a><a id="Disclaimer-Link" href="disclaimer.html"
-					class="footer__docs--link">Disclaimer</a><a id="Cookies-Policy-Link" href="cookies.html"
+			<div class="policies"><a id="Privacy-Policy-Link" href="/terms"
+					class="footer__docs--link">Privacy</a><a id="Terms-of-Use-Link" href="/terms"
+					class="footer__docs--link">Terms</a><a id="Disclaimer-Link" href="/terms"
+					class="footer__docs--link">Disclaimer</a><a id="Cookies-Policy-Link" href="/terms"
 					class="footer__docs--link">Cookies</a>
 				<div class="footer__embed w-embed"><button id="Preferences-Link" class="footer__docs--link"
 						type="button"

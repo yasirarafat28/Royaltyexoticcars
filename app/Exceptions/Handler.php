@@ -2,8 +2,12 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use PayPal\Exception\PayPalConnectionException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Redirect;
+use Input;
+use Session;
 
 class Handler extends ExceptionHandler
 {
@@ -29,10 +33,8 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Throwable  $exception
+     * @param  \Exception  $exception
      * @return void
-     *
-     * @throws \Exception
      */
     public function report(Throwable $exception)
     {
@@ -43,13 +45,21 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \Throwable
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
      */
     public function render($request, Throwable $exception)
     {
+        //check the specific exception
+        if ($exception instanceof PayPalConnectionException) {
+            //return with errors and with at the form data
+            Session::flash('message',__('messages.error_in_paypal')); 
+        Session::flash('alert-class', 'alert-danger');
+            return Redirect::back();
+        } 
+
         return parent::render($request, $exception);
-    }
+    } 
+    
+    
 }

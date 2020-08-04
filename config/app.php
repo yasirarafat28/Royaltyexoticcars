@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Barryvdh\TranslationManager\ManagerServiceProvider',
 
         /*
          * Package Service Providers...
@@ -174,6 +175,13 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Darryldecode\Cart\CartServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        MasterRO\LaravelXSSFilter\XSSFilterServiceProvider::class
 
     ],
 
@@ -207,7 +215,6 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
-        'Http' => Illuminate\Support\Facades\Http::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -226,6 +233,15 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
+        'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
+        'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'XSSCleaner' => MasterRO\LaravelXSSFilter\XSSCleanerFacade::class
 
     ],
 
