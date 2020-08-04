@@ -191,8 +191,8 @@
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
-                        <img src="/logo.png" class="logo" alt="">
-						<!--<div class="brand__icon"></div>-->
+                        <!--<img src="/logo.png" class="logo" alt="">-->
+						<div class="brand__icon"></div>
 						<div class="brand__text">Rental Exotic Beasts</div>
 					</a></div>
 				<div class="nav__links">
