@@ -351,7 +351,7 @@
         </div>
     </main>
 @endsection
-@section('script')
+<!--@section('script')
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
@@ -383,4 +383,4 @@
             });
         }
     </script>
-@endsection
+@endsection -->
