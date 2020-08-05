@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: Arial;
@@ -13,6 +14,10 @@
 
         * {
             box-sizing: border-box;
+        }
+
+        .input-group-addon.beautiful input[type="checkbox"], .input-group-addon.beautiful input[type="radio"] {
+            display: none;
         }
 
         .row {
@@ -139,7 +144,8 @@
 
     <div class="main">
         <h2>Responsive Checkout Form</h2>
-        <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack
+        <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns
+            stack
             on top of each other instead of next to each other.</p>
         <div class="container">
             <form action="/action_page.php">
@@ -156,10 +162,57 @@
                     <option value="usa">USA</option>
                 </select>
 
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
 
-                <input type="submit" value="Submit">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <div class="row">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon beautiful">
+                                    <input type="checkbox">
+                                </span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+
             </form>
         </div>
         <div class="row">
