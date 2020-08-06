@@ -39,6 +39,7 @@ Route::get('/team', 'FrontController@team');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
 Route::get('/book/checkout', 'FrontController@checkoutCar');
+Route::get('bookingcar', 'FrontController@bookingcar');
 
 
 

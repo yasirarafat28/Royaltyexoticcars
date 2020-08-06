@@ -15,7 +15,24 @@
     <h1 class="text-xl">Schedule Template</h1>
   </header>
 
+  <div class="imgcont" style="display: flex;">
+    <div class="imgdiv1">
+      <img src="5a10aaa4d85f4b0001a542b7_2017-lamborghini-huracan-convertible-red-exterior-profile-royalty-exotic-cars.jpg" style="width: 250px; height: 200px; margin: auto; padding: 40px;">
+    </div>
+    <div class="imgdescription" style="width: 200px; height: 100px;">
+      <h3>2018 Jeep Wrangler - White</h3>
+      Thursday, August 27th 2020 @ 10am - 2pm
+    </div>
+  </div>
 
+  <div class="page" style="display: flex; justify-content: space-between;">
+    <div class="prev">
+      <a href="#">Previous Month</a>
+    </div>
+    <div class="next">
+      <a href="#">Next Month</a>
+    </div>
+  </div>
   <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
     <div class="cd-schedule__timeline">
       <ul>
@@ -48,7 +65,7 @@
 
           <ul>
             <li class="cd-schedule__event">
-              <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+              <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="/book/checkout">
                 <em class="cd-schedule__name">Abs Circuit</em>
               </a>
             </li>
@@ -426,7 +443,7 @@
     <div class="cd-schedule__events">
       <ul>
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>01-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>11-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -450,7 +467,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>02-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>12-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -481,7 +498,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>03-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>13-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -512,7 +529,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>04-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>14-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -543,7 +560,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>05-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>15-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -617,7 +634,7 @@
     <div class="cd-schedule__events">
       <ul>
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>01-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>16-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -641,7 +658,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>02-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>17-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -672,7 +689,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>03-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>18-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -703,7 +720,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>04-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>19-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -734,7 +751,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>05-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>20-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -808,7 +825,7 @@
     <div class="cd-schedule__events">
       <ul>
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>01-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>21-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -832,7 +849,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>02-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>22-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -863,7 +880,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>03-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>23-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -894,7 +911,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>04-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>24-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -925,7 +942,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>05-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>25-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -999,7 +1016,7 @@
     <div class="cd-schedule__events">
       <ul>
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>01-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>26-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -1023,7 +1040,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>02-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>27-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -1054,7 +1071,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>03-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>28-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -1085,7 +1102,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>04-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>29-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
@@ -1116,7 +1133,7 @@
         </li>
 
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>05-Aug</span></div>
+          <div class="cd-schedule__top-info"><span>30-Aug</span></div>
 
           <ul>
             <li class="cd-schedule__event">
