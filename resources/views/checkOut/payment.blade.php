@@ -55,6 +55,8 @@
         }
 
         .container {
+            width: 80%;
+            margin: auto;
             background-color: #f2f2f2;
             padding: 5px 20px 15px 20px;
             border: 1px solid lightgrey;
@@ -143,8 +145,17 @@
 <body>
 
     <div class="main">
-        <h2>Online Booking Agreement</h2>
         <div class="container">
+            <div class="imgdiv">
+                <img src="/frontEnd/5af4be5feee5104947ba2c94_2018-ferrari-488-spyder-white-exterior-front-angle-royalty-exotic-cars.jpg"  style="width: 100px; height: 100px;">
+            </div>
+            <div class="imgdescription" style="width: 200px; height: 100px;">
+                <h3>2018 Jeep Wrangler - White</h3>
+                Thursday, August 27th 2020 @ 10am - 2pm
+            </div>
+        </div>
+        <div class="container">
+            <h2>Online Booking Agreement</h2>
             <form action="/action_page.php">
                 <label for="fname">Primary Driver's Full Name:</label>
                 <input type="text" id="fname" name="firstname" placeholder="As it appears on Driver's license">
@@ -189,51 +200,30 @@
                     <option value="canada">$0.00 No I dont want to buy this property</option>
                 </select>
 
-                <div style="width: 100%; height: 45px; margin: auto;">
-                    <input type="checkbox" id="fname"><span> am over the age of 25 </span>
+                <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
+                    <input type="checkbox" id="fname"><span> I am over the age of 25 </span>
                     All drivers must be over the age of 25.
                     *Passengers must be at least 4' 9" or weigh more than 40lbs.
                 </div>
 
-                <div style="width: 100%; height: 45px; ">
+                <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
                     <input type="checkbox" id="fname">I have a valid driver's license
                     All drivers must have a valid driver's license from their country of citizenship.
                     *International driver's must have passport present.
                 </div>
 
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
+                <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
+                    <input type="checkbox" id="fname">I agree to follow all state and federal laws
+                    Please drive in a safe, responsible, and legal manner.
+                    
+                    *Unsafe operation may result in fines/early termination of rental agreement.
                 </div>
 
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <div style="width: 100%; height: 45px; ">
-                    <input type="checkbox" id="fname">Option 1
-                </div>
-
-                <label for="country">Country</label>
+                <label for="country" style="margin-top: 6px;">How did you hear about us originally?</label>
                 <select id="country" name="country">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
+                    <option value="australia">Organic</option>
+                    <option value="canada">Social</option>
+                    <option value="usa">Location</option>
                 </select>
 
             </form>
