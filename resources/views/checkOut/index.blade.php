@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Schedule Template | CodyHouse</title>
+  <title>Schedule Car</title>
 </head>
 
 <body>
   <header class="cd-main-header text-center flex flex-column flex-center">
 
-    <h1 class="text-xl">Schedule Template</h1>
+    <h1 class="text-xl">Schedule Car</h1>
   </header>
 
   <div class="imgcont" style="display: flex;">
@@ -66,10 +66,10 @@
           <ul>
             <li class="cd-schedule__event">
               <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="/checkout">
-                <em class="cd-schedule__name">Abs Circuit</em>
+                <em class="cd-schedule__name">2018 Jeep Wrangler - White</em>
               </a>
             </li>
-            <a href="/bookCar" style="color:black;">2018 Jeep Wrangler - White</a>
+            <a href="/bookCar" style="color:black;">Click Here to book</a>
 
             <li class="cd-schedule__event">
               <a data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
@@ -1179,6 +1179,15 @@
 
     <div class="cd-schedule__cover-layer"></div>
   </div> <!-- .cd-schedule -->
+
+  <div class="page" style="display: flex; justify-content: space-between;">
+    <div class="prev">
+      <a href="#">Previous Month</a>
+    </div>
+    <div class="next">
+      <a href="#">Next Month</a>
+    </div>
+  </div>
 
   <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
   <script src="assets/js/main.js"></script>
