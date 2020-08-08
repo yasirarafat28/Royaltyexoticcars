@@ -28,7 +28,7 @@
                         {{__('messages.add_brands')}}
                     </button>
                     <div class="table-responsive dtdiv">
-                        <table id="brandTable" class="table table-striped table-bordered dttablewidth">
+                        <table id="" class="table table-striped table-bordered dttablewidth">
                             <thead>
                             <tr>
                                 <th>{{__('messages.id')}}</th>
@@ -39,7 +39,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($brands??array() as $item)
+                            @forelse($brands??array() as $item)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
 
@@ -116,7 +116,11 @@
 
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td class="text-center" colspan="4">    Sorry! No record found</td>
+                                </tr>
+                            @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -170,8 +174,4 @@
             </div>
         </div>
     </div>
-
-    @foreach($brands??array() as $item)
-
-    @endforeach
 @stop

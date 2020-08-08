@@ -34,16 +34,34 @@
                @endif
                <a  class="btn btn-primary btn-flat m-b-30 m-t-30 text-white" href="/admin/vehicles/create" >{{__('messages.add')}} Vehicle</a>
                <div class="table-responsive cmr1">
-                  <table id="productdataTable" class="table table-striped table-bordered dttablewidth" >
+                  <table id="vehicledataTable" class="table table-striped table-bordered dttablewidth" >
                      <thead>
                         <tr>
                            <th>{{__('messages.id')}}</th>
                            <th>{{__('messages.thumbnail')}}</th>
                            <th>{{__('messages.name')}}</th>
+                           <th>{{__('Type')}}</th>
                            <th>{{__('messages.price')}}</th>
                            <th>{{__('messages.action')}}</th>
                         </tr>
                      </thead>
+                      <tbody>
+                      @foreach($recordtts??array() as $vehicle)
+
+                          <tr>
+                              <td>{{$loop->iteration}}</td>
+                              <td>
+                                  <img src="{{url($vehicle->feature_image??'')}}" width="50px" alt="">
+                              </td>
+                              <td>
+                                  {{$vehicle->name}}
+                              </td>
+                              <td>
+                                  {{$vehicle->category->name??'N/A'}}
+                              </td>
+                          </tr>
+                      @endforeach
+                      </tbody>
                   </table>
                </div>
             </div>

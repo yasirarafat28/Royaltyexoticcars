@@ -7,6 +7,7 @@ use App\Model\Vehicle;
 use App\Model\VehicleBrand;
 use App\Model\VehicleCategory;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class VehicleController extends Controller
 {
@@ -17,7 +18,45 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        return view('admin.vehicles.index');
+
+        $records = Vehicle::orderBy('created_at','DESC')->get();
+        return view('admin.vehicles.index',compact('records'));
+    }
+
+
+
+    public function vehicledatatable (){
+        $category =Vehicle::with('category')->orderBy('created_at','DESC')->get();
+        return DataTables::of($category)
+            ->editColumn('id', function ($category) {
+                return $category->id;
+            })
+            ->editColumn('thumbnail', function ($category) {
+                return $category->feature_image;
+            })
+            ->editColumn('name', function ($category) {
+                return $category->name;
+            })
+            ->editColumn('category', function ($category) {
+                return $category->category->name??'N/A';
+            })
+            ->editColumn('price', function ($category) {
+                return $category->four_hour_price;
+            })
+            ->editColumn('action', function ($category) {
+                $editoption=url('admin/vehicles/'.$category->id.'/edit');
+                $showoption=url('admin/vehicles/'.$category->id);
+                $deletecatlog=url('admin/deletevehicle',array('id'=>$category->id));
+                if($category->status=='1'){
+                    $color="green";
+                }
+                else{
+                    $color="red";
+                }
+                $return = '<a  href="'.$editoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove"><i class="fa fa-edit f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a  href="'.$showoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Show"><i class="fa fa-eye f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a onclick="delete_record(' . "'" . $deletecatlog. "'" . ')" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove" style="margin-right: 10px;"><i class="fa fa-trash f-s-25" style="font-size: x-large;"></i></a>';
+                return $return;
+            })
+            ->make(true);
     }
 
     /**
@@ -65,7 +104,7 @@ class VehicleController extends Controller
         $vehicle->full_day = $request->full_day;
         $vehicle->full_day_price = $request->full_day_price;
         $vehicle->full_day_discount = $request->full_day_discount;
-        $vehicle->stock = $request->stock;
+        $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
         $vehicle->model = $request->model;
@@ -101,7 +140,8 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        return view('admin.vehicles.show',compact('vehicle'));
     }
 
     /**
@@ -112,7 +152,8 @@ class VehicleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        return view('admin.vehicles.show',compact('vehicle'));
     }
 
     /**
@@ -135,7 +176,9 @@ class VehicleController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $vehicle = Vehicle::destroy($id);
+        return back()->withSuccess('Vehicle removed successfully!');
     }
 
 

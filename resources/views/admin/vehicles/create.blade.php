@@ -205,11 +205,11 @@
 
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.start')}}</label>
-                                    <input id="spe_pri_start" name="available_from" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                    <input id="spe_pri_start" name="available_from" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.to')}}</label>
-                                    <input id="spe_pri_to" name="available_to" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                    <input id="spe_pri_to" name="available_to" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                                 <div id="uploaded_image">
                                     <div class="upload-btn-wrapper">
                                         <button class="btn imgcatlog">
-                                            <input type="hidden" name="feature_image" id="real_basic_img" />
+                                            <input type="hidden" name="feature_imagse" id="real_basic_img" />
                                             <?php
                                             if(isset($data->basic_image)){
                                                 $path=asset('upload/product')."/".$data->basic_image;
@@ -235,7 +235,7 @@
                                             <img src="{{$path}}" alt="..." class="img-thumbnail imgsize"  id="basic_img" >
                                         </button>
                                         <input type="hidden" name="basic_img" id="basic_img1"/>
-                                        <input type="file" name="upload_image" id="upload_image" />
+                                        <input type="file" name="feature_image" id="upload_image" />
                                     </div>
                                 </div>
                             </div>
@@ -378,14 +378,19 @@
 <input type="hidden" id="sku_already" value="{{__('messages_error_success.sku_already')}}">
 @stop
 @section('footer')
-<script type="text/javascript" src="{{asset('js/vehicle.js').'?v=wewe3'}}"></script>
+<script type="text/javascript" src="{{asset('js/vehicle.js')}}"></script>
 <script src="/admin-asset/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
 <script src="/admin-asset/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js -->
 
-<!--<script src="/admin/js/pages/forms/form-wizard.js"></script>-->
 
 <script>
     $(function () {
+
+        $('#add_image').on('change',function (event) {
+            event.preventDefault();
+            alert('testing');
+
+        });
 
         //Advanced form with validation
         var form = $('#wizard_with_validation');

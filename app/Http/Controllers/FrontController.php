@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
+use App\Model\Vehicle;
+use App\Model\VehicleCategory;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
@@ -169,8 +171,10 @@ class FrontController extends Controller {
     public function faqs() {
         return view('frontView.faqs');
     }
-    public function carRentals() {
-        return view('frontView.vehicle-browse');
+    public function vehicles($cat='all') {
+        $records = Vehicle::where('status','active')->get();
+        $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
+        return view('frontView.vehicle-browse',compact('records'));
     }
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');

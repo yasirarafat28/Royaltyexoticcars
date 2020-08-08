@@ -28,6 +28,7 @@ Route::get('/', function() {
 Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
+Route::get('/vehicles/{cat?}', 'FrontController@vehicles');
 
 Route::get('/suv-rentals', 'FrontController@suvRentals');
 Route::get('/bugatti-rentals', 'FrontController@bugattiRentals');
@@ -205,6 +206,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::resource("vehicles","VehicleController");
         Route::get("getvehiclesubcategory/{id}","VehicleController@getsubcategory")->name("getsubcategory");
+        Route::get("vehicledatatable","VehicleController@vehicledatatable")->name("vehicledatatable");
+        Route::get("deletevehicle/{id}","VehicleController@destroy")->name("deletevehicle");
 
 
      Route::get("savecatalog/{id}/{tab}","ProductController@showaddcatalog")->name("addcatalog");

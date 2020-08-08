@@ -1278,6 +1278,7 @@ $(document).ready(function() {
             {data: 'id'    , name: 'id'},
             {data: 'thumbnail'  , name: 'thumbnail'},
             {data: 'name'  , name: 'name'},
+              {data: 'category'  , name: 'category'},
             {data: 'price'  , name: 'price'},
             {data: 'action', name:'action'}
          ],
