@@ -44,8 +44,7 @@ class VehicleCategoryController extends Controller {
             $parent_categories = array();
         }
 
-
-        return view('admin/vehicle-categories/index',compact('categories','level','parent_categories','type','parent_id'));
+        return view('admin/vehicle-categories/index',compact('categories','level','parent_categories','parent_id'));
     }
     public function CategoryStore(Request $request)
     {
