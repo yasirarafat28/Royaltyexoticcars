@@ -120,7 +120,7 @@
                                         <div class="hero__content">
                                             <div class="card card__cta"><a id="Hero-Call-Button" href="tel:+18669841187" class="hero__cta hero__cta--top w-inline-block">
                                                     <div class="hero__cta--text">Call to Book!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg" alt="" class="hero__cta--icon">
-                                                </a><a href="https://fareharbor.com/embeds/book/royalty-exotic-cars/" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
+                                                </a><a href="/bookingcar" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
                                                     <div class="hero__cta--text">Book Online!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a534d4_calendar.svg" alt="" class="hero__cta--icon">
                                                 </a></div>
                                             <div class="hero__note">We Beat Competitors's Prices!</div>
@@ -351,7 +351,7 @@
         </div>
     </main>
 @endsection
-@section('script')
+<!--@section('script')
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
@@ -383,4 +383,4 @@
             });
         }
     </script>
-@endsection
+@endsection -->

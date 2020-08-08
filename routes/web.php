@@ -38,6 +38,8 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 Route::get('/team', 'FrontController@team');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
+Route::get('checkout', 'FrontController@checkoutCar');
+Route::get('bookingcar', 'FrontController@bookingcar');
 
 
 
