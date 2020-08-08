@@ -7,6 +7,8 @@ return array (
   'product' => 'Products',
   'category' => 'Categories',
   'catalog' => 'Product',
+  'vehicle' => 'Vehicle',
+  'vehicles' => 'Vehicles',
   'option' => 'Options',
   'attributeset' => 'Attribute Sets',
   'attribute' => 'Attributes',

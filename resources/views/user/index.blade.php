@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      
+
       <title>@yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
@@ -55,10 +55,30 @@
       border-color:<?= Session::get('site_color') ?> !important;
       color:<?= Session::get('site_color') ?> !important;
       }
-     
+
+      .top-logo {
+          height: 70px;
+          width: 116px;
+          background-color: #f07f13;
+          -webkit-mask-repeat: no-repeat;    background-image: url('/logo.jpg');
+          -webkit-mask-image: url('/logo.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+
+      .brand__text {
+           color: #000;
+           font-size: 1.6em;
+           line-height: 1.1em;
+           font-weight: 700;
+           letter-spacing: 0;
+          text-transform: uppercase;
+          margin-top: 20px;
+       }
+
    </style>
    <body class="rtl">
-      
+
  <div id="overlaychk">
                         <div class="cv-spinner">
                            <span class="spinner"></span>
@@ -183,61 +203,11 @@
             </div>
          </div>
       </div>
-    
+
       <input type="hidden" id="select_cate_name" value="<?=isset($_GET['ca'])?$_GET['ca']:'All'; ?>" />
       <input type="hidden" id="select_cate_id" value="<?=isset($_GET['ca'])?$_GET['ca']:'0'; ?>" />
       <input id="settings-btn" type="checkbox" class="settings-btn">
-      @if(Session::get("set_show")==0)
-      <label for="settings-btn" class="settings-box-element" style="background: <?= Session::get('site_color') ?> !important"><i class="fa fa-2x fa-gear"></i></label>
-      @endif
-      <div id="style-switcher">
-         <h2 class="color-title">{{__('messages.choose_color')}} : 
-         </h2>
-         <div class="tab-content-1" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-base" role="tabpanel" aria-labelledby="pills-base-tab">
-               <div>
-                  <ul class="colors themecolor" id="colorslist">
-                     <li id="colorbox1" class="<?=Session::get("colorid")==1? 'active-1' : '';?>" onclick="changebox(1,'#f07f13')">
-                        <a  data-color="f07f13" class="color1" onclick="changecolorlog(1)"></a>
-                     </li>
-                     <li id="colorbox2" class="<?=Session::get("colorid")==2? 'active-1' : '';?>" onclick="changebox(2,'#E91E63')">
-                        <a data-color="E91E63" class="color2" onclick="changecolorlog(2)"></a>
-                     </li>
-                     <li id="colorbox3" class="<?=Session::get("colorid")==3? 'active-1' : '';?>" onclick="changebox(3,'#673AB7')">
-                        <a  data-color="673AB7" class="color3" onclick="changecolorlog(3)"></a>
-                     </li>
-                     <li id="colorbox4" class="<?=Session::get("colorid")==4? 'active-1' : '';?>" onclick="changebox(4,'#00BCD4')">
-                        <a  data-color="00BCD4" class="color4" onclick="changecolorlog(4)"></a>
-                     </li>
-                     <li id="colorbox5" class="<?=Session::get("colorid")==5? 'active-1' : '';?>" onclick="changebox(5,'#009688')">
-                        <a  data-color="009688" class="color5" onclick="changecolorlog(5)"></a>
-                     </li>
-                     <li id="colorbox6" class="<?=Session::get("colorid")==6? 'active-1' : '';?>" onclick="changebox(6,'#4CAF50')">
-                        <a  data-color="4CAF50" class="color6" onclick="changecolorlog(6)"></a>
-                     </li>
-                     <li id="colorbox7" class="<?=Session::get("colorid")==7? 'active-1' : '';?>" onclick="changebox(7,'#8BC34A')">
-                        <a  data-color="8BC34A" class="color7" onclick="changecolorlog(7)"></a>
-                     </li>
-                     <li id="colorbox8" class="<?=Session::get("colorid")==8? 'active-1' : '';?>" onclick="changebox(8,'#353b48')">
-                        <a  data-color="353b48" class="color8" onclick="changecolorlog(8)"></a>
-                     </li>
-                     <li id="colorbox9" class="<?=Session::get("colorid")==9? 'active-1' : '';?>" onclick="changebox(9,'#E88EBA')"> 
-                        <a  data-color="E88EBA" class="color9" onclick="changecolorlog(9)"></a>
-                     </li>
-                     <li id="colorbox10" class="<?=Session::get("colorid")==10? 'active-1' : '';?>" onclick="changebox(10,'#795548')">
-                        <a data-color="795548" class="color10" onclick="changecolorlog(10)"></a>
-                     </li>
-                     <li id="colorbox11" class="<?=Session::get("colorid")==11? 'active-1' : '';?>" onclick="changebox(11,'#f1c40f')">
-                        <a  data-color="f1c40f" class="color11" onclick="changecolorlog(11)"></a>
-                     </li>
-                     <li id="colorbox12" class="<?=Session::get("colorid")==12? 'active-1' : '';?>" onclick="changebox(12,'#D8616D')">
-                        <a  data-color="D8616D" class="color12" onclick="changecolorlog(12)"></a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
+
       <?php   if(strpos($_SERVER['REQUEST_URI'],"productslist")){
          $myclass="container my-container";
          }else{
@@ -247,16 +217,17 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row">
-               <div class="col-lg-2 col-md-3 col-8">
-                  <a href="{{url('/')}}">
-                     <div class="top-logo" style="background: <?= Session::get('site_color') ?> !important;-webkit-mask-image:url('<?=Session::get("logo")?>')"></div>
+               <div class="col-lg-3 col-md-3 col-8">
+                  <a href="{{url('/shop')}}">
+                      <div class="brand__text">Rental Exotic Beasts</div>
+                     <!--<div class="top-logo" style="background-image: url('/logo.jpg');-webkit-mask-image: url('/logo.jpg');"></div>-->
                   </a>
                </div>
-               <div class="col-lg-7 col-md-6 ser-show">
+               <div class="col-lg-6 col-md-6 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">
-                        <div id="divNoImage">      
+                        <div id="divNoImage">
                         </div>
                         <div class="sea-input">
                            <input type="text" required name="search_product" value="<?=isset($_GET['s'])?$_GET['s']:''; ?>" onfocus="changesearcat()" id="search_product" placeholder="Search product...">
@@ -279,7 +250,7 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                      </a>
                      @endif
-                   
+
                      <div class="popover__wrapper">
                         <a href="#" class="cart hover-popup" data-modal-target="modal1" id="cart-1">
                            <i class="fa fa-shopping-cart popover__title" aria-hidden="true"></i>
@@ -318,11 +289,11 @@
                                                    $label=explode(",",$item->attributes[0]['label']);
                                                    $price=explode(",",$item->attributes[0]['price']);
                                                    ?>
-                                                
+
                                                    <?php for($i=0;$i<count($option);$i++){?>
                                                    <span style="font-size:small"><b>{{$option[$i]}}</b><span>  {{$label[$i]}}</span></span></br>
                                                    <?php }?>
-                                               
+
                                              </p>
                                              <h2>{{Session::get('currency').number_format((float)$item->price, 2, '.', '')}}</h2>
                                           </div>
@@ -330,7 +301,7 @@
                                        @endforeach
                                        <div class="cart-pop_up-subtotal">
                                           <h3>{{__('messages.subtotal')}} :</h3>
-                                          
+
                                           <h3 class="cart-pop_up-prize">{{Session::get('currency').number_format(Cart::getTotal(), 2, '.', '')}}</h3>
                                        </div>
                                        <a href="{{url('cartdetail')}}">
@@ -377,7 +348,7 @@
                            <h1 id="totalwish">{{count($mywish)}}</h1>
                         </div>
                      </a>
-                     <a class="compare" href="{{url('compare')}}"> 
+                     <a class="compare" href="{{url('compare')}}">
                         <img src="{{asset('Ecommerce/images/compareheader.png')}}">
                          <div class="e-nav-cricle comparesp" style="background: <?= Session::get('site_color') ?> !important">
                            <?php $arr=explode(",",Session::get("compare"));?>
@@ -452,14 +423,14 @@
                                           <ul>
                                              @foreach($category->subcategory as $subcat)
                                              <li><a href="{{url('productslist/').'/0/'.$subcat->id.'/0/0'}}">{{$subcat->name}}</i></a></li>
-                                             @endforeach                      
+                                             @endforeach
                                           </ul>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </li>
-                           @endforeach 
+                           @endforeach
                            <li><a href="{{url('Offers')}}">{{__('messages.offers')}}</a>
                            </li>
                         </ul>
@@ -527,9 +498,9 @@
                            <h1>{{__('messages.my_account')}}</h1>
                         </div>
                         <div class="f-account">
-                           <li><a href="{{url('aboutus')}}">{{__('messages.about')}}</a></li>
+                           <!--<li><a href="{{url('aboutus')}}">{{__('messages.about')}}</a></li>
                            <li><a href="{{url('helpsupport')}}">{{__('messages.helpsupport')}}</a></li>
-                           <li><a href="{{url('termscondition')}}">{{__('messages.termscon')}}</a></li>
+                           <li><a href="{{url('termscondition')}}">{{__('messages.termscon')}}</a></li>-->
                            <li><a href="{{url('contactus')}}">{{__('messages.contact_us')}}</a></li>
                            <?php if(Auth::id()!=""){?>
                            <li><a href="{{url('myaccount')}}">{{__('messages.my_account')}}</a></li>
@@ -584,7 +555,7 @@
             </div>
          </div>
       </div>
-      
+
       <input type="hidden" id="path" value="{{url('/')}}">
       <input type="hidden" id="cartsuccesslang" value="{{__('messages_error_success.product_add_success')}}"/>
       <input type="hidden" id="login_user_id" value="{{Auth::id()}}">
@@ -600,7 +571,7 @@
       <input type="hidden" id="np_product_lang" value="{{__('messages.No Product')}}">
       <input type="hidden" id="is_required_lang" value="{{__('messages.is Required')}}">
       <input type="hidden" id="email_success_lang" value="{{__('messages.Email Send Successfully')}}">
-      <input type="hidden" id="email_not_lang" value="{{__('messages.Your Entered Email Not Exist')}}"> 
+      <input type="hidden" id="email_not_lang" value="{{__('messages.Your Entered Email Not Exist')}}">
       <input type="hidden" id="email_req_lang" value="{{__('messages.Entered Your Email')}}">
       <input type="hidden" id="site_color_store" value="{{Session::get('site_color')}}">
       <script type="text/javascript" src="{{ asset('js/select.js') }}"></script>
@@ -609,5 +580,5 @@
       <input type="hidden" id="compare_add_lang" value="{{__('messages.The product has been added to your compare list')}}">
       <script type="text/javascript" src="{{ URL::to('public/js/code.js').'?v=20000' }}"></script>
    </body>
-  
+
 </html>

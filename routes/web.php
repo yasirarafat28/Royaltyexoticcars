@@ -201,6 +201,9 @@ Route::group(['prefix' => 'admin'], function () {
          Route::post("saverealtedprice","ProductController@saverealtedprice")->name("saverealtedprice");
 
 
+        Route::resource("vehicles","VehicleController");
+
+
      Route::get("savecatalog/{id}/{tab}","ProductController@showaddcatalog")->name("addcatalog");
 
        Route::get("editproduct/{id}","ProductController@editproduct")->name("editproduct");
