@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
 use Session;
@@ -71,7 +72,7 @@ class Categorycontroller extends Controller {
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension() ?: 'png';
                 $folderName = '/upload/category/image/';
-                $picture = str_random(10).time() . '.' . $extension;
+                $picture = Str::random(10).time() . '.' . $extension;
                 $destinationPath = public_path() . $folderName;
                 $request->file('image')->move($destinationPath, $picture);
                 $img_url =$picture;
