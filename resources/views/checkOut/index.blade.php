@@ -69,7 +69,7 @@
                 <em class="cd-schedule__name">Abs Circuit</em>
               </a>
             </li>
-            <a href="checkout">book</a>
+            <a href="/bookCar" style="color:black;">2018 Jeep Wrangler - White</a>
 
             <li class="cd-schedule__event">
               <a data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
