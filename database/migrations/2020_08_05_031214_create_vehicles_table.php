@@ -16,6 +16,7 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id')->default(0);
+            $table->integer('sub_category_id')->default(0);
             $table->integer('brand_id')->default(0);
             $table->string('type')->default('super_car');
             $table->text('feature_image')->nullable();
@@ -52,7 +53,7 @@ class CreateVehiclesTable extends Migration
             $table->dateTime('available_from')->nullable();
             $table->dateTime('available_to')->nullable();
             $table->integer('stock')->default(1);
-            $table->string('taxable')->default(0);
+            $table->string('tax_id')->default(0);
 
             $table->enum('status',['active','inactive'])->default('active');
 

@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 @endif
-                <form id="wizard_with_validation" method="POST" action="{{url('admin/vehicles')}}" class="validateFormFor">
+                <form id="wizard_with_validation" method="POST" action="{{url('admin/vehicles')}}" class="validateFormFor" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <h3>{{__('messages.general')}}</h3>
                     <fieldset>
@@ -223,7 +223,7 @@
                                 <div id="uploaded_image">
                                     <div class="upload-btn-wrapper">
                                         <button class="btn imgcatlog">
-                                            <input type="hidden" name="real_basic_img" id="real_basic_img" />
+                                            <input type="hidden" name="feature_image" id="real_basic_img" />
                                             <?php
                                             if(isset($data->basic_image)){
                                                 $path=asset('upload/product')."/".$data->basic_image;
