@@ -115,7 +115,7 @@
                                     <label for="brand" class="control-label mb-1">{{__('messages.tax_name')}}<span class="reqfield">*</span>
                                     </label>
                                     <select class="form-control" name="tax_id" id="texable" >
-                                        <option value="">{{__('messages.select').' '.__('messages.tax_name')}}</option>
+                                        <option value="0">{{__('messages.select').' '.__('messages.tax_name')}}</option>
                                         @foreach($taxes??array() as $t)
                                             <option value="{{$t->id}}" >{{$t->tax_name}}</option>
                                         @endforeach
@@ -156,7 +156,7 @@
                                 <div class="form-group col-md-4" >
                                     <label for="name" class="control-label mb-1">8 hours price<span class="reqfield">*</span>
                                     </label>
-                                    <select name="four_hour" id="" class="form-control">
+                                    <select name="eight_hour" id="" class="form-control">
                                         <option value="yes" >Yes</option>
                                         <option value="no" >No</option>
                                     </select>

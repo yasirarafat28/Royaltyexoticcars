@@ -54,12 +54,12 @@ class VehicleController extends Controller
         $vehicle->category_id = $request->category_id;
         $vehicle->sub_category_id = $request->sub_category_id;
         $vehicle->brand_id = $request->brand_id;
-        $vehicle->tax_id = $request->tax_id;
+        $vehicle->tax_id = $request->tax_id??0;
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
         $vehicle->four_hour_discount = $request->four_hour_discount;
-        $vehicle->eight_hour = $request->eight_hour;
+        $vehicle->eight_hour = $request->eight_hour??'no';
         $vehicle->eight_hour_price = $request->eight_hour_price;
         $vehicle->eight_hour_discount = $request->eight_hour_discount;
         $vehicle->full_day = $request->full_day;

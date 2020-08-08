@@ -1269,6 +1269,28 @@ $(document).ready(function() {
          order:[[0,"DESC"]]
       });
    });
+   $(document).ready(function () {
+       $('#vehicledataTable').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: $("#url_path").val()+'/admin/vehicledatatable',
+          columns: [
+            {data: 'id'    , name: 'id'},
+            {data: 'thumbnail'  , name: 'thumbnail'},
+            {data: 'name'  , name: 'name'},
+            {data: 'price'  , name: 'price'},
+            {data: 'action', name:'action'}
+         ],
+           columnDefs: [
+            { targets: 1,
+              render: function(data) {
+                    return '<img src="'+data+'" style="height:50px">';
+              }
+            }
+        ],
+         order:[[0,"DESC"]]
+      });
+   });
 
    function addcatlog(){
      window.location.href=$("#url_path").val()+"/admin/savecatalog/0/1";
