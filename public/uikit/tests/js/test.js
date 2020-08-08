@@ -11,7 +11,7 @@
     function hasOwn(obj, key) {
         return hasOwnProperty.call(obj, key);
     }
-    
+
     var rootpath=document.getElementById("url_path").value;
     var hyphenateCache = {};
     var hyphenateRe = /([a-z\d])([A-Z])/g;
@@ -905,13 +905,13 @@
 
     // try to load themes.json
     var request = new XMLHttpRequest();
-    request.open('GET', rootpath+'/public/uikit/themes.json', false);
+    request.open('GET', rootpath+'/uikit/themes.json', false);
     request.send(null);
 
     var themes = request.status === 200 ? JSON.parse(request.responseText) : {};
     var styles = {
-        core: {css: rootpath+'/public/uikit/dist/css/uikit-core.css'},
-        theme: {css: rootpath+'/public/uikit/dist/css/uikit.css'}
+        core: {css: rootpath+'/uikit/dist/css/uikit-core.css'},
+        theme: {css: rootpath+'/uikit/dist/css/uikit.css'}
     };
     var component = location.pathname.split('/').pop().replace(/.html$/, '');
 
@@ -943,8 +943,8 @@
     document.writeln(("<link rel=\"stylesheet\" href=\"" + (dir !== 'rtl' ? style.css : style.css.replace('.css', '').concat('-rtl.css')) + "\">"));
 
     // add javascript
-    document.writeln('<script src="'+rootpath+'/public/uikit/dist/js/uikit.js"></script>');
-    document.writeln(("<script src=\"" + (style.icons ? style.icons : ''+rootpath+'/public/uikit/dist/js/uikit-icons.js') + "\"></script>"));
+    document.writeln('<script src="'+rootpath+'/uikit/dist/js/uikit.js"></script>');
+    document.writeln(("<script src=\"" + (style.icons ? style.icons : ''+rootpath+'/uikit/dist/js/uikit-icons.js') + "\"></script>"));
 
         on(window, 'load', function () { return setTimeout(function () { return fastdom.write(function () {
 

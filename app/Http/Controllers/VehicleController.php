@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Taxes;
+use App\Model\VehicleBrand;
+use App\Model\VehicleCategory;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
@@ -24,7 +27,12 @@ class VehicleController extends Controller
     public function create()
     {
         $tab = 1;
-        return view('admin.vehicles.create',compact('tab'));
+
+
+        $category=VehicleCategory::where("parent_category_id",0)->where("status",'active')->get();
+        $brand=VehicleBrand::where("status",'active')->get();
+        $tax=Taxes::all();
+        return view('admin.vehicles.create',compact('tab','category','brand','tax'));
     }
 
     /**
@@ -35,7 +43,10 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+        ]);
+        return $request;
     }
 
     /**
@@ -81,5 +92,12 @@ class VehicleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+
+    public function getsubcategory($id){
+        $data=VehicleCategory::where("parent_category_id",$id)->where("status",'active')->get();
+        return json_encode($data);
     }
 }

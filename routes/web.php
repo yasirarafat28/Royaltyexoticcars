@@ -204,6 +204,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
         Route::resource("vehicles","VehicleController");
+        Route::get("getvehiclesubcategory/{id}","VehicleController@getsubcategory")->name("getsubcategory");
 
 
      Route::get("savecatalog/{id}/{tab}","ProductController@showaddcatalog")->name("addcatalog");

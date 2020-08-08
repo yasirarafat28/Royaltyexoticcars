@@ -41,6 +41,7 @@
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
+       @yield('style')
    </head>
    <style type="text/css">
    .product-heading h1:before{
@@ -55,6 +56,9 @@
    .col-md-3.services:after{
       background-color:<?= Session::get('site_color') ?> !important;
    }
+       a{
+           color: #fff !important;
+       }
 
 </style>
 

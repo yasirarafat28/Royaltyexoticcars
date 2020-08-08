@@ -18,9 +18,11 @@ class CreateVehiclesTable extends Migration
             $table->integer('category_id')->default(0);
             $table->integer('brand_id')->default(0);
             $table->string('type')->default('super_car');
+            $table->text('feature_image')->nullable();
             $table->text('name')->nullable();
             $table->text('description')->nullable();
             $table->string('model')->nullable();
+            $table->string('body')->nullable();
             $table->string('color')->nullable();
             $table->string('vehicle_class')->nullable();
             $table->string('horse_power')->nullable();
@@ -50,6 +52,7 @@ class CreateVehiclesTable extends Migration
             $table->dateTime('available_from')->nullable();
             $table->dateTime('available_to')->nullable();
             $table->integer('stock')->default(1);
+            $table->string('taxable')->default(0);
 
             $table->enum('status',['active','inactive'])->default('active');
 
