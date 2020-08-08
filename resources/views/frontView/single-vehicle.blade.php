@@ -75,7 +75,7 @@
       <div class="rental__cta">
         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
           <div class="rental__cta--embed w-embed"><a
-              href="https://fareharbor.com/embeds/book/royalty-exotic-cars/items/162792/calendar/?flow=15373"
+              href="/vehicle-booking"
               class="rental__cta--text">
               Book Online
             </a></div>
