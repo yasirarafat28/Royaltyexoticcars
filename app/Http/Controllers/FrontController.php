@@ -176,6 +176,9 @@ class FrontController extends Controller {
         $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
         return view('frontView.vehicle-browse',compact('records'));
     }
+    public function singleVehicle(){
+        return view('frontView.single-vehicle');
+    }
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');
     }
@@ -201,8 +204,11 @@ class FrontController extends Controller {
     public function checkoutCar() {
         return view('checkOut.payment');
     }
-    public function bookingcar() {
-        return view('checkOut.index');
+    public function bookingvehicle() {
+        return view('frontView.vehicle-booking');
+    }
+    public function vehiclecheckout() {
+        return view('frontView.vehicle-checkout');
     }
     public function shop(){
         $setting=Setting::find(1);

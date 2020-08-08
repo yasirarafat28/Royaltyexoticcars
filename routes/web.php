@@ -29,6 +29,7 @@ Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 Route::get('/vehicles/{cat?}', 'FrontController@vehicles');
+Route::get('/vehicle', 'FrontController@singleVehicle');
 
 Route::get('/suv-rentals', 'FrontController@suvRentals');
 Route::get('/bugatti-rentals', 'FrontController@bugattiRentals');
@@ -39,8 +40,9 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 Route::get('/team', 'FrontController@team');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
-Route::get('/bookCar', 'FrontController@checkoutCar');
-Route::get('bookingcar', 'FrontController@bookingcar');
+Route::get('bookCar', 'FrontController@checkoutCar');
+Route::get('vehicle-booking', 'FrontController@bookingvehicle');
+Route::get('/vehicle-checkout', 'FrontController@vehiclecheckout');
 
 
 
