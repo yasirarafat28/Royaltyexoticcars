@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
 use Session;
@@ -39,7 +40,7 @@ class BannerController extends Controller {
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension() ?: 'png';
                 $folderName = '/upload/banner/image/';
-                $picture = str_random(10).time() . '.' . $extension;
+                $picture = Str::random(10).time() . '.' . $extension;
                 $destinationPath = public_path() . $folderName;
                 $request->file('photo1')->move($destinationPath, $picture);
                 $img_url =$picture;
@@ -70,7 +71,7 @@ class BannerController extends Controller {
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension() ?: 'png';
                 $folderName = '/upload/banner/image/';
-                $picture = str_random(10).time() . '.' . $extension;
+                $picture = Str::random(10).time() . '.' . $extension;
                 $destinationPath = public_path() . $folderName;
                 $request->file('photo2')->move($destinationPath, $picture);
                 $img_url =$picture;
@@ -101,7 +102,7 @@ class BannerController extends Controller {
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension() ?: 'png';
                 $folderName = '/upload/banner/image/';
-                $picture = str_random(10).time() . '.' . $extension;
+                $picture = Str::random(10).time() . '.' . $extension;
                 $destinationPath = public_path() . $folderName;
                 $request->file('photo3')->move($destinationPath, $picture);
                 $img_url =$picture;
