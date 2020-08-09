@@ -56,9 +56,18 @@
    .col-md-3.services:after{
       background-color:<?= Session::get('site_color') ?> !important;
    }
-       a{
+       a.btn{
            color: #fff !important;
        }
+
+   .wizard > .actions a, .wizard > .actions a:hover, .wizard > .actions a:active {
+       color: #fff !important;
+   }
+   .wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active {
+       background: #2184be;
+       color: #fff !important;
+       cursor: default;
+   }
 
 </style>
 
@@ -229,12 +238,12 @@
                      </a>
                   </li>
 
-                   <li class="active">
+                   <!--<li class="active">
                      <a href="{{url('admin/complain')}}">
                      <i class="menu-icon  fa fa-tags"></i>
                      {{__('messages.complain')}}
                      </a>
-                  </li>
+                  </li>-->
 
 
                   <li class="menu-item-has-children dropdown">
@@ -271,7 +280,7 @@
                            {{__('messages.setting')}}
                            </a>
                         </li>
-                        <li>
+                        <!--<li>
                            <a href="{{url('admin/pages')}}">
                            {{__('messages.page')}}
                            </a>
@@ -285,14 +294,14 @@
                            <a href="{{url('admin/serverkey/2')}}">
                            {{__('messages.Iphone Server Key')}}
                            </a>
-                        </li>
+                        </li>-->
                         @if(Session::get("is_web")==1)
                         <li>
                            <a href="{{url('admin/banner')}}">
                            {{__('messages.banner')}}
                            </a>
                         </li>
-                        <li>
+                        <!--<li>
                            <a href="{{url('admin/support/1')}}">
                            {{__('messages.helpsupport')}}
                            </a>
@@ -301,7 +310,7 @@
                            <a href="{{url('admin/support/2')}}">
                            {{__('messages.termscon')}}
                            </a>
-                        </li>
+                        </li>-->
                         @endif
                      </ul>
                   </li>

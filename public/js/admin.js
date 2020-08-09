@@ -1285,7 +1285,7 @@ $(document).ready(function() {
            columnDefs: [
             { targets: 1,
               render: function(data) {
-                    return '<img src="'+data+'" style="height:50px">';
+                    return '<img src="/'+data+'" style="height:50px">';
               }
             }
         ],

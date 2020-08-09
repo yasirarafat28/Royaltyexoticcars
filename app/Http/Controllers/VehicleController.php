@@ -93,7 +93,7 @@ class VehicleController extends Controller
         $vehicle->category_id = $request->category_id;
         $vehicle->sub_category_id = $request->sub_category_id;
         $vehicle->brand_id = $request->brand_id;
-        $vehicle->tax_id = $request->tax_id??0;
+        //$vehicle->tax_id = $request->tax_id??0;
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
@@ -120,13 +120,45 @@ class VehicleController extends Controller
             $upload_folder = 'upload';
             $file      = $request->file('feature_image');
             $fileName  = date('ymdhis').'.'.$file->getClientOriginalExtension();
-            $path       = $upload_folder.'/vehicles';
+            $path       = $upload_folder.'/vehicles/';
 
             $file->move($path, $fileName);
             $fileUrl   = $path . $fileName;
             $vehicle->feature_image = $fileUrl;
 
         }
+
+
+        //$adddata=explode(",",$store->additional_image);
+
+        if($request->get("additional_img")!=""){
+            $add_img=array();
+            $data=$request->get("additional_img");
+
+            foreach (array_filter($data) as $k) {
+                if(strstr($k,"http")==""){
+                    $data1 =$k;
+                    list($type, $data1) = explode(';', $data1);
+                    list(, $data1)      = explode(',', $data1);
+                    $folderName = '/upload/vehicles/';
+                    $destinationPath = public_path() . $folderName;
+                    $file_name='/upload/vehicles/'.uniqid() . '.png';
+                    $file = $destinationPath .$file_name;
+                    $data = base64_decode($data1);
+                    file_put_contents($file, $data);
+                    $add_img[]=$file_name;
+                }
+                else{
+                    $arr=explode("/",$k);
+                    $add_img[]=$arr[count($arr)-1];
+                }
+            }
+            if(!empty(array_filter($add_img))){
+                $vehicle->additional_image=implode(',',$add_img);
+            }
+
+        }
+
         $vehicle->save();
         return back()->withSuccess('Vehicle added successfully');
         return $request;
@@ -153,7 +185,13 @@ class VehicleController extends Controller
     public function edit($id)
     {
         $vehicle = Vehicle::find($id);
-        return view('admin.vehicles.show',compact('vehicle'));
+
+
+        $category=VehicleCategory::where("parent_category_id",0)->where("status",'active')->get();
+        $subcategory=VehicleCategory::where("parent_category_id",$vehicle->category_id)->where("status",'active')->get();
+        $brand=VehicleBrand::where("status",'active')->get();
+        $tax=Taxes::all();
+        return view('admin.vehicles.edit',compact('vehicle','category','brand','tax','subcategory'));
     }
 
     /**
