@@ -71,7 +71,11 @@
 
                             <label for="fname" class="form-label">Primary Driver's Full Name:</label>
                             <input class="form-control" type="text" id="fname" name="firstname"
-                                placeholder="As it appears on Driver's license">
+                                placeholder="As it appears on Driver's license" required>
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                *It is required that the name of your booking matches your Identification Card and Payment Card at time of check-in.
+                            </small>
 
                         </div>
                         <div class="form-group" style="margin: 20px;">
@@ -80,11 +84,15 @@
                             <label for="lname" class="form-label">Additional Driver's Full Name:</label>
                             <input type="text" id="lname" name="lastname" class="form-control"
                                 placeholder="As it appears on Driver's license">
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                *Rentals are limited to 2 drivers.
+                            </small>
                         </div>
                         <div class="form-group" style="margin: 20px;">
                             <label for="country" class="form-label">Country of Residence</label>
                             <select id="country" name="country" class="form-control selectpicker"
-                                data-live-search="true">
+                                data-live-search="true" required>
                                 <option value="australia">Australia</option>
                                 <option value="canada">Canada</option>
                                 <option value="usa">USA</option>
@@ -107,6 +115,10 @@
                                 <option value="australia">$99.00 Yes I would like to buy this property</option>
                                 <option value="canada">$0.00 No I dont want to buy this property</option>
                             </select>
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability.
+                            </small>
                         </div>
 
                         <div class="form-group" style="margin: 20px;">
@@ -118,6 +130,11 @@
                                 <option value="USA">$0.00 Free I would like to include breakdown coverage at no cost
                                 </option>
                             </select>
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Covers cost of Mechanical Parts due to wear and tear, tow charges, and loss of rental time up to $1000. Mechanical Failure can take up to several hours depending on the location of incident, traffic conditions, and availability.
+                                *This coverage EXCLUDES mechanical failure due to customer mis-use or gross negligence operating the vehicle and customers are fully responsible for their own actions while operating a Royalty Exotic Cars vehicle.
+                            </small>
                         </div>
 
                         <div class="form-group" style="margin: 20px;">
@@ -135,6 +152,10 @@
                                 data-live-search="true">
                                 <option value="australia">$349.00 Grand canion test rim Arizona</option>
                             </select>
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                These packages allow you to drive outside the 100 mile radius service area.
+                            </small>
                         </div>
 
                         <div class="form-group" style="margin: 20px;">
@@ -146,6 +167,10 @@
                                 <option value="australia">$349.00 - 3 Passenger</option>
                                 <option value="australia">$499.00 - 4 Passenger</option>
                             </select>
+
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Luxury Helicopter Tours of the Las Vegas Strip are available for $149 per passenger, up to 4 passengers at a time.
+                            </small>
                         </div>
 
                         <label for="country" class="form-label" style="margin: 20px;">Please read the following
@@ -153,7 +178,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I am over the age of 25
                                     <span>
                                         <p>All drivers must be over the age of 25.
@@ -165,7 +190,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I have a valid driver's license
                                     <span>
                                         <p>All drivers must have a valid driver's license from their country of
@@ -178,7 +203,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I agree to follow all state and federal laws
                                     <span>
                                         <p>Please drive in a safe, responsible, and legal manner.
@@ -191,7 +216,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
                                     <span>
                                         <p>All car rentals include unlimited mileage within a 100 mile radius of pickup
@@ -204,7 +229,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept the Cancellation Policy
                                     *All cancellations are subject to a maximum 50% refund.</div>
                             </label>
@@ -212,7 +237,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept the Late Returns Policy
                                     <span>
                                         <p>Please ensure you have adequate time for your drive back to the showroom.
@@ -224,7 +249,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I understand that my reservation may change at any
                                     time
                                     <span>
@@ -239,7 +264,7 @@
 
                         <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                             <label style="display: flex; padding: 5px;">
-                                <div><input type="checkbox" value=""></div>
+                                <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all
                                     risk
                                     <span>
@@ -329,7 +354,11 @@
 
                     </div>
 
-                        
+                    <div class="chashout">
+
+
+
+                    </div>
 
                 </div>
             </main>
