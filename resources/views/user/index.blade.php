@@ -23,7 +23,7 @@
       <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" />
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
       <script type="text/javascript" src="{{asset('Ecommerce/js/aos.js')}}"></script>
-      <script type="text/javascript" src="{{ URL::to('public/js/zoomsl.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::to('js/zoomsl.js') }}"></script>
    </head>
    <style type="text/css">
       .product-heading h1:before{
@@ -578,7 +578,7 @@
       <input type="hidden" id="quick_view_lang" value="{{__('messages.Quick View')}}">
       <input type="hidden" id="user_register" value="{{__('messages.user_register')}}"/>
       <input type="hidden" id="compare_add_lang" value="{{__('messages.The product has been added to your compare list')}}">
-      <script type="text/javascript" src="{{ URL::to('public/js/code.js').'?v=20000' }}"></script>
+      <script type="text/javascript" src="{{ URL::to('/js/code.js').'?v=20000' }}"></script>
    </body>
 
 </html>
