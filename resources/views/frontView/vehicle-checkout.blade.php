@@ -190,17 +190,38 @@
                           </form>
                           
                           <div class="gidt-card">
-                              
-                               <div class="gift" style="float: left;">
-                               
-                                    <div class="form-group" style="">
 
-                                        <label for="fname" class="form-label">Gift card number:</label>
+                                <label for="fname" class="form-label">Gift card number:</label>
+                              
+                               <div class="gift" style="display: flex;">
+                               
+                                    <div class="form-group" style="padding: 5px;">
+
                                         <input class="form-control" type="text" id="fname" name="firstname" placeholder="As it appears on Driver's license">
 
                                     </div>
 
+                                    <div class="btnfr" style="padding: 5px;">
+
+                                        <button type="button" class="btn btn-success">Apply</button>
+
+                                    </div>
+
+                                    <div class="btnfr" style="padding: 5px;">
+
+                                        <button type="button" class="btn btn-success">Cancel</button>
+
+                                    </div>
+
                                </div>
+
+                                <div class="alerttext" style="display: flex; border: 1px solid black; border-radius: 10px; padding: 3px; height: 30px; width: 270px;">
+
+                                    <img src="images/lock-solid.svg" alt="lock-icon" style="height: 12px; width: 13px; margin: 5px;">
+
+                                    <p>Secured with 2048-bit encryption</p>
+
+                                </div>
 
                           </div>
 
