@@ -189,12 +189,14 @@
 
                           </form>
                           
-                          <div class="gidt-card">
+                          <div class="middle-container" style="display: flex; justify-content: space-between;">
+                          
+                            <div class="gidt-card">
 
                                 <label for="fname" class="form-label">Gift card number:</label>
-                              
-                               <div class="gift" style="display: flex;">
-                               
+
+                                <div class="gift" style="display: flex;">
+
                                     <div class="form-group" style="padding: 5px;">
 
                                         <input class="form-control" type="text" id="fname" name="firstname" placeholder="As it appears on Driver's license">
@@ -213,13 +215,40 @@
 
                                     </div>
 
-                               </div>
+                                </div>
 
                                 <div class="alerttext" style="display: flex; border: 1px solid black; border-radius: 10px; padding: 3px; height: 30px; width: 270px;">
 
                                     <img src="images/lock-solid.svg" alt="lock-icon" style="height: 12px; width: 13px; margin: 5px;">
 
                                     <p>Secured with 2048-bit encryption</p>
+
+                                </div>
+
+                                </div>
+
+                                <div class="cashf" style="width: 200px;">
+
+                                <div class="subtot" style="display: flex; justify-content: space-between;">
+
+                                <p>Subtotal</p>
+                                <p>$299.00</p>
+
+                                </div>
+
+                                <div class="taxest" style="display: flex; justify-content: space-between;">
+
+                                <p>Taxes & Fees</p>
+                                <p>$299.00</p>
+
+                                </div>
+
+                                <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
+
+                                <p style="padding: 5px;">Total</p>
+                                <h3>$299.00</h3>
+
+                                </div>
 
                                 </div>
 
