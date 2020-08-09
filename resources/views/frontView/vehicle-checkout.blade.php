@@ -57,21 +57,19 @@
                       <div class="container">
                           <h2 class="text-center text-success"><strong>Online Booking Agreement</strong></h2>
                           <form action="/action_page.php">
-                              <div class="form-group">
+                              <div class="form-group" style="margin: 20px;">
 
                                   <label for="fname" class="form-label">Primary Driver's Full Name:</label>
                                   <input class="form-control" type="text" id="fname" name="firstname" placeholder="As it appears on Driver's license">
 
                               </div>
-                              <div class="form-group">
+                              <div class="form-group" style="margin: 20px;">
 
 
                                   <label for="lname" class="form-label">Additional Driver's Full Name:</label>
                                   <input type="text" id="lname" name="lastname" class="form-control" placeholder="As it appears on Driver's license">
                               </div>
-                              <div class="form-group">
-
-
+                              <div class="form-group" style="margin: 20px;">
                                   <label for="country" class="form-label">Country of Residence</label>
                                   <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
                                       <option value="australia">Australia</option>
@@ -80,63 +78,132 @@
                                   </select>
                               </div>
 
-                              <label for="country">Property Damage Waiver ($3,500 Limit)</label>
-                              <select id="country" name="country">
-                                  <option value="australia">$99.00 Yes I would like to buy this property</option>
-                                  <option value="canada">$0.00 No I dont want to buy this property</option>
-                              </select>
-
-                              <label for="country">Tire Protection</label>
-                              <select id="country" name="country">
-                                  <option value="australia">$99.00 Yes I would like to buy this property</option>
-                                  <option value="canada">$0.00 No I dont want to buy this property</option>
-                              </select>
-
-                              <label for="country">Mechanical Break Down Insurance</label>
-                              <select id="country" name="country">
-                                  <option value="australia">$99.00 Yes I would like to buy this property</option>
-                                  <option value="canada">$0.00 No I dont want to buy this property</option>
-                              </select>
-
-                              <label for="country">Prepaid Gas Credit</label>
-                              <select id="country" name="country">
-                                  <option value="australia">$99.00 Yes I would like to buy this property</option>
-                                  <option value="canada">$0.00 No I dont want to buy this property</option>
-                              </select>
-
-                              <label for="country">Destination Packages</label>
-                              <select id="country" name="country">
-                                  <option value="australia">$99.00 Yes I would like to buy this property</option>
-                                  <option value="canada">$0.00 No I dont want to buy this property</option>
-                              </select>
-
-                              <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
-                                  <input type="checkbox" id="fname"><span> I am over the age of 25 </span>
-                                  All drivers must be over the age of 25.
-                                  *Passengers must be at least 4' 9" or weigh more than 40lbs.
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                      <option value="australia">$99.00 Yes I would like to buy this property</option>
+                                      <option value="canada">$0.00 No I dont want to buy this property</option>
+                                  </select>
                               </div>
 
-                              <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
-                                  <input type="checkbox" id="fname">I have a valid driver's license
-                                  All drivers must have a valid driver's license from their country of citizenship.
-                                  *International driver's must have passport present.
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Tire Protection</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                      <option value="australia">$99.00 Yes I would like to buy this property</option>
+                                      <option value="canada">$0.00 No I dont want to buy this property</option>
+                                  </select>
                               </div>
 
-                              <div style="width: 100%; height: 45px; margin: auto; border: 1px solid lightgrey; padding: 8px; font-size: 0.8em; float: left;">
-                                  <input type="checkbox" id="fname">I agree to follow all state and federal laws
-                                  Please drive in a safe, responsible, and legal manner.
-
-                                  *Unsafe operation may result in fines/early termination of rental agreement.
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Mechanical Break Down Insurance</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                      <option value="australia">$99.00 Yes I would like to buy this property</option>
+                                      <option value="canada">$0.00 No I dont want to buy this property</option>
+                                      <option value="USA">$0.00 Free I would like to include breakdown coverage at no cost</option>
+                                  </select>
                               </div>
 
-                              <label for="country" style="margin-top: 6px;">How did you hear about us originally?</label>
-                              <select id="country" name="country">
-                                  <option value="australia">Organic</option>
-                                  <option value="canada">Social</option>
-                                  <option value="usa">Location</option>
-                              </select>
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Prepaid Gas Credit</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                      <option value="australia">$99.00 Yes I would like to buy this property</option>
+                                      <option value="canada">$0.00 No I dont want to buy this property</option>
+                                  </select>
+                              </div>
+
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Destination Packages</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                  <option value="australia">$349.00 Grand canion test rim Arizona</option>
+                                  </select>
+                              </div>
+
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="country" class="form-label">Strip Helicopter Tour</label>
+                                  <select id="country" name="country" class="form-control selectpicker" data-live-search="true">
+                                      <option value="australia">$199.00 - 1 Passenger</option>
+                                      <option value="australia">$299.00 - 2 Passenger</option>
+                                      <option value="australia">$349.00 - 3 Passenger</option>
+                                      <option value="australia">$499.00 - 4 Passenger</option>
+                                  </select>
+                              </div>
+                              
+                              <label for="country" class="form-label" style="margin: 20px;">Please read the following agreements carefully:</label>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I am over the age of 25
+<span>  <p>All drivers must be over the age of 25.
+
+*Passengers must be at least 4' 9" or weigh more than 40lbs.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I have a valid driver's license
+                                  <span>  <p>All drivers must have a valid driver's license from their country of citizenship.
+
+*International driver's must have passport present.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I agree to follow all state and federal laws
+<span>  <p>Please drive in a safe, responsible, and legal manner.
+
+*Unsafe operation may result in fines/early termination of rental agreement.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
+                                  <span>  <p>All car rentals include unlimited mileage within a 100 mile radius of pickup location.
+
+*Driving outside the 100 mile radius service area is subject to fees.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I accept the Cancellation Policy
+*All cancellations are subject to a maximum 50% refund.</div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I accept the Late Returns Policy
+                                  <span>  <p>Please ensure you have adequate time for your drive back to the showroom.
+
+*Late returns are subject to $250+proration fee.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I understand that my reservation may change at any time
+                                  <span>  <p>Please be aware that car accidents, breakdowns, or other disruptive events can happen at any time.
+
+*We will always do our best to ensure you are in a car of equal or greater value when available.</p></span></div></label>
+                              </div>
+
+                              <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
+                                  <label style="display: flex; padding: 5px;"> <div><input type="checkbox" value=""></div>  <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all risk
+                                  <span>  <p>I hereby waive and release Royalty Exotic Cars, its owners, agents and employees from any liability and/or claim for personal injury, property damage, or death that may arise from my use of this car rental even if such cause can be associated in any way by the acts or failures to act of the Company, or any of its agents, or employees in the inspection, maintenance and/or from other customer's use of this vehicle.</p></span></div></label>
+                              </div>
+
+                              <div class="form-group" style="margin: 20px;">
+                                  <label for="comment">Customer Notes</label>
+                                  <textarea class="form-control" rows="5" id="comment" placeholder="Please include rental specific requests."></textarea>
+                              </div>
 
                           </form>
+                          
+                          <div class="gidt-card">
+                              
+                               <div class="gift" style="float: left;">
+                               
+                                    <div class="form-group" style="">
+
+                                        <label for="fname" class="form-label">Gift card number:</label>
+                                        <input class="form-control" type="text" id="fname" name="firstname" placeholder="As it appears on Driver's license">
+
+                                    </div>
+
+                               </div>
+
+                          </div>
+
                       </div>
                   </main>
               </div>
