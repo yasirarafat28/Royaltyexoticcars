@@ -182,7 +182,7 @@
                                 <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I am over the age of 25
                                     <span>
-                                        <p>All drivers must be over the age of 25.
+                                        <p style="font-weight: normal; font-size: 90%;">All drivers must be over the age of 25.
 
                                             *Passengers must be at least 4' 9" or weigh more than 40lbs.</p>
                                     </span></div>
@@ -194,7 +194,7 @@
                                 <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I have a valid driver's license
                                     <span>
-                                        <p>All drivers must have a valid driver's license from their country of
+                                        <p style="font-weight: normal; font-size: 90%;">All drivers must have a valid driver's license from their country of
                                             citizenship.
 
                                             *International driver's must have passport present.</p>
@@ -207,7 +207,7 @@
                                 <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I agree to follow all state and federal laws
                                     <span>
-                                        <p>Please drive in a safe, responsible, and legal manner.
+                                        <p style="font-weight: normal; font-size: 90%;">Please drive in a safe, responsible, and legal manner.
 
                                             *Unsafe operation may result in fines/early termination of rental agreement.
                                         </p>
@@ -220,7 +220,7 @@
                                 <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
                                     <span>
-                                        <p>All car rentals include unlimited mileage within a 100 mile radius of pickup
+                                        <p style="font-weight: normal; font-size: 90%;">All car rentals include unlimited mileage within a 100 mile radius of pickup
                                             location.
 
                                             *Driving outside the 100 mile radius service area is subject to fees.</p>
@@ -241,7 +241,7 @@
                                 <div><input type="checkbox" value="" required></div>
                                 <div style="padding-left: 10px;"> I accept the Late Returns Policy
                                     <span>
-                                        <p>Please ensure you have adequate time for your drive back to the showroom.
+                                        <p  style="font-weight: normal; font-size: 90%;">Please ensure you have adequate time for your drive back to the showroom.
 
                                             *Late returns are subject to $250+proration fee.</p>
                                     </span></div>
@@ -254,7 +254,7 @@
                                 <div style="padding-left: 10px;"> I understand that my reservation may change at any
                                     time
                                     <span>
-                                        <p>Please be aware that car accidents, breakdowns, or other disruptive events
+                                        <p style="font-weight: normal; font-size: 90%;">Please be aware that car accidents, breakdowns, or other disruptive events
                                             can happen at any time.
 
                                             *We will always do our best to ensure you are in a car of equal or greater
@@ -269,7 +269,7 @@
                                 <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all
                                     risk
                                     <span>
-                                        <p>I hereby waive and release Royalty Exotic Cars, its owners, agents and
+                                        <p style="font-weight: normal; font-size: 90%;">I hereby waive and release Royalty Exotic Cars, its owners, agents and
                                             employees from any liability and/or claim for personal injury, property
                                             damage, or death that may arise from my use of this car rental even if such
                                             cause can be associated in any way by the acts or failures to act of the
