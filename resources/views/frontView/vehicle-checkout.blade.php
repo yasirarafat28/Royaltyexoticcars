@@ -7,6 +7,7 @@
     }
 </style>
 <link rel="stylesheet" href="/assets/plugins/fullcalendar/fullcalendar.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 @section('content')
 <div class="rental__hero">
@@ -286,7 +287,7 @@
 
                     </form>
 
-                    <div class="middle-container" style="display: flex; justify-content: space-between; margin:0 auto;">
+                    <div class="middle-container" style="border: 1px solid grey; border-radius: 10px; padding: 10px; display: flex; justify-content: space-between; margin:10px;">
 
                         <div class="gidt-card">
 
@@ -354,11 +355,96 @@
 
                     </div>
 
-                    <div class="chashout">
+                    <div class="chashout" style="display: flex; justify-content: space-between; margin-top: 20px;">
+
+                        <div class="col-xs-4">
+
+                            <form action="/action_page.php" style="margin:auto">
+                                <p>contact</p>
+                                <div class="input-container" style="padding: 5px; border-radius: 10px;">
+                                    <i class="fa fa-user icon"></i>
+                                    <input class="input-field" type="text" placeholder="Full Name" name="usrnm" required>
+                                </div>
+
+                                <div class="input-container" style="padding: 5px; border-radius: 10px;">
+                                    <i class="fa fa-phone icon"></i>
+                                    <input class="input-field" type="text" placeholder="Phone number" name="usrnm" required>
+                                </div>
+
+                                <div class="input-container" style="padding: 5px; border-radius: 10px;">
+                                    <i class="fa fa-envelope icon"></i>
+                                    <input class="input-field" type="text" placeholder="Email" name="email" required>
+                                </div>
+                            </form>
+
+                        </div>
 
 
+                        <div class="col-xs-4">
+                            <div class="logodiv" style="display: flex;">
+                            
+                                <img src="images/lock-solid.svg" alt="lock-icon"
+                                        style="height: 12px; width: 13px; margin: 5px;">
+                                
+                                <p>Payment</p>
+
+                            </div>
+                            <div class="dible" style="width: 400px; border: 1px solid grey; border-radius: 10px; padding: 10px; margin-top: 8px;">
+                                <!--<div id="credit-card" class="tab-pane fade show active pt-3">-->
+                                    <form role="form">
+                                        <div class="form-group"> <label for="username">
+                                                <h6 style="font-size: 80%;">Card Owner</h6>
+                                            </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                        <div class="form-group"> <label for="cardNumber">
+                                                <h6 style="font-size: 80%;">Card number</h6>
+                                            </label>
+                                            <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                                <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fa fa-cc-visa" style="font-size:24px"></i> </span> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group"> <label><span class="hidden-xs">
+                                                            <h6 style="font-size: 80%;">Expiration Date</h6>
+                                                        </span></label>
+                                                    <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                        <h6 style="font-size: 80%;">CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                    </label> <input type="text" required class="form-control"> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                <!--</div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+
+                            <p>Cancellations</p>
+                            <div class="texti" style="border: 1px solid grey; border-radius: 10px; padding: 15px; margin-top: 20px; font-size: 90%">
+
+                                <p>
+                                    (1) Rental make, model, or color<br> are NOT guaranteed.<br>
+                                    (2) Reservation changes can be <br>made before 3 days within <br>booking date for $249 fee.<br>
+                                    (3) No reservation changes can be <br>made within 3 days of booking.<br>
+                                </p>
+
+                            </div>
+
+                        </div>
 
                     </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <p style="text-align: center;"> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </p>
+                    </div>
+
+                    <small id="passwordHelpBlock" class="form-text text-muted" style="text-align: center;">
+                        By booking you also agree to FareHarbor's terms of service.
+                    </small>
 
                 </div>
             </main>
