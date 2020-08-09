@@ -72,8 +72,9 @@
             defaultDate: "2018-01-12",
 
             eventClick: function(arg) {
-                if (confirm('Are you sure you want to delete this event?')) {
-                    arg.event.remove()
+                if (confirm('You want to book in ths time?')) {
+                    //arg.event.remove()
+                    window.location='/vehicle-checkout'
                 }
             },
             navLinks: true, // can click day/week names to navigate views
@@ -82,7 +83,7 @@
             select: function(arg) {
                 //alert(arg);
 
-                window.location='/vehicle-checkout'
+                //window.location='/vehicle-checkout'
             },
             editable: true,
             droppable: true, // this allows things to be dropped onto the calendar
@@ -103,6 +104,7 @@
                 },
                 {
                     title: 'Long Event',
+                    url: '/vehicle-checkout',
                     start: '2018-01-07',
                     end: '2018-01-10',
                     className: 'bg-cyan'
