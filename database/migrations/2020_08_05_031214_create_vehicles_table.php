@@ -20,6 +20,7 @@ class CreateVehiclesTable extends Migration
             $table->integer('brand_id')->default(0);
             $table->string('type')->default('super_car');
             $table->text('feature_image')->nullable();
+            $table->text('additional_image')->nullable();
             $table->text('name')->nullable();
             $table->text('description')->nullable();
             $table->string('model')->nullable();

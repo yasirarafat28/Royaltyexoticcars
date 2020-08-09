@@ -69,12 +69,12 @@
                             <div class="form-group">
                                 <label for="name" class="control-label mb-1">{{__('messages.name')}}<span class="reqfield">*</span>
                                 </label>
-                                <input id="pro_name" name="name"  type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.name')}}">
+                                <input id="pro_name" name="name"  type="text" class="form-control" aria-required="true" required aria-invalid="false" placeholder="{{__('messages.name')}}">
                             </div>
                             <div class="form-group">
                                 <label for="description" class="control-label mb-1">{{__('messages.description')}}<span class="reqfield">*</span>
                                 </label>
-                                <textarea name="description" id="description" class="editor"></textarea>
+                                <textarea name="description" id="description" class="editor" required></textarea>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
@@ -111,7 +111,7 @@
                                         @endif
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6" >
+                                <!--<div class="form-group col-md-6" >
                                     <label for="brand" class="control-label mb-1">{{__('messages.tax_name')}}<span class="reqfield">*</span>
                                     </label>
                                     <select class="form-control" name="tax_id" id="texable" >
@@ -120,7 +120,7 @@
                                             <option value="{{$t->id}}" >{{$t->tax_name}}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div>-->
                                 <div class="form-group col-md-6" >
                                     <label for="brand" class="control-label mb-1">{{__('messages.color_name')}}<span class="reqfield">*</span>
                                     </label>
@@ -144,7 +144,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.selling_price')}}<span class="reqfield">*</span>
                                     </label>
-                                    <input name="four_hour_price" type="number" step="any" class="form-control" aria-invalid="false" placeholder="{{__('messages.selling_price')}}" required>
+                                    <input name="four_hour_price" type="number" step="any" class="form-control" aria-invalid="false" placeholder="{{__('messages.selling_price')}}">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.spe_price')}}</label>
@@ -164,7 +164,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.selling_price')}}<span class="reqfield">*</span>
                                     </label>
-                                    <input name="eight_hour_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.selling_price')}}" required>
+                                    <input name="eight_hour_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.selling_price')}}">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.spe_price')}}</label>
@@ -184,7 +184,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.selling_price')}}<span class="reqfield">*</span>
                                     </label>
-                                    <input name="full_day_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.selling_price')}}" required>
+                                    <input name="full_day_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.selling_price')}}">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.spe_price')}}</label>
@@ -193,7 +193,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <h3>Stock Information</h3>
+                    <h3>Stock</h3>
                     <fieldset>
                         <div class="body">
                             <div class="row">
@@ -205,11 +205,11 @@
 
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.start')}}</label>
-                                    <input id="spe_pri_start" name="available_from" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                                    <input name="available_from" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.to')}}</label>
-                                    <input id="spe_pri_to" name="available_to" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                                    <input name="available_to" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
                             </div>
                         </div>
@@ -225,8 +225,8 @@
                                         <button class="btn imgcatlog">
                                             <input type="hidden" name="feature_imagse" id="real_basic_img" />
                                             <?php
-                                            if(isset($data->basic_image)){
-                                                $path=asset('upload/product')."/".$data->basic_image;
+                                            if(isset($vehicle->feature_image)){
+                                                $path=asset($vehicle->feature_image??'');
                                             }
                                             else{
                                                 $path=asset('admin-asset/images/imgplaceholder.png');
@@ -235,7 +235,7 @@
                                             <img src="{{$path}}" alt="..." class="img-thumbnail imgsize"  id="basic_img" >
                                         </button>
                                         <input type="hidden" name="basic_img" id="basic_img1"/>
-                                        <input type="file" name="feature_image" id="upload_image" />
+                                        <input type="file" name="feature_image" id="upload_image" onchange="featureImageUpload(this)" />
                                     </div>
                                 </div>
                             </div>
@@ -245,8 +245,8 @@
 
                                 <div id="additional_image" class="fleft">
                                     <?php $i=0;?>
-                                    @if(isset($data->additional_image))
-                                        <?php $imagels=explode(",",$data->additional_image);;?>
+                                    @if(isset($vehicle->additional_image))
+                                        <?php $imagels=explode(",",$vehicle->additional_image);;?>
                                         @foreach($imagels as $imls)
                                             <div id="imgid{{$i}}" class="add-img">
                                                 <input type="hidden" name="add_real_img[]" value="{{$imls}}"/>
@@ -264,7 +264,8 @@
                                     <button class="btn imgcatlog">
                                         <img src="{{asset('admin-asset/images/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
                                     </button>
-                                    <input type="file" name="add_image" id="add_image" />
+                                    <input type="file" name="add_image" id="add_image" onchange="additionalImageUpload(this)" />
+                                    <input type="hidden" id="add_total_img" value="0">
                                 </div>
                             </div>
                         </div>
@@ -384,13 +385,22 @@
 
 
 <script>
+
+    function additionalImageUpload(abc){
+
+        var add_total_img=$("#add_total_img").val();
+        var txt='<div id="imgid'+add_total_img+'" class="add-img"><input type="hidden" name="add_real_img[]"/><img class="img-thumbnail" id="additional_img'+add_total_img+'" name="arrimg[]" style="width: 150px;height: 150px;" /><div class="add-box"><input type="hidden" id="additionalimg'+add_total_img+'" name="additional_img[]"/><input type="button" id="removeImage1" value="x" class="btn-rmv1" onclick="removeimg('+add_total_img+')"/></div></div>';
+        $("#additional_image").append(txt);
+        readaddURL(abc,add_total_img);
+        var newtotal=parseInt(add_total_img)+1;
+        $("#add_total_img").val(newtotal);
+    }
+
+    function featureImageUpload(abc){
+
+        readURL(abc,"basic_img");
+    }
     $(function () {
-
-        $('#add_image').on('change',function (event) {
-            event.preventDefault();
-            alert('testing');
-
-        });
 
         //Advanced form with validation
         var form = $('#wizard_with_validation');
@@ -404,12 +414,6 @@
                 var tabCount = $tab.length;
                 $tab.css('width', (100 / tabCount) + '%');
                 CKEDITOR.replace('description');
-
-                $('#spe_pri_start, #spe_pri_to').datepicker({
-                    showOn: "both",
-                    beforeShow: customRange,
-                    dateFormat: "M dd,yy",
-                });
 
 
 

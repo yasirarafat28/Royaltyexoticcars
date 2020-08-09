@@ -60,6 +60,15 @@
            color: #fff !important;
        }
 
+   .wizard > .actions a, .wizard > .actions a:hover, .wizard > .actions a:active {
+       color: #fff !important;
+   }
+   .wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active {
+       background: #2184be;
+       color: #fff !important;
+       cursor: default;
+   }
+
 </style>
 
 
