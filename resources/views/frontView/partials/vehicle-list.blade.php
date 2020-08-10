@@ -1,5 +1,5 @@
 <div class="single-car-wrap">
-	<div class="single-car-thumb"><img src={{ $record->feature_image }}></div>
+	<div class="single-car-thumb"><img src={{url($record->feature_image)}}></div>
 
 
 	<div class="single-car-info">
@@ -26,7 +26,7 @@
 		<p class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
-            <iclass="fa fa-star"></i>
+            <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star unmark"></i>
         </p>

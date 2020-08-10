@@ -102,10 +102,10 @@
               </ol>
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img src="{{ $vehicle->feature_image }}" class="d-block w-100" alt="...">
+                      <img src="{{url($vehicle->feature_image)}}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                      <img src="{{ $vehicle->feature_image }}" class="d-block w-100" alt="...">
+                      <img src="{{url($vehicle->feature_image)}}" class="d-block w-100" alt="...">
                   </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
