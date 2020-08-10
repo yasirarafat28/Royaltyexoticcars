@@ -107,7 +107,11 @@ class VehicleController extends Controller
         $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
+        $vehicle->vehicle_class = $request->vehicle_class;
         $vehicle->model = $request->model;
+        $vehicle->body = $request->body;
+        $vehicle->seat = $request->seat;
+        $vehicle->actual_msrp = $request->actual_msrp;
         $vehicle->horse_power = $request->horse_power;
         $vehicle->torque = $request->torque;
         $vehicle->transmission = $request->transmission;

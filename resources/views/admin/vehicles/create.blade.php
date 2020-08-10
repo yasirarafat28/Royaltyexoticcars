@@ -294,23 +294,23 @@
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Color</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input required class="form-control" type="text" name="color"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Class</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input required class="form-control" type="text" name="vehicle_class"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Body</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input required class="form-control" type="text" name="body"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Seat</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input required class="form-control" type="text" name="seat"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Actual MSRP</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input required class="form-control" type="text" name="actual_msrp"></td>
                                             </tr>
                                             </tbody>
                                         </table>
