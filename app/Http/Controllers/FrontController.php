@@ -210,6 +210,9 @@ class FrontController extends Controller {
     public function vehiclecheckout() {
         return view('frontView.vehicle-checkout');
     }
+    public function vehiclebrowse() {
+        return view('frontView.vehicle-browse');
+    }
     public function shop(){
         $setting=Setting::find(1);
         Session::put("is_web",$setting->is_web);

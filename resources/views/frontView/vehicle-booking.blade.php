@@ -72,7 +72,7 @@
             defaultDate: "2018-01-12",
 
             eventClick: function(arg) {
-                if (confirm('You want to book in ths time?')) {
+                if (confirm('Do you want to book in ths time?')) {
                     //arg.event.remove()
                     window.location='/vehicle-checkout'
                 }
