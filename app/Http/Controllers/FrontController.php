@@ -177,8 +177,8 @@ class FrontController extends Controller {
         $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
         return view('frontView.vehicle-browse',compact('records'));
     }
-    public function singleVehicle(){
-        return view('frontView.single-vehicle');
+    public function singleVehicle( $vehicleID ){
+        return view('frontView.single-vehicle')->with('vehicle', Vehicle::find($vehicleID));
     }
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');

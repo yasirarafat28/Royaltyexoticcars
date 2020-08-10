@@ -43,32 +43,32 @@
   <div class="rental__hero">
     <div class="rental__header">
       <div class="rental__name">
-        <h1 class="rental__h1">Lamborghini Aventador </h1>
+        <h1 class="rental__h1">{{ $vehicle->name }}</h1>
         <div class="rental__specs">6.5 V12</div>
         <div class="rental__specs rental__specs--spacer">|</div>
-        <div class="rental__specs">7-Speed Automatic</div>
+        <div class="rental__specs">{{ $vehicle->transmission }}</div>
         <div class="rental__specs rental__specs--spacer">|</div>
-        <div class="rental__specs">750</div>
+        <div class="rental__specs">{{ $vehicle->horse_power }}</div>
         <div class="rental__specs">hp</div>
       </div>
       <div class="rental__price">
         <div class="rental__price--block">
           <div class="rental__price--label">4 Hours</div>
           <div>$</div>
-          <div>999</div>
+          <div>{{ $vehicle->four_hour_price }}</div>
         </div>
         <div class="rental__price--block">
           <div class="rental__price--label">8 Hours</div>
           <div>$</div>
-          <div>1749</div>
+          <div>{{ $vehicle->eight_hour_price }}</div>
         </div>
         <div class="rental__price--block bookbar__price--block-wide">
           <div class="rental__price--label">24Hr Special!</div>
           <div>$</div>
-          <div>1749</div>
+          <div>{{ $vehicle->full_day_price }}</div>
           <div class="rental__price--before">
             <div>normally $</div>
-            <div>2299</div>
+            <div>{{ $vehicle->four_hour_price }}</div>
           </div>
         </div>
       </div>
@@ -102,10 +102,10 @@
               </ol>
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg" class="d-block w-100" alt="...">
+                      <img src="{{ $vehicle->feature_image }}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                      <img src="/frontEnd/5af4d00138c15114e253c7df_2018-mclaren-720s-bright-orange-exterior-front-angle-royalty-exotic-cars.jpg" class="d-block w-100" alt="...">
+                      <img src="{{ $vehicle->feature_image }}" class="d-block w-100" alt="...">
                   </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -140,33 +140,33 @@
         <div class="rentals__features">
           <div class="rental__features--block">
             <div class="rental__features--label">Make</div>
-            <div class="rental__features--text">Lamborghini</div>
+            <div class="rental__features--text">lamborgini</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Model</div>
-            <div class="rental__features--text">Aventador</div>
+            <div class="rental__features--text">{{ $vehicle->model }}</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Color</div>
-            <div class="rental__features--text">Black</div>
+            <div class="rental__features--text">{{ $vehicle->color }}</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Class</div>
-            <div class="rental__features--text">Supercar</div>
+            <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Body</div>
-            <div class="rental__features--text">Coupe</div>
+            <div class="rental__features--text">{{ $vehicle->body }}</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Seats</div>
-            <div class="rental__features--text">2</div>
+            <div class="rental__features--text">{{ $vehicle->seat }}</div>
             <div class="rental__features--text">-seater</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Actual MSRP</div>
             <div>
-              <div class="rental__features--text currency">$536,000</div>
+              <div class="rental__features--text currency">{{ $vehicle->actual_msrp }}</div>
             </div>
           </div>
         </div>
@@ -178,26 +178,26 @@
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Transmission</div>
-            <div class="rental__features--text">7-Speed Automatic</div>
+            <div class="rental__features--text">{{ $vehicle->transmission }}</div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Horse Power</div>
             <div>
-              <div class="rental__features--text">750</div>
+              <div class="rental__features--text">{{ $vehicle->horse_power }}</div>
               <div class="rental__features--text profile__features--text-label">hp</div>
             </div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Torque</div>
             <div>
-              <div class="rental__features--text">509</div>
+              <div class="rental__features--text">{{ $vehicle->torque }}</div>
               <div class="rental__features--text profile__features--text-label">lb-ft</div>
             </div>
           </div>
           <div class="rental__features--block">
             <div class="rental__features--label">Drive Wheel</div>
             <div>
-              <div class="rental__features--text">AWD</div>
+              <div class="rental__features--text">{{ $vehicle->driver_wheel }}</div>
             </div>
           </div>
           <div class="rental__features--block">
@@ -224,28 +224,7 @@
       <section id="description" class="rental__section">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
-          <p>If there&#x27;s a pecking order among the elite of the supercar elite, the Lamborghini Aventador may be in
-            its own category. You wouldn&#x27;t expect anything less than superiority from a 690-horsepower wonder that
-            accelerates from 0-60 mph in 2.9 seconds and completes a standing quarter-mile in 10.4 seconds.</p>
-          <p>Lamborghini celebrated its 50th anniversary in 2014, and the Aventador represents the Italian carmaker at
-            its best. The 6.5-liter V12 has a tremendous personality. Its engine roars in grand tradition and the
-            supercar is best defined as a speed demon. Its acceleration is as outrageous as the rest of the 2-door
-            coupe&#x27;s specs that include 509 lb-ft of torque and has a top end speed of 216 mph. All-wheel drive is
-            standard and the seven-speed automatic transmission features five driving modes.</p>
-          <p>The driving experience surprises, particularly on a winding country road with your foot well into the
-            accelerator. Part of the Lamborghini&#x27;s signature look is its drastic width. It adds a welcomed,
-            pleasing challenge. The Aventador has precise steering on its composed chassis and thus drives pleasingly
-            smaller than its monolithic presence.</p>
-          <p>The Aventador&#x27;s driving gravitas is further enhanced by its futuristic exterior styling and equally
-            aggressive interior control panel reminiscent of a stealth jet.</p>
-          <p>For a supercar, the Lamborghini has an extensive laundry list of features for you to enjoy. Consider:
-            19-inch front wheels, 20-inch rear wheels, high-performance tires, carbon-ceramic brakes, a deployable rear
-            spoiler, and an adjustable-height suspension.</p>
-          <p>Plus, there&#x27;s hill-start assist, automatic bi-xenon headlights, LED running lights, heated and power
-            folding mirrors, a tilt steering wheel, automatic climate control, leather upholstery, an LCD gauge cluster,
-            navigation system, real-time traffic, Bluetooth, an iPod interface and a sound system.</p>
-          <p>If you crave mind-blowing speed in a superior driving supercar, the Lamborghini will provide an experience
-            like few other vehicles.</p>
+        {{ $vehicle->description }}
         </div>
       </section>
       <section id="location" class="rental__section">
