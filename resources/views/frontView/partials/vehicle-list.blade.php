@@ -32,5 +32,6 @@
 
 
         <a href="#CarBookModal" class="primary-btn "
-           data-toggle="modal">Book It</a></div>
+           data-toggle="modal">Book It</a>
+    </div>
 </div>

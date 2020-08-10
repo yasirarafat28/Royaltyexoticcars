@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use App\Model\Vehicle;
 use App\Model\VehicleCategory;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
@@ -211,6 +212,7 @@ class FrontController extends Controller {
         return view('frontView.vehicle-checkout');
     }
     public function vehiclebrowse() {
+        $vehicles = Vehicle::all();
         return view('frontView.vehicle-browse');
     }
     public function shop(){

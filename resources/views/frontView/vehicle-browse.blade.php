@@ -137,6 +137,8 @@
 					</div>
 					<div class="quicklinks quicklinks__browse w-dyn-list">
 						<div role="list" class="w-dyn-items">
+
+
 							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
@@ -145,7 +147,8 @@
 										<div>Bugatti</div>
 										<div class="quicklinks__desc">Veyron</div>
 									</div>
-								</a></div>
+								</a>
+							</div>
 							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 									class="quicklinks__link w-inline-block"><img
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
@@ -261,11 +264,47 @@
                     <div class="container text-left">
                         <div class="car-list-content">
                             <div class="row">
-                                @for($i=0;$i<8;$i++)
+                                @foreach($records as $record)
                                     <div class="col-md-4 col-sm-6 mb-3 mt-3">
-                                        @include('frontView.partials.vehicle-list')
+										<div class="single-car-wrap">
+											<div class="single-car-thumb"><img src={{ $record->feature_image }}></div>
+
+
+											<div class="single-car-info">
+
+												<div class="rentals__header">
+													<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg" alt="" class="rentals__logo">
+													<div class="trending__embed w-embed">
+														<div class="rentals__label">{{ $record->body }}</div>
+													</div>
+												</div>
+												<h2><a href="#">{{ $record->name }}</a></h2>
+												<div class="rentals__info">
+													<div>4 Hrs: $</div>
+													<div>{{ $record->four_hour_price }}</div>
+													<div>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;8 Hrs: $</div>
+													<div>{{ $record->eight_hour_price }}</div>
+												</div>
+												<p>{{ $record->description }}</p>
+												<ul class="car-info-list">
+													<li>AC</li>
+													<li>Diesel</li>
+													<li>Auto</li>
+												</ul>
+												<p class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+														class="fa fa-star"></i><i class="fa fa-star"></i><i
+														class="fa fa-star unmark"></i></p>
+
+
+
+
+												<a href="#CarBookModal" class="primary-btn "
+												data-toggle="modal">Book It</a>
+											</div>
+										</div>
+
                                     </div>
-                                @endfor
+                                @endforeach
                             </div>
                         </div>
                     </div>
