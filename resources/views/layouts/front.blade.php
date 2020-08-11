@@ -1,3 +1,7 @@
+@php
+$setting = setting();
+
+@endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="www.rentalexoticsbeasts.com" data-wf-page="5eab2e688db14a5dd693300b"
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
@@ -99,7 +103,6 @@
             margin-bottom: 5px;
         }
     </style>
-
 
 @yield('style')
 </head>
@@ -1010,7 +1013,7 @@
 		</div>
 	</header>
 	@yield('content')
-	<footer class="footer">
+	<!--<footer class="footer">
 		<div class="container container__small">
 			<div id="requirements" class="reqs">
 				<div class="reqs__header">
@@ -1631,142 +1634,6 @@
 					id="Feedback-Very-Good" title="Very Good" href="#" class="feedback__icon">😁</a>
 			</div>
 		</div>
-
-        <!--
-		<div class="shop">
-			<div class="shop__item">
-				<div data-poster-url="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-poster-00001.jpg"
-					data-video-urls="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-transcode.mp4,https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-transcode.webm"
-					data-autoplay="true" data-loop="true" data-wf-ignore="true"
-					class="shop__video w-background-video w-background-video-atom"><video autoplay="" loop=""
-						style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-poster-00001.html)"
-						muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-transcode.mp4"
-							data-wf-ignore="true" />
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17e0a486ccdcb7ec0770df_dean-martin-transcode.webm"
-							data-wf-ignore="true" /></video></div>
-				<div class="shop__content">
-					<div class="shop__heading">Dean Martin<br />Location</div>
-					<div class="shop__text">The world&#x27;s largest selection of exotic cars for rent!</div>
-					<div class="spacer"></div><a id="Footer-Browse-Exhausts-Button"
-						href="https://goo.gl/maps/KPq2pDCV4KZPAaQ69" target="_blank" class="button">Visit Showroom</a>
-				</div>
-			</div>
-			<div class="shop__item">
-				<div data-poster-url="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-poster-00001.jpg"
-					data-video-urls="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-transcode.mp4,https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-transcode.webm"
-					data-autoplay="true" data-loop="true" data-wf-ignore="true"
-					class="shop__video w-background-video w-background-video-atom"><video autoplay="" loop=""
-						style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-poster-00001.html)"
-						muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-transcode.mp4"
-							data-wf-ignore="true" />
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e17dfd3ba9f9e67f5ea77e1_fashion-show-transcode.webm"
-							data-wf-ignore="true" /></video></div>
-				<div class="shop__content">
-					<div class="shop__heading">Fashion Show<br />Location</div>
-					<div class="shop__text">Our retail store is located in Vegas&#x27; most popular shopping
-						destination!</div>
-					<div class="spacer"></div><a id="Footer-Browse-Apparel-Button"
-						href="https://g.page/royalty-exotic-cars?share" target="_blank" class="button">Visit Fashion
-						Show</a>
-				</div>
-			</div>
-			<div class="shop__item">
-				<div data-poster-url="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-poster-00001.jpg"
-					data-video-urls="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-transcode.mp4,https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-transcode.webm"
-					data-autoplay="true" data-loop="true" data-wf-ignore="true"
-					class="shop__video w-background-video w-background-video-atom"><video autoplay="" loop=""
-						style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-poster-00001.html)"
-						muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-transcode.mp4"
-							data-wf-ignore="true" />
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac7267efbaefcc854707d6_shop-promo-video-transcode.webm"
-							data-wf-ignore="true" /></video></div>
-				<div class="shop__content">
-					<div class="shop__heading">Shop<br />Apparel</div>
-					<div class="shop__text">Browse our selection of hoodies, tshirts, hats and other apparel!</div>
-					<div class="spacer"></div><a id="Footer-Browse-Apparel-Button"
-						href="https://shop.rentalexoticsbeasts.com/" target="_blank" class="button">Browse Apparel</a>
-				</div>
-			</div>
-			<div class="shop__item">
-				<div data-poster-url="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-poster-00001.jpg"
-					data-video-urls="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-transcode.mp4,https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-transcode.webm"
-					data-autoplay="true" data-loop="true" data-wf-ignore="true"
-					class="shop__video w-background-video w-background-video-atom"><video autoplay="" loop=""
-						style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-poster-00001.html)"
-						muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-transcode.mp4"
-							data-wf-ignore="true" />
-						<source
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5cac79cad10c09d15f411316_shop-ryft-promo-transcode.webm"
-							data-wf-ignore="true" /></video></div>
-				<div class="shop__content">
-					<div class="shop__heading">Shop<br />Exhausts</div>
-					<div class="shop__text">100% titanium, hand made, proprietary exhaust systems!</div>
-					<div class="spacer"></div><a id="Footer-Browse-Exhausts-Button"
-						href="https://shop.rentalexoticsbeasts.com/collections/exhausts" target="_blank"
-						class="button">Browse Exhausts</a>
-				</div>
-			</div>
-			<div class="shop__gift"><a id="Footer-Gift-Card-Button"
-					href="https://fareharbor.com/embeds/book/royalty-exotic-cars/items/44436/calendar/?flow=15373"
-					class="button__link">Buy a Gift Card! :)</a></div>
-		</div>
-		<div class="team">
-			<div class="team__mission">Every day, we go to work focused and committed to being the best, most
-				affordable, and most exciting exotic car rental company in the world.* <br /><br />Give us a shot —
-				<strong>happiness guaranteed.</strong></div>
-			<div class="team__members w-dyn-list">
-				<div role="list" class="team__list w-dyn-items">
-					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="/team/houston" class="team__link w-inline-block"><img
-								src="/frontEnd/5baa88f49d2e932ea9c68803_landscape_0001_houston_landscape.png"
-								alt="" class="team__photo" />
-							<div class="team__text">Houston</div>
-							<div class="team__text">, </div>
-							<div class="team__text">Owner/CEO</div>
-						</a></div>
-					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="/team/houston" class="team__link w-inline-block"><img
-								src="/frontEnd/5baa89209d2e93204bc68826_tony-catchings-showroom-manager.png"
-								alt="" class="team__photo" />
-							<div class="team__text">Tony</div>
-							<div class="team__text">, </div>
-							<div class="team__text">Operations Director</div>
-						</a></div>
-					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="/team/houston" class="team__link w-inline-block"><img
-								src="/frontEnd/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png"
-								alt="" sizes="(max-width: 479px) 45vw, 22vw"
-								srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bb2a5c5d150db823a9ad021_mario-media-director-landscape.png 600w"
-								class="team__photo" />
-							<div class="team__text">Mario</div>
-							<div class="team__text">, </div>
-							<div class="team__text">Media &amp; Marketing Director</div>
-						</a></div>
-					<div role="listitem" class="team__item w-dyn-item"><a id="Footer-Team-Member-Item"
-							href="/team/houston" class="team__link w-inline-block"><img
-								src="/frontEnd/5bd21e36dc7d0dc24c414bbd_attwood-2.png"
-								alt="" class="team__photo" />
-							<div class="team__text">Attwood</div>
-							<div class="team__text">, </div>
-							<div class="team__text">Outside Location Specialist</div>
-						</a></div>
-				</div>
-			</div>
-			<div class="team__family">*Rental Exotic Beasts is owned and operated by a small team of just 10
-				people.<br />Some of us are related by blood, others by sweat and tears — <a id="Footer-Family-Link"
-					href="/team"><strong>together we&#x27;re family→</strong></a><strong><br /></strong></div>
-		</div> -->
 		<div class="brands w-dyn-list">
 			<div role="list" class="brands__list w-dyn-items">
 				<div role="listitem" class="brands__item w-dyn-item"><img
@@ -1847,35 +1714,6 @@
 			</div>
 		</div>
         <div class="container container__small">
-            <!--<img
-				src="/frontEnd/5a10aaa4d85f4b0001a533d8_webclip.png"
-				alt="Rental Exotic Beasts Logo" class="footer__logo" />
-			<div id="VIP" class="vip w-form">
-				<form id="VIP-Form" name="wf-form-VIP-Form" data-name="VIP Form" data-reach-subscribe="VIP"
-					class="vip__form"><img
-						src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e2940f464852b3dbcd8c76d_logo-cursive-black.svg"
-						alt="" class="vip__logo" />
-					<div class="vip__heading">Royalty VIP Club</div>
-					<div class="vip__desciption">Every month we give VIP Club members opportunities to get free
-						merchandise, discounts on rentals, exclusive sweepstakes offers, special updates, early access
-						to rentals, wishlist items, flash sales and more!<br /></div><input type="text"
-						class="vip__input vip__input--top w-input" maxlength="256" name="Name---VIP"
-						data-reach-input="name" data-name="Name - VIP" placeholder="Name" id="Name-VIP"
-						required="" /><input type="email" class="vip__input w-input" maxlength="256" name="Email---VIP"
-						data-reach-input="email" data-name="Email - VIP" placeholder="Email (for updates)"
-						id="Email-VIP" required="" /><input type="tel" class="vip__input w-input" maxlength="256"
-						name="Phone---VIP" data-reach-input="phone" data-name="Phone - VIP"
-						placeholder="Phone (for flash sales)" id="Phone-VIP" required="" /><input type="submit"
-						value="Join The Royalty VIP Club" data-wait="Please wait..."
-						class="vip__input vip__input--bottom w-button" />
-				</form>
-				<div class="w-form-done">
-					<div>Thank you! Your submission has been received!</div>
-				</div>
-				<div class="w-form-fail">
-					<div>Oops! Something went wrong while submitting the form.</div>
-				</div>
-			</div>-->
 			<div class="motto">
 				<div class="motto__brand"><a href="index.html" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
@@ -2135,7 +1973,89 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer>--><footer>
+        <!-- Footer top -->
+        <div class="container footer_top">
+            <div class="row"><div class="col-md-3">
+                    <div class="footer_item">
+                        <h4>Explore link</h4>
+                        <hr>
+                        <ul class="list-unstyled footer_menu">
+                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
+                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
+                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
+                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
+                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+                            </li></ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer_item">
+                        <h4>Information</h4>
+                        <hr>
+                        <ul class="list-unstyled footer_menu">
+                            <li>
+                                <a href="https://edeal.xyz/information/about"><span class="fa fa-play"></span> About us</a>
+                            </li>
+                            <li>
+                                <a href="https://edeal.xyz/information/contact"><span class="fa fa-play"></span> Contact us</a>
+                            </li>
+                            <li>
+                                <a href="https://edeal.xyz/information/merchant_term"><span class="fa fa-play"></span> Merchant Terms</a>
+                            </li>
+                            <li>
+                                <a href="https://edeal.xyz/information/seller_term"><span class="fa fa-play"></span> Customer Terms</a>
+                            </li>
+                            <li>
+                                <a href="https://edeal.xyz/information/privacy"><span class="fa fa-play"></span> Privacy and Policy</a>
+                            </li>
+                            <li>
+                                <a href="https://edeal.xyz/information/faq"><span class="fa fa-play"></span> Frequent Asked Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer_item">
+                        <h4>Social</h4>
+                        <hr>
+                        <ul class="list-unstyled footer_menu">
+                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
+                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
+                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
+                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
+                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+                            </li></ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="footer_item">
+                        <h4>Local</h4>
+                        <hr>
+                        <ul class="list-unstyled footer_contact">
+                            <li><a href=""><span class="fa fa-map-marker"></span>264/5, 60FT Road, Mirpur,
+                                    Dhaka, Bangladesh 1216</a></li>
+                            <li><a href="mailto:support@edeal.xyz"><span class="fa fa-envelope"></span> support@edeal.xyz</a></li>
+                            <li><a><span class="fa fa-mobile"></span><p>+8801988300003</p></a></li>
+                            <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
+
+                            <!--<li><a><span class="fa fa-whatsapp"></span><p>01988300003</p></a></li>
+                            <li><a><img class="fa" src="https://edeal.xyz/img/imo.png"><p>01988300003</p></a></li>
+                            <li><a><img class="fa"  src="https://edeal.xyz/img/viber.png"><p>01988300003</p></a></li>-->
+                            <li><a><span class="fa fa-skype"></span><p>Edeal.xyz</p></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Footer top end -->
+
+        <!-- Footer bottom -->
+        <div class="footer_bottom text-center">
+            <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by Edeal.xyz Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name}} </a>{{date('Y')}}. All Rights Reserved
+            </p>
+        </div><!-- Footer bottom end -->
+    </footer>
 	<script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
 		type="text/javascript" ></script>
 	<script src="/frontEnd/js/rentalexoticsbeasts.af38aa331.js"
