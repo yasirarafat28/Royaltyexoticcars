@@ -196,6 +196,7 @@ class FrontController extends Controller {
         $records = $records->get();
         return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories'));
     }
+
     public function brandshow(Request $request, $cat='all') {
 
         $records = Vehicle::where('status','active')->where(function($q) use($request){
@@ -219,6 +220,7 @@ class FrontController extends Controller {
         $records = $records->get();
         return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories'));
     }
+    
     public function singleVehicle( $vehicleID ){
         return view('frontView.single-vehicle')->with('vehicle', Vehicle::find($vehicleID));
     }
