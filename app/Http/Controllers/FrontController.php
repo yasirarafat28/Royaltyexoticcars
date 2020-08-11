@@ -175,7 +175,22 @@ class FrontController extends Controller {
     }
     public function vehicles(Request $request, $cat='all') {
 
-        $records = Vehicle::where('status','active')->where(function($q) use($request){
+        $records = Vehicle::whereHas('category', function ($q) use($request){
+
+            if (isset($request->category) && $request->category){
+                $q->where('slug', $request->category);
+            }
+        })->whereHas('subcategory', function ($q) use($request){
+
+            if (isset($request->sub_category) && $request->sub_category){
+                $q->where('slug', $request->sub_category);
+            }
+        })->whereHas('brand', function ($q) use($request){
+
+            if (isset($request->brand) && $request->brand){
+                $q->where('slug', $request->brand);
+            }
+        })->where('status','active')->where(function($q) use($request){
             if (isset($request->q) && $request->q){
                 $q->where('name', 'LIKE', '%' . $request->q . '%');
             }
@@ -186,8 +201,12 @@ class FrontController extends Controller {
 
         $brands = VehicleBrand::whereIn('id',$brand_ids)->get();
         $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
-        if (isset($request->category_id) && $request->category_id){
-            $sub_categories = VehicleCategory::where('parent_category_id',$request->category_id)->where('status','active')->get();
+        if (isset($request->category) && $request->category){
+            $sub_categories = VehicleCategory::whereHas('parentcategory', function ($q) use($request){
+                if (isset($request->category) && $request->category){
+                    $q->where('slug', $request->category);
+                }
+            })->where('status','active')->get();
         }else{
             $sub_categories = array();
         }
@@ -200,7 +219,7 @@ class FrontController extends Controller {
     public function brandshow( $brandID ) {
 
         //
-        
+
     }
 
     public function singleVehicle( $vehicleID ){

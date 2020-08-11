@@ -89,6 +89,7 @@ class VehicleController extends Controller
 
         $vehicle = new Vehicle();
         $vehicle->name = $request->name;
+        $vehicle->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         $vehicle->description = $request->description;
         $vehicle->category_id = $request->category_id;
         $vehicle->sub_category_id = $request->sub_category_id;

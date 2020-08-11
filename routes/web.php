@@ -16,6 +16,10 @@ Route::get('/schedule', function() {
     Artisan::call('schedule:run');
     return "schedule done";
 });
+
+Route::get('/testing', function() {
+    return ;
+});
 Route::get('config-cache', function() {
     Artisan::call('config:cache');
      echo "php clear cache";

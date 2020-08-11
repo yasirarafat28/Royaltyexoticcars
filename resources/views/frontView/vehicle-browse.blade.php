@@ -6,8 +6,8 @@
 				<div class="crumbsbar__wrapper">
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
 						<div class="crumbsbar__toggle w-dropdown-toggle">
-							<div>Car</div>
-							<div>s</div><img
+							<div>All Category</div>
+                            <img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
 								alt="" class="crumbsbar__icon" />
 						</div>
@@ -16,37 +16,10 @@
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
 
-										@foreach($categories as $categorie)
+										@foreach($categories as $category)
 
 											<div role="listitem" class="w-dyn-item">
-												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $categorie->name }}</a>
-											</div>
-
-										@endforeach
-										
-									</div>
-								</div>
-							</div>
-						</nav>
-					</div><img
-						src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f52c6915f44000178c85e_right arrow.svg"
-						alt="" class="crumbsbar__divider" />
-					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
-						<div class="crumbsbar__toggle w-dropdown-toggle">
-							<div>All </div>
-							<div>Cars</div><img
-								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
-								alt="" class="crumbsbar__icon" />
-						</div>
-						<nav class="crumbsbar__pane w-dropdown-list">
-							<div class="crumbsbar__list">
-								<div class="w-dyn-list">
-									<div role="list" class="w-dyn-items">
-
-										@foreach($sub_categories as $sub_categorie)
-
-											<div role="listitem" class="w-dyn-item">
-												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $sub_categorie->name }}</a>
+												<a href="/vehicles?{!! http_build_query(\Request::except('category')) !!}{{\Request::except('category')?'&':''}}category={{ $category->slug }}" class="crumbsbar__link w-dropdown-link">{{ $category->name }}</a>
 											</div>
 
 										@endforeach
@@ -55,7 +28,38 @@
 								</div>
 							</div>
 						</nav>
-					</div><img
+					</div>
+                    @if(sizeof($sub_categories))
+                        <img
+                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f52c6915f44000178c85e_right arrow.svg"
+                            alt="" class="crumbsbar__divider" />
+                        <div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
+                            <div class="crumbsbar__toggle w-dropdown-toggle">
+                                <div>All </div>
+                                <div>Cars</div><img
+                                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
+                                    alt="" class="crumbsbar__icon" />
+                            </div>
+                            <nav class="crumbsbar__pane w-dropdown-list">
+                                <div class="crumbsbar__list">
+                                    <div class="w-dyn-list">
+                                        <div role="list" class="w-dyn-items">
+
+                                            @foreach($sub_categories as $sub_category)
+
+                                                <div role="listitem" class="w-dyn-item">
+                                                    <a href="/vehicles?{!! http_build_query(\Request::except('sub_category')) !!}{{\Request::except('sub_category')?'&':''}}sub_category={{ $sub_category->slug }}" class="crumbsbar__link w-dropdown-link">{{ $sub_category->name }}</a>
+                                                </div>
+
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    @endif
+                    <img
 						src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f52c6915f44000178c85e_right arrow.svg"
 						alt="" class="crumbsbar__divider" />
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
@@ -73,7 +77,7 @@
 										@foreach($brands as $brand)
 
 											<div role="listitem" class="w-dyn-item">
-												<a href="/brand/{{ $brand->id }}" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
+												<a href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
 											</div>
 
 										@endforeach
@@ -113,7 +117,7 @@
 							@foreach($brands as $brand)
 
 								<div role="listitem" class="w-dyn-item">
-									<a href="/car-rentals"
+									<a href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
 										class="quicklinks__link w-inline-block"><img
 										src="{{url($brand->photo)}}"
 										alt="Bugatti" class="quicklinks__logo" />
@@ -125,7 +129,7 @@
 								</div>
 
 							@endforeach
-		
+
 						</div>
 					</div>
 				</div>
@@ -136,7 +140,7 @@
 
                                 @foreach($records as $record)
                                     <div class="col-md-4 col-sm-6 mb-3 mt-3">
-										
+
 										@include('frontView.partials.vehicle-list')
 
                                     </div>

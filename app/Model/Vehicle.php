@@ -13,7 +13,7 @@ class Vehicle extends Model
     }
 
     public function subcategory(){
-        return $this->belongsTo('App\Model\VehicleCategory','category_id');
+        return $this->belongsTo('App\Model\VehicleCategory','sub_category_id');
     }
 
     public function brand(){

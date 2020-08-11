@@ -43,6 +43,7 @@ class VehicleBrandController extends Controller
 
         $category = new VehicleBrand();
         $category->name = $request->name;
+        $category->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         //$category->status = $request->status;
 
         if ($request->hasFile('photo')) {
