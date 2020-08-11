@@ -54,6 +54,11 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
+										@foreach($categories as $categorie)
+											<div role="listitem" class="w-dyn-item">
+												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $categorie->name }}</a>
+											</div>
+										@endforeach
 										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
 												class="crumbsbar__link w-dropdown-link">Hypercars</a></div>
 										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
@@ -120,124 +125,22 @@
 						<div role="list" class="w-dyn-items">
 
 
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
+
+
+							@foreach($brands as $brand)
+								<div role="listitem" class="w-dyn-item">
+									<a href="/car-rentals"
+										class="quicklinks__link w-inline-block"><img
+										src="{{url($brand->photo)}}"
 										alt="Bugatti" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Bugatti</div>
-										<div class="quicklinks__desc">Veyron</div>
-									</div>
-								</a>
-							</div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
-										alt="Lamborghini" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Lamborghini</div>
-										<div class="quicklinks__desc">Aventador, Huracán, Gallardo</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
-										alt="Ferrari" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Ferrari</div>
-										<div class="quicklinks__desc">488, 458</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
-										alt="McLaren" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>McLaren</div>
-										<div class="quicklinks__desc">720S, 650S, 570S</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
-										alt="Porsche" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Porsche</div>
-										<div class="quicklinks__desc">911 GT3-RS</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
-										alt="Acura" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Acura</div>
-										<div class="quicklinks__desc">NSX</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
-										alt="Nissan" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Nissan</div>
-										<div class="quicklinks__desc">GT-R</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="corvette-z06-rentals.html"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
-										alt="Corvette" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Corvette</div>
-										<div class="quicklinks__desc">Z06</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
-										alt="Aston Martin" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Aston Martin</div>
-										<div class="quicklinks__desc">Vantage</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
-										alt="Rolls-Royce" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Rolls-Royce</div>
-										<div class="quicklinks__desc">Ghost</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
-										alt="Bentley" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Bentley</div>
-										<div class="quicklinks__desc">Continental GTC</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
-										alt="Mercedes-AMG" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>Mercedes-AMG</div>
-										<div class="quicklinks__desc">S63</div>
-									</div>
-								</a></div>
-							<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-									class="quicklinks__link w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
-										alt="BMW-i" class="quicklinks__logo" />
-									<div class="quicklinks__details">
-										<div>BMW-i</div>
-										<div class="quicklinks__desc">i8</div>
-									</div>
-								</a></div>
+										<div class="quicklinks__details">
+											<div>{{ $brand->name }}</div>
+											<div class="quicklinks__desc">{{ $brand->name }} </div>
+										</div>
+									</a>
+								</div>
+							@endforeach
+		
 						</div>
 					</div>
 				</div>
