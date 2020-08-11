@@ -4,21 +4,6 @@
 		<div class="container-fluid">
 			<div class="crumbsbar w-clearfix">
 				<div class="crumbsbar__wrapper">
-					<div data-delay="200" data-hover="1" class="crumbsbar__dropdown w-dropdown">
-						<div class="crumbsbar__toggle w-dropdown-toggle">
-							<div>Las Vegas, NV</div><img
-								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
-								alt="" class="crumbsbar__icon" />
-						</div>
-						<nav class="crumbsbar__pane w-dropdown-list">
-							<div class="crumbsbar__list"><a href="/car-rentals" aria-current="page"
-									class="crumbsbar__link crumbsbar__link--inline w-inline-block w--current">
-									<div>Las Vegas, NV</div>
-								</a></div>
-						</nav>
-					</div><img
-						src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f52c6915f44000178c85e_right arrow.svg"
-						alt="" class="crumbsbar__divider" />
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
 						<div class="crumbsbar__toggle w-dropdown-toggle">
 							<div>Car</div>
