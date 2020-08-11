@@ -266,3 +266,9 @@ footer::after {
     color: #fff;
 }
 
+.view-more-btn{
+    font-size: 18px !important;
+    padding: 12px 50px !important;
+
+}
+

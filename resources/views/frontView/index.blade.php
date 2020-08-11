@@ -209,7 +209,7 @@
                         </div>
                         <div class="col-md-12 text-center">
 
-                            <a id="Browse-All-Motorcycles-Link" href="/vehicles?category={{$group->slug}}" class="rentals__browse--link">Browse all {{ucwords($group->name)}}</a>
+                            <a id="Browse-All-Motorcycles-Link" href="/vehicles?category={{$group->slug}}" class="btn btn-outline-success view-more-btn ">Browse all {{ucwords($group->name)}}</a>
 
                         </div>
                     </div>
