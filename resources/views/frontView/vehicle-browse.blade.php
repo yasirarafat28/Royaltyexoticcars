@@ -39,21 +39,15 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
+
 										@foreach($categories as $categorie)
+
 											<div role="listitem" class="w-dyn-item">
 												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $categorie->name }}</a>
 											</div>
+
 										@endforeach
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Hypercars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Supercars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Exotic Cars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Sports Cars</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Luxury Cars</a></div>
+										
 									</div>
 								</div>
 							</div>
@@ -72,11 +66,15 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
+
 										@foreach($brands as $brand)
+
 											<div role="listitem" class="w-dyn-item">
 												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
 											</div>
+
 										@endforeach
+
 									</div>
 								</div>
 							</div>
@@ -109,10 +107,8 @@
 					<div class="quicklinks quicklinks__browse w-dyn-list">
 						<div role="list" class="w-dyn-items">
 
-
-
-
 							@foreach($brands as $brand)
+
 								<div role="listitem" class="w-dyn-item">
 									<a href="/car-rentals"
 										class="quicklinks__link w-inline-block"><img
@@ -124,6 +120,7 @@
 										</div>
 									</a>
 								</div>
+
 							@endforeach
 		
 						</div>
@@ -133,6 +130,7 @@
                     <div class="container text-left">
                         <div class="car-list-content">
                             <div class="row">
+
                                 @foreach($records as $record)
                                     <div class="col-md-4 col-sm-6 mb-3 mt-3">
 										
@@ -140,6 +138,7 @@
 
                                     </div>
                                 @endforeach
+
                             </div>
                         </div>
                     </div>
