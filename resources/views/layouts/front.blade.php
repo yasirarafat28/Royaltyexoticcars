@@ -2052,7 +2052,7 @@ $setting = setting();
 
         <!-- Footer bottom -->
         <div class="footer_bottom text-center">
-            <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by Edeal.xyz Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name}} </a>{{date('Y')}}. All Rights Reserved
+            <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by {{$setting->company_name}} Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name}} </a>{{date('Y')}}. All Rights Reserved
             </p>
         </div><!-- Footer bottom end -->
     </footer>
