@@ -186,7 +186,7 @@
 					</div>
 				</div>
 				<div class="info__search">
-					<form action="{{url('')}}/search" id="Header-Search-Form"
+					<form action="/vehicles" id="Header-Search-Form"
 						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
 							name="query" placeholder="Search cars, suvs, slingshots, etc"
 							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"

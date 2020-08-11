@@ -46,6 +46,7 @@ use Mail;
 use Cart;
 use Config;
 use App\Model\Newsletter;
+use App\Model\VehicleBrand;
 use Hash;
 use DB;
 use Artisan;
@@ -172,10 +173,28 @@ class FrontController extends Controller {
     public function faqs() {
         return view('frontView.faqs');
     }
-    public function vehicles($cat='all') {
-        $records = Vehicle::where('status','active')->get();
+    public function vehicles(Request $request, $cat='all') {
+
+        $records = Vehicle::where('status','active')->where(function($q) use($request){
+            if (isset($request->q) && $request->q){
+                $q->where('name', 'LIKE', '%' . $request->q . '%');
+            }
+        });
+
+        $brand_ids = $records->distinct('brand_id')
+            ->get(['brand_id'])->pluck('brand_id');
+
+        $brands = VehicleBrand::whereIn('id',$brand_ids)->get();
         $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
-        return view('frontView.vehicle-browse',compact('records'));
+        if (isset($request->category_id) && $request->category_id){
+            $sub_categories = VehicleCategory::where('parent_category_id',$request->category_id)->where('status','active')->get();
+        }else{
+            $sub_categories = array();
+        }
+
+
+        $records = $records->get();
+        return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories'));
     }
     public function singleVehicle( $vehicleID ){
         return view('frontView.single-vehicle')->with('vehicle', Vehicle::find($vehicleID));

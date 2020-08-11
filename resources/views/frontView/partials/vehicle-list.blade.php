@@ -1,11 +1,12 @@
 <div class="single-car-wrap">
-	<div class="single-car-thumb"><img src={{url($record->feature_image)}}></div>
+	<div class="single-car-thumb"><img src={{url($record->feature_image??'')}}></div>
 
 
 	<div class="single-car-info">
 
 		<div class="rentals__header">
-			<img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg" alt="" class="rentals__logo">
+			<img src="{{url($record->brand->photo??'')}}" width="50px" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
+
 			<div class="trending__embed w-embed">
 				<div class="rentals__label">{{ $record->body }}</div>
 			</div>
@@ -17,7 +18,7 @@
 			<div>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;8 Hrs: $</div>
 			<div>{{ $record->eight_hour_price }}</div>
 	    </div>
-		<p>{{ $record->description }}</p>
+		<p>{{ substr(strip_tags($record->description),0,100) }} ...</p>
 		<ul class="car-info-list">
 			<li>AC</li>
 			<li>Diesel</li>
@@ -31,7 +32,7 @@
             <i class="fa fa-star unmark"></i>
         </p>
 
-		<a href="#CarBookModal" class="primary-btn "
+		<a href="#CarBookModal" class="rental__cta--text btn-success "
 			data-toggle="modal">Book It</a>
 	</div>
 </div>
