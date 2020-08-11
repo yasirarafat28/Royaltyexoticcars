@@ -172,79 +172,20 @@
                 </div>
             </div>
         </section>
-        <!--<div class="reviews">
-            <div class="reviews__item"><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5b2542c4a3234f310ba98fdb_logo-youtube-red.svg"
-                    alt="TripAdvisor Top Rated Company" class="reviews__logo" /><a
-                    href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
-                    class="reviews__youtube w-inline-block"><img
-                        src="/frontEnd/5e1258524b55b0f3303c2605_youtube-subscribe.png"
-                        srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe.png 1660w"
-                        sizes="(max-width: 479px) 20vw, 8vw" alt="" class="reviews__youtube--img" /></a>
-                <div class="reviews__text">269 videos, 400K subs, 40M views &amp; counting!</div><a
-                    href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
-                    id="Watch-Our-Vlog-Link" class="reviews__link">Watch our Vlog!</a>
-            </div>
-            <div class="reviews__item"><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e9e6fc00011a8e3e_reviews-tripadvisor-light-bg.svg"
-                    alt="TripAdvisor Top Rated Company" class="reviews__logo" /><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a535ce_trip-advisor-stars.svg"
-                    alt="" class="reviews__stars" />
-                <div class="reviews__text">5 star average rating based on <strong>1,550</strong> reviews</div><a
-                    href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html"
-                    target="_blank" id="TripAdvisor-Review-Link" class="reviews__link">Leave a TripAdvisor Review</a>
-            </div>
-            <div class="reviews__item"><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74afc4be0001e0ec84_reviews-google-light-bg.svg"
-                    alt="TripAdvisor Top Rated Company" class="reviews__logo" /><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5360b_google-reviews-stars.svg"
-                    alt="" class="reviews__stars" />
-                <div class="reviews__text">5 star average rating based on <strong>571</strong> reviews</div><a
-                    href="https://goo.gl/maps/Bxth6drQDFqZTnvF9" target="_blank" id="Google-Review-Link"
-                    class="reviews__link">Leave a Google Review</a>
-            </div>
-            <div class="reviews__item"><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e1788700018e6cd1_reviews-facebook-light-bg-2.svg"
-                    alt="TripAdvisor Top Rated Company" class="reviews__logo" /><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a62817bae7e6500016b012c_stars-facebook.svg"
-                    alt="" class="reviews__stars" />
-                <div class="reviews__text">5 star average rating based on <strong>230</strong> reviews</div><a
-                    href="https://www.facebook.com/pg/RoyaltySupercarRentals/reviews/" target="_blank"
-                    id="Facebook-Review-Link" class="reviews__link">Leave a Facebook Review</a>
-            </div>
-            <div class="reviews__item"><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e9e6fc00011a8e3d_reviews-yelp-light-bg.svg"
-                    alt="TripAdvisor Top Rated Company" class="reviews__logo" /><img
-                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5372b_yelp-reviews-stars.svg"
-                    alt="" class="reviews__stars" />
-                <div class="reviews__text">5 star average rating based on <strong>169</strong> reviews</div><a
-                    href="https://www.yelp.com/biz/royalty-exotic-cars-las-vegas-5?hrid=Y6HEV_AYvUQs5RMwUD5guw&amp;rh_type=phrase&amp;rh_ident=unlimited_mile"
-                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a>
-            </div>
-        </div>-->
         <div class="rentals">
             <h2 class="home__h2">Browse our fleet</h2>
-            <div class="rent__nav"><a id="Browse-Supercar-Rentals-Link" href="/car-rentals"
-                                      class="rent__nav--link w-inline-block"><img
-                        src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg"
-                        alt="" />
-                    <div class="rent__nav--label">Car Rentals</div>
-                </a><a id="Browse-SUV-Rentals-Link" href="/suv-rentals"
-                       class="rent__nav--link w-inline-block"><img
-                        src="/frontEnd/5d3f3e92ffba056a84408ad3_002-suv.jpg"
-                        alt="" />
-                    <div class="rent__nav--label">SUV Rentals</div>
-                </a><a id="Browse-Slingshot-Rentals-Link" href="/car-rentals"
-                       class="rent__nav--link w-inline-block"><img
-                        src="/frontEnd/5d3f3e7d23fb0f428fb98133_004-autocycle.jpg"
-                        alt="" />
-                    <div class="rent__nav--label">Autocycle Rentals</div>
-                </a><a id="Browse-Motorcycle-Rentals-Link" href="/car-rentals"
-                       class="rent__nav--link w-inline-block"><img
-                        src="/frontEnd/5d3f3e8725d7f1e6c2db4edb_003-motorcycles.jpg"
-                        alt="" />
-                    <div class="rent__nav--label">Motorcycle Rentals</div>
-                </a></div>
+            <div class="rent__nav">
+                @foreach($groups??array() as $group)
+                    <a id="Browse-Supercar-Rentals-Link" href="/vehicles?category={{$group->slug}}"
+                           class="rent__nav--link w-inline-block">
+                        <!--<img src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg" alt="" />-->
+                        <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
+                            <div class="rent__nav--label">{{$group->name}}</div>
+                        </a>
+
+
+                @endforeach
+            </div>
 
             @foreach($groups??array() as $group)
                 @if(!sizeof($group->vehicles))
@@ -266,42 +207,14 @@
                                 @endforeach
                             </div>
                         </div>
+                        <div class="col-md-12 text-center">
+
+                            <a id="Browse-All-Motorcycles-Link" href="/vehicles?category={{$group->slug}}" class="rentals__browse--link">Browse all {{ucwords($group->name)}}</a>
+
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </main>
 @endsection
-<!--@section('script')
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            $(".mySlides:nth-child(1)").mouseover(function() {
-                currentSlide(1);
-            });
-        }
-    </script>
-@endsection -->

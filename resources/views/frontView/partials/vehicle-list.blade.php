@@ -1,5 +1,5 @@
 <div class="single-car-wrap">
-	<div class="single-car-thumb"><img src="{{url($record->feature_image??'')}}"></div>
+	<div class="single-car-thumb"><img src="{{url($record->feature_image??'')}}"  onerror="this.src='/no-image.png';"></div>
 
 
 	<div class="single-car-info">
