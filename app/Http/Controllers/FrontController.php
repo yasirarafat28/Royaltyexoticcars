@@ -120,7 +120,30 @@ class FrontController extends Controller {
        }
         return redirect()->back();
     }
-    public function home(){
+    public function home(Request $request){
+
+        $groups =  VehicleCategory::where('status','active')->where('parent_category_id',0)->get();
+
+        /*$records = Vehicle::whereHas('category', function ($q) use($request){
+
+            if (isset($request->category) && $request->category){
+                $q->where('slug', $request->category);
+            }
+        })->whereHas('subcategory', function ($q) use($request){
+
+            if (isset($request->sub_category) && $request->sub_category){
+                $q->where('slug', $request->sub_category);
+            }
+        })->whereHas('brand', function ($q) use($request){
+
+            if (isset($request->brand) && $request->brand){
+                $q->where('slug', $request->brand);
+            }
+        })->where('status','active')->where(function($q) use($request){
+            if (isset($request->q) && $request->q){
+                $q->where('name', 'LIKE', '%' . $request->q . '%');
+            }
+        })->groupby('category_id')->get()->take(2);*/
         /* $setting=Setting::find(1);
         Session::put("is_web",$setting->is_web);
         if($setting->is_web=='2'){
@@ -167,7 +190,7 @@ class FrontController extends Controller {
         }
         $pay=PaymentMethod::find(1);
         $mywish=Wishlist::where("user_id",Auth::id())->get(); */
-        return view("frontView.index");
+        return view("frontView.index",compact('groups'));
         // return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
     }
     public function faqs() {

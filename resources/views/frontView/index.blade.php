@@ -245,109 +245,30 @@
                         alt="" />
                     <div class="rent__nav--label">Motorcycle Rentals</div>
                 </a></div>
-            <div id="supercar-rentals" class="rentals__section">
-                <h3 class="home__h3">Supercar Rentals</h3>
 
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="exotic-car-rentals" class="rentals__section">
-                <h3 class="home__h3">Exotic Car Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sports-car-rentals" class="rentals__section">
-                <h3 class="home__h3">Sports Car Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="luxury-car-rentals" class="rentals__section">
-                <h3 class="home__h3">Luxury Car Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="suv-rentals" class="rentals__section">
-                <h3 class="home__h3">SUV Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="slingshot-rentals" class="rentals__section">
-                <h3 class="home__h3">Autocycle Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
+            @foreach($groups??array() as $group)
+                @if(!sizeof($group->vehicles))
+                    @continue
+                @endif
 
-
-                <a id="Browse-All-Autocycles-Link" href="/car-rentals"
-                         class="rentals__browse--link">Browse all 21 Autocycles</a>
-            </div>
-            <div id="motorcycle-rentals" class="rentals__section">
-                <h3 class="home__h3">Motorcycle Rentals</h3>
-                <div class="container-fluid text-left">
-                    <div class="car-list-content">
-                        <div class="row">
-                            @for($i=0;$i<8;$i++)
-                                <div class=" col-md-3 mb-3 mt-3 col-sm-6">
-                                    @include('frontView.partials.vehicle-list')
-                                </div>
-                            @endfor
+                <div id="exotic-car-rentals" class="rentals__section">
+                    <h3 class="home__h3">{{$group->name??''}}</h3>
+                    <div class="container-fluid text-left">
+                        <div class="car-list-content">
+                            <div class="row">
+                                @foreach($group->vehicles??array() as $key=>$record)
+                                    @if($key>=12)
+                                        @break
+                                    @endif
+                                    <div class=" col-md-3 mb-3 mt-3 col-sm-6">
+                                        @include('frontView.partials.vehicle-list')
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </main>
 @endsection

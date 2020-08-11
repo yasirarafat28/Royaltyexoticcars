@@ -19,7 +19,7 @@
 										@foreach($categories as $category)
 
 											<div role="listitem" class="w-dyn-item">
-												<a href="/vehicles?{!! http_build_query(\Request::except('category')) !!}{{\Request::except('category')?'&':''}}category={{ $category->slug }}" class="crumbsbar__link w-dropdown-link">{{ $category->name }}</a>
+												<a href="/vehicles?category={{ $category->slug }}" class="crumbsbar__link w-dropdown-link">{{ $category->name }}</a>
 											</div>
 
 										@endforeach
