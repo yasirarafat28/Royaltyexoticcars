@@ -15,12 +15,15 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-										<div role="listitem" class="w-dyn-item"><a href="/suv-rentals"
-												class="crumbsbar__link w-dropdown-link">SUVs</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Autocycle</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Motorcycles</a></div>
+
+										@foreach($categories as $categorie)
+
+											<div role="listitem" class="w-dyn-item">
+												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $categorie->name }}</a>
+											</div>
+
+										@endforeach
+										
 									</div>
 								</div>
 							</div>
@@ -40,14 +43,14 @@
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
 
-										@foreach($categories as $categorie)
+										@foreach($sub_categories as $sub_categorie)
 
 											<div role="listitem" class="w-dyn-item">
-												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $categorie->name }}</a>
+												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $sub_categorie->name }}</a>
 											</div>
 
 										@endforeach
-										
+
 									</div>
 								</div>
 							</div>
@@ -70,7 +73,7 @@
 										@foreach($brands as $brand)
 
 											<div role="listitem" class="w-dyn-item">
-												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
+												<a href="/brand/{{ $brand->id }}" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
 											</div>
 
 										@endforeach
