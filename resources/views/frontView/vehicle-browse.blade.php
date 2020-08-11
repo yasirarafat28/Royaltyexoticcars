@@ -82,30 +82,11 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Bugatti</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Lamborghini</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">Ferrari</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="/car-rentals"
-												class="crumbsbar__link w-dropdown-link">McLaren</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="porsche-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Porsche</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="acura-nsx-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Acura NSX</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="nissan-gtr-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Nissan GT-R</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="corvette-z06-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Corvette Z06</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="aston-martin.html"
-												class="crumbsbar__link w-dropdown-link">Aston Martin</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="rolls-royce-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Rolls Royce</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="bentley-rentals.html"
-												class="crumbsbar__link w-dropdown-link">Bentley</a></div>
-										<div role="listitem" class="w-dyn-item"><a href="bmw-i8-rentals.html"
-												class="crumbsbar__link w-dropdown-link">BMW i8</a></div>
+										@foreach($brands as $brand)
+											<div role="listitem" class="w-dyn-item">
+												<a href="/car-rentals" class="crumbsbar__link w-dropdown-link">{{ $brand->name }}</a>
+											</div>
+										@endforeach
 									</div>
 								</div>
 							</div>
