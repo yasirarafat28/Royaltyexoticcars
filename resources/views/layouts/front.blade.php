@@ -90,7 +90,7 @@
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info">
 				<a target="_blank"
-					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
+					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
 				<div class="info__search">
 					<form action="/vehicles" id="Header-Search-Form"
@@ -479,49 +479,14 @@
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a690c68ae5eb70001f01b94_rec_logo_icon_black.svg"
 										alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
 									<div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
-									<div class="drawer__location--desc">4305 Dean Martin Drive, Suite 120<br />Las
-										Vegas, NV 89103<br />9:00am to 7:00pm Daily</div>
+									<div class="drawer__location--desc">{{$setting->address}}</div>
 								</div>
 								<div class="location__map"></div>
 							</div>
 						</a></div>
+					
 					<div class="drawer__section">
-						<div class="card card__rideshare">
-							<div class="rideshare"><a
-									href="https://m.uber.com/ul/?action=setPickup&amp;client_id=eK0ZoTS-ufl0UyXmKV07j92I8spQfxWu&amp;pickup=my_location&amp;dropoff[formatted_address]=Royalty%20Exotic%20Car%20Rentals%2C%20Dean%20Martin%20Drive%2C%20Las%20Vegas%2C%20NV%2C%20USA&amp;dropoff[latitude]=36.111317&amp;dropoff[longitude]=-115.181669"
-									target="_blank" id="Drawer-Uber-Button"
-									class="rideshare__button rideshare__button--uber w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f7f_logo-uber-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-10<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a><a
-									href="https://ride.lyft.com/request?code=ROYALTYEXOTICS&amp;destination=4305%20Dean%20Martin%20Drive%20120%2C%20Las%20Vegas%2C%20Nevada%2089103%2C%20United%20States@36.111317,-115.1838577&amp;partner=4Gc5_-Ju6Bx8&amp;pickup=3545%20S%20Las%20Vegas%20Blvd%2C%20Las%20Vegas%2C%20Nevada%2089109%2C%20United%20States@36.1177747,-115.1725759&amp;rideType=lyft"
-									target="_blank" id="Drawer-Lyft-Button"
-									class="rideshare__button rideshare__button--lyft w-hidden-small w-hidden-tiny w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f80_logo-lyft-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-20<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a><a
-									href="https://ride.lyft.com/ride?code=ROYALTYEXOTICS&amp;destination=4305%20Dean%20Martin%20Drive%20120%2C%20Las%20Vegas%2C%20Nevada%2089103%2C%20United%20States@36.111317,-115.1838577&amp;partner=4Gc5_-Ju6Bx8&amp;pickup=3545%20S%20Las%20Vegas%20Blvd%2C%20Las%20Vegas%2C%20Nevada%2089109%2C%20United%20States@36.1177747,-115.1725759&amp;rideType=lyft"
-									target="_blank"
-									class="rideshare__button rideshare__button--lyft rideshare__button--lyft-mobile w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f80_logo-lyft-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-20<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a></div>
-						</div>
-					</div>
-					<div class="drawer__section">
-						<div class="card"><a id="Drawer-Shop-Button" href="https://shop.rentalexoticsbeasts.com/"
+						<div class="card"><a id="Drawer-Shop-Button" href="/shop"
 								target="_blank" class="navdrawer__shop--button w-inline-block"><img
 									src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
 									alt="" class="navdrawer__shop--icon" />
@@ -531,14 +496,7 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-								<div class="tabs__menu w-tab-menu"><a data-w-tab="US Residents"
-										id="Drawer-Contact-US-Tab"
-										class="tabs__menu--link w-inline-block w-tab-link w--current">
-										<div>US Residents</div>
-									</a><a data-w-tab="International" id="Drawer-Contact-Intl-Tab"
-										class="tabs__menu--link w-inline-block w-tab-link">
-										<div>International</div>
-									</a></div>
+								
 								<div class="tabs__content w-tab-content">
 									<div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
 										<div class="navdrawer__links--wrapper"><a href="tel:18669841187"
@@ -548,21 +506,16 @@
 														alt="US Main Phone Number" class="navdrawer__link--image" />
 												</div>
 												<div>Call Toll Free: </div>
-												<div>+1-866-984-1187</div>
+												<div>{{$setting->phone}}</div>
 											</a><a
 												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
 												id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
 												<div class="navdrawer__link--icon"><img
 														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
 														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@rentalexoticsbeasts.com</div>
-											</a><a href="tel:17022976539" id="Drawer-Fax-Link"
-												class="navdrawer__link navdrawer__link--no-border w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a724bf33c051a0001206965_icon-fax-white.svg"
-														alt="Fax Number" class="navdrawer__link--image" /></div>
-												<div>Fax: +1-702-297-6539</div>
-											</a></div>
+												<div>{{$setting->email}}</div>
+											</a>
+										</div>
 									</div>
 									<div data-w-tab="International" class="tabs__pane w-tab-pane">
 										<div class="navdrawer__links--wrapper"><a href="tel:18884359737"
