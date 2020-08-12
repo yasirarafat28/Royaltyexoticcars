@@ -1668,11 +1668,11 @@
                         <h4>Social</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span>Instagram</a>
-                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span>Facebook</a>
-                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span>Twitter</a>
-                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span>Pinterest</a>
-                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span>Youtube</a>
+                            <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Instagram</a>
+                            </li><li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                            </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Twitter</a>
+                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Pinterest</a>
+                            </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
                             </li></ul>
                     </div>
                 </div>
@@ -1682,10 +1682,9 @@
                         <h4>Local</h4>
                         <hr>
                         <ul class="list-unstyled footer_contact">
-                            <li><a href=""><span class="fa fa-map-marker"></span>264/5, 60FT Road, Mirpur,
-                                    Dhaka, Bangladesh 1216</a></li>
+                            <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
                             <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
-                            <li><a><span class="fa fa-mobile"></span><p>+8801988300003</p></a></li>
+                            <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
                             <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
 
                             <!--<li><a><span class="fa fa-whatsapp"></span><p>01988300003</p></a></li>

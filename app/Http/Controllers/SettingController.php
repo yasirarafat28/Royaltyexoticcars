@@ -208,7 +208,12 @@ class SettingController extends Controller {
          $setting->helpline=$request->get("helpline");
          $setting->main_feature=$request->get("main_feature");
          $setting->newsletter=$request->get("newsletter");
-         $setting->company_name=$request->get("company_name");
+         $setting->company_name = $request->get("company_name");
+         $setting->insta_link = $request->get("insta_link");
+         $setting->fb_link = $request->get("fb_link");
+         $setting->tweeet_link = $request->get("tweeet_link");
+         $setting->pinter_link = $request->get("pinter_link");
+         $setting->utube_link = $request->get("utube_link");
          $setting->logo=$file_name;
          $setting->save();
          if($img!=$file_name){
