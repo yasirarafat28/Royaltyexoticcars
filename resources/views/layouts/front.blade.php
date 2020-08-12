@@ -89,7 +89,7 @@
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info">
-				<div class="info__callout">We Beat competitor&#x27;s prices</div><a target="_blank"
+				<a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
 
 				<div class="info__search">
@@ -131,6 +131,7 @@
 							<div class="nav__dropdown--pane">
 
 								<div class="nav__categories">
+
                                     @foreach($categories??array(  ) as $category)
 										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 											<div class="nav__categories--graphic">
@@ -431,56 +432,28 @@
 								alt="" class="nav__dropdown--arrow" />
 							<div class="nav__dropdown--pane">
 								<div class="nav__about">
-									<div class="nav__about--column">
-										<div class="nav__about--row"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2ce02faf1912f72a1f_icon-number-one.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Pick a rental.</div>
-												<div class="nav__about--desc">Choose from over 75 cars, suvs,
-													autocycles, and motorcycles.</div>
-											</div>
-										</div>
-										<div class="nav__about--row"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2e455d3a411f0d3791_icon-number-two.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Pay for booking.</div>
-												<div class="nav__about--desc">Select a date &amp; time frame and submit
-													payment.</div>
-											</div>
-										</div>
-										<div class="nav__about--row navbar__how--li-last"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2d1f34fda56f182972_icon-number-three.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Proof of insurance.</div>
-												<div class="nav__about--desc">Make sure you meet the insurance
-													requirements.</div>
-											</div>
-										</div>
-									</div>
-									<div class="nav__about--column about__column--links"><a href="/faqs"
-											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a><a
-											href="/team" id="Nav-Team-Link"
-											class="nav__about--link w-dropdown-link">Team</a><a href="/jobs"
-											id="Nav-Jobs-Link" class="nav__about--link w-dropdown-link">Jobs</a><a
-											href="/privacy" id="Nav-Privacy-Link"
-											class="nav__about--link w-dropdown-link">Privacy</a><a href="/terms"
-											id="Nav-Terms-Link" class="nav__about--link w-dropdown-link">Terms</a><a
-											href="/cookies" id="Nav-Cookies-Link"
-											class="nav__about--link w-dropdown-link">Cookies</a><a href="/feedback"
+									<div class="nav__about--column about__column--links">
+										<a href="/faqs"
+											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
+										<a href="/privacy" id="Nav-Privacy-Link"
+											class="nav__about--link w-dropdown-link">Privacy</a>
+										<a href="/cookies" id="Nav-Cookies-Link"
+											class="nav__about--link w-dropdown-link">Cookies</a>
+										<a href="/feedback"
 											id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 									</div>
 								</div>
 							</div>
 						</nav>
-					</div><a id="Rally-Link-Nav" href="#" class="nav__link nav__link--hidden w-inline-block">
+					</div>
+					<a id="Rally-Link-Nav" href="#" class="nav__link nav__link--hidden w-inline-block">
 						<div>Rally</div>
-					</a><a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
+					</a>
+					<!-- <a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
 						target="_blank" class="nav__link w-inline-block">
 						<div>Vlog</div>
-					</a><a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
+					</a> -->
+					<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 						<div>Shop</div>
 					</a>
 				</div>
@@ -1665,37 +1638,28 @@
                         <h4>Explore link</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
-                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
-                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
-                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
-                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+							<li><a href="/"><span class="fa fa-play"></span> Home</a>
+							<li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
+                            </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
+                            </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
+                            </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
                             </li></ul>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="footer_item">
-                        <h4>Information</h4>
+                        <h4>Rentals</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li>
-                                <a href="https://edeal.xyz/information/about"><span class="fa fa-play"></span> About us</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/contact"><span class="fa fa-play"></span> Contact us</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/merchant_term"><span class="fa fa-play"></span> Merchant Terms</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/seller_term"><span class="fa fa-play"></span> Customer Terms</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/privacy"><span class="fa fa-play"></span> Privacy and Policy</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/faq"><span class="fa fa-play"></span> Frequent Asked Question</a>
-                            </li>
+
+							@foreach($categories??array(  ) as $category)
+
+								<li>
+									<a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
+								</li>
+
+							@endforeach
+                
                         </ul>
                     </div>
                 </div>
@@ -1704,11 +1668,11 @@
                         <h4>Social</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
-                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
-                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
-                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
-                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span>Instagram</a>
+                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span>Facebook</a>
+                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span>Twitter</a>
+                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span>Pinterest</a>
+                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span>Youtube</a>
                             </li></ul>
                     </div>
                 </div>
@@ -1720,7 +1684,7 @@
                         <ul class="list-unstyled footer_contact">
                             <li><a href=""><span class="fa fa-map-marker"></span>264/5, 60FT Road, Mirpur,
                                     Dhaka, Bangladesh 1216</a></li>
-                            <li><a href="mailto:support@edeal.xyz"><span class="fa fa-envelope"></span> support@edeal.xyz</a></li>
+                            <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
                             <li><a><span class="fa fa-mobile"></span><p>+8801988300003</p></a></li>
                             <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
 
