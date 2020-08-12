@@ -1,5 +1,6 @@
 @php
-$setting = setting();
+
+	$setting = setting();
 
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
