@@ -1,5 +1,6 @@
 @php
-$setting = setting();
+
+	$setting = \App\Model\Setting::first();
 
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
@@ -37,20 +38,8 @@ $setting = setting();
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
 	<script
-		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
+		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);
+	</script>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -63,20 +52,6 @@ $setting = setting();
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" />
 
-
-<!--
-	<script
-		type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {
-			"currencyCode": "USD",
-			"$init": true,
-			"symbol": "$",
-			"decimal": ".",
-			"fractionDigits": 2,
-			"group": ",",
-			"template": "@{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} @{{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} @{{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}",
-            "hideDecimalForWholeNumbers": false };</script>
-
-    -->
 
     <style>
         .nav__brand .logo{
@@ -114,80 +89,7 @@ $setting = setting();
 			<div class="info">
 				<div class="info__callout">We Beat competitor&#x27;s prices</div><a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
-				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
-						href="mailto:reservations+toursengine@rentalexoticsbeasts.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
-						onclick="this.href = this.href.replace('[sub]',window.location)">
-						{{setting()->email}}
-					</a></div><a
-					href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
-					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
-				<div class="info__share">
-					<div class="share">
-						<div class="share__text">Share on </div>
-						<div class="share__icon">
-							<div class="share__embed share__embed--fb w-embed"><a id="Facebook-Share-Icon"
-									class="share__embed share__embed--fb"
-									href="https://www.facebook.com/sharer/sharer.php?u=&amp;t=" target="_blank"
-									title="Share on Facebook"
-									onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">
-									<svg width="100%" height="100%" aria-hidden="true" focusable="false"
-										data-prefix="fab" data-icon="facebook-f"
-										class="svg-inline--fa fa-facebook-f fa-w-10" role="img"
-										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-										<path fill="currentColor"
-											d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-										</path>
-									</svg>
-								</a></div>
-						</div>
-						<div class="share__icon">
-							<div class="share__embed share__embed--tw w-embed"><a id="Twitter-Share-Icon"
-									class="share__embed share__embed--tw" href="https://twitter.com/intent/tweet?"
-									target="_blank" title="Share on Twitter"
-									onclick="window.open('https://twitter.com/intent/tweet?text=%20' + encodeURIComponent(document.title) + ':%20 '  + encodeURIComponent(document.URL)); return false;">
-									<svg width="100%" height="100%" aria-hidden="true" focusable="false"
-										data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16"
-										role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-										<path fill="currentColor"
-											d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
-										</path>
-									</svg>
-								</a></div>
-						</div>
-						<div class="share__icon">
-							<div class="share__embed share__embed--in w-embed"><a id="LinkedIn-Share-Icon"
-									class="share__embed share__embed--in"
-									href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=&amp;summary=&amp;source="
-									target="_blank" title="Share on LinkedIn"
-									onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;">
-									<svg width="100%" height="100%" aria-hidden="true" focusable="false"
-										data-prefix="fab" data-icon="linkedin-in"
-										class="svg-inline--fa fa-linkedin-in fa-w-14" role="img"
-										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-										<path fill="currentColor"
-											d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-										</path>
-									</svg>
-								</a></div>
-						</div>
-						<div class="share__icon">
-							<div class="share__embed share__embed--mail w-embed"><a id="Email-Share-Icon"
-									class="share__embed share__embed--mail"
-									href="mailto:?subject=m&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
-									target="_blank" title="Email this page"
-									onclick="this.href = this.href.replace('[sub]',window.location)">
-									<svg width="100%" height="100%" aria-hidden="true" focusable="false"
-										data-prefix="fas" data-icon="envelope"
-										class="svg-inline--fa fa-envelope fa-w-16" role="img"
-										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-										<path fill="currentColor"
-											d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
-										</path>
-									</svg>
-								</a></div>
-						</div>
-					</div>
-				</div>
+
 				<div class="info__search">
 					<form action="/vehicles" id="Header-Search-Form"
 						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
@@ -195,6 +97,17 @@ $setting = setting();
 							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 							required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
 				</div>
+
+				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
+						href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
+						onclick="this.href = this.href.replace('[sub]',window.location)">
+						{{$setting->email}}
+					</a>
+				</div>
+				<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
+					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
+				
+				
 			</div>
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
@@ -214,273 +127,40 @@ $setting = setting();
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
 								alt="" class="nav__dropdown--arrow" />
 							<div class="nav__dropdown--pane">
-								<div class="nav__categories"><a href="/car-rentals"
-										id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
-										<div class="nav__categories--graphic"><img
-												src="/frontEnd/5b6224522898679a9952b073_2017-lamborghini-aventador-roadster-green-isolated-front-angle-royalty-exotic-cars-v2.png"
-												alt="" class="nav__categories--img" /><img
-												src="/frontEnd/5afc9dcbcf87150ce67f6bc2_2018-mclaren-720s-orange-isolated-2-front-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img navbar__rentals--image-absolute" />
-										</div>
-										<div class="nav__categories--text">
-											<div class="nav__categories--heading">Car Rentals</div>
-											<div class="nav__categories--desc">Ranging from American muscle to European
-												masterpieces.</div>
-										</div>
-									</a><a href="/suv-rentals" id="Nav-SUV-Rentals-Link"
-										class="nav__categories--link w-inline-block">
-										<div class="nav__categories--graphic"><img
-												src="/frontEnd/5abda7fc38a916291e1647d3_2018-jeep-wrangler-white-isolated-front-angle-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img" /><img
-												src="/frontEnd/5ba410d897971022e1ebc2c4_2018-jeep-wrangler-red-isolated-front-angle-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img navbar__rentals--image-absolute" />
-										</div>
-										<div class="nav__categories--text">
-											<div class="nav__categories--heading">SUV Rentals</div>
-											<div class="nav__categories--desc">From fully custom off-road vehicles to
-												luxury suvs and more!</div>
-										</div>
-									</a><a href="/car-rentals" id="Nav-Autocycle-Rentals-Link"
-										class="nav__categories--link w-inline-block">
-										<div class="nav__categories--graphic"><img
-												src="/frontEnd/5bb4211cc7a86b01713f61e0_2018-polaris-slingshot-matte-orange-isolated-front-angle-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img" /><img
-												src="/frontEnd/5aec98ce2c95ed52d1428ada_2018-vanderhall-venice-white-isolated-bright-exterior-front-angle-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img navbar__rentals--image-absolute" />
-										</div>
-										<div class="nav__categories--text">
-											<div class="nav__categories--heading">Autocycle Rentals</div>
-											<div class="nav__categories--desc">3-wheelers with two seats and faster than
-												most sports cars!</div>
-										</div>
-									</a><a href="/car-rentals" id="Nav-Motorcycle-Rentals-Link"
-										class="nav__categories--link w-inline-block">
-										<div class="nav__categories--graphic"><img
-												src="/frontEnd/5bb420d3f487b462f499b7e2_2017-ducati-1299-panigale-red-isolated-profile-royalty-exotic-cars.png"
-												alt="" class="nav__categories--img" /><img
-												src="/frontEnd/5bb420c7bfd9288e40d8484a_2017-bmw-s1000rr-white-blue-isolated-profile-royalty-exotic-cars-v3.png"
-												alt="" class="nav__categories--img navbar__rentals--image-absolute" />
-										</div>
-										<div class="nav__categories--text">
-											<div class="nav__categories--heading">Motorcycle Rentals</div>
-											<div class="nav__categories--desc">From superbikes to sport bikes; we have
-												motorcycles for every style!</div>
-										</div>
-									</a>
+								
+								<div class="nav__categories">
+									@foreach($categories as $category)
+										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
+											<div class="nav__categories--graphic">
+												<img src="{{url($category->photo??'')}}"
+													alt="" class="nav__categories--img" />
+											</div>
+											<div class="nav__categories--text">
+												<div class="nav__categories--heading">{{ $category->name }}</div>
+												<div class="nav__categories--desc">Ranging from American muscle to European
+													masterpieces.</div>
+											</div>
+										</a>
+									@endforeach
 									<div class="nav__categories--quicklinks">
 										<div class="quicklinks__collection w-dyn-list">
 											<div role="list"
 												class="quicklinks__list quicklinks__list--grid w-dyn-items">
+												@foreach($brands as $brand)
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/bugatti-rentals"
+														id="Nav-Quicklink" href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
 														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e531b7bd20a0001850dc3_brand-bugatti.svg"
+															src="{{url($brand->photo??'')}}"
 															alt="Bugatti" class="quicklinks__logo" />
 														<div class="quicklinks__details">
-															<div class="quicklinks__title">Bugatti</div>
-															<div class="quicklinks__desc">Veyron</div>
+															<div class="quicklinks__title">{{ $brand->name }}</div>
+															<!-- <div class="quicklinks__desc">Veyron</div> -->
 														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53e76_Lambo-web.svg"
-															alt="Lamborghini" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Lamborghini</div>
-															<div class="quicklinks__desc">Aventador, Huracán, Gallardo
-															</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5414a_Ferrari-web.svg"
-															alt="Ferrari" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Ferrari</div>
-															<div class="quicklinks__desc">488, 458</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a54901_mclaren-icon-black.svg"
-															alt="McLaren" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">McLaren</div>
-															<div class="quicklinks__desc">720S, 650S, 570S</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a540d1_Artboard 1.svg"
-															alt="Porsche" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Porsche</div>
-															<div class="quicklinks__desc">911 GT3-RS</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5e692dd588998ceddddba8c4_brand-acura-light-bg.svg"
-															alt="Acura" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Acura</div>
-															<div class="quicklinks__desc">NSX</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c97_nissan-gtr-logo-dark.svg"
-															alt="Nissan" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Nissan</div>
-															<div class="quicklinks__desc">GT-R</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53c95_corvette-dark.svg"
-															alt="Corvette" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Corvette</div>
-															<div class="quicklinks__desc">Z06</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5bbe40d13883132b070e0582_brand-aston-martin-light-bg.svg"
-															alt="Aston Martin" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Aston Martin</div>
-															<div class="quicklinks__desc">Vantage</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a8627d91a47200001d7e77f_brand-rolls-royce-light-bg.svg"
-															alt="Rolls-Royce" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Rolls-Royce</div>
-															<div class="quicklinks__desc">Ghost</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53ed4_bentley-on-light-background.svg"
-															alt="Bentley" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Bentley</div>
-															<div class="quicklinks__desc">Continental GTC</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a873a0257c38e00015b5e92_brand-amg-light-bg.svg"
-															alt="Mercedes-AMG" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Mercedes-AMG</div>
-															<div class="quicklinks__desc">S63</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e720a10ba5800018a828f_brand-bmw-i-3d.svg"
-															alt="BMW-i" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">BMW-i</div>
-															<div class="quicklinks__desc">i8</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a86280cba0c49000107fcb4_brand-jeep-light-bg.svg"
-															alt="Jeep" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Jeep</div>
-															<div class="quicklinks__desc">Wrangler</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a6e504610ba5800018a6d47_brand-slingshot-light-bg.svg"
-															alt="Slingshot" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Slingshot</div>
-															<div class="quicklinks__desc">SRL, SL, ICON</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a53cb2_vanderhall-light.svg"
-															alt="Vanderhall" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Vanderhall</div>
-															<div class="quicklinks__desc">Laguna, Venice</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4eb5ce85390000019d730d_ducati-light-bg.svg"
-															alt="Ducati" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Ducati</div>
-															<div class="quicklinks__desc">1299, 959 Panigale</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a5415b_BMW-web.svg"
-															alt="BMW Motorrad" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">BMW Motorrad</div>
-															<div class="quicklinks__desc">S1000RR</div>
-														</div>
-													</a></div>
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/lamborghini-rentals"
-														class="quicklinks__link w-inline-block"><img
-															src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a4ed69d489f4600012fb1b7_indian-light-bg.svg"
-															alt="Indian" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">Indian</div>
-															<div class="quicklinks__desc">Scout, Chieftan</div>
-														</div>
-													</a></div>
+													</a>
+												</div>
+												@endforeach
+												
 											</div>
 										</div>
 									</div>
@@ -1973,7 +1653,8 @@ $setting = setting();
 				</div>
 			</div>
 		</div>
-	</footer>--><footer>
+	</footer>-->
+	<footer>
         <!-- Footer top -->
         <div class="container footer_top">
             <div class="row"><div class="col-md-3">
