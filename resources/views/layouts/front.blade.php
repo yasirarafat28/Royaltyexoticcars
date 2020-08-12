@@ -1,6 +1,8 @@
 @php
 
 	$setting = \App\Model\Setting::first();
+	$brands = App\Model\VehicleBrand::where('status','active')->get();
+	$categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
 
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
@@ -106,8 +108,8 @@
 				</div>
 				<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
-				
-				
+
+
 			</div>
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
@@ -127,13 +129,13 @@
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
 								alt="" class="nav__dropdown--arrow" />
 							<div class="nav__dropdown--pane">
-								
+
 								<div class="nav__categories">
-									@foreach($categories as $category)
+									@foreach($categories??array(  ) as $category)
 										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 											<div class="nav__categories--graphic">
 												<img src="{{url($category->photo??'')}}"
-													alt="" class="nav__categories--img" />
+													alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
 											</div>
 											<div class="nav__categories--text">
 												<div class="nav__categories--heading">{{ $category->name }}</div>
@@ -146,10 +148,10 @@
 										<div class="quicklinks__collection w-dyn-list">
 											<div role="list"
 												class="quicklinks__list quicklinks__list--grid w-dyn-items">
-												@foreach($brands as $brand)
+												@foreach($brands??array() as $brand)
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
+														id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
 														class="quicklinks__link w-inline-block"><img
 															src="{{url($brand->photo??'')}}"
 															alt="Bugatti" class="quicklinks__logo" />
@@ -160,7 +162,7 @@
 													</a>
 												</div>
 												@endforeach
-												
+
 											</div>
 										</div>
 									</div>
