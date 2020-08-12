@@ -24,15 +24,15 @@
 			<li>Diesel</li>
 			<li>Auto</li>
 		</ul>
-		<p class="rating">
+		<!--<p class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star unmark"></i>
-        </p>
+        </p>-->
 
-		<a href="#CarBookModal" class="rental__cta--text btn-success "
-			data-toggle="modal">Book It</a>
+		<a href="#CarBookModal" class="rental__cta--text btn-success text-uppercase"
+			data-toggle="modal">Book Now</a>
 	</div>
 </div>
