@@ -104,6 +104,41 @@
                               </label>
                               <input type="text" id="company_name" placeholder="{{__('messages.company_name')}}" class="form-control" name="company_name" required value="{{$data->company_name}}">
                            </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.instagram_id')}}
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="instagram_id" placeholder="{{__('messages.instagram_id')}}" class="form-control" name="instagram_id" required value="{{$data->insta_link}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.facebook_id')}}
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="facebook_id" placeholder="{{__('messages.facebook_id')}}" class="form-control" name="facebook_id" required value="{{$data->fb_link}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.tweeter_id')}}
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="tweeter_id" placeholder="{{__('messages.tweeter_id')}}" class="form-control" name="tweeter_id" required value="{{$data->tweeet_link}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.pinterest_id')}}
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="pinterest_id" placeholder="{{__('messages.pinterest_id')}}" class="form-control" name="pinterest_id" required value="{{$data->pinter_link}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.youtube_account')}}
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="youtube_account" placeholder="{{__('messages.youtube_account')}}" class="form-control" name="youtube_account" required value="{{$data->utube_link}}">
+                           </div>
                         <div class="form-group col-md-12 paddiv">
                            <div class="col-md-6">
                               <label for="name" class=" form-control-label">

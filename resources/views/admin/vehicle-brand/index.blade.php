@@ -42,7 +42,6 @@
                             @forelse($brands??array() as $item)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-
                                 <td>
                                     <img src="{{asset($item->photo)}}" height="42" width="42"></td>
                                 <td>{{$item->name}}</td>

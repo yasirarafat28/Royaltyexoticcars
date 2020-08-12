@@ -387,7 +387,6 @@
 <script>
 
     function additionalImageUpload(abc){
-
         var add_total_img=$("#add_total_img").val();
         var txt='<div id="imgid'+add_total_img+'" class="add-img"><input type="hidden" name="add_real_img[]"/><img class="img-thumbnail" id="additional_img'+add_total_img+'" name="arrimg[]" style="width: 150px;height: 150px;" /><div class="add-box"><input type="hidden" id="additionalimg'+add_total_img+'" name="additional_img[]"/><input type="button" id="removeImage1" value="x" class="btn-rmv1" onclick="removeimg('+add_total_img+')"/></div></div>';
         $("#additional_image").append(txt);
