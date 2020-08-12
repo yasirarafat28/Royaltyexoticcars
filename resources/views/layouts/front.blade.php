@@ -131,13 +131,7 @@
 							<div class="nav__dropdown--pane">
 
 								<div class="nav__categories">
-<<<<<<< HEAD
-
-									@foreach($categories as $category)
-
-=======
-									@foreach($categories??array(  ) as $category)
->>>>>>> f5945b98fb5a156f2d6c94b8995241015ce970e4
+                                    @foreach($categories??array(  ) as $category)
 										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 											<div class="nav__categories--graphic">
 												<img src="{{url($category->photo??'')}}"
@@ -156,28 +150,7 @@
 										<div class="quicklinks__collection w-dyn-list">
 											<div role="list"
 												class="quicklinks__list quicklinks__list--grid w-dyn-items">
-<<<<<<< HEAD
-
-												@foreach($brands as $brand)
-
-													<div role="listitem"
-														class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-															id="Nav-Quicklink" href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
-															class="quicklinks__link w-inline-block"><img
-																src="{{url($brand->photo??'')}}"
-																alt="Bugatti" class="quicklinks__logo" />
-															<div class="quicklinks__details">
-																<div class="quicklinks__title">{{ $brand->name }}</div>
-																<!-- <div class="quicklinks__desc">Veyron</div> -->
-															</div>
-														</a>
-													</div>
-													
-												@endforeach
-
-												
-=======
-												@foreach($brands??array() as $brand)
+                                                @foreach($brands??array() as $brand)
 												<div role="listitem"
 													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
 														id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
@@ -191,8 +164,6 @@
 													</a>
 												</div>
 												@endforeach
-
->>>>>>> f5945b98fb5a156f2d6c94b8995241015ce970e4
 											</div>
 										</div>
 									</div>
