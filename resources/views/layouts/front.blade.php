@@ -463,14 +463,7 @@
 			</div>
 			<nav role="navigation" class="drawer w-nav-menu">
 				<div class="drawer__container">
-					<div class="drawer__search">
-						<form action="{{url('')}}/search" id="Drawer-Search-Form"
-							class="search w-form"><input type="search" name="query"
-								placeholder="Search cars, suvs, slingshots, etc" maxlength="256" required=""
-								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-								class="search__input w-input" /><input type="submit" value=" "
-								class="search__submit w-button" /></form>
-					</div>
+					
 					<div class="drawer__section"><a
 							href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 							id="Drawer-Location-Link" target="_blank" class="card w-inline-block">
@@ -517,51 +510,6 @@
 											</a>
 										</div>
 									</div>
-									<div data-w-tab="International" class="tabs__pane w-tab-pane">
-										<div class="navdrawer__links--wrapper"><a href="tel:18884359737"
-												id="Drawer-Call-Intl-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg"
-														alt="Toll Free Number" class="navdrawer__link--image" /></div>
-												<div>Toll Free: </div>
-												<div>+1-888-435-9737</div>
-											</a><a href="tel:18552251679" id="Drawer-Call-Espanol-Link"
-												class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a83a14363b7e50001e30191_icon-es-white.svg"
-														alt="Español Number" class="navdrawer__link--image" /></div>
-												<div>Español: +1-855-225-1679</div>
-											</a>
-											<div id="Drawer-Call-Skype-Link" class="w-embed"><a
-													href="skype:live:accounts_22302?call"
-													class="navdrawer__link w-inline-block">
-													<div class="navdrawer__link--icon"><img
-															src="https://global-uploads.webflow.com/5a10aaa4d85f4b0001a53292/5a839b0c4c065e000105ad90_icon-skype-white.svg"
-															alt="Skype Call" class="navdrawer__link--image"></div>
-													<div>Skype: Rental Exotic Beasts</div>
-												</a></div><a id="Drawer-Call-WhatsApp-Link" href="#"
-												class="navdrawer__link navdrawer__link--no-border w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a839b8def2b990001bc4d3e_icon-whats-app-white.svg"
-														alt="What&#x27;s App Call" class="navdrawer__link--image" />
-												</div>
-												<div>What&#x27;s App: @RoyaltyExoticCars</div>
-											</a><a
-												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
-												id="Drawer-Email-Intl-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
-														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@rentalexoticsbeasts.com</div>
-											</a>
-										</div><a id="Drawer-Translate-Button" href="#"
-											class="navdrawer__link navdrawer__link--centered addthis_button_googletranslate w-inline-block">
-											<div class="navdrawer__link--icon navdrawer__link--icon-no-fill"><img
-													src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a839990d6e5270001cb58fa_icon-translate-white.svg"
-													alt="Toll Free Number" class="navdrawer__link--image" /></div>
-											<div>Translate this page</div>
-										</a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -569,53 +517,44 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div class="navdrawer__links--wrapper"><a
-									href="https://www.instagram.com/rentalexoticsbeasts/" target="_blank"
+									href="{{$setting->insta_link}}" target="_blank"
 									id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
 											alt="Instagram" class="navdrawer__link--image" /></div>
 									<div>Follow us on Instagram</div>
-								</a><a href="https://www.facebook.com/Royalty-Exotic-Cars-1803379263252624/"
+								</a><a href="{{$setting->fb_link}}"
 									target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
 											alt="Facebook" class="navdrawer__link--image" /></div>
 									<div>Like us on Facebook</div>
-								</a><a href="https://twitter.com/RoyaltyExotics" target="_blank"
+								</a><a href="{{$setting->tweeet_link}}" target="_blank"
 									id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
 											alt="Twitter" class="navdrawer__link--image" /></div>
 									<div>Follow us on Twitter</div>
-								</a><a href="https://plus.google.com/102029232386680774193" target="_blank"
-									id="Drawer-GooglePlus-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53456_google-plus-icon.svg"
-											alt="Google Plus" class="navdrawer__link--image" /></div>
-									<div>Join us on Google+</div>
-								</a><a href="https://www.pinterest.com/royaltyexotics/" target="_blank"
+								</a>
+								
+								<a href="{{$setting->pinter_link}}" target="_blank"
 									id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
 											alt="Pinterest" class="navdrawer__link--image" /></div>
 									<div>Follow us on Pinterest</div>
-								</a><a href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
+								</a><a href="{{$setting->utube_link}}" target="_blank"
 									id="Drawer-Youtube-Link"
 									class="navdrawer__link navdrawer__link--no-border w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53631_youtube.svg"
 											alt="Youtube" class="navdrawer__link--image" /></div>
 									<div>Subscribe to our YouTube</div>
-								</a></div><a href="blog/rss.html" target="_blank" id="Drawer-RSS-Button"
-								class="navdrawer__link navdrawer__link--centered navdrawer__link--centered-social w-inline-block">
-								<div class="navdrawer__link--icon navdrawer__link--icon-no-fill"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533bd_53f3342f1b92a02f2f930a07_rss_footer.svg"
-										alt="RSS Feed" class="navdrawer__link--image" /></div>
-								<div>Subscribe to our RSS feed</div>
-							</a>
+								</a>
+							</div>
 						</div>
 					</div><a
-						href="mailto:happiness@rentalexoticsbeasts.com?subject=I%20have%20an%20idea%20that%20can%20improve%20Royalty%20Exotic%20Cars!%20%3A)"
+						href="mailto:{{$setting->email}}"
 						id="Drawer-Feedback-Button" class="navdrawer__button w-button">How can we improve?</a>
 				</div>
 			</nav>
