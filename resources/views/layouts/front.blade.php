@@ -1,6 +1,5 @@
 @php
 
-	
 	$setting = \App\Model\Setting::first();
 
 @endphp
