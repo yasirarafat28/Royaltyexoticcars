@@ -1,6 +1,7 @@
 @php
 
-	$setting = setting();
+	
+	$setting = \App\Model\Setting::first();
 
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
@@ -118,7 +119,7 @@
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
 						href="mailto:reservations+toursengine@rentalexoticsbeasts.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 						onclick="this.href = this.href.replace('[sub]',window.location)">
-						{{setting()->email}}
+						{{$setting->email}}
 					</a></div><a
 					href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
