@@ -38,20 +38,8 @@
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
 	<script
-		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
+		type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);
+	</script>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -115,13 +103,24 @@
 			<div class="info">
 				<div class="info__callout">We Beat competitor&#x27;s prices</div><a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
+
+				<div class="info__search">
+					<form action="/vehicles" id="Header-Search-Form"
+						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
+							name="q" placeholder="Search cars, suvs, slingshots, etc"
+							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
+							required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
+				</div>
+
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
-						href="mailto:reservations+toursengine@rentalexoticsbeasts.com?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
+						href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
 						onclick="this.href = this.href.replace('[sub]',window.location)">
 						{{$setting->email}}
-					</a></div><a
-					href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
+					</a>
+				</div>
+				<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
+				
 				<div class="info__share">
 					<div class="share">
 						<div class="share__text">Share on </div>
@@ -189,13 +188,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="info__search">
-					<form action="/vehicles" id="Header-Search-Form"
-						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
-							name="q" placeholder="Search cars, suvs, slingshots, etc"
-							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-							required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
-				</div>
+				
 			</div>
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
