@@ -129,7 +129,9 @@
 							<div class="nav__dropdown--pane">
 								
 								<div class="nav__categories">
+
 									@foreach($categories as $category)
+
 										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 											<div class="nav__categories--graphic">
 												<img src="{{url($category->photo??'')}}"
@@ -141,25 +143,31 @@
 													masterpieces.</div>
 											</div>
 										</a>
+
 									@endforeach
+
 									<div class="nav__categories--quicklinks">
 										<div class="quicklinks__collection w-dyn-list">
 											<div role="list"
 												class="quicklinks__list quicklinks__list--grid w-dyn-items">
+
 												@foreach($brands as $brand)
-												<div role="listitem"
-													class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-														id="Nav-Quicklink" href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
-														class="quicklinks__link w-inline-block"><img
-															src="{{url($brand->photo??'')}}"
-															alt="Bugatti" class="quicklinks__logo" />
-														<div class="quicklinks__details">
-															<div class="quicklinks__title">{{ $brand->name }}</div>
-															<!-- <div class="quicklinks__desc">Veyron</div> -->
-														</div>
-													</a>
-												</div>
+
+													<div role="listitem"
+														class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
+															id="Nav-Quicklink" href="/vehicles?{!! http_build_query(\Request::except('brand')) !!}{{\Request::except('brand')?'&':''}}brand={{ $brand->slug }}"
+															class="quicklinks__link w-inline-block"><img
+																src="{{url($brand->photo??'')}}"
+																alt="Bugatti" class="quicklinks__logo" />
+															<div class="quicklinks__details">
+																<div class="quicklinks__title">{{ $brand->name }}</div>
+																<!-- <div class="quicklinks__desc">Veyron</div> -->
+															</div>
+														</a>
+													</div>
+													
 												@endforeach
+
 												
 											</div>
 										</div>
