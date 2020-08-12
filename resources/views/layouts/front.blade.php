@@ -1974,7 +1974,8 @@
 				</div>
 			</div>
 		</div>
-	</footer>--><footer>
+	</footer>-->
+	<footer>
         <!-- Footer top -->
         <div class="container footer_top">
             <div class="row"><div class="col-md-3">
