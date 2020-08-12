@@ -11,7 +11,7 @@
 				<div class="rentals__label">{{ $record->body }}</div>
 			</div>
 		</div>
-		<h2><a href="/vehicle/{{ $record->id }}">{{ $record->name }}</a></h2>
+		<h2><a href="/vehicles?record={{ $record->slug }}">{{ $record->name }}</a></h2>
 		<div class="rentals__info">
 			<div>4 Hrs: $</div>
 		    <div>{{ $record->four_hour_price }}</div>
@@ -24,13 +24,6 @@
 			<li>Diesel</li>
 			<li>Auto</li>
 		</ul>
-		<!--<p class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star unmark"></i>
-        </p>-->
 
 		<a href="#CarBookModal" class="rental__cta--text btn-success text-uppercase"
 			data-toggle="modal">Book Now</a>
