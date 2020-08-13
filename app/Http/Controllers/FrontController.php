@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller as Controller;
 use App\Model\Vehicle;
 use App\Model\VehicleCategory;
 
+use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
@@ -317,7 +318,9 @@ class FrontController extends Controller {
         return view('checkOut.payment');
     }
     public function bookingvehicle() {
-        return view('frontView.vehicle-booking');
+        $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 15 days')));
+        $schedules = VehicleSchedule::get();
+        return view('frontView.vehicle-booking',compact('dates','schedules'));
     }
     public function vehiclecheckout() {
         return view('frontView.vehicle-checkout');

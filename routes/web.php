@@ -164,6 +164,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('vehiclecategory/update', 'VehicleCategoryController@CategoryUpdate');
         Route::get('vehiclecategory_entry/delete/{id}', 'VehicleCategoryController@CategoryDelete');
         Route::resource('vehicle-brand', 'VehicleBrandController');
+        Route::resource('vehicle-schedules', 'VehicleScheduleController');
 
 
         Route::get("category","Categorycontroller@index")->name("category");

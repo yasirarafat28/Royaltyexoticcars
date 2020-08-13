@@ -46,6 +46,7 @@ class VehicleController extends Controller
             ->editColumn('action', function ($category) {
                 $editoption=url('admin/vehicles/'.$category->id.'/edit');
                 $showoption=url('admin/vehicles/'.$category->id);
+                $scheduleoption=url('admin/vehicle-schedules/?vehicle_id='.$category->id);
                 $deletecatlog=url('admin/deletevehicle',array('id'=>$category->id));
                 if($category->status=='1'){
                     $color="green";
@@ -53,7 +54,7 @@ class VehicleController extends Controller
                 else{
                     $color="red";
                 }
-                $return = '<a  href="'.$editoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove"><i class="fa fa-edit f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a  href="'.$showoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Show"><i class="fa fa-eye f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a onclick="delete_record(' . "'" . $deletecatlog. "'" . ')" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove" style="margin-right: 10px;"><i class="fa fa-trash f-s-25" style="font-size: x-large;"></i></a>';
+                $return = '<a  href="'.$editoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove"><i class="fa fa-edit f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a  href="'.$showoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Show"><i class="fa fa-eye f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a  href="'.$scheduleoption.'" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Schedule"><i class="fa fa-code-fork  f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a onclick="delete_record(' . "'" . $deletecatlog. "'" . ')" rel="tooltip"  class="m-b-10 m-l-5 text-dark" data-original-title="Remove" style="margin-right: 10px;"><i class="fa fa-trash f-s-25" style="font-size: x-large;"></i></a>';
                 return $return;
             })
             ->make(true);

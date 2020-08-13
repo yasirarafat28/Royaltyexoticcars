@@ -128,6 +128,11 @@
                                Vehicles
                            </a>
                         </li>
+                        <li>
+                           <a href="{{url('admin/vehicle-schedules')}}">
+                               Schedules
+                           </a>
+                        </li>
                      </ul>
                   </li>
 

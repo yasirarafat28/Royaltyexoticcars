@@ -6,6 +6,37 @@
             padding: 4rem !important;
         }
 
+        .fc-day-grid-event .fc-content {
+            color: #4c5d76;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .fc-event, .fc-event-dot {
+            background-color: transparent !important;
+            padding: 10px !important;
+        }.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+             float: unset;
+         }
+        .fc-day-top{
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center !important;
+        }
+
+        .schedule-title{
+            font-size: 14px !important;
+        }
+        .schedule-offer{
+            font-size: 13px;
+        }
+        p.schedule-offer{
+            margin: 0px !important;
+        }
+        .fc-day-grid-event .fc-content {
+             white-space: normal !important;
+             overflow: hidden;
+         }
+
     </style>
     <link rel="stylesheet" href="/assets/plugins/fullcalendar/fullcalendar.min.css">
 @endsection
@@ -17,6 +48,8 @@
 
           </div>
       </div>
+
+
 
 
 @endsection
@@ -31,13 +64,10 @@
                 center: 'title',
                 right: 'next'
             },
-            defaultDate: "2018-01-12",
+            defaultDate: "{{date("Y-m-d")}}",
 
             eventClick: function(arg) {
-                if (confirm('Do you want to book in ths time?')) {
-                    //arg.event.remove()
-                    window.location='/vehicle-checkout'
-                }
+
             },
             navLinks: true, // can click day/week names to navigate views
             selectable: true,
@@ -56,77 +86,35 @@
                     $(this).remove();
                 }
             },
-            eventLimit: true, // allow "more" link when too many events
+            eventLimit: false, // allow "more" link when too many events
             dayMaxEvents: true,
             events: [
-                {
-                    title: 'All Day Event',
-                    start: '2018-11-01',
-                    className: 'b-l b-2x b-greensea'
-                },
-                {
-                    title: 'Long Event',
-                    url: '/vehicle-checkout',
-                    start: '2018-01-07',
-                    end: '2018-01-10',
-                    className: 'bg-cyan'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2018-01-09T16:00:00',
-                    className: 'b-l b-2x b-lightred'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2018-12-16T16:00:00',
-                    className: 'b-l b-2x b-success'
-                },
-                {
-                    title: 'Conference',
-                    start: '2018-01-11',
-                    end: '2018-01-13',
-                    className: 'b-l b-2x b-primary'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2018-01-12T10:30:00',
-                    end: '2018-01-12 T12:30:00',
-                    className: 'b-l b-2x b-amethyst'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2018-01-12T12:00:00',
-                    className: 'b-l b-2x b-primary'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2018-01-12T14:30:00',
-                    className: 'b-l b-2x b-drank'
-                },
-                {
-                    title: 'Happy Hour',
-                    start: '2018-01-12T17:30:00',
-                    className: 'b-l b-2x b-lightred'
-                },
-                {
-                    title: 'Dinner',
-                    start: '2018-12-12T20:00:00',
-                    className: 'b-l b-2x b-amethyst'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2018-01-13T07:00:00',
-                    className: 'b-l b-2x b-primary'
-                },
+                @foreach($dates??array() as $date)
+                    @foreach($schedules??array() as $schedule)
+                        {
+                            title: '<span style="color: #0a6ece;" class="schedule-time">{{date("h:i a",strtotime($schedule->start_time))}}</span>\n' +
+                                '  <span class="schedule-title">{{$schedule->vehicle->name??null}} - ({{$schedule->color}}) -  ({{$schedule->register_number}})</span>\n' +
+                                '    @if($schedule->four_hour=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 4 Hrs Rental  </p> @endif ' +
+                                '    @if($schedule->eight_hour=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 8 Hrs Rental  </p> @endif ' +
+                                '    @if($schedule->full_day=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 24 Hrs Rental  </p> @endif ',
+                            start: "{{$date}}",
+                            className: 'b-l b-2x b-greensea',
+                            url: "{{url('/vehicle-booking')}}",
+                        },
+                    @endforeach
+                @endforeach
+
                 {
                     title: 'Click for Google',
                     url: 'http://google.com/',
                     start: '2018-01-28',
                     className: 'b-l b-2x b-greensea'
                 }
-            ]
+            ],
+
+            eventRender: function (event, element) {
+                element.find('.fc-title').html(event.title);
+            }
         });
     </script>
 @endsection
