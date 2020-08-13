@@ -50,6 +50,7 @@ Route::get('bookCar', 'FrontController@checkoutCar');
 Route::get('vehicle-booking', 'FrontController@bookingvehicle');
 Route::get('/vehicle-checkout', 'FrontController@vehiclecheckout');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
+Route::post('/checkoutstore', 'FrontController@checkoutstore');
 
 
 
