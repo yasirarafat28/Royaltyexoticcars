@@ -76,6 +76,138 @@
           margin-top: 20px;
        }
 
+
+
+      /* Footer */
+      footer {
+          background-size:cover;
+          position:relative;
+          padding-top:45px;
+      }
+      footer::before {
+          background: rgba(255, 255, 255, 0.33) none repeat scroll 0 0;
+          content: "";
+          height: 45px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+      }
+      footer::after {
+          background: rgba(34, 37, 51, 0.9) none repeat scroll 0 0;
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+      }
+      .footer_top,.footer_bottom{ position:relative; z-index:1; color:#fff;}
+      .footer_item {
+          margin-top: 75px;
+      }
+      .footer_item > h4 {
+          color: #fff;
+          font-size: 25px;
+          margin-bottom: 34px;
+          text-transform: inherit;
+      }
+      .footer_item .list-unstyled > li a{
+          color: #fff;
+      }
+      /* Footer About */
+      .footer_item .logo {
+          margin-bottom: 15px;
+          width: 200px;
+      }
+      .list-inline.footer_social_icon {
+          margin: 32px 0 0;
+      }
+      .footer_social_icon .fa {
+          background: #ffcb0f none repeat scroll 0 0;
+          border-radius: 100%;
+          color: #222;
+          font-size: 20px;
+          height: 45px;
+          padding: 12px;
+          text-align: center;
+          width: 45px;
+      }
+      .footer_item .footer_social_icon .fa:hover,.footer_item .footer_social_icon .fa:focus {
+          background: #d7a300 none repeat scroll 0 0;
+      }
+      /* Footer Explore */
+      .footer_menu .fa {
+          font-size: 10px;
+          margin-right: 18px;
+      }
+      .list-unstyled.footer_menu > li {
+          padding: 4px 0;
+      }
+      /* Footer Post */
+      .list-unstyled.post,.list-unstyled.footer_contact {
+          margin-top: -14px;
+      }
+      .post .date {
+          border: 2px solid #fff;
+          border-radius: 100%;
+          display: block;
+          float: left;
+          font-size: 20px;
+          height: 50px;
+          line-height: 12px;
+          margin-right: 15px;
+          padding: 10px;
+          text-align: center;
+          width: 50px;
+      }
+      .footer_item li a:hover .date,.footer_item li a:focus .date{ border:2px solid #aaa; }
+      .footer_item li a:hover,.footer_item li a:focus{
+          color: #aaa;
+      }
+      .post .date small {
+          font-size: 12px;
+      }
+
+      .list-unstyled.post > li,.list-unstyled.footer_contact > li {
+          padding: 2px 0;
+          overflow:hidden;
+      }
+      /* Footer Contact */
+      .footer_contact .fa {
+          margin-right: 25px;
+          text-align: center;
+          width: 15px;
+          float: left;
+          font-size:18px;
+      }
+      .list-unstyled.footer_contact p {
+          overflow: hidden;
+      }
+      .footer_bottom {
+          background: #1a1c27 none repeat scroll 0 0;
+          padding: 28px 0 18px;
+          margin-top:55px;
+      }
+      .footer_bottom a {
+          color: #ffcb0f;
+      }
+      .footer_bottom a:hover,.footer_bottom a:focus {
+          color: #d7a300;
+      }
+
+
+      /*Social btn*/
+      .social-footer
+      {
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+          color: #fff;
+      }
+
+
    </style>
    <body class="rtl">
 
@@ -442,7 +574,7 @@
       </div>
       @yield('content')
       @yield('footer')
-      <div class="footer-background">
+      <!--<div class="footer-background">
          <div class="footer-logo">
             <div class="f-logo" style="background: <?= Session::get('site_color') ?> !important;-webkit-mask-image:url('<?=Session::get("logo")?>')"></div>
          </div>
@@ -498,9 +630,6 @@
                            <h1>{{__('messages.my_account')}}</h1>
                         </div>
                         <div class="f-account">
-                           <!--<li><a href="{{url('aboutus')}}">{{__('messages.about')}}</a></li>
-                           <li><a href="{{url('helpsupport')}}">{{__('messages.helpsupport')}}</a></li>
-                           <li><a href="{{url('termscondition')}}">{{__('messages.termscon')}}</a></li>-->
                            <li><a href="{{url('contactus')}}">{{__('messages.contact_us')}}</a></li>
                            <?php if(Auth::id()!=""){?>
                            <li><a href="{{url('myaccount')}}">{{__('messages.my_account')}}</a></li>
@@ -554,7 +683,81 @@
                </div>
             </div>
          </div>
-      </div>
+      </div>-->
+
+ <footer>
+     <!-- Footer top -->
+     <div class="container footer_top">
+         <div class="row"><div class="col-md-3">
+                 <div class="footer_item">
+                     <h4>Explore link</h4>
+                     <hr>
+                     <ul class="list-unstyled footer_menu">
+                         <li><a href="/"><span class="fa fa-play"></span> Home</a>
+                         <li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
+                         </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
+                         </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
+                         </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
+                         </li></ul>
+                 </div>
+             </div>
+             <div class="col-md-3">
+                 <div class="footer_item">
+                     <h4>Rentals</h4>
+                     <hr>
+                     <ul class="list-unstyled footer_menu">
+
+                         @foreach($categories??array(  ) as $category)
+
+                             <li>
+                                 <a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
+                             </li>
+
+                         @endforeach
+
+                     </ul>
+                 </div>
+             </div>
+             <div class="col-md-3">
+                 <div class="footer_item">
+                     <h4>Social</h4>
+                     <hr>
+                     <ul class="list-unstyled footer_menu">
+                         <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Instagram</a>
+                         </li><li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                         </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Twitter</a>
+                         </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Pinterest</a>
+                         </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
+                         </li></ul>
+                 </div>
+             </div>
+
+             <div class="col-md-3">
+                 <div class="footer_item">
+                     <h4>Local</h4>
+                     <hr>
+                     <ul class="list-unstyled footer_contact">
+                         <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
+                         <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
+                         <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
+                         <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
+
+                         <!--<li><a><span class="fa fa-whatsapp"></span><p>01988300003</p></a></li>
+                         <li><a><img class="fa" src="https://edeal.xyz/img/imo.png"><p>01988300003</p></a></li>
+                         <li><a><img class="fa"  src="https://edeal.xyz/img/viber.png"><p>01988300003</p></a></li>-->
+                         <li><a><span class="fa fa-skype"></span><p>Edeal.xyz</p></a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div><!-- Footer top end -->
+
+     <!-- Footer bottom -->
+     <div class="footer_bottom text-center">
+         <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by {{$setting->company_name}} Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name}} </a>{{date('Y')}}. All Rights Reserved
+         </p>
+     </div><!-- Footer bottom end -->
+ </footer>
 
       <input type="hidden" id="path" value="{{url('/')}}">
       <input type="hidden" id="cartsuccesslang" value="{{__('messages_error_success.product_add_success')}}"/>
