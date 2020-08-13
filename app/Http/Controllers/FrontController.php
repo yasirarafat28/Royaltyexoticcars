@@ -283,8 +283,10 @@ class FrontController extends Controller {
 
     }
 
-    public function singleVehicle( $vehicleID ){
-        return view('frontView.single-vehicle')->with('vehicle', Vehicle::find($vehicleID));
+    public function singleVehicle($vehicleID ,$slug=''){
+        $vehicle =  Vehicle::find($vehicleID);
+
+        return view('frontView.single-vehicle',compact('vehicle'));
     }
     public function suvRentals() {
         return view('frontView.las-vegas-nv.suv-rentals');

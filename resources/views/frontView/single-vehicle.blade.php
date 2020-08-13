@@ -52,25 +52,53 @@
         <div class="rental__specs">hp</div>
       </div>
       <div class="rental__price">
-        <div class="rental__price--block">
-          <div class="rental__price--label">4 Hours</div>
-          <div>$</div>
-          <div>{{ $vehicle->four_hour_price }}</div>
-        </div>
-        <div class="rental__price--block">
-          <div class="rental__price--label">8 Hours</div>
-          <div>$</div>
-          <div>{{ $vehicle->eight_hour_price }}</div>
-        </div>
-        <div class="rental__price--block bookbar__price--block-wide">
-          <div class="rental__price--label">24Hr Special!</div>
-          <div>$</div>
-          <div>{{ $vehicle->full_day_price }}</div>
-          <div class="rental__price--before">
-            <div>normally $</div>
-            <div>{{ $vehicle->four_hour_price }}</div>
-          </div>
-        </div>
+
+        @if($vehicle->four_hour=='yes')
+            @if($vehicle->four_hour_discount)
+                <div class="rental__price--block bookbar__price--block-wide">
+                  <div class="rental__price--label">4Hr Special!</div>
+                  <div>$</div>
+                  <div>{{ $vehicle->four_hour_discount }}</div>
+                  <div class="rental__price--before">
+                    <div>normally $</div>
+                    <div>{{ $vehicle->four_hour_price }}</div>
+                  </div>
+                </div>
+            @else
+                <div class="rental__price--block">
+                    <div class="rental__price--label">4 Hours</div>
+                    <div>$</div>
+                    <div>{{ $vehicle->four_hour_price }}</div>
+                </div>
+            @endif
+
+        @endif
+
+        @if($vehicle->eight_hour=='yes')
+
+            <div class="rental__price--block bookbar__price--block-wide">
+              <div class="rental__price--label">8Hr Special!</div>
+              <div>$</div>
+              <div>{{ $vehicle->eight_hour_discount }}</div>
+              <div class="rental__price--before">
+                <div>normally $</div>
+                <div>{{ $vehicle->eight_hour_price }}</div>
+              </div>
+            </div>
+        @endif
+
+        @if($vehicle->full_day=='yes')
+
+            <div class="rental__price--block bookbar__price--block-wide">
+              <div class="rental__price--label">24Hr Special!</div>
+              <div>$</div>
+              <div>{{ $vehicle->full_day_discount }}</div>
+              <div class="rental__price--before">
+                <div>normally $</div>
+                <div>{{ $vehicle->full_day_price }}</div>
+              </div>
+            </div>
+        @endif
       </div>
       <div class="rental__cta">
         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
@@ -102,10 +130,10 @@
               </ol>
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img src="{{url($vehicle->feature_image)}}" class="d-block w-100" alt="...">
+                      <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                      <img src="{{url($vehicle->feature_image)}}" class="d-block w-100" alt="...">
+                      <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
                   </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

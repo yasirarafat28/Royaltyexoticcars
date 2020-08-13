@@ -33,7 +33,7 @@ Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/car-rentals', 'FrontController@carRentals');
 Route::get('/vehicles/{cat?}', 'FrontController@vehicles');
-Route::get('/vehicle/{vehicle}', 'FrontController@singleVehicle');
+Route::get('/vehicle/{id}/{slug?}', 'FrontController@singleVehicle');
 Route::get('/brand/{brand}', 'FrontController@brandshow');
 
 Route::get('/suv-rentals', 'FrontController@suvRentals');

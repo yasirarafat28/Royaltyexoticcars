@@ -1366,6 +1366,12 @@ $(document).ready(function() {
                   var main_feature=$("#main_feature").val();
                   var newsletter=$("#newsletter").val();
                   var company_name=$("#company_name").val();
+
+                  var insta_link=$("#insta_link").val();
+                  var tweeet_link=$("#tweeet_link").val();
+                  var pinter_link=$("#pinter_link").val();
+                  var utube_link=$("#utube_link").val();
+                  var fb_link=$("#fb_link").val();
                   var is_customer_order=0;
                   if ($("#is_customer_order").prop("checked")) {
                             is_customer_order=1;
@@ -1398,7 +1404,12 @@ $(document).ready(function() {
                             main_feature:main_feature,
                             newsletter:newsletter,
                             company_name:company_name,
-                            logo:logo
+                            logo:logo,
+                             insta_link:insta_link,
+                             tweeet_link:tweeet_link,
+                             pinter_link:pinter_link,
+                             utube_link:utube_link,
+                             fb_link:fb_link
                          },
                          success: function( data ) {
                             $("#general").removeClass('in show active');

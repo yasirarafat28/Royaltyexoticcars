@@ -457,5 +457,10 @@ return array (
   "img_invaild"=>"Image Size Invaild",
   "site_rtl"=>"Site RTL",
   "site_color_setting"=>"Color Setting Show",
-  "img_tr"=>"image should be transparent"
+  "img_tr"=>"image should be transparent",
+    "instagram_id"=>"Instagram",
+    "facebook_id "=>"Facebook",
+    "tweeter_id "=>"Twitter",
+    "pinterest_id "=>"Pinterest",
+    "youtube_account "=>"Youtube",
 );
