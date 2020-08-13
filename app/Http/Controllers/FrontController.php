@@ -270,6 +270,9 @@ class FrontController extends Controller {
     public function terms() {
         return view('frontView.terms');
     }
+    public function privacy() {
+        return view('frontView.privacy');
+    }
     public function checkoutCar() {
         return view('checkOut.payment');
     }

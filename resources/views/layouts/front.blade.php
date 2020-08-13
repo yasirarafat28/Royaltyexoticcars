@@ -439,7 +439,7 @@
 											class="nav__about--link w-dropdown-link">Privacy</a>
 										<a href="/cookies" id="Nav-Cookies-Link"
 											class="nav__about--link w-dropdown-link">Cookies</a>
-										<a href="/feedback"
+										<a href="mailto:{{$setting->email}}"
 											id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 									</div>
 								</div>
