@@ -13,9 +13,8 @@
 <div class="rental__hero">
 
     <div class="container">
+    	@include('frontView.partials.vehicle-checkout')
 
-
-        @include('frontView.partials.vehicle-checkout')
 
     </div>
 </div>

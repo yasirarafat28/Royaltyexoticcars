@@ -15,7 +15,7 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-
+									
 										@foreach($categories as $category)
 
 											<div role="listitem" class="w-dyn-item">

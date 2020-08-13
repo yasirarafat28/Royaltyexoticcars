@@ -111,8 +111,8 @@
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info">
-				<div class="info__callout">We Beat competitor&#x27;s prices</div><a target="_blank"
-					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: +1-866-984-1187</a>
+				<a target="_blank"
+					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
 				<div class="info__search">
 					<form action="/vehicles" id="Header-Search-Form"
@@ -153,6 +153,7 @@
 							<div class="nav__dropdown--pane">
 
 								<div class="nav__categories">
+
                                     @foreach($categories??array(  ) as $category)
 										<a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
 											<div class="nav__categories--graphic">
@@ -453,56 +454,28 @@
 								alt="" class="nav__dropdown--arrow" />
 							<div class="nav__dropdown--pane">
 								<div class="nav__about">
-									<div class="nav__about--column">
-										<div class="nav__about--row"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2ce02faf1912f72a1f_icon-number-one.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Pick a rental.</div>
-												<div class="nav__about--desc">Choose from over 75 cars, suvs,
-													autocycles, and motorcycles.</div>
-											</div>
-										</div>
-										<div class="nav__about--row"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2e455d3a411f0d3791_icon-number-two.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Pay for booking.</div>
-												<div class="nav__about--desc">Select a date &amp; time frame and submit
-													payment.</div>
-											</div>
-										</div>
-										<div class="nav__about--row navbar__how--li-last"><img
-												src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5bb29e2d1f34fda56f182972_icon-number-three.svg"
-												alt="" class="nav__about--icon" />
-											<div class="nav__about--text">
-												<div>Proof of insurance.</div>
-												<div class="nav__about--desc">Make sure you meet the insurance
-													requirements.</div>
-											</div>
-										</div>
-									</div>
-									<div class="nav__about--column about__column--links"><a href="/faqs"
-											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a><a
-											href="/team" id="Nav-Team-Link"
-											class="nav__about--link w-dropdown-link">Team</a><a href="/jobs"
-											id="Nav-Jobs-Link" class="nav__about--link w-dropdown-link">Jobs</a><a
-											href="/privacy" id="Nav-Privacy-Link"
-											class="nav__about--link w-dropdown-link">Privacy</a><a href="/terms"
-											id="Nav-Terms-Link" class="nav__about--link w-dropdown-link">Terms</a><a
-											href="/cookies" id="Nav-Cookies-Link"
-											class="nav__about--link w-dropdown-link">Cookies</a><a href="/feedback"
+									<div class="nav__about--column about__column--links">
+										<a href="/faqs"
+											id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
+										<a href="/privacy" id="Nav-Privacy-Link"
+											class="nav__about--link w-dropdown-link">Privacy</a>
+										<a href="/cookies" id="Nav-Cookies-Link"
+											class="nav__about--link w-dropdown-link">Cookies</a>
+										<a href="mailto:{{$setting->email}}"
 											id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 									</div>
 								</div>
 							</div>
 						</nav>
-					</div><a id="Rally-Link-Nav" href="#" class="nav__link nav__link--hidden w-inline-block">
+					</div>
+					<a id="Rally-Link-Nav" href="#" class="nav__link nav__link--hidden w-inline-block">
 						<div>Rally</div>
-					</a><a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
+					</a>
+					<!-- <a id="Vlog-Link-Nav" href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw"
 						target="_blank" class="nav__link w-inline-block">
 						<div>Vlog</div>
-					</a><a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
+					</a> -->
+					<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 						<div>Shop</div>
 					</a>
 				</div>
@@ -512,14 +485,7 @@
 			</div>
 			<nav role="navigation" class="drawer w-nav-menu">
 				<div class="drawer__container">
-					<div class="drawer__search">
-						<form action="{{url('')}}/search" id="Drawer-Search-Form"
-							class="search w-form"><input type="search" name="query"
-								placeholder="Search cars, suvs, slingshots, etc" maxlength="256" required=""
-								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-								class="search__input w-input" /><input type="submit" value=" "
-								class="search__submit w-button" /></form>
-					</div>
+					
 					<div class="drawer__section"><a
 							href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 							id="Drawer-Location-Link" target="_blank" class="card w-inline-block">
@@ -528,49 +494,14 @@
 										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a690c68ae5eb70001f01b94_rec_logo_icon_black.svg"
 										alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
 									<div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
-									<div class="drawer__location--desc">4305 Dean Martin Drive, Suite 120<br />Las
-										Vegas, NV 89103<br />9:00am to 7:00pm Daily</div>
+									<div class="drawer__location--desc">{{$setting->address}}</div>
 								</div>
 								<div class="location__map"></div>
 							</div>
 						</a></div>
+					
 					<div class="drawer__section">
-						<div class="card card__rideshare">
-							<div class="rideshare"><a
-									href="https://m.uber.com/ul/?action=setPickup&amp;client_id=eK0ZoTS-ufl0UyXmKV07j92I8spQfxWu&amp;pickup=my_location&amp;dropoff[formatted_address]=Royalty%20Exotic%20Car%20Rentals%2C%20Dean%20Martin%20Drive%2C%20Las%20Vegas%2C%20NV%2C%20USA&amp;dropoff[latitude]=36.111317&amp;dropoff[longitude]=-115.181669"
-									target="_blank" id="Drawer-Uber-Button"
-									class="rideshare__button rideshare__button--uber w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f7f_logo-uber-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-10<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a><a
-									href="https://ride.lyft.com/request?code=ROYALTYEXOTICS&amp;destination=4305%20Dean%20Martin%20Drive%20120%2C%20Las%20Vegas%2C%20Nevada%2089103%2C%20United%20States@36.111317,-115.1838577&amp;partner=4Gc5_-Ju6Bx8&amp;pickup=3545%20S%20Las%20Vegas%20Blvd%2C%20Las%20Vegas%2C%20Nevada%2089109%2C%20United%20States@36.1177747,-115.1725759&amp;rideType=lyft"
-									target="_blank" id="Drawer-Lyft-Button"
-									class="rideshare__button rideshare__button--lyft w-hidden-small w-hidden-tiny w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f80_logo-lyft-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-20<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a><a
-									href="https://ride.lyft.com/ride?code=ROYALTYEXOTICS&amp;destination=4305%20Dean%20Martin%20Drive%20120%2C%20Las%20Vegas%2C%20Nevada%2089103%2C%20United%20States@36.111317,-115.1838577&amp;partner=4Gc5_-Ju6Bx8&amp;pickup=3545%20S%20Las%20Vegas%20Blvd%2C%20Las%20Vegas%2C%20Nevada%2089109%2C%20United%20States@36.1177747,-115.1725759&amp;rideType=lyft"
-									target="_blank"
-									class="rideshare__button rideshare__button--lyft rideshare__button--lyft-mobile w-inline-block"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a837c7d86a39d0001010f80_logo-lyft-white.svg"
-										alt="" class="rideshare__icon" />
-									<div class="rideshare__text">Get a ride<br /><span class="rideshare__code">Use Code:
-											ROYALTYEXOTICS</span></div>
-									<div class="rideshare__credit">$5-20<br /><span class="rideshare__note">in ride
-											credit</span></div>
-								</a></div>
-						</div>
-					</div>
-					<div class="drawer__section">
-						<div class="card"><a id="Drawer-Shop-Button" href="https://shop.rentalexoticsbeasts.com/"
+						<div class="card"><a id="Drawer-Shop-Button" href="/shop"
 								target="_blank" class="navdrawer__shop--button w-inline-block"><img
 									src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
 									alt="" class="navdrawer__shop--icon" />
@@ -580,14 +511,7 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-								<div class="tabs__menu w-tab-menu"><a data-w-tab="US Residents"
-										id="Drawer-Contact-US-Tab"
-										class="tabs__menu--link w-inline-block w-tab-link w--current">
-										<div>US Residents</div>
-									</a><a data-w-tab="International" id="Drawer-Contact-Intl-Tab"
-										class="tabs__menu--link w-inline-block w-tab-link">
-										<div>International</div>
-									</a></div>
+								
 								<div class="tabs__content w-tab-content">
 									<div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
 										<div class="navdrawer__links--wrapper"><a href="tel:18669841187"
@@ -597,66 +521,16 @@
 														alt="US Main Phone Number" class="navdrawer__link--image" />
 												</div>
 												<div>Call Toll Free: </div>
-												<div>+1-866-984-1187</div>
+												<div>{{$setting->phone}}</div>
 											</a><a
 												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
 												id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
 												<div class="navdrawer__link--icon"><img
 														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
 														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@rentalexoticsbeasts.com</div>
-											</a><a href="tel:17022976539" id="Drawer-Fax-Link"
-												class="navdrawer__link navdrawer__link--no-border w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a724bf33c051a0001206965_icon-fax-white.svg"
-														alt="Fax Number" class="navdrawer__link--image" /></div>
-												<div>Fax: +1-702-297-6539</div>
-											</a></div>
-									</div>
-									<div data-w-tab="International" class="tabs__pane w-tab-pane">
-										<div class="navdrawer__links--wrapper"><a href="tel:18884359737"
-												id="Drawer-Call-Intl-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg"
-														alt="Toll Free Number" class="navdrawer__link--image" /></div>
-												<div>Toll Free: </div>
-												<div>+1-888-435-9737</div>
-											</a><a href="tel:18552251679" id="Drawer-Call-Espanol-Link"
-												class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a83a14363b7e50001e30191_icon-es-white.svg"
-														alt="Español Number" class="navdrawer__link--image" /></div>
-												<div>Español: +1-855-225-1679</div>
+												<div>{{$setting->email}}</div>
 											</a>
-											<div id="Drawer-Call-Skype-Link" class="w-embed"><a
-													href="skype:live:accounts_22302?call"
-													class="navdrawer__link w-inline-block">
-													<div class="navdrawer__link--icon"><img
-															src="https://global-uploads.webflow.com/5a10aaa4d85f4b0001a53292/5a839b0c4c065e000105ad90_icon-skype-white.svg"
-															alt="Skype Call" class="navdrawer__link--image"></div>
-													<div>Skype: Rental Exotic Beasts</div>
-												</a></div><a id="Drawer-Call-WhatsApp-Link" href="#"
-												class="navdrawer__link navdrawer__link--no-border w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a839b8def2b990001bc4d3e_icon-whats-app-white.svg"
-														alt="What&#x27;s App Call" class="navdrawer__link--image" />
-												</div>
-												<div>What&#x27;s App: @RoyaltyExoticCars</div>
-											</a><a
-												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
-												id="Drawer-Email-Intl-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
-														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>reservations@rentalexoticsbeasts.com</div>
-											</a>
-										</div><a id="Drawer-Translate-Button" href="#"
-											class="navdrawer__link navdrawer__link--centered addthis_button_googletranslate w-inline-block">
-											<div class="navdrawer__link--icon navdrawer__link--icon-no-fill"><img
-													src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a839990d6e5270001cb58fa_icon-translate-white.svg"
-													alt="Toll Free Number" class="navdrawer__link--image" /></div>
-											<div>Translate this page</div>
-										</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -665,53 +539,44 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div class="navdrawer__links--wrapper"><a
-									href="https://www.instagram.com/rentalexoticsbeasts/" target="_blank"
+									href="{{$setting->insta_link}}" target="_blank"
 									id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
 											alt="Instagram" class="navdrawer__link--image" /></div>
 									<div>Follow us on Instagram</div>
-								</a><a href="https://www.facebook.com/Royalty-Exotic-Cars-1803379263252624/"
+								</a><a href="{{$setting->fb_link}}"
 									target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
 											alt="Facebook" class="navdrawer__link--image" /></div>
 									<div>Like us on Facebook</div>
-								</a><a href="https://twitter.com/RoyaltyExotics" target="_blank"
+								</a><a href="{{$setting->tweeet_link}}" target="_blank"
 									id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
 											alt="Twitter" class="navdrawer__link--image" /></div>
 									<div>Follow us on Twitter</div>
-								</a><a href="https://plus.google.com/102029232386680774193" target="_blank"
-									id="Drawer-GooglePlus-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53456_google-plus-icon.svg"
-											alt="Google Plus" class="navdrawer__link--image" /></div>
-									<div>Join us on Google+</div>
-								</a><a href="https://www.pinterest.com/royaltyexotics/" target="_blank"
+								</a>
+								
+								<a href="{{$setting->pinter_link}}" target="_blank"
 									id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
 											alt="Pinterest" class="navdrawer__link--image" /></div>
 									<div>Follow us on Pinterest</div>
-								</a><a href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
+								</a><a href="{{$setting->utube_link}}" target="_blank"
 									id="Drawer-Youtube-Link"
 									class="navdrawer__link navdrawer__link--no-border w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
 											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53631_youtube.svg"
 											alt="Youtube" class="navdrawer__link--image" /></div>
 									<div>Subscribe to our YouTube</div>
-								</a></div><a href="blog/rss.html" target="_blank" id="Drawer-RSS-Button"
-								class="navdrawer__link navdrawer__link--centered navdrawer__link--centered-social w-inline-block">
-								<div class="navdrawer__link--icon navdrawer__link--icon-no-fill"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533bd_53f3342f1b92a02f2f930a07_rss_footer.svg"
-										alt="RSS Feed" class="navdrawer__link--image" /></div>
-								<div>Subscribe to our RSS feed</div>
-							</a>
+								</a>
+							</div>
 						</div>
 					</div><a
-						href="mailto:happiness@rentalexoticsbeasts.com?subject=I%20have%20an%20idea%20that%20can%20improve%20Royalty%20Exotic%20Cars!%20%3A)"
+						href="mailto:{{$setting->email}}"
 						id="Drawer-Feedback-Button" class="navdrawer__button w-button">How can we improve?</a>
 				</div>
 			</nav>
@@ -1687,37 +1552,28 @@
                         <h4>Explore link</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
-                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
-                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
-                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
-                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+							<li><a href="/"><span class="fa fa-play"></span> Home</a>
+							<li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
+                            </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
+                            </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
+                            </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
                             </li></ul>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="footer_item">
-                        <h4>Information</h4>
+                        <h4>Rentals</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li>
-                                <a href="https://edeal.xyz/information/about"><span class="fa fa-play"></span> About us</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/contact"><span class="fa fa-play"></span> Contact us</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/merchant_term"><span class="fa fa-play"></span> Merchant Terms</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/seller_term"><span class="fa fa-play"></span> Customer Terms</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/privacy"><span class="fa fa-play"></span> Privacy and Policy</a>
-                            </li>
-                            <li>
-                                <a href="https://edeal.xyz/information/faq"><span class="fa fa-play"></span> Frequent Asked Question</a>
-                            </li>
+
+							@foreach($categories??array(  ) as $category)
+
+								<li>
+									<a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
+								</li>
+
+							@endforeach
+                
                         </ul>
                     </div>
                 </div>
@@ -1726,11 +1582,11 @@
                         <h4>Social</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="https://edeal.xyz/all-services"><span class="fa fa-play"></span> Our services</a>
-                            </li><li><a href="https://edeal.xyz/product/products"><span class="fa fa-play"></span> All Products</a>
-                            </li><li><a href="https://edeal.xyz/fleet-management"><span class="fa fa-play"></span> Fleet Management</a>
-                            </li><li><a href="https://edeal.xyz/merchant/register"><span class="fa fa-play"></span> Become a Merchant</a>
-                            </li><li><a href="https://edeal.xyz/customer/login"><span class="fa fa-play"></span> Customer Area</a>
+                            <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Instagram</a>
+                            </li><li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                            </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Twitter</a>
+                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Pinterest</a>
+                            </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
                             </li></ul>
                     </div>
                 </div>
@@ -1740,10 +1596,9 @@
                         <h4>Local</h4>
                         <hr>
                         <ul class="list-unstyled footer_contact">
-                            <li><a href=""><span class="fa fa-map-marker"></span>264/5, 60FT Road, Mirpur,
-                                    Dhaka, Bangladesh 1216</a></li>
-                            <li><a href="mailto:support@edeal.xyz"><span class="fa fa-envelope"></span> support@edeal.xyz</a></li>
-                            <li><a><span class="fa fa-mobile"></span><p>+8801988300003</p></a></li>
+                            <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
+                            <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
+                            <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
                             <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
 
                             <!--<li><a><span class="fa fa-whatsapp"></span><p>01988300003</p></a></li>
