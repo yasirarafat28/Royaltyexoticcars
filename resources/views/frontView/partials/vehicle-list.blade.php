@@ -17,6 +17,8 @@
 		    <div>{{ $record->four_hour_price }}</div>
 			<div>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;8 Hrs: $</div>
 			<div>{{ $record->eight_hour_price }}</div>
+			<div>Full Day: $</div>
+			<div>{{ $record->full_day_price }}</div>
 	    </div>
 		<p>{{ substr(strip_tags($record->description),0,100) }} ...</p>
 		<ul class="car-info-list">
