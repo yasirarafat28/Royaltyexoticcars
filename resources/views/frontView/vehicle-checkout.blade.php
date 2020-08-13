@@ -73,7 +73,7 @@
                             <div class="form-group" style="margin: 20px;">
 
                                 <label for="fname" class="form-label">Primary Driver's Full Name:</label>
-                                <input class="form-control" type="text" id="fname" name="firstname"
+                                <input class="form-control" type="text" id="fname" name="primary_driver_name"
                                     placeholder="As it appears on Driver's license" required>
 
                                 <small id="passwordHelpBlock" class="form-text text-muted">
@@ -85,7 +85,7 @@
 
 
                                 <label for="lname" class="form-label">Additional Driver's Full Name:</label>
-                                <input type="text" id="lname" name="lastname" class="form-control"
+                                <input type="text" id="lname" name="additional_driver_name" class="form-control"
                                     placeholder="As it appears on Driver's license">
 
                                 <small id="passwordHelpBlock" class="form-text text-muted">
@@ -104,7 +104,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="property_damage_waiver" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$99.00 Yes I would like to buy this property</option>
                                     <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -113,7 +113,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Tire Protection</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="true_protection" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$99.00 Yes I would like to buy this property</option>
                                     <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -126,7 +126,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Mechanical Break Down Insurance</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="breakdown_insurance" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$99.00 Yes I would like to buy this property</option>
                                     <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -142,7 +142,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Prepaid Gas Credit</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="prepaid_gas_credit" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$99.00 Yes I would like to buy this property</option>
                                     <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -151,7 +151,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Destination Packages</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="destination_package" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$349.00 Grand canion test rim Arizona</option>
                                 </select>
@@ -163,7 +163,7 @@
 
                             <div class="form-group" style="margin: 20px;">
                                 <label for="country" class="form-label">Strip Helicopter Tour</label>
-                                <select id="country" name="country" class="form-control selectpicker"
+                                <select id="country" name="strip_helicopter_tour" class="form-control selectpicker"
                                     data-live-search="true">
                                     <option value="australia">$199.00 - 1 Passenger</option>
                                     <option value="australia">$299.00 - 2 Passenger</option>
@@ -181,7 +181,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="age_over_25" required></div>
                                     <div style="padding-left: 10px;"> I am over the age of 25
                                         <span>
                                             <p style="font-weight: normal; font-size: 90%;">All drivers must be over the age of 25.
@@ -193,7 +193,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="drivers_license" required></div>
                                     <div style="padding-left: 10px;"> I have a valid driver's license
                                         <span>
                                             <p style="font-weight: normal; font-size: 90%;">All drivers must have a valid driver's license from their country of
@@ -206,7 +206,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_policy" required></div>
                                     <div style="padding-left: 10px;"> I agree to follow all state and federal laws
                                         <span>
                                             <p style="font-weight: normal; font-size: 90%;">Please drive in a safe, responsible, and legal manner.
@@ -219,7 +219,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_refund_policy" required></div>
                                     <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
                                         <span>
                                             <p style="font-weight: normal; font-size: 90%;">All car rentals include unlimited mileage within a 100 mile radius of pickup
@@ -232,7 +232,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_return_policy" required></div>
                                     <div style="padding-left: 10px;"> I accept the Cancellation Policy
                                         *All cancellations are subject to a maximum 50% refund.</div>
                                 </label>
@@ -240,7 +240,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_reservation_change2" required></div>
                                     <div style="padding-left: 10px;"> I accept the Late Returns Policy
                                         <span>
                                             <p  style="font-weight: normal; font-size: 90%;">Please ensure you have adequate time for your drive back to the showroom.
@@ -252,7 +252,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_reservation_change" required></div>
                                     <div style="padding-left: 10px;"> I understand that my reservation may change at any
                                         time
                                         <span>
@@ -267,7 +267,7 @@
 
                             <div class="checkbox" style="margin: 20px; padding: 10px; border: 1px solid black;">
                                 <label style="display: flex; padding: 5px;">
-                                    <div><input type="checkbox" value="" required></div>
+                                    <div><input type="checkbox" value="" name="accept_resposibilty" required></div>
                                     <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all
                                         risk
                                         <span>
@@ -284,7 +284,7 @@
                             <div class="form-group" style="margin: 20px;">
                                 <label for="comment">Customer Notes</label>
                                 <textarea class="form-control" rows="5" id="comment"
-                                    placeholder="Please include rental specific requests."></textarea>
+                                    placeholder="Please include rental specific requests." name="customer_note"></textarea>
                             </div>
 
                         </form>
@@ -299,7 +299,7 @@
 
                                     <div class="form-group" style="padding: 5px;">
 
-                                        <input class="form-control" type="text" id="fname" name="firstname"
+                                        <input class="form-control" type="text" id="gift_card_number" name="firstname"
                                             placeholder="As it appears on Driver's license">
 
                                     </div>
@@ -349,7 +349,7 @@
                                 <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
 
                                     <p style="padding: 5px;">Total</p>
-                                    <h3>$299.00</h3>
+                                    <h3 name="grand_total">$299.00</h3>
 
                                 </div>
 
@@ -365,17 +365,17 @@
                                     <p>contact</p>
                                     <div class="input-container" style="padding: 5px; border-radius: 10px;">
                                         <i class="fa fa-user icon"></i>
-                                        <input class="input-field" type="text" placeholder="Full Name" name="usrnm" required>
+                                        <input class="input-field" type="text" placeholder="Full Name" name="primary_driver_name" required>
                                     </div>
 
                                     <div class="input-container" style="padding: 5px; border-radius: 10px;">
                                         <i class="fa fa-phone icon"></i>
-                                        <input class="input-field" type="text" placeholder="Phone number" name="usrnm" required>
+                                        <input class="input-field" type="text" placeholder="Phone number" name="phone_number" required>
                                     </div>
 
                                     <div class="input-container" style="padding: 5px; border-radius: 10px;">
                                         <i class="fa fa-envelope icon"></i>
-                                        <input class="input-field" type="text" placeholder="Email" name="email" required>
+                                        <input class="input-field" type="text" placeholder="Email" name="customer_email" required>
                                     </div>
                                 </form>
 
@@ -396,11 +396,11 @@
                                         <form role="form">
                                             <div class="form-group"> <label for="username">
                                                     <h6 style="font-size: 80%;">Card Owner</h6>
-                                                </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                                </label> <input type="text" name="card_owner_name" placeholder="Card Owner Name" required class="form-control "> </div>
                                             <div class="form-group"> <label for="cardNumber">
                                                     <h6 style="font-size: 80%;">Card number</h6>
                                                 </label>
-                                                <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                                <div class="input-group"> <input type="text" name="card_number" placeholder="Valid card number" class="form-control " required>
                                                     <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fa fa-cc-visa" style="font-size:24px"></i> </span> </div>
                                                 </div>
                                             </div>
@@ -409,13 +409,13 @@
                                                     <div class="form-group"> <label><span class="hidden-xs">
                                                                 <h6 style="font-size: 80%;">Expiration Date</h6>
                                                             </span></label>
-                                                        <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                        <div class="input-group"> <input type="number" placeholder="MM" name="expiration_month" class="form-control" required> <input type="number" placeholder="YY" name="expiration_year" class="form-control" required> </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
                                                             <h6 style="font-size: 80%;">CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                                        </label> <input type="text" required class="form-control"> </div>
+                                                        </label> <input type="text" required class="form-control" name="CVV"> </div>
                                                 </div>
                                             </div>
                                         </form>
@@ -441,7 +441,7 @@
                         </div>
 
                         <div class="form-group" style="margin-top: 20px;">
-                            <p style="text-align: center;"> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </p>
+                            <p style="text-align: center;"> <button type="submit" class="btn btn-success"><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </p>
                         </div>
 
                         <small id="passwordHelpBlock" class="form-text text-muted" style="text-align: center;">

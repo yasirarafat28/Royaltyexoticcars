@@ -245,6 +245,41 @@ class FrontController extends Controller {
 
     }
 
+    public function checkoutstore() {
+
+        $data = request()->all();
+
+        $checkout = new Checkout();
+
+        $checkout->primary_driver_name = $data['primary_driver_name'];
+        $checkout->additional_driver_name = $data['additional_driver_name'];
+        $checkout->country = $data['country'];
+        $checkout->property_damage_waiver = $data['property_damage_waiver'];
+        $checkout->true_protection = $data['true_protection'];
+        $checkout->breakdown_insurance = $data['breakdown_insurance'];
+        $checkout->prepaid_gas_credit = $data['prepaid_gas_credit'];
+        $checkout->destination_package = $data['destination_package'];
+        $checkout->strip_helicopter_tour = $data['strip_helicopter_tour'];
+        $checkout->age_over_25 = $data['age_over_25'];
+        $checkout->drivers_license = $data['drivers_license'];
+        $checkout->accept_policy = $data['accept_policy'];
+        $checkout->accept_refund_policy = $data['accept_refund_policy'];
+        $checkout->accept_return_policy = $data['accept_return_policy'];
+        $checkout->accept_reservation_change = $data['accept_reservation_change'];
+        $checkout->accept_resposibilty = $data['accept_resposibilty'];
+        $checkout->customer_note = $data['customer_note'];
+        $checkout->gift_card_number = $data['gift_card_number'];
+        $checkout->phone_number = $data['phone_number'];
+        $checkout->customer_email = $data['customer_email'];
+        $checkout->card_owner_name = $data['card_owner_name'];
+        $checkout->card_number = $data['card_number'];
+        $checkout->expiration_month = $data['expiration_month'];
+        $checkout->expiration_year = $data['expiration_year'];
+        $checkout->CVV = $data['CVV'];
+        $checkout->grand_total = $data['grand_total'];
+
+    }
+
     public function singleVehicle( $vehicleID ){
         return view('frontView.single-vehicle')->with('vehicle', Vehicle::find($vehicleID));
     }
