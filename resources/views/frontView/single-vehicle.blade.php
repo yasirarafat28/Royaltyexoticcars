@@ -75,7 +75,7 @@
       <div class="rental__cta">
         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
           <div class="rental__cta--embed w-embed"><a
-              href="/vehicle-booking"
+              href="#BookingModal" data-toggle="modal"
               class="rental__cta--text">
               Book Online
             </a></div>
@@ -117,14 +117,6 @@
                   <span class="sr-only">Next</span>
               </a>
           </div>
-          <!--<div class="car-preview-crousel  owl-theme">
-              <div class="single-car-preview item">
-                  <img src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg" alt="JSOFT">
-              </div>
-              <div class="single-car-preview item">
-                  <img src="/frontEnd/5af4d00138c15114e253c7df_2018-mclaren-720s-bright-orange-exterior-front-angle-royalty-exotic-cars.jpg" alt="JSOFT">
-              </div>
-          </div>-->
       </section>
 
         <nav class="rental__nav">
@@ -246,6 +238,21 @@
         </address>
       </section>
     </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="BookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="container p-0">
+
+                  @include('frontView.partials.vehicle-checkout')
+
+              </div>
+          </div>
+      </div>
   </div>
 
 

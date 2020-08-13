@@ -79,6 +79,28 @@
             font-weight: 600;
             margin-bottom: 5px;
         }
+
+        .no-appearance {
+            -webkit-appearance: caps-lock-indicator;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
+        }
+
+        .booking-option{
+            font-size: 18px !important;
+            height: 55px !important;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-with-content{
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
     </style>
 
 @yield('style')
