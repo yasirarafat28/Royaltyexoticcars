@@ -14,6 +14,7 @@ use App\Model\Categories;
 use App\Model\Brand;
 use App\Model\Offer;
 use App\Model\Product;
+use App\Model\Checkout;
 use App\Model\Seasonaloffer;
 use App\Model\Banner;
 use App\Model\Deal;
@@ -277,6 +278,8 @@ class FrontController extends Controller {
         $checkout->expiration_year = $data['expiration_year'];
         $checkout->CVV = $data['CVV'];
         $checkout->grand_total = $data['grand_total'];
+
+        $checkout->save();
 
     }
 
