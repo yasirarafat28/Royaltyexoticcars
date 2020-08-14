@@ -13,6 +13,7 @@ class VehicleScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index(Request $request)
     {
         $records = VehicleSchedule::where(function ($q) use($request){

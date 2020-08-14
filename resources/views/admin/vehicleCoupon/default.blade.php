@@ -30,6 +30,7 @@
                     </div>
                 </div>
                 @endif
+                
                 <button onclick="addcoupon()" class="btn btn-primary btn-flat m-b-30 m-t-30">{{__('messages.add_coupon')}}</button>
                 <div class="table-responsive dtdiv">
                     <table id="couponmainTable" class="table table-striped table-bordered dttablewidth">

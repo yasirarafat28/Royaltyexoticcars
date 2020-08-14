@@ -70,6 +70,7 @@
 
 
 
+
                                         <div class="form-group ">
                                             <label for="name" class="control-label">Register Number</label>
                                             <input class="form-control" name="register_number" placeholder="Register Number" type="text" id="name">

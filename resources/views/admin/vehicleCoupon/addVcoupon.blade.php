@@ -129,16 +129,7 @@
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                <div class="cmr1">
                   <div class="form-group col-md-12 paddiv">
-                     <div class="col-md-6">
-                        <label for="cc-payment" class="control-label mb-1">{{__('messages.minmum_spend')}}</label>
-                        <input id="minmum_send" name="minmum_send" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="{{__('messages.minmum_spend')}}" value="<?=isset($data->minmum_spend)?$data->minmum_spend:''; ?>" onkeypress="return isNumberKey(event)">
-                     </div>
-                     <div class="col-md-6">
-                        <label for="cc-payment" class="control-label mb-1">
-                        {{__('messages.maximum_spend')}}
-                        </label>
-                        <input id="maximum_spend" name="maximum_spend" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?=isset($data->maximum_spend)?$data->maximum_spend:''; ?>" placeholder="{{__('messages.maximum_spend')}}" onchange="maxnumber(this.value)" onkeypress="return isNumberKey(event)">
-                     </div>
+                     
                   </div>
                   <div class="form-group col-md-12">
                      <div class="form-check">
@@ -176,10 +167,7 @@
                         <label for="cc-payment" class="control-label mb-1">{{__('messages.usage_limit_per_coupon')}}</label>
                         <input id="per_coupon" name="per_coupon" type="number" class="form-control" aria-required="true" aria-invalid="false" placeholder="0" min='0' value="<?=isset($data->usage_limit_per_coupon)?$data->usage_limit_per_coupon:''; ?>">
                      </div>
-                     <div class="col-md-6">
-                        <label for="cc-payment" class="control-label mb-1">{{__('messages.usage_limit_per_customer')}}</label>
-                        <input id="per_customer" name="per_customer" type="number" class="form-control" aria-required="true" aria-invalid="false" placeholder="0" min='0' value="<?=isset($data->usage_limit_per_customer)?$data->usage_limit_per_customer:''; ?>">
-                     </div>
+                     
                   </div>
                   <div class="form-group col-md-12" >
                       @if(Session::get("is_demo")=='1')
