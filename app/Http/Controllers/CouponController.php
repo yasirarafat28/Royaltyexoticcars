@@ -26,11 +26,11 @@ class CouponController extends Controller {
         return view("admin.vehicleCoupon.default");
     }
 
-      public function checkcoupon(Request $request){
-          return $this->verifiedcoupon($request->get("coupon"));
-      }
+    public function checkcoupon(Request $request){
+        return $this->verifiedcoupon($request->get("coupon"));
+    }
 
-      public function coupondatatable(){
+    public function coupondatatable(){
             $coupon =Coupon::orderBy('id','DESC')->where("is_deleted",'0')->get();
             return DataTables::of($coupon)
                 ->editColumn('id', function ($coupon) {
@@ -72,6 +72,10 @@ class CouponController extends Controller {
       public function addcoupon(){
          return view("admin.coupon.addcoupon");
       }
+
+    public function addVcoupon(){
+        return view("admin.vehicleCoupon.addcoupon");
+    }
 
       public function savecoupon(Request $request){        
           if($request->get("id")==0||$request->get("id")==""){
