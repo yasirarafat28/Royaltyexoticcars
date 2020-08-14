@@ -243,6 +243,13 @@
                      </a>
                   </li>
 
+                  <li class="active">
+                     <a href="{{url('admin/vehicle_coupon')}}">
+                     <i class="menu-icon  fa fa-tags"></i>
+                        Vehicle Coupon
+                     </a>
+                  </li>
+
                    <!--<li class="active">
                      <a href="{{url('admin/complain')}}">
                      <i class="menu-icon  fa fa-tags"></i>
