@@ -18,9 +18,13 @@ class CouponController extends Controller {
       public function __construct() {
          parent::callschedule();
     }
-      public function index(){
-           return view("admin.coupon.default");
-      }
+    public function index(){
+        return view("admin.coupon.default");
+    }
+
+    public function Vindex(){
+        return view("admin.vehicleCoupon.default");
+    }
 
       public function checkcoupon(Request $request){
           return $this->verifiedcoupon($request->get("coupon"));

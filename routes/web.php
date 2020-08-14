@@ -304,6 +304,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post("savecouponstepthree","CouponController@savecouponstepthree")->name("savecouponstepthree");
         Route::get("editcoupon/{id}","CouponController@editcoupon")->name("editcoupon");
 
+        Route::get("vehicle_coupon","CouponController@Vindex");
+        Route::get("coupondatatable","CouponController@coupondatatable")->name("coupondatatable");
+        Route::get("addcoupon","CouponController@addcoupon")->name("addcoupon");
+        Route::post("savecoupon","CouponController@savecoupon")->name("savecoupon");
+        Route::get("deletecoupon/{id}","CouponController@deletecoupon");
+        Route::post("savecouponsecondstep","CouponController@savecouponsecondstep")->name("savecouponsecondstep");
+        Route::post("savecouponstepthree","CouponController@savecouponstepthree")->name("savecouponstepthree");
+        Route::get("editcoupon/{id}","CouponController@editcoupon")->name("editcoupon");
+
         Route::get("user","UserController@index")->name("user");
         Route::get("userdatatable/{id}","UserController@userdatatable")->name("userdatatable");
         Route::post("adduser","UserController@adduser")->name("adduser");
