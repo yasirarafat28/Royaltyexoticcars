@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Model\vehicle_coupon;
+use App\Model\Vehicle_coupon;
 use App\Model\Vehicle;
 
 class VehicleCouponController extends Controller
@@ -12,7 +12,7 @@ class VehicleCouponController extends Controller
     //
     public function index(Request $request)
     {
-        $records = vehicle_coupon::where(function ($q) use($request){
+        $records = Vehicle_coupon::where(function ($q) use($request){
             if (isset($request->vehicle_id) && is_numeric($request->vehicle_id)){
                 $q->where('vehicle_id',$request->vehicle_id);
             }
@@ -28,7 +28,7 @@ class VehicleCouponController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.vehicleCoupon.addVcoupon');
     }
 
     /**
@@ -114,10 +114,11 @@ class VehicleCouponController extends Controller
         $item->vehicle_id = $request->product;
         $item->categories = $request->category;
         $item->uses_limit_per_customer = $request->per_coupon;
-        
+
         $item->save();
         return back()->withSuccess('Schedule saved successfully!');
     }
+
 
     /**
      * Remove the specified resource from storage.

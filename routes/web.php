@@ -168,7 +168,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-coupon', 'VehicleCouponController');
 
 
-        Route::get("category","Categorycontroller@index")->name("category");
+
+      Route::get("category","Categorycontroller@index")->name("category");
       Route::get("categorydatatable","Categorycontroller@categorydatatable")->name('categorydatatable');
       Route::post("addcategory","Categorycontroller@addcategory")->name("addcategory");
       Route::get("getcategorybyid/{id}","Categorycontroller@getcategorybyid")->name("getcategorybyid");
@@ -306,8 +307,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("editcoupon/{id}","CouponController@editcoupon")->name("editcoupon");
 
 
-        Route::get("vehicle_coupon","CouponController@Vindex");
-        Route::get("addVcoupon","CouponController@addVcoupon");
+        
 
         Route::get("user","UserController@index")->name("user");
         Route::get("userdatatable/{id}","UserController@userdatatable")->name("userdatatable");
