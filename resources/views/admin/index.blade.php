@@ -236,6 +236,7 @@
                   </li>
                  @endif
 
+
                   <li class="active">
                      <a href="{{url('admin/coupon')}}">
                      <i class="menu-icon  fa fa-tags"></i>
@@ -244,7 +245,7 @@
                   </li>
 
                   <li class="active">
-                     <a href="{{url('admin/vehicle_coupon')}}">
+                     <a href="{{url('admin/vehicle-coupon')}}">
                      <i class="menu-icon  fa fa-tags"></i>
                         Vehicle Coupon
                      </a>

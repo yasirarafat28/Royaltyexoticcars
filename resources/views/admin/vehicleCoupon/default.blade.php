@@ -32,7 +32,7 @@
                 </div>
                 @endif
                 
-                <button onclick="addcoupon()" class="btn btn-primary btn-flat m-b-30 m-t-30">{{__('messages.add_coupon')}}</button>
+                <button onclick="addcoupon()" class="btn btn-primary btn-flat m-b-30 m-t-30"><a href="{{ url('admin/vehicle-coupon/create') }}">{{__('messages.add_coupon')}}</a></button>
                 <div class="table-responsive dtdiv">
                     <table id="dt" class="table table-striped table-bordered dttablewidth">
                         <thead>
@@ -48,23 +48,11 @@
                         <tbody>
                         @foreach($records??array() as $item)
                             <tr>
-                                <td>{{$item->vehicle->name}}</td>
-                                <td>
-                                    @if($item->four_hour=='yes')
-                                        4Hr Offer Available<br>
-                                    @endif
-                                    @if($item->eight_hour=='yes')
-                                        8Hr Offer  Available<br>
-                                    @endif
-                                    @if($item->full_day=='yes')
-                                        24Hr Offer  Available<br>
-                                    @endif
-                                </td>
-                                <td>{{$item->register_number}}</td>
-                                <td>{{$item->color}}</td>
-                                <td>{{date('h:i a',strtotime($item->start_time))}}</td>
-                                <td>{{$item->status}}</td>
-                                <td>{{$item->created_at}}</td>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->code}}</td>
+                                <td>{{$item->start_date}} to {{$item->end_date}}</td>
+                                <td>{{$item->value}}</td>
                                 <td id="action" class="action-td">
                                     <a class="m-1" data-toggle="modal" data-target="#modal-edit{{$item->id}}" title="Edit Vehicle Schedules"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 10px;font-size: x-large;color:black"></i></a>
 
