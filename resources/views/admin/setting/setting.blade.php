@@ -113,14 +113,14 @@
                            </div>
                            <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
-                              {{__('messages.facebook_id')}}
+                                 Facebook ID
                               <span class="reqfield">*</span>
                               </label>
-                              <input type="text" id="fb_link" placeholder="{{__('messages.facebook_id')}}" class="form-control" name="fb_link" required value="{{$data->fb_link}}">
+                              <input type="text" id="fb_link" placeholder="Facebook ID" class="form-control" name="fb_link" required value="{{$data->fb_link}}">
                            </div>
                            <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
-                              {{__('messages.tweeter_id')}}
+                                 Tweeter ID
                               <span class="reqfield">*</span>
                               </label>
                               <input type="text" id="tweeet_link" placeholder="{{__('messages.tweeter_id')}}" class="form-control" name="tweeet_link" required value="{{$data->tweeet_link}}">

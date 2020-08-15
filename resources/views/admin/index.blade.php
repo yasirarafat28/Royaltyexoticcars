@@ -236,10 +236,18 @@
                   </li>
                  @endif
 
+
                   <li class="active">
                      <a href="{{url('admin/coupon')}}">
                      <i class="menu-icon  fa fa-tags"></i>
                      {{__('messages.coupon')}}
+                     </a>
+                  </li>
+
+                  <li class="active">
+                     <a href="{{url('admin/vehicle-coupon')}}">
+                     <i class="menu-icon  fa fa-tags"></i>
+                        Vehicle Coupon
                      </a>
                   </li>
 
