@@ -140,7 +140,7 @@
                         <div class="form-check">
                            <div class="status">
                               <label for="coupon_on" class="form-check-label ">
-                              <input type="checkbox" id="coupon_on" name="coupon_on" value="1" class="form-check-input" checked="" onchange="changeproductdiv()">Coupon On Product
+                              <input type="checkbox" id="coupon_on" name="coupon_on" value="1" class="form-check-input" checked="" onchange="changeproductdiv()">Coupon On Vehicle
                               </label>
                            </div>
                         </div>
