@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card checkout-card">
 
     <header class="card-header">
         <div class="pull-right">
@@ -105,6 +105,36 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="liability_insurance" class="form-label">Supplemental Liability Insurance ($1,000,000 Bodily Injury Limit)</label>
+                    <select id="liability_insurance" name="liability_insurance" class="form-control selectpicker"
+                            data-live-search="true">
+                        <option value="australia">$99.00 Yes I would like to buy this property</option>
+                        <option value="canada">$0.00 No I dont want to buy this property</option>
+                    </select>
+
+
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        *NOTE TO ALL U.S. DRIVERS: Whether you choose to upgrade your liability coverage or not,
+                    </small>
+                </div>
+
+
+                <div class="form-group" style="display: none;">
+                    <label for="international_full_coverage_insurance" class="form-label">International Full Coverage Insurance</label>
+                    <select id="international_full_coverage_insurance" name="international_full_coverage_insurance" class="form-control selectpicker"
+                            data-live-search="true">
+                        <option value="australia">$99.00 Yes I would like to buy this property</option>
+                        <option value="canada">$0.00 No I dont want to buy this property</option>
+                    </select>
+
+
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        *REQUIRED FOR ALL INTERNATIONAL DRIVERS: Covers any bodily injury claim up to $1,000,000 and has full comprehensive and collision coverage with a $15,000 deductible.
+                    </small>
+                </div>
+
+
+                <div class="form-group">
                     <label for="property_damage_waiver" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
                     <select id="property_damage_waiver" name="property_damage_waiver" class="form-control selectpicker"
                             data-live-search="true">
@@ -183,7 +213,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="age_agreement" required></div>
                         <div style="padding-left: 10px;"> I am over the age of 25
                             <span>
                                         <p style="font-weight: normal; font-size: 90%;">All drivers must be over the age of 25.
@@ -195,7 +225,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="licence_agreement" required></div>
                         <div style="padding-left: 10px;"> I have a valid driver's license
                             <span>
                                         <p style="font-weight: normal; font-size: 90%;">All drivers must have a valid driver's license from their country of
@@ -208,7 +238,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="law_agreement" required></div>
                         <div style="padding-left: 10px;"> I agree to follow all state and federal laws
                             <span>
                                         <p style="font-weight: normal; font-size: 90%;">Please drive in a safe, responsible, and legal manner.
@@ -221,7 +251,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="mile_policy_agreement" required></div>
                         <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
                             <span>
                                         <p style="font-weight: normal; font-size: 90%;">All car rentals include unlimited mileage within a 100 mile radius of pickup
@@ -234,7 +264,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" max="cancellation_agreement" required></div>
                         <div style="padding-left: 10px;"> I accept the Cancellation Policy
                             *All cancellations are subject to a maximum 50% refund.</div>
                     </label>
@@ -242,7 +272,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="late_return_agreement" required></div>
                         <div style="padding-left: 10px;"> I accept the Late Returns Policy
                             <span>
                                         <p  style="font-weight: normal; font-size: 90%;">Please ensure you have adequate time for your drive back to the showroom.
@@ -254,7 +284,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" value="" name="reservation_change_agreement" required></div>
                         <div style="padding-left: 10px;"> I understand that my reservation may change at any
                             time
                             <span>
@@ -269,7 +299,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" required></div>
+                        <div><input type="checkbox" name="risk_agreement" value="" required></div>
                         <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all
                             risk
                             <span>
@@ -286,7 +316,7 @@
                 <div class="form-group">
                     <label for="comment">Customer Notes</label>
                     <textarea class="form-control" rows="5" id="comment"
-                              placeholder="Please include rental specific requests."></textarea>
+                              placeholder="Please include rental specific requests." name="note"></textarea>
                 </div>
 
             </form>
@@ -301,8 +331,8 @@
 
                         <div class="form-group">
 
-                            <input class="form-control" type="text" id="fname" name="firstname"
-                                   placeholder="As it appears on Driver's license">
+                            <input class="form-control" type="text" name="coupon_code"
+                                   placeholder="Enter your Gift card number here">
 
                         </div>
 
@@ -464,6 +494,20 @@
         }
 
         calculation();
+    });
+
+    $('#country').on('change',function (event) {
+        event.preventDefault();
+
+        let type = $(this).val();
+        if (type==='usa'){
+            $('#international_full_coverage_insurance').closest('.form-group').hide();
+            $('#liability_insurance').closest('.form-group').show();
+        }else if (type==='international'){
+            $('#international_full_coverage_insurance').closest('.form-group').show();
+            $('#liability_insurance').closest('.form-group').hide();
+        }
+
     });
 
     function calculation(){

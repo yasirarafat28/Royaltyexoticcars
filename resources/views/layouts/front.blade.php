@@ -101,6 +101,10 @@
             border-radius: 10px;
             margin: 10px auto;
         }
+
+        .checkout-card, .booking-card{
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4) !important;
+        }
     </style>
 
 @yield('style')
@@ -485,7 +489,7 @@
 			</div>
 			<nav role="navigation" class="drawer w-nav-menu">
 				<div class="drawer__container">
-					
+
 					<div class="drawer__section"><a
 							href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 							id="Drawer-Location-Link" target="_blank" class="card w-inline-block">
@@ -499,7 +503,7 @@
 								<div class="location__map"></div>
 							</div>
 						</a></div>
-					
+
 					<div class="drawer__section">
 						<div class="card"><a id="Drawer-Shop-Button" href="/shop"
 								target="_blank" class="navdrawer__shop--button w-inline-block"><img
@@ -511,7 +515,7 @@
 					<div class="drawer__section">
 						<div class="card card__table">
 							<div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-								
+
 								<div class="tabs__content w-tab-content">
 									<div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
 										<div class="navdrawer__links--wrapper"><a href="tel:18669841187"
@@ -558,7 +562,7 @@
 											alt="Twitter" class="navdrawer__link--image" /></div>
 									<div>Follow us on Twitter</div>
 								</a>
-								
+
 								<a href="{{$setting->pinter_link}}" target="_blank"
 									id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
 									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
@@ -1573,7 +1577,7 @@
 								</li>
 
 							@endforeach
-                
+
                         </ul>
                     </div>
                 </div>

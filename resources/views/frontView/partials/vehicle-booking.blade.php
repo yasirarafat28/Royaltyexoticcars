@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card booking-card">
 
     <header class="card-header">
         <div class="pull-right">
