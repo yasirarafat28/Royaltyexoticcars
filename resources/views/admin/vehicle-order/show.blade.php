@@ -136,13 +136,13 @@
                                             <hr>
                                         </div>
                                         <div class="panel-body">
-                                            <form action="{{url('admin/orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
+                                            <form action="{{url('admin/vehicle-orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
                                                 {{csrf_field()}}
                                                 {{method_field('PATCH')}}
 
                                                 <div class="col-md-12 form-group">
                                                     <label for="" class="form-label">Amount</label>
-                                                    <input type="number" name="amount" step="any" id="amount" class="form-control" placeholder="Amount" value="{{$order->total}}">
+                                                    <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Amount" value="{{$order->total}}">
                                                 </div>
 
 
@@ -197,63 +197,73 @@
                                         <div class="panel-body">
                                             <table class="table table-striped table-sm">
                                                 <tr>
-                                                    <td class="text-right"><strong>Pickup Point:</strong></td>
-                                                    <td>{{$order->pickup_point}}</td>
+                                                    <td class="text-right" style="width: 50% !important;"><strong>Primary Driver's Full Name:</strong></td>
+                                                    <td>{{$order->primary_driver_name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Dropping Point:</strong></td>
-                                                    <td>{{$order->destination_point}}</td>
+                                                    <td class="text-right"><strong>Additional Driver's Full Name:</strong></td>
+                                                    <td>{{$order->additional_driver_name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Trip Type:</strong></td>
-                                                    <td>{{$order->trip_type??'Pick & Drop'}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Distance:</strong></td>
-                                                    <td>{{$order->distance_km}} KM</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Duration:</strong></td>
-                                                    <td>{{$order->duration_min}} Minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Pickup Date:</strong></td>
-                                                    <td>{{$order->required_date}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Return Date:</strong></td>
-                                                    <td>{{$order->return_time}} (<small>Only for round trip</small>)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Full-filled By:</strong></td>
-                                                    <td>
-                                                        @if(isset($order->partner->business_name))
-                                                            {{$order->partner->business_name}}  (<small>{{$order->partner->name}}</small>)
-                                                        @else
-                                                            Not assigned
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Driving By:</strong></td>
-                                                    <td>
-                                                        @if(isset($order->driver->name))
-                                                            {{$order->driver->name}}  (<small>{{$order->driver->phone}}</small>)
-                                                        @else
-                                                            Not assigned
-                                                        @endif
-                                                    </td>
+                                                    <td class="text-right"><strong>Country of Residence:</strong></td>
+                                                    <td>${{$order->country}}</td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td class="text-right"><strong>International Full Coverage Insurance :</strong></td>
+                                                    <td>${{$order->international_full_coverage_insurance}}</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Supplemental Liability Insurance :</strong></td>
+                                                    <td>${{$order->liability_insurance}}</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Property Damage Waiver  :</strong></td>
+                                                    <td>${{$order->property_damage_waiver}}</td>
+                                                </tr>
+
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Tire Protection  :</strong></td>
+                                                    <td>${{$order->tire_protection}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Mechanical Break Down Insurance  :</strong></td>
+                                                    <td>${{$order->mechanical_breakdown_coverage}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Prepaid Gas Credit  :</strong></td>
+                                                    <td>${{$order->gas_credit}}</td>
+                                                </tr>
+
+
+                                                <tr>
                                                     <td class="text-right"><strong>Total Demand:</strong></td>
-                                                    <td>{{number_format($order->total,2)}} TK</td>
+                                                    <td>${{number_format($order->total,2)}} </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Tax and Fee:</strong></td>
+                                                    <td>${{number_format($order->total,2)}}</td>
                                                 </tr>
 
 
                                                 <tr>
                                                     <td class="text-right"><strong>Discount:</strong></td>
-                                                    <td>{{number_format($order->discount-$order->voucher_discount,2)}} TK</td>
+                                                    <td>${{number_format($order->discount,2)}} </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Grand Total:</strong></td>
+                                                    <td>${{number_format($order->grand_total-$order->discount,2)}} </td>
                                                 </tr>
 
 

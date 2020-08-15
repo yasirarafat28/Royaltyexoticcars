@@ -84,7 +84,19 @@ class VehicleOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $order = VehicleCheckout::find($id);
+
+        $order->total                   = $request->sub_total;
+        $order->tax                     = $request->tax_total;
+        $order->discount                = $request->discount;
+        $order->grand_total             = $request->grand_total;
+        $order->note             = $request->note;
+        $order->save();
+
+        return back()->withSuccess('Reservation order saved successfully!');
+
     }
 
     /**
