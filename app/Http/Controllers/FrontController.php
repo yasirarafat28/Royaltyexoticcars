@@ -1,20 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
-use App\Mail\NewOrderPlaced;
 use App\Model\Vehicle;
 use App\Faq;
 use App\Model\VehicleCategory;
 use App\Model\VehicleRequirement;
-use App\VehicleCheckout;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
 use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
-use PayPal\Api\Payer;
 use Sentinel;
 use Session;
 use Auth;
@@ -60,19 +55,6 @@ use App\Model\VehicleBrand;
 use Hash;
 use DB;
 use Artisan;
-
-
-use PayPal\Api\Amount;
-use PayPal\Api\Item;
-use PayPal\Api\ItemList;
-use PayPal\Api\Payment;
-use PayPal\Api\PaymentExecution;
-use PayPal\Api\RedirectUrls;
-use PayPal\Api\Transaction;
-use PayPal\Auth\OAuthTokenCredential;
-use PayPal\Rest\ApiContext;
-use Barryvdh\DomPDF\Facade as PDF;
-
 class FrontController extends Controller {
     public function __construct() {
          parent::callschedule();
@@ -116,19 +98,6 @@ class FrontController extends Controller {
         else{
           Session::put("home_delivery","0#0");
         }
-
-
-        $payment_setting=PaymentMethod::find(1);
-        $paypal_conf = \Config::get('paypal');
-        if($payment_setting->payment_mode==1){
-            $mode="sandbox";
-        }
-        else{
-            $mode="live";
-        }
-        $this->_api_context = new ApiContext(new OAuthTokenCredential($payment_setting->payment_key,$payment_setting->payment_secret));
-        $this->_api_context->setConfig(array('mode' =>$mode,'http.ConnectionTimeOut' => 1000,'log.LogEnabled' => true,'log.FileName' => storage_path() . '/logs/paypal.log','log.LogLevel' => 'FINE'));
-
     }
 
     public function adddefaultreview(){
@@ -173,6 +142,13 @@ class FrontController extends Controller {
         $faq = Faq::find($faqID);
         
         return view('frontView.faqsShow')->with('faqs', $faq);
+    }
+
+    public function faqadmin() {
+        
+        $faqs = Faq::all();
+        
+        return view('admin.index')->with('faqs', $faqs);
     }
 
     public function vehicles(Request $request, $cat='all') {
@@ -247,132 +223,42 @@ class FrontController extends Controller {
         return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country'));
     }
 
-    public function checkoutstore(Request $request,$vehicle_id) {
-        $setting = \setting();
+    public function checkoutstore(Request $request) {
 
-        $grand_total = $request->grand_total;
+        return $request;
 
-        $order = new VehicleCheckout();
-        $order->txn_id                  = uniqid();
-        $order->customer_id             = 0;
-        $order->schedule_id             = $request->schedule_id;
-        $order->vehicle_id             = $vehicle_id;
-        $order->reservation_time         = $request->reservation_time;
-        $order->reservation_for         = $request->reservation_for;
-        $order->primary_driver_name     = $request->primary_driver_name;
-        $order->additional_driver_name  = $request->additional_driver_name;
-        $order->country                 = $request->country;
-        $order->international_full_coverage_insurance = $request->international_full_coverage_insurance??'';
-        $order->liability_insurance     = $request->liability_insurance??'';
-        $order->property_damage_waiver  = $request->property_damage_waiver;
-        $order->tire_protection         = $request->tire_protection;
-        $order->mechanical_breakdown_coverage = $request->mechanical_breakdown_coverage;
-        $order->gas_credit              = $request->fuel_credit;
-        //$order->destination_package     = $request->reservation_for;
-        $order->customer_note           = $request->note;
-        $order->voucher_code            = $request->coupon_code;
-        $order->phone                   = $request->phone;
-        $order->name                    = $request->name;
-        $order->email                   = $request->email;
-        $order->address                 = $request->address??'';
-        $order->total                   = $request->sub_total;
-        $order->tax                     = $request->tax_total;
-        $order->discount                = $request->discount;
-        $order->grand_total             = $request->grand_total;
-        $order->payment_method          = $request->payment_method;
-        $order->payment_status          = 'unpaid';
-        $order->save();
+        $data = request()->all();
 
+        $checkout = new Checkout();
 
-        $redirect_url = url();
-        if ($request->payment_method=='paypal'){
-            $payer = new Payer();
-            $payer->setPaymentMethod('paypal');
-            $amount = new Amount();
-            $amount->setCurrency('GBP')
-                ->setTotal($grand_total);
-            $transaction = new Transaction();
-            $transaction->setAmount($amount)
-                ->setDescription("Payment to $setting->company_name. Invoice: ".$order->txn_id);
+        $checkout->primary_driver_name = $data['primary_driver_name'];
+        $checkout->additional_driver_name = $data['additional_driver_name'];
+        $checkout->country = $data['country'];
+        $checkout->property_damage_waiver = $data['property_damage_waiver'];
+        $checkout->true_protection = $data['true_protection'];
+        $checkout->breakdown_insurance = $data['breakdown_insurance'];
+        $checkout->prepaid_gas_credit = $data['prepaid_gas_credit'];
+        $checkout->destination_package = $data['destination_package'];
+        $checkout->strip_helicopter_tour = $data['strip_helicopter_tour'];
+        $checkout->age_over_25 = $data['age_over_25'];
+        $checkout->drivers_license = $data['drivers_license'];
+        $checkout->accept_policy = $data['accept_policy'];
+        $checkout->accept_refund_policy = $data['accept_refund_policy'];
+        $checkout->accept_return_policy = $data['accept_return_policy'];
+        $checkout->accept_reservation_change = $data['accept_reservation_change'];
+        $checkout->accept_resposibilty = $data['accept_resposibilty'];
+        $checkout->customer_note = $data['customer_note'];
+        $checkout->gift_card_number = $data['gift_card_number'];
+        $checkout->phone_number = $data['phone_number'];
+        $checkout->customer_email = $data['customer_email'];
+        $checkout->card_owner_name = $data['card_owner_name'];
+        $checkout->card_number = $data['card_number'];
+        $checkout->expiration_month = $data['expiration_month'];
+        $checkout->expiration_year = $data['expiration_year'];
+        $checkout->CVV = $data['CVV'];
+        $checkout->grand_total = $data['grand_total'];
 
-            $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(URL::route('PaypalCheckoutCallBack'))
-                ->setCancelUrl(URL::route('PaypalCheckoutCallBack'));
-
-            $payment = new Payment();
-            $payment->setIntent('Sale')
-                ->setPayer($payer)
-                ->setRedirectUrls($redirect_urls)
-                ->setTransactions(array($transaction));
-            try {
-                $payment->create($this->_api_context);
-            } catch (\PayPal\Exception\PayPalConnectionException $ex) {
-                if (\Config::get('app.debug')) {
-                    return 'payment_error';
-                } else {
-                    return 'payment_error';
-                }
-            }
-            foreach ($payment->getLinks() as $link) {
-                if ($link->getRel() == 'approval_url') {
-                    $redirect_url = $link->getHref();
-                    break;
-                }
-            }
-
-            $paymentID = $payment->getId();
-
-            $order->paypal_payment_id= $paymentID;
-            Session::put('paypal_payment_id',$paymentID);
-        }
-
-
-        $order->save();
-
-
-        return Redirect::away($redirect_url);
-
-    }
-
-    public function PaypalCheckoutCallBack(Request $request)
-    {
-        if (isset($request->paymentId)){
-
-            $payment_id = $request->paymentId;
-        }else{
-            $payment_id = Session::get('paypal_payment_id');
-        }
-        $order = VehicleCheckout::where('paypal_payment_id',$payment_id)->first();
-        Session::forget('paypal_payment_id');
-        if (!$request->PayerID || !$request->token) {
-            return redirect('/home')->withErrors('Payment is not confirmed successfully!');
-        }
-        $payment = Payment::get($payment_id, $this->_api_context);
-        $execution = new PaymentExecution();
-        $execution->setPayerId($request->PayerID);
-        $result = $payment->execute($execution, $this->_api_context);
-        if ($result->getState() == 'approved') {
-            $order->payment_status='paid';
-            $order->status='pending';
-            $order->save();
-            Mail::to($order->email)->send(new NewOrderPlaced($order));
-            return Redirect::route('vehicleCheckoutSuccess',$order->txn_id)->withOrdersuccess('confirmed');
-        }
-        return Redirect::url('/home')->withErrors('Payment is not confirmed successfully!');
-    }
-
-    public function vehicleCheckoutSuccess($txn_id){
-
-        $order = VehicleCheckout::where('txn_id',$txn_id)->first();
-        return view('frontView.vehicle-checkout-success',compact('order'));
-    }
-
-    public function vehicleCheckoutInvoice($txn_id){
-
-        $order = VehicleCheckout::where('txn_id',$txn_id)->first();
-        //return view('frontView.vehicle-checkout-invoice', compact('order'));
-        $pdf = PDF::loadView('frontView.vehicle-checkout-invoice', compact('order'));
-        return $pdf->download('invoice.pdf');
+        $checkout->save();
 
     }
 
@@ -386,6 +272,7 @@ class FrontController extends Controller {
         $vehicle = Vehicle::find($request->vehicle_id);
 
         $requirement = VehicleRequirement::first();
+
         return view('frontView.partials.vehicle-checkout-item-upgradation',compact('country','vehicle','requirement'));
 
     }

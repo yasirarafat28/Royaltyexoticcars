@@ -34,6 +34,7 @@ Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
 Route::get('/faqs/{faqs}', 'FrontController@faqsShow');
 
+
 Route::get('/car-rentals', 'FrontController@carRentals');
 Route::get('/vehicles/{cat?}', 'FrontController@vehicles');
 Route::get('/vehicle/{id}/{slug?}', 'FrontController@singleVehicle');
@@ -55,9 +56,6 @@ Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@veh
 Route::get('/vehicle-browse', 'FrontController@vehicles');
 Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
 Route::get('/getCheckoutUpgradeItems', 'FrontController@getCheckoutUpgradeItems')->name('getCheckoutUpgradeItems');
-Route::get('/PaypalCheckoutCallBack', 'FrontController@PaypalCheckoutCallBack')->name('PaypalCheckoutCallBack');
-Route::get('/vehicle-checkout-success/{txn_id}', 'FrontController@vehicleCheckoutSuccess')->name('vehicleCheckoutSuccess');
-Route::get('/vehicle-checkout-invoice/{txn_id}', 'FrontController@vehicleCheckoutInvoice')->name('vehicleCheckoutInvoice');
 
 
 
@@ -160,6 +158,8 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get("contact","QuestionSupportController@contactindex");
 
       Route::get("notification","NotificationController@index");
+
+      Route::get("faq","FrontController@faqadmin");
       Route::get("notificationTable","NotificationController@notificationTable");
       Route::post("sendnotification","NotificationController@addsendnotification");
       //end password change
@@ -173,8 +173,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-brand', 'VehicleBrandController');
         Route::resource('vehicle-schedules', 'VehicleScheduleController');
         Route::resource('vehicle-coupon', 'VehicleCouponController');
-        Route::resource('vehicle-orders', 'VehicleOrderController');
-        Route::post('update-order-status', 'OrderStatusController@UpdateOrderStatus')->name('UpdateOrderStatus');
 
 
 

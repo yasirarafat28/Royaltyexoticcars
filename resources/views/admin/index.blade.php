@@ -251,9 +251,9 @@
                   </li>
                   @endif
                   <li class="active">
-                     <a href="{{url('admin/faqs')}}">
+                     <a href="{{url('admin/faq')}}">
                      <i class="menu-icon fa fa-image"></i>
-                     {{__('messages.add_FAQs')}}
+                        Add FAQs
                      </a>
                   </li>
                    <li class="active">
