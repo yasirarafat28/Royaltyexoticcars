@@ -236,6 +236,30 @@ class VehicleController extends Controller
             'name'=>'required',
         ]);
 
+        if ($request->four_hour=='yes')
+        {
+            $this->validate($request,[
+                'four_hour_price'=>'required',
+            ]);
+        }
+
+        if ($request->eight_hour=='yes')
+        {
+            $this->validate($request,[
+                'eight_hour_price'=>'required',
+            ]);
+        }
+
+        if ($request->full_day=='yes')
+        {
+            $this->validate($request,[
+                'full_day_price'=>'required',
+            ]);
+        }
+        if ($request->four_hour !='yes' ||$request->eight_hour !='yes' || $request->full_day !='yes'){
+            return back()->withErrors('You must select a price type!');
+        }
+
         $vehicle = Vehicle::find($id);
         $vehicle->name = $request->name;
         $vehicle->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
