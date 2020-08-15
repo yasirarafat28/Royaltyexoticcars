@@ -4,12 +4,10 @@
         <div class="pull-right">
             <!-- ngIf: lightframe.isLightframe() || backUrl -->
             <div class="ben-flyout-wrap" ng-if="lightframe.isLightframe() || backUrl">
-                <button class="btn btn-dark" type="button" ng-toggle="leaveFlyout" ng-toggle-group="ben-flyouts"
-                        ng-toggle-group-closeable="" ng-toggle-auto-close="" ng-mx-click="click-leave-flyout"
-                        aria-expanded="false">
+                <a class="btn btn-dark" href="/vehicle-booking/{{base64_encode($vehicle->id)}}">
 
                     <span class="visually-hidden"> Choose a different date or time</span>
-                </button>
+                </a>
             </div>
         </div>
         <div class="pull-left">
@@ -36,20 +34,20 @@
                         <div class="mr-5">
                             <div class="thumbnail">
                                 <img class="thumbimg"
-                                     src="/frontEnd/5af4be5feee5104947ba2c94_2018-ferrari-488-spyder-white-exterior-front-angle-royalty-exotic-cars.jpg"
+                                     src="{{url($vehicle->feature_image??'')}}"
                                      width="150px">
                             </div>
                         </div>
                         <div>
-                            <h3>2018 Jeep Wrangler - White</h3>
-                            Thursday, August 27th 2020 @ 10am - 2pm
+                            <h3>{{$vehicle->name}} - {{ucfirst($schedule->color)}}</h3>
+                            {{date("l, F d Y",strtotime($date))}} @ {{date("h:ia",strtotime($schedule->start_time))}}
                         </div>
 
                     </div>
                 </div>
                 <div class="col-md-6 align-self-center">
                     <div class="input-group">
-                        <div class="input-group-prepend">
+                        <!--<div class="input-group-prepend">
                                     <span class="input-group-text" style="border: 0px;padding: 0px;">
 
                                         <select name="" id="" class="form-control no-appearance booking-option">
@@ -58,11 +56,18 @@
                                             <option value=""> Full day Rental</option>
                                         </select>
                                     </span>
-                        </div>
-                        <select name="" id="" class="form-control no-appearance booking-option">
-                            <option value=""> Four Hours Rental</option>
-                            <option value=""> Eight Hours Rental</option>
-                            <option value=""> Full day Rental</option>
+                        </div>-->
+                        <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
+                            <option value=""></option>
+                            @if($schedule->four_hour=='yes')
+                                <option value="four_hour">4Hrs Rental</option>
+                            @endif
+                            @if($schedule->eight_hour=='yes')
+                                <option value="four_hour">8Hrs Rental</option>
+                            @endif
+                            @if($schedule->full_day=='yes')
+                                <option value="four_hour">24Hrs Rental</option>
+                            @endif
                         </select>
                         <div class="input-group-append">
                             <span class="input-group-text">$ 299.00</span>
