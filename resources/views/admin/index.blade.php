@@ -213,6 +213,23 @@
                         </li>
                      </ul>
                   </li>
+
+
+
+                   <li class="menu-item-has-children dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="menu-icon  fa fa-tags"></i>
+                           {{__('messages.coupon')}}/ Vouchers
+                       </a>
+                       <ul class="sub-menu children dropdown-menu">
+                           <li>
+                               <a href="{{url('admin/coupon')}}">Shop Coupon</a>
+                           </li>
+                           <li>
+                               <a href="{{url('admin/vehicle-coupon')}}">Vehicle Coupon</a>
+                           </li>
+                       </ul>
+                   </li>
                  @if(Session::get("is_web")==1)
                   <li class="active">
                      <a href="{{url('admin/sepical_category')}}">
@@ -236,27 +253,13 @@
                   </li>
                  @endif
 
-
-                  <li class="active">
-                     <a href="{{url('admin/coupon')}}">
-                     <i class="menu-icon  fa fa-tags"></i>
-                     {{__('messages.coupon')}}
-                     </a>
-                  </li>
-
-                  <li class="active">
-                     <a href="{{url('admin/vehicle-coupon')}}">
-                     <i class="menu-icon  fa fa-tags"></i>
-                        Vehicle Coupon
-                     </a>
-                  </li>
-
                    <!--<li class="active">
                      <a href="{{url('admin/complain')}}">
                      <i class="menu-icon  fa fa-tags"></i>
                      {{__('messages.complain')}}
                      </a>
                   </li>-->
+
 
 
                   <li class="menu-item-has-children dropdown">

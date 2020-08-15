@@ -285,6 +285,7 @@ class FrontController extends Controller {
     }
 
     public function singleVehicle($vehicleID ,$slug=''){
+        $vehicleID = base64_decode($vehicleID);
         $vehicle =  Vehicle::find($vehicleID);
 
         return view('frontView.single-vehicle',compact('vehicle'));
