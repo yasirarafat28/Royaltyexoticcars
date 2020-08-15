@@ -11,7 +11,7 @@
 				<div class="rentals__label">{{ $record->body }}</div>
 			</div>
 		</div>
-		<h2><a href="/vehicle/{{$record->id}}/{{ $record->slug }}">{{ $record->name }}</a></h2>
+		<h2><a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}">{{ $record->name }}</a></h2>
 		<div class="rentals__info">
 			<div>4 Hrs: $</div>
 		    <div>{{ $record->four_hour_price }}</div>
@@ -26,8 +26,13 @@
 			<li>Diesel</li>
 			<li>Auto</li>
 		</ul>
+        <div style="display: flex;">
 
-		<a href="#CarBookModal" class="rental__cta--text btn-success text-uppercase"
-			data-toggle="modal">Book Now</a>
-	</div>
+
+            <a href="/vehicle-booking/{{base64_encode($record->id)}}" class="rental__cta--text btn-success text-uppercase mr-auto" > <i class="fa fa-plus mr-2"> </i> Book Now</a>
+            <a href="/vehicle/{{base64_encode($record->id)}}/{{$record->slug}}" class="rental__cta--text btn-secondary text-uppercase ml-auto" > <i class="fa fa-eye mr-2"> </i> Details</a>
+
+        </div>
+
+    </div>
 </div>

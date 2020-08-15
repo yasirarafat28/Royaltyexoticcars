@@ -20,7 +20,7 @@
          <div class="page-title">
             <ol class="breadcrumb text-right">
                <li><a href="{{url('admin/coupon')}}">{{__('messages.coupon')}}</a></li>
-               <li class="active">{{__('messages.add_coupon')}}</li>
+               <li class="active">Edit Vehicle Coupon</li>
             </ol>
          </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="col-lg-9">
            <div class="card">
               <div class="card-header">
-                 <h4>{{__('messages.add_coupon')}}</h4>
+                 <h4>Edit Vehicle Coupon</h4>
               </div>
               <div class="card-body">
 
@@ -52,42 +52,42 @@
                   </div>
 
                   <div class="padding-30">
-                      <form method="POST" action="{{ url('admin/vehicle-coupon')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                      <form method="POST" action="{{ url('admin/vehicle-coupon/'.$item->id)}}" accept-charset="UTF-8" enctype="multipart/form-data">
                           {{csrf_field()}}
-
+                          {{method_field('PATCH')}}
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">Title</label>
-                              <input class="form-control" name="title" type="text">
+                              <input class="form-control" name="title" type="text" value="{{$item->title}}">
                           </div>
                           <div class="form-group col-md-6">
                               <label class="form-label">Code</label>
                               <div class="controls input-group">
-                                  <input type="text" class="form-control" id="coupon_code_0" name="code">
+                                  <input type="text" class="form-control" id="coupon_code_0" name="code" type="text" value="{{$item->code}}">
                                   <span class="input-group-addon" onclick="generate_code(0);" style="cursor: pointer"><i class="fa fa-magic"></i></span>
                               </div>
                           </div>
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Minimum Purchase Amount</label>
-                              <input class="form-control" name="min_required_amount" type="number" id="name" step="amount">
+                              <input class="form-control" name="min_required_amount" type="number" id="name" step="amount"  value="{{$item->min_required_amount}}">
 
                           </div>
 
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Discount Type</label>
                               <select name="discount_type" class="form-control" id="type">
-                                  <option value="flat">Flat Amount</option>
-                                  <option value="percent">Percentage</option>
+                                  <option value="flat" {{$item->discount_type=='flat'?'selected':''}}>Flat Amount</option>
+                                  <option value="percent" {{$item->discount_type=='percent'?'selected':''}}>Percentage</option>
                               </select>
                           </div>
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Discount</label>
-                              <input class="form-control" name="discount" type="number" id="name">
+                              <input class="form-control" name="discount" type="number" id="name" value="{{$item->discount}}">
                           </div>
 
 
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Max. Discount <small>(Keep it blank if discount is unlimited)</small></label>
-                              <input class="form-control" name="max_discount_amount" type="number" id="name">
+                              <input class="form-control" name="max_discount_amount" type="number" id="name" value="{{$item->max_discount_amount}}">
                           </div>
 
 
@@ -97,36 +97,37 @@
                               <select name="item_id" class="form-control" id="type">
                                   <option value="all">All</option>
                                   @foreach($vehicles??array() as $vehicle)
-                                      <option value="{{$vehicle->id}}">{{$vehicle->name}}</option>
+                                      <option {{$item->item_id==$vehicle->id?'selected':''}} value="{{$vehicle->id}}">{{$vehicle->name}}</option>
                                   @endforeach
                               </select>
                           </div>
 
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Start At</label>
-                              <input class="form-control datetimepicker" name="start_at" type="text">
+                              <input class="form-control datetimepicker" name="start_at" type="text" value="{{date('Y-m-d H:i:s',strtotime($item->start_at))}}">
 
                           </div>
 
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">End At</label>
-                              <input class="form-control datetimepicker" name="end_at" type="text">
+                              <input class="form-control datetimepicker" name="end_at" type="text" value="{{date('Y-m-d H:i:s',strtotime($item->end_at))}}">
 
                           </div>
                           <div class="form-group  col-md-6">
                               <label for="name" class="control-label">Status</label>
                               <select name="status" class="form-control">
-                                  <option value="active">Active</option>
-                                  <option value="inactive">Inactive</option>
+                                  <option value="active" {{$item->status=='active'?'selected':''}} >Active</option>
+                                  <option value="inactive" {{$item->status=='inactive'?'selected':''}}>Inactive</option>
                               </select>
                           </div>
-                          <div class="form-group">
+                          <div class="form-group  col-md-12">
                               <label for="name" class="control-label">Note</label>
 
-                              <textarea name="note" class="form-control"></textarea>
+                              <textarea name="note" class="form-control">{{$item->note}}</textarea>
                           </div>
-                          <div class="form-group   col-md-12 text-center">
-                              <button class="btn btn-primary btn-corner col-md-offset-4 col-md-4">Save Changes</button>
+
+                          <div class="form-group col-md-12 text-center">
+                              <input class="btn btn-primary btn-corner col-md-4" type="submit" value="Update">
                           </div>
 
                       </form>

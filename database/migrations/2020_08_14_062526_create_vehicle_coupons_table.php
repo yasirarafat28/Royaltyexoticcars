@@ -15,18 +15,18 @@ class CreateVehicleCouponsTable extends Migration
     {
         Schema::create('vehicle_coupons', function (Blueprint $table) {
             $table->id();
-
-            $table->string('name')->nullable();
-            $table->string('code')->nullable();
-            $table->boolean('discount_type')->nullable();
-            $table->string('value')->nullable();
-            $table->boolean('free_shipping')->nullable();
-            $table->string('start_date')->nullable();
-            $table->string('end_date')->nullable();
-            $table->boolean('status')->nullable();
-            $table->string('vehicle_id')->nullable();
-            $table->string('categories')->nullable();
-            $table->string('uses_limit_per_customer')->nullable();
+            $table->text('title')->nullable();
+            $table->text('code')->nullable();
+            $table->text('type')->nullable();
+            $table->text('item_id')->nullable();
+            $table->dateTime('start_at')->nullable();
+            $table->dateTime('end_at')->nullable();
+            $table->double('min_required_amount')->default(0);
+            $table->enum('discount_type',['flat','percent'])->default('flat');
+            $table->double('discount')->default(0);
+            $table->double('max_discount_amount')->default(0);
+            $table->text('note')->nullable();
+            $table->enum('status',['active','inactive'])->default('active');
 
             $table->timestamps();
         });

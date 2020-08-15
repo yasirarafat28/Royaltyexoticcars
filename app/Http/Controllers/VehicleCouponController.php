@@ -12,12 +12,21 @@ class VehicleCouponController extends Controller
     //
     public function index(Request $request)
     {
+
+        $vehicles = Vehicle::where('status','active')->orderBy('name','ASC')->get();
         $records = Vehicle_coupon::where(function ($q) use($request){
-            if (isset($request->vehicle_id) && is_numeric($request->vehicle_id)){
-                $q->where('vehicle_id',$request->vehicle_id);
+            if (isset($request->status) && $request->status){
+                if ($request->status=='expired'){
+                    $q->where('end_at','<=',date('Y-m-d H:i:s'));
+                }else{
+                    $q->where('status',$request->status);
+                }
             }
-        })->get();
-        $vehicles = Vehicle::where('status','active')->get();
+            if(isset($request->q)   && $request->q){
+
+                $q->where('code', 'LIKE', '%' . $request->q . '%');
+            }
+        })->orderBy('created_at','DESC')->paginate(25);
         return view("admin.vehicleCoupon.default",compact('records','vehicles'));
     }
 
@@ -40,25 +49,34 @@ class VehicleCouponController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'code'=>'required',
-            'name'=>'required',
-            'value'=>'required',
+            'title'=>'required',
+            'code'=>'required|unique:vehicle_coupons',
+            'discount_type'=>'required',
+            'discount'=>'required',
+            'item_id'=>'required',
         ]);
 
-        $item  = new vehicle_coupon();
-        $item->name = $request->name;
-        $item->code = $request->code;
-        $item->discount_type = $request->discount_type;
-        $item->value = $request->value;
-        $item->free_shipping = $request->free_shipping;
-        $item->start_date = $request->start_date;
-        $item->end_date = $request->end_date;
-        $item->status = $request->status;
-        $item->vehicle_id = $request->product;
-        $item->categories = $request->category;
-        $item->uses_limit_per_customer = $request->per_coupon;
+        $coupon = new Vehicle_coupon();
+        $coupon->title = $request->title;
+        $coupon->code = $request->code;
+        $coupon->item_id = $request->item_id;
+        $coupon->discount_type = $request->discount_type;
+        $coupon->discount = $request->discount;
+        if ($request->start_at)
+        {
+            $coupon->start_at = date('Y-m-d H:i:s',strtotime($request->start_at));
 
-        $item->save();
+        }
+        if ($request->end_at){
+
+            $coupon->end_at = date('Y-m-d H:i:s',strtotime($request->end_at));
+        }
+
+        $coupon->note = $request->note;
+        $coupon->status = $request->status;
+        $coupon->max_discount_amount = $request->max_discount_amount??0;
+        $coupon->min_required_amount = $request->min_required_amount??0;
+        $coupon->save();
         return back()->withSuccess('Coupon created successfully!');
     }
 
@@ -81,7 +99,10 @@ class VehicleCouponController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $vehicles = Vehicle::orderBy('name','ASC')->get();
+        $item = Vehicle_coupon::find($id);
+        return view('admin.vehicleCoupon.edit',compact('vehicles','item'));
     }
 
     /**
@@ -94,29 +115,27 @@ class VehicleCouponController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'start_time'=>'required',
-            'four_hour'=>'required',
-            'eight_hour'=>'required',
-            'full_day'=>'required',
-            'status'=>'required',
+            'title'=>'required',
+            'code'=>'required|unique:vehicle_coupons,code,'.$id,
+            'discount_type'=>'required',
+            'discount'=>'required',
+            'item_id'=>'required',
         ]);
 
-        $item  = vehicle_coupon::find($id);
-
-        $item->name = $request->name;
-        $item->code = $request->code;
-        $item->discount_type = $request->discount_type;
-        $item->value = $request->value;
-        $item->free_shipping = $request->free_shipping;
-        $item->start_date = $request->start_date;
-        $item->end_date = $request->end_date;
-        $item->status = $request->status;
-        $item->vehicle_id = $request->product;
-        $item->categories = $request->category;
-        $item->uses_limit_per_customer = $request->per_coupon;
-
-        $item->save();
-        return back()->withSuccess('Schedule saved successfully!');
+        $coupon = Vehicle_coupon::find($id);
+        $coupon->title = $request->title;
+        $coupon->code = $request->code;
+        $coupon->item_id = $request->item_id;
+        $coupon->discount_type = $request->discount_type;
+        $coupon->discount = $request->discount;
+        $coupon->start_at = $request->start_at;
+        $coupon->end_at = $request->end_at;
+        $coupon->note = $request->note;
+        $coupon->status = $request->status;
+        $coupon->max_discount_amount = $request->max_discount_amount??0;
+        $coupon->min_required_amount = $request->min_required_amount??0;
+        $coupon->save();
+        return back()->withSuccess('Vehicle saved successfully!');
     }
 
 
@@ -129,6 +148,6 @@ class VehicleCouponController extends Controller
     public function destroy($id)
     {
         vehicle_coupon::destroy($id);
-        return back()->withSuccess('Schedule removed successfully!');
+        return back()->withSuccess('Vehicle removed successfully!');
     }
 }

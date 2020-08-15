@@ -127,18 +127,27 @@
 
       <section id="photos" class="rental__section">
 
+          @php
+           $additional_images = explode(',',$vehicle->additional_image);
+          @endphp
+
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  @foreach($additional_images??array() as $key=>$image)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
+                  @endforeach
               </ol>
               <div class="carousel-inner">
                   <div class="carousel-item active">
                       <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
-                      <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
-                  </div>
+
+                  @foreach($additional_images??array() as $key=>$image)
+                      <div class="carousel-item">
+                          <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
+                      </div>
+                  @endforeach
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
