@@ -141,8 +141,8 @@
                                                 {{method_field('PATCH')}}
 
                                                 <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Amount</label>
-                                                    <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Amount" value="{{$order->total}}">
+                                                    <label for="" class="form-label">Sub total</label>
+                                                    <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Sub total" value="{{$order->total}}">
                                                 </div>
 
 
@@ -252,7 +252,7 @@
 
                                                 <tr>
                                                     <td class="text-right"><strong>Tax and Fee:</strong></td>
-                                                    <td>${{number_format($order->total,2)}}</td>
+                                                    <td>${{number_format($order->tax,2)}}</td>
                                                 </tr>
 
 

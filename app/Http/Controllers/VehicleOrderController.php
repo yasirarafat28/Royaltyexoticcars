@@ -88,8 +88,8 @@ class VehicleOrderController extends Controller
 
         $order = VehicleCheckout::find($id);
 
-        $order->total                   = $request->sub_total;
-        $order->tax                     = $request->tax_total;
+        $order->total                   = $request->total;
+        $order->tax                     = $request->tax;
         $order->discount                = $request->discount;
         $order->grand_total             = $request->grand_total;
         $order->note             = $request->note;
