@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Queue\SerializesModels;
 use Sentinel;

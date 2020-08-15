@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\VehicleBrand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class VehicleBrandController extends Controller
 {

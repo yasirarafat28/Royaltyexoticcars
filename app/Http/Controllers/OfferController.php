@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
 use Session;
@@ -180,7 +181,7 @@ class OfferController extends Controller {
                         $filename = $file->getClientOriginalName();
                         $extension = $file->getClientOriginalExtension() ?: 'png';
                         $folderName = '/upload/offer/image/';
-                        $picture = str_random(10).time() . '.' . $extension;
+                        $picture = Str::random(10).time() . '.' . $extension;
                         $destinationPath = public_path() . $folderName;
                         $request->file('banner')->move($destinationPath, $picture);
                         $img_url =$picture;
@@ -246,7 +247,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('banner')->move($destinationPath, $picture);
                  $img_url =$picture;
@@ -255,7 +256,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('mobile_banner')->move($destinationPath, $picture);
                  $mobile_image =$picture;
@@ -266,7 +267,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('banner')->move($destinationPath, $picture);
                  $img_url =$picture;
@@ -426,7 +427,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('banner')->move($destinationPath, $picture);
                  $img_url =$picture;
@@ -436,7 +437,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('banner')->move($destinationPath, $picture);
                  $img_url =$picture;
@@ -451,7 +452,7 @@ class OfferController extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/offer/image/';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('mobile_banner')->move($destinationPath, $picture);
                  $mobile_image =$picture;

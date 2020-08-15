@@ -7,6 +7,7 @@ use App\Model\Vehicle;
 use App\Model\VehicleBrand;
 use App\Model\VehicleCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class VehicleController extends Controller

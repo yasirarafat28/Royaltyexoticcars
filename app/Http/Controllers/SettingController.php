@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
 use Session;
@@ -214,6 +215,9 @@ class SettingController extends Controller {
          $setting->tweeet_link = $request->get("tweeet_link");
          $setting->pinter_link = $request->get("pinter_link");
          $setting->utube_link = $request->get("utube_link");
+         $setting->longitude = $request->get("longitude");
+         $setting->latitude = $request->get("latitude");
+
          $setting->logo=$file_name;
          $setting->save();
          if($img!=$file_name){

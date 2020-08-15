@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Vehicle;
 use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class VehicleScheduleController extends Controller
 {
