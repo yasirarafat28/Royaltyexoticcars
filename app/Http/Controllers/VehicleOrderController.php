@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\VehicleCheckout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VehicleOrderController extends Controller
 {
@@ -12,9 +13,20 @@ class VehicleOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $records = VehicleCheckout::get();
+        $records = VehicleCheckout::where(function ($q) use($request){
+            if (isset($request->status) && $request->status){
+                $q->where('status',$request->status);
+            }
+            if (isset($request->date_from) && $request->date_from){
+                $q->where(DB::raw('date(created_at)'),'>=',$request->date_from);
+            }
+            if (isset($request->date_to) && $request->date_to){
+                $q->where(DB::raw('date(created_at)'),'<=',$request->date_to);
+            }
+
+        })->where('status','!=','temporary')->orderBy('created_at','DESC')->paginate(25);
         return view('admin.vehicle-order.index',compact('records'));
     }
 
