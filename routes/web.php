@@ -29,8 +29,11 @@ Route::get('/', function() {
   return redirect('home');
 });
 
+
 Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
+Route::get('/faqs/{faqs}', 'FrontController@faqsShow');
+
 Route::get('/car-rentals', 'FrontController@carRentals');
 Route::get('/vehicles/{cat?}', 'FrontController@vehicles');
 Route::get('/vehicle/{id}/{slug?}', 'FrontController@singleVehicle');

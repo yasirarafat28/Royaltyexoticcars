@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use App\Mail\NewOrderPlaced;
 use App\Model\Vehicle;
+use App\Faq;
 use App\Model\VehicleCategory;
 use App\Model\VehicleRequirement;
 use App\VehicleCheckout;
@@ -159,9 +160,21 @@ class FrontController extends Controller {
         $groups =  VehicleCategory::where('status','active')->where('parent_category_id',0)->get();
         return view("frontView.index",compact('groups'));
     }
+
+
     public function faqs() {
-        return view('frontView.faqs');
+        $faqs = Faq::all();
+        
+        return view('frontView.faqs')->with('faqs', $faqs);
     }
+
+    public function faqsShow($faqID) {
+        
+        $faq = Faq::find($faqID);
+        
+        return view('frontView.faqsShow')->with('faqs', $faq);
+    }
+
     public function vehicles(Request $request, $cat='all') {
 
         $records = Vehicle::whereHas('category', function ($q) use($request){
