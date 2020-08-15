@@ -13,35 +13,40 @@ class CreateCheckoutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('checkouts', function (Blueprint $table) {
+        Schema::create('vehicle_checkouts', function (Blueprint $table) {
             $table->id();
 
+            $table->string('txn_id')->nullable();
+            $table->integer('customer_id')->default(0);
+            $table->integer('vehicle_id')->default(0);
+            $table->integer('schedule_id')->default(0);
+            $table->dateTime('reservation_time')->nullable();
+            $table->string('reservation_for')->default('four_hour');
             $table->text('primary_driver_name')->nullable();
             $table->text('additional_driver_name')->nullable();
             $table->text('country')->nullable();
-            $table->text('property_damage_waiver')->nullable();
-            $table->text('true_protection')->nullable();
-            $table->text('breakdown_insurance')->nullable();
-            $table->text('prepaid_gas_credit')->nullable();
-            $table->text('destination_package')->nullable();
-            $table->text('strip_helicopter_tour')->nullable();
-            $table->boolean('age_over_25')->default(1);
-            $table->boolean('drivers_license')->default(1);
-            $table->boolean('accept_policy')->default(1);
-            $table->boolean('accept_refund_policy')->default(1);
-            $table->boolean('accept_return_policy')->default(1);
-            $table->boolean('accept_reservation_change')->default(1);
-            $table->boolean('accept_resposibilty')->default(1);
+            $table->double('international_full_coverage_insurance')->default(0);
+            $table->double('liability_insurance')->default(0);
+            $table->double('property_damage_waiver')->default(0);
+            $table->double('tire_protection')->default(0);
+            $table->double('mechanical_breakdown_coverage')->default(0);
+            $table->double('gas_credit')->default(0);
+            $table->string('destination_package')->nullable();
+            $table->string('strip_helicopter_tour')->nullable();
             $table->text('customer_note')->nullable();
-            $table->text('gift_card_number')->nullable();
-            $table->text('phone_number')->nullable();
-            $table->text('customer_email')->nullable();
-            $table->text('card_owner_name');
-            $table->text('card_number');
-            $table->text('expiration_month')->nullable();
-            $table->text('expiration_year')->nullable();
-            $table->text('CVV')->nullable();
+            $table->text('voucher_code')->nullable();
+            $table->text('name')->nullable();
+            $table->text('phone')->nullable();
+            $table->text('email')->nullable();
+            $table->text('address')->nullable();
+            $table->text('total')->nullable();
+            $table->text('tax')->nullable();
+            $table->text('discount')->nullable();
             $table->text('grand_total')->nullable();
+            $table->text('payment_method')->nullable();
+            $table->text('payment_status')->nullable();
+            $table->text('paypal_payment_id')->nullable();
+            $table->string('status')->default('temporary');
 
             $table->timestamps();
         });
@@ -54,6 +59,6 @@ class CreateCheckoutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checkouts');
+        Schema::dropIfExists('vehicle_checkouts');
     }
 }

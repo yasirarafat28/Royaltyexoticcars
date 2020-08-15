@@ -73,11 +73,16 @@
             <form action="{{route('checkoutstore',$vehicle->id)}}" id="checkout-form" method="POST">
                 {{csrf_field()}}
 
+                <input type="hidden" name="reservation_for" id="reservation_for" value="four_hour">
                 <input type="hidden" name="discount" id="discount_total" value="0">
                 <input type="hidden" name="sub_total" id="sub_total" value="0">
                 <input type="hidden" name="grand_total" id="grand_total" value="0">
                 <input type="hidden" name="tax_total" id="tax_total" value="0">
                 <input type="hidden" name="vehicle_id" id="vehicle_id" value="{{$vehicle->id}}">
+                <input type="hidden" name="reservation_time" id="vehicle_id" value="{{date('Y-m-d H:i:s',strtotime($date.' '.$schedule->start_time))}}">
+                <input type="hidden" name="reservation_for" id="vehicle_id" value="{{$vehicle->id}}">
+                <input type="hidden" name="schedule_id" id="vehicle_id" value="{{$schedule->id}}">
+                <input type="hidden" name="payment_method" value="paypal">
 
                 <div class="form-group">
 
@@ -94,7 +99,7 @@
 
 
                     <label for="lname" class="form-label">Additional Driver's Full Name:</label>
-                    <input type="text" id="lname" name="secondary_driver_name" class="form-control"
+                    <input type="text" id="lname" name="additional_driver_name" class="form-control"
                            placeholder="As it appears on Driver's license">
 
                     <small id="passwordHelpBlock" class="form-text text-muted">
@@ -295,7 +300,7 @@
                                     </span>
                             </div>
 
-                            <input class="form-control" type="text" placeholder="Full Name" name="usrnm" required>
+                            <input class="form-control" type="text" placeholder="Full Name" name="name" required>
                         </div>
 
                         <div class="input-group" >
@@ -305,7 +310,7 @@
                                     </span>
                             </div>
 
-                            <input class="form-control" type="text" placeholder="Phone number" name="usrnm" required>
+                            <input class="form-control" type="text" placeholder="Phone number" name="phone" required>
                         </div>
 
                         <div class="input-group" >
@@ -315,6 +320,15 @@
                                 </span>
                             </div>
                             <input class="form-control" type="text" placeholder="Email" name="email" required>
+                        </div>
+
+                        <div class="input-group" >
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-globe icon"></i>
+                                </span>
+                            </div>
+                            <input class="form-control" type="text" placeholder="Address" name="address" required>
                         </div>
 
                     </div>
@@ -404,6 +418,7 @@
 
     $('#rental_type').on('change',function (event) {
         event.preventDefault();
+        $('#reservation_for').val($(this).val());
         let cost = $('#rental_type option:selected').data('cost');
         if (isNaN(cost)){
             $('#online-booking-container').hide();
@@ -452,32 +467,56 @@
 
     });
 
+    $('#international_full_coverage_insurance').on('change',function (event) {
+        calculation();
+    });
+
+    $('#liability_insurance').on('change',function (event) {
+        calculation();
+    });
+
+    $('#property_damage_waiver').on('change',function (event) {
+        calculation();
+    });
+
+    $('#tire_protection').on('change',function (event) {
+        calculation();
+    });
+
+    $('#mechanical_breakdown_coverage').on('change',function (event) {
+        calculation();
+    });
+
+    $('#fuel_credit').on('change',function (event) {
+        calculation();
+    });
+
     function calculation(){
         let rental_cost = parseFloat($('#rental_cost').val());
 
-        let international_full_coverage_insurance = $('#international_full_coverage_insurance option:selected').val();
-        let liability_insurance = $('#liability_insurance option:selected').val();
-        let property_damage_waiver = $('#property_damage_waiver option:selected').val();
-        let tire_protection = $('#tire_protection option:selected').val();
-        let mechanical_breakdown_coverage = $('#mechanical_breakdown_coverage option:selected').val();
-        let fuel_credit = $('#fuel_credit option:selected').val();
-        alert(international_full_coverage_insurance);
+        let international_full_coverage_insurance = parseFloat($('#international_full_coverage_insurance option:selected').val()??0);
+        let liability_insurance = parseFloat($('#liability_insurance option:selected').val()??0);
+        let property_damage_waiver = parseFloat($('#property_damage_waiver option:selected').val()??0);
+        let tire_protection = parseFloat($('#tire_protection option:selected').val()??0);
+        let mechanical_breakdown_coverage = parseFloat($('#mechanical_breakdown_coverage option:selected').val()??0);
+        let fuel_credit = parseFloat($('#fuel_credit option:selected').val()??0);
 
 
 
-        let discount = parseFloat($('#discount').val());
+        let discount = parseFloat($('#discount_total').val());
 
 
 
-        let sub_total = rental_cost;
+        let sub_total = rental_cost + international_full_coverage_insurance
+            +liability_insurance + property_damage_waiver + tire_protection + mechanical_breakdown_coverage + fuel_credit;
         let tax = sub_total*0.3;
         let grand_total = sub_total+tax - discount;
 
 
-        $('#sub_total').text(sub_total.toFixed(2));
-        $('#discount_total').text(discount.toFixed(2));
-        $('#tax_total').text(tax.toFixed(2));
-        $('#grand_total').text(grand_total.toFixed(2));
+        $('#sub_total').val(sub_total.toFixed(2));
+        //$('#discount_total').text(discount.toFixed(2));
+        $('#tax_total').val(tax.toFixed(2));
+        $('#grand_total').val(grand_total.toFixed(2));
 
         $('#subtotal-text').text(sub_total.toFixed(2));
         $('#discount-text').text(discount.toFixed(2));

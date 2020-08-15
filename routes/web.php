@@ -55,6 +55,9 @@ Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@veh
 Route::get('/vehicle-browse', 'FrontController@vehicles');
 Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
 Route::get('/getCheckoutUpgradeItems', 'FrontController@getCheckoutUpgradeItems')->name('getCheckoutUpgradeItems');
+Route::get('/PaypalCheckoutCallBack', 'FrontController@PaypalCheckoutCallBack')->name('PaypalCheckoutCallBack');
+Route::get('/vehicle-checkout-success/{txn_id}', 'FrontController@vehicleCheckoutSuccess')->name('vehicleCheckoutSuccess');
+Route::get('/vehicle-checkout-invoice/{txn_id}', 'FrontController@vehicleCheckoutInvoice')->name('vehicleCheckoutInvoice');
 
 
 
@@ -170,6 +173,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-brand', 'VehicleBrandController');
         Route::resource('vehicle-schedules', 'VehicleScheduleController');
         Route::resource('vehicle-coupon', 'VehicleCouponController');
+        Route::resource('vehicle-orders', 'VehicleOrderController');
+        Route::post('update-order-status', 'OrderStatusController@UpdateOrderStatus')->name('UpdateOrderStatus');
 
 
 
