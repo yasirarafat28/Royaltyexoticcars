@@ -47,8 +47,8 @@ Route::get('/privacy', 'FrontController@privacy');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
 Route::get('bookCar', 'FrontController@checkoutCar');
-Route::get('vehicle-booking', 'FrontController@bookingvehicle');
-Route::get('/vehicle-checkout', 'FrontController@vehiclecheckout');
+Route::get('vehicle-booking/{vehicle_id}', 'FrontController@bookingvehicle');
+Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@vehiclecheckout');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
 Route::post('/checkoutstore', 'FrontController@checkoutstore');
 

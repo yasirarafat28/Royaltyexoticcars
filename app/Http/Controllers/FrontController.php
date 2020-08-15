@@ -317,13 +317,23 @@ class FrontController extends Controller {
     public function checkoutCar() {
         return view('checkOut.payment');
     }
-    public function bookingvehicle() {
-        $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 15 days')));
-        $schedules = VehicleSchedule::get();
-        return view('frontView.vehicle-booking',compact('dates','schedules'));
+    public function bookingvehicle($vehicle_id) {
+        $id = base64_decode($vehicle_id);
+        $vehicle = \App\Vehicle::where('id',$id)->first();
+        $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 30 days')));
+        $schedules = VehicleSchedule::where('vehicle_id',$id)->where('status','active')->get();
+        return view('frontView.vehicle-booking',compact('dates','schedules','vehicle'));
     }
-    public function vehiclecheckout() {
-        return view('frontView.vehicle-checkout');
+    public function vehiclecheckout($vehicle,$schedule,$date) {
+
+        $id = base64_decode($vehicle);
+        $vehicle = \App\Vehicle::where('id',$id)->first();
+
+        $schedule_id = base64_decode($schedule);
+        $schedule = VehicleSchedule::where('id',$schedule_id)->first();
+        $date = base64_decode($date);
+
+        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date'));
     }
     public function vehiclebrowse() {
         $vehicles = Vehicle::all();

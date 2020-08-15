@@ -23,18 +23,25 @@
     <main class="card-body booking">
         <div class="container-full" style="margin: -18px -18px 0px -18px !important;">
             <div class="tr" style="margin: 0px -18px -18px 0px -18px !important;">
-                <div class="banner text-white" style="background-image: url(&quot;https://cdn.filestackcontent.com/WBxW3lGeQYUJz247087w/convert?cache=true&amp;compress=true&amp;quality=90&amp;w=1000&amp;fit=max&amp;filter=blur&amp;blurAmount=3&quot;);">
-                    <h1>2017 Indian Chieftain (White)</h1>
-                    <p >Starting at $249 | 4 or 24 Hour Rental Options</p>
+                <div class="banner text-white" style="background-image: url({{url($vehicle->feature_image??'/no-image.png')}});background-size: cover; background-position-y: center;">
+                    <h1>{{$vehicle->name}}</h1>
+                    <p >Starting at $249 | 4 or 24 Hour Rental Optionssss</p>
                 </div>
             </div>
         </div>
         <br>
+        @if(sizeof($schedules))
 
-        <div class="container-fluid">
-            <div id="calendar"></div>
+            <div class="container-fluid">
+                <div id="calendar"></div>
 
-        </div>
+            </div>
+        @else
+            <div class="error-error" style="padding: 100px 10px;">
+                <h2>Sorry, there is no online availability for this booking.</h2>
+                <div>Please call us at {{setting()->phone}}.</div>
+            </div>
+        @endif
 
         <!--<div class="error-error" style="padding: 100px 10px;">
             <h2>Not found</h2>

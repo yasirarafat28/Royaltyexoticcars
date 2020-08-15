@@ -102,11 +102,15 @@
       </div>
       <div class="rental__cta">
         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
-          <div class="rental__cta--embed w-embed"><a
-              href="#BookingModal" data-toggle="modal"
+          <div class="rental__cta--embed w-embed">
+              <!--<a href="#BookingModal" data-toggle="modal"
               class="rental__cta--text">
               Book Online
-            </a></div>
+            </a>-->
+              <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
+              Book Online
+            </a>
+          </div>
         </div>
         <div class="interest">
           <div class="interest__wrapper"><img
@@ -275,8 +279,6 @@
       <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="container p-0">
-
-                  @include('frontView.partials.vehicle-checkout')
 
               </div>
           </div>

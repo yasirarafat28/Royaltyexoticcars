@@ -59,6 +59,8 @@
 
     <script>
         $('#calendar').fullCalendar({
+
+            timeZone: 'UTC',
             header: {
                 left: 'prev',
                 center: 'title',
@@ -77,8 +79,8 @@
 
                 //window.location='/vehicle-checkout'
             },
-            editable: true,
-            droppable: true, // this allows things to be dropped onto the calendar
+            editable: false,
+            droppable: false, // this allows things to be dropped onto the calendar
             drop: function() {
                 // is the "remove after drop" checkbox checked?
                 if ($('#drop-remove').is(':checked')) {
@@ -99,17 +101,14 @@
                                 '    @if($schedule->full_day=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 24 Hrs Rental  </p> @endif ',
                             start: "{{$date}}",
                             className: 'b-l b-2x b-greensea',
-                            url: "{{url('/vehicle-booking')}}",
+                            url: "{{url('/vehicle-checkout',array(
+                                'vehicle'=>base64_encode($vehicle->id),
+                                'schedule'=>base64_encode($schedule->id),
+                                'date'=>base64_encode($date),
+                            ))}}",
                         },
                     @endforeach
                 @endforeach
-
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2018-01-28',
-                    className: 'b-l b-2x b-greensea'
-                }
             ],
 
             eventRender: function (event, element) {
