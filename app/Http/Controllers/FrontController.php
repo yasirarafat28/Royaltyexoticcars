@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use App\Model\Vehicle;
 use App\Model\VehicleCategory;
+use Illuminate\Support\Str;
 
 use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;

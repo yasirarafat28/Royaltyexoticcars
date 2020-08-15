@@ -207,7 +207,7 @@ class Admincontroller extends Controller {
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/profile';
-                 $picture = str_random(10).time() . '.' . $extension;
+                 $picture = Str::random(10).time() . '.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('file')->move($destinationPath, $picture);
                  $img_url =$picture;
