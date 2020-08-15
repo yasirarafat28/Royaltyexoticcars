@@ -47,43 +47,36 @@
                 </div>
                 <div class="col-md-6 align-self-center">
                     <div class="input-group">
-                        <!--<div class="input-group-prepend">
-                                    <span class="input-group-text" style="border: 0px;padding: 0px;">
-
-                                        <select name="" id="" class="form-control no-appearance booking-option">
-                                            <option value=""> Four Hours Rental</option>
-                                            <option value=""> Eight Hours Rental</option>
-                                            <option value=""> Full day Rental</option>
-                                        </select>
-                                    </span>
-                        </div>-->
                         <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
-                            <option value=""></option>
+                            <option value="">Select an Option</option>
                             @if($schedule->four_hour=='yes')
-                                <option value="four_hour">4Hrs Rental</option>
+                                <option value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
                             @endif
                             @if($schedule->eight_hour=='yes')
-                                <option value="four_hour">8Hrs Rental</option>
+                                <option value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
                             @endif
                             @if($schedule->full_day=='yes')
-                                <option value="four_hour">24Hrs Rental</option>
+                                <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
                             @endif
                         </select>
+                        <input type="hidden" id="rental_cost">
                         <div class="input-group-append">
-                            <span class="input-group-text">$ 299.00</span>
+                            <span class="input-group-text">$  &nbsp;<span id="rental-cost-append"> 0.00</span></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
-        <div class="container">
+        <div class="container online-booking-container" id="online-booking-container">
             <h2 class="text-center text-success"><strong>Online Booking Agreement</strong></h2>
             <form action="/action_page.php">
+
+                <input type="hidden" name="discount" id="discount" value="0">
                 <div class="form-group">
 
                     <label for="fname" class="form-label">Primary Driver's Full Name:</label>
-                    <input class="form-control" type="text" id="fname" name="firstname"
+                    <input class="form-control" type="text" id="fname" name="primary_driver_name"
                            placeholder="As it appears on Driver's license" required>
 
                     <small id="passwordHelpBlock" class="form-text text-muted">
@@ -95,7 +88,7 @@
 
 
                     <label for="lname" class="form-label">Additional Driver's Full Name:</label>
-                    <input type="text" id="lname" name="lastname" class="form-control"
+                    <input type="text" id="lname" name="secondary_driver_name" class="form-control"
                            placeholder="As it appears on Driver's license">
 
                     <small id="passwordHelpBlock" class="form-text text-muted">
@@ -106,15 +99,14 @@
                     <label for="country" class="form-label">Country of Residence</label>
                     <select id="country" name="country" class="form-control selectpicker"
                             data-live-search="true" required>
-                        <option value="australia">Australia</option>
-                        <option value="canada">Canada</option>
                         <option value="usa">USA</option>
+                        <option value="international"> International & Canada </option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="country" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
-                    <select id="country" name="country" class="form-control selectpicker"
+                    <label for="property_damage_waiver" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
+                    <select id="property_damage_waiver" name="property_damage_waiver" class="form-control selectpicker"
                             data-live-search="true">
                         <option value="australia">$99.00 Yes I would like to buy this property</option>
                         <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -122,8 +114,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="country" class="form-label">Tire Protection</label>
-                    <select id="country" name="country" class="form-control selectpicker"
+                    <label for="tire_protection" class="form-label">Tire Protection</label>
+                    <select id="tire_protection" name="tire_protection" class="form-control selectpicker"
                             data-live-search="true">
                         <option value="australia">$99.00 Yes I would like to buy this property</option>
                         <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -135,8 +127,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="country" class="form-label">Mechanical Break Down Insurance</label>
-                    <select id="country" name="country" class="form-control selectpicker"
+                    <label for="mechanical_breakdown_coverage" class="form-label">Mechanical Break Down Insurance</label>
+                    <select id="mechanical_breakdown_coverage" name="mechanical_breakdown_coverage" class="form-control selectpicker"
                             data-live-search="true">
                         <option value="australia">$99.00 Yes I would like to buy this property</option>
                         <option value="canada">$0.00 No I dont want to buy this property</option>
@@ -151,15 +143,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="country" class="form-label">Prepaid Gas Credit</label>
-                    <select id="country" name="country" class="form-control selectpicker"
+                    <label for="fuel_credit" class="form-label">Prepaid Gas Credit</label>
+                    <select id="fuel_credit" name="fuel_credit" class="form-control selectpicker"
                             data-live-search="true">
                         <option value="australia">$99.00 Yes I would like to buy this property</option>
                         <option value="canada">$0.00 No I dont want to buy this property</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="country" class="form-label">Destination Packages</label>
                     <select id="country" name="country" class="form-control selectpicker"
                             data-live-search="true">
@@ -184,7 +176,7 @@
                     <small id="passwordHelpBlock" class="form-text text-muted">
                         Luxury Helicopter Tours of the Las Vegas Strip are available for $149 per passenger, up to 4 passengers at a time.
                     </small>
-                </div>
+                </div>-->
 
                 <label for="country" class="form-label" style="margin: 20px;">Please read the following
                     agreements carefully:</label>
@@ -329,21 +321,28 @@
                     <div class="subtot" style="display: flex; justify-content: space-between;">
 
                         <p>Subtotal</p>
-                        <p>$299.00</p>
+                        <p>$ <span id="subtotal-text">0.00</span></p>
+
+                    </div>
+
+                    <div class="subtot" style="display: flex; justify-content: space-between;">
+
+                        <p>Discount</p>
+                        <p>$ <span id="discount-text">0.00</span></p>
 
                     </div>
 
                     <div class="taxest" style="display: flex; justify-content: space-between;">
 
                         <p>Taxes & Fees</p>
-                        <p>$299.00</p>
+                        <p>$ <span id="tax-text">0.00</span></p>
 
                     </div>
 
                     <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
 
                         <p style="padding: 5px;">Total</p>
-                        <h3>$299.00</h3>
+                        <h3>$ <span id="total-text">0.00</span></h3>
 
                     </div>
 
@@ -438,5 +437,49 @@
             </div>
 
         </div>
+
+
+        <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: block;">
+            <h2>Sorry, there is no online availability for this booking.</h2>
+            <div>Please call us at {{setting()->phone}}.</div>
+        </div>
     </main>
 </div>
+
+<script>
+    $('#rental_type').on('change',function (event) {
+        event.preventDefault();
+        let cost = $('#rental_type option:selected').data('cost');
+        if (isNaN(cost)){
+            $('#online-booking-container').hide();
+            $('#online-booking-error-container').show();
+            $('#rental-cost-append').text('0.00');
+            $('#rental_cost').val(0);
+        }else{
+            $('#online-booking-container').show();
+            $('#online-booking-error-container').hide();
+
+            $('#rental-cost-append').text(parseFloat(cost).toFixed(2));
+            $('#rental_cost').val(cost);
+        }
+
+        calculation();
+    });
+
+    function calculation(){
+        let rental_cost = parseFloat($('#rental_cost').val());
+        let discount = parseFloat($('#discount').val());
+
+
+
+        let sub_total = rental_cost;
+        let tax = sub_total*0.3;
+        let grand_total = sub_total+tax - discount;
+
+
+        $('#subtotal-text').text(sub_total.toFixed(2));
+        $('#discount-text').text(discount.toFixed(2));
+        $('#tax-text').text(tax.toFixed(2));
+        $('#total-text').text(grand_total.toFixed(2));
+    }
+</script>
