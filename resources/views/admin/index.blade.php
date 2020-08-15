@@ -241,7 +241,7 @@
                   <li class="active">
                      <a href="{{url('admin/faqs')}}">
                      <i class="menu-icon fa fa-image"></i>
-                     {{__('messages.add_FAQs)}}
+                     {{__('messages.add_FAQs')}}
                      </a>
                   </li>
                    <li class="active">
