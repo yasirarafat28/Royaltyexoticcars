@@ -31,48 +31,64 @@
                     </div>
                 </div>
                 @endif
-                
-                <button onclick="addcoupon()" class="btn btn-primary btn-flat m-b-30 m-t-30"><a href="{{ url('admin/vehicle-coupon/create') }}">{{__('messages.add_coupon')}}</a></button>
+
+                <a class="btn btn-primary btn-flat m-b-30 m-t-30" href="{{ url('admin/vehicle-coupon/create') }}">{{__('messages.add_coupon')}}</a>
                 <div class="table-responsive dtdiv">
                     <table id="dt" class="table table-striped table-bordered dttablewidth">
                         <thead>
-                            <tr>
-                                <th>{{__('messages.id')}}</th>
-                                <th>{{__('messages.name')}}</th>
-                                <th>{{__('messages.code')}}</th>
-                                <th>{{__('messages.date')}}</th>
-                                <th>{{__('messages.value')}}</th>
-                                <th>{{__('messages.action')}}</th>
-                            </tr>
+                        <tr>
+                            <th>Title</th>
+                            <th>Code</th>
+                            <th>Discount</th>
+                            <th>Status</th>
+                            <th>Expire At</th>
+                            <th  class="action-td" >Action</th>
+                        </tr>
                         </thead>
                         <tbody>
-                        @foreach($records??array() as $item)
+
+                        @forelse($records??array() as $item)
                             <tr>
-                                <td>{{$item->id}}</td>
-                                <td>{{$item->name}}</td>
+                                <td>{{$item->title}}</td>
                                 <td>{{$item->code}}</td>
-                                <td>{{$item->start_date}} to {{$item->end_date}}</td>
-                                <td>{{$item->value}}</td>
+                                <td>
+                                    @if($item->discount_type=='flat')
+                                        {{$item->discount}}
+                                    @else
+                                        {{$item->discount}} %
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(date('Y-m-d H:i:s') > $item->end_at)
+                                        Expired
+                                    @else
+                                        {{ucfirst($item->status)}}
+                                    @endif
+                                </td>
+                                <td>{{$item->end_at}}</td>
                                 <td id="action" class="action-td">
-                                    <a class="m-1" data-toggle="modal" data-target="#modal-edit{{$item->id}}" title="Edit Vehicle Schedules"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 10px;font-size: x-large;color:black"></i></a>
-
-
-                                {!! Form::open([
-                                                'method'=>'DELETE',
-                                                'url' => ['/admin/vehicle-schedules', $item->id],
-                                                'style' => 'display:inline'
-                                                ]) !!}
-                                {!! Form::button('<i class="fa fa-trash f-s-25"></i>', array(
-                                    'type' => 'submit',
-                                    'onclick' => 'return confirm("Are you sure? ");',
-                                    'class' => 'm-1 btn',
-                                        'data-type'=>'confirm',
-                                    )) !!}
-                                {!! Form::close() !!}
+                                    <a class="btn btn-primary" href="{{url('admin/vehicle-coupon/'.$item->id.'/edit')}}" title="Edit Coupon/Voucher"><i class="fa fa-eye" aria-hidden="true"></i> Edit</a>
+                                    <a class="btn btn-primary" data-toggle="modal" data-target="#modal-show{{$item->id}}" title="Show Coupon/Voucher"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>
+                                    {!! Form::open([
+                                                                                               'method'=>'DELETE',
+                                                                                               'url' => ['admin/vehicle-coupon/'.$item->id],
+                                                                                               'style' => 'display:inline'
+                                                                                            ]) !!}
+                                    {!! Form::button('Delete', array(
+                                         'type' => 'submit',
+                                         'onclick' => 'return confirm("Are you sure? ");',
+                                         'class' => 'btn btn-danger',
+                                            'data-type'=>'confirm',
+                                         )) !!}
+                                    {!! Form::close() !!}
 
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr class="text-center">
+                                <td colspan="7"><strong>Sorry!</strong> Found no records</td>
+                            </tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>
