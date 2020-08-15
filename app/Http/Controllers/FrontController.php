@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use App\Model\Vehicle;
 use App\Model\VehicleCategory;
+use App\Model\VehicleRequirement;
 use Illuminate\Support\Str;
 
 use App\Model\VehicleSchedule;
@@ -124,77 +125,8 @@ class FrontController extends Controller {
         return redirect()->back();
     }
     public function home(Request $request){
-
         $groups =  VehicleCategory::where('status','active')->where('parent_category_id',0)->get();
-
-        /*$records = Vehicle::whereHas('category', function ($q) use($request){
-
-            if (isset($request->category) && $request->category){
-                $q->where('slug', $request->category);
-            }
-        })->whereHas('subcategory', function ($q) use($request){
-
-            if (isset($request->sub_category) && $request->sub_category){
-                $q->where('slug', $request->sub_category);
-            }
-        })->whereHas('brand', function ($q) use($request){
-
-            if (isset($request->brand) && $request->brand){
-                $q->where('slug', $request->brand);
-            }
-        })->where('status','active')->where(function($q) use($request){
-            if (isset($request->q) && $request->q){
-                $q->where('name', 'LIKE', '%' . $request->q . '%');
-            }
-        })->groupby('category_id')->get()->take(2);*/
-        /* $setting=Setting::find(1);
-        Session::put("is_web",$setting->is_web);
-        if($setting->is_web=='2'){
-            return redirect('admin/');
-        }
-        $deals=Deal::with("offer")->get();
-        $sepcat=Sepicalcategories::where("is_active","1")->first();
-        $sen_offer=Seasonaloffer::where("is_active","1")->first();
-        $setting=Setting::find(1);
-        $shiping=Shipping::find(1);
-        $res_curr=explode("-",$setting->default_currency);
-
-
-        $bestselling=$this->getbestsellingpro();
-        $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist();
-        $banner=Banner::all();
-        $fdata=array();
-        $featurepro=FeatureProduct::with('productdata')->orderby('id','DESC')->get();
-        foreach ($featurepro as $k) {
-            if($k->productdata->is_deleted=='0'){
-                 $k->productdata->name=substr($k->productdata->name, 0,15);
-                 $getreview=Review::where("product_id",$k->product_id)->where("is_deleted",'0')->get();
-                 $k->total_review=count($getreview);
-                 $avgStar = Review::where("product_id",$k->product_id)->avg('ratting');
-                 $wish=Wishlist::where("product_id",$k->product_id)->where("user_id",Auth::id())->get();
-                 $k->wish=count($wish);
-                 $k->avgStar=round($avgStar);
-                 $fdata[]=$k;
-            }
-
-        }
-
-        $featurepro=$fdata;
-         $date=date("Y-m-d");
-         $best=array();
-         $bestoffer=Offer::where("offer_type","1")->orderby('id',"DESC")->get();
-         foreach ($bestoffer as $bo) {
-          $start_date=date("Y-m-d",strtotime($bo->start_date));
-          $end_date=date("Y-m-d",strtotime($bo->end_date));
-          if(($date>=$start_date)&&($date<=$end_date)){
-                  $best[]=$bo;
-          }
-        }
-        $pay=PaymentMethod::find(1);
-        $mywish=Wishlist::where("user_id",Auth::id())->get(); */
         return view("frontView.index",compact('groups'));
-        // return view("user.home")->with("header_menu",$getcat)->with("offerdata",$deals)->with("banner",$banner)->with("sepical_cat",$sepcat)->with("sen_offer",$sen_offer)->with("setting",$setting)->with("bestselling",$bestselling)->with("currency",Session::get("currency"))->with("productdata",$productdata)->with("featurepro",$featurepro)->with("mywish",$mywish)->with("bestoffer",$best);
     }
     public function faqs() {
         return view('frontView.faqs');
@@ -242,10 +174,33 @@ class FrontController extends Controller {
         return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories'));
     }
 
-    public function brandshow( $brandID ) {
 
-        //
+    public function singleVehicle($vehicleID ,$slug=''){
+        $vehicleID = base64_decode($vehicleID);
+        $vehicle =  Vehicle::find($vehicleID);
 
+        return view('frontView.single-vehicle',compact('vehicle'));
+    }
+
+    public function bookingvehicle($vehicle_id) {
+        $id = base64_decode($vehicle_id);
+        $vehicle = \App\Vehicle::where('id',$id)->first();
+        $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 30 days')));
+        $schedules = VehicleSchedule::where('vehicle_id',$id)->where('status','active')->get();
+        return view('frontView.vehicle-booking',compact('dates','schedules','vehicle'));
+    }
+    public function vehiclecheckout($vehicle,$schedule,$date) {
+
+        $id = base64_decode($vehicle);
+        $vehicle = \App\Vehicle::where('id',$id)->first();
+
+        $schedule_id = base64_decode($schedule);
+        $schedule = VehicleSchedule::where('id',$schedule_id)->first();
+        $date = base64_decode($date);
+
+        $requirement = VehicleRequirement::first();
+
+        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement'));
     }
 
     public function checkoutstore() {
@@ -285,25 +240,6 @@ class FrontController extends Controller {
 
     }
 
-    public function singleVehicle($vehicleID ,$slug=''){
-        $vehicleID = base64_decode($vehicleID);
-        $vehicle =  Vehicle::find($vehicleID);
-
-        return view('frontView.single-vehicle',compact('vehicle'));
-    }
-    public function suvRentals() {
-        return view('frontView.las-vegas-nv.suv-rentals');
-    }
-    public function bugattiRentals() {
-        return view('frontView.las-vegas-nv.bugatti-rentals');
-    }
-    public function lamborghiniRentals() {
-        return view('frontView.las-vegas-nv.lamborghini-rentals');
-    }
-
-    public function carRentalsLamborghiniAventador() {
-        return view('frontView.car-rentals.lamborghini-aventador');
-    }
     public function team() {
         return view('frontView.team');
     }
@@ -315,31 +251,6 @@ class FrontController extends Controller {
     }
     public function privacy() {
         return view('frontView.privacy');
-    }
-    public function checkoutCar() {
-        return view('checkOut.payment');
-    }
-    public function bookingvehicle($vehicle_id) {
-        $id = base64_decode($vehicle_id);
-        $vehicle = \App\Vehicle::where('id',$id)->first();
-        $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 30 days')));
-        $schedules = VehicleSchedule::where('vehicle_id',$id)->where('status','active')->get();
-        return view('frontView.vehicle-booking',compact('dates','schedules','vehicle'));
-    }
-    public function vehiclecheckout($vehicle,$schedule,$date) {
-
-        $id = base64_decode($vehicle);
-        $vehicle = \App\Vehicle::where('id',$id)->first();
-
-        $schedule_id = base64_decode($schedule);
-        $schedule = VehicleSchedule::where('id',$schedule_id)->first();
-        $date = base64_decode($date);
-
-        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date'));
-    }
-    public function vehiclebrowse() {
-        $vehicles = Vehicle::all();
-        return view('frontView.vehicle-browse');
     }
     public function shop(){
         $setting=Setting::find(1);

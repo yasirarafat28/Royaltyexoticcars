@@ -285,27 +285,27 @@
                                             <tbody id="morerow0">
                                             <tr id="attrrow01">
                                                 <td>Model</td>
-                                                <td><input required class="form-control" type="text" name="model"></td>
+                                                <td><input  class="form-control" type="text" name="model"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Color</td>
-                                                <td><input required class="form-control" type="text" name="color"></td>
+                                                <td><input  class="form-control" type="text" name="color"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Class</td>
-                                                <td><input required class="form-control" type="text" name="vehicle_class"></td>
+                                                <td><input  class="form-control" type="text" name="vehicle_class"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Body</td>
-                                                <td><input required class="form-control" type="text" name="body"></td>
+                                                <td><input  class="form-control" type="text" name="body"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Seat</td>
-                                                <td><input required class="form-control" type="text" name="seat"></td>
+                                                <td><input  class="form-control" type="text" name="seat"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Actual MSRP</td>
-                                                <td><input required class="form-control" type="text" name="actual_msrp"></td>
+                                                <td><input  class="form-control" type="text" name="actual_msrp"></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -324,31 +324,31 @@
                                             <tbody id="morerow0">
                                             <tr id="attrrow01">
                                                 <td>Horse Power</td>
-                                                <td><input required class="form-control" type="text" name="horse_power"></td>
+                                                <td><input  class="form-control" type="text" name="horse_power"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Torque</td>
-                                                <td><input required class="form-control" type="text" name="torque"></td>
+                                                <td><input  class="form-control" type="text" name="torque"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Transmission</td>
-                                                <td><input required class="form-control" type="text" name="transmission"></td>
+                                                <td><input  class="form-control" type="text" name="transmission"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Suspension</td>
-                                                <td><input required class="form-control" type="text" name="suspension"></td>
+                                                <td><input  class="form-control" type="text" name="suspension"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Clearance</td>
-                                                <td><input required class="form-control" type="text" name="clearance"></td>
+                                                <td><input  class="form-control" type="text" name="clearance"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Differential</td>
-                                                <td><input required class="form-control" type="text" name="differential"></td>
+                                                <td><input  class="form-control" type="text" name="differential"></td>
                                             </tr>
                                             <tr id="attrrow01">
                                                 <td>Gear Ratio</td>
-                                                <td><input required class="form-control" type="text" name="gear_ratio"></td>
+                                                <td><input class="form-control" type="text" name="gear_ratio"></td>
                                             </tr>
                                             </tbody>
                                         </table>

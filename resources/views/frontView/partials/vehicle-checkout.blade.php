@@ -70,7 +70,7 @@
         <hr>
         <div class="container online-booking-container" id="online-booking-container">
             <h2 class="text-center text-success"><strong>Online Booking Agreement</strong></h2>
-            <form action="/action_page.php">
+            <form action="#" id="checkout-form">
 
                 <input type="hidden" name="discount" id="discount" value="0">
                 <div class="form-group">
@@ -319,26 +319,58 @@
                               placeholder="Please include rental specific requests." name="note"></textarea>
                 </div>
 
-            </form>
+                <div class="middle-container row" style="padding: 5px;border: 1px solid #ddd; border-radius: 10px; margin: 1px; justify-content: space-between;">
 
-            <div class="middle-container row" style="padding: 5px;border: 1px solid #ddd; border-radius: 10px; margin: 1px; justify-content: space-between;">
+                    <div class="gidt-card col-md-6">
 
-                <div class="gidt-card col-md-6">
+                        <label for="fname" class="form-label">Gift card number:</label>
 
-                    <label for="fname" class="form-label">Gift card number:</label>
+                        <div class="gift" style="display: flex;">
 
-                    <div class="gift" style="display: flex;">
+                            <div class="form-group">
 
-                        <div class="form-group">
+                                <input class="form-control" type="text" name="coupon_code"
+                                       placeholder="Enter your Gift card number here">
 
-                            <input class="form-control" type="text" name="coupon_code"
-                                   placeholder="Enter your Gift card number here">
+                            </div>
+
+                            <div class="btnfr ml-2">
+
+                                <button type="button" class="btn btn-success">Apply</button>
+
+                            </div>
 
                         </div>
 
-                        <div class="btnfr ml-2">
+                    </div>
 
-                            <button type="button" class="btn btn-success">Apply</button>
+                    <div class="cashf col-md-6">
+
+                        <div class="subtot" style="display: flex; justify-content: space-between;">
+
+                            <p>Subtotal</p>
+                            <p>$ <span id="subtotal-text">0.00</span></p>
+
+                        </div>
+
+                        <div class="subtot" style="display: flex; justify-content: space-between;">
+
+                            <p>Discount</p>
+                            <p>$ <span id="discount-text">0.00</span></p>
+
+                        </div>
+
+                        <div class="taxest" style="display: flex; justify-content: space-between;">
+
+                            <p>Taxes & Fees</p>
+                            <p>$ <span id="tax-text">0.00</span></p>
+
+                        </div>
+
+                        <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
+
+                            <p style="padding: 5px;">Total</p>
+                            <h3>$ <span id="total-text">0.00</span></h3>
 
                         </div>
 
@@ -346,45 +378,10 @@
 
                 </div>
 
-                <div class="cashf col-md-6">
+                <div class="row" style="display: flex; justify-content: space-between; margin-top: 20px;">
 
-                    <div class="subtot" style="display: flex; justify-content: space-between;">
+                    <div class="col-sm-6">
 
-                        <p>Subtotal</p>
-                        <p>$ <span id="subtotal-text">0.00</span></p>
-
-                    </div>
-
-                    <div class="subtot" style="display: flex; justify-content: space-between;">
-
-                        <p>Discount</p>
-                        <p>$ <span id="discount-text">0.00</span></p>
-
-                    </div>
-
-                    <div class="taxest" style="display: flex; justify-content: space-between;">
-
-                        <p>Taxes & Fees</p>
-                        <p>$ <span id="tax-text">0.00</span></p>
-
-                    </div>
-
-                    <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
-
-                        <p style="padding: 5px;">Total</p>
-                        <h3>$ <span id="total-text">0.00</span></h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row" style="display: flex; justify-content: space-between; margin-top: 20px;">
-
-                <div class="col-sm-6">
-
-                    <form action="/action_page.php" style="margin:auto">
                         <p class="text-uppercase"><i class="fa fa-user icon"></i> contact</p>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -414,22 +411,20 @@
                             </div>
                             <input class="form-control" type="text" placeholder="Email" name="email" required>
                         </div>
-                    </form>
-
-                </div>
-
-
-                <div class="col-sm-6">
-                    <div class="logodiv" style="display: flex;">
-
-                        <img src="/images/lock-solid.svg" alt="lock-icon"
-                             style="height: 12px; width: 13px; margin: 5px;">
-
-                        <p class="text-uppercase">Payment</p>
 
                     </div>
-                    <div class="dible" style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 8px;">
-                        <form role="form">
+
+
+                    <div class="col-sm-6">
+                        <div class="logodiv" style="display: flex;">
+
+                            <img src="/images/lock-solid.svg" alt="lock-icon"
+                                 style="height: 12px; width: 13px; margin: 5px;">
+
+                            <p class="text-uppercase">Payment</p>
+
+                        </div>
+                        <div class="dible" style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 8px;">
                             <div class="form-group"> <label for="username">
                                     <h6 style="font-size: 80%;">Card Owner</h6>
                                 </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
@@ -454,29 +449,55 @@
                                         </label> <input type="text" required class="form-control"> </div>
                                 </div>
                             </div>
-                        </form>
-                        <!--</div>-->
+                            <!--</div>-->
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <p style="text-align: center;">
+                        <button type="submit" class="button "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
+                </div>
 
-            <div class="form-group" style="margin-top: 20px;">
-                <p style="text-align: center;">
-                    <button type="button" class="button "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
-            </div>
+            </form>
+
+
 
         </div>
 
 
-        <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: block;">
+        <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: none;">
             <h2>Sorry, there is no online availability for this booking.</h2>
             <div>Please call us at {{setting()->phone}}.</div>
         </div>
     </main>
 </div>
 
+
+<script src="/admin-asset/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
+
 <script>
+
+    $(function () {
+        $('#checkout-form').valid({
+            highlight: function (input) {
+                $(input).parents('.form-line').addClass('error');
+            },
+            unhighlight: function (input) {
+                $(input).parents('.form-line').removeClass('error');
+            },
+            errorPlacement: function (error, element) {
+                $(element).parents('.form-group').append(error);
+            },
+            rules: {
+                'confirm': {
+                    equalTo: '#password'
+                }
+            }
+        });
+    });
+
     $('#rental_type').on('change',function (event) {
         event.preventDefault();
         let cost = $('#rental_type option:selected').data('cost');
