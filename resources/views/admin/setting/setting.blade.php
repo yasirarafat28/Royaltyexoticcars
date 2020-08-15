@@ -195,17 +195,17 @@
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
-                           {{__('messages.latitude')}}
+                           latitude
                            <span class="reqfield">*</span>
                            </label>
-                           <textarea  id="address" placeholder="{{__('messages.latitude')}}" class="form-control h150" name="latitude" required >{{$data->address}}</textarea>
+                           <textarea  id="address" placeholder="latitude" class="form-control h150" name="latitude" required >{{$data->latitude}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
-                           {{__('messages.longitude')}}
+                           longitude
                            <span class="reqfield">*</span>
                            </label>
-                           <textarea  id="address" placeholder="{{__('messages.longitude')}}" class="form-control h150" name="longitude" required >{{$data->address}}</textarea>
+                           <textarea  id="address" placeholder="longitude" class="form-control h150" name="longitude" required >{{$data->longitude}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
