@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h6 class="panel-title"><i class="fa fa-shopping-cart"></i> Order Details</h6>
+                                        <h3 class="panel-title"><i class="fa fa-shopping-cart"></i> Order Details</h3>
                                     </div>
                                     <table class="table table-sm">
                                         <tbody>
@@ -86,7 +86,7 @@
                             <div class="col-md-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h6 class="panel-title"><i class="fa fa-user"></i> Customer Details</h6>
+                                        <h3 class="panel-title"><i class="fa fa-user"></i> Customer Details</h3>
                                     </div>
                                     <table class="table table-sm">
                                         <tbody><tr>
@@ -130,82 +130,49 @@
                                 <div class="col-md-6">
                                     <div class="panel-default">
                                         <div class="panel-header">
-                                            <h6>
+                                            <h3>
                                                 Update Booking
-                                            </h6>
+                                            </h3>
                                             <hr>
                                         </div>
                                         <div class="panel-body">
-                                            <form action="{{url('admin/orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
+                                            <form action="{{url('admin/vehicle-orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
                                                 {{csrf_field()}}
                                                 {{method_field('PATCH')}}
 
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-12 form-group">
                                                     <label for="" class="form-label">Amount</label>
-                                                    <input type="number" name="amount" step="any" id="amount" class="form-control" placeholder="Amount" value="{{$order->total}}">
+                                                    <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Amount" value="{{$order->total}}">
                                                 </div>
 
-                                                <div class="col-md-6 form-group">
+
+                                                <div class="col-md-12 form-group">
+                                                    <label for="" class="form-label">Tax & Fee</label>
+                                                    <input type="number" name="tax" step="any" id="amount" class="form-control" placeholder="Tax & Fee" value="{{$order->tax}}">
+                                                </div>
+
+                                                <div class="col-md-12 input-group">
+                                                    <input class="form-control" type="text" placeholder="Voucher code" name="coupon_code" id="coupon_code" value="{{$order->coupon_code}}">
+
+                                                    <div class="input-group-append">
+                                                        <a href="#" class="btn btn-success" id="apply-coupon-btn">Apply</a>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-12 form-group">
                                                     <label for="" class="form-label">Discount</label>
                                                     <input type="number" name="discount" step="any" class="form-control" placeholder="Discount" value="{{$order->discount}}">
                                                 </div>
 
                                                 <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Pickup Point</label>
-                                                    <input type="text" name="pickup_point" id="pickup_point" class="form-control" placeholder="Pickup Point" value="{{$order->pickup_point}}">
+                                                    <label for="" class="form-label">Grand Total</label>
+                                                    <input type="number" name="grand_total" step="any" class="form-control" placeholder="Grand Total" value="{{$order->grand_total}}">
                                                 </div>
-
-                                                <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Dropping Point</label>
-                                                    <input type="text" name="destination_point" id="destination_point" class="form-control" placeholder="Dropping Point" value="{{$order->destination_point}}">
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    <label for="">Package<small> (required)</small></label>
-                                                    <select class="form-control ms" name="package_id" id="package_id">
-                                                        <option value="">-- Please select --</option>
-                                                        @foreach($packages??array() as $item)
-                                                            <option {{$item->id==$order->package_id?'selected':''}} value="{{$item->id}}" >{{$item->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    <label for="">Estimated Fare</label>
-                                                    <h3><span style="color:darkorange" id="estimated_fare">{{$order->total}}</span> TK</h3>
-                                                </div>
-
-
                                                 <div class=" col-md-12">
                                                     <div class="form-group">
-                                                        <label for="">Partner<small> (required)</small></label>
-                                                        <select class="form-control ms" name="partner_id">
-                                                            <option value="">-- Please select --</option>
-                                                            @foreach($partners??array() as $item)
-                                                                <option {{$item->id==$order->partner_id?'selected':''}} value="{{$item->id}}" >{{$item->business_name}} -- ({{$item->name}})</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class=" col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="">Driver<small> (required)</small></label>
-                                                        <select class="form-control ms" name="driver_id">
-                                                            <option value="">-- Please select --</option>
-                                                            @foreach($drivers??array() as $item)
-                                                                <option {{$item->id==$order->driver_id?'selected':''}} value="{{$item->id}}" >{{$item->name}} -- ({{$item->phone}})</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class=" col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="">Comment<small> (optional)</small></label>
-                                                        <textarea name="comment" class="form-control" placeholder="Order Comment">{{$order->comment}}</textarea>
+                                                        <label for="">Note<small> (optional)</small></label>
+                                                        <textarea name="note" class="form-control" placeholder="Order Note">{{$order->note}}</textarea>
                                                     </div>
                                                 </div>
 
@@ -222,71 +189,81 @@
                                 <div class="col-md-6">
                                     <div class="panel-default">
                                         <div class="panel-header">
-                                            <h6>
+                                            <h3>
                                                 Booking Information
-                                            </h6>
+                                            </h3>
                                             <hr>
                                         </div>
                                         <div class="panel-body">
                                             <table class="table table-striped table-sm">
                                                 <tr>
-                                                    <td class="text-right"><strong>Pickup Point:</strong></td>
-                                                    <td>{{$order->pickup_point}}</td>
+                                                    <td class="text-right" style="width: 50% !important;"><strong>Primary Driver's Full Name:</strong></td>
+                                                    <td>{{$order->primary_driver_name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Dropping Point:</strong></td>
-                                                    <td>{{$order->destination_point}}</td>
+                                                    <td class="text-right"><strong>Additional Driver's Full Name:</strong></td>
+                                                    <td>{{$order->additional_driver_name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Trip Type:</strong></td>
-                                                    <td>{{$order->trip_type??'Pick & Drop'}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Distance:</strong></td>
-                                                    <td>{{$order->distance_km}} KM</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Duration:</strong></td>
-                                                    <td>{{$order->duration_min}} Minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Pickup Date:</strong></td>
-                                                    <td>{{$order->required_date}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Return Date:</strong></td>
-                                                    <td>{{$order->return_time}} (<small>Only for round trip</small>)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Full-filled By:</strong></td>
-                                                    <td>
-                                                        @if(isset($order->partner->business_name))
-                                                            {{$order->partner->business_name}}  (<small>{{$order->partner->name}}</small>)
-                                                        @else
-                                                            Not assigned
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Driving By:</strong></td>
-                                                    <td>
-                                                        @if(isset($order->driver->name))
-                                                            {{$order->driver->name}}  (<small>{{$order->driver->phone}}</small>)
-                                                        @else
-                                                            Not assigned
-                                                        @endif
-                                                    </td>
+                                                    <td class="text-right"><strong>Country of Residence:</strong></td>
+                                                    <td>${{$order->country}}</td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td class="text-right"><strong>International Full Coverage Insurance :</strong></td>
+                                                    <td>${{$order->international_full_coverage_insurance}}</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Supplemental Liability Insurance :</strong></td>
+                                                    <td>${{$order->liability_insurance}}</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Property Damage Waiver  :</strong></td>
+                                                    <td>${{$order->property_damage_waiver}}</td>
+                                                </tr>
+
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Tire Protection  :</strong></td>
+                                                    <td>${{$order->tire_protection}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Mechanical Break Down Insurance  :</strong></td>
+                                                    <td>${{$order->mechanical_breakdown_coverage}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Prepaid Gas Credit  :</strong></td>
+                                                    <td>${{$order->gas_credit}}</td>
+                                                </tr>
+
+
+                                                <tr>
                                                     <td class="text-right"><strong>Total Demand:</strong></td>
-                                                    <td>{{number_format($order->total,2)}} TK</td>
+                                                    <td>${{number_format($order->total,2)}} </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Tax and Fee:</strong></td>
+                                                    <td>${{number_format($order->total,2)}}</td>
                                                 </tr>
 
 
                                                 <tr>
                                                     <td class="text-right"><strong>Discount:</strong></td>
-                                                    <td>{{number_format($order->discount-$order->voucher_discount,2)}} TK</td>
+                                                    <td>${{number_format($order->discount,2)}} </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right"><strong>Grand Total:</strong></td>
+                                                    <td>${{number_format($order->grand_total-$order->discount,2)}} </td>
                                                 </tr>
 
 
@@ -302,9 +279,9 @@
                             <div class="col-md-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h6 class="panel-title float-left">
+                                        <h3 class="panel-title float-left">
                                             Status History
-                                        </h6>
+                                        </h3>
                                         <div class="panel-title float-right">
                                             <a href="#UpdateOrderStatus" data-toggle="modal" class="btn btn-primary btn-sm"> Update Status</a>
 
@@ -354,7 +331,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="title" id="">Make Payment</h6>
+                <h3 class="title" id="">Update order status</h3>
                 <button type="button" class="close"
                         data-dismiss="modal"
                         aria-label="Close">

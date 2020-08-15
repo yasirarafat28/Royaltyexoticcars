@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-header" style="display: flex;">
                     <h2 class="mr-5"><strong>Orders</strong> </h2>
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#modal-create"><i class="fa fa-plus" aria-hidden="true"></i> Create Vehicle Schedules</a>
+                    <!--<a class="btn btn-primary" data-toggle="modal" data-target="#modal-create"><i class="fa fa-plus" aria-hidden="true"></i> Create Vehicle Schedules</a>-->
                 </div>
                 <div class="card-body table-responsive">
 

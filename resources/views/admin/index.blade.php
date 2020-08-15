@@ -101,11 +101,23 @@
                      </a>
                   </li>
                   <h3 class="menu-title"></h3>
-                  <li class="active">
-                     <a href="{{url('admin/order')}}"  aria-haspopup="true" aria-expanded="false">
-                         <i class="menu-icon  fa fa-dollar"></i>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="menu-icon  fa fa-dollar"></i>
                          {{__('messages.sales')}}
                      </a>
+                     <ul class="sub-menu children dropdown-menu">
+                         <li>
+                             <a href="{{url('admin/order')}}">
+                                 Shop Sales
+                             </a>
+                         </li>
+                         <li>
+                             <a href="{{url('admin/vehicle-orders')}}">
+                                 Rental Orders
+                             </a>
+                         </li>
+                     </ul>
                   </li>
                   <li class="menu-item-has-children dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -241,7 +253,7 @@
                   <li class="active">
                      <a href="{{url('admin/faqs')}}">
                      <i class="menu-icon fa fa-image"></i>
-                     {{__('messages.add_FAQs)}}
+                     {{__('messages.add_FAQs')}}
                      </a>
                   </li>
                    <li class="active">
