@@ -103,22 +103,12 @@
       <div class="rental__cta">
         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
           <div class="rental__cta--embed w-embed">
-              <!--<a href="#BookingModal" data-toggle="modal"
-              class="rental__cta--text">
-              Book Online
-            </a>-->
               <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
               Book Online
             </a>
           </div>
         </div>
-        <div class="interest">
-          <div class="interest__wrapper"><img
-              src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e540b14d9116b23f42894dd_fire-alt-duotone-red.svg"
-              alt="" class="interest__icon" />
-            <div class="interest__text"><span class="interest__span">3</span> Active Visitors</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
