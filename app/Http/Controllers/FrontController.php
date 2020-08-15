@@ -199,11 +199,13 @@ class FrontController extends Controller {
         $date = base64_decode($date);
 
         $requirement = VehicleRequirement::first();
-
-        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement'));
+        $country='local';
+        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country'));
     }
 
-    public function checkoutstore() {
+    public function checkoutstore(Request $request) {
+
+        return $request;
 
         $data = request()->all();
 
@@ -237,6 +239,21 @@ class FrontController extends Controller {
         $checkout->grand_total = $data['grand_total'];
 
         $checkout->save();
+
+    }
+
+    public function getCheckoutUpgradeItems(Request $request){
+        $this->validate($request,[
+            'country'=>'required',
+            'vehicle_id'=>'required',
+        ]);
+
+        $country = $request->country=='international'?$request->country:'local';
+        $vehicle = Vehicle::find($request->vehicle_id);
+
+        $requirement = VehicleRequirement::first();
+
+        return view('frontView.partials.vehicle-checkout-item-upgradation',compact('country','vehicle','requirement'));
 
     }
 

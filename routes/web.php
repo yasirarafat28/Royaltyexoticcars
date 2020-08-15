@@ -50,7 +50,8 @@ Route::get('bookCar', 'FrontController@checkoutCar');
 Route::get('vehicle-booking/{vehicle_id}', 'FrontController@bookingvehicle');
 Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@vehiclecheckout');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
-Route::post('/checkoutstore', 'FrontController@checkoutstore');
+Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
+Route::get('/getCheckoutUpgradeItems', 'FrontController@getCheckoutUpgradeItems')->name('getCheckoutUpgradeItems');
 
 
 
@@ -307,7 +308,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("editcoupon/{id}","CouponController@editcoupon")->name("editcoupon");
 
 
-        
+
 
         Route::get("user","UserController@index")->name("user");
         Route::get("userdatatable/{id}","UserController@userdatatable")->name("userdatatable");

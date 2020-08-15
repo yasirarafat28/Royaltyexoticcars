@@ -70,9 +70,15 @@
         <hr>
         <div class="container online-booking-container" id="online-booking-container">
             <h2 class="text-center text-success"><strong>Online Booking Agreement</strong></h2>
-            <form action="#" id="checkout-form">
+            <form action="{{route('checkoutstore',$vehicle->id)}}" id="checkout-form" method="POST">
+                {{csrf_field()}}
 
-                <input type="hidden" name="discount" id="discount" value="0">
+                <input type="hidden" name="discount" id="discount_total" value="0">
+                <input type="hidden" name="sub_total" id="sub_total" value="0">
+                <input type="hidden" name="grand_total" id="grand_total" value="0">
+                <input type="hidden" name="tax_total" id="tax_total" value="0">
+                <input type="hidden" name="vehicle_id" id="vehicle_id" value="{{$vehicle->id}}">
+
                 <div class="form-group">
 
                     <label for="fname" class="form-label">Primary Driver's Full Name:</label>
@@ -103,110 +109,9 @@
                         <option value="international"> International & Canada </option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label for="liability_insurance" class="form-label">Supplemental Liability Insurance ($1,000,000 Bodily Injury Limit)</label>
-                    <select id="liability_insurance" name="liability_insurance" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                    </select>
-
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        *NOTE TO ALL U.S. DRIVERS: Whether you choose to upgrade your liability coverage or not,
-                    </small>
+                <div id="upgrade-items">
+                    @include('frontView.partials.vehicle-checkout-item-upgradation')
                 </div>
-
-
-                <div class="form-group" style="display: none;">
-                    <label for="international_full_coverage_insurance" class="form-label">International Full Coverage Insurance</label>
-                    <select id="international_full_coverage_insurance" name="international_full_coverage_insurance" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                    </select>
-
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        *REQUIRED FOR ALL INTERNATIONAL DRIVERS: Covers any bodily injury claim up to $1,000,000 and has full comprehensive and collision coverage with a $15,000 deductible.
-                    </small>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="property_damage_waiver" class="form-label">Property Damage Waiver ($3,500 Limit)</label>
-                    <select id="property_damage_waiver" name="property_damage_waiver" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="tire_protection" class="form-label">Tire Protection</label>
-                    <select id="tire_protection" name="tire_protection" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                    </select>
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <label for="mechanical_breakdown_coverage" class="form-label">Mechanical Break Down Insurance</label>
-                    <select id="mechanical_breakdown_coverage" name="mechanical_breakdown_coverage" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                        <option value="USA">$0.00 Free I would like to include breakdown coverage at no cost
-                        </option>
-                    </select>
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Covers cost of Mechanical Parts due to wear and tear, tow charges, and loss of rental time up to $1000. Mechanical Failure can take up to several hours depending on the location of incident, traffic conditions, and availability.
-                        *This coverage EXCLUDES mechanical failure due to customer mis-use or gross negligence operating the vehicle and customers are fully responsible for their own actions while operating a Royalty Exotic Cars vehicle.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <label for="fuel_credit" class="form-label">Prepaid Gas Credit</label>
-                    <select id="fuel_credit" name="fuel_credit" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$99.00 Yes I would like to buy this property</option>
-                        <option value="canada">$0.00 No I dont want to buy this property</option>
-                    </select>
-                </div>
-
-                <!--<div class="form-group">
-                    <label for="country" class="form-label">Destination Packages</label>
-                    <select id="country" name="country" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$349.00 Grand canion test rim Arizona</option>
-                    </select>
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        These packages allow you to drive outside the 100 mile radius service area.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <label for="country" class="form-label">Strip Helicopter Tour</label>
-                    <select id="country" name="country" class="form-control selectpicker"
-                            data-live-search="true">
-                        <option value="australia">$199.00 - 1 Passenger</option>
-                        <option value="australia">$299.00 - 2 Passenger</option>
-                        <option value="australia">$349.00 - 3 Passenger</option>
-                        <option value="australia">$499.00 - 4 Passenger</option>
-                    </select>
-
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Luxury Helicopter Tours of the Las Vegas Strip are available for $149 per passenger, up to 4 passengers at a time.
-                    </small>
-                </div>-->
 
                 <label for="country" class="form-label" style="margin: 20px;">Please read the following
                     agreements carefully:</label>
@@ -424,7 +329,7 @@
                             <p class="text-uppercase">Payment</p>
 
                         </div>
-                        <div class="dible" style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 8px;">
+                        <!--<div class="dible" style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 8px;">
                             <div class="form-group"> <label for="username">
                                     <h6 style="font-size: 80%;">Card Owner</h6>
                                 </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
@@ -449,8 +354,7 @@
                                         </label> <input type="text" required class="form-control"> </div>
                                 </div>
                             </div>
-                            <!--</div>-->
-                        </div>
+                        </div>-->
                     </div>
 
                 </div>
@@ -521,18 +425,46 @@
         event.preventDefault();
 
         let type = $(this).val();
-        if (type==='usa'){
+        let vehicle_id = $('#vehicle_id').val();
+
+        $.ajax({
+            url: '{{ route('getCheckoutUpgradeItems') }}',
+            type: 'GET',
+            data: {
+                "country": type,
+                "vehicle_id": vehicle_id,
+            },
+            success: function (data) {
+                $('#upgrade-items').html(data);
+            },
+            error: function (error) {
+                console.log(error);
+
+            }
+        });
+        /*if (type==='usa'){
             $('#international_full_coverage_insurance').closest('.form-group').hide();
             $('#liability_insurance').closest('.form-group').show();
         }else if (type==='international'){
             $('#international_full_coverage_insurance').closest('.form-group').show();
             $('#liability_insurance').closest('.form-group').hide();
-        }
+        }*/
 
     });
 
     function calculation(){
         let rental_cost = parseFloat($('#rental_cost').val());
+
+        let international_full_coverage_insurance = $('#international_full_coverage_insurance option:selected').val();
+        let liability_insurance = $('#liability_insurance option:selected').val();
+        let property_damage_waiver = $('#property_damage_waiver option:selected').val();
+        let tire_protection = $('#tire_protection option:selected').val();
+        let mechanical_breakdown_coverage = $('#mechanical_breakdown_coverage option:selected').val();
+        let fuel_credit = $('#fuel_credit option:selected').val();
+        alert(international_full_coverage_insurance);
+
+
+
         let discount = parseFloat($('#discount').val());
 
 
@@ -541,6 +473,11 @@
         let tax = sub_total*0.3;
         let grand_total = sub_total+tax - discount;
 
+
+        $('#sub_total').text(sub_total.toFixed(2));
+        $('#discount_total').text(discount.toFixed(2));
+        $('#tax_total').text(tax.toFixed(2));
+        $('#grand_total').text(grand_total.toFixed(2));
 
         $('#subtotal-text').text(sub_total.toFixed(2));
         $('#discount-text').text(discount.toFixed(2));
