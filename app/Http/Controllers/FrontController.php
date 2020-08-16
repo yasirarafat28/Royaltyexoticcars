@@ -7,6 +7,7 @@ use App\Model\VehicleCategory;
 use App\Model\VehicleRequirement;
 use Illuminate\Support\Str;
 
+
 use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
@@ -142,13 +143,6 @@ class FrontController extends Controller {
         $faq = Faq::find($faqID);
         
         return view('frontView.faqsShow')->with('faqs', $faq);
-    }
-
-    public function faqadmin() {
-        
-        $faqs = Faq::all();
-        
-        return view('admin.index')->with('faqs', $faqs);
     }
 
     public function vehicles(Request $request, $cat='all') {

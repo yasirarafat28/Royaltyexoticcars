@@ -161,10 +161,10 @@ Route::group(['prefix' => 'admin'], function () {
 
       Route::get("notification","NotificationController@index");
 
-      Route::get("faq","FrontController@faqadmin");
       Route::get("notificationTable","NotificationController@notificationTable");
       Route::post("sendnotification","NotificationController@addsendnotification");
       //end password change
+
 
       //categories
 
@@ -175,6 +175,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-brand', 'VehicleBrandController');
         Route::resource('vehicle-schedules', 'VehicleScheduleController');
         Route::resource('vehicle-coupon', 'VehicleCouponController');
+        Route::resource('faq', 'faqController');
 
 
 

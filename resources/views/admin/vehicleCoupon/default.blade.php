@@ -1,4 +1,5 @@
-@extends('admin.index') @section('content')
+@extends('admin.index') 
+@section('content')
 <div class="breadcrumbs">
     <div class="col-sm-4 float-right-1">
       <div class="page-header float-left float-right-1">
@@ -31,6 +32,7 @@
                     </div>
                 </div>
                 @endif
+
 
                 <a class="btn btn-primary btn-flat m-b-30 m-t-30" href="{{ url('admin/vehicle-coupon/create') }}">{{__('messages.add_coupon')}}</a>
                 <div class="table-responsive dtdiv">

@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('content')
   <div class="main">
-  
+
     <div class="faqs__container">
       <h1 class="text-center my-5">Frequently Asked Questions</h1>
       

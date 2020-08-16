@@ -256,6 +256,7 @@
                         Add FAQs
                      </a>
                   </li>
+                  
                    <li class="active">
                      <a href="{{url('admin/notification')}}">
                      <i class="menu-icon fa fa-image"></i>
