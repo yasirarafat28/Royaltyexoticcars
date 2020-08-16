@@ -56,6 +56,7 @@ Route::get('bookCar', 'FrontController@checkoutCar');
 Route::get('vehicle-booking/{vehicle_id}', 'FrontController@bookingvehicle');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
 Route::get('/getCheckoutUpgradeItems', 'FrontController@getCheckoutUpgradeItems')->name('getCheckoutUpgradeItems');
+Route::post('/vehicle-coupon-apply', 'VehicleCouponController@CouponApply')->name('VehicleCouponApply');
 
 Route::get('/PaypalCheckoutCallBack', 'FrontController@PaypalCheckoutCallBack')->name('PaypalCheckoutCallBack');
 Route::get('/vehicle-checkout-success/{txn_id}', 'FrontController@vehicleCheckoutSuccess')->name('vehicleCheckoutSuccess');

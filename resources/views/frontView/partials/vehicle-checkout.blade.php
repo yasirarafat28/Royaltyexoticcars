@@ -236,18 +236,23 @@
                         <label for="fname" class="form-label">Gift card number:</label>
 
                         <div class="gift" style="display: flex;">
+                                <div class="form-group">
 
-                            <div class="form-group">
+                                    <input class="form-control" type="text" name="coupon_code" id="coupon_code"
+                                           placeholder="Enter your Gift card number here">
 
-                                <input class="form-control" type="text" name="coupon_code"
-                                       placeholder="Enter your Gift card number here">
+                                </div>
 
-                            </div>
+                                <div class="btnfr ml-2">
 
-                            <div class="btnfr ml-2">
+                                    <button type="button" id="btn-coupon-apply" class="btn btn-success">Apply</button>
 
-                                <button type="button" class="btn btn-success">Apply</button>
+                                </div>
 
+                            <div class="row alerts">
+
+                                <div class="alert alert-danger col-md-12" style="display: none;" id="couponError"></div>
+                                <div class="alert alert-primary col-md-12" style="display: none;" id="couponSuccess"></div>
                             </div>
 
                         </div>

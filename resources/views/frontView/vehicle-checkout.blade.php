@@ -132,4 +132,65 @@
 <script src="/assets/plugins/fullcalendar/fullcalendarscripts.bundle.js"></script>
 <!--/ calender javascripts -->
 
+
+<script>
+    $('.btn-coupon-apply').on('click',function (event) {
+        event.preventDefault();
+        var that = $(this);
+        that.button('loading');
+        that.attr('disabled');
+        $('#couponError').hide();
+        $('#couponSuccess').hide();
+
+        var formData = $('#CouponApplyForm').serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "{{ route('VehicleCouponApply') }}",
+            data: {
+                '_token' : "{{csrf_token()}}",
+                'coupon_code' : $('#coupon_code').val(),
+                'vehicle_id' : "{{$vehicle->id}}",
+                'total' : $('#grand_total').val(),
+            },
+            success:function(data) {
+                that.prop("disabled", false);
+                console.log(data);
+                if (data==='not_available'){
+                    that.html("Apply");
+                    $('#couponError').text('Entered coupon is not available now!').show();
+                }else if (data.status==='voucher_error'){
+                    that.html("Apply");
+                    $('#couponError').text(data.message).show();
+                }else{
+                    that.html("Applied");
+
+                    $('#couponSuccess').text(data.message).show();
+                    window.location.reload();
+                }
+            },
+
+            error: function (xhr) {
+
+                console.log(xhr);
+                that.prop("disabled", false);
+                that.html("Apply");
+                var errors = xhr.responseJSON.errors;
+                console.log(errors);
+                if ($.isEmptyObject(errors) === false) {
+                    $.each(errors, function (key, value) {
+                        $('#couponError')
+                            .text(value).show();
+                    });
+
+
+                }
+            },
+
+        });
+
+
+
+    });
+</script>
 @endsection

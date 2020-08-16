@@ -13,7 +13,7 @@ class VehicleCouponController extends Controller
     //
     public function index(Request $request)
     {
-        
+
 
         $vehicles = Vehicle::where('status','active')->orderBy('name','ASC')->get();
         $records = Vehicle_coupon::where(function ($q) use($request){
@@ -99,7 +99,7 @@ class VehicleCouponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) 
+    public function edit($id)
     {
 
         $vehicles = Vehicle::orderBy('name','ASC')->get();
@@ -151,5 +151,54 @@ class VehicleCouponController extends Controller
     {
         vehicle_coupon::destroy($id);
         return back()->withSuccess('Vehicle removed successfully!');
+    }
+
+    public function CouponApply(Request $request){
+
+        $this->validate($request,[
+            'code'=>'required|exists:coupons',
+            'vehicle_id'=>'required',
+            'total'=>'required',
+        ],[
+            'code.exists'=>'The entered code is not valid!'
+        ]);
+
+        $dt = date('Y-m-d');
+        $voucher_data = Vehicle_coupon::whereRaw('"' . $dt . '" between `start_at` and `end_at`')->where('code', $request->input('code'))->where('status', 'active')
+            ->first();
+
+        if (!$voucher_data){
+            return 'not_available';
+        }
+
+        $vehicle = Vehicle::find($request->vehicle_id);
+
+        if ($voucher_data->item_id!='all'){
+            if ($voucher_data->item_id !=$vehicle->id){
+                return [
+                    'status'=>'voucher_error',
+                    'message'=>'Coupon is not available for this vehicle or Invalid coupon code applied! ',
+                ];
+            }
+        }
+
+
+        if ($voucher_data->min_required_amount && $voucher_data->item_id=='all' && $request->total <   $voucher_data->min_required_amount){
+
+            return [
+                'status'=>'voucher_error',
+                'message'=>'Only Purchased order with minimum of $ ' . $voucher_data->min_required_amount.' is available for this coupon code',
+            ];
+
+        }
+        $voucherDiscount = Vehicle_coupon::CheckCouponDiscountAmount($vehicle->id);
+
+
+        return [
+            'status'=>'voucher_success',
+            'message'=>'Congratulation! Your are enjoying $ '.$voucherDiscount.' coupon discount with this checkout!',
+        ];
+
+
     }
 }
