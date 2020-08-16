@@ -70,7 +70,8 @@ class faqController extends Controller
      */
     public function edit($id)
     {
-        //
+        $faqs = Faq::find($id);
+        return view('admin.faq.edit')->with('faqs', $faqs);
     }
 
     /**
@@ -82,7 +83,18 @@ class faqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(), [
+
+            'question' => 'required',
+            'description' => 'required'
+
+        ]);
+
+        $faqs = Faq::find($id);
+        $faqs->question = $request->question;
+        $faqs->description = $request->description;
+
+        $faq->save();
     }
 
     /**

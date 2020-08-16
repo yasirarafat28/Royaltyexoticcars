@@ -11,25 +11,25 @@
         
             <div class="card-header">
             
-                Create New FAQs
+                Edit FAQs
             
             </div>
 
             <div class="card-body">
             
-                <form action="{{ url('admin/faq')}}" method-"POST">
+                <form action="{{url('admin/faq/'.$faqs->id.'/update')}}" method-"POST">
 
                     @csrf
 
                     <div class="form-group">
                     
-                        <input type="text" class="form-control" placeholder="Question" name="question">
+                        <input type="text" class="form-control" placeholder="Question" name="question" value="{{ $faqs->question }}">
                     
                     </div>
 
                     <div class="form-group">
                     
-                        <textarea name="description" placeholder="Description" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="description" placeholder="Description" cols="30" rows="10" class="form-control" value="{{ $faqs->description }}"></textarea>
                     
                     </div>
 
@@ -37,7 +37,7 @@
                     
                         <button class="btn btn-success">
                         
-                            Create FAQ 
+                            Update FAQ 
                         
                         </button>
                     

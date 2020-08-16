@@ -77,7 +77,7 @@
                                                                                                'style' => 'display:inline'
                                                                                             ]) !!}
                                     {!! Form::button('Delete', array(
-                                         'type' => 'submit',
+                                         'type' => 'submit', 
                                          'onclick' => 'return confirm("Are you sure? ");',
                                          'class' => 'btn btn-danger',
                                             'data-type'=>'confirm',
