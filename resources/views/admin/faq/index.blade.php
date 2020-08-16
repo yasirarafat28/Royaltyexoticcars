@@ -29,9 +29,15 @@
             
               {{ $faq->question }}
 
-              <a href="/faqs/{{ $faq->id }}" class="btn btn-primary btn-sm float-right">
+              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right">
               
-                View
+                Update 
+              
+              </a>
+
+              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-danger btn-sm float-right">
+              
+                Delete 
               
               </a>
               
