@@ -9,7 +9,7 @@
    </div>
    <div class="myaccount">
       <div class="row">
-         <div class="col-md-12 col-lg-4">
+         <div class="col-md-3">
             <div class="profile">
                <div class="profile-img">
                   <?php $external_link = asset('upload/profile'.'/'.Session::get("profile_pic"));
@@ -34,7 +34,7 @@
                </ul>
             </div>
          </div>
-         <div class="col-md-12 col-lg-8 side">
+         <div class="col-md-9 side">
             <div id="tab-1" class="tab-content current account">
                @if(count($myorder)!=0)
                <div class="tab-heading">
@@ -104,70 +104,58 @@
                @endif
             </div>
 
-             <div id="tab-6" class="tab-content current account">
-               @if(count($my_trips)!=0)
+             <div id="tab-6" class="tab-content account">
+               @if(count($my_trips))
                <div class="tab-heading">
                   <h1>{{__('My Trips')}}</h1>
                </div>
-               <table>
-                  <tr class="account-h">
-                     <th>{{__('messages.order_id')}}.</th>
-                     <th>{{__('messages.date')}}</th>
-                     <th>{{__('messages.status')}}</th>
-                     <th>{{__('messages.total')}}</th>
-                     <th>{{__('messages.action')}}</th>
-                  </tr>
+               <table class="table table-striped table-borderless">
+                   <thead>
+
+                   <tr  >
+                       <th>{{__('Reservation ID')}}.</th>
+                       <th>{{__('messages.date')}}</th>
+                       <th>{{__('messages.status')}}</th>
+                       <th>{{__('Reservation Time')}}</th>
+                       <th>{{__('messages.total')}}</th>
+                       <th>{{__('messages.action')}}</th>
+                   </tr>
+                   </thead>
                   <?php $i=1;?>
-                  @foreach($myorder as $my)
-                  <tr class="account-detail" data-aos="zoom-in">
-                     <td>
-                        <span>{{__('messages.order_id')}}. :</span>
-                        {{$i}}
-                     </td>
-                     <td>
-                        <span>{{__('messages.date')}} :</span>
-                        {{date('F d,Y', strtotime($my->orderdate))}}
-                     </td>
-                     <td>
-                        <span>{{__('messages.status')}} :</span>
-                        @if($my->order_status=='1')
-                        {{__("messages.processing")}}
-                        @endif
-                        @if($my->order_status=='2')
-                        {{__("messages.on_hold")}}
-                        @endif
-                        @if($my->order_status=='3')
-                        {{__("messages.pending")}}
-                        @endif
-                        @if($my->order_status=='5')
-                        {{__("messages.completed")}}
-                        @endif
-                        @if($my->order_status=='6')
-                        {{__("messages.canceled")}}
-                        @endif
-                        @if($my->order_status=='7')
-                        {{__("messages.refunded")}}
-                        @endif
-                        @if($my->order_status=='4')
-                        {{__("messages.out_of_delivery")}}
-                        @endif
-                     </td>
-                     <td>
-                        <span>{{__('messages.total')}} :</span>
-                        {{Session::get('currency')}}{{$my->total}} {{__('messages.for')}} {{$my->total_item}} {{__('messages.item')}}
-                     </td>
-                     <td class="View">
-                        <span>{{__('messages.action')}} :</span>
-                        <a href="{{url('vieworder').'/'.$my->id}}" style="border-color: <?= Session::get('site_color') ?> !important" class="myordera" id="myordera{{$i}}">{{__('messages.view')}}</a>
-                     </td>
-                  </tr>
-                  <?php $i++;?>
+                  <tbody>
+                  @foreach($my_trips??array() as $my)
+                      <tr>
+                          <td>
+                              <span>{{__('messages.order_id')}}. :</span>
+                              {{$my->txn_id}}
+                          </td>
+                          <td>
+                              <span>{{__('messages.date')}} :</span>
+                              {{date('F d,Y', strtotime($my->created_at))}}
+                          </td>
+                          <td>
+                              <span>{{__('messages.status')}} :</span>
+                              {{ucfirst($my->status)}}
+                          </td>
+                          <td>
+                              <span>{{__('messages.status')}} :</span>
+                              {{ucfirst(date(' F d,Y h:ia',strtotime($my->reservation_time)))}}
+                          </td>
+                          <td>
+                              <span>{{__('messages.total')}} :</span>
+                              {{Session::get('currency')}}{{number_format($my->grand_total,2)}}
+                          </td>
+                          <td class="View">
+                              <a href="{{url('vehicle-checkout-invoice/'.$my->txn_id)}}" target="_blank" style="border-color: <?= Session::get('site_color') ?> !important" class="myordera"><i class="fa fa-print"></i> {{__('Invoice')}}</a>
+                          </td>
+                      </tr>
+                      <?php $i++;?>
                   @endforeach
+                  </tbody>
                </table>
                @else
                <div class="order-em">
-                  <img src="{{asset('Ecommerce/images/empty.png')}}">
-                  <h1>{{__('messages.no_order')}}</h1>
+                  <h1>{{__('No Trips yet.')}}</h1>
                </div>
                @endif
             </div>
