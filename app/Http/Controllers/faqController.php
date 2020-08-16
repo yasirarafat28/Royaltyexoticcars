@@ -37,6 +37,13 @@ class faqController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate(request(), [
+
+            'question' => 'required',
+            'description' => 'required'
+
+        ]);
         $faq = new Faq();
         $faq->question = $request->question;
         $faq->description = $request->description;
