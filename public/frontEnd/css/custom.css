@@ -319,4 +319,6 @@ footer::after {
     padding: 12px 50px !important;
 
 }
-
+.inner_page{
+    margin: 7rem 0rem !important;
+}

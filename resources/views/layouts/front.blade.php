@@ -119,7 +119,7 @@
 				<a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
-				
+
 
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
 						href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
@@ -487,6 +487,9 @@
 					<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 						<div>Shop</div>
 					</a>
+                    <a href="/login" class="user nav__link w-inline-block">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
 				</div>
 				<div id="Nav-Drawer-Button" class="nav__button w-nav-button"><img
 						src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f41d75e7131000194c9d3_menu.svg"
@@ -1625,6 +1628,7 @@
             <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by {{$setting->company_name}} Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name}} </a>{{date('Y')}}. All Rights Reserved
             </p>
         </div><!-- Footer bottom end -->
+        @include('modal.auth')
     </footer>
 	<script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
 		type="text/javascript" ></script>

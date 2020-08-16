@@ -45,7 +45,7 @@
 </style>
 @endsection
 @section('content')
-<div class="rental__hero">
+<div class="inner_page">
 
     <div class="container mt-5">
         <div class="card col-md-10 col-sm-12">

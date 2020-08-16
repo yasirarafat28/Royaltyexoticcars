@@ -348,7 +348,7 @@
                             @if($payment_method[0]->status=='1')
                                 <div class="check-payment">
                                     <div class="c-box">
-                                        <input type="radio" required name="payment_method" checked id="payment_method_1" value="paypal" onclick="orderpayment(this.value)">
+                                        <input type="radio" required name="payment_method" checked id="payment_method_1" value="paypal" onclick="orderpaymentOption(this.value)">
                                     </div>
                                     <div class="payment-text">
                                         <div class="pay">
@@ -360,7 +360,7 @@
                             @if($payment_method[1]->status=='1')
                                 <div class="check-payment">
                                     <div class="c-box">
-                                        <input type="radio" name="payment_method" required id="payment_method_2" value="stripe" onclick="orderpayment(this.value)">
+                                        <input type="radio" name="payment_method" required id="payment_method_2" value="stripe" onclick="orderpaymentOption(this.value)">
                                     </div>
                                     <div class="payment-text">
                                         <div class="pay">
@@ -370,6 +370,17 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                    <script
+                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="{{Session::get('stripe_key')}}"
+                                        data-amount=""
+                                        data-id="stripid"
+                                        data-name="{{__('messages.site_name')}}"
+                                        data-label="{{__('messages.place_order')}}"
+                                        data-description=""
+                                        data-image="{{asset('Ecommerce/images/logo.png')}}"
+                                        data-locale="auto"></script>
                             @endif
                         </div>
                     </div>
@@ -378,7 +389,8 @@
 
                 <div class="form-group" style="margin-top: 20px;">
                     <p style="text-align: center;">
-                        <button type="submit" class="button "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
+                        <button type="submit" class="button " id="paypal-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button>
+                        <a  class="button text-white" onclick="event.preventDefault();$('.stripe-button-el').click();" style="display: none;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a> </p>
                 </div>
 
             </form>
@@ -395,10 +407,30 @@
     </main>
 </div>
 
+<style>
+
+    .stripe-button-el{
+        visibility: hidden !important;
+    }
+
+</style>
 
 <script src="/admin-asset/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
 
 <script>
+
+    function orderpaymentOption(option){
+
+        if (option==='paypal')
+        {
+            $('#paypal-submit').show();
+            $('#stripe-submit').hide();
+        }else{
+            $('#paypal-submit').hide();
+            $('#stripe-submit').show();
+        }
+
+    }
 
     $(function () {
         $('#checkout-form').valid({
