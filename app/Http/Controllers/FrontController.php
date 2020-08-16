@@ -237,6 +237,10 @@ class FrontController extends Controller {
     }
     public function vehiclecheckout($vehicle,$schedule,$date) {
 
+        $pay=PaymentMethod::find(2);
+        Session::put("stripe_key",$pay->payment_key);
+        Session::put("stripe_secert",$pay->payment_secret);
+
         $id = base64_decode($vehicle);
         $vehicle = \App\Vehicle::where('id',$id)->first();
 
@@ -252,6 +256,8 @@ class FrontController extends Controller {
 
 
     public function checkoutstore(Request $request,$vehicle_id) {
+
+        //return $request;
         $setting = \setting();
 
         $pay=PaymentMethod::find(2);
@@ -332,31 +338,42 @@ class FrontController extends Controller {
 
             $order->paypal_payment_id= $paymentID;
             Session::put('paypal_payment_id',$paymentID);
+            $order->save();
+
+
+            return Redirect::away($redirect_url);
+
+
         }elseif($request->payment_method=='stripe'){
+
+
             try{
                 \Stripe\Stripe::setApiKey(Session::get("stripe_secert"));
-                $unique_id = uniqid();
                 $charge = \Stripe\Charge::create(array(
                     'description' => "Amount: ".$grand_total.' - '. $order->txn_id,
-                    'source' => $input['stripeToken'],
-                    'amount' => (int)($input['total_order_price'] * 100),
+                    'source' => $request->stripeToken,
+                    'amount' => (int)($grand_total * 100),
                     'currency' => 'USD'
                 ));
-                $data=Order::find($store->id);
-                $data->charges_id=$charge->id;
-                $data->save();
+                $order->stripe_payment_id=$charge->id;
+                $order->stripeToken= $request->stripeToken;
+                $order->stripeTokenType= $request->stripeTokenType;
+                $order->payment_status='paid';
+                $order->status='pending';
+                $order->save();
             }catch (\Exception $e) {
                 Session::flash('message', __('messages_error_success.payment_fail'));
                 Session::flash('alert-class', 'alert-success');
-                return Redirect::route('checkout');
+
+                return redirect('/home')->withErrors('Payment is not confirmed successfully!');
             }
         }
 
 
         $order->save();
 
+        return Redirect::route('vehicleCheckoutSuccess',$order->txn_id)->withOrdersuccess('confirmed');
 
-        return Redirect::away($redirect_url);
 
     }
 

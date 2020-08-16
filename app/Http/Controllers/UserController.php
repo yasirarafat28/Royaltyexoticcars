@@ -46,7 +46,7 @@ class UserController extends Controller {
             $k->delete();
         }
          $delreview=Review::where("user_id",$id)->delete();
-         Session::flash('message',__('messages_error_success.user_del')); 
+         Session::flash('message',__('messages_error_success.user_del'));
          Session::flash('alert-class', 'alert-success');
          return redirect()->back();
     }
@@ -62,7 +62,7 @@ class UserController extends Controller {
     public function deletewishlist(Request $request){
        $checkuser=Wishlist::where("product_id",$request->get("product_id"))->where("user_id",$request->get("user_id"))->delete();
        $getwish=Wishlist::with('productdata')->where("user_id",$request->get("user_id"))->get();
-     
+
        $txt='<tr class="pro-heading" style="background:'.Session::get("site_color").' !important"><th>'.__("messages.del").'</th><th>'.__("messages.images").'</th><th>'.__("messages.product").'</th><th>'.__("messages.stock_status").'</th><th>'.__("messages.price").'</th><th></th></tr>';
        if(count($getwish)!=0){
            foreach($getwish as $mw){
@@ -82,11 +82,11 @@ class UserController extends Controller {
        $data=array("content"=>$txt,"total"=>count($getwish));
        return json_encode($data);
     }
-    
+
     public function index(){
        return view("admin.user.default");
     }
-    
+
     public function indexadmin(){
       return view("admin.user.admin");
     }
@@ -107,24 +107,24 @@ class UserController extends Controller {
           $setting=Setting::find(1);
           $checkuser=User::where("email",$request->get("email"))->where("password",$request->get("password"))->first();
           if($checkuser){
-               
+
                 Auth::login($checkuser, true);
                 $data=Auth::user();
                 if($request->get("rem_me")==1){
                     setcookie('user_email', $request->get("email"), time() + (86400 * 30), "/");
                     setcookie('password',$request->get("password"), time() + (86400 * 30), "/");
                    setcookie('rem_me',1, time() + (86400 * 30), "/");
-               } 
+               }
                 return "done";
           }
         else{
             return __('messages_error_success.login_error');
-        } 
+        }
     }
 
 
     public function userregister(Request $request){
-        $setting=Setting::find(1);    
+        $setting=Setting::find(1);
         $checkemail=User::where("email",$request->get("email"))->first();
         if(empty($checkemail)){
            DB::beginTransaction();
@@ -132,12 +132,12 @@ class UserController extends Controller {
                     $user=new User();
                     $user->first_name=$request->get("first_name");
                     $user->email=$request->get("email");
-                    $user->password=$request->get("password");
+                    $user->password=bcrypt($request->get("password"));
                     $user->is_email_verified='1';
                     $user->address=$request->get("address");
                     $user->phone=$request->get("phone");
                     $user->login_type=1;
-                    $user->user_type='1';                                    
+                    $user->user_type='1';
                     $user->save();
                     try {
                         if($setting->customer_reg_email=='1'){
@@ -152,8 +152,8 @@ class UserController extends Controller {
               }
               catch (\Exception $e) {
                    DB::rollback();
-                   return __('messages_error_success.error_code');      
-              }          
+                   return __('messages_error_success.error_code');
+              }
         }
         else{
             return __('messages_error_success.email_already_error');
@@ -174,7 +174,7 @@ class UserController extends Controller {
             })
             ->editColumn('phone', function ($user) {
                 return $user->phone;
-            })            
+            })
             ->editColumn('action', function ($user) {
                $changestatus=url('admin/changeuserstatus',array('id'=>$user->id));
                 $deleteuser=url('admin/userdelete',array('id'=>$user->id));
@@ -185,13 +185,13 @@ class UserController extends Controller {
                     $color="red";
                  }
                  $return = '<a onclick="edituser('.$user->id.')"  rel="tooltip"  class="m-b-10 m-l-5" data-original-title="Remove" data-toggle="modal" data-target="#edituser"><i class="fa fa-edit f-s-25" style="margin-right: 10px;font-size: x-large;"></i></a><a onclick="delete_record(' . "'" . $deleteuser. "'" . ')" rel="tooltip"  class="m-b-10 m-l-5" data-original-title="Remove" style="margin-right: 10px;"><i class="fa fa-trash f-s-25" style="font-size: x-large;"></i></a><a href="'.$changestatus.'" rel="tooltip"  class="m-b-10 m-l-5" data-original-title="Remove" style="margin-right: 10px;"><i class="fa fa-ban f-s-25" style="font-size: x-large;color:'.$color.'"></i></a>';
-                 return $return;              
-            })           
+                 return $return;
+            })
             ->make(true);
     }
 
-    public function adduser(Request $request){  
-        $setting=Setting::find(1);    
+    public function adduser(Request $request){
+        $setting=Setting::find(1);
         $checkemail=User::where("email",$request->get("email"))->first();
         if(empty($checkemail)){
            DB::beginTransaction();
@@ -204,34 +204,34 @@ class UserController extends Controller {
                     else{
                         $user = Sentinel::registerAndActivate($request->input());
                     }
-                    
+
                     $user->first_name=$request->get("first_name");
                     $user->is_email_verified='1';
                     $user->address=$request->get("address");
                     $user->phone=$request->get("phone");
                     $user->login_type=1;
-                    $user->user_type=$request->get("user_type");                                    
+                    $user->user_type=$request->get("user_type");
                     $user->save();
-                    
+
                           DB::commit();
-                           Session::flash('message',__('messages_error_success.create_success')); 
+                           Session::flash('message',__('messages_error_success.create_success'));
                                     Session::flash('alert-class', 'alert-success');
                                     return redirect()->back();
-                          
+
               }
               catch (\Exception $e) {
                    DB::rollback();
-                   Session::flash('message',__('messages_error_success.error_code')); 
+                   Session::flash('message',__('messages_error_success.error_code'));
                    Session::flash('alert-class', 'alert-danger');
-                   return redirect()->back();       
-              }          
+                   return redirect()->back();
+              }
         }
         else{
-            Session::flash('message',__('messages_error_success.email_already_error')); 
+            Session::flash('message',__('messages_error_success.email_already_error'));
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
         }
-        
+
     }
 
     public function changestatus($id){
@@ -245,7 +245,7 @@ class UserController extends Controller {
             $msg=__('messages_error_success.user_deactive_msg');
         }
         $store->save();
-        Session::flash('message',$msg); 
+        Session::flash('message',$msg);
         Session::flash('alert-class', 'alert-success');
         return redirect("admin/user");
     }
@@ -263,7 +263,7 @@ class UserController extends Controller {
       $data->phone=$request->get("phone");
       $data->address=$request->get("address");
       $data->save();
-      Session::flash('message',__('messages_error_success.user_update_success')); 
+      Session::flash('message',__('messages_error_success.user_update_success'));
       Session::flash('alert-class', 'alert-success');
       return redirect()->back();
     }
@@ -271,12 +271,12 @@ class UserController extends Controller {
     public function userrole(){
        return view("admin.user.role");
     }
- 
+
     public function confirmregister($id){
         $store=User::find($id);
         $store->is_email_verified='1';
         $store->save();
-        Session::flash('message',__('messages_error_success.email_verified')); 
+        Session::flash('message',__('messages_error_success.email_verified'));
         Session::flash('alert-class', 'alert-success');
         return view("emailverified");
     }
