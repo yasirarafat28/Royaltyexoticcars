@@ -280,13 +280,12 @@
                </div>
                <div class="cartbar_pop_mbox">
                   <div class="cartbar_pop_mcon">
-                     @if(Auth::id()!="")
+                     @if(Auth::check())
                      <a href="{{url('myaccount')}}" class="user" >
                         <i class="fa fa-user" aria-hidden="true"></i>
                      </a>
-                     @endif
-                     @if(Auth::id()=="")
-                     <a href="#" class="user" data-toggle="modal" onclick="resetmodel()" data-target="#myModal">
+                     @else
+                     <a href="/login" class="user" >
                         <i class="fa fa-user" aria-hidden="true"></i>
                      </a>
                      @endif

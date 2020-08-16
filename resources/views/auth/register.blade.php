@@ -62,12 +62,24 @@
                             <form method="POST" class="container" action="{{ route('register') }}">
                                 @csrf
 
+                                @if(session()->has('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+                                @if($errors->any())
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first() }}
+                                    </div>
+                                @endif
+
 
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text  bg-success text-white"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="name" placeholder="Name">
+                                    <input type="text" class="form-control" name="name" placeholder="Name" value="{{old('name')}}">
 
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -81,7 +93,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text  bg-success text-white"><i class="fa fa-envelope"></i></span>
                                     </div>
-                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -95,7 +107,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text  bg-success text-white"><i class="fa fa-phone"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone">
+                                    <input type="text" class="form-control" name="phone" placeholder="Phone" value="{{old('phone')}}">
 
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">

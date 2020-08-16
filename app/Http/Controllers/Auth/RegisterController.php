@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Model\Setting;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,6 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -63,10 +66,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $setting=Setting::find(1);
+        DB::beginTransaction();
+        try {
+            $user=new User();
+            $user->first_name       =$data['name'];
+            $user->email            =$data['email'];
+            $user->password         =bcrypt($data['password']);
+            $user->is_email_verified='1';
+            $user->address          =$data['address']??'';
+            $user->phone            =$data['phone'];
+            $user->login_type       =1;
+            $user->user_type        ='1';
+            $user->save();
+            try {
+                if($setting->customer_reg_email=='1'){
+                    Mail::send('email.register_confirmation', ['user' => $user], function($message) use ($user){
+                        $message->to($user->email,$user->first_name)->subject('shop on');
+                    });
+                }
+            } catch (\Exception $e) {
+            }
+            DB::commit();
+            return $user;
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+            return __('messages_error_success.error_code');
+        }
     }
 }
