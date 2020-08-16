@@ -340,35 +340,38 @@
                             <img src="/images/lock-solid.svg" alt="lock-icon"
                                  style="height: 12px; width: 13px; margin: 5px;">
 
-                            <p class="text-uppercase">Payment</p>
+                            <p class="text-uppercase">Payment Method</p>
 
                         </div>
-                        <!--<div class="dible" style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 8px;">
-                            <div class="form-group"> <label for="username">
-                                    <h6 style="font-size: 80%;">Card Owner</h6>
-                                </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
-                            <div class="form-group"> <label for="cardNumber">
-                                    <h6 style="font-size: 80%;">Card number</h6>
-                                </label>
-                                <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
-                                    <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fa fa-cc-visa" style="font-size:24px"></i> </span> </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="form-group"> <label><span class="hidden-xs">
-                                                            <h6 style="font-size: 80%;">Expiration Date</h6>
-                                                        </span></label>
-                                        <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+
+                        <div class="payment-box">
+                            @if($payment_method[0]->status=='1')
+                                <div class="check-payment">
+                                    <div class="c-box">
+                                        <input type="radio" required name="payment_method" checked id="payment_method_1" value="paypal" onclick="orderpayment(this.value)">
+                                    </div>
+                                    <div class="payment-text">
+                                        <div class="pay">
+                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-1.jpg')}}"></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                            <h6 style="font-size: 80%;">CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                        </label> <input type="text" required class="form-control"> </div>
+                            @endif
+                            @if($payment_method[1]->status=='1')
+                                <div class="check-payment">
+                                    <div class="c-box">
+                                        <input type="radio" name="payment_method" required id="payment_method_2" value="stripe" onclick="orderpayment(this.value)">
+                                    </div>
+                                    <div class="payment-text">
+                                        <div class="pay">
+                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
+                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
+                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>-->
+                            @endif
+                        </div>
                     </div>
 
                 </div>
