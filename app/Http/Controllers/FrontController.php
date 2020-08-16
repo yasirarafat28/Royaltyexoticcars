@@ -789,6 +789,7 @@ class FrontController extends Controller {
         $productdata=$this->getproductlist();
         $user=Auth::user();
         $myorder=Order::where("user_id",Auth::id())->orderby("id","DESC")->get();
+        $my_trips=VehicleCheckout::where("customer_id",Auth::id())->where('status','!=','temporary')->orderby("id","DESC")->get();
 
         foreach ($myorder as $k) {
             $getdata=OrderData::where('order_id',$k->id)->get();
@@ -805,7 +806,7 @@ class FrontController extends Controller {
         Session::put("name",$user->first_name);
         Session::put("email",$user->email);
          $mywish=Wishlist::where("user_id",Auth::id())->get();
-        return view("user.account.myaccount")->with("header_menu",$getcat)->with("userdata",$user)->with("productdata",$productdata)->with("mywish",$mywish)->with("myorder",$myorder);
+        return view("user.account.myaccount")->with("header_menu",$getcat)->with("userdata",$user)->with("my_trips",$my_trips)->with("productdata",$productdata)->with("mywish",$mywish)->with("myorder",$myorder);
     }
 
     public function storecontact(Request $request){
