@@ -148,7 +148,7 @@ class FrontController extends Controller {
         
         $faqs = Faq::all();
         
-        return view('admin.index')->with('faqs', $faqs);
+        return view('admin.faq.index')->with('faqs', $faqs);
     }
 
     public function vehicles(Request $request, $cat='all') {
