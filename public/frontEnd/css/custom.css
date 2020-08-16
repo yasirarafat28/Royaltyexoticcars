@@ -1,6 +1,54 @@
-
-
-
+.header .info {
+    background-color: #660000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header .info .left-side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header .info .left-side a {
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 16px 0 0;
+}
+.header .info .left-side a:hover {
+    background-color: transparent;
+}
+.rent__nav--label {
+    margin: 0;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: darkorange;
+}
+.rent__nav--label:hover {
+    text-decoration: none;
+    background-color: #660000;
+    border-bottom: none;
+    outline: none;
+}
+.rent__nav--link {
+    padding: 0 15px;
+}
+.brand__text {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.car-info-list {
+    padding-left: 0;
+}
+.nav {
+    height: 70px;
+}
 .brand__icon {
     width: 4.5em !important;
     height: 3.5em !important;
