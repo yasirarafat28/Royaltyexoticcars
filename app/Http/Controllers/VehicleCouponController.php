@@ -13,6 +13,7 @@ class VehicleCouponController extends Controller
     //
     public function index(Request $request)
     {
+        
 
         $vehicles = Vehicle::where('status','active')->orderBy('name','ASC')->get();
         $records = Vehicle_coupon::where(function ($q) use($request){
