@@ -49,7 +49,7 @@
                         </div>
                          <?php $i++;?>
                         @endforeach
-                       
+
                         <input type="hidden" id="nobrand" value="{{$i}}"/>
                      </div>
                   </div>
@@ -203,14 +203,14 @@
                     @endif
                      <div class="pro-img">
                           <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$p->id}}"> <img src="{{asset('upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}"> <img src="{{asset('upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$p->id}}')">
                                 {{__('messages.Quick View')}}
                            </button>
                         </div>
                      </figure>
-                  
+
                         <div class="img-text">
                            <label class="fancy-checkbox">
                                @if(Auth::id()!="")
@@ -237,21 +237,21 @@
                         <span class="review">
                         ({{$p->total_review}} {{__('messages.review')}})
                         </span>
-                        <span class="compare_icon"> 
+                        <span class="compare_icon">
                            <a href="javascript:addcomapre('<?=$p->id?>','productfiltercompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                         </span>
                         <div class="price">
                            <h2>{{Session::get("currency")}}{{$p->price}}</h2>
                            <span >{{Session::get("currency")}}{{$p->MRP}}</span>
                              @if($p->stock!=='0')
-                               <a href="{{url('viewproduct/').'/'.$p->id}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                               <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                            @endif
                         </div>
                      </div>
                   </div>
                </div>
                <?php $k++;?>
-               @endforeach 
+               @endforeach
             </div>
          </div>
       </div>

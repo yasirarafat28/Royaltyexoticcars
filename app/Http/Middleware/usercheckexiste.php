@@ -22,11 +22,11 @@ class usercheckexiste
                 return $next($request);
             }
             else{
-                return redirect('/');
+                return redirect('/admin/dashboard');
             }
-            
+
         }else{
-            return redirect('/');
+            return redirect('/login');
         }
     }
 }

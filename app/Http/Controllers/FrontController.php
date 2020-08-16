@@ -821,7 +821,8 @@ class FrontController extends Controller {
         Session::flash('alert-class', 'alert-success');
         return redirect()->back();
     }
-       public function viewproduct($id){
+       public function viewproduct($id,$slug=''){
+            $id = base64_decode($id);
           $product=$this->getproductdetails($id);
 
           if(empty($product)){

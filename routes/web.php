@@ -54,9 +54,7 @@ Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
 Route::get('bookCar', 'FrontController@checkoutCar');
 Route::get('vehicle-booking/{vehicle_id}', 'FrontController@bookingvehicle');
-Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@vehiclecheckout');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
-Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
 Route::get('/getCheckoutUpgradeItems', 'FrontController@getCheckoutUpgradeItems')->name('getCheckoutUpgradeItems');
 
 Route::get('/PaypalCheckoutCallBack', 'FrontController@PaypalCheckoutCallBack')->name('PaypalCheckoutCallBack');
@@ -97,7 +95,7 @@ Route::group(['prefix' => '/'], function (){
      Route::get("aboutus","FrontController@aboutus");
      Route::get("contactus","FrontController@contactus");
      Route::post("storecontact","FrontController@storecontact")->name("storecontact");
-     Route::get("viewproduct/{id}","FrontController@viewproduct")->name("viewproduct");
+     Route::get("viewproduct/{id}/{slug?}","FrontController@viewproduct")->name("viewproduct");
      Route::get("getorderjson","OrderController@getorderjson")->name("getorderjson");
      Route::post("searchproduct","FrontController@searchproduct")->name("searchproduct");
      Route::get("productlist/{category_id}/{subcategory_id}/{brand_id}","FrontController@productlist")->name("productlist");
@@ -110,7 +108,6 @@ Route::group(['prefix' => '/'], function (){
      Route::get("deletecartitem/{id}","CartController@deletecartitem")->name("deletecartitem");
      Route::get("updatecartqty","CartController@updatecartqty")->name("updatecartqty");
      Route::get("checkcoupon","CouponController@checkcoupon");
-     Route::any("checkout","FrontController@checkout")->name("checkout");
      Route::any("changeproductdata","productfilterController@changeproductdata");
      Route::get("productslist/{category}/{subcategory}/{brand}/{discount}","productfilterController@productls");
      Route::get("getallsearchproduct","ProductController@getallsearchproduct");
@@ -133,6 +130,13 @@ Route::group(['prefix' => '/'], function (){
           Route::post('paypal', array('as' => 'paypal','uses' => 'PaypalController@postPaymentWithpaypal',));
           Route::get('paypal', array('as' => 'status','uses' => 'PaypalController@getPaymentStatus',));
 
+
+     });
+     Route::group(['middleware' => ['auth']], function () {
+
+         Route::any("checkout","FrontController@checkout")->name("checkout");
+         Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@vehiclecheckout');
+         Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
 
      });
 });
@@ -178,7 +182,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-brand', 'VehicleBrandController');
         Route::resource('vehicle-schedules', 'VehicleScheduleController');
         Route::resource('vehicle-coupon', 'VehicleCouponController');
-        Route::resource('faq', 'faqController'); 
+        Route::resource('faq', 'faqController');
 
 
 

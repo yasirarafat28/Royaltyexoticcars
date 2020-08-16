@@ -51,7 +51,7 @@
                 <?php $i++;?>
                 @endforeach
             @endif
- 
+
 </div>
 
 <div class="carousel carousel-nav"
@@ -65,7 +65,7 @@
             @endforeach
                @endif
 </div>
-        
+
             </div>
           <div class="col-lg-6 col-md-6">
                 <div class="detail-product-text">
@@ -75,7 +75,7 @@
                      <p>{{$currency}}<span id="order_price">{{$product->selling_price}}</span></p>
                         <input type="hidden" name="product_price" id="product_price" value="{{$product->selling_price}}">
                         <input type="hidden" name="new_price" id="new_price" value="{{$product->selling_price}}">
-                        
+
                            <p id="mrppro">{{Session::get('currency')}}<span class="td1">{{$product->MRP}}</span></p>
                     </div>
                     <div>
@@ -94,8 +94,8 @@
                             <p>({{$product->totalreview}} {{__('messages.cus')}} {{__('messages.review')}})</p>
                         </div>
                     </div>
-                   
-                    <?php  
+
+                    <?php
                   if(isset($product->options)){
                       $options_name=explode(",",$product->options->name);
                       $options_type=explode(",",$product->options->type);
@@ -136,7 +136,7 @@
                             @endif
                             @if($options_type[$i]==2)
                                 <ul class="col-md-12 sizes">
-                                   <?php 
+                                   <?php
                                         for($j=0;$j<count($label);$j++){?>
                                             <li>
                                                 <div class="custom-control custom-checkbox">
@@ -166,10 +166,10 @@
                                                         @else
                                                          <input type="radio" class="custom-control-input" id="customRadio{{$i}}{{$j}}" name="option_ls{{$i}}" value="{{$label[$j]}}#" onclick="changeradio('3','{{$label[$j]}}#','{{$i}}','{{$j}}')">
                                                         <label class="custom-control-label" for="customRadio{{$i}}{{$j}}">
-                                                            {{$label[$j]}} 
+                                                            {{$label[$j]}}
                                                         </label>
                                                         @endif
-                                                       
+
                                                     </div>
                                                 </li>
                                             </div>
@@ -203,7 +203,7 @@
                                     <span class="qty-mp plus" onclick="changeqty('1')" style="background: <?= Session::get('site_color') ?> !important"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                 </div>
                             </div>
-                         
+
                                   @if($product->stock=='1')
                                      <a href="javascript:addtocart()">
                                         <div class="detail-add-cart" style="background: <?= Session::get('site_color') ?> !important">
@@ -217,7 +217,7 @@
                                         </div>
                                     </a>
                                   @endif
-                           
+
                             <div class="detail-info">
                                 <div class="detail-info-wishlist">
                                     <label class="fancy-checkbox">
@@ -228,7 +228,7 @@
                                         @endif
                                         <big id="wishfavor{{$product->id}}"></big>
                                     </label>
-                                     
+
                                     <p>{{__('messages.add_to_wishlist')}}</p>
                                   </br>
                                     <span>
@@ -327,7 +327,7 @@
                         @foreach($product->attributes as $attr)
                         <h1 style="background-color:<?= Session::get('site_color') ?> !important;">{{$attr->attributeset}}</h1>
                         <div class="tital tal">
-                          <?php 
+                          <?php
                                   $labelarr=explode(",", $attr->attribute);
                                   $valuesarr=explode(",",$attr->value);
                           ?>
@@ -350,7 +350,7 @@
                         @foreach($product->review as $re)
                         <div class="review-user-box" data-aos="zoom-in">
                             <div class="review-user-img">
-                                <?php 
+                                <?php
                         $external_link = asset('upload/profile'.'/'.$re->userdata->profile_pic);
                            if (@GetImageSize($external_link)) {
                                  $image = $external_link;
@@ -360,12 +360,12 @@
                                     <img src="{{$image}}" width="100px" height="75px">
                             </div>
                             <div class="review-user-text">
-                               
+
                                     <div class="detail-review-people-1">
                                         @for($i=0;$i<$re->ratting;$i++)
                                          <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
                                         @endfor
-                                      
+
                                           @for($i=0;$i<5-$re->ratting;$i++)
                                          <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
                                         @endfor
@@ -406,11 +406,11 @@
                     </div>
                     @if(isset($userdata->id))
                     <div class="deta-but">
-                      
+
                         <button class="detail-review-submit" onclick="storereview()" style="background: <?= Session::get('site_color') ?> !important">
                             {{__('messages.submit')}}
                         </button>
-                      
+
                     </div>
                     @endif @if(!isset($userdata->id))
                     <div class="detail-review-submit" style="background: <?= Session::get('site_color') ?> !important">
@@ -447,7 +447,7 @@
                                                  </div>
                                                 @endif
                             <div class="img-background">
-                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
+                                <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
                                 <div class="img-text">
                                     <label class="fancy-checkbox">
                                         @if(Auth::id()!="")
@@ -479,12 +479,12 @@
                         <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
                         <?php }?>
                         </span>
-                         <span class="compare_icon"> 
+                         <span class="compare_icon">
                         <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                                 </div>
                                   @if($realt->stock=='1')
-                                                <a href="{{url('viewproduct/').'/'.$realt->id}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                                                <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                                                 @endif
                             </div>
                             </div>
@@ -492,7 +492,7 @@
                         <?php $k++;?>
                             @endforeach
                             @else
-                              
+
                              <?php $k=0;?>
                                   @foreach($productdata as $realt)
                                    @if($realt->category==$product->category_id&&$realt->subcategory==$product->subcategory_id)
@@ -504,7 +504,7 @@
                                                  </div>
                                                 @endif
                                             <div class="img-background">
-                                                <a href="{{url('viewproduct/').'/'.$realt->id}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
+                                                <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}"> <img src="{{asset('upload/product').'/'.$realt->basic_image}}" class="img-responsive" ></a>
                                                 <div class="img-text">
                                                     <label class="fancy-checkbox">
                                                         @if(Auth::id()!="")
@@ -532,22 +532,22 @@
                      <span class="review">
                      ({{$realt->total_review}} {{__('messages.review')}})
                      </span>
-                     <span class="compare_icon"> 
+                     <span class="compare_icon">
                         <a href="javascript:addcomapre('<?=$realt->id?>','realtecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get("currency")}}{{$realt->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$realt->MRP}}</span>
                         @if($realt->stock=='1')
-                        <a href="{{url('viewproduct/').'/'.$realt->id}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                         @endif
                      </div>
-                  </div> 
+                  </div>
                                             </div>
                                         </div>
-                                        
+
                                          <?php $k++;?>
-                                       @endif  
+                                       @endif
                                   @endforeach
                             @endif
                 </div>

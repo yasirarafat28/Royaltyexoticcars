@@ -32,7 +32,7 @@
             <p>{{$no->coupon_code}}</p>
             @endif
             @if($no->is_product=='2')
-            <a href="{{url('viewproduct').'/'.$no->product_id}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('viewproduct').'/'.base64_encode($no->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
             {{__('messages.shop_now')}}
             </a>
             @endif
@@ -63,8 +63,8 @@
    <div class="product-slider">
       <div id="demo1">
          <div class="row pos">
-            <div class="customNavigation"> 
-               <a class="btn prev" onclick="prevdemo2()"><i class="fa fa-angle-left" aria-hidden="true"></i></a> 
+            <div class="customNavigation">
+               <a class="btn prev" onclick="prevdemo2()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                <a class="btn next" onclick="nextdemo2()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
             <div id="owl-demo2" class="owl-carousel">
@@ -78,9 +78,9 @@
                                                  </div>
                       @endif
                   <div class="img-background" >
-                    
+
                        <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$fe->id}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->id}}')">
                               Quick View
@@ -94,7 +94,7 @@
                               <input type="checkbox" id="checkfe{{$k}}" name="checkdata" onclick="changewishlist('{{$fe->id}}','checkfe{{$k}}')" <?=$fe->wish==1? ' checked="checked"' : '';?>/>
                              @else
                               <input type="checkbox" id="checkfe{{$k}}" name="checkdata"  onclick="removewishselect('checkfe{{$k}}')" data-toggle="modal" data-target="#myModal"/>
-                             @endif 
+                             @endif
                              <big id="wishfavor{{$fe->id}}"></big>
                         </label>
                         <i class="fa fa-spinner loadlconwish" aria-hidden="true" id="loading{{$fe->id}}" ></i>
@@ -103,7 +103,7 @@
                         @endif
                      </div>
                   </div>
-              
+
                    <div class="text-s-box text-s-box-2">
                      <h1>{{$fe->name}}</h1>
                      <span class="rating">
@@ -117,17 +117,17 @@
                      <span class="review">
                      ({{$fe->total_review}} {{__('messages.review')}})
                      </span>
-                     <span class="compare_icon"> 
+                     <span class="compare_icon">
                         <a href="javascript:addcomapre('<?=$fe->id?>','offercompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get('currency').$fe->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$fe->MRP}}</span>
                          @if($fe->stock=='1')
-                              <a href="{{url('viewproduct/').'/'.$fe->id}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                              <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                           @endif
                      </div>
-                  </div> 
+                  </div>
                </div>
             </div>
                <?php $k++;?>

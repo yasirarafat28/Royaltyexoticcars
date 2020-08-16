@@ -21,7 +21,7 @@
       <div class="carousel-inner">
          <?php $i=0;?>
          @foreach($bestoffer as $fd)
-         <?php 
+         <?php
             $active="";
             if($i==0){
                $active="active";
@@ -47,7 +47,7 @@
                         </a>
                         @endif
                         @if($fd->is_product=='2')
-                        <a href="{{url('viewproduct').'/'.$fd->product_id}}" style="background: <?= Session::get('site_color') ?> !important">
+                        <a href="{{url('viewproduct').'/'.base64_encode($fd->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
                         {{__('messages.shop_now')}}
                         </a>
                         @endif
@@ -85,7 +85,7 @@
             <p>{{__('messages.home_note_1')}} {{$fd->offer->fixed}}% {{__('messages.home_note_2')}}</p>
             @endif
             @if($fd->offer->is_product=='2')
-            <a href="{{url('viewproduct').'/'.$fd->offer->product_id}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('viewproduct').'/'.base64_encode($fd->offer->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
            {{__('messages.shop_now')}}
             </a>
             @endif
@@ -144,7 +144,7 @@
                </div>
             </div>
          </div>
-         @endif   
+         @endif
          @endforeach
          <div class="col-md-6">
             @foreach($banner as $ba)
@@ -159,7 +159,7 @@
                   <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                </div>
             </div>
-            @endif   
+            @endif
             @if($ba->id!=1&&$ba->id!=2)
             <div class="sale-banner-3 col-md-12 p-0 overlay_main_2">
                <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}"> <img src="{{asset('upload/banner/image').'/'.$ba->Image}}" class="img-responsive"></a>
@@ -171,8 +171,8 @@
                   <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                </div>
             </div>
-            @endif   
-            @endforeach                
+            @endif
+            @endforeach
          </div>
       </div>
    </div>
@@ -185,8 +185,8 @@
    <div class="product-slider">
       <div id="demo1">
          <div class="row pos">
-            <div class="customNavigation"> 
-               <a class="btn prev" onclick="prevdemo1()"><i class="fa fa-angle-left" aria-hidden="true"></i></a> 
+            <div class="customNavigation">
+               <a class="btn prev" onclick="prevdemo1()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                <a class="btn next" onclick="nextdemo1()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
             <div id="owl-demo1" class="owl-carousel">
@@ -198,15 +198,15 @@
                            </div>
                           @endif
                <div class="item col-md-12">
-                  
+
                   <div class="home-bg">
 
                   <div class="img-background">
 
                      <figure class="preview-image">
-                        
-                        <a href="{{url('viewproduct/').'/'.$bt['id']}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
-                      
+
+                        <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
+
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('<?=$bt["id"]?>')">
                                {{__('messages.Quick View')}}
@@ -223,7 +223,7 @@
                            @else
                             <input type="checkbox" onclick="removewishselect('checkdata{{$k}}')" id="checkdata{{$k}}" name="checkdata"  data-toggle="modal" data-target="#myModal"/>
                            @endif
-                       
+
                          <big id="wishfavor{{$bt['id']}}"></big>
                         </label>
                           <i class="fa fa-spinner loadlconwish" aria-hidden="true" id="loading{{$bt['id']}}" ></i>
@@ -245,18 +245,18 @@
                         <span class="review">
                         ({{$bt['total_review']}} {{__('messages.review')}})
                         </span>
-                        <span class="compare_icon"> 
+                        <span class="compare_icon">
                            <a href="javascript:addcomapre('<?=$bt['id']?>','bestcompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                         </span>
                         <div class="price">
                            <h2>{{Session::get("currency")}}{{$bt['price']}}</h2>
                            <span >{{Session::get("currency")}}{{$bt['MRP']}}</span>
                              @if($bt["stock"]=='1')
-                           <a href="{{url('viewproduct/').'/'.$bt['id']}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                           <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                            @endif
                         </div>
                      </div>
-                  </div>                
+                  </div>
                </div>
             </div>
                <?php $k++;?>
@@ -311,14 +311,14 @@
    <div class="product-slider">
       <div id="demo">
          <div class="row pos">
-            <div class="customNavigation"> 
-               <a class="btn prev" onclick="prevowl()"><i class="fa fa-angle-left" aria-hidden="true"></i></a> 
+            <div class="customNavigation">
+               <a class="btn prev" onclick="prevowl()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                <a class="btn next" onclick="nextowl()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
             <div id="owl-demo" class="owl-carousel">
                <?php $k=1;?>
                @foreach($featurepro as $fe)
-               
+
                <div class="item col-md-12">
                   @if($fe->productdata->stock=='0')
                            <div class="out_of_sb">
@@ -328,7 +328,7 @@
                   <div class="home-bg">
                   <div class="img-background" >
                      <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.$fe->productdata->id}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
                               {{__('messages.Quick View')}}
@@ -363,17 +363,17 @@
                      <span class="review">
                      ({{$fe->total_review}} {{__('messages.review')}})
                      </span>
-                     <span class="compare_icon"> 
+                     <span class="compare_icon">
                         <a href="javascript:addcomapre('<?=$fe->product_id?>','featurecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
                      </span>
                      <div class="price">
                         <h2>{{Session::get("currency")}}{{$fe->productdata->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$fe->productdata->MRP}}</span>
                         @if($fe->productdata->stock=='1')
-                        <a href="{{url('viewproduct/').'/'.$fe->product_id}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
                         @endif
                      </div>
-                  </div> 
+                  </div>
                </div>
             </div>
                <?php $k++;?>

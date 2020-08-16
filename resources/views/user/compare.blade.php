@@ -15,14 +15,14 @@
                <th class="item-row">
                   <button type="button" onclick="removecomareitem('{{$d->id}}')" class="remove-compare">{{__('messages.Remove')}}</button>
                </th>
-               @endforeach	       
+               @endforeach
             </tr>
          </thead>
          <tbody id="table-compare">
             <tr>
                <th class="product-name">{{__('messages.Product Name')}}</th>
                @foreach($comparedata as $d)
-               <td><a href="{{url('viewproduct/').'/'.$d->id}}">{{$d->name}}</a></td>
+               <td><a href="{{url('viewproduct/').'/'.base64_encode($d->id)}}">{{$d->name}}</a></td>
                @endforeach
             </tr>
             <tr>
@@ -44,7 +44,7 @@
                <td class="item-row">
                   <p class="description-compare">{{$d->sku}}</p>
                </td>
-               @endforeach	       
+               @endforeach
             </tr>
             <tr>
                <th class="product-name">{{__('messages.Availability')}}</th>
@@ -56,24 +56,24 @@
                   <p>{{__('messages.Availabel Out Of stock')}}</p>
                   @endif
                </td>
-               @endforeach		       
+               @endforeach
             </tr>
             @foreach($attr_name as $anam)
             <tr>
                <th class="product-name">{{$anam}}</th>
-               <?php foreach ($comparedata as $k) {   
-                  $temp=0;                      	  
+               <?php foreach ($comparedata as $k) {
+                  $temp=0;
                   foreach ($k->attributes as $k1) {
 	                  if($k1['attributename']&&isset($k1['attributename']['name'])&&$k1['attributename']['name']==$anam){
 		                  echo '<td>'.$k1['attributename']['values'].'</td>';
 		                  $temp=1;
-		                  break;           	 		              	
+		                  break;
 	                  }
                   } ?>
                @if($temp!=1)
                <td>--</td>
                @endif
-               <?php } ?>	
+               <?php } ?>
             </tr>
             @endforeach
          </tbody>
