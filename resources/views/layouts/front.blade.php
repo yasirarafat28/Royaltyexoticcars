@@ -115,16 +115,11 @@
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info">
+			    <div class="left-side">
 				<a target="_blank"
 					href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
-				<div class="info__search">
-					<form action="/vehicles" id="Header-Search-Form"
-						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
-							name="q" placeholder="Search cars, suvs, slingshots, etc"
-							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-							required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
-				</div>
+				
 
 				<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
 						href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
@@ -134,6 +129,16 @@
 				</div>
 				<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 					id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
+                </div>
+					<div class="right-side">
+					<div class="info__search">
+					<form action="/vehicles" id="Header-Search-Form"
+						class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
+							name="q" placeholder="Search cars, suvs, slingshots, etc"
+							title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
+							required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
+				</div>
+                </div>
 
 
 			</div>

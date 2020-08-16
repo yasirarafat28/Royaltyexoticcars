@@ -1,4 +1,10 @@
 @extends('layouts.front')
+
+@php
+
+$setting = setting();
+
+@endphp
 @section('style')
     <style>
         .carousel-item img{
@@ -247,16 +253,21 @@
       <section id="description" class="rental__section">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
-        {{ $vehicle->description }}
+        {!! $vehicle->description !!}
         </div>
       </section>
       <section id="location" class="rental__section">
-        <h2 class="rental__h2">Pickup Location</h2><a target="_blank"
-          style="background-image:url(_https_/assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a549a4_royalty-exotic-cars-map.html)"
-          href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
-          class="rental__location--img w-inline-block"><img
-            src="/frontEnd/5a7df00a214ab6000146ef72_placeholder-1920x700.png" alt="" class="placeholder" /></a>
-        <address class="profile__location--details">
+        <h2 class="rental__h2">Pickup Location</h2>
+
+
+          <div class="form-group row googlemap">
+              <div class="col-sm-12">
+                  <div id="map-canvas" style="height: 500px"></div>
+              </div>
+          </div>
+
+
+          <address class="profile__location--details">
           <div class="profile__location--address">
             <div>Rental Exotic Beasts (Las Vegas)</div>
             <div>4305 Dean Martin Dr, Suite #120</div>
@@ -288,6 +299,10 @@
 @endsection
 @section('script')
 
+    <script src="//maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCyYM0wdvmHA5KRhEAl1R7rMp28eCHoGlo"  type="text/javascript"></script>
+
+
+
     <link href="/assets/css/owl.carousel.min.css" rel="stylesheet">
     <script>
         $(document).ready(function(){
@@ -304,5 +319,35 @@
                 animateIn: 'fadeIn'
             });
         });
+    </script>
+
+
+    <script>
+        function initialize() {
+
+            var mylong = parseFloat('{{$setting->longitude}}');
+            var mylat = parseFloat('{{$setting->latitude}}');
+
+            var myLatlng = {lat: mylat, lng: mylong };
+            var mapDiv = document.getElementById('map-canvas');
+            var map = new google.maps.Map(mapDiv, {
+                center: myLatlng,
+                zoom: 20,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            var branchName = 'Rental Exotic Beasts';
+
+            var dictionary = { lat: mylat, lng: mylong, name: branchName };
+
+            var myLatLng = {lat: dictionary.lat, lng: dictionary.lng};
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                label: dictionary.name,
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 @endsection

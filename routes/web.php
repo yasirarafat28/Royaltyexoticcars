@@ -29,6 +29,8 @@ Route::get('/', function() {
   return redirect('home');
 });
 
+Auth::routes();
+
 
 Route::get("/home","FrontController@home");
 Route::get('/faqs', 'FrontController@faqs');
