@@ -135,7 +135,7 @@
                         <input type="text" name="edit_phone" id="edit_phone" value="{{$userdata->phone}}" required="">
                         <label class="per-text">{{__('messages.address')}}
                         </label>
-                        <textarea name="edit_address" id="edit_address">{{$userdata->address}}</textarea>   
+                        <textarea name="edit_address" id="edit_address">{{$userdata->address}}</textarea>
                      </div>
                      <div class="personal-btn">
                         <button class="update" type="submit" name="btnsubmit" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.update')}}</button>
