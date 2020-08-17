@@ -249,12 +249,13 @@
 
                                 </div>
 
-                            <div class="row alerts">
+                        </div>
 
-                                <div class="alert alert-danger col-md-12" style="display: none;" id="couponError"></div>
-                                <div class="alert alert-primary col-md-12" style="display: none;" id="couponSuccess"></div>
-                            </div>
 
+                        <div class="alerts">
+
+                            <div class="alert alert-danger col-md-12" style="display: none;" id="couponError"></div>
+                            <div class="alert alert-primary col-md-12" style="display: none;" id="couponSuccess"></div>
                         </div>
 
                     </div>
@@ -350,7 +351,7 @@
                         </div>
 
                         <div class="payment-box">
-                            @if($payment_method[0]->status=='1')
+                            @if($payment_method[0]->status=='1' && false)
                                 <div class="check-payment">
                                     <div class="c-box">
                                         <input type="radio" required name="payment_method" checked id="payment_method_1" value="paypal" onclick="orderpaymentOption(this.value)">
@@ -365,13 +366,14 @@
                             @if($payment_method[1]->status=='1')
                                 <div class="check-payment">
                                     <div class="c-box">
-                                        <input type="radio" name="payment_method" required id="payment_method_2" value="stripe" onclick="orderpaymentOption(this.value)">
+                                        <input type="radio" name="payment_method" checked required id="payment_method_2" value="stripe" onclick="orderpaymentOption(this.value)">
                                     </div>
                                     <div class="payment-text">
                                         <div class="pay">
-                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
+                                            <!--<a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
                                             <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
-                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>
+                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>-->
+                                            <a href="#"><img src="/stripe_credit-card-logos.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -392,10 +394,16 @@
 
                 </div>
 
-                <div class="form-group" style="margin-top: 20px;">
+                <!--<div class="form-group" style="margin-top: 20px;">
                     <p style="text-align: center;">
                         <button type="submit" class="button " id="paypal-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button>
-                        <a  class="button text-white" onclick="event.preventDefault();$('.stripe-button-el').click();" style="display: none;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a> </p>
+                        <a href="#"  class="button text-white" onclick="event.preventDefault();$('.stripe-button-el').click();" style="display: block;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
+                    </p>
+                </div>-->
+                <br>
+                <div class="form-group col-md-6 offset-md-3">
+                    <a href="#"  class="button text-white" onclick="event.preventDefault();$('.stripe-button-el').click();" style="display: block;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
+
                 </div>
 
             </form>
@@ -563,4 +571,65 @@
         $('#tax-text').text(tax.toFixed(2));
         $('#total-text').text(grand_total.toFixed(2));
     }
+</script>
+
+
+<script>
+    $('#btn-coupon-apply').on('click',function (event) {
+        event.preventDefault();
+        var that = $(this);
+        that.attr('disabled');
+        $('#couponError').hide();
+        $('#couponSuccess').hide();
+
+        var formData = $('#CouponApplyForm').serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "{{ route('VehicleCouponApply') }}",
+            data: {
+                '_token' : "{{csrf_token()}}",
+                'code' : $('#coupon_code').val(),
+                'vehicle_id' : "{{$vehicle->id}}",
+                'total' : $('#sub_total').val(),
+            },
+            success:function(data) {
+                that.prop("disabled", false);
+                console.log(data);
+                if (data==='not_available'){
+                    that.html("Apply");
+                    $('#couponError').text('Entered coupon is not available now!').show();
+                }else if (data.status==='voucher_error'){
+                    that.html("Apply");
+                    $('#couponError').text(data.message).show();
+                }else{
+                    that.html("Applied");
+
+                    $('#couponSuccess').text(data.message).show();
+                    //window.location.reload();
+                    $('#discount_total').val(data.amount);
+                    calculation();
+                }
+            },
+
+            error: function (xhr) {
+                that.prop("disabled", false);
+                that.html("Apply");
+                let errors = xhr.responseJSON.errors;
+                console.log(xhr);
+                if ($.isEmptyObject(errors) === false) {
+                    $.each(errors, function (key, value) {
+                        $('#couponError')
+                            .text(value).show();
+                    });
+
+
+                }
+            },
+
+        });
+
+
+
+    });
 </script>

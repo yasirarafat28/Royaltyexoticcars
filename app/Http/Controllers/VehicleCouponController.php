@@ -156,7 +156,7 @@ class VehicleCouponController extends Controller
     public function CouponApply(Request $request){
 
         $this->validate($request,[
-            'code'=>'required|exists:coupons',
+            'code'=>'required|exists:vehicle_coupons',
             'vehicle_id'=>'required',
             'total'=>'required',
         ],[
@@ -191,11 +191,12 @@ class VehicleCouponController extends Controller
             ];
 
         }
-        $voucherDiscount = Vehicle_coupon::CheckCouponDiscountAmount($vehicle->id);
+        $voucherDiscount = Vehicle_coupon::CheckCouponDiscountAmount($vehicle->id,$request->code,$request->total);
 
 
         return [
             'status'=>'voucher_success',
+            'amount'=>$voucherDiscount,
             'message'=>'Congratulation! Your are enjoying $ '.$voucherDiscount.' coupon discount with this checkout!',
         ];
 
