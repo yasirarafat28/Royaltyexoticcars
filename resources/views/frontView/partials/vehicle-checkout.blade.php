@@ -174,7 +174,7 @@
 
                 <div class="checkbox checkbox-with-content" >
                     <label style="display: flex; padding: 5px;">
-                        <div><input type="checkbox" value="" max="cancellation_agreement" required></div>
+                        <div><input type="checkbox" value="" name="cancellation_agreement" required></div>
                         <div style="padding-left: 10px;"> I accept the Cancellation Policy
                             *All cancellations are subject to a maximum 50% refund.</div>
                     </label>
@@ -308,6 +308,7 @@
 
                             <input class="form-control" type="text" placeholder="Full Name" name="name" required>
                         </div>
+                        <div class="errorTxt"></div>
 
                         <div class="input-group" >
                             <div class="input-group-prepend">
@@ -318,6 +319,7 @@
 
                             <input class="form-control" type="text" placeholder="Phone number" name="phone" required>
                         </div>
+                        <div class="errorTxt"></div>
 
                         <div class="input-group" >
                             <div class="input-group-prepend">
@@ -327,6 +329,7 @@
                             </div>
                             <input class="form-control" type="text" placeholder="Email" name="email" required>
                         </div>
+                        <div class="errorTxt"></div>
 
                         <div class="input-group" >
                             <div class="input-group-prepend">
@@ -336,6 +339,7 @@
                             </div>
                             <input class="form-control" type="text" placeholder="Address" name="address" required>
                         </div>
+                        <div class="errorTxt"></div>
 
                     </div>
 
@@ -402,7 +406,7 @@
                 </div>-->
                 <br>
                 <div class="form-group col-md-6 offset-md-3">
-                    <a href="#"  class="button text-white" onclick="event.preventDefault();$('.stripe-button-el').click();" style="display: block;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
+                    <a href="#"  class="button text-white" style="display: block;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
 
                 </div>
 
@@ -427,209 +431,3 @@
     }
 
 </style>
-
-<script src="/admin-asset/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
-
-<script>
-
-    function orderpaymentOption(option){
-
-        if (option==='paypal')
-        {
-            $('#paypal-submit').show();
-            $('#stripe-submit').hide();
-        }else{
-            $('#paypal-submit').hide();
-            $('#stripe-submit').show();
-        }
-
-    }
-
-    $(function () {
-        $('#checkout-form').valid({
-            highlight: function (input) {
-                $(input).parents('.form-line').addClass('error');
-            },
-            unhighlight: function (input) {
-                $(input).parents('.form-line').removeClass('error');
-            },
-            errorPlacement: function (error, element) {
-                $(element).parents('.form-group').append(error);
-            },
-            rules: {
-                'confirm': {
-                    equalTo: '#password'
-                }
-            }
-        });
-    });
-
-    $('#rental_type').on('change',function (event) {
-        event.preventDefault();
-        $('#reservation_for').val($(this).val());
-        let cost = $('#rental_type option:selected').data('cost');
-        if (isNaN(cost)){
-            $('#online-booking-container').hide();
-            $('#online-booking-error-container').show();
-            $('#rental-cost-append').text('0.00');
-            $('#rental_cost').val(0);
-        }else{
-            $('#online-booking-container').show();
-            $('#online-booking-error-container').hide();
-
-            $('#rental-cost-append').text(parseFloat(cost).toFixed(2));
-            $('#rental_cost').val(cost);
-        }
-
-        calculation();
-    });
-
-    $('#country').on('change',function (event) {
-        event.preventDefault();
-
-        let type = $(this).val();
-        let vehicle_id = $('#vehicle_id').val();
-
-        $.ajax({
-            url: '{{ route('getCheckoutUpgradeItems') }}',
-            type: 'GET',
-            data: {
-                "country": type,
-                "vehicle_id": vehicle_id,
-            },
-            success: function (data) {
-                $('#upgrade-items').html(data);
-            },
-            error: function (error) {
-                console.log(error);
-
-            }
-        });
-        /*if (type==='usa'){
-            $('#international_full_coverage_insurance').closest('.form-group').hide();
-            $('#liability_insurance').closest('.form-group').show();
-        }else if (type==='international'){
-            $('#international_full_coverage_insurance').closest('.form-group').show();
-            $('#liability_insurance').closest('.form-group').hide();
-        }*/
-
-    });
-
-    $('#international_full_coverage_insurance').on('change',function (event) {
-        calculation();
-    });
-
-    $('#liability_insurance').on('change',function (event) {
-        calculation();
-    });
-
-    $('#property_damage_waiver').on('change',function (event) {
-        calculation();
-    });
-
-    $('#tire_protection').on('change',function (event) {
-        calculation();
-    });
-
-    $('#mechanical_breakdown_coverage').on('change',function (event) {
-        calculation();
-    });
-
-    $('#fuel_credit').on('change',function (event) {
-        calculation();
-    });
-
-    function calculation(){
-        let rental_cost = parseFloat($('#rental_cost').val());
-
-        let international_full_coverage_insurance = parseFloat($('#international_full_coverage_insurance option:selected').val()??0);
-        let liability_insurance = parseFloat($('#liability_insurance option:selected').val()??0);
-        let property_damage_waiver = parseFloat($('#property_damage_waiver option:selected').val()??0);
-        let tire_protection = parseFloat($('#tire_protection option:selected').val()??0);
-        let mechanical_breakdown_coverage = parseFloat($('#mechanical_breakdown_coverage option:selected').val()??0);
-        let fuel_credit = parseFloat($('#fuel_credit option:selected').val()??0);
-
-
-
-        let discount = parseFloat($('#discount_total').val());
-
-
-
-        let sub_total = rental_cost + international_full_coverage_insurance
-            +liability_insurance + property_damage_waiver + tire_protection + mechanical_breakdown_coverage + fuel_credit;
-        let tax = sub_total*0.3;
-        let grand_total = sub_total+tax - discount;
-
-
-        $('#sub_total').val(sub_total.toFixed(2));
-        //$('#discount_total').text(discount.toFixed(2));
-        $('#tax_total').val(tax.toFixed(2));
-        $('#grand_total').val(grand_total.toFixed(2));
-
-        $('#subtotal-text').text(sub_total.toFixed(2));
-        $('#discount-text').text(discount.toFixed(2));
-        $('#tax-text').text(tax.toFixed(2));
-        $('#total-text').text(grand_total.toFixed(2));
-    }
-</script>
-
-
-<script>
-    $('#btn-coupon-apply').on('click',function (event) {
-        event.preventDefault();
-        var that = $(this);
-        that.attr('disabled');
-        $('#couponError').hide();
-        $('#couponSuccess').hide();
-
-        var formData = $('#CouponApplyForm').serialize();
-
-        $.ajax({
-            type: "POST",
-            url: "{{ route('VehicleCouponApply') }}",
-            data: {
-                '_token' : "{{csrf_token()}}",
-                'code' : $('#coupon_code').val(),
-                'vehicle_id' : "{{$vehicle->id}}",
-                'total' : $('#sub_total').val(),
-            },
-            success:function(data) {
-                that.prop("disabled", false);
-                console.log(data);
-                if (data==='not_available'){
-                    that.html("Apply");
-                    $('#couponError').text('Entered coupon is not available now!').show();
-                }else if (data.status==='voucher_error'){
-                    that.html("Apply");
-                    $('#couponError').text(data.message).show();
-                }else{
-                    that.html("Applied");
-
-                    $('#couponSuccess').text(data.message).show();
-                    //window.location.reload();
-                    $('#discount_total').val(data.amount);
-                    calculation();
-                }
-            },
-
-            error: function (xhr) {
-                that.prop("disabled", false);
-                that.html("Apply");
-                let errors = xhr.responseJSON.errors;
-                console.log(xhr);
-                if ($.isEmptyObject(errors) === false) {
-                    $.each(errors, function (key, value) {
-                        $('#couponError')
-                            .text(value).show();
-                    });
-
-
-                }
-            },
-
-        });
-
-
-
-    });
-</script>

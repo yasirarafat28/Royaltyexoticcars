@@ -35,7 +35,7 @@
 	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/custom.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<script src="../frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+	<script src="/frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
 	<script
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
@@ -104,6 +104,10 @@
 
         .checkout-card, .booking-card{
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        label.error{
+            color: red !important;
         }
     </style>
 
