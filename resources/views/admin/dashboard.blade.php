@@ -77,7 +77,7 @@
       <div class="card">
          <div class="card-body">
             <div class="stat-widget-one">
-               <div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+               <div class="stat-icon dib"><i class="ti-car text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Total Vehicle</div>
                   <div class="stat-digit">{{$total_users}}</div>
@@ -90,7 +90,7 @@
       <div class="card">
          <div class="card-body">
             <div class="stat-widget-one">
-               <div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+               <div class="stat-icon dib"><i class="ti-notepad text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Total Booking</div>
                   <div class="stat-digit">{{$total_users}}</div>
