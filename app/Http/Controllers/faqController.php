@@ -48,7 +48,7 @@ class faqController extends Controller
         $faq->question = $request->question;
         $faq->description = $request->description;
         $faq->save();
-        return back()->withSuccess('FAQ created successfully!');
+        return redirect('admin/faq');
     }
 
     /**
@@ -105,6 +105,8 @@ class faqController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $faqs = Faq::find($id);
+        $faqs = delete();
+        return redirect('admin/faq');
     }
 }
