@@ -114,6 +114,7 @@ class VehicleController extends Controller
         }
 
         $vehicle = new Vehicle();
+        $vehicle->type = $request->type;
         $vehicle->name = $request->name;
         $vehicle->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         $vehicle->description = $request->description;
@@ -261,6 +262,7 @@ class VehicleController extends Controller
         }
 
         $vehicle = Vehicle::find($id);
+        $vehicle->type = $request->type;
         $vehicle->name = $request->name;
         $vehicle->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         $vehicle->description = $request->description;

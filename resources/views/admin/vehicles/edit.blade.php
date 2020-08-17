@@ -68,6 +68,14 @@
                             <fieldset>
                                 <div class="body">
                                     <div class="form-group">
+                                        <label for="category" class="control-label mb-1">{{__('Type')}}<span class="reqfield">*</span>
+                                        </label>
+                                        <select name="type" required  class="form-control" >
+                                            <option {{$vehicle->type=='car_suv'?'selected':''}} value="car_suv"> Car & SUVs</option>
+                                            <option {{$vehicle->type=='auto_moto'?'selected':''}} value="auto_moto"> Auto & Motors</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name" class="control-label mb-1">{{__('messages.name')}}<span class="reqfield">*</span>
                                         </label>
                                         <input id="pro_name" name="name" value="{{$vehicle->name}}" type="text" class="form-control" aria-required="true" required aria-invalid="false" placeholder="{{__('messages.name')}}">
