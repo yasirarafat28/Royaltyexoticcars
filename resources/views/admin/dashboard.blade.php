@@ -86,6 +86,7 @@
          </div>
       </div>
    </div>
+
    <div class="col-lg-3 col-sm-6">
       <div class="card">
          <div class="card-body">
@@ -93,7 +94,7 @@
                <div class="stat-icon dib"><i class="ti-notepad text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Total Booking</div>
-                  <div class="stat-digit">{{$total_users}}</div>
+                  <div class="stat-digit">{{$order}}</div>
                </div>
             </div>
          </div>

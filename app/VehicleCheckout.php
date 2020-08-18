@@ -14,6 +14,7 @@ class VehicleCheckout extends Model
         return $this->hasMany('App\OrderStatus','order_id');
 
     }
+    
 
     public function vehicle()
     {
