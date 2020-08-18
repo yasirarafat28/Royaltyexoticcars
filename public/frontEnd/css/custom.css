@@ -322,3 +322,15 @@ footer::after {
 .inner_page{
     margin: 7rem 0rem !important;
 }
+
+.search__input {
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0 3em 0 1em;
+    border: 1px solid transparent;
+    border-radius: .3em;
+    background-color: #fff;
+    font-size: 1.1em;
+}.info__search {
+     font-size: 1.1em;
+ }
