@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
 use App\Model\Order;
+use App\Vehicle;
 use App\Model\Setting;
 use App\Model\Product;
 use Session;
@@ -80,6 +81,7 @@ class Admincontroller extends Controller {
 
    public function showdashboard(){
         $setting=Setting::find(1);
+        $vehicle=Vehicle::all();
         $res_curr=explode("-",$setting->default_currency);
         $order=Order::all();
         if(count($order)!=0){
@@ -103,9 +105,10 @@ class Admincontroller extends Controller {
           $total=$tax+$shipping+$subtotal;
           $total_sell=$res_curr[1]."".$total;
           $total_order=Order::all();
+          $total_vehicle=Vehicle::all();
           $total_product=Product::all();
           $total_customer=User::where("user_type",'1')->get();
-          return view("admin.dashboard")->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
+          return view("admin.dashboard")->with("total_vehicle",count($total_vehicle))->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
    }
 
    public function showlogout(){
