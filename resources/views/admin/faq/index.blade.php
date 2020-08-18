@@ -29,13 +29,13 @@
             
               {{ $faq->question }}
 
-              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right">
+              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right mr-2">
               
                 Update 
               
               </a>
 
-              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-danger btn-sm float-right">
+              <a href="{{url('admin/faq/'.$faq->id.'/delete')}}" class="btn btn-danger btn-sm float-right mr-2">
               
                 Delete 
               
