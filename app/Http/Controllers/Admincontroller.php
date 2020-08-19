@@ -129,6 +129,7 @@ class Admincontroller extends Controller {
        return view("admin.updateprofile")->with("data",$user);
    }
 
+   
    public function updateprofile(Request $request){      
            $user=Sentinel::getUser();
            if ($request->hasFile('file')) 

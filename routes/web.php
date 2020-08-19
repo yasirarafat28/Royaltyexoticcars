@@ -143,6 +143,7 @@ Route::group(['prefix' => '/'], function (){
 });
 
 
+
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get("/","Admincontroller@showlogin")->name("showlogin");
@@ -151,7 +152,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => ['admincheckexiste']], function () {
 
       Route::get("dashboard","Admincontroller@showdashboard")->name("dashboard");
-      
+
       //logout
       Route::get("logout","Admincontroller@showlogout")->name("logout");
 

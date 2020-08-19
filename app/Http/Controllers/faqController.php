@@ -46,7 +46,7 @@ class faqController extends Controller
         ]);
         $faq = new Faq();
         $faq->question = $request->question;
-        $faq->description = $request->description;
+        $faq->descripton = $request->description;
         $faq->save();
         return redirect('admin/faq');
     }
@@ -92,7 +92,7 @@ class faqController extends Controller
 
         $faqs = Faq::find($id);
         $faqs->question = $request->question;
-        $faqs->description = $request->description;
+        $faqs->descripton = $request->description;
 
         $faq->save();
     }
@@ -105,8 +105,7 @@ class faqController extends Controller
      */
     public function destroy($id)
     {
-        $faqs = Faq::find($id);
-        $faqs = delete();
+        $faqs = Faq::destroy($id);
         return redirect('admin/faq');
     }
 }

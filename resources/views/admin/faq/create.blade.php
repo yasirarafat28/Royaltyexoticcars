@@ -17,7 +17,7 @@
 
             <div class="card-body">
             
-                <form action="{{ url('admin/faq')}}" method-"POST">
+                <form action="{{ url('admin/faq')}}" method="POST">
 
                     @csrf
 

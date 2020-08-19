@@ -17,7 +17,8 @@
 
             <div class="card-body">
             
-                <form action="{{url('admin/faq/'.$faqs->id.'/update')}}" method-"POST">
+                <form action="{{url('admin/faq/'.$faqs->id.'/update')}}" method="POST">
+                {{method_field('PATCH')}}
 
                     @csrf
 
@@ -29,7 +30,7 @@
 
                     <div class="form-group">
                     
-                        <textarea name="description" placeholder="Description" cols="30" rows="10" class="form-control" value="{{ $faqs->description }}"></textarea>
+                        <textarea name="description" placeholder="Description" cols="30" rows="10" class="form-control" value="">{{ $faqs->descripton }}</textarea>
                     
                     </div>
 

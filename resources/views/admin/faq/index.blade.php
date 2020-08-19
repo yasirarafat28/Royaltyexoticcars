@@ -15,37 +15,57 @@
       
         FAQ's
 
-        <a href="{{ url('admin/faq/create') }}" class="btn btn-primaryt">Create FAQ</a>
+        <a href="{{ url('admin/faq/create') }}" class="btn btn-primary">Create FAQ</a>
       
       </div>
 
       <div class="card-body">
+      <table class="table table-striped">
+      <thead>
+      <tr>
+      <td>#</td>
+      <td>Question</td>
+      <td>Description</td>
+      <td>Action</td>
+      </tr>
+      </thead>
+      <tbody>
       
-        <ul class="list-group">
       
-          @foreach($faqs as $faq)
+      @foreach($faqs as $faq)
+      
+      <tr>
+      <td>{{$loop->iteration}}</td>
+      <td>{{$faq->question}}</td>
+      <td>{{$faq->descripton}}</td>
+      <td>
+      
 
-            <li class="list-group-item">
+        <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right mr-2">
+              
+              Update 
             
-              {{ $faq->question }}
+            </a>
+            
+            {!! Form::open([
+                                               'method'=>'DELETE',
+                                               'url' => ['/admin/faq', $faq->id],
+                                               'style' => 'display:inline'
+                                            ]) !!}
+                            {!! Form::button('<i class="fa fa-trash f-s-25"></i> Delete', array(
+                                 'type' => 'submit',
+                                 'onclick' => 'return confirm("Are you sure? ");',
+                                 'class' => 'btn btn-danger',
+                                    'data-type'=>'confirm',
+                                 )) !!}
+                            {!! Form::close() !!}
 
-              <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right mr-2">
-              
-                Update 
-              
-              </a>
+          </td>
+      </tr>
 
-              <a href="{{url('admin/faq/'.$faq->id.'/delete')}}" class="btn btn-danger btn-sm float-right mr-2">
-              
-                Delete 
-              
-              </a>
-              
-            </li>
-
-          @endforeach
-
-        </ul>
+      @endforeach
+      </tbody>
+      </table>
       
       </div>
 
