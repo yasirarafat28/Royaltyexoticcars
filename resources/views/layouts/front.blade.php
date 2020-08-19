@@ -149,16 +149,12 @@
 			<div class="nav">
 				<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 						class="brand w-nav-brand w--current">
-                        <!--<img src="/logo.png" class="logo" alt="">-->
 						<div class="brand__icon"></div>
-						<div class="brand__text">Rental Exotic Beasts</div>
 					</a></div>
 				<div class="nav__links">
 					<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 						<div id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-							<div>Rentals</div><img
-								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e5457c79427000132cf15_icon-arrow-down.svg"
-								alt="" class="nav__arrow" />
+							<div>Rentals</div>
 						</div>
 						<nav class="dropdown__list dropdown__list--categories w-dropdown-list"><img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -209,9 +205,7 @@
 					</div>
 					<div data-delay="0" data-hover="1" class="dropdown w-dropdown">
 						<div id="Requirements-Menu" class="nav__link w-dropdown-toggle">
-							<div>Requirements</div><img
-								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e5457c79427000132cf15_icon-arrow-down.svg"
-								alt="" class="nav__arrow" />
+							<div>Requirements</div>
 						</div>
 						<nav class="dropdown__list dropdown__list--table w-dropdown-list"><img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -458,9 +452,7 @@
 					</div>
 					<div data-delay="0" data-hover="1" class="dropdown w-dropdown">
 						<div id="About-Menu" class="nav__link w-dropdown-toggle">
-							<div>About</div><img
-								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e5457c79427000132cf15_icon-arrow-down.svg"
-								alt="" class="nav__arrow" />
+							<div>About</div>
 						</div>
 						<nav class="dropdown__list dropdown__list--about w-dropdown-list"><img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
