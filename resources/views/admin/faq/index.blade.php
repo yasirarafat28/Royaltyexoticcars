@@ -39,13 +39,6 @@
       <td>{{$faq->question}}</td>
       <td>{{$faq->descripton}}</td>
       <td>
-      
-
-        <a href="{{url('admin/faq/'.$faq->id.'/edit')}}" class="btn btn-info btn-sm float-right mr-2">
-              
-              Update 
-            
-            </a>
             
             {!! Form::open([
                                                'method'=>'DELETE',
