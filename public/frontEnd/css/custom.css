@@ -1,5 +1,5 @@
 .header .info {
-    background-color: #660000;
+    background-color: darkorange;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +12,7 @@
     justify-content: flex-start;
 }
 .header .info .left-side a {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
     color: #ffffff;
     margin: 0 16px 0 0;
