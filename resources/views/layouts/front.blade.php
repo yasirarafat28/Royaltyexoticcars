@@ -175,8 +175,7 @@
 												</div>
 												<div class="nav__categories--text">
 													<div class="nav__categories--heading">{{ $category->name }}</div>
-													<div class="nav__categories--desc">Ranging from American muscle to European
-														masterpieces.</div>
+													<div class="nav__categories--desc">{{$category->description}}</div>
 												</div>
 											</a>
 
@@ -672,7 +671,7 @@
                 </div>
             </nav>
         </div>
-        <div id="feedback-tab" style="background-color:orangered;"><i class="fa fa-phone"></i> Call Center</div>
+        <div id="feedback-tab" style="background-color:orangered;">Get in Touch</div>
     </div>
 
     <style>

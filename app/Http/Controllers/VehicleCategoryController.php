@@ -57,6 +57,7 @@ class VehicleCategoryController extends Controller {
 
         $category = new VehicleCategory();
         $category->name = $request->name;
+        $category->description = $request->description;
         $category->status = $request->status;
 
         $category->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
@@ -93,8 +94,9 @@ class VehicleCategoryController extends Controller {
 
         $category = VehicleCategory::find($id);
         $category->name = $request->name;
+        $category->description = $request->description;
 
-        $category->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
+        //$category->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         $category->status = $request->status;
 
 
