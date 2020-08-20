@@ -351,6 +351,15 @@ footer::after {
     padding-left: .8em !important;
 }
 
+.nav__categories--heading {
+    font-weight: 700;
+    color: #4c5d76;
+    text-transform: uppercase;
+}
+.dropdown__list.dropdown__list--about {
+    width: auto;
+}
+
 
 @media screen and (max-width: 767px) {
     .header .info {

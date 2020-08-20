@@ -141,7 +141,11 @@
 							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
 								name="q" placeholder="Search fleets"
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-								required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
+								required="" />
+
+                            <button type="submit"  value=" " class="search__submit w-button" style="color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            </button>
+                        </form>
 					</div>
 					</div>
 
