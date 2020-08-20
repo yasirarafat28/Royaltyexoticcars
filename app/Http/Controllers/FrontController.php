@@ -214,10 +214,20 @@ class FrontController extends Controller {
         }else{
             $sub_categories = array();
         }
-
-
         $records = $records->get();
-        return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories'));
+
+        if (isset($request->brand) && $res=VehicleBrand::where('slug',$request->brand)->first())
+            $current_brand = $res;
+        else
+            $current_brand = null;
+
+        if (isset($request->category) && $res=VehicleCategory::where('slug',$request->category)->first())
+            $current_category = $res;
+        else
+            $current_category = null;
+
+
+        return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories','cat','current_brand','current_category'));
     }
 
 
@@ -371,7 +381,7 @@ class FrontController extends Controller {
         }
 
 
-        Mail::to($order->email)->send(new NewOrderPlaced($order));
+        //Mail::to($order->email)->send(new NewOrderPlaced($order));
 
 
         $order->save();

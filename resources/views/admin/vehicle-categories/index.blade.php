@@ -42,28 +42,28 @@
                                     <input type="hidden" name="parent_id" value="{{$parent_id}}">
 
                                     <div class="form-group ">
-                                        <label for="name" class="col-md-2 control-label">Name</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" name="name" type="text" id="name">
+                                        <label for="name" class="control-label">Name</label>
+                                        <input class="form-control" name="name" type="text" id="name">
 
-                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label for="name" class="control-label">Description</label>
+                                        <textarea name="description"   class="form-control"></textarea>
+
                                     </div>
                                     <div class="form-group ">
-                                        <label for="email" class="col-md-2 control-label">Image</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" name="image" type="file" id="image">
+                                        <label for="email" class="control-label">Image</label>
+                                        <input class="form-control" name="image" type="file" id="image">
 
-                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="phone" class="col-md-2 control-label">Status</label>
-                                        <div class="col-md-8">
-                                            <select class="form-control" name="status">
-                                                <option>Select an option</option>
-                                                <option value="active"  >Active</option>
-                                                <option value="inactive"  >Inactive</option>
-                                            </select>
-                                        </div>
+                                        <label for="phone" class="control-label">Status</label>
+                                        <select class="form-control" name="status">
+                                            <option>Select an option</option>
+                                            <option value="active"  >Active</option>
+                                            <option value="inactive"  >Inactive</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
@@ -132,29 +132,29 @@
                                                     {!! csrf_field() !!}
                                                     <input type="hidden" name="id" value="{{$item->id}}">
                                                     <div class="form-group">
-                                                        <label for="name" class="col-md-4 control-label">Name</label>
-                                                        <div class="col-md-6">
-                                                            <input class="form-control" name="name" type="text" value="{{$item->name}}"  id="edit-name">
-                                                        </div>
+                                                        <label for="name" class="control-label">Name</label>
+                                                        <input class="form-control" name="name" type="text" value="{{$item->name}}"  id="edit-name">
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label for="name" class="control-label">Description</label>
+                                                        <textarea name="description"   class="form-control"></textarea>
+
                                                     </div>
                                                     <input type="hidden" name="parent_id" value="{{$parent_id}}">
 
                                                     <div class="form-group">
-                                                        <label for="email" class="col-md-4 control-label">Image</label>
-                                                        <div class="col-md-6">
-                                                            <input class="form-control" name="image" type="file" id="edit-image">
-                                                        </div>
+                                                        <label for="email" class="control-label">Image</label>
+                                                        <input class="form-control" name="image" type="file" id="edit-image">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="phone" class="col-md-4 control-label">Status</label>
-                                                        <div class="col-md-6">
-                                                            <select class="form-control" name="status">
-                                                                <option>Select an option</option>
-                                                                <option value="active" {{$item->status=='active'?'selected':''}} >Active</option>
-                                                                <option value="inactive" {{$item->status=='inactive'?'selected':''}} >Inactive</option>
-                                                            </select>
-                                                        </div>
+                                                        <label for="phone" class="control-label">Status</label>
+                                                        <select class="form-control" name="status">
+                                                            <option>Select an option</option>
+                                                            <option value="active" {{$item->status=='active'?'selected':''}} >Active</option>
+                                                            <option value="inactive" {{$item->status=='inactive'?'selected':''}} >Inactive</option>
+                                                        </select>
                                                     </div>
 
                                                     <div class="form-group">

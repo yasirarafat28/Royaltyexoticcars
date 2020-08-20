@@ -6,6 +6,15 @@
     flex-wrap: wrap;
     padding: 0px 150px 0px 150px;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .header .info {
+        padding: unset !important;
+    }
+}
+
 .header .info .left-side {
     display: flex;
     flex-wrap: wrap;
@@ -330,7 +339,7 @@ footer::after {
     margin-bottom: 0;
     padding: 0 3em 0 1em;
     border: 1px solid transparent;
-    border-radius: .3em;
+    border-radius: 5px;
     background-color: #fff;
     font-size: 1.1em;
 }.info__search {
@@ -340,4 +349,11 @@ footer::after {
 .rental__cta--text {
     padding-right: .8em !important;
     padding-left: .8em !important;
+}
+
+
+@media screen and (max-width: 767px) {
+    .header .info {
+        padding: unset !important;
+    }
 }

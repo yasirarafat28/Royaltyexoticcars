@@ -187,8 +187,8 @@
                         </h2>
 
                         <div>{{$setting->address}}</div>
-                        <div>(123) 456-789</div>
-                        <div>company@example.com</div>
+                        <div>{{$setting->phone}}</div>
+                        <div>{{$setting->email}}</div>
                     </div>
                 </div>
             </header>
@@ -196,7 +196,7 @@
                 <div class="row contacts">
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">John Doe</h2>
+                        <h2 class="to">${{$order->name}}</h2>
                         <div class="address">796 Silver Harbour, TX 79273, US</div>
                         <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
                     </div>
