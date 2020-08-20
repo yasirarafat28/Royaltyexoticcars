@@ -120,7 +120,7 @@
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info-container">
-				<div class="info" style="padding: 0px 150px 0px 150px;">
+				<div class="info" style="">
 					<div class="left-side">
 					<a target="_blank"
 						href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
@@ -149,7 +149,7 @@
 
 				</div>
 			</div>
-			<div class="nav-container" style="padding: 0px 150px 50px 150px;">
+			<div class="nav-container" style="">
 				<div class="nav">
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
