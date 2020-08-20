@@ -185,7 +185,8 @@
                                 Arboshiki
                             </a>
                         </h2>
-                        <div>455 Foggy Heights, AZ 85004, US</div>
+
+                        <div>{{$setting->address}}</div>
                         <div>(123) 456-789</div>
                         <div>company@example.com</div>
                     </div>
@@ -201,7 +202,7 @@
                     </div>
                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                        <div class="date">Date of Invoice: 01/10/2018</div>
+                        <div class="date">${{$order->reservation_time}}</div>
                         <div class="date">Due Date: 30/10/2018</div>
                     </div>
                 </div>
