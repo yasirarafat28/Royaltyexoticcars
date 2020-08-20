@@ -148,7 +148,7 @@
 
 				</div>
 			</div>
-			<div class="nav-container" style="">
+			<div class="nav-container" style="padding: 0px 150px 0px 150px;">
 				<div class="nav">
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
