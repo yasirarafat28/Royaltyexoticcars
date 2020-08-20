@@ -210,65 +210,73 @@
                     <tr>
                         <th>#</th>
                         <th class="text-left">DESCRIPTION</th>
-                        <th class="text-right">HOUR PRICE</th>
-                        <th class="text-right">HOURS</th>
                         <th class="text-right">TOTAL</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="no">04</td>
-                        <td class="text-left"><h3>
-                                <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-                                    Youtube channel
-                                </a>
-                            </h3>
-                            <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-                                Useful videos
-                            </a>
-                            to improve your Javascript skills. Subscribe and stay tuned :)
-                        </td>
-                        <td class="unit">$0.00</td>
-                        <td class="qty">100</td>
-                        <td class="total">$0.00</td>
+                        <td>1</td>
+                        <td class="text-left"><strong>Fare :</strong></td>
+                        <td class="total">${{number_format($order->fare,2)}}</td>
                     </tr>
+
+
                     <tr>
-                        <td class="no">01</td>
-                        <td class="text-left"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
-                        <td class="unit">$40.00</td>
-                        <td class="qty">30</td>
-                        <td class="total">$1,200.00</td>
+                        <td>1</td>
+                        <td class="text-left"><strong>International Full Coverage Insurance :</strong></td>
+                        <td class="total">${{$order->international_full_coverage_insurance}}</td>
                     </tr>
+
+
                     <tr>
-                        <td class="no">02</td>
-                        <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
-                        <td class="unit">$40.00</td>
-                        <td class="qty">80</td>
-                        <td class="total">$3,200.00</td>
+                        <td>2</td>
+                        <td class="text-left"><strong>Supplemental Liability Insurance :</strong></td>
+                        <td class="total">${{$order->liability_insurance}}</td>
                     </tr>
+
+
                     <tr>
-                        <td class="no">03</td>
-                        <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
-                        <td class="unit">$40.00</td>
-                        <td class="qty">20</td>
-                        <td class="total">$800.00</td>
+                        <td>3</td>
+                        <td class="text-left"><strong>Property Damage Waiver  :</strong></td>
+                        <td class="total">${{$order->property_damage_waiver}}</td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>4</td>
+                        <td class="text-left"><strong>Tire Protection  :</strong></td>
+                        <td class="total">${{$order->tire_protection}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td class="text-left"><strong>Mechanical Break Down Insurance  :</strong></td>
+                        <td class="total">${{$order->mechanical_breakdown_coverage}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td class="text-left"><strong>Prepaid Gas Credit  :</strong></td>
+                        <td class="total">${{$order->gas_credit}}</td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="2"></td>
                         <td colspan="2">SUBTOTAL</td>
-                        <td>$5,200.00</td>
+                        <td>${{number_format($order->total,2)}}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"></td>
-                        <td colspan="2">TAX 25%</td>
-                        <td>$1,300.00</td>
+                        <td colspan="2">DISCOUNT</td>
+                        <td> - ${{number_format($order->discount,2)}}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"></td>
+                        <td colspan="2">TAX</td>
+                        <td>${{number_format($order->tax,2)}}</td>
+                    </tr>
+                    <tr>
                         <td colspan="2">GRAND TOTAL</td>
-                        <td>$6,500.00</td>
+                        <td>${{number_format($order->grand_total,2)}}</td>
                     </tr>
                     </tfoot>
                 </table>

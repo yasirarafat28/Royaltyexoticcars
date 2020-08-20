@@ -59,7 +59,6 @@
                                 <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
                             @endif
                         </select>
-                        <input type="hidden" id="rental_cost">
                         <div class="input-group-append">
                             <span class="input-group-text">$  &nbsp;<span id="rental-cost-append"> 0.00</span></span>
                         </div>
@@ -73,16 +72,18 @@
             <form action="{{route('checkoutstore',$vehicle->id)}}" id="checkout-form" method="POST">
                 {{csrf_field()}}
 
+                <input type="hidden" name="rental_cost" id="rental_cost">
+
                 <input type="hidden" name="reservation_for" id="reservation_for" value="four_hour">
                 <input type="hidden" name="discount" id="discount_total" value="0">
                 <input type="hidden" name="sub_total" id="sub_total" value="0">
                 <input type="hidden" name="grand_total" id="grand_total" value="0">
                 <input type="hidden" name="tax_total" id="tax_total" value="0">
                 <input type="hidden" name="vehicle_id" id="vehicle_id" value="{{$vehicle->id}}">
-                <input type="hidden" name="reservation_time" id="vehicle_id" value="{{date('Y-m-d H:i:s',strtotime($date.' '.$schedule->start_time))}}">
-                <input type="hidden" name="reservation_for" id="vehicle_id" value="{{$vehicle->id}}">
+                <input type="hidden" name="reservation_time" id="reservation_time" value="{{date('Y-m-d H:i:s',strtotime($date.' '.$schedule->start_time))}}">
+                <input type="hidden" name="vehicle_id" id="vehicle_id" value="{{$vehicle->id}}">
                 <input type="hidden" name="schedule_id" id="vehicle_id" value="{{$schedule->id}}">
-                <input type="hidden" name="payment_method" value="paypal">
+                <input type="hidden" name="payment_method" value="stripe">
 
                 <div class="form-group">
 

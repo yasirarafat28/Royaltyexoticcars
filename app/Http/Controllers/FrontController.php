@@ -289,6 +289,7 @@ class FrontController extends Controller {
         $order->name                    = $request->name;
         $order->email                   = $request->email;
         $order->address                 = $request->address??'';
+        $order->fare                   = $request->rental_cost;
         $order->total                   = $request->sub_total;
         $order->tax                     = $request->tax_total;
         $order->discount                = $request->discount;
@@ -409,7 +410,7 @@ class FrontController extends Controller {
         $order = VehicleCheckout::where('txn_id',$txn_id)->first();
         return view('frontView.vehicle-checkout-success',compact('order'));
     }
-    
+
 
     public function vehicleCheckoutInvoice($txn_id){
 
