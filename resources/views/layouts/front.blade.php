@@ -45,7 +45,7 @@
 
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -60,7 +60,6 @@
         .nav__brand .logo{
             height:60px !important;
         }
-
 
         @media screen and (max-width: 767px) {
             .nav__brand .logo {
@@ -121,9 +120,9 @@
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info-container">
 				<div class="info" style="">
-					<div class="left-side">
+					<div class="left-side col-sm-6">
 					<a target="_blank"
-						href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
+						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
 
 
@@ -136,11 +135,11 @@
 					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
 					</div>
-						<div class="right-side">
+                    <div class="right-side">
 						<div class="info__search">
 						<form action="/vehicles" id="Header-Search-Form"
 							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
-								name="q" placeholder="Search cars, suvs, slingshots, etc"
+								name="q" placeholder="Search fleets"
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 								required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
 					</div>
@@ -154,7 +153,7 @@
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:29px;">Rental Exotic Beasts</div>
+							<div style="font-size:29px;" class="brand__text text-uppercase">Rental Exotic Beasts</div>
 						</a></div>
 					<div class="nav__links">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
@@ -469,7 +468,7 @@
 												id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
 											<a href="/privacy" id="Nav-Privacy-Link"
 												class="nav__about--link w-dropdown-link">Privacy</a>
-											
+
 											<a href="mailto:{{$setting->email}}"
 												id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 										</div>
@@ -480,7 +479,7 @@
 						<a id="Rally-Link-Nav" href="#" class="nav__link nav__link--hidden w-inline-block">
 							<div>Rally</div>
 						</a>
-						
+
 						<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 							<div>Shop</div>
 						</a>
@@ -488,108 +487,12 @@
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
 					</div>
-					<div id="Nav-Drawer-Button" class="nav__button w-nav-button"><img
+					<!--<div id="Nav-Drawer-Button" class="nav__button w-nav-button"><img
 							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f41d75e7131000194c9d3_menu.svg"
-							alt="" class="navbar__icon" /></div>
+							alt="" class="navbar__icon" /></div>-->
 				</div>
 			</div>
-			<nav role="navigation" class="drawer w-nav-menu">
-				<div class="drawer__container">
 
-					<div class="drawer__section"><a
-							href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
-							id="Drawer-Location-Link" target="_blank" class="card w-inline-block">
-							<div class="drawer__location">
-								<div class="drawer__location--info"><img
-										src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a690c68ae5eb70001f01b94_rec_logo_icon_black.svg"
-										alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
-									<div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
-									<div class="drawer__location--desc">{{$setting->address}}</div>
-								</div>
-								<div class="location__map"></div>
-							</div>
-						</a></div>
-
-					<div class="drawer__section">
-						<div class="card"><a id="Drawer-Shop-Button" href="/shop"
-								target="_blank" class="navdrawer__shop--button w-inline-block"><img
-									src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
-									alt="" class="navdrawer__shop--icon" />
-								<div>Visit our Merch Shop!</div>
-							</a></div>
-					</div>
-					<div class="drawer__section">
-						<div class="card card__table">
-							<div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-
-								<div class="tabs__content w-tab-content">
-									<div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
-										<div class="navdrawer__links--wrapper"><a href="tel:18669841187"
-												id="Drawer-Call-US-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7253fa2651bb0001cd5c5c_icon-sms-white.svg"
-														alt="US Main Phone Number" class="navdrawer__link--image" />
-												</div>
-												<div>Call Toll Free: </div>
-												<div>{{$setting->phone}}</div>
-											</a><a
-												href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
-												id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
-												<div class="navdrawer__link--icon"><img
-														src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
-														alt="Reservations Email" class="navdrawer__link--image" /></div>
-												<div>{{$setting->email}}</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="drawer__section">
-						<div class="card card__table">
-							<div class="navdrawer__links--wrapper"><a
-									href="{{$setting->insta_link}}" target="_blank"
-									id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
-											alt="Instagram" class="navdrawer__link--image" /></div>
-									<div>Follow us on Instagram</div>
-								</a><a href="{{$setting->fb_link}}"
-									target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
-											alt="Facebook" class="navdrawer__link--image" /></div>
-									<div>Like us on Facebook</div>
-								</a><a href="{{$setting->tweeet_link}}" target="_blank"
-									id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
-											alt="Twitter" class="navdrawer__link--image" /></div>
-									<div>Follow us on Twitter</div>
-								</a>
-
-								<a href="{{$setting->pinter_link}}" target="_blank"
-									id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
-											alt="Pinterest" class="navdrawer__link--image" /></div>
-									<div>Follow us on Pinterest</div>
-								</a><a href="{{$setting->utube_link}}" target="_blank"
-									id="Drawer-Youtube-Link"
-									class="navdrawer__link navdrawer__link--no-border w-inline-block">
-									<div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-											src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53631_youtube.svg"
-											alt="Youtube" class="navdrawer__link--image" /></div>
-									<div>Subscribe to our YouTube</div>
-								</a>
-							</div>
-						</div>
-					</div><a
-						href="mailto:{{$setting->email}}"
-						id="Drawer-Feedback-Button" class="navdrawer__button w-button">How can we improve?</a>
-				</div>
-			</nav>
 		</div>
 	</header>
 	@yield('content')
@@ -670,6 +573,190 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous"></script>
 
+
+
+
+    <div class="side-tray">
+        <div id="feedback-form" style='display:none;' class=" panel panel-danger text-center">
+            <nav role="navigation" class="drawer w-nav-menu">
+                <div class="drawer__container">
+
+                    <div class="drawer__section">
+                        <div class="drawer__location">
+                            <div class="drawer__location--info"><img
+                                    src="/logo.png" style="width: unset !important;"
+                                    alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
+                                <div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
+                                <div class="drawer__location--desc">{{$setting->address}}</div>
+                            </div>
+                            <div class="location__map"></div>
+                        </div>
+                    </div>
+
+                    <div class="drawer__section">
+                        <div class="card"><a id="Drawer-Shop-Button" href="/shop"
+                                             target="_blank" class="navdrawer__shop--button w-inline-block"><img
+                                    src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
+                                    alt="" class="navdrawer__shop--icon" />
+                                <div>Visit our Merch Shop!</div>
+                            </a></div>
+                    </div>
+                    <div class="drawer__section">
+                        <div class="card card__table">
+                            <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+
+                                <div class="tabs__content w-tab-content">
+                                    <div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
+                                        <div class="navdrawer__links--wrapper"><a href="tel:18669841187"
+                                                                                  id="Drawer-Call-US-Link" class="navdrawer__link w-inline-block">
+                                                <div class="navdrawer__link--icon"><img
+                                                        src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7253fa2651bb0001cd5c5c_icon-sms-white.svg"
+                                                        alt="US Main Phone Number" class="navdrawer__link--image" />
+                                                </div>
+                                                <div>Call Toll Free: </div>
+                                                <div>{{$setting->phone}}</div>
+                                            </a><a
+                                                href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
+                                                id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
+                                                <div class="navdrawer__link--icon"><img
+                                                        src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
+                                                        alt="Reservations Email" class="navdrawer__link--image" /></div>
+                                                <div>{{$setting->email}}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer__section">
+                        <div class="card card__table">
+                            <div class="navdrawer__links--wrapper"><a
+                                    href="{{$setting->insta_link}}" target="_blank"
+                                    id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
+                                            alt="Instagram" class="navdrawer__link--image" /></div>
+                                    <div>Follow us on Instagram</div>
+                                </a><a href="{{$setting->fb_link}}"
+                                       target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
+                                            alt="Facebook" class="navdrawer__link--image" /></div>
+                                    <div>Like us on Facebook</div>
+                                </a><a href="{{$setting->tweeet_link}}" target="_blank"
+                                       id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
+                                            alt="Twitter" class="navdrawer__link--image" /></div>
+                                    <div>Follow us on Twitter</div>
+                                </a>
+
+                                <a href="{{$setting->pinter_link}}" target="_blank"
+                                   id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
+                                            alt="Pinterest" class="navdrawer__link--image" /></div>
+                                    <div>Follow us on Pinterest</div>
+                                </a><a href="{{$setting->utube_link}}" target="_blank"
+                                       id="Drawer-Youtube-Link"
+                                       class="navdrawer__link navdrawer__link--no-border w-inline-block">
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53631_youtube.svg"
+                                            alt="Youtube" class="navdrawer__link--image" /></div>
+                                    <div>Subscribe to our YouTube</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="feedback-tab" style="background-color:orangered;"><i class="fa fa-phone"></i> Call Center</div>
+    </div>
+
+    <style>
+
+        .side-tray {
+            position: fixed;
+            right: 0;
+            bottom: 40px;
+            height: 100vh;
+            margin-left: -3px;
+            margin-bottom: -3px;
+            z-index: 998;
+
+        }
+
+        #feedback-form {
+            float: right;
+            width: 345px;
+            height: 100%;
+            z-index: 1000;
+            padding: 1em;
+            padding-left: 5px;
+            padding-right: 10px;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,.2);
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            box-shadow: 5px 10px 15px rgba(0,1,1,.2);
+        }
+
+        #feedback-tab {
+            float: left;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            width: 150px;
+            height: 42px;
+            background-color: rgba(0,0,0,0.5);
+            margin-top: 50vh;
+            margin-right: -50px;
+            padding-top: 5px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        #feedback-tab:hover { background-color: #341a79; }
+
+        #feedback-form textarea { resize: none; }
+
+
+
+        @media screen and (max-width: 479px) {
+
+            .drawer {
+                width: 70% !important;
+                min-width: 70% !important;
+            }
+
+
+            #feedback-form {
+                width: 253px;
+            }
+        }
+
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#feedback-tab").click(function() {
+                $("#feedback-form").toggle("slide");
+            });
+        });
+    </script>
 
 
     @yield('script')
