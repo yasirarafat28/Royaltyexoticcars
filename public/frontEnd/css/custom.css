@@ -12,9 +12,7 @@
     align-items: center;
     justify-content: flex-start;
 }
-,nav {
-    padding: 0px 150px 50px 150px;
-}
+
 .header .info .left-side a {
     font-size: 15px;
     font-weight: 300;
