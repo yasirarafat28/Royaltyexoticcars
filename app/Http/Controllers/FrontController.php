@@ -371,6 +371,9 @@ class FrontController extends Controller {
         }
 
 
+        Mail::to($order->email)->send(new NewOrderPlaced($order));
+
+
         $order->save();
 
         return Redirect::route('vehicleCheckoutSuccess',$order->txn_id)->withOrdersuccess('confirmed');
