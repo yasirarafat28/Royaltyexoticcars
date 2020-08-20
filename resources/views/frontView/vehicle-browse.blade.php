@@ -6,7 +6,13 @@
 				<div class="crumbsbar__wrapper">
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
 						<div class="crumbsbar__toggle w-dropdown-toggle">
-							<div>All Category</div>
+							<div>
+                                @if($current_category)
+                                    {{$current_category->name}}
+                                @else
+                                    All Category
+                                @endif
+                            </div>
                             <img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
 								alt="" class="crumbsbar__icon" />
@@ -15,7 +21,7 @@
 							<div class="crumbsbar__list">
 								<div class="w-dyn-list">
 									<div role="list" class="w-dyn-items">
-									
+
 										@foreach($categories as $category)
 
 											<div role="listitem" class="w-dyn-item">
@@ -65,7 +71,14 @@
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
 						<div class="crumbsbar__toggle w-dropdown-toggle">
 							<div class="w-condition-invisible">Cars</div>
-							<div>All Brands</div><img
+							<div>
+
+                                @if($current_brand)
+                                    {{$current_brand->name}}
+                                @else
+                                    All Brands
+                                @endif
+                            </div><img
 								src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7e2fc2432d430001146dc7_icon-arrow-down-black.svg"
 								alt="" class="crumbsbar__icon" />
 						</div>
@@ -92,24 +105,17 @@
 			<div class="browse">
 				<div class="browse__nav">
 					<div class="browse__heading">
-						<div class="browse__heading--embed w-embed">
-							<h1 class="browse__h1">Car Rentals</h1>
-						</div>
-						<div class="browse__heading--embed w-condition-invisible w-embed">
-							<h1 class="browse__h1"> Rentals</h1>
-						</div>
-						<div class="browse__heading--embed w-condition-invisible w-embed">
-							<h1 class="browse__h1"> Rentals</h1>
-						</div>
-						<div class="browse__heading--embed w-condition-invisible w-embed">
-							<h1 class="browse__h1"> Rentals</h1>
-						</div>
-						<p class="browse__desc">Ranging from American muscle to European masterpieces, from race cars to
-							luxury cars; all of our car rentals are exotic, rare, and exclusive and demand the attention
-							of everyone nearby.</p>
-						<p class="browse__desc w-condition-invisible w-dyn-bind-empty"></p>
-						<p class="browse__desc w-condition-invisible w-dyn-bind-empty"></p>
-						<p class="browse__desc w-condition-invisible w-dyn-bind-empty"></p>
+                        @if($current_category)
+                            <div class="browse__heading--embed w-embed">
+                                <h1 class="browse__h1">{{$current_category->name}}</h1>
+                            </div>
+                            <p class="browse__desc">{{$current_category->description}}</p>
+                        @else
+
+                            <div class="browse__heading--embed w-embed">
+                                <h1 class="browse__h1">All Fleet</h1>
+                            </div>
+                        @endif
 					</div>
 					<div class="quicklinks quicklinks__browse w-dyn-list">
 						<div role="list" class="w-dyn-items">
