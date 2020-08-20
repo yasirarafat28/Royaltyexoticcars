@@ -122,7 +122,6 @@
 				<div class="info" style="">
 					<div class="left-side col-sm-6">
 					<a target="_blank"
-						href="tel:+18669841187" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
 
