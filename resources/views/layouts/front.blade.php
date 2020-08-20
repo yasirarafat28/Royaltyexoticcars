@@ -149,12 +149,12 @@
 
 				</div>
 			</div>
-			<div class="nav-container" style="">
+			<div class="nav-container" style="padding: 0px 150px 0px 150px;">
 				<div class="nav">
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:29px;">Rental Exotic Beasts</div>
+							<div style="font-size:20px;"><strong>Rental Exotic Beasts</strong></div>
 						</a></div>
 					<div class="nav__links">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
