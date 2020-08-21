@@ -65,26 +65,11 @@
       .top-logo {
           height: 70px;
           width: 116px;
-          background-color: unset;
-          -webkit-mask-repeat: no-repeat;    background-image: url('/logo.jpg');
-          -webkit-mask-image: url('/logo.jpg');
+          background-color: #f07f13;
+          -webkit-mask-repeat: no-repeat;    background-image: url('/logo.png');
+          -webkit-mask-image: url('/logo.png');
           background-repeat: no-repeat;
           background-size: cover;
-      }
-      .wish .e-nav-cricle {
-          top: -4px;
-          right: -16px;
-      }.compare .e-nav-cricle {
-           top: -11px;
-           right: 10px;
-       }
-
-      .search input {
-          height: 100%;
-      }
-      .pro-img img {
-          width: 100%;
-          height: 230px;
       }
 
       .brand__text {
@@ -96,13 +81,6 @@
           text-transform: uppercase;
           margin-top: 20px;
        }
-
-      .main-menu {
-          border-top: none;
-          -webkit-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
-          -moz-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
-          box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
-      }
 
 
 
@@ -236,11 +214,6 @@
       }
 
 
-       .brand-area{
-           display: flex;
-       }
-
-
    </style>
    <body class="rtl">
 
@@ -284,14 +257,13 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row">
-               <div class="col-md-5 col-5">
-                  <a href="{{url('/shop')}}" class="brand-area">
-                      <div class="top-logo" style="background-image: url('/logo.png');-webkit-mask-image: url('/logo.png');"></div>
-
-                      <div class="brand__text d-none d-sm-block">Rental Exotic Beasts</div>
-                     </a>
+               <div class="col-lg-3 col-md-3 col-8">
+                  <a href="{{url('/shop')}}">
+                      <div class="brand__text">Rental Exotic Beasts</div>
+                     <!--<div class="top-logo" style="background-image: url('/logo.png');-webkit-mask-image: url('/logo.png');"></div>-->
+                  </a>
                </div>
-               <div class="col-md-5 ser-show">
+               <div class="col-lg-6 col-md-6 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">
@@ -306,7 +278,7 @@
                      </div>
                   </form>
                </div>
-               <div class="cartbar_pop_mbox col-md-2 col-7">
+               <div class="cartbar_pop_mbox">
                   <div class="cartbar_pop_mcon">
                      @if(Auth::check())
                      <a href="{{url('myaccount')}}" class="user" >
@@ -443,7 +415,7 @@
                            <ul class="sub-menu">
                               <h4><a href="{{url('productslist/').'/0/'.$subcat->id.'/0/0'}}">{{$subcat->name}}</a></h4>
                               @foreach($subcat->brand as $brand)
-                              <li><a href="{{url('productslist/').'/'.$category->id.'/'.$subcat->id.'/'.$brand->id.'/0'}}">{{$brand->brand_name}}</a></li>
+                              <li><a href="{{url('productslist/').'/'.$category->id.'/'.$subcat->id.'/'.$brand->id.'/0'}}">{{$brand->brand_name}}</i></a></li>
                               @endforeach
                            </ul>
                            @endforeach
@@ -508,191 +480,78 @@
          </div>
       </div>
       @yield('content')
+         <footer>
+             <!-- Footer top -->
+             <div class="container footer_top">
+                 <div class="row"><div class="col-md-3">
+                         <div class="footer_item">
+                             <h4>Explore link</h4>
+                             <hr>
+                             <ul class="list-unstyled footer_menu">
+                                 <li><a href="/"><span class="fa fa-play"></span> Home</a>
+                                 <li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
+                                 </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
+                                 </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
+                                 </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
+                                 </li></ul>
+                         </div>
+                     </div>
+                     <div class="col-md-3">
+                         <div class="footer_item">
+                             <h4>Rentals</h4>
+                             <hr>
+                             <ul class="list-unstyled footer_menu">
+
+                                 @foreach($categories??array(  ) as $category)
+
+                                     <li>
+                                         <a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
+                                     </li>
+
+                                 @endforeach
+
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="col-md-3">
+                         <div class="footer_item">
+                             <h4>Social</h4>
+                             <hr>
+                             <ul class="list-unstyled footer_menu">
+                                 <li><a href="{{$setting->insta_link?? ''}}"><span class="fa fa-play"></span>Instagram</a>
+                                 </li><li><a href="{{$setting->fb_link?? ''}}"><span class="fa fa-play"></span>Facebook</a>
+                                 </li><li><a href="{{$setting->tweeet_link?? ''}}"><span class="fa fa-play"></span>Twitter</a>
+                                 </li><li><a href="{{$setting->pinter_link?? ''}}"><span class="fa fa-play"></span>Pinterest</a>
+                                 </li><li><a href="{{$setting->utube_link?? ''}}"><span class="fa fa-play"></span>Youtube</a>
+                                 </li></ul>
+                         </div>
+                     </div>
+
+                     <div class="col-md-3">
+                         <div class="footer_item">
+                             <h4>Local</h4>
+                             <hr>
+                             <ul class="list-unstyled footer_contact">
+                                 <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address?? ''}}</a></li>
+                                 <li><a href="mailto:{{$setting->email?? ''}}"><span class="fa fa-envelope"></span>{{$setting->email?? ''}}</a></li>
+                                 <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone?? ''}}</p></a></li>
+
+                                 
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div><!-- Footer top end -->
+
+             <!-- Footer bottom -->
+             <div class="footer_bottom text-center">
+                 <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by {{$setting->company_name?? ''}} Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name?? ''}} </a>{{date('Y')}}. All Rights Reserved
+                 </p>
+             </div><!-- Footer bottom end -->
+         </footer>
       @yield('footer')
-      <!--<div class="footer-background">
-         <div class="footer-logo">
-            <div class="f-logo" style="background: <?= Session::get('site_color') ?> !important;-webkit-mask-image:url('<?=Session::get("logo")?>')"></div>
-         </div>
-         <div class="{{$myclass}}">
-            <div class="row">
-               <div class="col-md-12 col-lg-4">
-                  <div class="contact">
-                     <div class="f-head">
-                        <h1>{{__('messages.contact_us')}}</h1>
-                     </div>
-                     <div class="contact-text">
-                        <div class="contact-icon">
-                           <div class="footer-icon" style="background: <?= Session::get('site_color') ?> !important"></div>
-                        </div>
-                        <div class="c-text">
-                           <h1>{{__('messages.address')}} : </h1>
-                           <p>{{Session::get('site_address')}}</p>
-                        </div>
-                     </div>
-                     <div class="contact-text">
-                        <div class="contact-icon">
-                           <div class="footer-icon-1" style="background: <?= Session::get('site_color') ?> !important"></div>
-                        </div>
-                        <div class="c-text">
-                           <h1>{{__('messages.phone')}} : </h1>
-                           <p>{{Session::get('site_phone')}}</p>
-                        </div>
-                     </div>
-                     <div class="contact-text">
-                        <div class="contact-icon">
-                           <div class="footer-icon-2" style="background: <?= Session::get('site_color') ?> !important"></div>
-                        </div>
-                        <div class="c-text">
-                           <h1>{{__('messages.email')}} : </h1>
-                           <p>{{Session::get('site_email')}}</p>
-                        </div>
-                     </div>
-                     <div class="contact-text">
-                        <div class="contact-icon">
-                           <div class="footer-icon-3" style="background: <?= Session::get('site_color') ?> !important"></div>
-                        </div>
-                        <div class="c-text">
-                           <h1>{{__('messages.working_day')}} :</h1>
-                           <p>{{Session::get('site_workinghour')}}</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 col-lg-8">
-                  <div class="row">
-                     <div class="f-box">
-                        <div class="f-head">
-                           <h1>{{__('messages.my_account')}}</h1>
-                        </div>
-                        <div class="f-account">
-                           <li><a href="{{url('contactus')}}">{{__('messages.contact_us')}}</a></li>
-                           <?php if(Auth::id()!=""){?>
-                           <li><a href="{{url('myaccount')}}">{{__('messages.my_account')}}</a></li>
-                           <li><a href="{{url('myaccount')}}">{{__('messages.order_history')}}</a></li>
-                           <?php }else{?>
-                           <li><a href="#" data-toggle="modal" data-target="#myModal">{{__('messages.my_account')}}</a></li>
-                           <li><a href="#" data-toggle="modal" data-target="#myModal">{{__('messages.order_history')}}</a></li>
-                           <?php }?>
-                        </div>
-                     </div>
-                     <div class="f-box-1">
-                        <div class="f-head">
-                           <h1>{{__('messages.main_feature')}}</h1>
-                        </div>
-                        <div class="f-account">
-                           {{Session::get('site_mainfeature')}}
-                        </div>
-                     </div>
-                     <div class="f-box-2">
-                        <div class="f-head">
-                           <h1>{{__('messages.newsletternote')}}</h1>
-                        </div>
-                        <div class="f-be">
-                           <p>{{Session::get('site_newsletter')}}</p>
-                           <div class="news">
-                              @if(Session::has('message1'))
-                              <div class="col-sm-12">
-                                 <div class="alert  {{ Session::get('alert-class', 'alert-info') }} alert-dismissible fade show" role="alert">{{ Session::get('message1') }}
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                              </div>
-                              @endif
-                              <form action="{{url('newsletter')}}" method="post">
-                                 {{csrf_field()}}
-                                 <input type="text" name="newsletter" placeholder="{{__('messages.email')}}" required="">
-                                 <button class="go-btn" type="submit" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.go')}}</button>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="pay">
-                     <a href="#"><img src="{{asset('Ecommerce/images/pay-1.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
-                     <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>
-                     <span>{{date('Y')}} {{__('messages.footer_note')}}</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>-->
 
- <footer>
-     <!-- Footer top -->
-     <div class="container footer_top">
-         <div class="row"><div class="col-md-3">
-                 <div class="footer_item">
-                     <h4>Explore link</h4>
-                     <hr>
-                     <ul class="list-unstyled footer_menu">
-                         <li><a href="/"><span class="fa fa-play"></span> Home</a>
-                         <li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
-                         </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
-                         </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
-                         </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-                         </li></ul>
-                 </div>
-             </div>
-             <div class="col-md-3">
-                 <div class="footer_item">
-                     <h4>Rentals</h4>
-                     <hr>
-                     <ul class="list-unstyled footer_menu">
 
-                         @foreach($categories??array(  ) as $category)
-
-                             <li>
-                                 <a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
-                             </li>
-
-                         @endforeach
-
-                     </ul>
-                 </div>
-             </div>
-             <div class="col-md-3">
-                 <div class="footer_item">
-                     <h4>Social</h4>
-                     <hr>
-                     <ul class="list-unstyled footer_menu">
-                         <li><a href="{{$setting->insta_link?? ''}}"><span class="fa fa-play"></span>Instagram</a>
-                         </li><li><a href="{{$setting->fb_link?? ''}}"><span class="fa fa-play"></span>Facebook</a>
-                         </li><li><a href="{{$setting->tweeet_link?? ''}}"><span class="fa fa-play"></span>Twitter</a>
-                         </li><li><a href="{{$setting->pinter_link?? ''}}"><span class="fa fa-play"></span>Pinterest</a>
-                         </li><li><a href="{{$setting->utube_link?? ''}}"><span class="fa fa-play"></span>Youtube</a>
-                         </li></ul>
-                 </div>
-             </div>
-
-             <div class="col-md-3">
-                 <div class="footer_item">
-                     <h4>Local</h4>
-                     <hr>
-                     <ul class="list-unstyled footer_contact">
-                         <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address?? ''}}</a></li>
-                         <li><a href="mailto:{{$setting->email?? ''}}"><span class="fa fa-envelope"></span>{{$setting->email?? ''}}</a></li>
-                         <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone?? ''}}</p></a></li>
-                         <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
-
-                         <!--<li><a><span class="fa fa-whatsapp"></span><p>01988300003</p></a></li>
-                         <li><a><img class="fa" src="https://edeal.xyz/img/imo.png"><p>01988300003</p></a></li>
-                         <li><a><img class="fa"  src="https://edeal.xyz/img/viber.png"><p>01988300003</p></a></li>-->
-                         <li><a><span class="fa fa-skype"></span><p>Edeal.xyz</p></a></li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </div><!-- Footer top end -->
-
-     <!-- Footer bottom -->
-     <div class="footer_bottom text-center">
-         <p class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Designed and Developed by {{$setting->company_name?? ''}} Team . Copyright © <a href="{{url('/')}}">{{$setting->company_name?? ''}} </a>{{date('Y')}}. All Rights Reserved
-         </p>
-     </div><!-- Footer bottom end -->
- </footer>
 
       <input type="hidden" id="path" value="{{url('/')}}">
       <input type="hidden" id="cartsuccesslang" value="{{__('messages_error_success.product_add_success')}}"/>
