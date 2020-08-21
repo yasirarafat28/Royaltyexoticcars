@@ -428,7 +428,7 @@ class FrontController extends Controller {
     public function vehicleCheckoutInvoice($txn_id){
 
 
-        $setting = Setting::all();
+        $setting = Setting();
 
         $order = VehicleCheckout::where('txn_id',$txn_id)->first();
 
