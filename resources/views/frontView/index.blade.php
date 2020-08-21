@@ -178,10 +178,12 @@
                 @foreach($groups??array() as $group)
                     <a id="Browse-Supercar-Rentals-Link" href="/vehicles?category={{$group->slug}}"
                            class="rent__nav--link w-inline-block">
-                        <!--<img src="/frontEnd/5d3f3e9d9f2cd93b57223d57_001-cars.jpg" alt="" />-->
-                        <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
+                        <div class="vehicle-group">
+
+                            <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
                             <div class="rent__nav--label">{{$group->name}}</div>
-                        </a>
+                        </div>
+                    </a>
 
 
                 @endforeach
@@ -201,7 +203,7 @@
                                     @if($key>=12)
                                         @break
                                     @endif
-                                    <div class=" col-md-3 mb-3 mt-3 col-sm-6">
+                                    <div class=" col-lg-3 col-md-4  col-sm-6 mb-3 mt-3">
                                         @include('frontView.partials.vehicle-list')
                                     </div>
                                 @endforeach

@@ -4,16 +4,10 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0px 150px 0px 150px;
+    padding: 0px 80px 0px 80px;
 }
 
 
-
-@media screen and (max-width: 768px) {
-    .header .info {
-        padding: unset !important;
-    }
-}
 
 .header .info .left-side {
     display: flex;
@@ -48,7 +42,11 @@
     outline: none;
 }
 .rent__nav--link {
-    padding: 0 15px;
+    padding: 0px 15px;
+}
+
+.vehicle-group{
+    box-shadow: 0 2px 4px 0 rgba(35,31,32,0.2), 0 0 1px 0 rgba(35,31,32,0.1);
 }
 .brand__text {
     font-size: 18px;
@@ -360,9 +358,13 @@ footer::after {
     width: auto;
 }
 
+.nav-container .nav{
+    padding-right: 0px;
+}
 
 @media screen and (max-width: 767px) {
     .header .info {
-        padding: unset !important;
+        padding: 0px !important;
     }
 }
+

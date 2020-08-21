@@ -70,7 +70,7 @@
 			<li>Diesel</li>
 			<li>Auto</li>
 		</ul>-->
-        <div style="display: flex;">
+        <div style="display: flex;flex-flow: wrap;">
 
 
             <a href="/vehicle-booking/{{base64_encode($record->id)}}" class="rental__cta--text btn-success text-uppercase mr-auto" > <i class="fa fa-plus mr-2"> </i> Book Now</a>
