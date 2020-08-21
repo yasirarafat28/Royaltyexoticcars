@@ -231,8 +231,8 @@ class OrderController extends Controller {
       $pdf=PDF::loadHTML($html);
       $pdf->setPaper('a4', 'landscape');
       $pdf->setWarnings(false);
-      $pdf->download('invoice.pdf');
-      //$pdf->save(public_path('pdf/'.$file_name));
+      //$pdf->download('invoice.pdf');
+      $pdf->save(public_path('pdf/'.$file_name));
       return $file_name;
 
   }
