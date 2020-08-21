@@ -144,6 +144,11 @@
             width: 120px;
             margin-top: -2px;
         }
+
+        .info__search {
+            width: unset;
+            font-size: .9em;
+        }
     </style>
 
 @yield('style')
