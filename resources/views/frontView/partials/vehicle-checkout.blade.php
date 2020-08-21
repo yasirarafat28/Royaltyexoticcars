@@ -28,8 +28,11 @@
     <main class="card-body booking">
         <div class="container p-3">
             <div class="row">
+                <div class="col-md-12 checkout-header mb-5">
+                    <h2 class="home__h2 text-info">You're Booking :</h2>
+                    <hr>
+                </div>
                 <div class="col-md-6">
-                    <h2 class="title text-info mb-5">You're Booking :</h2>
                     <div class="d-flex">
                         <div class="mr-5">
                             <div class="thumbnail">
@@ -67,7 +70,7 @@
             </div>
         </div>
         <hr>
-        <div class="container online-booking-container" id="online-booking-container">
+        <div class="container online-booking-container" id="online-booking-container" style="display: none;">
             <h2 class="text-center text-success"><strong>Online Booking Agreement</strong></h2>
             <form action="{{route('checkoutstore',$vehicle->id)}}" id="checkout-form" method="POST">
                 {{csrf_field()}}
@@ -418,7 +421,7 @@
         </div>
 
 
-        <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: none;">
+        <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: block;">
             <h2>Sorry, there is no online availability for this booking.</h2>
             <div>Please call us at {{setting()->phone}}.</div>
         </div>

@@ -135,7 +135,7 @@
             text-align: left;
         }
 
-        .rentals hr:before, .rentals__section hr:before {
+        .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before {
             display: flex;
             height: 3px;
             background-color: darkorange;
@@ -718,6 +718,10 @@
     </div>
 
     <style>
+
+        .fc-view-container *, .fc-view-container ::after, .fc-view-container ::before {
+            font-weight: 600;
+        }
 
         .side-tray {
             position: fixed;
