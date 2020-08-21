@@ -57,13 +57,23 @@
 
 
     <style>
+        body{
+            font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif !important;
+        }
         .nav__brand .logo{
             height:60px !important;
+        }
+        .nav-container{
+            padding: 0px 80px 0px 80px;
         }
 
         @media screen and (max-width: 767px) {
             .nav__brand .logo {
                 height: 38px !important;
+            }
+
+            .nav-container{
+                padding: 0px 10px 0px 10px;
             }
         }
 
@@ -109,6 +119,11 @@
         label.error{
             color: red !important;
         }
+        .nav__link {
+            padding: 0 1em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
     </style>
 
 @yield('style')
@@ -120,7 +135,7 @@
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info-container">
 				<div class="info" style="">
-					<div class="left-side col-sm-6">
+					<div class="left-side col-sm-6  d-none d-sm-flex">
 					<a target="_blank"
 						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
 
@@ -135,25 +150,29 @@
 					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
 					</div>
-                    <div class="right-side">
-						<div class="info__search">
+                    <div class="right-side col-sm-6">
+						<div class="info__search pull-right">
 						<form action="/vehicles" id="Header-Search-Form"
 							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
 								name="q" placeholder="Search fleets"
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-								required="" /><input type="submit" value=" " class="search__submit w-button" /></form>
+								required="" />
+
+                            <button type="submit"  value=" " class="search__submit w-button" style="color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            </button>
+                        </form>
 					</div>
 					</div>
 
 
 				</div>
 			</div>
-			<div class="nav-container" style="padding: 0px 150px 0px 150px;">
+			<div class="nav-container" style="">
 				<div class="nav">
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:29px;" class="brand__text text-uppercase">Rental Exotic Beasts</div>
+							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-md-block">Rental Exotic Beasts</div>
 						</a></div>
 					<div class="nav__links">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
@@ -714,8 +733,8 @@
             width: 150px;
             height: 42px;
             background-color: rgba(0,0,0,0.5);
-            margin-top: 50vh;
-            margin-right: -50px;
+            margin-top: 80vh;
+            margin-right: -54px;
             padding-top: 5px;
             -moz-border-radius: 3px;
             -webkit-border-radius: 3px;
@@ -732,15 +751,19 @@
         #feedback-form textarea { resize: none; }
 
 
+        .drawer {
+            width: 345px !important;
+            min-width: 345px !important;
+        }
+
 
         @media screen and (max-width: 479px) {
 
+
             .drawer {
-                width: 70% !important;
-                min-width: 70% !important;
+                width: 253px !important;
+                min-width: 253px !important;
             }
-
-
             #feedback-form {
                 width: 253px;
             }
