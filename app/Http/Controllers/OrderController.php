@@ -74,18 +74,18 @@ class OrderController extends Controller {
                  }
                  return $order->payment_method;
             })
-         
+
             ->editColumn('total', function ($order) {
                  $setting=Setting::find(1);
                  $getcurrency=explode("-",$setting->default_currency);
                  return $getcurrency[1].$order->total;
             })
-             ->editColumn('view', function ($order) {                 
+             ->editColumn('view', function ($order) {
                  return $order->id;
             })
-             
-            ->editColumn('action', function ($order) { 
-                 
+
+            ->editColumn('action', function ($order) {
+
                  $return = '<select name="status" class="form-control" onchange="savestatusorder('.$order->id.',this.value)">';
                  if($order->order_status=='6'){
                    $return=$return.'<option value="6" selected>'.__("messages.canceled").'</option>';
@@ -107,20 +107,20 @@ class OrderController extends Controller {
                   $return=$return.'<option value="4" selected>'.__("messages.out_of_delivery").'</option><option value="5">'.__("messages.completed").'</option>';
                 }
 
-                       
-                 return $return;              
-            })           
+
+                 return $return;
+            })
             ->make(true);
   }
 
-  public function vieworder($id){    
+  public function vieworder($id){
      $data=Order::find($id);
      $user=User::find($data->user_id);
      $shipping=Shipping::find($data->shipping_method);
-     $order_data=OrderData::with("productdata")->where("order_id",$id)->get(); 
+     $order_data=OrderData::with("productdata")->where("order_id",$id)->get();
      $generatepdf=$this->generateorderpdf($id);
       $setting=Setting::find(1);
-        $res_curr=explode("-",$setting->default_currency); 
+        $res_curr=explode("-",$setting->default_currency);
      return view("admin.order.vieworder")->with("order",$data)->with("orderdata",$order_data)->with("user",$user)->with("shipping",$shipping)->with('pdfname',$generatepdf)->with("currency",$res_curr[1]);
   }
 
@@ -128,7 +128,7 @@ class OrderController extends Controller {
      $setting=Setting::find(1);
      $order=Order::find($id);
       $res_curr=explode("-",$setting->default_currency);
-     $order_data=OrderData::with("productdata")->where("order_id",$id)->get(); 
+     $order_data=OrderData::with("productdata")->where("order_id",$id)->get();
       $html='<style type="text/css">*{font-family: Verdana, Arial, sans-serif;}table{
         font-size: x-small;}tfoot tr td{font-weight: bold;font-size: x-small;}.gray {
         background-color: lightgray}</style><table width="100%"><tr>
@@ -176,7 +176,7 @@ class OrderController extends Controller {
                 $label=explode(",",$od->label);
                 for($i=0;$i<count($opna);$i++){
                     $html=$html.'<pre></pre><span style="font-size: small;">'.$opna[$i].'=>'.$label[$i].'</span>';
-                }  
+                }
             }
           $html=$html.'</td><td style="text-align:center">'.$res_curr[1].number_format((float)$od->price, 2, '.', '');
           if($od->option_name!=""&&$od->option_name!="null"){
@@ -194,12 +194,12 @@ class OrderController extends Controller {
                                                   }else{
                                                       $html=$html."<pre></pre>".$res_curr[1].$t;
                                                   }
-                                                  
+
                                               }
                                           }
           $html=$html.'</td><td style="text-align:center">'.$od->quantity.'</td><td style="text-align:center">'.$res_curr[1].number_format((float)$od->total_amount, 2, '.', '').'</td></tr>';
       }
-    
+
      $html=$html.'
     </tbody>
 
@@ -231,7 +231,8 @@ class OrderController extends Controller {
       $pdf=PDF::loadHTML($html);
       $pdf->setPaper('a4', 'landscape');
       $pdf->setWarnings(false);
-      $pdf->save(public_path('pdf/'.$file_name));
+      $pdf->download('invoice.pdf');
+      //$pdf->save(public_path('pdf/'.$file_name));
       return $file_name;
 
   }
@@ -250,7 +251,7 @@ class OrderController extends Controller {
                  else{
                     return "";
                  }
-                
+
             })
             ->editColumn('status', function ($order) {
                  if($order->order_status=='6'){
@@ -281,11 +282,11 @@ class OrderController extends Controller {
 
                     return __("messages.out_of_delivery");
                  }
-                 
+
             })
             ->editColumn('total', function ($order) {
                  return $order->currency.$order->total;
-            })      
+            })
             ->make(true);
   }
 
@@ -293,15 +294,15 @@ class OrderController extends Controller {
        $user=User::find($request->get("user_id"));
        $user->pdffile=public_path().'/pdf/'.'/'.$request->get("filename");
         try {
-           
+
                $result=Mail::send('email.view_order', ['user' => $user], function($message) use ($user){
                    $message->to($user->email,$user->first_name)->subject('shop on');
                    $message->attach($user->pdffile);
                 });
-            
+
         } catch (\Exception $e) {
         }
-        Session::flash('message',__('messages_error_success.mail_send_success')); 
+        Session::flash('message',__('messages_error_success.mail_send_success'));
         Session::flash('alert-class', 'alert-success');
         return redirect()->back();
   }
@@ -321,20 +322,20 @@ class OrderController extends Controller {
                else{
                   return "";
                }
-                
-              
+
+
             })
             ->editColumn('ratting', function ($order) {
                   return $order->ratting.'/5';
             })
-                
+
             ->make(true);
   }
 
   public function showtransactionorder(){
      return view("admin.order.transaction");
   }
-  
+
   public function transactiondatatable(){
       $order =Order::orderBy('id','DESC')->where("payment_method",'!=',3)->get();
          return DataTables::of($order)
@@ -348,7 +349,7 @@ class OrderController extends Controller {
                  if($order->payment_method==1){
                     return $order->paypal_payment_Id;
                  }
-                 
+
             })
             ->editColumn('payment_method', function ($order) {
                   if($order->payment_method==2){
@@ -358,21 +359,21 @@ class OrderController extends Controller {
                     return __('messages.stripe');;
                  }
             })
-                
+
             ->make(true);
   }
 
-  function getName() { 
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
-    $randomString = ''; 
-  
-    for ($i = 0; $i <5; $i++) { 
-        $index = rand(0, strlen($characters) - 1); 
-        $randomString .= $characters[$index]; 
-    } 
-  
-    return "shopno"."_".date('d-m-Y')."_".$randomString.".pdf"; 
-} 
+  function getName() {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+
+    for ($i = 0; $i <5; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $randomString .= $characters[$index];
+    }
+
+    return "shopno"."_".date('d-m-Y')."_".$randomString.".pdf";
+}
    public function changeorderstatus($order_id,$staus_id){
             DB::beginTransaction();
               try {
@@ -381,7 +382,7 @@ class OrderController extends Controller {
                              $setting=Setting::find(1);
                              $user=User::find($order->user_id);
                              if(!$user){
-                                 Session::flash('message',__('messages_error_success.user_not_exist')); 
+                                 Session::flash('message',__('messages_error_success.user_not_exist'));
                                  Session::flash('alert-class', 'alert-success');
                                  return redirect()->back();
                              }
@@ -389,43 +390,43 @@ class OrderController extends Controller {
                                   $order->processing_datetime=$this->getsitedate();
                                   $msg=__('messages_error_success.order_process_msg');
                                   $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                  $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                  $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }else if($staus_id==2){//on_hold
                                 $order->onhold_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_hold_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }else if($staus_id==3){//pending
                                 $order->pending_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_pending_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }
                              else if($staus_id==5){//completed
                                 $order->completed_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_complete_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }
                              else if($staus_id==6){//cancel
                                 $order->cancel_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_cancel_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }
                              else if($staus_id==7){//refund
                                 $order->refund_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_refund_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
                              }
-                            
+
                                else if($staus_id==4){//out of delivery
                                 $order->outfordelivery_datetime=$this->getsitedate();
                                 $msg=__('messages_error_success.order_out_of_delivery_msg');
                                 $android=$this->send_notification_android($setting->android_api_key,$order->user_id,$msg,$order->id);
-                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id); 
-                                
+                                $ios=$this->send_notification_IOS($setting->iphone_api_key,$order->user_id,$msg,$order->id);
+
                              }
 
                              $order->order_status=$staus_id;
@@ -443,27 +444,27 @@ class OrderController extends Controller {
                                     }
                              }
                              DB::commit();
-                             Session::flash('message',__('messages_error_success.order_status_change')); 
+                             Session::flash('message',__('messages_error_success.order_status_change'));
                              Session::flash('alert-class', 'alert-success');
                              return redirect()->back();
                     }
               catch (\Exception $e) {
                    DB::rollback();
-                   Session::flash('message',$e); 
+                   Session::flash('message',$e);
                    Session::flash('alert-class', 'alert-danger');
-                   return redirect()->back();       
+                   return redirect()->back();
               }
    }
 
 
      public function send_notification_android($key,$user_id,$msg,$id){
           $getuser=Token::where("type",1)->where("user_id",$user_id)->get();
-          if(count($getuser)!=0){               
+          if(count($getuser)!=0){
                $reg_id = array();
                foreach($getuser as $gt){
                    $reg_id[]=$gt->token;
                }
-               $registrationIds =  $reg_id;    
+               $registrationIds =  $reg_id;
                $message = array(
                     'message' => $msg,
                     'key'=>'order',
@@ -480,7 +481,7 @@ class OrderController extends Controller {
                  'Authorization: key='.$key,// . $api_key,
                  'Content-Type: application/json'
                );
-              $json =  json_encode($fields);   
+              $json =  json_encode($fields);
               try {
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, $url);
@@ -489,13 +490,13 @@ class OrderController extends Controller {
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                     curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
-                    $result = curl_exec($ch);  
+                    $result = curl_exec($ch);
 
                     if ($result === FALSE){
                        die('Curl failed: ' . curl_error($ch));
-                    }     
+                    }
                    curl_close($ch);
-                   $response=json_decode($result,true); 
+                   $response=json_decode($result,true);
                   } catch (\Exception $e) {
                     return 0;
                  }
@@ -512,12 +513,12 @@ class OrderController extends Controller {
    }
    public function send_notification_IOS($key,$user_id,$msg,$id){
       $getuser=Token::where("type",2)->where("user_id",$user_id)->get();
-         if(count($getuser)!=0){               
+         if(count($getuser)!=0){
                $reg_id = array();
                foreach($getuser as $gt){
                    $reg_id[]=$gt->token;
                }
-                $registrationIds =  $reg_id;    
+                $registrationIds =  $reg_id;
                 $message = array(
                    'body'  => $msg,
                    'title'     => __('messages.notification'),
@@ -536,7 +537,7 @@ class OrderController extends Controller {
                  'Authorization: key='.$key,// . $api_key,
                  'Content-Type: application/json'
                );
-              $json =  json_encode($fields);   
+              $json =  json_encode($fields);
                try {
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, $url);
@@ -545,13 +546,13 @@ class OrderController extends Controller {
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                     curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
-                    $result = curl_exec($ch);  
+                    $result = curl_exec($ch);
 
                     if ($result === FALSE){
                        die('Curl failed: ' . curl_error($ch));
-                    }     
+                    }
                    curl_close($ch);
-                   $response=json_decode($result,true); 
+                   $response=json_decode($result,true);
                   } catch (\Exception $e) {
                     return 0;
                  }
@@ -576,8 +577,8 @@ class OrderController extends Controller {
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('d-m-Y h:i:s');                    
+            date_default_timezone_set($date_zone);
+            return date('d-m-Y h:i:s');
      }
       static public function generate_timezone_list(){
           static $regions = array(
@@ -603,7 +604,7 @@ class OrderController extends Controller {
                   }
                  asort($timezone_offsets);
                  $timezone_list = array();
-    
+
                  foreach($timezone_offsets as $timezone=>$offset){
                           $offset_prefix = $offset < 0 ? '-' : '+';
                           $offset_formatted = gmdate('H:i', abs($offset));
@@ -623,7 +624,7 @@ class OrderController extends Controller {
                  }
               }
        }
-  
+
      public function cashorder(Request $request){
         $setting=Setting::find(1);
         $cartCollection = Cart::getContent();
@@ -664,7 +665,7 @@ class OrderController extends Controller {
                 $storeres->desc=json_encode($this->getorderjson());
                 $storeres->save();
                 $jsondata=$this->getorderjson();
-        
+
                   foreach($jsondata["order"] as $k) {
                       $add=new OrderData();
                       $add->order_id=$store->id;
@@ -682,18 +683,18 @@ class OrderController extends Controller {
                    if($request->get("payment_method")==2){
                        try{
                         \Stripe\Stripe::setApiKey(Session::get("stripe_secert"));
-                          $unique_id = uniqid(); 
+                          $unique_id = uniqid();
                           $charge = \Stripe\Charge::create(array(
                               'description' => "Amount: ".$input['total_order_price'].' - '. $unique_id,
-                              'source' => $input['stripeToken'],                    
-                              'amount' => (int)($input['total_order_price'] * 100), 
+                              'source' => $input['stripeToken'],
+                              'amount' => (int)($input['total_order_price'] * 100),
                               'currency' => 'USD'
                           ));
                           $data=Order::find($store->id);
                           $data->charges_id=$charge->id;
                           $data->save();
                         }catch (\Exception $e) {
-                           Session::flash('message', __('messages_error_success.payment_fail')); 
+                           Session::flash('message', __('messages_error_success.payment_fail'));
                             Session::flash('alert-class', 'alert-success');
                             return Redirect::route('checkout');
                       }
@@ -712,30 +713,30 @@ class OrderController extends Controller {
                        } catch (\Exception $e) {
 
                        }
-                      
+
                  DB::commit();
                   Cart::clear();
-                    Session::flash('message',__('messages_error_success.order_place_success')); 
+                    Session::flash('message',__('messages_error_success.order_place_success'));
                     Session::flash('alert-class', 'alert-success');
                      return redirect("vieworder/".$store->id);
                  } catch (\Exception $e) {
                      DB::rollback();
-                    Session::flash('message',$e); 
+                    Session::flash('message',$e);
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
            }
      }
-    
+
      function headreadMoreHelper($story_desc, $chars =35) {
-    $story_desc = substr($story_desc,0,$chars);  
-    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));  
-    $story_desc = $story_desc;  
-    return $story_desc;  
-} 
+    $story_desc = substr($story_desc,0,$chars);
+    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+    $story_desc = $story_desc;
+    return $story_desc;
+}
 
      public function getorderjson(){
       $cartCollection = Cart::getContent();
-      $main_array=array();  
+      $main_array=array();
         foreach ($cartCollection as $item) {
            $order=array();
            $gettotal=array();
