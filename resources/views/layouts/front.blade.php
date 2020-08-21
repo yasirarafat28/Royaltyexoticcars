@@ -157,18 +157,17 @@
 				<div class="info" style="">
 					<div class="left-side col-sm-6  d-none d-sm-flex">
 					<a target="_blank"
-						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
+						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link"><i class="fa fa-phone mr-2"></i> {{$setting->phone}} &nbsp;  |</a>
 
 
 
 					<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
-							href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
-							onclick="this.href = this.href.replace('[sub]',window.location)">
-							{{$setting->email}}
+							href="mailto:{{$setting->email}}"> <i class="fa fa-envelope mr-2"></i>
+                            {{$setting->email}} &nbsp; |
 						</a>
 					</div>
 					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
-						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
+						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i> 9am - 7pm Daily</a>
 					</div>
                     <div class="right-side col-sm-6">
 						<div class="info__search pull-right">
