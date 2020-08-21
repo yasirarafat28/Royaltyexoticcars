@@ -97,6 +97,13 @@
           margin-top: 20px;
        }
 
+      .main-menu {
+          border: none;
+          -webkit-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
+          -moz-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
+          box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
+      }
+
 
 
       /* Footer */
@@ -420,7 +427,7 @@
             </div>
          </div>
       </div>
-      <div class="{{$myclass}}">
+      <div class="{{$myclass}}" style="box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important">
          <div class="main-menu">
             <div class="row">
                <ul>
