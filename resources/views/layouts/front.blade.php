@@ -196,7 +196,7 @@
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-md-block">Rental Exotic Beasts</div>
+							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
 						</a></div>
 					<div class="nav__links">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
