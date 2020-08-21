@@ -146,7 +146,7 @@
         }
 
         .info__search {
-            width: unset;
+            width: 100%;
             font-size: .9em;
         }
     </style>
@@ -160,7 +160,7 @@
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info-container">
 				<div class="info" style="">
-					<div class="left-side col-sm-6  d-none d-sm-flex">
+					<div class="left-side col-sm-6 col-md-8  d-none d-sm-flex">
 					<a target="_blank"
 						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link"><i class="fa fa-phone mr-2"></i> {{$setting->phone}} &nbsp;  |</a>
 
@@ -174,7 +174,7 @@
 					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
 						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i> 9am - 7pm Daily</a>
 					</div>
-                    <div class="right-side col-sm-6">
+                    <div class="right-side col-sm-6 col-md-4">
 						<div class="info__search pull-right">
 						<form action="/vehicles" id="Header-Search-Form"
 							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
