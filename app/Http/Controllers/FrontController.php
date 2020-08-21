@@ -232,10 +232,12 @@ class FrontController extends Controller {
 
 
     public function singleVehicle($vehicleID ,$slug=''){
+
         $vehicleID = base64_decode($vehicleID);
         $vehicle =  Vehicle::find($vehicleID);
-
-        return view('frontView.single-vehicle',compact('vehicle'));
+        $setting = Setting();
+        $brand = VehicleBrand::find($vehicle->brand_id);
+        return view('frontView.single-vehicle',compact('vehicle','brand','setting'));
     }
 
     public function bookingvehicle($vehicle_id) {
@@ -427,10 +429,13 @@ class FrontController extends Controller {
 
     public function vehicleCheckoutInvoice($txn_id){
 
+
+        $setting = Setting();
+
         $order = VehicleCheckout::where('txn_id',$txn_id)->first();
 
         //return view('frontView.vehicle-checkout-invoice', compact('order'));
-        $pdf = PDF::loadView('frontView.vehicle-checkout-invoice', compact('order'));
+        $pdf = PDF::loadView('frontView.vehicle-checkout-invoice', compact('order', 'setting'));
         return $pdf->download('invoice.pdf');
 
     }

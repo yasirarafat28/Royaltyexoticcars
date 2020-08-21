@@ -174,20 +174,21 @@
         <div style="min-width: 600px">
             <header>
                 <div class="row">
-                    <div class="col">
-                        <a target="_blank" href="https://lobianijs.com">
-                            <img src="http://lobianijs.com/lobiadmin/version/1.0/ajax/img/logo/lobiadmin-logo-text-64.png" data-holder-rendered="true" />
-                        </a>
+                    <div class="col-sm-6">
+                        
+                        <img src="images/logo.jpg" style=" width:100px;" data-holder-rendered="true" />
+                        
                     </div>
-                    <div class="col company-details">
+                    <div class="col-sm-6 company-details">
                         <h2 class="name">
                             <a target="_blank" href="https://lobianijs.com">
-                                Arboshiki
+                            {{$setting->company_name}}
                             </a>
                         </h2>
-                        <div>455 Foggy Heights, AZ 85004, US</div>
-                        <div>(123) 456-789</div>
-                        <div>company@example.com</div>
+
+                        <div>{{$setting->address}}</div>
+                        <div>{{$setting->phone}}</div>
+                        <div>{{$setting->email}}</div>
                     </div>
                 </div>
             </header>
@@ -195,14 +196,14 @@
                 <div class="row contacts">
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">John Doe</h2>
-                        <div class="address">796 Silver Harbour, TX 79273, US</div>
-                        <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
+                        <h2 class="to">{{$order->name}}</h2>
+                        <div class="address">{{$order->address}}</div>
+                        <div class="email"><a href="mailto:john@example.com">{{$order->email}}</a></div>
                     </div>
                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                        <div class="date">Date of Invoice: 01/10/2018</div>
-                        <div class="date">Due Date: 30/10/2018</div>
+                        <div class="date">Invoice Time: {{$order->created_at}}</div>
+                        <div class="date">Reservation Time: {{$order->reservation_time}}</div>
                     </div>
                 </div>
                 <table border="0" cellspacing="0" cellpadding="0">
