@@ -50,7 +50,7 @@ $setting = setting();
     <div class="rental__header">
       <div class="rental__name">
         <h1 class="rental__h1">{{ $vehicle->name }}</h1>
-        <div class="rental__specs">6.5 V12</div>
+        <div class="rental__specs">{{ $brand->name }}</div>
         <div class="rental__specs rental__specs--spacer">|</div>
         <div class="rental__specs">{{ $vehicle->transmission }}</div>
         <div class="rental__specs rental__specs--spacer">|</div>
@@ -184,40 +184,62 @@ $setting = setting();
               <div class="rental__features--text">{{ $vehicle->model }}</div>
             </div>
           @endif
-          <div class="rental__features--block">
-            <div class="rental__features--label">Color</div>
-            <div class="rental__features--text">{{ $vehicle->color }}</div>
-          </div>
-          <div class="rental__features--block">
-            <div class="rental__features--label">Class</div>
-            <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
-          </div>
+          @if( $vehicle->color)
+            <div class="rental__features--block">
+              <div class="rental__features--label">Color</div>
+              <div class="rental__features--text">{{ $vehicle->color }}</div>
+            </div>
+          @endif
+          @if( $vehicle->vehicle_class)
+            <div class="rental__features--block">
+              <div class="rental__features--label">Class</div>
+              <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
+            </div>
+          @endif
+          @if( $vehicle->body)
           <div class="rental__features--block">
             <div class="rental__features--label">Body</div>
             <div class="rental__features--text">{{ $vehicle->body }}</div>
           </div>
+          @endif
+          @if( $vehicle->seat)
           <div class="rental__features--block">
             <div class="rental__features--label">Seats</div>
             <div class="rental__features--text">{{ $vehicle->seat }}</div>
             <div class="rental__features--text">-seater</div>
           </div>
+          @endif
+          @if( $vehicle->type)
           <div class="rental__features--block">
-            <div class="rental__features--label">Actual MSRP</div>
-            <div>
-              <div class="rental__features--text currency">{{ $vehicle->actual_msrp }}</div>
-            </div>
+            <div class="rental__features--label">Type</div>
+            <div class="rental__features--text">{{ $vehicle->type }}</div>
           </div>
+          @endif
+          @if( $vehicle->actual_msrp)
+            <div class="rental__features--block">
+              <div class="rental__features--label">Actual MSRP</div>
+              <div>
+                <div class="rental__features--text currency">{{ $vehicle->actual_msrp }}</div>
+              </div>
+            </div>
+          @endif
         </div>
         <h2 class="rental__h2">Performance</h2>
+
         <div class="rentals__features last">
+          @if( $vehicle->suspension)
           <div class="rental__features--block">
-            <div class="rental__features--label">Engine</div>
-            <div class="rental__features--text">6.5 V12</div>
+            <div class="rental__features--label">Suspension</div>
+            <div class="rental__features--text">{{ $vehicle->suspension }}</div>
           </div>
+          @endif
+          @if( $vehicle->transmission)
           <div class="rental__features--block">
             <div class="rental__features--label">Transmission</div>
             <div class="rental__features--text">{{ $vehicle->transmission }}</div>
           </div>
+          @endif
+          @if( $vehicle->horse_power)
           <div class="rental__features--block">
             <div class="rental__features--label">Horse Power</div>
             <div>
@@ -225,6 +247,8 @@ $setting = setting();
               <div class="rental__features--text profile__features--text-label">hp</div>
             </div>
           </div>
+          @endif
+          @if( $vehicle->torque)
           <div class="rental__features--block">
             <div class="rental__features--label">Torque</div>
             <div>
@@ -232,31 +256,40 @@ $setting = setting();
               <div class="rental__features--text profile__features--text-label">lb-ft</div>
             </div>
           </div>
+          @endif
+          @if( $vehicle->clearence)
           <div class="rental__features--block">
-            <div class="rental__features--label">Drive Wheel</div>
+            <div class="rental__features--label">Clearence</div>
             <div>
-              <div class="rental__features--text">{{ $vehicle->driver_wheel }}</div>
+              <div class="rental__features--text">{{ $vehicle->clearence }}</div>
             </div>
           </div>
+          @endif
+          @if( $vehicle->differential)
           <div class="rental__features--block">
-            <div class="rental__features--label">0-60mph</div>
+            <div class="rental__features--label">Differential</div>
             <div>
-              <div class="rental__features--text">2.9</div>
-              <div class="rental__features--text"> seconds</div>
+              <div class="rental__features--text">{{ $vehicle->differential }}</div>
             </div>
           </div>
+          @endif
+          @if( $vehicle->gear_ratio)
           <div class="rental__features--block">
-            <div class="rental__features--label">1/4 Mile</div>
+            <div class="rental__features--label">Gear Ratio</div>
             <div>
-              <div class="rental__features--text">10.4</div>
-              <div class="rental__features--text"> seconds</div>
+              <div class="rental__features--text">{{ $vehicle->gear_ratio }}</div>
             </div>
           </div>
+          @endif
+          @if( $vehicle->stock)
           <div class="rental__features--block">
-            <div class="rental__features--label">Top Speed</div>
-            <div class="rental__features--text">220</div>
-            <div class="rental__features--text"> mph</div>
+            <div class="rental__features--label">In stock</div>
+            <div>
+              <div class="rental__features--text">{{ $vehicle->stock }} vehicle</div>
+            </div>
           </div>
+          @endif
+          
         </div>
       </section>
       <section id="description" class="rental__section">
@@ -278,10 +311,11 @@ $setting = setting();
 
           <address class="profile__location--details">
           <div class="profile__location--address">
-            <div>Rental Exotic Beasts (Las Vegas)</div>
-            <div>4305 Dean Martin Dr, Suite #120</div>
-            <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">+1-866-984-1187</a><a
-              href="mailto:reservations@rentalexoticsbeasts.com?subject=Can%20you%20please%20help%20me%20find%20my%20rental%20pickup%20location%3F%20%3A)">reservations@rentalexoticsbeasts.com</a>
+            <div>Rental Exotic Beasts</div>
+            <div>{{ $setting->company_name }}</div>
+            <div>{{ $setting->address }}</div>
+            <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
+              href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
           </div>
           <div class="profile__location--directions">From Las Vegas BLVD, go West on Flamingo, take a left at Hotel Rio
             Drive, take a right at Dean Martin, and you&#x27;ll see a large Rental Exotic Beasts sign on the right-hand

@@ -235,8 +235,9 @@ class FrontController extends Controller {
 
         $vehicleID = base64_decode($vehicleID);
         $vehicle =  Vehicle::find($vehicleID);
+        $setting = Setting();
         $brand = VehicleBrand::find($vehicle->brand_id);
-        return view('frontView.single-vehicle',compact('vehicle','brand'));
+        return view('frontView.single-vehicle',compact('vehicle','brand','setting'));
     }
 
     public function bookingvehicle($vehicle_id) {
