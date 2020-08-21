@@ -175,9 +175,9 @@
             <header>
                 <div class="row">
                     <div class="col-sm-6">
-                        
-                        <img src="images/logo.jpg" style=" width:100px;" data-holder-rendered="true" />
-                        
+
+                        <img src="images/logo.png" style=" width:100px;" data-holder-rendered="true" />
+
                     </div>
                     <div class="col-sm-6 company-details">
                         <h2 class="name">

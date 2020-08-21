@@ -124,6 +124,26 @@
             font-weight: 600;
             text-transform: uppercase;
         }
+        .header{
+            box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important;
+        }
+
+        .home__h2 {
+            margin-top: 0;
+            margin-bottom: .5em;
+            font-size: 1.3em;
+            text-align: left;
+        }
+
+        .rentals hr:before, .rentals__section hr:before {
+            display: flex;
+            height: 3px;
+            background-color: darkorange;
+            content: "";
+            position: absolute;
+            width: 120px;
+            margin-top: -2px;
+        }
     </style>
 
 @yield('style')
@@ -702,7 +722,7 @@
             height: 100vh;
             margin-left: -3px;
             margin-bottom: -3px;
-            z-index: 998;
+            z-index: 2;
 
         }
 

@@ -65,11 +65,26 @@
       .top-logo {
           height: 70px;
           width: 116px;
-          background-color: #f07f13;
+          background-color: unset;
           -webkit-mask-repeat: no-repeat;    background-image: url('/logo.jpg');
           -webkit-mask-image: url('/logo.jpg');
           background-repeat: no-repeat;
           background-size: cover;
+      }
+      .wish .e-nav-cricle {
+          top: -4px;
+          right: -16px;
+      }.compare .e-nav-cricle {
+           top: -11px;
+           right: 10px;
+       }
+
+      .search input {
+          height: 100%;
+      }
+      .pro-img img {
+          width: 100%;
+          height: 230px;
       }
 
       .brand__text {
@@ -214,6 +229,11 @@
       }
 
 
+       .brand-area{
+           display: flex;
+       }
+
+
    </style>
    <body class="rtl">
 
@@ -257,13 +277,14 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row">
-               <div class="col-lg-3 col-md-3 col-8">
-                  <a href="{{url('/shop')}}">
+               <div class="col-md-5">
+                  <a href="{{url('/shop')}}" class="brand-area">
+                      <div class="top-logo" style="background-image: url('/logo.png');-webkit-mask-image: url('/logo.png');"></div>
+
                       <div class="brand__text">Rental Exotic Beasts</div>
-                     <!--<div class="top-logo" style="background-image: url('/logo.jpg');-webkit-mask-image: url('/logo.jpg');"></div>-->
-                  </a>
+                     </a>
                </div>
-               <div class="col-lg-6 col-md-6 ser-show">
+               <div class="col-md-4 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">
@@ -278,7 +299,7 @@
                      </div>
                   </form>
                </div>
-               <div class="cartbar_pop_mbox">
+               <div class="cartbar_pop_mbox col-md-3">
                   <div class="cartbar_pop_mcon">
                      @if(Auth::check())
                      <a href="{{url('myaccount')}}" class="user" >
