@@ -98,7 +98,7 @@
        }
 
       .main-menu {
-          border: none;
+          border-top: none;
           -webkit-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
           -moz-box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
           box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important hoff voff blur #000;
@@ -284,14 +284,14 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row">
-               <div class="col-md-5">
+               <div class="col-md-5 col-5">
                   <a href="{{url('/shop')}}" class="brand-area">
                       <div class="top-logo" style="background-image: url('/logo.png');-webkit-mask-image: url('/logo.png');"></div>
 
-                      <div class="brand__text">Rental Exotic Beasts</div>
+                      <div class="brand__text d-none d-sm-block">Rental Exotic Beasts</div>
                      </a>
                </div>
-               <div class="col-md-4 ser-show">
+               <div class="col-md-5 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">
@@ -306,7 +306,7 @@
                      </div>
                   </form>
                </div>
-               <div class="cartbar_pop_mbox col-md-3">
+               <div class="cartbar_pop_mbox col-md-2 col-7">
                   <div class="cartbar_pop_mcon">
                      @if(Auth::check())
                      <a href="{{url('myaccount')}}" class="user" >
@@ -427,7 +427,7 @@
             </div>
          </div>
       </div>
-      <div class="{{$myclass}}" style="box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important">
+      <div class="{{$myclass}}">
          <div class="main-menu">
             <div class="row">
                <ul>
@@ -443,7 +443,7 @@
                            <ul class="sub-menu">
                               <h4><a href="{{url('productslist/').'/0/'.$subcat->id.'/0/0'}}">{{$subcat->name}}</a></h4>
                               @foreach($subcat->brand as $brand)
-                              <li><a href="{{url('productslist/').'/'.$category->id.'/'.$subcat->id.'/'.$brand->id.'/0'}}">{{$brand->brand_name}}</i></a></li>
+                              <li><a href="{{url('productslist/').'/'.$category->id.'/'.$subcat->id.'/'.$brand->id.'/0'}}">{{$brand->brand_name}}</a></li>
                               @endforeach
                            </ul>
                            @endforeach

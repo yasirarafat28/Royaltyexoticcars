@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3>{{$vehicle->name}} - {{ucfirst($schedule->color)}}</h3>
+                            <h3 class="home__h2">{{$vehicle->name}} - {{ucfirst($schedule->color)}}</h3>
                             {{date("l, F d Y",strtotime($date))}} @ {{date("h:ia",strtotime($schedule->start_time))}}
                         </div>
 

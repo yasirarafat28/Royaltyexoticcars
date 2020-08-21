@@ -182,7 +182,7 @@
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 								required="" />
 
-                            <button type="submit"  value=" " class="search__submit w-button" style="color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: darkorange;background-image: none"><i class="fa fa-search"></i>
                             </button>
                         </form>
 					</div>
@@ -525,7 +525,7 @@
 						<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 							<div>Shop</div>
 						</a>
-						<a href="/login" class="user nav__link w-inline-block">
+						<a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
 					</div>
