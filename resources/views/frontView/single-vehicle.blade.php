@@ -81,29 +81,45 @@ $setting = setting();
         @endif
 
         @if($vehicle->eight_hour=='yes')
+            @if($vehicle->eight_hour_discount)
+                <div class="rental__price--block bookbar__price--block-wide">
+                  <div class="rental__price--label">8Hr Special!</div>
+                  <div>$</div>
+                  <div>{{ $vehicle->eight_hour_discount }}</div>
+                  <div class="rental__price--before">
+                    <div>normally $</div>
+                    <div>{{ $vehicle->eight_hour_price }}</div>
+                  </div>
+                </div>
+            @else
+                <div class="rental__price--block">
+                    <div class="rental__price--label">8 Hours</div>
+                    <div>$</div>
+                    <div>{{ $vehicle->eight_hour_price }}</div>
+                </div>
+            @endif
 
-            <div class="rental__price--block bookbar__price--block-wide">
-              <div class="rental__price--label">8Hr Special!</div>
-              <div>$</div>
-              <div>{{ $vehicle->eight_hour_discount }}</div>
-              <div class="rental__price--before">
-                <div>normally $</div>
-                <div>{{ $vehicle->eight_hour_price }}</div>
-              </div>
-            </div>
         @endif
 
         @if($vehicle->full_day=='yes')
+            @if($vehicle->full_day_discount)
+                <div class="rental__price--block bookbar__price--block-wide">
+                  <div class="rental__price--label">Full Day Special!</div>
+                  <div>$</div>
+                  <div>{{ $vehicle->full_day_discount }}</div>
+                  <div class="rental__price--before">
+                    <div>normally $</div>
+                    <div>{{ $vehicle->full_day_price }}</div>
+                  </div>
+                </div>
+            @else
+                <div class="rental__price--block">
+                    <div class="rental__price--label">Full Day</div>
+                    <div>$</div>
+                    <div>{{ $vehicle->full_day_price }}</div>
+                </div>
+            @endif
 
-            <div class="rental__price--block bookbar__price--block-wide">
-              <div class="rental__price--label">24Hr Special!</div>
-              <div>$</div>
-              <div>{{ $vehicle->full_day_discount }}</div>
-              <div class="rental__price--before">
-                <div>normally $</div>
-                <div>{{ $vehicle->full_day_price }}</div>
-              </div>
-            </div>
         @endif
       </div>
       <div class="rental__cta">
@@ -155,26 +171,19 @@ $setting = setting();
               </a>
           </div>
       </section>
-
-        <nav class="rental__nav">
-            <!--<a href="#photos" class="rental__nav--link">Photos</a>-->
-            <a href="#specs" class="rental__nav--link">Specs</a>
-            <a href="#description" class="rental__nav--link">Description</a>
-            <a href="#location" class="rental__nav--link">Location</a>
-            <a href="#requirements" class="rental__nav--link">Requirements</a>
-            <a href="#faqs" class="rental__nav--link">FAQs</a>
-        </nav>
       <section id="specs" class="rental__section">
         <h2 class="rental__h2">Style</h2>
         <div class="rentals__features">
           <div class="rental__features--block">
             <div class="rental__features--label">Make</div>
-            <div class="rental__features--text">lamborgini</div>
+            <div class="rental__features--text">{{ $brand->name }}</div> 
           </div>
-          <div class="rental__features--block">
-            <div class="rental__features--label">Model</div>
-            <div class="rental__features--text">{{ $vehicle->model }}</div>
-          </div>
+          @if( $vehicle->model)
+            <div class="rental__features--block">
+              <div class="rental__features--label">Model</div>
+              <div class="rental__features--text">{{ $vehicle->model }}</div>
+            </div>
+          @endif
           <div class="rental__features--block">
             <div class="rental__features--label">Color</div>
             <div class="rental__features--text">{{ $vehicle->color }}</div>

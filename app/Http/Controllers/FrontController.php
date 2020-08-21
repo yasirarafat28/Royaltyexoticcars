@@ -232,10 +232,11 @@ class FrontController extends Controller {
 
 
     public function singleVehicle($vehicleID ,$slug=''){
+
         $vehicleID = base64_decode($vehicleID);
         $vehicle =  Vehicle::find($vehicleID);
-
-        return view('frontView.single-vehicle',compact('vehicle'));
+        $brand = VehicleBrand::find($vehicle->brand_id);
+        return view('frontView.single-vehicle',compact('vehicle','brand'));
     }
 
     public function bookingvehicle($vehicle_id) {
