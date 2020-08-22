@@ -18,9 +18,7 @@
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="og:description" />
-	<meta
-		content="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a823c1c32f0d300017e7fa0_Royalty%20Exotic%20Cars%20Website%20Banner%20-%20small.gif"
-		property="og:image" />
+    
 	<meta content="Rental Exotic Beasts - Las Vegas" property="twitter:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
@@ -53,10 +51,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" />
 
 
@@ -85,6 +79,13 @@
             .fc-scroller{
                 min-height: 500px;
             }
+        }
+
+        @media screen and (max-width: 479px) {
+            .nav__links {
+                margin-left: 0em;
+
+            };
         }
 
         .slider-left-content{
