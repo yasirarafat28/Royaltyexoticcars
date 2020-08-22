@@ -231,7 +231,7 @@
 												</div>
 												<div class="nav__categories--text">
 													<div class="nav__categories--heading">{{ $category->name }}</div>
-													<div class="nav__categories--desc">{{substr(0,80,$category->description)}}</div>
+													<div class="nav__categories--desc">{{substr($category->description,0,80)}}</div>
 												</div>
 											</a>
 
