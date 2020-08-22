@@ -43,7 +43,7 @@
 @section('content')
   <div class="rental__hero">
 
-      <div class="container">
+      <div class="container mt-4">
           @include('frontView.partials.vehicle-booking')
 
           </div>

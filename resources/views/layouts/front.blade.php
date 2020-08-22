@@ -18,9 +18,7 @@
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="og:description" />
-	<meta
-		content="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a823c1c32f0d300017e7fa0_Royalty%20Exotic%20Cars%20Website%20Banner%20-%20small.gif"
-		property="og:image" />
+
 	<meta content="Rental Exotic Beasts - Las Vegas" property="twitter:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
@@ -53,10 +51,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" />
 
 
@@ -87,12 +81,19 @@
             }
         }
 
+        @media screen and (max-width: 479px) {
+            .nav__links {
+                margin-left: 0em;
+
+            };
+        }
+
         .slider-left-content{
 
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 40% !important;
+            bottom: 25% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
@@ -148,7 +149,7 @@
         .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
             display: flex;
             height: 3px;
-            background-color: darkorange;
+            background-color: red;
             content: "";
             position: absolute;
             width: 20%;
@@ -161,6 +162,13 @@
         }
         .search__input{
             height: 100% !important;
+        }
+
+
+        .btn-outline-success:hover {
+            color: #fff;
+            background-color: red;
+            border-color: red;
         }
     </style>
 
@@ -195,7 +203,7 @@
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 								required="" />
 
-                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: red;background-image: none"><i class="fa fa-search"></i>
                             </button>
                         </form>
 					</div>
@@ -521,6 +529,8 @@
 										<div class="nav__about--column about__column--links">
 											<a href="/faqs"
 												id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
+											<a href="/terms" id="Nav-Privacy-Link"
+												class="nav__about--link w-dropdown-link">Terms & Conditions</a>
 											<a href="/privacy" id="Nav-Privacy-Link"
 												class="nav__about--link w-dropdown-link">Privacy</a>
 											<a href="/term" id="Nav-Privacy-Link"
@@ -565,9 +575,14 @@
                             </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
+<<<<<<< HEAD
                             </li><li><a href="/term"><span class="fa fa-play"></span> Terms & Conditions</a>
                             </li>
 							</ul>
+=======
+                            </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a>
+                            </li></ul>
+>>>>>>> da5f95636b93d67bb1f1fdce7f30dc3e270495c3
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -730,7 +745,7 @@
                 </div>
             </nav>
         </div>
-        <div id="feedback-tab" style="background-color:orangered;">Get in Touch</div>
+        <div id="feedback-tab" style="background-color:red;">Get in Touch</div>
     </div>
 
     <style>

@@ -203,7 +203,7 @@ $setting = setting();
                                     <small><s id="order_price">${{number_format($vehicle->four_hour_price,1)}}</s></small>
                                 </h5>
                             @else
-                                <h5 class="td1">${{number_format($vehicle->four_hour_discount,1)}}
+                                <h5 class="td1">${{number_format($vehicle->four_hour_price,1)}}
                                 </h5>
                             @endif
 
@@ -220,7 +220,7 @@ $setting = setting();
                                     <small><s id="order_price">${{number_format($vehicle->eight_hour_price,1)}}</s></small>
                                 </h5>
                             @else
-                                <h5 class="td1">${{number_format($vehicle->eight_hour_discount,1)}}
+                                <h5 class="td1">${{number_format($vehicle->eight_hour_price,1)}}
                                 </h5>
                             @endif
 
@@ -237,7 +237,7 @@ $setting = setting();
                                     <small><s id="order_price">${{number_format($vehicle->full_day_price,1)}}</s></small>
                                 </h5>
                             @else
-                                <h5 class="td1">${{number_format($vehicle->full_day_discount,1)}}
+                                <h5 class="td1">${{number_format($vehicle->full_day_price,1)}}
                                 </h5>
                             @endif
 
