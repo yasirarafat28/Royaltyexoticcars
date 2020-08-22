@@ -163,6 +163,13 @@
         .search__input{
             height: 100% !important;
         }
+
+
+        .btn-outline-success:hover {
+            color: #fff;
+            background-color: red;
+            border-color: red;
+        }
     </style>
 
 @yield('style')
