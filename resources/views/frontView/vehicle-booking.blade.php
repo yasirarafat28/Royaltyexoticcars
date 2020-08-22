@@ -58,6 +58,15 @@
     <script src="/assets/plugins/fullcalendar/fullcalendarscripts.bundle.js"></script><!--/ calender javascripts -->
 
     <script>
+
+
+        function getView() {
+            return $(window).width() < 765 ? 'listMonth':'month'
+        }
+        console.log($(window).width());
+
+
+
         $('#calendar').fullCalendar({
 
             timeZone: 'UTC',
@@ -66,6 +75,8 @@
                 center: 'title',
                 right: 'next'
             },
+            defaultView: getView(),
+
             defaultDate: "{{date("Y-m-d")}}",
 
             eventClick: function(arg) {
@@ -112,7 +123,11 @@
             ],
 
             eventRender: function (event, element) {
-                element.find('.fc-title').html(event.title);
+                if (getView()==='month')
+                    element.find('.fc-title').html(event.title);
+                else
+                    element.find('.fc-list-item-title').html(event.title);
+                //
             }
         });
     </script>

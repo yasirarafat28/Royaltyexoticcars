@@ -77,6 +77,12 @@
             }
         }
 
+        @media screen and (max-width: 767px) {
+            .fc-scroller{
+                min-height: 500px;
+            }
+        }
+
         .slider-left-content{
 
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
