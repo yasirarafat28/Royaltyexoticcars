@@ -176,7 +176,7 @@
                 <div class="row">
                     <div class="col-sm-6">
 
-                        <img src="{{asset('logo.png')}}" style=" width:100px;" data-holder-rendered="true" />
+                        <img src="{{asset('setting->logo')}}" style=" width:100px;" data-holder-rendered="true" />
 
                     </div>
                     <div class="col-sm-6 company-details">
