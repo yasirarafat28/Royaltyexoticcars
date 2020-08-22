@@ -149,6 +149,9 @@
             width: 100%;
             font-size: .9em;
         }
+        .search__input{
+            height: 100% !important;
+        }
     </style>
 
 @yield('style')
@@ -593,7 +596,7 @@
                             <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
                             <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
                             <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
