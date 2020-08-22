@@ -149,7 +149,7 @@
 }
 
 .car-info-list li::before {
-    color: #ffd000;
+    color: red;
     content: "\f14a";
     font-family: FontAwesome;
     margin-right: 5px;
@@ -160,7 +160,7 @@
 }
 
 .rating {
-    color: #ffd000;
+    color: red;
     font-size: 13px;
     position: absolute;
     right: 15px;
@@ -172,7 +172,7 @@
 }
 
 .rating i.unmark:hover {
-    color: #ffd000;
+    color: red;
 }
 
 .rating i.unmark {
