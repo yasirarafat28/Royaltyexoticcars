@@ -154,7 +154,7 @@
 
     @media print {
         .invoice {
-            font-size: 6px!important;
+            font-size: 11px!important;
             overflow: hidden!important
         }
 
@@ -173,9 +173,11 @@
     <div class="invoice overflow-auto">
         <div style="min-width: 600px">
             <header>
-                <div class="row" style="display:flex; justify-content:space-between; height:100px;">
+                <div class="row" style="display:flex; justify-content:space-between;">
                     <div class="col-sm-6">
+
                         <img src="images/logo.png" style=" width:100px;" data-holder-rendered="true" />
+
                     </div>
                     <div class="col-sm-6 company-details">
                         <h2 class="name">
