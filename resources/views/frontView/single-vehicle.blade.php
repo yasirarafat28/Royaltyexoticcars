@@ -46,287 +46,330 @@ $setting = setting();
 
 @endsection
 @section('content')
-  <div class="rental__hero">
-    <div class="rental__header">
-      <div class="rental__name">
-        <h1 class="rental__h1">{{ $vehicle->name }}</h1>
-        <div class="rental__specs">{{ $brand->name }}</div>
-        <div class="rental__specs rental__specs--spacer">|</div>
-        <div class="rental__specs">{{ $vehicle->transmission }}</div>
-        <div class="rental__specs rental__specs--spacer">|</div>
-        <div class="rental__specs">{{ $vehicle->horse_power }}</div>
-        <div class="rental__specs">hp</div>
-      </div>
-      <div class="rental__price">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
+          <section id="photos" class="rental__section">
+            @php
+            $additional_images = explode(',',$vehicle->additional_image);
+            @endphp
 
-        @if($vehicle->four_hour=='yes')
-            @if($vehicle->four_hour_discount)
-                <div class="rental__price--block bookbar__price--block-wide">
-                  <div class="rental__price--label">4Hr Special!</div>
-                  <div>$</div>
-                  <div>{{ $vehicle->four_hour_discount }}</div>
-                  <div class="rental__price--before">
-                    <div>normally $</div>
-                    <div>{{ $vehicle->four_hour_price }}</div>
-                  </div>
-                </div>
-            @else
-                <div class="rental__price--block">
-                    <div class="rental__price--label">4 Hours</div>
-                    <div>$</div>
-                    <div>{{ $vehicle->four_hour_price }}</div>
-                </div>
-            @endif
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators mx-auto">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    @foreach($additional_images??array() as $key=>$image)
+                      <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
+                    @endforeach
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
+                    </div>
 
-        @endif
-
-        @if($vehicle->eight_hour=='yes')
-            @if($vehicle->eight_hour_discount)
-                <div class="rental__price--block bookbar__price--block-wide">
-                  <div class="rental__price--label">8Hr Special!</div>
-                  <div>$</div>
-                  <div>{{ $vehicle->eight_hour_discount }}</div>
-                  <div class="rental__price--before">
-                    <div>normally $</div>
-                    <div>{{ $vehicle->eight_hour_price }}</div>
-                  </div>
+                    @foreach($additional_images??array() as $key=>$image)
+                        <div class="carousel-item">
+                            <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
+                        </div>
+                    @endforeach
                 </div>
-            @else
-                <div class="rental__price--block">
-                    <div class="rental__price--label">8 Hours</div>
-                    <div>$</div>
-                    <div>{{ $vehicle->eight_hour_price }}</div>
-                </div>
-            @endif
-
-        @endif
-
-        @if($vehicle->full_day=='yes')
-            @if($vehicle->full_day_discount)
-                <div class="rental__price--block bookbar__price--block-wide">
-                  <div class="rental__price--label">Full Day Special!</div>
-                  <div>$</div>
-                  <div>{{ $vehicle->full_day_discount }}</div>
-                  <div class="rental__price--before">
-                    <div>normally $</div>
-                    <div>{{ $vehicle->full_day_price }}</div>
-                  </div>
-                </div>
-            @else
-                <div class="rental__price--block">
-                    <div class="rental__price--label">Full Day</div>
-                    <div>$</div>
-                    <div>{{ $vehicle->full_day_price }}</div>
-                </div>
-            @endif
-
-        @endif
-      </div>
-      <div class="rental__cta">
-        <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
-          <div class="rental__cta--embed w-embed">
-              <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
-              Book Online
-            </a>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+              </div>
+          </section>
+    </div>
+    <div class="col-sm-5">
+      <div class="well">
+        <div class="mt-10">
+          <div class="rental__name">
+              <h1 class="rental__h1">{{ $vehicle->name }}</h1>
+              <div class="rental__specs">{{ $brand->name }}</div>
+              <div class="rental__specs rental__specs--spacer">|</div>
+              <div class="rental__specs">{{ $vehicle->transmission }}</div>
+              <div class="rental__specs rental__specs--spacer">|</div>
+              <div class="rental__specs">{{ $vehicle->horse_power }}</div>
+              <div class="rental__specs">hp</div>
           </div>
         </div>
+      </div>
+      
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="text-break">
+                @if($vehicle->four_hour=='yes')
+                      @if($vehicle->four_hour_discount)
+                          <div class="rental__price--block bookbar__price--block-wide">
+                            <div class="col-sm-9 rental__price--label"><h4>4Hr Special! ${{ $vehicle->four_hour_discount }}</h4></div>
+                            <div class="col-sm-3 rental__price--before">
+                              <div><h5>normally $ {{ $vehicle->four_hour_price }}</h5></div>
+                            </div>
+                          </div>
+                      @else
+                          <div class="rental__price--block ">
+                              <div class="rental__price--label">4 Hours  ${{ $vehicle->four_hour_price }}</div>
+                          </div>
+                      @endif
+                @endif
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="text-break">
+                @if($vehicle->eight_hour=='yes')
+                      @if($vehicle->eight_hour_discount)
+                          <div class="rental__price--block bookbar__price--block-wide">
+                            <div class="col-sm-9 rental__price--label"><h4>8Hr Special! ${{ $vehicle->eight_hour_discount }}</h4></div>
+                            <div class="col-sm-3 rental__price--before">
+                              <div><h5>normally $ {{ $vehicle->eight_hour_price }}</h5></div>
+                            </div>
+                          </div>
+                      @else
+                          <div class="rental__price--block ">
+                              <div class="rental__price--label">8 Hours  ${{ $vehicle->eight_hour_price }}</div>
+                          </div>
+                      @endif
+                @endif
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="text-break">
+                @if($vehicle->full_day=='yes')
+                      @if($vehicle->full_day_discount)
+                          <div class="rental__price--block bookbar__price--block-wide">
+                            <div class="col-sm-9 rental__price--label"><h4>Full Day Special! ${{ $vehicle->full_day_discount }}</h4></div>
+                            <div class="col-sm-3 rental__price--before">
+                              <div><h5>normally $ {{ $vehicle->full_day_price }}</h5></div>
+                            </div>
+                          </div>
+                      @else
+                          <div class="rental__price--block ">
+                              <div class="rental__price--label">Full Day  ${{ $vehicle->full_day_price }}</div>
+                          </div>
+                      @endif
+                @endif
+              </div>
+            </li>
+          </ul>
+        </div>
+      
+      <div class="well">
+        <div class="rental__cta">
+          <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
+            <div class="rental__cta--embed w-embed">
+                <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
+                Book Online
+              </a>
+            </div>
+          </div>
 
+        </div>
       </div>
     </div>
   </div>
-  <div class="rental__content">
-    <div class="container container__small">
-
-      <section id="photos" class="rental__section">
-
-          @php
-           $additional_images = explode(',',$vehicle->additional_image);
-          @endphp
-
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  @foreach($additional_images??array() as $key=>$image)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
-                  @endforeach
-              </ol>
-              <div class="carousel-inner">
-                  <div class="carousel-item active">
-                      <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
+</div>
+<div class="container">
+        <div class="descriptiondiv" style="display:flex; justify-content: space-between;">
+          <div class="aboutdiv">
+            <h2 class="rental__h2">About</h2>
+            <ul class="list-group list-group-flush">
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Make</h4></div>
+                  <div class="rental__features--text">{{ $brand->name }}</div> 
+                </div>
+              
+              @if( $vehicle->model)
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Model</h4></div>
+                  <div class="rental__features--text">{{ $vehicle->model }}</div>
+                </div>
+              
+              @endif
+              @if( $vehicle->vehicle_class)
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Class</h4></div>
+                  <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
+                </div>
+              
+              @endif
+              @if( $vehicle->type)
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Type</h4></div>
+                <div class="rental__features--text">{{ $vehicle->type }}</div>
+              </div>
+              @endif
+              @if( $vehicle->actual_msrp)
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Actual MSRP</h4></div>
+                  <div>
+                    <div class="rental__features--text currency">${{ $vehicle->actual_msrp }}</div>
                   </div>
+                </div>
+              @endif
+            </ul>
 
-                  @foreach($additional_images??array() as $key=>$image)
-                      <div class="carousel-item">
-                          <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
-                      </div>
-                  @endforeach
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-              </a>
           </div>
-      </section>
-      <section id="specs" class="rental__section">
-        <h2 class="rental__h2">Style</h2>
-        <div class="rentals__features">
-          <div class="rental__features--block">
-            <div class="rental__features--label">Make</div>
-            <div class="rental__features--text">{{ $brand->name }}</div> 
-          </div>
-          @if( $vehicle->model)
-            <div class="rental__features--block">
-              <div class="rental__features--label">Model</div>
-              <div class="rental__features--text">{{ $vehicle->model }}</div>
-            </div>
-          @endif
-          @if( $vehicle->color)
-            <div class="rental__features--block">
-              <div class="rental__features--label">Color</div>
-              <div class="rental__features--text">{{ $vehicle->color }}</div>
-            </div>
-          @endif
-          @if( $vehicle->vehicle_class)
-            <div class="rental__features--block">
-              <div class="rental__features--label">Class</div>
-              <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
-            </div>
-          @endif
-          @if( $vehicle->body)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Body</div>
-            <div class="rental__features--text">{{ $vehicle->body }}</div>
-          </div>
-          @endif
-          @if( $vehicle->seat)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Seats</div>
-            <div class="rental__features--text">{{ $vehicle->seat }}</div>
-            <div class="rental__features--text">-seater</div>
-          </div>
-          @endif
-          @if( $vehicle->type)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Type</div>
-            <div class="rental__features--text">{{ $vehicle->type }}</div>
-          </div>
-          @endif
-          @if( $vehicle->actual_msrp)
-            <div class="rental__features--block">
-              <div class="rental__features--label">Actual MSRP</div>
-              <div>
-                <div class="rental__features--text currency">{{ $vehicle->actual_msrp }}</div>
-              </div>
-            </div>
-          @endif
-        </div>
-        <h2 class="rental__h2">Performance</h2>
 
-        <div class="rentals__features last">
-          @if( $vehicle->suspension)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Suspension</div>
-            <div class="rental__features--text">{{ $vehicle->suspension }}</div>
+          <div class="stylediv">
+            <h2 class="rental__h2">Style</h2>
+            <ul class="list-group list-group-flush">
+              @if( $vehicle->color)
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Color</h4></div>
+                  <div class="rental__features--text">{{ $vehicle->color }}</div>
+                </div>
+              
+              @endif
+              
+              @if( $vehicle->body)
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Body</h4></div>
+                  <div class="rental__features--text">{{ $vehicle->body }}</div>
+                </div>
+              
+              @endif
+              @if( $vehicle->seat)
+              
+                <div class="rental__features--block">
+                  <div class="rental__features--label"><h4>Seats</h4></div>
+                  <div class="rental__features--text">{{ $vehicle->seat }}-seater</div>
+                </div>
+              
+              @endif
+              @if( $vehicle->type)
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Type</h4></div>
+                <div class="rental__features--text">{{ $vehicle->type }}</div>
+              </div>
+              @endif
+            
+            </ul>
           </div>
-          @endif
-          @if( $vehicle->transmission)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Transmission</div>
-            <div class="rental__features--text">{{ $vehicle->transmission }}</div>
+
+          <div class="performdiv">
+            <h2 class="rental__h2">Performance</h2>
+            <ul class="list-group list-group-flush">
+              @if( $vehicle->suspension)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Suspension</h4></div>
+                <div class="rental__features--text">{{ $vehicle->suspension }}</div>
+              </div>
+              
+              @endif
+              @if( $vehicle->horse_power)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Horse Power</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->horse_power }}</div>
+                  <div class="rental__features--text profile__features--text-label">hp</div>
+                </div>
+              </div>
+              
+              @endif
+              @if( $vehicle->torque)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Torque</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->torque }}</div>
+                  <div class="rental__features--text profile__features--text-label">lb-ft</div>
+                </div>
+              </div>
+              
+              @endif
+              @if( $vehicle->gear_ratio)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Gear Ratio</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->gear_ratio }}</div>
+                </div>
+              </div>
+              
+              @endif
+              
+            </ul>
           </div>
-          @endif
-          @if( $vehicle->horse_power)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Horse Power</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->horse_power }}</div>
-              <div class="rental__features--text profile__features--text-label">hp</div>
-            </div>
+
+          <div class="availabilitydiv">
+            <h2 class="rental__h2">Availability</h2>
+            <ul class="list-group list-group-flush">
+              @if( $vehicle->stock)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>In stock</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->stock }} vehicle</div>
+                </div>
+              </div>
+              
+              @endif
+              @if( $vehicle->differential)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Differential</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->differential }}</div>
+                </div>
+              </div>
+              
+              @endif
+              @if( $vehicle->clearence)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Clearence</h4></div>
+                <div>
+                  <div class="rental__features--text">{{ $vehicle->clearence }}</div>
+                </div>
+              </div>
+              
+              @endif
+              @if( $vehicle->transmission)
+              
+              <div class="rental__features--block">
+                <div class="rental__features--label"><h4>Transmission</h4></div>
+                <div class="rental__features--text">{{ $vehicle->transmission }}</div>
+              </div>
+              
+              @endif
+            </ul>
           </div>
-          @endif
-          @if( $vehicle->torque)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Torque</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->torque }}</div>
-              <div class="rental__features--text profile__features--text-label">lb-ft</div>
-            </div>
-          </div>
-          @endif
-          @if( $vehicle->clearence)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Clearence</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->clearence }}</div>
-            </div>
-          </div>
-          @endif
-          @if( $vehicle->differential)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Differential</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->differential }}</div>
-            </div>
-          </div>
-          @endif
-          @if( $vehicle->gear_ratio)
-          <div class="rental__features--block">
-            <div class="rental__features--label">Gear Ratio</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->gear_ratio }}</div>
-            </div>
-          </div>
-          @endif
-          @if( $vehicle->stock)
-          <div class="rental__features--block">
-            <div class="rental__features--label">In stock</div>
-            <div>
-              <div class="rental__features--text">{{ $vehicle->stock }} vehicle</div>
-            </div>
-          </div>
-          @endif
-          
         </div>
-      </section>
-      <section id="description" class="rental__section">
+</div>
+<div class="container">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
-        {!! $vehicle->description !!}
+          {!! $vehicle->description !!}
         </div>
-      </section>
-      <section id="location" class="rental__section">
-        <h2 class="rental__h2">Pickup Location</h2>
-
-
-          <div class="form-group row googlemap">
-              <div class="col-sm-12">
-                  <div id="map-canvas" style="height: 500px"></div>
-              </div>
-          </div>
-
-
-          <address class="profile__location--details">
-          <div class="profile__location--address">
-            <div>Rental Exotic Beasts</div>
-            <div>{{ $setting->company_name }}</div>
-            <div>{{ $setting->address }}</div>
-            <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
-              href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
-          </div>
-          <div class="profile__location--directions">From Las Vegas BLVD, go West on Flamingo, take a left at Hotel Rio
-            Drive, take a right at Dean Martin, and you&#x27;ll see a large Rental Exotic Beasts sign on the right-hand
-            side. Call us anytime if you have trouble finding our showroom.</div>
-        </address>
-      </section>
+</div>
+<div class="container">
+  <h2 class="rental__h2">Pickup Location</h2>
+  <div class="form-group row googlemap">
+    <div class="col-sm-12">
+      <div id="map-canvas" style="height: 500px"></div>
     </div>
   </div>
-
-
-
+  <address class="profile__location--details">
+    <div class="profile__location--address">
+      <div>Rental Exotic Beasts</div>
+      <div>{{ $setting->company_name }}</div>
+      <div>{{ $setting->address }}</div>
+      <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
+        href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
+    </div>
+  </address>
+</div>
   <!-- Modal -->
   <div class="modal fade" id="BookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered" role="document">

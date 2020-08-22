@@ -201,7 +201,7 @@
                         <div class="email"><a href="mailto:john@example.com">{{$order->email}}</a></div>
                     </div>
                     <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE 3-2-1</h1>
+                        <h1 class="invoice-id">{{$order->txn_id}}</h1>
                         <div class="date">Invoice Time: {{$order->created_at}}</div>
                         <div class="date">Reservation Time:
                             {{date("l, F d Y @ h:ia",strtotime($order->reservation_time))}}
