@@ -129,10 +129,13 @@ class VehicleController extends Controller
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
+        $vehicle->four_hour_discount = $request->four_hour_discount??0;
         $vehicle->eight_hour = $request->eight_hour??'no';
         $vehicle->eight_hour_price = $request->eight_hour_price;
+        $vehicle->eight_hour_discount = $request->eight_hour_discount??0;
         $vehicle->full_day = $request->full_day;
         $vehicle->full_day_price = $request->full_day_price;
+        $vehicle->full_day_discount = $request->full_day_discount??0;
         $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
@@ -275,10 +278,13 @@ class VehicleController extends Controller
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
+        $vehicle->four_hour_discount = $request->four_hour_discount??0;
         $vehicle->eight_hour = $request->eight_hour??'no';
         $vehicle->eight_hour_price = $request->eight_hour_price;
+        $vehicle->eight_hour_discount = $request->eight_hour_discount??0;
         $vehicle->full_day = $request->full_day;
         $vehicle->full_day_price = $request->full_day_price;
+        $vehicle->full_day_discount = $request->full_day_discount??0;
         $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
