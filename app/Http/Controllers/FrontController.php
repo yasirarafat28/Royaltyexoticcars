@@ -467,7 +467,12 @@ class FrontController extends Controller {
         return view('frontView.terms');
     }
     public function privacy() {
-        return view('frontView.privacy');
+        $setting=Setting();
+        return view('frontView.privacy')->with('setting', $setting);;
+    }
+    public function termsconditions() {
+        $setting=Setting();
+        return view('frontView.terms')->with('setting', $setting);
     }
     public function shop(){
         $setting=Setting::find(1);

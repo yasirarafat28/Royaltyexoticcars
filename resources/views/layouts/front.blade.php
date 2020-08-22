@@ -523,7 +523,8 @@
 												id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
 											<a href="/privacy" id="Nav-Privacy-Link"
 												class="nav__about--link w-dropdown-link">Privacy</a>
-
+											<a href="/term" id="Nav-Privacy-Link"
+												class="nav__about--link w-dropdown-link">Terms & Conditions</a>
 											<a href="mailto:{{$setting->email}}"
 												id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
 										</div>
@@ -564,7 +565,9 @@
                             </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-                            </li></ul>
+                            </li><li><a href="/term"><span class="fa fa-play"></span> Terms & Conditions</a>
+                            </li>
+							</ul>
                     </div>
                 </div>
                 <div class="col-md-3">

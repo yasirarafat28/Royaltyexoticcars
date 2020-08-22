@@ -51,8 +51,9 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 
 Route::get('/team', 'FrontController@team');
 Route::get('/privacy', 'FrontController@privacy');
-Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/terms', 'FrontController@terms');
+Route::get('/team/houston', 'FrontController@teamMembers');
+Route::get('/term', 'FrontController@termsconditions');
 Route::get('bookCar', 'FrontController@checkoutCar');
 Route::get('vehicle-booking/{vehicle_id}', 'FrontController@bookingvehicle');
 Route::get('/vehicle-browse', 'FrontController@vehicles');
