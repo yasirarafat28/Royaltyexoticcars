@@ -98,6 +98,18 @@
                          
                         </div>
                            <div class="form-group col-md-12">
+                              <label for="image">
+                                 1st Banner
+                              </label>
+                              <input type="file" id="image" class="form-control" name="banner1">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="image">
+                                 2nd Banner
+                              </label>
+                              <input type="file" id="image" class="form-control" name="banner2">
+                           </div>
+                           <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
                               {{__('messages.company_name')}}
                               <span class="reqfield">*</span>
@@ -587,7 +599,7 @@
             <span aria-hidden="true">&times;</span>
             </button>
          </div>
-         <form action="{{url('admin/updateshipping')}}" method="post">
+         <form action="{{url('admin/updateshipping')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <input type="hidden" name="id" id="id" />
             <div class="modal-body">
