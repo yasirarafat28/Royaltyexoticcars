@@ -307,6 +307,24 @@
                   <li class="menu-item-has-children dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <i class="menu-icon  fa fa-cog"></i>
+                     {{__('Appearance')}}
+                     </a>
+                     <ul class="sub-menu children dropdown-menu">
+                        <li>
+                           <a href="{{url('admin/banner')}}">
+                           {{__('messages.banner')}}
+                           </a>
+                        </li>
+                        <li>
+                           <a href="{{url('admin/slider')}}">
+                           {{__('Home Page Slider')}}
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="menu-icon  fa fa-cog"></i>
                      {{__('messages.site_setting')}}
                      </a>
                      <ul class="sub-menu children dropdown-menu">
@@ -331,11 +349,6 @@
                            </a>
                         </li>-->
                         @if(Session::get("is_web")==1)
-                        <li>
-                           <a href="{{url('admin/banner')}}">
-                           {{__('messages.banner')}}
-                           </a>
-                        </li>
                         <!--<li>
                            <a href="{{url('admin/support/1')}}">
                            {{__('messages.helpsupport')}}
