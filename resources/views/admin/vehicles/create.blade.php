@@ -134,16 +134,16 @@
                                         @endif
                                     </select>
                                 </div>
-                                <!--<div class="form-group col-md-6" >
-                                    <label for="brand" class="control-label mb-1">{{__('messages.tax_name')}}<span class="reqfield">*</span>
+                                <div class="form-group col-md-6" >
+                                    <label for="brand" class="control-label mb-1">{{__('messages.tax_name')}} <span class="reqfield">*</span>
                                     </label>
-                                    <select class="form-control" name="tax_id" id="texable" >
+                                    <select class="form-control" name="tax_id" id="texable" required >
                                         <option value="0">{{__('messages.select').' '.__('messages.tax_name')}}</option>
                                         @foreach($taxes??array() as $t)
-                                            <option value="{{$t->id}}" >{{$t->tax_name}}</option>
+                                            <option value="{{$t->id}}" >{{$t->tax_name}} ({{$t->rate}}%)</option>
                                         @endforeach
                                     </select>
-                                </div>-->
+                                </div>
                             </div>
                         </div>
                     </fieldset>

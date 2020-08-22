@@ -253,10 +253,10 @@
                   <li class="active">
                      <a href="{{url('admin/faq')}}">
                      <i class="menu-icon fa fa-image"></i>
-                        Add FAQs
+                        FAQs
                      </a>
                   </li>
-                  
+
                    <li class="active">
                      <a href="{{url('admin/notification')}}">
                      <i class="menu-icon fa fa-image"></i>

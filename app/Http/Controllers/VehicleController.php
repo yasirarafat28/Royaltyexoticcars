@@ -73,8 +73,8 @@ class VehicleController extends Controller
 
         $category=VehicleCategory::where("parent_category_id",0)->where("status",'active')->get();
         $brand=VehicleBrand::where("status",'active')->get();
-        $tax=Taxes::all();
-        return view('admin.vehicles.create',compact('tab','category','brand','tax'));
+        $taxes=Taxes::all();
+        return view('admin.vehicles.create',compact('tab','category','brand','taxes'));
     }
 
     /**
@@ -121,7 +121,7 @@ class VehicleController extends Controller
         $vehicle->category_id = $request->category_id;
         $vehicle->sub_category_id = $request->sub_category_id;
         $vehicle->brand_id = $request->brand_id;
-        //$vehicle->tax_id = $request->tax_id??0;
+        $vehicle->tax_id = $request->tax_id??0;
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
@@ -220,8 +220,9 @@ class VehicleController extends Controller
         $category=VehicleCategory::where("parent_category_id",0)->where("status",'active')->get();
         $subcategory=VehicleCategory::where("parent_category_id",$vehicle->category_id)->where("status",'active')->get();
         $brand=VehicleBrand::where("status",'active')->get();
-        $tax=Taxes::all();
-        return view('admin.vehicles.edit',compact('vehicle','category','brand','tax','subcategory'));
+
+        $taxes=Taxes::all();
+        return view('admin.vehicles.edit',compact('vehicle','category','brand','taxes','subcategory'));
     }
 
     /**
@@ -269,7 +270,7 @@ class VehicleController extends Controller
         $vehicle->category_id = $request->category_id;
         $vehicle->sub_category_id = $request->sub_category_id;
         $vehicle->brand_id = $request->brand_id;
-        //$vehicle->tax_id = $request->tax_id??0;
+        $vehicle->tax_id = $request->tax_id??0;
         $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;

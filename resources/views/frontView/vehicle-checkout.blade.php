@@ -280,7 +280,8 @@
 
             let sub_total = rental_cost + international_full_coverage_insurance
                 +liability_insurance + property_damage_waiver + tire_protection + mechanical_breakdown_coverage + fuel_credit;
-            let tax = sub_total*0.3;
+            let tax_rate = parseFloat("{{$vehicle->tax->rate??0}}");
+            let tax = sub_total*tax_rate/100;
             let grand_total = sub_total+tax - discount;
 
 

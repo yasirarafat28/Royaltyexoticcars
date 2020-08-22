@@ -254,7 +254,9 @@ class FrontController extends Controller {
         Session::put("stripe_secert",$pay->payment_secret);
 
         $id = base64_decode($vehicle);
-        $vehicle = \App\Vehicle::where('id',$id)->first();
+        $vehicle = \App\Vehicle::with('tax')->where('id',$id)->first();
+
+        //return $vehicle;
 
         $schedule_id = base64_decode($schedule);
         $schedule = VehicleSchedule::where('id',$schedule_id)->first();

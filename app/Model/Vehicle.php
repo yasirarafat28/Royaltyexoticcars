@@ -19,4 +19,8 @@ class Vehicle extends Model
     public function brand(){
         return $this->belongsTo('App\Model\VehicleBrand','brand_id');
     }
+
+    public function tax(){
+        return $this->belongsTo('App\Model\Taxes','tax_id');
+    }
 }
