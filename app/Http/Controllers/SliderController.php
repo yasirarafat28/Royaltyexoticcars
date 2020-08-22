@@ -38,6 +38,7 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'slider'=>'required',
             'title'=>'required',
             'photo'=>'required|mimes:jpg,jpeg,png,bmp',
         ]);
@@ -97,6 +98,7 @@ class SliderController extends Controller
     {
 
         $this->validate($request,[
+            'slider'=>'required',
             'title'=>'required',
         ]);
 

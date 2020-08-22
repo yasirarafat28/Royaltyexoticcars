@@ -90,76 +90,53 @@
                 }
             </style>
 
+            @php
+            $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
+
+            @endphp
+
             <div class="container-fluid p-0">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        @foreach($sliders??array() as $key=>$slider)
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" class="{{$key==0?'active':''}}"></li>
+                        @endforeach
                     </ol>
                     <div class="carousel-inner" role="listbox">
-                        <!-- Slide One - Set the background image for this slide in the line below -->
-                        <div class="carousel-item active" style="background-image: url('/frontEnd/img/banner.jpg')">
-                            <div class="carousel-caption">
-                                <div class="row">
-                                    <div class="col-md-6">
 
-                                        <div class="hero__content">
-                                            <div class="card card__hero slider-left-content" style="">
-                                                <div class="text-dark heading">Rated #1 for Exotic Car Rentals<br>in Las Vegas on&nbsp;<a href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html" id="Hero-TripAdvisor-Link" target="_blank" class="hero__rating--highlight">TripAdvisor</a>
+                        @foreach($sliders??array() as $key=>$slider)
+                            <div class="carousel-item {{$key==0?'active':''}}" style="background-image: url({{url($slider->photo??'/')}})">
+                                <div class="carousel-caption">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="hero__content">
+                                                <div class="card card__hero slider-left-content" style="">
+                                                    <div class="text-dark heading">Rated #1 for Exotic Car Rentals<br>in Las Vegas on&nbsp;<a href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html" id="Hero-TripAdvisor-Link" target="_blank" class="hero__rating--highlight">TripAdvisor</a>
+                                                    </div>
+                                                    <h1 class="hero__h1">Exotic Car Rentals at the lowest prices!</h1>
+                                                    <p class="lead">Rental Exotic Beasts has the largest selection of <strong>exotic
+                                                            cars</strong>, <strong>suvs</strong>, <strong>autocycles</strong> &amp;
+                                                        <strong>motorcycles</strong> for rent</p>
                                                 </div>
-                                                <h1 class="hero__h1">Exotic Car Rentals at the lowest prices!</h1>
-                                                <p class="lead">Rental Exotic Beasts has the largest selection of <strong>exotic
-                                                        cars</strong>, <strong>suvs</strong>, <strong>autocycles</strong> &amp;
-                                                    <strong>motorcycles</strong> for rent</p>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
+                                        <div class="col-md-6">
 
-                                        <div class="hero__content">
-                                            <div class="card card__cta"><a id="Hero-Call-Button" href="tel:+18669841187" class="hero__cta hero__cta--top w-inline-block">
-                                                    <div class="hero__cta--text">Call to Book!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg" alt="" class="hero__cta--icon">
-                                                </a><a href="/vehicles" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
-                                                    <div class="hero__cta--text">Book Online!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a534d4_calendar.svg" alt="" class="hero__cta--icon">
-                                                </a></div>
-                                            <div class="hero__note">We Beat Competitors's Prices!</div>
+                                            <div class="hero__content">
+                                                <div class="card card__cta"><a id="Hero-Call-Button" href="tel:+18669841187" class="hero__cta hero__cta--top w-inline-block">
+                                                        <div class="hero__cta--text">Call to Book!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg" alt="" class="hero__cta--icon">
+                                                    </a><a href="/vehicles" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
+                                                        <div class="hero__cta--text">Book Online!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a534d4_calendar.svg" alt="" class="hero__cta--icon">
+                                                    </a></div>
+                                                <div class="hero__note">We Beat Competitors's Prices!</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item" style="background-image: url('/frontEnd/img/banner2.jpg')">
-                            <div class="carousel-caption">
-                                <div class="row">
-                                    <div class="col-md-6">
-
-                                        <div class="hero__content">
-                                            <div class="card card__hero slider-left-content" style="">
-                                                <div class="text-dark heading">Rated #1 for Exotic Car Rentals<br>in Las Vegas on&nbsp;<a href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html" id="Hero-TripAdvisor-Link" target="_blank" class="hero__rating--highlight">TripAdvisor</a>
-                                                </div>
-                                                <h1 class="hero__h1">Exotic Car Rentals at the lowest prices!</h1>
-                                                <p class="lead">Rental Exotic Beasts has the largest selection of <strong>exotic
-                                                        cars</strong>, <strong>suvs</strong>, <strong>autocycles</strong> &amp;
-                                                    <strong>motorcycles</strong> for rent</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="hero__content">
-                                            <div class="card card__cta"><a id="Hero-Call-Button" href="tel:+18669841187" class="hero__cta hero__cta--top w-inline-block">
-                                                    <div class="hero__cta--text">Call to Book!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg" alt="" class="hero__cta--icon">
-                                                </a><a href="https://fareharbor.com/embeds/book/royalty-exotic-cars/" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
-                                                    <div class="hero__cta--text">Book Online!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a534d4_calendar.svg" alt="" class="hero__cta--icon">
-                                                </a></div>
-                                            <div class="hero__note">We Beat Competitors's Prices!</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
