@@ -118,6 +118,34 @@
                            </div>
                            <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
+                                 Supplemental Liability Insurance
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="supplemental_insurance" placeholder="Enter amount of Supplemental Liability Insurance" class="form-control" name="supplemental_insurance" required value="{{$data->supplemental_insurance}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                                 Property Damage Waiver
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="property_damage_waiver" placeholder="Enter amount of Property Damage Waiver" class="form-control" name="property_damage_waiver" required value="{{$data->property_damage_waiver}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                                 Tire Protection
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="tire_protection" placeholder="Enter amount of Tire Protection Insurance" class="form-control" name="tire_protection" required value="{{$data->tire_protection}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
+                                 Mechanical Break Down Insurance
+                              <span class="reqfield">*</span>
+                              </label>
+                              <input type="text" id="mechanical_break_down_insurance" placeholder="Enter amount of Mechanical Break Down Insurance" class="form-control" name="mechanical_break_down_insurance" required value="{{$data->mechanical_break_down_insurance}}">
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="name" class=" form-control-label">
                               {{__('messages.instagram_id')}}
                               <span class="reqfield">*</span>
                               </label>
