@@ -17,16 +17,16 @@ use App\User;
 use Hash;
 use Auth;
 class Admincontroller extends Controller {
-  
+
    public function showlogin(){
        parent::callschedule();
        $setting=Setting::find(1);
        Session::put("is_demo",$setting->is_demo);
        Session::put("is_rtl",$setting->is_rtl);
-       Session::put("is_web",$setting->is_web); 
+       Session::put("is_web",$setting->is_web);
        return view("admin.login");
    }
-   
+
    public function privacy(){
        return view("privacy_policy");
    }
@@ -38,22 +38,22 @@ class Admincontroller extends Controller {
    public function adddoc(){
       return view("document.product");
    }
-   
+
    public function dealofferdoc(){
        return view("document.dealoffer");
    }
- 
+
    public function normalofferdoc(){
        return view("document.normaloffer");
    }
-   
+
    public function mainofferdoc(){
        return view("document.mainoffer");
    }
    public function addproductstep(){
       return view("document.addproductstep");
    }
-   
+
    public function addfeadoc(){
       return view('document.addfeadoc');
    }
@@ -64,20 +64,20 @@ class Admincontroller extends Controller {
              if($user){
                  $data=Sentinel::getUser();
                  Session::put("profile_pic",asset("public/upload/profile/"."/".$data->profile_pic));
-                 return  redirect("admin/dashboard");    
-               } 
+                 return  redirect("admin/dashboard");
+               }
               else{
-                   
-                    Session::flash('message',__('messages_error_success.login_error')); 
+
+                    Session::flash('message',__('messages_error_success.login_error'));
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
-              } 
+              }
         }
         else{
-            Session::flash('message',__('messages_error_success.login_error')); 
+            Session::flash('message',__('messages_error_success.login_error'));
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
-        }       
+        }
    }
 
    public function showdashboard(){
@@ -92,7 +92,7 @@ class Admincontroller extends Controller {
         else{
              $array_ob["date"]="";
         }
-         
+
           $array_ob["order"]=count($order);
           $subtotal=0;
           $shipping=0;
@@ -114,7 +114,7 @@ class Admincontroller extends Controller {
    }
 
    public function showlogout(){
-            Sentinel::logout();
+            Auth::logout();
             return redirect('admin');
    }
 
@@ -125,14 +125,14 @@ class Admincontroller extends Controller {
    }
 
    public function editprofile(){
-        $user=Sentinel::getUser();
+        $user=Auth::user();
        return view("admin.updateprofile")->with("data",$user);
    }
 
-   
-   public function updateprofile(Request $request){      
-           $user=Sentinel::getUser();
-           if ($request->hasFile('file')) 
+
+   public function updateprofile(Request $request){
+           $user=Auth::user();
+           if ($request->hasFile('file'))
               {
                  $file = $request->file('file');
                  $filename = $file->getClientOriginalName();
@@ -150,26 +150,26 @@ class Admincontroller extends Controller {
             $data->profile_pic=$img_url;
             $data->save();
             Session::put("profile_pic",asset("public/upload/profile/"."/".$img_url));
-            Session::flash('message',__('messages_error_success.profile_sucess_update')); 
+            Session::flash('message',__('messages_error_success.profile_sucess_update'));
             Session::flash('alert-class', 'alert-success');
             return redirect("admin/editprofile");
    }
 
     public function changepassword(Request $request){
       return view("admin.changepassword");
-   }  
+   }
    public  function check_password_same($pwd){
-    $user=Sentinel::getUser();
+    $user=Auth::user();
      if (Hash::check($pwd, $user->password))
      {
         $data=1;
      }
     else{
-        $data=0; 
+        $data=0;
      }
    return json_encode($data);
    }
-   
+
    public function check_user_password_same($pwd){
        $user=Auth::user();
        if($user->password==$pwd)
@@ -177,25 +177,25 @@ class Admincontroller extends Controller {
           $data=1;
        }
        else{
-            $data=0; 
+            $data=0;
        }
        return json_encode($data);
    }
    public function updatepassword(Request $request){
-     $user=Sentinel::getUser();
+     $user=Auth::user();
        if (Hash::check($request->get('cpwd'), $user->password))
         {
-            Sentinel::update($user, array('password' => $request->get('npwd')));
-            Session::flash('message',__("messages_error_success.password_update_success")); 
+            Auth::update($user, array('password' => $request->get('npwd')));
+            Session::flash('message',__("messages_error_success.password_update_success"));
             Session::flash('alert-class', 'alert-success');
             return redirect()->back();
         }
        else{
-          Session::flash('message',__('messages_error_success.error_code')); 
+          Session::flash('message',__('messages_error_success.error_code'));
           Session::flash('alert-class', 'alert-danger');
           return redirect()->back();;
        }
-       
+
    }
 
    public function changeuserpwd(Request $request){
@@ -206,8 +206,8 @@ class Admincontroller extends Controller {
    }
 
    public function updateuserprofile(Request $request){
-         
-            if ($request->hasFile('file')) 
+
+            if ($request->hasFile('file'))
               {
                  $file = $request->file('file');
                  $filename = $file->getClientOriginalName();
@@ -228,7 +228,7 @@ class Admincontroller extends Controller {
             $data->save();
             Session::put("profile_pic",asset("public/upload/profile/"."/".$img_url));
             Session::put("name",$data->first_name);
-            Session::flash('message',__('messages_error_success.profile_sucess_update')); 
+            Session::flash('message',__('messages_error_success.profile_sucess_update'));
             Session::flash('alert-class', 'alert-success');
             return redirect()->back();
    }
