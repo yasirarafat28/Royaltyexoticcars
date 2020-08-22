@@ -109,7 +109,7 @@
                             <div class="browse__heading--embed w-embed">
                                 <h1 class="browse__h1">{{$current_category->name}}</h1>
                             </div>
-                            <p class="browse__desc">{{$current_category->description}}</p>
+                            <p class="browse__desc" style="font-style: 1em;">{{$current_category->description}}</p>
                         @else
 
                             <div class="browse__heading--embed w-embed">

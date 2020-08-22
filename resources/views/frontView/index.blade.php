@@ -36,29 +36,25 @@
                                 <div class="carousel-item {{$key==0?'active':''}}" style="background-image: url({{url($slider->photo??'/')}})">
                                     <div class="carousel-caption">
                                         <div class="row">
-                                            <div class="col-md-6">
+
+                                            <div class="col-md-6 offset-md-6">
 
                                                 <div class="hero__content">
-                                                    <div class="card card__hero slider-left-content" style="">
-                                                        <div class="text-dark heading">Rated #1 for Exotic Car Rentals<br>in Las Vegas on&nbsp;<a href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html" id="Hero-TripAdvisor-Link" target="_blank" class="hero__rating--highlight">TripAdvisor</a>
-                                                        </div>
-                                                        <h1 class="hero__h1">Exotic Car Rentals at the lowest prices!</h1>
-                                                        <p class="lead">Rental Exotic Beasts has the largest selection of <strong>exotic
-                                                                cars</strong>, <strong>suvs</strong>, <strong>autocycles</strong> &amp;
-                                                            <strong>motorcycles</strong> for rent</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-
-                                                <div class="hero__content">
-                                                    <div class="card card__cta"><a id="Hero-Call-Button" href="tel:+18669841187" class="hero__cta hero__cta--top w-inline-block">
-                                                            <div class="hero__cta--text">Call to Book!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg" alt="" class="hero__cta--icon">
-                                                        </a><a href="/vehicles" id="Hero-Book-Online-Button" class="hero__cta hero__cta--bottom w-inline-block">
-                                                            <div class="hero__cta--text">Book Online!</div><img src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a534d4_calendar.svg" alt="" class="hero__cta--icon">
-                                                        </a></div>
+                                                    <h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
+                                                    <p class="lead ">{!! $slider->content !!}</p>
                                                     <div class="hero__note">We Beat Competitors's Prices!</div>
+
+                                                    <br>
+                                                    <div class="rental__cta">
+                                                        <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
+                                                            <div class="rental__cta--embed w-embed">
+                                                                <a href="/vehicles" class="rental__cta--text text-uppercase">
+                                                                    Book Now
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

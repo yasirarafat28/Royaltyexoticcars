@@ -33,6 +33,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
 	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css" rel="stylesheet" type="text/css" />
+	<link href="/Ecommerce/css/animate.min.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/custom.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<script src="/frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -91,7 +92,7 @@
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 20% !important;
+            bottom: 40% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
@@ -230,7 +231,7 @@
 												</div>
 												<div class="nav__categories--text">
 													<div class="nav__categories--heading">{{ $category->name }}</div>
-													<div class="nav__categories--desc">{{$category->description}}</div>
+													<div class="nav__categories--desc">{{substr($category->description,0,80)}}</div>
 												</div>
 											</a>
 
