@@ -408,6 +408,8 @@
          <div class="main-menu">
             <div class="row">
                <ul>
+
+                   <li><a href="{{url('/shop')}}">{{__('Home')}}</a>
                   @foreach($header_menu as $category)
                   <li>
                      <a href="{{url('productslist/').'/'.$category->id.'/0/0/0'}}">
