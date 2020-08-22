@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Sentinel;
 use Session;
+use Illuminate\Support\Facades\Auth;
 class admincheckexiste
 {
     /**
@@ -16,8 +17,8 @@ class admincheckexiste
      */
     public function handle($request, Closure $next)
     {
-        if(Sentinel::check()){
-            $user=Sentinel::getUser();
+        if(Auth::check()){
+            $user=Auth::user();
             if($user->user_type=='2'){
                 return $next($request);
             }
@@ -27,9 +28,9 @@ class admincheckexiste
                 }else{
                     return redirect('admin/');
                 }
-                
+
             }
-            
+
         }else{
             if(Session::get("is_web")=='1'){
                     return redirect('/');

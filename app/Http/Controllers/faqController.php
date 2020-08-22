@@ -14,7 +14,7 @@ class faqController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $faqs = Faq::all();
         return view('admin.faq.index')->with('faqs', $faqs);
     }
@@ -90,11 +90,12 @@ class faqController extends Controller
 
         ]);
 
-        $faqs = Faq::find($id);
-        $faqs->question = $request->question;
-        $faqs->descripton = $request->description;
+        $faq = Faq::find($id);
+        $faq->question = $request->question;
+        $faq->descripton = $request->description;
 
         $faq->save();
+        return redirect('admin/faq')->withSuccess('Faq updated successfully!');
     }
 
     /**
@@ -106,6 +107,6 @@ class faqController extends Controller
     public function destroy($id)
     {
         $faqs = Faq::destroy($id);
-        return redirect('admin/faq');
+        return back()->withSuccess('FAQ removed successfully!');
     }
 }

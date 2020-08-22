@@ -40,7 +40,7 @@
                      </div>
                      @endif
                   </div>
-                  <form action="{{url('admin/postlogin')}}" method="post">
+                  <form action="{{url('login')}}" method="post">
                      {{csrf_field()}}
                      <div class="form-group">
                         <label>{{__('messages.email')}}</label>
