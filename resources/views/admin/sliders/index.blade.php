@@ -44,7 +44,7 @@
 
 
                     <div class="modal fade" id="modal-create">
-                        <div class="modal-dialog modal-md">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">Create Schedule</h4>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="form-group ">
                                             <label for="name" class="control-label">Description</label>
-                                            <textarea name="description"  class="form-control"></textarea>
+                                            <textarea name="description" id="description" class="editor form-control"></textarea>
 
                                         </div>
 
