@@ -93,7 +93,7 @@
             <div class="stat-widget-one">
                <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                <div class="stat-content dib">
-                  <div class="stat-text">Total Booking Revenue</div>
+                  <div class="stat-text">Booking Revenue</div>
                   <div class="stat-digit">$ {{number_format($total_booking_revenue,2)}}</div>
                </div>
             </div>

@@ -42,162 +42,363 @@ $setting = setting();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+        .detail-product-text ul {
+            list-style: none;
+            padding-left: 0px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .detail-product {
+            margin-top: 50px;
+        }
+
+        .detail-product-head h2 {
+            font-family: 'Open Sans';
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .detail-product-head p {
+            font-family: 'open sans';
+            font-weight: 700;
+            display: inline-block;
+            color: #727272;
+            font-size: 20px;
+            padding-top: 3px;
+            margin-bottom: 6px;
+        }
+        .detail-review-star .fa-star:before {
+            color: #f07f13;
+        }
+        .detail-product-text .detail-review-box {
+            margin-top: 0px;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .detail-review-box .detail-review-star {
+            display: inline-block;
+            float: left;
+        }
+
+        .detail-review-box .detail-review-people p {
+            color: #96979d;
+            padding-left: 20px;
+            display: inline-block;
+            margin-bottom: 0px;
+        }
+
+        .detail-content p {
+            color: #96979d;
+            font-size: 18px;
+            font-family: 'open sans';
+        }
+
+        .detail-product-text .detail-qty-button {
+            padding: 10px;
+            border: 2px solid #f07f13;
+            border-radius: 1000px;
+            display: inline-block;
+            margin-top: 35px;
+        }
+        .detail-info .detail-information {
+            padding: 4px 0px;
+        }
+
+        .detail-information h2 {
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .detail-information h4 {
+            font-size: 16px;
+            color: #727272;
+            /* padding: 0px 5px;*/
+            display: inline-block;
+        }
+
+        .vehicle-price hr{
+            margin: 2px 0px;
+        }
+
+        .vehicle-price .title{
+            font-size: 16px !important;
+            font-weight: bold;
+        }
+
+
+
+
     </style>
 
 @endsection
 @section('content')
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-sm-7">
-          <section id="photos" class="rental__section">
-            @php
+        @php
             $additional_images = explode(',',$vehicle->additional_image);
-            @endphp
+        @endphp
 
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators mx-auto">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    @foreach($additional_images??array() as $key=>$image)
-                      <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
-                    @endforeach
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
-                    </div>
-
-                    @foreach($additional_images??array() as $key=>$image)
-                        <div class="carousel-item">
-                            <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
-                        </div>
-                    @endforeach
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators mx-auto">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                @foreach($additional_images??array() as $key=>$image)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-              </div>
-          </section>
+
+                @foreach($additional_images??array() as $key=>$image)
+                    <div class="carousel-item">
+                        <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
+                    </div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
     <div class="col-sm-5">
-      <div class="well">
-        <div class="mt-10">
-          <div class="rental__name">
-              <h1 class="rental__h1">{{ $vehicle->name }}</h1>
-              <div class="rental__specs">{{ $brand->name }}</div>
-              <div class="rental__specs rental__specs--spacer">|</div>
-              <div class="rental__specs">{{ $vehicle->transmission }}</div>
-              <div class="rental__specs rental__specs--spacer">|</div>
-              <div class="rental__specs">{{ $vehicle->horse_power }}</div>
-              <div class="rental__specs">hp</div>
-          </div>
-        </div>
-      </div>
-      
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="text-break">
-                @if($vehicle->four_hour=='yes')
-                      @if($vehicle->four_hour_discount)
-                          <div class="rental__price--block bookbar__price--block-wide">
-                            <div class="col-sm-9 rental__price--label"><h4>4Hr Special! ${{ $vehicle->four_hour_discount }}</h4></div>
-                            <div class="col-sm-3 rental__price--before">
-                              <div><h5>normally $ {{ $vehicle->four_hour_price }}</h5></div>
-                            </div>
-                          </div>
-                      @else
-                          <div class="rental__price--block ">
-                              <div class="rental__price--label">4 Hours  ${{ $vehicle->four_hour_price }}</div>
-                          </div>
-                      @endif
-                @endif
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="text-break">
-                @if($vehicle->eight_hour=='yes')
-                      @if($vehicle->eight_hour_discount)
-                          <div class="rental__price--block bookbar__price--block-wide">
-                            <div class="col-sm-9 rental__price--label"><h4>8Hr Special! ${{ $vehicle->eight_hour_discount }}</h4></div>
-                            <div class="col-sm-3 rental__price--before">
-                              <div><h5>normally $ {{ $vehicle->eight_hour_price }}</h5></div>
-                            </div>
-                          </div>
-                      @else
-                          <div class="rental__price--block ">
-                              <div class="rental__price--label">8 Hours  ${{ $vehicle->eight_hour_price }}</div>
-                          </div>
-                      @endif
-                @endif
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="text-break">
-                @if($vehicle->full_day=='yes')
-                      @if($vehicle->full_day_discount)
-                          <div class="rental__price--block bookbar__price--block-wide">
-                            <div class="col-sm-9 rental__price--label"><h4>Full Day Special! ${{ $vehicle->full_day_discount }}</h4></div>
-                            <div class="col-sm-3 rental__price--before">
-                              <div><h5>normally $ {{ $vehicle->full_day_price }}</h5></div>
-                            </div>
-                          </div>
-                      @else
-                          <div class="rental__price--block ">
-                              <div class="rental__price--label">Full Day  ${{ $vehicle->full_day_price }}</div>
-                          </div>
-                      @endif
-                @endif
-              </div>
-            </li>
-          </ul>
-        </div>
-      
-      <div class="well">
-        <div class="rental__cta">
-          <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
-            <div class="rental__cta--embed w-embed">
-                <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
-                Book Online
-              </a>
-            </div>
-          </div>
 
+        <div class="detail-product-text">
+            <div class="detail-product-head">
+                <input type="hidden" name="productname" id="productname" value="Heckle chain">
+                <h2 class="home__h2">{{$vehicle->name}}</h2>
+                <br>
+                <div class="d-flex">
+
+                    @if($vehicle->four_hour=='yes')
+                        <div class="vehicle-price mr-5">
+                            <h4 class="title">4 Hrs Price</h4>
+                            <hr>
+
+                            @if($vehicle->four_hour_discount)
+                                <h5 class="td1">${{number_format($vehicle->four_hour_discount,1)}}
+                                    <small><s id="order_price">${{number_format($vehicle->four_hour_price,1)}}</s></small>
+                                </h5>
+                            @else
+                                <h5 class="td1">${{number_format($vehicle->four_hour_discount,1)}}
+                                </h5>
+                            @endif
+
+                        </div>
+                    @endif
+
+                    @if($vehicle->eight_hour=='yes')
+                        <div class="vehicle-price mr-5">
+                            <h4 class="title">8 Hrs Price</h4>
+                            <hr>
+
+                            @if($vehicle->eight_hour_discount)
+                                <h5 class="td1">${{number_format($vehicle->eight_hour_discount,1)}}
+                                    <small><s id="order_price">${{number_format($vehicle->eight_hour_price,1)}}</s></small>
+                                </h5>
+                            @else
+                                <h5 class="td1">${{number_format($vehicle->eight_hour_discount,1)}}
+                                </h5>
+                            @endif
+
+                        </div>
+                    @endif
+
+                    @if($vehicle->full_day=='yes')
+                        <div class="vehicle-price mr-5">
+                            <h4 class="title">24 Hrs Price</h4>
+                            <hr>
+
+                            @if($vehicle->full_day_discount)
+                                <h5 class="td1">${{number_format($vehicle->full_day_discount,1)}}
+                                    <small><s id="order_price">${{number_format($vehicle->full_day_price,1)}}</s></small>
+                                </h5>
+                            @else
+                                <h5 class="td1">${{number_format($vehicle->full_day_discount,1)}}
+                                </h5>
+                            @endif
+
+                        </div>
+                    @endif
+
+
+                </div>
+            </div>
+            <br>
+            <div>
+                {{ substr(strip_tags($vehicle->description),0,100) }} <a href="#information">Read More</a>
+            </div>
+
+            <div class="detail-info">
+                <div class="detail-information">
+                    <h2>Category :</h2>
+                    <h4>{{$vehicle->category->name??''}}</h4>
+                </div>
+                <div class="detail-information">
+                    <h2>Brand :</h2>
+                    <h4>{{$brand->name}}</h4>
+                </div>
+            </div>
+
+            <div class="detail-info">
+                <ul class="car-info-list d-flex">
+                    <li>{{$vehicle->model}}</li>
+                    <li>{{$vehicle->body}}</li>
+                    <li>{{$vehicle->vehicle_class}}</li>
+                    <li>{{$vehicle->transmission}}</li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="rental__cta">
+                <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
+                    <div class="rental__cta--embed w-embed">
+                        <a href="/vehicle-booking/{{base64_encode($vehicle->id)}}"  class="rental__cta--text">
+                            Book Online
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
+
     </div>
   </div>
 </div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 vehicle-spec">
+            <h4>About</h4>
+            <hr>
+
+            <div class="tech-info-table">
+                <table class="table table-bordered table-hover">
+                    <tbody><tr>
+                        <th>Class</th>
+                        <td>Compact</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>Petrol</td>
+                    </tr>
+                    <tr>
+                        <th>Doors</th>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th>GearBox</th>
+                        <td>Automatic</td>
+                    </tr>
+                    </tbody></table>
+            </div>
+        </div>
+
+        <div class="col-sm-4 vehicle-spec">
+            <h4>Style</h4>
+            <hr>
+
+            <div class="tech-info-table">
+                <table class="table table-bordered table-hover">
+                    <tbody><tr>
+                        <th>Class</th>
+                        <td>Compact</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>Petrol</td>
+                    </tr>
+                    <tr>
+                        <th>Doors</th>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th>GearBox</th>
+                        <td>Automatic</td>
+                    </tr>
+                    </tbody></table>
+            </div>
+        </div>
+
+        <div class="col-sm-4 vehicle-spec">
+            <h4>Performance</h4>
+            <hr>
+
+            <div class="tech-info-table">
+                <table class="table table-bordered table-hover">
+                    <tbody><tr>
+                        <th>Class</th>
+                        <td>Compact</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>Petrol</td>
+                    </tr>
+                    <tr>
+                        <th>Doors</th>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th>GearBox</th>
+                        <td>Automatic</td>
+                    </tr>
+                    </tbody></table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--
 <div class="container">
         <div class="descriptiondiv" style="display:flex; justify-content: space-between;">
           <div class="aboutdiv">
             <h2 class="rental__h2">About</h2>
             <ul class="list-group list-group-flush">
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Make</h4></div>
-                  <div class="rental__features--text">{{ $brand->name }}</div> 
+                  <div class="rental__features--text">{{ $brand->name }}</div>
                 </div>
-              
+
               @if( $vehicle->model)
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Model</h4></div>
                   <div class="rental__features--text">{{ $vehicle->model }}</div>
                 </div>
-              
+
               @endif
               @if( $vehicle->vehicle_class)
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Class</h4></div>
                   <div class="rental__features--text">{{ $vehicle->vehicle_class }}</div>
                 </div>
-              
+
               @endif
               @if( $vehicle->type)
               <div class="rental__features--block">
@@ -221,29 +422,29 @@ $setting = setting();
             <h2 class="rental__h2">Style</h2>
             <ul class="list-group list-group-flush">
               @if( $vehicle->color)
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Color</h4></div>
                   <div class="rental__features--text">{{ $vehicle->color }}</div>
                 </div>
-              
+
               @endif
-              
+
               @if( $vehicle->body)
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Body</h4></div>
                   <div class="rental__features--text">{{ $vehicle->body }}</div>
                 </div>
-              
+
               @endif
               @if( $vehicle->seat)
-              
+
                 <div class="rental__features--block">
                   <div class="rental__features--label"><h4>Seats</h4></div>
                   <div class="rental__features--text">{{ $vehicle->seat }}-seater</div>
                 </div>
-              
+
               @endif
               @if( $vehicle->type)
               <div class="rental__features--block">
@@ -251,7 +452,7 @@ $setting = setting();
                 <div class="rental__features--text">{{ $vehicle->type }}</div>
               </div>
               @endif
-            
+
             </ul>
           </div>
 
@@ -259,15 +460,15 @@ $setting = setting();
             <h2 class="rental__h2">Performance</h2>
             <ul class="list-group list-group-flush">
               @if( $vehicle->suspension)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Suspension</h4></div>
                 <div class="rental__features--text">{{ $vehicle->suspension }}</div>
               </div>
-              
+
               @endif
               @if( $vehicle->horse_power)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Horse Power</h4></div>
                 <div>
@@ -275,10 +476,10 @@ $setting = setting();
                   <div class="rental__features--text profile__features--text-label">hp</div>
                 </div>
               </div>
-              
+
               @endif
               @if( $vehicle->torque)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Torque</h4></div>
                 <div>
@@ -286,19 +487,19 @@ $setting = setting();
                   <div class="rental__features--text profile__features--text-label">lb-ft</div>
                 </div>
               </div>
-              
+
               @endif
               @if( $vehicle->gear_ratio)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Gear Ratio</h4></div>
                 <div>
                   <div class="rental__features--text">{{ $vehicle->gear_ratio }}</div>
                 </div>
               </div>
-              
+
               @endif
-              
+
             </ul>
           </div>
 
@@ -306,47 +507,47 @@ $setting = setting();
             <h2 class="rental__h2">Availability</h2>
             <ul class="list-group list-group-flush">
               @if( $vehicle->stock)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>In stock</h4></div>
                 <div>
                   <div class="rental__features--text">{{ $vehicle->stock }} vehicle</div>
                 </div>
               </div>
-              
+
               @endif
               @if( $vehicle->differential)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Differential</h4></div>
                 <div>
                   <div class="rental__features--text">{{ $vehicle->differential }}</div>
                 </div>
               </div>
-              
+
               @endif
               @if( $vehicle->clearence)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Clearence</h4></div>
                 <div>
                   <div class="rental__features--text">{{ $vehicle->clearence }}</div>
                 </div>
               </div>
-              
+
               @endif
               @if( $vehicle->transmission)
-              
+
               <div class="rental__features--block">
                 <div class="rental__features--label"><h4>Transmission</h4></div>
                 <div class="rental__features--text">{{ $vehicle->transmission }}</div>
               </div>
-              
+
               @endif
             </ul>
           </div>
         </div>
-</div>
+</div>-->
 <div class="container">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
