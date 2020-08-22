@@ -149,7 +149,7 @@
         .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
             display: flex;
             height: 3px;
-            background-color: darkorange;
+            background-color: red;
             content: "";
             position: absolute;
             width: 20%;
@@ -203,7 +203,7 @@
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 								required="" />
 
-                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: red;background-image: none"><i class="fa fa-search"></i>
                             </button>
                         </form>
 					</div>
