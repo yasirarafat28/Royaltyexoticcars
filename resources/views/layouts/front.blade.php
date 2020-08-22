@@ -18,7 +18,7 @@
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="og:description" />
-    
+
 	<meta content="Rental Exotic Beasts - Las Vegas" property="twitter:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
