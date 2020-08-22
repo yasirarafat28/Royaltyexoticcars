@@ -213,6 +213,11 @@
           color: #fff;
       }
 
+      .pro-img img {
+          width: 100%;
+          height: 230px;
+      }
+
 
    </style>
    <body class="rtl">
@@ -536,7 +541,7 @@
                                  <li><a href="mailto:{{$setting->email?? ''}}"><span class="fa fa-envelope"></span>{{$setting->email?? ''}}</a></li>
                                  <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone?? ''}}</p></a></li>
 
-                                 
+
                              </ul>
                          </div>
                      </div>

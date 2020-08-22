@@ -422,8 +422,8 @@
 
 
         <div class="error-error" id="online-booking-error-container" style="padding: 100px 10px; display: block;">
-            <h2>Sorry, there is no online availability for this booking.</h2>
-            <div>Please call us at {{setting()->phone}}.</div>
+            <h2>Please select a reservation package.</h2>
+            <div>Please call us at <a href="tel:{{setting()->phone}}">{{setting()->phone}}</a>.</div>
         </div>
     </main>
 </div>

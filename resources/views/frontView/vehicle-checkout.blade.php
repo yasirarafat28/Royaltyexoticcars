@@ -170,6 +170,7 @@
             });
             //console.log(form.valid());
             if (form.valid()){
+                $(this).text('Processing...').attr('disabled','disabled');
                 $('.stripe-button-el').click();
             }
         });
