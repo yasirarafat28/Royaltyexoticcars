@@ -593,7 +593,7 @@
                             <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
                             <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
                             <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
-                            <li><a href="tel:01988300003" class="btn btn-success mb-2" style="background-color: orangered"><i class="fa fa-phone"></i> Call Now</a></li>
+                            
                         </ul>
                     </div>
                 </div>
