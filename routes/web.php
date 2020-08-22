@@ -186,6 +186,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle-brand', 'VehicleBrandController');
         Route::resource('vehicle-schedules', 'VehicleScheduleController');
         Route::resource('vehicle-coupon', 'VehicleCouponController');
+        Route::resource('vehicle-orders', 'VehicleOrderController');
         Route::resource('faq', 'faqController');
 
 

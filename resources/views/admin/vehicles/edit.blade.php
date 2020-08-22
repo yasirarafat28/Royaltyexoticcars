@@ -99,7 +99,8 @@
                                         <div class="form-group col-md-4">
                                             <label for="subcategory" class="control-label mb-1">{{__('messages.sub_cat')}}<span class="reqfield">*</span>
                                             </label>
-                                            <select name="sub_category_id" required id="subcategory" class="form-control" onchange="getbrand(this.value)">
+                                            <!--<select name="sub_category_id" required id="subcategory" class="form-control" onchange="getbrand(this.value)">-->
+                                            <select name="sub_category_id" required id="subcategory" class="form-control">
                                                 <option value="">{{__('messages.select')}} {{__('messages.sub_cat')}}</option>
                                                 @if(isset($subcategory))
                                                     @foreach($subcategory??array() as $sub)
