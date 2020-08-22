@@ -43,16 +43,16 @@
                   <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
                      <div class="cmr1">
                         
-                                           <div class="form-group col-md-12">
-                                              <div class="form-group col-md-6">
-                          <label for="name" class=" form-control-label">
-                              {{__('messages.com_logo')}} <b>{{__('messages.img_tr')}} (128X61)</b>
-                              <span class="reqfield">*</span>
+                        <div class="form-group col-md-12">
+                           <div class="form-group col-md-6">
+                              <label for="name" class=" form-control-label">
+                                 {{__('messages.com_logo')}} <b>{{__('messages.img_tr')}} (128X61)</b>
+                                 <span class="reqfield">*</span>
                               </label>
-                        <div id="uploaded_image">
-                            <div class="upload-btn-wrapper">
-                                <button class="btn imgcatlog">
-                                   <input type="hidden" name="real_logo" id="real_logo" value="<?= isset($data->logo)?$data->logo:""?>"/>
+                              <div id="uploaded_image">
+                                 <div class="upload-btn-wrapper">
+                                    <button class="btn imgcatlog">
+                                       <input type="hidden" name="real_logo" id="real_logo" value="<?= isset($data->logo)?$data->logo:""?>"/>
                                                    <?php 
                                                          if(isset($data->logo)){
                                                              $path=asset('Ecommerce/images/')."/".$data->logo;
@@ -62,13 +62,13 @@
                                                          }
                                                    ?>
                                                 <img src="{{$path}}" alt="..." class="img-thumbnail"  id="img_logo" >
-                                                </button>
+                                    </button>
                                                 <input type="hidden" name="logo" id="logo"/>
                                                 <input type="file" name="upload_image_logo" id="upload_image_logo" />
-                                             </div>
-                                          </div>
-                                          </div>
-                         <div class="form-group col-md-5">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-group col-md-5">
                               <label for="name" class=" form-control-label">
                               {{__('messages.site_rtl')}}
                                <a href="{{url('admin/changesettingstatus/is_rtl')}}">
