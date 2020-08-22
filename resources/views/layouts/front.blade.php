@@ -575,14 +575,9 @@
                             </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-<<<<<<< HEAD
-                            </li><li><a href="/term"><span class="fa fa-play"></span> Terms & Conditions</a>
-                            </li>
-							</ul>
-=======
                             </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a>
                             </li></ul>
->>>>>>> da5f95636b93d67bb1f1fdce7f30dc3e270495c3
+
                     </div>
                 </div>
                 <div class="col-md-3">
