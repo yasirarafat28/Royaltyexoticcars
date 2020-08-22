@@ -7,7 +7,7 @@
           <h1 class="policy__h1">RENTAL EXOTICS BEASTS RENTAL THEMS</h1>
           <div class="policy__timestamp">Updated Aug 23, 2020</div>
           <div class="policy__note">*If you have any questions about these Terms of Use, please contact us at<br>
-            {{ $setting->email }}.</div>
+          {{ $setting ?? '' }}.</div>
         </div>
         <div class="policy__richtext w-richtext">
           <p>Please read these Terms and Conditions carefully before using rentalexoticsbeasts.com website operated by RENTAL EXOTICS BEASTS. Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service. By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.
