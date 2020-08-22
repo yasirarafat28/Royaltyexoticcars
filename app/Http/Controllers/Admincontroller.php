@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Http\Requests\LoginRequest;
 use Sentinel;
@@ -107,11 +108,17 @@ class Admincontroller extends Controller {
           $total=$tax+$shipping+$subtotal;
           $total_sell=$res_curr[1]."".$total;
           $total_order=Order::all();
-          $total_vehicle=Vehicle::all();
-          $total_booking = VehicleCheckout::all();
+
+          $total_vehicle    =   Vehicle::count();
+          $total_booking_revenue = VehicleCheckout::where('status','!=','temporary')->sum('grand_total');
+          $pending_booking = VehicleCheckout::where('status','pending')->count();
+          $today_booking = VehicleCheckout::where('status','!=','temporary')->where(DB::raw('date(created_at)'),'>=',date('Y-m-d'))->count();
+          $latest_booking = VehicleCheckout::where('status','!=','temporary')->orderBy('created_at','DESC')->take(5)->get();
+
+
           $total_product=Product::all();
           $total_customer=User::where("user_type",'1')->get();
-          return view("admin.dashboard")->with("total_booking",count($total_booking))->with("total_vehicle",count($total_vehicle))->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
+          return view("admin.dashboard")->with("latest_booking",$latest_booking)->with("today_booking",$today_booking)->with("pending_booking",$pending_booking)->with("total_booking_revenue",$total_booking_revenue)->with("total_vehicle",$total_vehicle)->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
    }
 
    public function showlogout(){

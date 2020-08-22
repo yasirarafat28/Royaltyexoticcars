@@ -91,10 +91,10 @@
       <div class="card">
          <div class="card-body">
             <div class="stat-widget-one">
-               <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
+               <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                <div class="stat-content dib">
-                  <div class="stat-text">Total Bookings</div>
-                  <div class="stat-digit">{{$total_vehicle}}</div>
+                  <div class="stat-text">Total Booking Revenue</div>
+                  <div class="stat-digit">$ {{number_format($total_booking_revenue,2)}}</div>
                </div>
             </div>
          </div>
@@ -106,8 +106,8 @@
             <div class="stat-widget-one">
                <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
                <div class="stat-content dib">
-                  <div class="stat-text">Todays Bookings</div>
-                  <div class="stat-digit">{{$total_vehicle}}</div>
+                  <div class="stat-text">Today's Bookings</div>
+                  <div class="stat-digit">{{$today_booking}}</div>
                </div>
             </div>
          </div>
@@ -120,7 +120,7 @@
                <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Pending Booking</div>
-                  <div class="stat-digit">{{$total_vehicle}}</div>
+                  <div class="stat-digit">{{$pending_booking}}</div>
                </div>
             </div>
          </div>
@@ -130,6 +130,42 @@
 </div>
 <div class="col-md-12 flt">
    <div class="row">
+   <div class="col-md-12 ">
+      <div class="card">
+         <div class="card-body">
+            <h4 class="orderh4">
+               <i class="fa fa-bookmark" aria-hidden="true"></i>     {{__('Latest Booking')}}
+               <a class="btn btn-primary btn-flat m-b-30 m-t-30 elec textorder" href="{{url('admin/vehicle-orders')}}">{{__('messages.Show All')}} </a>
+            </h4>
+
+            <div class="table-responsive dtdiv">
+               <table class="table table-striped dttablewidth">
+                  <thead>
+                     <tr>
+                        <th>{{__('messages.order_id')}}</th>
+                        <th>{{__('messages.customer')}}</th>
+                        <th>{{__('messages.status')}}</th>
+                        <th>{{__('messages.total')}}</th>
+                        <th>{{__('Timestamp')}}</th>
+                     </tr>
+                  </thead>
+                   <tbody>
+                   @foreach($latest_booking??array() as $booking)
+                       <tr>
+                           <td>{{$booking->txn_id}}</td>
+                           <td>{{$booking->name}}</td>
+                           <td>{{ucfirst($booking->status)}}</td>
+                           <td>${{number_format($booking->grand_total,2)}}</td>
+                           <td>{{$booking->created_at}}</td>
+
+                       </tr>
+                   @endforeach
+                   </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
    <div class="col-md-12 col-xl-6 col-12 flat-r">
       <div class="card">
          <div class="card-body">
