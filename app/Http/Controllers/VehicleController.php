@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
+
 class VehicleController extends Controller
 {
     /**
@@ -85,8 +86,11 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'name'=>'required',
+            'tax_id'=>'required',
+            'description'=>'required',
         ]);
 
         if ($request->four_hour=='yes')
