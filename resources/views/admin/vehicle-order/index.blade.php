@@ -8,7 +8,7 @@
         <div class="col-sm-4 float-right-1">
             <div class="page-header float-left float-right-1">
                 <div class="page-title">
-                    <h1>Vehicle Schedules</h1>
+                    <h1>Vehicle Orders</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="page-header float-right float-left-1">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Vehicle Schedules</li>
+                        <li class="active">Vehicle Orders</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-header" style="display: flex;">
                     <h2 class="mr-5"><strong>Orders</strong> </h2>
-                    <!--<a class="btn btn-primary" data-toggle="modal" data-target="#modal-create"><i class="fa fa-plus" aria-hidden="true"></i> Create Vehicle Schedules</a>-->
+                    <!--<a class="btn btn-primary" data-toggle="modal" data-target="#modal-create"><i class="fa fa-plus" aria-hidden="true"></i> Create Vehicle Orders</a>-->
                 </div>
                 <div class="card-body table-responsive">
 

@@ -8,7 +8,7 @@
         <div class="col-sm-4 float-right-1">
             <div class="page-header float-left float-right-1">
                 <div class="page-title">
-                    <h1>Vehicle Schedules</h1>
+                    <h1>Vehicle Orders</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="page-header float-right float-left-1">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Vehicle Schedules</li>
+                        <li class="active">Vehicle Orders</li>
                     </ol>
                 </div>
             </div>
@@ -126,154 +126,153 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="row pt-5">
-                                <div class="col-md-6">
-                                    <div class="panel-default">
-                                        <div class="panel-header">
-                                            <h3>
-                                                Update Booking
-                                            </h3>
-                                            <hr>
-                                        </div>
-                                        <div class="panel-body">
-                                            <form action="{{url('admin/vehicle-orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
-                                                {{csrf_field()}}
-                                                {{method_field('PATCH')}}
+                        <div class="row pt-5">
+                            <!--<div class="col-md-6">
+                                <div class="panel-default">
+                                    <div class="panel-header">
+                                        <h3>
+                                            Update Booking
+                                        </h3>
+                                        <hr>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form action="{{url('admin/vehicle-orders',$order->id)}}" id="wizard_with_validation" class="row" method="POST" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            {{method_field('PATCH')}}
 
-                                                <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Sub total</label>
-                                                    <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Sub total" value="{{$order->total}}">
+                                            <div class="col-md-12 form-group">
+                                                <label for="" class="form-label">Sub total</label>
+                                                <input type="number" name="total" step="any" id="amount" class="form-control" placeholder="Sub total" value="{{$order->total}}">
+                                            </div>
+
+
+                                            <div class="col-md-12 form-group">
+                                                <label for="" class="form-label">Tax & Fee</label>
+                                                <input type="number" name="tax" step="any" id="amount" class="form-control" placeholder="Tax & Fee" value="{{$order->tax}}">
+                                            </div>
+
+                                            <div class="col-md-12 input-group">
+                                                <input class="form-control" type="text" placeholder="Voucher code" name="coupon_code" id="coupon_code" value="{{$order->coupon_code}}">
+
+                                                <div class="input-group-append">
+                                                    <a href="#" class="btn btn-success" id="apply-coupon-btn">Apply</a>
                                                 </div>
 
+                                            </div>
 
-                                                <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Tax & Fee</label>
-                                                    <input type="number" name="tax" step="any" id="amount" class="form-control" placeholder="Tax & Fee" value="{{$order->tax}}">
+                                            <div class="col-md-12 form-group">
+                                                <label for="" class="form-label">Discount</label>
+                                                <input type="number" name="discount" step="any" class="form-control" placeholder="Discount" value="{{$order->discount}}">
+                                            </div>
+
+                                            <div class="col-md-12 form-group">
+                                                <label for="" class="form-label">Grand Total</label>
+                                                <input type="number" name="grand_total" step="any" class="form-control" placeholder="Grand Total" value="{{$order->grand_total}}">
+                                            </div>
+                                            <div class=" col-md-12">
+                                                <div class="form-group">
+                                                    <label for="">Note<small> (optional)</small></label>
+                                                    <textarea name="note" class="form-control" placeholder="Order Note">{{$order->note}}</textarea>
                                                 </div>
-
-                                                <div class="col-md-12 input-group">
-                                                    <input class="form-control" type="text" placeholder="Voucher code" name="coupon_code" id="coupon_code" value="{{$order->coupon_code}}">
-
-                                                    <div class="input-group-append">
-                                                        <a href="#" class="btn btn-success" id="apply-coupon-btn">Apply</a>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Discount</label>
-                                                    <input type="number" name="discount" step="any" class="form-control" placeholder="Discount" value="{{$order->discount}}">
-                                                </div>
-
-                                                <div class="col-md-12 form-group">
-                                                    <label for="" class="form-label">Grand Total</label>
-                                                    <input type="number" name="grand_total" step="any" class="form-control" placeholder="Grand Total" value="{{$order->grand_total}}">
-                                                </div>
-                                                <div class=" col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="">Note<small> (optional)</small></label>
-                                                        <textarea name="note" class="form-control" placeholder="Order Note">{{$order->note}}</textarea>
-                                                    </div>
-                                                </div>
+                                            </div>
 
 
-                                                <div class="col-md-12 text-center">
-                                                    <button class="btn btn-primary btn-round">Save Changes</button>
-                                                </div>
-                                            </form>
+                                            <div class="col-md-12 text-center">
+                                                <button class="btn btn-primary btn-round">Save Changes</button>
+                                            </div>
+                                        </form>
 
-                                        </div>
                                     </div>
                                 </div>
+                            </div>-->
 
-                                <div class="col-md-6">
-                                    <div class="panel-default">
-                                        <div class="panel-header">
-                                            <h3>
-                                                Booking Information
-                                            </h3>
-                                            <hr>
-                                        </div>
-                                        <div class="panel-body">
-                                            <table class="table table-striped table-sm">
-                                                <tr>
-                                                    <td class="text-right" style="width: 50% !important;"><strong>Primary Driver's Full Name:</strong></td>
-                                                    <td>{{$order->primary_driver_name}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Additional Driver's Full Name:</strong></td>
-                                                    <td>{{$order->additional_driver_name}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Country of Residence:</strong></td>
-                                                    <td>${{$order->country}}</td>
-                                                </tr>
+                            <div class="col-md-6">
+                                <div class="panel-default">
+                                    <div class="panel-header">
+                                        <h3>
+                                            Booking Information
+                                        </h3>
+                                        <hr>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped table-sm">
+                                            <tr>
+                                                <td class="text-right" style="width: 50% !important;"><strong>Primary Driver's Full Name:</strong></td>
+                                                <td>{{$order->primary_driver_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Additional Driver's Full Name:</strong></td>
+                                                <td>{{$order->additional_driver_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Country of Residence:</strong></td>
+                                                <td>${{$order->country}}</td>
+                                            </tr>
 
-                                                <tr>
-                                                    <td class="text-right"><strong>International Full Coverage Insurance :</strong></td>
-                                                    <td>${{$order->international_full_coverage_insurance}}</td>
-                                                </tr>
-
-
-                                                <tr>
-                                                    <td class="text-right"><strong>Supplemental Liability Insurance :</strong></td>
-                                                    <td>${{$order->liability_insurance}}</td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>International Full Coverage Insurance :</strong></td>
+                                                <td>${{$order->international_full_coverage_insurance}}</td>
+                                            </tr>
 
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Property Damage Waiver  :</strong></td>
-                                                    <td>${{$order->property_damage_waiver}}</td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Supplemental Liability Insurance :</strong></td>
+                                                <td>${{$order->liability_insurance}}</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td class="text-right"><strong>Property Damage Waiver  :</strong></td>
+                                                <td>${{$order->property_damage_waiver}}</td>
+                                            </tr>
 
 
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Tire Protection  :</strong></td>
-                                                    <td>${{$order->tire_protection}}</td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Tire Protection  :</strong></td>
+                                                <td>${{$order->tire_protection}}</td>
+                                            </tr>
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Mechanical Break Down Insurance  :</strong></td>
-                                                    <td>${{$order->mechanical_breakdown_coverage}}</td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Mechanical Break Down Insurance  :</strong></td>
+                                                <td>${{$order->mechanical_breakdown_coverage}}</td>
+                                            </tr>
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Prepaid Gas Credit  :</strong></td>
-                                                    <td>${{$order->gas_credit}}</td>
-                                                </tr>
-
-
-                                                <tr>
-                                                    <td class="text-right"><strong>Total Demand:</strong></td>
-                                                    <td>${{number_format($order->total,2)}} </td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Prepaid Gas Credit  :</strong></td>
+                                                <td>${{$order->gas_credit}}</td>
+                                            </tr>
 
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Tax and Fee:</strong></td>
-                                                    <td>${{number_format($order->tax,2)}}</td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Total Demand:</strong></td>
+                                                <td>${{number_format($order->total,2)}} </td>
+                                            </tr>
 
 
-                                                <tr>
-                                                    <td class="text-right"><strong>Discount:</strong></td>
-                                                    <td>${{number_format($order->discount,2)}} </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-right"><strong>Grand Total:</strong></td>
-                                                    <td>${{number_format($order->grand_total-$order->discount,2)}} </td>
-                                                </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Tax and Fee:</strong></td>
+                                                <td>${{number_format($order->tax,2)}}</td>
+                                            </tr>
 
 
-                                            </table>
+                                            <tr>
+                                                <td class="text-right"><strong>Discount:</strong></td>
+                                                <td>${{number_format($order->discount,2)}} </td>
+                                            </tr>
 
-                                        </div>
+                                            <tr>
+                                                <td class="text-right"><strong>Grand Total:</strong></td>
+                                                <td>${{number_format($order->grand_total-$order->discount,2)}} </td>
+                                            </tr>
+
+
+                                        </table>
+
                                     </div>
                                 </div>
                             </div>
-                        <div class="row mt-5">
+
 
 
                             <div class="col-md-6">
