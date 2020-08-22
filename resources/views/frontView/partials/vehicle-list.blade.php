@@ -7,7 +7,7 @@
 	<div class="single-car-info">
 
 		<div class="rentals__header">
-			<img src="{{url($record->brand->photo??'')}}" width="50px" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
+			<img src="{{url($record->brand->photo??'')}}" width="50px" height="50px" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
 
 			<div class="trending__embed w-embed">
 				<div class="rentals__label">{{ $record->body??'' }}</div>
