@@ -91,7 +91,7 @@
       <div class="card">
          <div class="card-body">
             <div class="stat-widget-one">
-               <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
+               <div class="stat-icon dib"><i class="ti-briefcase text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Booking Revenue</div>
                   <div class="stat-digit">$ {{number_format($total_booking_revenue,2)}}</div>
@@ -117,7 +117,7 @@
       <div class="card">
          <div class="card-body">
             <div class="stat-widget-one">
-               <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
+               <div class="stat-icon dib"><i class="ti-pencil-alt text-success border-success"></i></div>
                <div class="stat-content dib">
                   <div class="stat-text">Pending Booking</div>
                   <div class="stat-digit">{{$pending_booking}}</div>
