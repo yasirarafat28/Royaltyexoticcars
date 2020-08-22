@@ -93,7 +93,7 @@
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 30% !important;
+            bottom: 25% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
