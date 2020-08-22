@@ -176,12 +176,12 @@
                 <div class="row">
                     <div class="col-sm-6">
 
-                        <img src="images/logo.png" style=" width:100px;" data-holder-rendered="true" />
+                        <img src="{{asset('logo.png')}}" style=" width:100px;" data-holder-rendered="true" />
 
                     </div>
                     <div class="col-sm-6 company-details">
                         <h2 class="name">
-                            <a target="_blank" href="https://lobianijs.com">
+                            <a target="_blank" href="{{url('/')}}">
                             {{$setting->company_name}}
                             </a>
                         </h2>
@@ -203,7 +203,9 @@
                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE 3-2-1</h1>
                         <div class="date">Invoice Time: {{$order->created_at}}</div>
-                        <div class="date">Reservation Time: {{$order->reservation_time}}</div>
+                        <div class="date">Reservation Time:
+                            {{date("l, F d Y @ h:ia",strtotime($order->reservation_time))}}
+                        </div>
                     </div>
                 </div>
                 <table border="0" cellspacing="0" cellpadding="0">

@@ -61,6 +61,19 @@
                                 </div>
                             </div>
                         @endif
+
+
+                            @if(session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    {{ $errors->first() }}
+                                </div>
+                            @endif
                         <form id="wizard_with_validation" method="POST" action="{{url('admin/vehicles/'.$vehicle->id)}}" class="validateFormFor" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{method_field('PATCH')}}

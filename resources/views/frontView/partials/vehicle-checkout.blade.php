@@ -52,13 +52,13 @@
                     <div class="input-group">
                         <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
                             <option value="">Select an Option</option>
-                            @if($schedule->four_hour=='yes')
+                            @if($schedule->four_hour=='yes' && $schedule->vehicle->four_hour=='yes')
                                 <option value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
                             @endif
-                            @if($schedule->eight_hour=='yes')
+                            @if($schedule->eight_hour=='yes' && $schedule->vehicle->eight_hour=='yes')
                                 <option value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
                             @endif
-                            @if($schedule->full_day=='yes')
+                            @if($schedule->full_day=='yes' && $schedule->vehicle->full_day=='yes')
                                 <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
                             @endif
                         </select>

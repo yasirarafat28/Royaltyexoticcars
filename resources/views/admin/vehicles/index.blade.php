@@ -32,6 +32,19 @@
                   </div>
                </div>
                @endif
+
+
+                   @if(session()->has('success'))
+                       <div class="alert alert-success">
+                           {{ session('success') }}
+                       </div>
+                   @endif
+
+                   @if($errors->any())
+                       <div class="alert alert-danger">
+                           {{ $errors->first() }}
+                       </div>
+                   @endif
                <a  class="btn btn-primary btn-flat m-b-30 m-t-30 text-white" href="/admin/vehicles/create" >{{__('messages.add')}} Vehicle</a>
                <div class="table-responsive cmr1">
                   <table id="vehicledataTable" class="table table-striped table-bordered dttablewidth" >

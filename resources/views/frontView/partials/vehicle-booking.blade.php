@@ -25,7 +25,42 @@
             <div class="tr" style="margin: 0px -18px -18px 0px -18px !important;">
                 <div class="banner text-white" style="background-image: url({{url($vehicle->feature_image??'/no-image.png')}});background-size: cover; background-position-y: center;">
                     <h1>{{$vehicle->name}}</h1>
-                    <p >Starting at $249 | 4 or 24 Hour Rental Optionssss</p>
+                    <p >Starting at
+                        @if($vehicle->four_hour=='yes')
+                            @if($vehicle->four_hour_discount)
+                                ${{number_format($vehicle->four_hour_discount)}}
+                            @else
+                                ${{number_format($vehicle->four_hour_price)}}
+                            @endif
+                        @elseif($vehicle->eight_hour=='yes')
+                            @if($vehicle->eight_hour_discount)
+                                ${{number_format($vehicle->eight_hour_discount)}}
+                            @else
+                                ${{number_format($vehicle->eight_hour_price)}}
+                            @endif
+                        @elseif($vehicle->full_day=='yes')
+                            @if($vehicle->full_day_discount)
+                                ${{number_format($vehicle->full_day_discount)}}
+                            @else
+                                ${{number_format($vehicle->full_day_price)}}
+                            @endif
+                        @endif
+
+
+                        |
+
+                        @if($vehicle->four_hour=='yes')
+                            4 Hrs,
+                        @endif
+
+                        @if($vehicle->eight_hour=='yes')
+                            8 Hrs,
+                        @endif
+
+                        @if($vehicle->full_day=='yes')
+                            24 Hrs,
+                        @endif
+                        Rental Options Available</p>
                 </div>
             </div>
         </div>

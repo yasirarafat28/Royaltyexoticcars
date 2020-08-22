@@ -301,7 +301,7 @@
         $('#btn-coupon-apply').on('click',function (event) {
             event.preventDefault();
             var that = $(this);
-            that.attr('disabled');
+            that.text('Processing...').attr('disabled');
             $('#couponError').hide();
             $('#couponSuccess').hide();
 
@@ -347,6 +347,10 @@
                         });
 
 
+                    }else{
+
+                        $('#couponError')
+                            .text('Something went wrong. Please try again later!').show();
                     }
                 },
 

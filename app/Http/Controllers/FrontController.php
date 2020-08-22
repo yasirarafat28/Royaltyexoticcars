@@ -434,7 +434,7 @@ class FrontController extends Controller {
 
         $order = VehicleCheckout::where('txn_id',$txn_id)->first();
 
-        //return view('frontView.vehicle-checkout-invoice', compact('order'));
+        //return view('frontView.vehicle-checkout-invoice', compact('order','setting'));
         $pdf = PDF::loadView('frontView.vehicle-checkout-invoice', compact('order', 'setting'));
         return $pdf->download('invoice.pdf');
 

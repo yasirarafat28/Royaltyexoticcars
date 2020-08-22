@@ -109,7 +109,7 @@ class VehicleController extends Controller
                 'full_day_price'=>'required',
             ]);
         }
-        if ($request->four_hour !='yes' ||$request->eight_hour !='yes' || $request->full_day !='yes'){
+        if ($request->four_hour !='yes' && $request->eight_hour !='yes' && $request->full_day !='yes'){
             return back()->withErrors('You must select a price type!');
         }
 
@@ -257,7 +257,7 @@ class VehicleController extends Controller
                 'full_day_price'=>'required',
             ]);
         }
-        if ($request->four_hour !='yes' ||$request->eight_hour !='yes' || $request->full_day !='yes'){
+        if ($request->four_hour !='yes' &&$request->eight_hour !='yes' && $request->full_day !='yes'){
             return back()->withErrors('You must select a price type!');
         }
 
@@ -335,7 +335,7 @@ class VehicleController extends Controller
         }
 
         $vehicle->save();
-        return back()->withSuccess('Vehicle added successfully');
+        return back()->withSuccess('Vehicle updated successfully');
     }
 
     /**
