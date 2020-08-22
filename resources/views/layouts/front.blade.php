@@ -522,6 +522,8 @@
 										<div class="nav__about--column about__column--links">
 											<a href="/faqs"
 												id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
+											<a href="/terms" id="Nav-Privacy-Link"
+												class="nav__about--link w-dropdown-link">Terms & Conditions</a>
 											<a href="/privacy" id="Nav-Privacy-Link"
 												class="nav__about--link w-dropdown-link">Privacy</a>
 
@@ -565,6 +567,7 @@
                             </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
+                            </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a>
                             </li></ul>
                     </div>
                 </div>
