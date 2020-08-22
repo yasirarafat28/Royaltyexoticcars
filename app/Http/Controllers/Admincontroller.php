@@ -108,9 +108,10 @@ class Admincontroller extends Controller {
           $total_sell=$res_curr[1]."".$total;
           $total_order=Order::all();
           $total_vehicle=Vehicle::all();
+          $total_booking = VehicleCheckout::all();
           $total_product=Product::all();
           $total_customer=User::where("user_type",'1')->get();
-          return view("admin.dashboard")->with("order",count($order))->with("total_vehicle",count($total_vehicle))->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
+          return view("admin.dashboard")->with("total_booking",count($total_booking))->with("total_vehicle",count($total_vehicle))->with("total_order",count($total_order))->with("total_product",count($total_product))->with("total_users",count($total_customer))->with("total_sell",$total_sell);
    }
 
    public function showlogout(){
