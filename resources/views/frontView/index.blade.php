@@ -173,7 +173,8 @@
             </div>
         </section>
         <div class="rentals">
-            <h2 class="home__h2">Browse fleet by Category</h2>
+            <h2 class="home__h2 rental-section-title">Browse fleet by Category</h2>
+            <hr>
             <div class="rent__nav">
                 @foreach($groups??array() as $group)
                     <a id="Browse-Supercar-Rentals-Link" href="/vehicles?category={{$group->slug}}"
@@ -195,7 +196,8 @@
                 @endif
 
                 <div id="exotic-car-rentals" class="rentals__section">
-                    <h3 class="home__h3">{{$group->name??''}}</h3>
+                    <h3 class="home__h2 rental-section-title">{{$group->name??''}}</h3>
+                    <hr>
                     <div class="container-fluid text-left">
                         <div class="car-list-content">
                             <div class="row">
@@ -203,7 +205,7 @@
                                     @if($key>=12)
                                         @break
                                     @endif
-                                    <div class=" col-lg-3 col-md-4  col-sm-6 mb-3 mt-3">
+                                    <div class=" col-lg-3 col-md-4  col-sm-6 col-6 mb-3 mt-3">
                                         @include('frontView.partials.vehicle-list')
                                     </div>
                                 @endforeach

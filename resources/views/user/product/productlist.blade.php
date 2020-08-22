@@ -225,7 +225,7 @@
                         </div>
                      </div>
                      <div class="text-s-box">
-                        <h1>{{$p->name}}</h1>
+                        <h1><a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}">{{$p->name}}</a></h1>
                         <span class="rating">
                         <?php for($i=0;$i<$p->avgStar;$i++){ ?>
                         <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>

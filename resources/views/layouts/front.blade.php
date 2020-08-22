@@ -124,6 +124,31 @@
             font-weight: 600;
             text-transform: uppercase;
         }
+        .header{
+            box-shadow: 6px 3px 4px rgba(0,0,0,.08) !important;
+        }
+
+        .home__h2 {
+            margin-top: 0;
+            margin-bottom: .5em;
+            font-size: 1.3em;
+            text-align: left;
+        }
+
+        .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before {
+            display: flex;
+            height: 3px;
+            background-color: darkorange;
+            content: "";
+            position: absolute;
+            width: 120px;
+            margin-top: -2px;
+        }
+
+        .info__search {
+            width: 100%;
+            font-size: .9em;
+        }
     </style>
 
 @yield('style')
@@ -135,22 +160,21 @@
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
 			<div class="info-container">
 				<div class="info" style="">
-					<div class="left-side col-sm-6  d-none d-sm-flex">
+					<div class="left-side col-sm-6 col-md-8  d-none d-sm-flex">
 					<a target="_blank"
-						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link">Toll Free: {{$setting->phone}}</a>
+						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link"><i class="fa fa-phone mr-2"></i> {{$setting->phone}} &nbsp;  |</a>
 
 
 
 					<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
-							href="mailto:{{$setting->email}}?subject=&body=<br><br><br><br>---------<br>Please place your message above this line<br>Page URL: [sub]"
-							onclick="this.href = this.href.replace('[sub]',window.location)">
-							{{$setting->email}}
+							href="mailto:{{$setting->email}}"> <i class="fa fa-envelope mr-2"></i>
+                            {{$setting->email}} &nbsp; |
 						</a>
 					</div>
 					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
-						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink">9am - 7pm Daily</a>
+						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i> 9am - 7pm Daily</a>
 					</div>
-                    <div class="right-side col-sm-6">
+                    <div class="right-side col-sm-6 col-md-4">
 						<div class="info__search pull-right">
 						<form action="/vehicles" id="Header-Search-Form"
 							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
@@ -158,7 +182,7 @@
 								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
 								required="" />
 
-                            <button type="submit"  value=" " class="search__submit w-button" style="color: darkorange;background-image: none"><i class="fa fa-search"></i>
+                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: darkorange;background-image: none"><i class="fa fa-search"></i>
                             </button>
                         </form>
 					</div>
@@ -172,7 +196,7 @@
 					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-md-block">Rental Exotic Beasts</div>
+							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
 						</a></div>
 					<div class="nav__links">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
@@ -501,7 +525,7 @@
 						<a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
 							<div>Shop</div>
 						</a>
-						<a href="/login" class="user nav__link w-inline-block">
+						<a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -695,6 +719,10 @@
 
     <style>
 
+        .fc-view-container *, .fc-view-container ::after, .fc-view-container ::before {
+            font-weight: 600;
+        }
+
         .side-tray {
             position: fixed;
             right: 0;
@@ -702,7 +730,7 @@
             height: 100vh;
             margin-left: -3px;
             margin-bottom: -3px;
-            z-index: 998;
+            z-index: 2;
 
         }
 
