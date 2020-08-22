@@ -86,7 +86,46 @@
          </div>
       </div>
    </div>
-   
+
+   <div class="col-lg-3 col-sm-6">
+      <div class="card">
+         <div class="card-body">
+            <div class="stat-widget-one">
+               <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
+               <div class="stat-content dib">
+                  <div class="stat-text">Total Bookings</div>
+                  <div class="stat-digit">{{$total_vehicle}}</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-sm-6">
+      <div class="card">
+         <div class="card-body">
+            <div class="stat-widget-one">
+               <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
+               <div class="stat-content dib">
+                  <div class="stat-text">Todays Bookings</div>
+                  <div class="stat-digit">{{$total_vehicle}}</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-sm-6">
+      <div class="card">
+         <div class="card-body">
+            <div class="stat-widget-one">
+               <div class="stat-icon dib"><i class="ti-book text-success border-success"></i></div>
+               <div class="stat-content dib">
+                  <div class="stat-text">Pending Booking</div>
+                  <div class="stat-digit">{{$total_vehicle}}</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
 </div>
 <div class="col-md-12 flt">
