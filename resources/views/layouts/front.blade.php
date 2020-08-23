@@ -170,6 +170,7 @@
             background-color: red;
             border-color: red;
         }
+        /*
 
 		.mmenu {
 
@@ -213,9 +214,18 @@
 			.hide-mobile {
 				display: none;
 			}
-		}
+		} */
         body {
             padding-top: 3em;
+        }
+
+        .nav__link{
+            display: block !important;
+        }
+
+        a.nav__link{
+            text-align: center !important;
+            margin-bottom: 5px;
         }
 	</style>
 
@@ -262,23 +272,382 @@
 			</div>
 			-->
 			<div class="nav-container" style="">
-				<div class="nav">
-					<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
+
+                <!-- Image and text -->
+                <nav class="navbar navbar-light navbar navbar-expand-lg">
+                    <div class="nav__brand navbar-brand"><a href="/" id="Header-Brand-Link" aria-current="page"
+                                               class="brand w-nav-brand w--current">
+                            <div class="brand__icon"></div>
+                            <div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
+                        </a>
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav__links navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
+
+                                    <a  id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
+                                        <div>Rentals</div>
+                                    </a>
+                                    <nav class="dropdown__list dropdown__list--categories w-dropdown-list"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
+                                            alt="" class="nav__dropdown--arrow" />
+                                        <div class="nav__dropdown--pane">
+
+                                            <div class="nav__categories">
+
+                                                @foreach($categories??array(  ) as $category)
+                                                    <a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
+                                                        <div class="nav__categories--graphic">
+                                                            <img src="{{url($category->photo??'')}}"
+                                                                 alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
+                                                        </div>
+                                                        <div class="nav__categories--text">
+                                                            <div class="nav__categories--heading">{{ $category->name }}</div>
+                                                            <div class="nav__categories--desc">{{substr($category->description,0,80)}}</div>
+                                                        </div>
+                                                    </a>
+
+                                                @endforeach
+
+                                                <div class="nav__categories--quicklinks">
+                                                    <div class="quicklinks__collection w-dyn-list">
+                                                        <div role="list"
+                                                             class="quicklinks__list quicklinks__list--grid w-dyn-items">
+                                                            @foreach($brands??array() as $brand)
+                                                                <div role="listitem"
+                                                                     class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
+                                                                        id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
+                                                                        class="quicklinks__link w-inline-block"><img
+                                                                            src="{{url($brand->photo??'')}}"
+                                                                            alt="Bugatti" class="quicklinks__logo" />
+                                                                        <div class="quicklinks__details">
+                                                                            <div class="quicklinks__title">{{ $brand->name }}</div>
+
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+
+                                <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
+
+
+                                    <a  id="Requirements-Menu" class="nav__link w-dropdown-toggle">
+                                        <div>Requirements</div>
+                                    </a>
+                                    <nav class="dropdown__list dropdown__list--table w-dropdown-list"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
+                                            alt="" class="nav__dropdown--arrow" />
+                                        <div class="nav__dropdown--pane">
+                                            <div class="nav__reqs">
+                                                <div class="switch switch__table">
+                                                    <div class="switch__label switch__label--on">United States<br />Drivers</div><a
+                                                        id="Requirements-Switch" href="#" class="switch__link w-inline-block">
+                                                        <div class="switch__button"></div>
+                                                    </a>
+                                                    <div class="switch__label switch__label--off">International<br />Drivers</div>
+                                                </div>
+                                                <div class="table reqs__table--nav">
+                                                    <div class="table__row table__row--header">
+                                                        <div
+                                                            class="table__cell table__cell--dimension table__cell--dimension-header">
+                                                        </div>
+                                                        <div class="table__cell">Exotic<br />Cars &amp; SUVs</div>
+                                                        <div class="table__cell">Auto &amp; Moto<br />Cycles</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Age-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div>Age ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Minimum Age requirements are strictly enforced and ensure
+                                                                    proper insurance protection. All renters who allow an underage
+                                                                    driver will be fined $2,500 and their rental will be immediately
+                                                                    canceled.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">25+</div>
+                                                        <div class="table__cell">21+</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-License-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Drivers License ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Every driver is required to be listed on the rental agreement
+                                                                    and provide a VALID and NON-EXPIRED drivers license with the
+                                                                    name matching EXACTLY the name on the rental
+                                                                    agreement.<br /><strong>Note:</strong> International Drivers
+                                                                    Licenses are accepted.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">United States<br />Drivers License</div>
+                                                            <div class="table__cell table__cell--intl">International<br />Drivers
+                                                                License</div>
+                                                        </div>
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">United States<br />Drivers License</div>
+                                                            <div class="table__cell table__cell--intl">International<br />Drivers
+                                                                License</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Insurance-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Car Insurance ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Every driver is required to have an active car insurance policy
+                                                                    before driving one of our rental vehicles.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell--wrapper">
+                                                            <div data-delay="0" class="table__cell w-dropdown">
+                                                                <div id="Requirements-Insurance-Exotics-US-Tooltip"
+                                                                     class="table__dropdown--toggle w-dropdown-toggle">
+                                                                    <div class="text-block">Comp/Collision<br />100/300/50 ⓘ</div>
+                                                                </div>
+                                                                <nav class="table__dropdown--pane w-dropdown-list">
+                                                                    <div><span>Each driver is required to provide their own car
+																	insurance that covers any liability claim up to
+																	$100k/$300k/$50k and has full comprehensive &amp;
+																	collision coverage with a maximum $1,000
+																	deductible.<br /><strong>Note:</strong> Your insurance
+																	policy still requires Comp/Collision coverage even if
+																	you decide to purchase an optional insurance
+																	upgrade.</span></div>
+                                                                    <div class="table__dropdown--arrow"></div>
+                                                                </nav>
+                                                            </div>
+                                                            <div data-delay="0" class="table__cell table__cell--intl w-dropdown">
+                                                                <div id="Requirements-Insurance-Exotics-Intl-Tooltip"
+                                                                     class="table__dropdown--toggle w-dropdown-toggle">
+                                                                    <div class="text-block">$199<br />Royalty Insurance ⓘ</div>
+                                                                </div>
+                                                                <nav class="table__dropdown--pane w-dropdown-list">
+                                                                    <div><span>Covers any bodily injury claim up to $1,000,000 and
+																	has full comprehensive and collision coverage with a
+																	$15,000 deductible.</span></div>
+                                                                    <div class="table__dropdown--arrow"></div>
+                                                                </nav>
+                                                            </div>
+                                                        </div>
+                                                        <div data-delay="0" class="table__cell w-dropdown">
+                                                            <div id="Requirements-Insurance-Cycles-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">$29<br />Royalty Insurance ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div><span>Each driver is required to purchase the Royalty Insurance
+																Policy that covers any bodily injury claim up to $15k/$30k
+																and has full comprehensive &amp; collision coverage with a
+																$2,500 deductible.</span></div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table__divider">Upgrade Options</div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Supplemental-Insurance-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Supplemental<br />Liability Insurance ⓘ
+                                                                </div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any bodily injury incurred during your rental
+                                                                    period up to the combined value of $1,000,000 for any passenger
+                                                                    or passerby regardless of who is at fault.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">$99</div>
+                                                            <div class="table__cell table__cell--intl">Included</div>
+                                                        </div>
+                                                        <div class="table__cell">--</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Property Damage<br />Waiver ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against common damages up to a specified limit
+                                                                    including curbed wheels, windshield cracks, minor
+                                                                    scuffs/scratches, etc.<br /><strong>Note: </strong>If damages
+                                                                    exceed the specified limit and results in an insurance claim,
+                                                                    this will act as a deductible waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div data-delay="0" class="table__cell w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Exotics-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">$99 ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any damages up to a $3,500 (based on the
+                                                                    actual cost of repair).<br />If the damage exceeds $3,500 and
+                                                                    results in an insurance claim, this will act as a deductible
+                                                                    waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div data-delay="0" class="table__cell w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Cycles-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">$49 ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any damages up to a $2,500 (based on the
+                                                                    actual cost of repair).<br />If the damage exceeds $2,500 and
+                                                                    results in an insurance claim, this will act as a deductible
+                                                                    waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Tire-Protection-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Tire<br />Protection ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Covers cost of tire replacement, tow charges, and loss of
+                                                                    rental time up to $1,000.<br /><strong>Note:</strong> Tire
+                                                                    replacement can take up to several hours depending on the
+                                                                    location of incident, traffic conditions, and availability.
+                                                                </div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$49</div>
+                                                        <div class="table__cell">$35</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Breakdown-Coverage-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Mechanical<br />Breakdown Coverage ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Covers cost of Mechanical Parts due to wear and tear, tow
+                                                                    charges, and loss of rental time up to
+                                                                    $1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
+                                                                    failure due to customer mis-use or gross negligence operating
+                                                                    the vehicle. You are fully responsible for your own actions
+                                                                    while operating a Rental Exotic Beasts vehicle.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$99</div>
+                                                        <div class="table__cell">$49</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Prepaid-Fuel-Tooltip"
+                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Prepaid<br />Fuel Credit ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Allows you to return the vehicle without needing to refuel
+                                                                    beforehand. <br /><strong>Note:</strong> ALL vehicles (including
+                                                                    auto/moto cycles) require 91 OCTANE RATING fuel. Anyone caught
+                                                                    using lower quality fuel will be fined $2,500 and responsible
+                                                                    for any subsequent damages resulting from improper fuel.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$99</div>
+                                                        <div class="table__cell">$49</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+
+                                <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
+
+                                    <a  id="About-Menu" class="nav__link w-dropdown-toggle">
+                                        <div>About</div>
+                                    </a>
+                                    <nav class="dropdown__list dropdown__list--about w-dropdown-list"><img
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
+                                            alt="" class="nav__dropdown--arrow" />
+                                        <div class="nav__dropdown--pane">
+                                            <div class="nav__about">
+                                                <div class="nav__about--column about__column--links">
+                                                    <a href="/faqs"
+                                                       id="Nav-FAQs-Link" class="nav__about--link w-dropdown-link">FAQs</a>
+                                                    <a href="/terms" id="Nav-Privacy-Link"
+                                                       class="nav__about--link w-dropdown-link">Terms & Conditions</a>
+                                                    <a href="/privacy" id="Nav-Privacy-Link"
+                                                       class="nav__about--link w-dropdown-link">Privacy</a>
+                                                    <a href="/term" id="Nav-Privacy-Link"
+                                                       class="nav__about--link w-dropdown-link">Terms & Conditions</a>
+                                                    <a href="mailto:{{$setting->email}}"
+                                                       id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+
+
+                                <a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
+                                    <div>Shop</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
+                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+				<!--<div class="nav">-->
+
+
+
+					<!--<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
 							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
 						</a>
 					</div>
-					<a href="#" class="show-mobile hide-desktop"><i class="fa fa-bars menu" id="mmenu"></i></a>
-					<ul class="hide-mobile hide-desktop">
-
-						<li id="exit" class="exit-btn"> <i class="fa fa-times"></i> </li>
-						<li> <a href="/vehicles"">Rentals</a> </li>
-						<li> <a href="">Requirements</a> </li>
-						<li> <a href="">Shop</a> </li>
-						<li> <a href="">User</a> </li>
-
-					</ul>
 					<div class="nav__links hide-mobile" id="dmenu">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 							<div id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
@@ -612,9 +981,9 @@
 						<a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> -->
 
-				</div>
+				<!--</div>-->
 			</div>
 
 		</div>
@@ -892,25 +1261,6 @@
             });
         });
 
-		var menu = document.getElementById('mmenu');
-
-		var nav = document.getElementById('nav');
-
-		var exit = document.getElementById('exit');
-
-		menu.addEventListener('click', function(e){
-
-			nav.classList.toggle('hide-mobile');
-			e.preventDefault();
-
-		});
-
-		menu.addEventListener('click', function(e){
-
-			nav.classList.add('hide-mobile');
-			e.preventDefault();
-
-		});
 
     </script>
 
@@ -918,12 +1268,6 @@
 
     <script>
         $(function() {
-           /*if ($.cookie('autopopup') == null) {
-
-
-                $.cookie('autopopup', '7');
-            }*/
-
             jQuery.noConflict();
 
             $('#AutoStartModal').modal('show');
@@ -935,6 +1279,24 @@
                 e.preventDefault();
             });
         });
+
+        $('.navbar-toggler').on('click',function (event) {
+            event.preventDefault();
+
+            let target = $(this).data('target');
+            let that = $(target);
+            if (that.hasClass('collapsing')){
+
+                that.removeClass('collapsing');
+                that.addClass('collapse');
+            }
+
+            if (that.hasClass('show')){
+                that.removeClass('show');
+                that.collapse('hide');
+            }
+
+        })
     </script>
     <script>
         $.cookieMessage({
