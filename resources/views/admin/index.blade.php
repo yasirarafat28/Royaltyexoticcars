@@ -267,7 +267,7 @@
                   <li class="active">
                      <a href="{{url('admin/contact')}}">
                      <i class="menu-icon fa fa-address-book"></i>
-                     {{__('messages.contact_details')}}
+                     {{__('Inquiries')}}
                      </a>
                   </li>
                  @endif
