@@ -6,7 +6,7 @@
             <div class="ben-flyout-wrap" ng-if="lightframe.isLightframe() || backUrl">
                 <a class="btn btn-dark" href="/vehicle-booking/{{base64_encode($vehicle->id)}}">
 
-                    <span class="visually-hidden"> Choose a different date or time</span>
+                    <span class="visually-hidden"> Choose a different schedule</span>
                 </a>
             </div>
         </div>
