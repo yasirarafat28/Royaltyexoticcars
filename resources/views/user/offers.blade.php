@@ -4,6 +4,10 @@
 @stop
 @section('content')
 <style>
+      .preview-image{ 
+
+         height: 200px;
+      }
     .off-heading h1:before{
          background-color:{{site_color()}} !important;
     }

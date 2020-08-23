@@ -13,7 +13,7 @@
 
         <style>
 
-            .preview-image{
+            .preview-image{ 
 
                height: 200px;
             }
