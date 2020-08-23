@@ -251,14 +251,13 @@ $setting = setting();
             <div>
                 {{ substr(strip_tags($vehicle->description),0,100) }} <a href="#information">Read More</a>
             </div>
-
             <div class="detail-info">
-                <div class="detail-information">
+                <div class="p-1 detail-information">
                     <h2>Category :</h2>
                     <h4>{{$vehicle->category->name??''}}</h4>
                 </div>
-                <div class="detail-information">
-                    <h2>Brand :</h2>
+                <div class="p-1 detail-information">
+                    <h2>Brand    	&nbsp;	&nbsp;	&nbsp;:</h2>
                     <h4>{{$brand->name}}</h4>
                 </div>
             </div>
