@@ -34,6 +34,7 @@
 	<link href="/Ecommerce/css/animate.min.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/custom.css" rel="stylesheet" type="text/css" />
 	<link href="/frontEnd/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
 	<script src="/frontEnd/ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
 	<script
 		type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Oswald:200,300,400,500,600,700", "Rock Salt:regular"] } });</script>
@@ -1079,10 +1080,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
+
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>-->
 
-    <!--<script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
-        type="text/javascript" ></script>-->
+    <script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
+        type="text/javascript" ></script>
 	<script src="/frontEnd/js/rentalexoticsbeasts.af38aa331.js" type="text/javascript"></script>
 	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
