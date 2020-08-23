@@ -127,6 +127,7 @@
                             </td>
                             <td>{{$item->title}}</td>
                             <td>{{$item->description}}</td>
+                            <td>{{$item->type}}</td>
                             <td>{{$item->status}}</td>
                             <td>{{$item->created_at}}</td>
                             <td id="action" class="action-td">
