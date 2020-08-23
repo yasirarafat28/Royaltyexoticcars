@@ -188,7 +188,7 @@
 			background: rgb(96, 240, 134);
 			padding-to: 3em;
 			padding-right: 1.5em;
-			height: 100;
+			height: 100px;
 			z-index: 7;
 
 		}
@@ -200,7 +200,7 @@
 			display: block;
 			width: 100%;
 			padding: 1em 2em;
-			
+
 		}
 		.hide-desktop {
 			display: none;
@@ -271,13 +271,13 @@
 					</div>
 					<a href="#" class="show-mobile hide-desktop"><i class="fa fa-bars menu" id="mmenu"></i></a>
 					<ul class="hide-mobile hide-desktop">
-					
+
 						<li id="exit" class="exit-btn"> <i class="fa fa-times"></i> </li>
 						<li> <a href="/vehicles"">Rentals</a> </li>
 						<li> <a href="">Requirements</a> </li>
 						<li> <a href="">Shop</a> </li>
 						<li> <a href="">User</a> </li>
-					
+
 					</ul>
 					<div class="nav__links hide-mobile" id="dmenu">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
