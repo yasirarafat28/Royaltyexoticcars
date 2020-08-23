@@ -218,7 +218,7 @@
         }
 
         a.nav__link{
-            text-align: center !important;
+            text-align: left !important;
             margin-bottom: 5px;
         }
 
@@ -227,6 +227,14 @@
             .nav__link {
                 position: unset !important;
             }
+            .dropdown__list.dropdown__list--table,.dropdown__list.dropdown__list--categories  {
+                width: 95vw !important;
+            }
+        }
+
+        .w-dropdown, .w-dropdown-btn, .w-dropdown-link, .w-dropdown-toggle{
+            margin-left: unset;
+            margin-right: unset;
         }
 	</style>
 
