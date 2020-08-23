@@ -640,6 +640,7 @@
 	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous"></script>
+    <script src="/js/jquery.cookieMessage.min.js"></script>
 
 
 
@@ -856,6 +857,32 @@
             });
         });
     </script>
+    <script>
+        $.cookieMessage({
+            'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
+
+            'acceptButton':'Accept Cookies!',
+            expirationDays: 20,
+            cookieName:'cookieMessage',
+
+            backgroundColor: '#666',
+            fontSize: '18px',
+            fontColor: 'white',
+            btnBackgroundColor: '#f2a920',
+            btnFontSize: '18px',
+            btnFontColor: 'white',
+            linkFontColor: '#ffff00'
+
+
+
+        });
+
+    </script>
+    <style>
+        #cookie-msg{
+            z-index: 14 !important;
+        }
+    </style>
 
 
     @yield('script')
