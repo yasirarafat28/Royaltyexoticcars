@@ -72,7 +72,7 @@
         </style>
 
         @php
-            $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
+            $sliders = \App\Slider::where('type','shop')->where('status','active')->get();
 
         @endphp
 
