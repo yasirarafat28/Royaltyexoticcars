@@ -74,7 +74,7 @@
 
       .brand__text {
            color: #000;
-           font-size: 1.6em;
+           font-size: 1.3em;
            line-height: 1.1em;
            font-weight: 700;
            letter-spacing: 0;
@@ -217,6 +217,10 @@
           width: 100%;
           height: 230px;
       }
+      .top-logo {
+          height: 53px;
+          width: 72px;
+      }
 
 
    </style>
@@ -262,13 +266,14 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row">
-               <div class="col-lg-3 col-md-3 col-8">
-                  <a href="{{url('/shop')}}">
-                      <div class="brand__text">Rental Exotic Beasts</div>
-                     <!--<div class="top-logo" style="background-image: url('/logo.png');-webkit-mask-image: url('/logo.png');"></div>-->
+               <div class="col-lg-4 col-md-4 col-8">
+                  <a href="{{url('/shop')}}" class="d-flex">
+                      <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent"></div>
+                      <div class="brand__text d-none d-lg-block">Rental Exotic Beasts</div>
+                     <!---->
                   </a>
                </div>
-               <div class="col-lg-6 col-md-6 ser-show">
+               <div class="col-lg-5 col-md-5 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">
