@@ -129,16 +129,8 @@
 @endsection
 @section('script')
 
-<script src="/assets/plugins/fullcalendar/fullcalendarscripts.bundle.js"></script>
-<!--/ calender javascripts -->
-
-
-    <!--
-    <script src="/admin-asset/jquery-validation/jquery.validate.js"></script>
-    -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-
-
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 
     <script>
         jQuery.validator.setDefaults({
@@ -147,9 +139,11 @@
         });
 
 
+
+
         $('#stripe-submit').on('click',function (event) {
             event.preventDefault();
-            var form = $( "#checkout-form" );
+            let form = $( "#checkout-form" );
             form.validate({
                 rules: {},
                 messages: {},

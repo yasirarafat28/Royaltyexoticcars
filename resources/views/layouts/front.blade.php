@@ -44,7 +44,13 @@
 	</script>
 
 
+
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" />
 
@@ -165,51 +171,6 @@
             background-color: red;
             border-color: red;
         }
-        /*
-
-		.mmenu {
-
-			width: 25px;
-			margin-top: 45%;
-
-		}
-
-		nav ul {
-
-			position: fixed;
-			width: 50%;
-			top: 0;
-			right: 0;
-			text-align: left;
-			background: rgb(96, 240, 134);
-			padding-to: 3em;
-			padding-right: 1.5em;
-			height: 100px;
-			z-index: 7;
-
-		}
-
-		nav ul li a {
-
-			color: white;
-			text-decoration: none;
-			display: block;
-			width: 100%;
-			padding: 1em 2em;
-
-		}
-		.hide-desktop {
-			display: none;
-		}
-
-		@media only screen and (max-width:650px) {
-			.show-mobile {
-				display: block;
-			}
-			.hide-mobile {
-				display: none;
-			}
-		} */
         body {
             padding-top: 6em;
         }
@@ -1074,23 +1035,6 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-
-
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>-->
-
-    <script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
-        type="text/javascript" ></script>
-	<script src="/frontEnd/js/rentalexoticsbeasts.af38aa331.js" type="text/javascript"></script>
-	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous"></script>
-    <script src="/js/jquery.cookieMessage.min.js"></script>
-
-
     <div class="side-tray">
         <div id="feedback-form" style='display:none;' class=" panel panel-danger text-center">
             <nav role="navigation" class="drawer w-nav-menu">
@@ -1190,6 +1134,83 @@
         <div id="feedback-tab" style="background-color:red;">Get in Touch</div>
     </div>
 
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+
+    <!--<script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
+            type="text/javascript" ></script>-->
+    <script src="/frontEnd/js/rentalexoticsbeasts.af38aa331.js" type="text/javascript"></script>
+	<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
+
+    <script src="/js/jquery.cookieMessage.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $("#feedback-tab").click(function() {
+                $("#feedback-form").toggle("slide");
+            });
+        });
+
+
+    </script>
+
+
+
+    <script>
+        $(function() {
+            jQuery.noConflict();
+
+            $('#AutoStartModal').modal('show');
+
+            //----- CLOSE
+            $('.popup-close').on('click', function(e)  {
+                $('#auto-first-popup').fadeOut(350);
+
+                e.preventDefault();
+            });
+        });
+
+    </script>
+    <script>
+        $.cookieMessage({
+            'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
+
+            'acceptButton':'Accept!',
+            expirationDays: 20,
+            cookieName:'cookieMessage',
+
+            backgroundColor: '#666',
+            fontSize: '18px',
+            fontColor: 'white',
+            btnBackgroundColor: 'red',
+            btnFontSize: '18px',
+            btnFontColor: 'white',
+            linkFontColor: '#ffff00'
+
+
+
+        });
+
+    </script>
+
+    @yield('script')
+
+
     <style>
 
         .fc-view-container *, .fc-view-container ::after, .fc-view-container ::before {
@@ -1272,62 +1293,11 @@
 
 
     </style>
-
-    <script>
-        $(document).ready(function(){
-            $("#feedback-tab").click(function() {
-                $("#feedback-form").toggle("slide");
-            });
-        });
-
-
-    </script>
-
-
-
-    <script>
-        $(function() {
-            jQuery.noConflict();
-
-            $('#AutoStartModal').modal('show');
-
-            //----- CLOSE
-            $('.popup-close').on('click', function(e)  {
-                $('#auto-first-popup').fadeOut(350);
-
-                e.preventDefault();
-            });
-        });
-
-    </script>
-    <script>
-        $.cookieMessage({
-            'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
-
-            'acceptButton':'Accept!',
-            expirationDays: 20,
-            cookieName:'cookieMessage',
-
-            backgroundColor: '#666',
-            fontSize: '18px',
-            fontColor: 'white',
-            btnBackgroundColor: 'red',
-            btnFontSize: '18px',
-            btnFontColor: 'white',
-            linkFontColor: '#ffff00'
-
-
-
-        });
-
-    </script>
     <style>
         #cookie-msg{
             z-index: 14 !important;
         }
     </style>
 
-
-    @yield('script')
 </body>
 </html>

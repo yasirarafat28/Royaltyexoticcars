@@ -394,7 +394,7 @@
                                         data-name="{{__('messages.site_name')}}"
                                         data-label="{{__('messages.place_order')}}"
                                         data-description=""
-                                        data-image="{{asset('Ecommerce/images/logo.png')}}"
+                                        data-image="{{asset('logo.png')}}"
                                         data-locale="auto"></script>
                             @endif
                         </div>
