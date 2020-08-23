@@ -1310,7 +1310,7 @@
         $.cookieMessage({
             'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
 
-            'acceptButton':'Accept Cookies!',
+            'acceptButton':'Accept!',
             expirationDays: 20,
             cookieName:'cookieMessage',
 
