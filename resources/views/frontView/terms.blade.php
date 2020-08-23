@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-  <div class="main">
+  <div class="main" style="padding-top:30px;">
     <div class="policy__container">
       <div class="rentalpolicy">
         <div class="policy__heading">
