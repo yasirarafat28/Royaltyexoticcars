@@ -100,12 +100,13 @@
                 <div class="hero__note">Enjoy 10% unlimited discount on first booking! Use Voucher Code <span class="text-primary">NEWRENT10.</span></div>
 
                 <br>
-                <form action="">
+                <form action="{{url('/newsletter')}}" method="POST" id="newsletterForm">
+                    {{csrf_field()}}
                     <div class="input-group ">
-                        <input type="text" class="form-control border-danger" placeholder="Enter your email to get exclusive deals">
+                        <input type="email" class="form-control border-danger" name="newsletter" placeholder="Enter your email to get exclusive deals">
 
                         <div class="input-group-append bg-red ">
-                            <a type="submit" href="#" class="input-group-text text-white border-0 text-uppercase font-weight-bold" style="background-color: red">
+                            <a type="submit" onclick="$('#newsletterForm').submit()" href="#" class="input-group-text text-white border-0 text-uppercase font-weight-bold" style="background-color: red">
                                 Subscribe
                             </a>
                         </div>
