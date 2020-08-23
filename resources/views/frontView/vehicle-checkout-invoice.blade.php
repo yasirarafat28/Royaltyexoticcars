@@ -4,14 +4,14 @@
 
 <style>
     #invoice{
-        padding: 30px;
+        padding: 0px 30px 30px 30px;
     }
 
     .invoice {
         position: relative;
         background-color: #FFF;
         min-height: 680px;
-        padding: 15px
+        padding: 0px 15px 15px 15px;
     }
 
     .invoice header {
@@ -216,7 +216,7 @@
                         <th class="text-right">TOTAL</th>
                     </tr>
                     </thead>
-                    <tbody">
+                    <tbody>
                     <tr>
                         <td>1</td>
                         <td class="text-left"><strong>Fare :</strong></td>
