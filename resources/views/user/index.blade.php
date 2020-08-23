@@ -33,39 +33,39 @@
    </head>
    <style type="text/css">
       .product-heading h1:before{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       .product-heading h1:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       .one-product-slider h1:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       .col-md-3.services:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       .user-login-pop_up .nav-tabs .nav-link.active{
-      background-color:<?= Session::get('site_color') ?> !important;
-      border-top:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
+      border-top:{{site_color()}} !important;
       }
       .fancy-checkbox input[type="checkbox"]:checked~big:before{
-      color:<?= Session::get('site_color') ?> !important;
+      color:{{site_color()}} !important;
       }
       .add a:hover{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       td.View a:hover{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
       }
       .Sort ul li .active-2{
-      border-color:<?= Session::get('site_color') ?> !important;
-      color:<?= Session::get('site_color') ?> !important;
+      border-color:{{site_color()}} !important;
+      color:{{site_color()}} !important;
       }
 
       .top-logo {
           height: 70px;
           width: 116px;
-          background-color: #f07f13;
+          background-color: red;
           -webkit-mask-repeat: no-repeat;    background-image: url('/logo.png');
           -webkit-mask-image: url('/logo.png');
           background-repeat: no-repeat;
@@ -238,7 +238,7 @@
                </div>
                <div class="logout-btn">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('messages.cancel')}}</button>
-                  <button type="button" onclick="userlogout()" class="btn log" data-dismiss="modal" style="background-color:<?= Session::get('site_color') ?> !important">{{__('messages.logout')}}</button>
+                  <button type="button" onclick="userlogout()" class="btn log" data-dismiss="modal" style="background-color:{{site_color()}} !important">{{__('messages.logout')}}</button>
                </div>
             </div>
          </div>
@@ -277,7 +277,7 @@
                         <div class="sea-input">
                            <input type="text" required name="search_product" value="<?=isset($_GET['s'])?$_GET['s']:''; ?>" onfocus="changesearcat()" id="search_product" placeholder="Search product...">
                         </div>
-                        <button class="search-btn" type="submit" style="background: <?= Session::get('site_color') ?> !important">
+                        <button class="search-btn" type="submit" style="background: {{site_color()}} !important">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                      </div>
@@ -299,7 +299,7 @@
                         <a href="#" class="cart hover-popup" data-modal-target="modal1" id="cart-1">
                            <i class="fa fa-shopping-cart popover__title" aria-hidden="true"></i>
                            <?php $cartCollection = Cart::getContent();?>
-                           <div class="e-nav-cricle" style="background: <?= Session::get('site_color') ?> !important">
+                           <div class="e-nav-cricle" style="background: {{site_color()}} !important">
                               <h1 id="totalcart">{{$cartCollection->count()}}</h1>
                            </div>
                         </a>
@@ -326,7 +326,7 @@
                                                    <i class="fa fa-times" aria-hidden="true"></i>
                                                    <span>{{$item->quantity}}</span>
                                                 </div>
-                                                <a href="javascript:deletecartitem('{{$item->id}}')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i></a>
+                                                <a href="javascript:deletecartitem('{{$item->id}}')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color: {{site_color()}} !important"></i></a>
                                              </div>
                                              <p>
                                                 <?php $option=explode(",",$item->attributes[0]['option']);
@@ -363,7 +363,7 @@
                                                 <input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" />
                                                 <input type="hidden" name="check_coupon_value" id="check_coupon_value" />
                                                 <input type="hidden" name="check_couponcode" id="check_couponcode" />
-                                                <button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: <?= Session::get('site_color') ?> !important">
+                                                <button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: {{site_color()}} !important">
                                                 {{__('messages.proceed_to_checkout')}}
                                                 </button>
                                              </form>
@@ -388,13 +388,13 @@
                      </div>
                      <a href="{{url('mywishlist')}}" class="wish">
                         <i class="fa fa-heart" aria-hidden="true"></i>
-                        <div class="e-nav-cricle" style="background: <?= Session::get('site_color') ?> !important">
+                        <div class="e-nav-cricle" style="background: {{site_color()}} !important">
                            <h1 id="totalwish">{{count($mywish)}}</h1>
                         </div>
                      </a>
                      <a class="compare" href="{{url('compare')}}">
                         <img src="{{asset('Ecommerce/images/compareheader.png')}}">
-                         <div class="e-nav-cricle comparesp" style="background: <?= Session::get('site_color') ?> !important">
+                         <div class="e-nav-cricle comparesp" style="background: {{site_color()}} !important">
                            <?php $arr=explode(",",Session::get("compare"));?>
                            <h1 id="totalcompare">{{count(array_filter($arr))}}</h1>
                         </div>
@@ -439,7 +439,7 @@
                         <div id="divNoImage1">
                         </div>
                         <input type="text" name="search_product" value="<?=isset($_GET['s'])?$_GET['s']:''; ?>" onfocus="changesearcat()"required  id="search_product_mobile" placeholder="Search product...">
-                        <button class="search-btn" type="submit" style="background-color:<?= Session::get('site_color') ?> !important;">
+                        <button class="search-btn" type="submit" style="background-color:{{site_color()}} !important;">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                      </div>
@@ -503,7 +503,7 @@
                                  </li></ul>
                          </div>
                      </div>
-                     
+
                      <div class="col-md-4">
                          <div class="footer_item">
                              <h4>Social</h4>
@@ -561,7 +561,7 @@
       <input type="hidden" id="email_success_lang" value="{{__('messages.Email Send Successfully')}}">
       <input type="hidden" id="email_not_lang" value="{{__('messages.Your Entered Email Not Exist')}}">
       <input type="hidden" id="email_req_lang" value="{{__('messages.Entered Your Email')}}">
-      <input type="hidden" id="site_color_store" value="{{Session::get('site_color')}}">
+      <input type="hidden" id="site_color_store" value="{{site_color()}}">
       <script type="text/javascript" src="{{ asset('js/select.js') }}"></script>
       <input type="hidden" id="quick_view_lang" value="{{__('messages.Quick View')}}">
       <input type="hidden" id="user_register" value="{{__('messages.user_register')}}"/>

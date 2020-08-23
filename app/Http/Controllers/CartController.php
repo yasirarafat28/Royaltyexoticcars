@@ -26,7 +26,7 @@ class CartController extends Controller {
          $setting=Setting::find(1);
          $shiping=Shipping::find(1);
          $res_curr=explode("-",$setting->default_currency);
-         Session::put("site_address",$setting->address);   
+         Session::put("site_address",$setting->address);
          Session::put("site_email",$setting->email);
          Session::put("site_phone",$setting->phone);
          Session::put("site_workinghour",$setting->working_day);
@@ -36,7 +36,7 @@ class CartController extends Controller {
          Session::put("google_active",$setting->google_active);
          Session::put("facebook_active",$setting->facebook_active);
          if(Session::get("site_color")==""){
-             Session::put("site_color","#f07f13");
+             Session::put("site_color","red");
              Session::put("colorid",'1');
         }
         if($shiping){
@@ -54,7 +54,7 @@ class CartController extends Controller {
        );
        $price=(float)$request->get("product_price")/(float)$request->get("qty");
        Cart::add($request->get("product_id"),$request->get("product_name"),number_format((float)$price, 2, '.', ''),$request->get("qty"), array($main_array));
-       Session::flash('message',__('messages_error_success.product_add_success')); 
+       Session::flash('message',__('messages_error_success.product_add_success'));
        Session::flash('alert-class', 'alert-success');
        $cartCollection = Cart::getContent();
        $i=0;
@@ -69,17 +69,17 @@ class CartController extends Controller {
                             $txt=$txt.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
-                $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
+                $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.{{site_color()}}.' !important"></i></a></div><p>';
                 $option=explode(",",$item->attributes[0]['option']);
                 $label=explode(",",$item->attributes[0]['label']);
-                
+
                    for($i=0;$i<count($option);$i++){
                                 $txt=$txt.' <span style="font-size:small"><b>'.$option[$i].'</b><span>  '.$label[$i].'</span></span></br>';
                    }
                     $txt=$txt.'</p><h2>'.Session::get('currency').number_format((float)$item->price, 2, '.', '').'</h2></div></div>';
             }
             $txt=$txt.'<div class="cart-pop_up-subtotal"><h3>'.__('messages.subtotal').' :</h3><h3 class="cart-pop_up-prize">'.Session::get('currency').number_format(Cart::getTotal(), 2, '.', '').'</h3></div><a href="'.url('cartdetail').'"><div class="pop_up-viewcart-b">'.__('messages.view_cart').'</div></a>';
-            $txt=$txt.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.Session::get('site_color').'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
+            $txt=$txt.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.{{site_color()}}.'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
             $txt=$txt.'</div>';
        }
        else{
@@ -95,14 +95,14 @@ class CartController extends Controller {
           "label"=>"",
           "price"=>""
        );
-       
+
        Cart::add($request->get("product_id"),$request->get("product_name"),$request->get("product_price"),$request->get("qty"), array($main_array));
        $wish=Wishlist::where("product_id",$request->get("product_id"))->where("user_id",Auth::id())->first();
        if($wish){
           $wish->delete();
        }
        $getwish=Wishlist::with('productdata')->where("user_id",Auth::id())->get();
-     
+
        $txt='<tr class="pro-heading" style="background:'.Session::get("site_color").' !important"><th>'.__("messages.del").'</th><th>'.__("messages.images").'</th><th>'.__("messages.product").'</th><th>'.__("messages.stock_status").'</th><th>'.__("messages.price").'</th><th></th></tr>';
        if(count($getwish)!=0){
            foreach($getwish as $mw){
@@ -132,24 +132,24 @@ class CartController extends Controller {
                             $txtcart=$txtcart.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
-                $txtcart=$txtcart.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
+                $txtcart=$txtcart.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.{{site_color()}}.' !important"></i></a></div><p>';
                 $option=explode(",",$item->attributes[0]['option']);
                 $label=explode(",",$item->attributes[0]['label']);
-                
+
                    for($i=0;$i<count($option);$i++){
                                 $txtcart=$txtcart.' <span style="font-size:small"><b>'.$option[$i].'</b><span>  '.$label[$i].'</span></span></br>';
                                 }
                     $txtcart=$txtcart.'</p><h2>'.Session::get('currency').number_format((float)$item->price, 2, '.', '').'</h2></div></div>';
             }
             $txtcart=$txtcart.'<div class="cart-pop_up-subtotal"><h3>'.__('messages.subtotal').' :</h3><h3 class="cart-pop_up-prize">'.Session::get('currency').number_format(Cart::getTotal(), 2, '.', '').'</h3></div><a href="'.url('cartdetail').'"><div class="pop_up-viewcart-b">'.__('messages.view_cart').'</div></a>';
-            $txtcart=$txtcart.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.Session::get('site_color').'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
+            $txtcart=$txtcart.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.{{site_color()}}.'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
             $txtcart=$txtcart.'</div>';
        }
        else{
            $txtcart='<div class="cart-pop_up-content"><div class="cart-pop_up-content empty"><div class="cart-pop_up-imgbox"><img src="'.asset('Ecommerce/images/empty.png').'"><h1>'.__('messages.cart_empty').'</h1></div></div></div>';
        }
        $data=array("content"=>$txt,"total"=>count($getwish),"totalcart"=>$cartCollection->count(),"cartcontent"=>$txtcart);
-       Session::flash('message',__('messages_error_success.product_add_success')); 
+       Session::flash('message',__('messages_error_success.product_add_success'));
        Session::flash('alert-class', 'alert-success');
        return json_encode($data);
    }
@@ -177,9 +177,9 @@ class CartController extends Controller {
 
 
    public function getcartview(){
-    
+
    	  $cartCollection = Cart::getContent();
-   	  $main_array=array();  
+   	  $main_array=array();
         foreach ($cartCollection as $item) {
            $order=array();
            $gettotal=array();
@@ -203,19 +203,19 @@ class CartController extends Controller {
    public function cartdetail(){
         $shipping=Shipping::all();
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist();  
-         $mywish=Wishlist::where("user_id",Auth::id())->get();  
+        $productdata=$this->getproductlist();
+         $mywish=Wishlist::where("user_id",Auth::id())->get();
         return view("user.product.mycart")->with("header_menu",$getcat)->with("productdata",$productdata)->with("mywish",$mywish)->with("shipping",$shipping);
    }
 
       public function getheadermenu(){
-        $main_array=array();  
-             
+        $main_array=array();
+
         $category=Categories::where("parent_category",'0')->where('is_delete','0')->get();
-        foreach ($category as $ke) {          
-            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();            
+        foreach ($category as $ke) {
+            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();
             $sub_arr=array();
-            foreach ($subcategory as $sub) {    
+            foreach ($subcategory as $sub) {
                 $brand=Brand::where("category_id",$sub->id)->where('is_delete','0')->get();
                 $sub->brand=$brand;
                 $sub_arr[]=$sub;
@@ -223,14 +223,14 @@ class CartController extends Controller {
             $ke->subcategory=$sub_arr;
             $main_array[]=$ke;
         }
-        
+
         return $main_array;
     }
     public function getproductlist(){
         $product=Product::all();
         return $product;
     }
-  
+
     public function deletecartitem($id){
        Cart::remove($id);
        $cartCollection = Cart::getContent();
@@ -246,7 +246,7 @@ class CartController extends Controller {
                             $txt=$txt.'<img src="'.asset('upload/product').'/'.$hs->basic_image.'" width="75" height="auto">';
                         }
                     }
-                $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.Session::get('site_color').' !important"></i></a></div><p>';
+                $txt=$txt.'</div><div class="cart-pop_up-detail-box"><div class="pop_up-detail-head"><h2>'.$item->name.'</h2><div class="cart-pop_up-cross"><i class="fa fa-times" aria-hidden="true"></i><span>'.$item->quantity.'</span></div><a href="javascript:deletecartitem('.$item->id.')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color:'.{{site_color()}}.' !important"></i></a></div><p>';
                 $option=explode(",",$item->attributes[0]['option']);
                 $label=explode(",",$item->attributes[0]['label']);
                  for($i=0;$i<count($option);$i++){
@@ -255,7 +255,7 @@ class CartController extends Controller {
                     $txt=$txt.'</p><h2>'.Session::get('currency').number_format((float)$item->price, 2, '.', '').'</h2></div></div>';
             }
             $txt=$txt.'<div class="cart-pop_up-subtotal"><h3>'.__('messages.subtotal').' :</h3><h3 class="cart-pop_up-prize">'.Session::get('currency').Cart::getTotal().'</h3></div><a href="'.url('cartdetail').'"><div class="pop_up-viewcart-b">'.__('messages.view_cart').'</div></a>';
-            $txt=$txt.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.Session::get('site_color').'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
+            $txt=$txt.'<a href="#"><div class=""><form action="'.url('checkout').'" method="post">'.csrf_field().'<input type="hidden" name="check_delivery" id="check_delivery" value="'.Session::get('home_delivery').'" /><input type="hidden" name="check_discount_type" id="check_discount_type" value="1" /><input type="hidden" name="check_discount_value" id="check_discount_value"   value="15"/><input type="hidden" name="check_free_shipping" id="check_free_shipping" value="0" /><input type="hidden" name="check_coupon_value" id="check_coupon_value" /><input type="hidden" name="check_couponcode" id="check_couponcode" /><button value="submit" class="pop_up-checkout-b" type="submit" onclick="Checkout()" style="background-color: '.{{site_color()}}.'!important">'.__('messages.proceed_to_checkout').'</button></form></div></a>';
             $txt=$txt.'</div>';
        }
        else{

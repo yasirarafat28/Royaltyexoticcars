@@ -14,7 +14,7 @@
             <div class="overlay">
             </div>
             <div class="ban-text">
-            <h1 style="color: <?= Session::get('site_color') ?> !important">{{$fd->offer->title}}</h1>
+            <h1 style="color: {{site_color()}} !important">{{$fd->offer->title}}</h1>
             @if($fd->offer->is_product=='2')
             <p>{{__('messages.home_note_3')}}{{$currency}}{{$fd->offer->new_price}}</p>
             @endif
@@ -22,12 +22,12 @@
             <p>{{__('messages.home_note_1')}} {{$fd->offer->fixed}}% {{__('messages.home_note_2')}}</p>
             @endif
             @if($fd->offer->is_product=='2')
-            <a href="{{url('viewproduct').'/'.base64_encode($fd->offer->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('viewproduct').'/'.base64_encode($fd->offer->product_id)}}" style="background: {{site_color()}} !important">
            {{__('messages.shop_now')}}
             </a>
             @endif
             @if($fd->offer->is_product=='1')
-            <a href="{{url('productslist').'/0/'.$fd->offer->category_id.'/0'.'/'.$fd->offer->fixed}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('productslist').'/0/'.$fd->offer->category_id.'/0'.'/'.$fd->offer->fixed}}" style="background: {{site_color()}} !important">
             {{__('messages.shop_now')}}
             </a>
             @endif
@@ -42,22 +42,22 @@
    <div class="services-main">
       <div class="row">
          <div class="col-md-3 col-6 services">
-            <div class="ser-img" style="background: <?= Session::get('site_color') ?> !important"></div>
+            <div class="ser-img" style="background: {{site_color()}} !important"></div>
             <h1>{{__('messages.free_delivery')}}</h1>
             <p>{{__('messages.home_note_4')}}</p>
          </div>
          <div class="col-md-3 col-6 services">
-            <div class="ser-img-1" style="background: <?= Session::get('site_color') ?> !important"></div>
+            <div class="ser-img-1" style="background: {{site_color()}} !important"></div>
             <h1>{{__('messages.home_note_5')}}</h1>
             <p>{{__('messages.Feedbacks')}}</p>
          </div>
          <div class="col-md-3 col-6 services">
-            <div class="ser-img-2" style="background: <?= Session::get('site_color') ?> !important"></div>
+            <div class="ser-img-2" style="background: {{site_color()}} !important"></div>
             <h1>{{__('messages.Payment')}}</h1>
             <p>{{__('messages.secured_sys')}}</p>
          </div>
          <div class="col-md-3 col-6 services">
-            <div class="ser-img-3" style="background: <?= Session::get('site_color') ?> !important"></div>
+            <div class="ser-img-3" style="background: {{site_color()}} !important"></div>
             <h1>{{__('messages.support')}}</h1>
             <p>{{__('messages.helpline')}} -{{$setting->helpline}}</p>
          </div>
@@ -77,7 +77,7 @@
                <div class="sale-b-text">
                   <h1>{{$ba->title}}</h1>
                   <p>{{$ba->subtitle}}</p>
-                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                </div>
             </div>
          </div>
@@ -93,7 +93,7 @@
                <div class="sale-b-text">
                   <h1>{{$ba->title}}</h1>
                   <p>{{$ba->subtitle}}</p>
-                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                </div>
             </div>
             @endif
@@ -105,7 +105,7 @@
                <div class="sale-b-text">
                   <h1>{{$ba->title}}</h1>
                   <p>{{$ba->subtitle}}</p>
-                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                  <a href="{{url('productslist').'/0/'.$ba->subcategory.'/0/0'}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                </div>
             </div>
             @endif
@@ -139,7 +139,7 @@
                   <div class="home-bg">
 
                   <div class="img-background">
-            
+
                      <figure class="preview-image">
 
                         <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
@@ -151,7 +151,7 @@
                         </div>
 
                      </figure>
-               
+
 
                      <div class="img-text">
 
@@ -174,10 +174,10 @@
                         <h1>{{$bt['name']}}</h1>
                         <span class="rating">
                         <?php for($i=0;$i<$bt['ratting'];$i++){ ?>
-                        <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         <?php for($i=0;$i<(5-$bt['ratting']);$i++){ ?>
-                        <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         </span>
                         <span class="review">
@@ -190,7 +190,7 @@
                            <h2>{{Session::get("currency")}}{{$bt['price']}}</h2>
                            <span >{{Session::get("currency")}}{{$bt['MRP']}}</span>
                              @if($bt["stock"]=='1')
-                           <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                           <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                            @endif
                         </div>
                      </div>
@@ -211,7 +211,7 @@
       <div class="summer-text">
          <h1>{{__('messages.up_to')}} {{$sen_offer->fixed_to}}% {{__('messages.home_note_2')}}</h1>
          <p>{{$sen_offer->title}}</p>
-         <a href="{{url('productslist').'/'.$sen_offer->category.'/0/0'.'/'.$sen_offer->fixed_to}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+         <a href="{{url('productslist').'/'.$sen_offer->category.'/0/0'.'/'.$sen_offer->fixed_to}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
       </div>
    </div>
 </div>
@@ -234,7 +234,7 @@
                <h1>{{$sepical_cat->title}}</h1>
                <p>{{$sepical_cat->description}}
                </p>
-               <a href="{{url('productslist').'/'.$sepical_cat->category_id.'/0/0/0'}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+               <a href="{{url('productslist').'/'.$sepical_cat->category_id.'/0/0/0'}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
             </div>
          </div>
       </div>
@@ -265,7 +265,7 @@
                           @endif
                   <div class="home-bg">
                   <div class="img-background" >
-               
+
                      <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
@@ -274,7 +274,7 @@
                            </button>
                         </div>
                      </figure>
-                  
+
                      <div class="img-text">
                         <label class="fancy-checkbox">
                              @if(Auth::id()!="")
@@ -294,10 +294,10 @@
                      <h1>{{$fe->productdata->name}}</h1>
                      <span class="rating">
                      <?php for($i=0;$i<$fe->productdata->avgStar;$i++){ ?>
-                     <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                     <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                      <?php }?>
                      <?php for($i=0;$i<(5-$fe->productdata->avgStar);$i++){ ?>
-                     <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                     <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                      <?php }?>
                      </span>
                      <span class="review">
@@ -310,7 +310,7 @@
                         <h2>{{Session::get("currency")}}{{$fe->productdata->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$fe->productdata->MRP}}</span>
                         @if($fe->productdata->stock=='1')
-                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->product_id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                         @endif
                      </div>
                   </div>

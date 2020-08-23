@@ -10,7 +10,7 @@
    </div>
    <div class="cart-detail">
       <table id="mycart">
-         <tr class="pro-heading" style="background: <?= Session::get('site_color') ?> !important">
+         <tr class="pro-heading" style="background: {{site_color()}} !important">
             <th>{{__('messages.del')}}</th>
             <th>{{__('messages.images')}}</th>
             <th>{{__('messages.product')}}</th>
@@ -23,7 +23,7 @@
          @foreach($cartCollection as $item)
          <tr>
             <td class="Delete-icon">
-               <a href="javascript:deletecartitem('{{$item->id}}')"><i class="fa fa-trash-o" aria-hidden="true"></i>   
+               <a href="javascript:deletecartitem('{{$item->id}}')"><i class="fa fa-trash-o" aria-hidden="true"></i>
                <span>{{__('messages.del')}} :</span></a>
             </td>
             <td class="cart-img">
@@ -41,7 +41,7 @@
                                                    $label=explode(",",$item->attributes[0]['label']);
                                                    $price=explode(",",$item->attributes[0]['price']);
                                                   ?>
-                                               
+
                                                    <?php for($i=0;$i<count($option);$i++){?>
                                                    </br><p style="font-size:small"><b>{{$option[$i]}}</b>=>{{$label[$i]}}</p>
                                                    <?php }?>
@@ -81,8 +81,8 @@
       <input type="hidden" name="coupon_min_value" id="coupon_min_value" value="" />
       <input type="hidden" name="coupon_max_value" id="coupon_max_value" value="" />
       <div class="continue">
-         <a href="{{url('/')}}" style="color: <?= Session::get('site_color') ?> !important">{{__('messages.continue_shopping')}}
-         <i class="fa fa-long-arrow-right" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+         <a href="{{url('/')}}" style="color: {{site_color()}} !important">{{__('messages.continue_shopping')}}
+         <i class="fa fa-long-arrow-right" aria-hidden="true" style="color: {{site_color()}} !important"></i>
          </a>
       </div>
    </div>
@@ -94,18 +94,18 @@
              $class="";
          }
    ?>
-   
+
    <div class="other-detail {{$class}}" id="coupon_section">
       <div class="row">
          <div class="col-md-6">
             <div class="coupon">
-               <h1 style="background: <?= Session::get('site_color') ?> !important">{{__('messages.coupon')}}</h1>
+               <h1 style="background: {{site_color()}} !important">{{__('messages.coupon')}}</h1>
             </div>
             <div class="coupon-detail">
                <p>{{__('messages.coupon_note')}}</p>
                <form class="contact1-form validate-form">
                   <input type="text" name="couponcode" id="couponcode" placeholder="Coupon code">
-                  <button value="submit" type="button" onclick="addcoupon()" style="background: <?= Session::get('site_color') ?> !important">
+                  <button value="submit" type="button" onclick="addcoupon()" style="background: {{site_color()}} !important">
                   {{__('messages.apply_coupon')}}
                   </button>
                </form>
@@ -113,7 +113,7 @@
          </div>
          <div class="col-md-6" id="totalsection">
             <div class="coupon">
-               <h1 style="background: <?= Session::get('site_color') ?> !important">{{__('messages.cart_details')}}</h1>
+               <h1 style="background: {{site_color()}} !important">{{__('messages.cart_details')}}</h1>
             </div>
             <div class="cart-mt">
                <form action="{{url('checkout')}}" method="post">
@@ -158,7 +158,7 @@
                   <input type="hidden" name="check_free_shipping" id="checkout_free_shipping" />
                   <input type="hidden" name="check_coupon_value" id="checkout_coupon_value" />
                   <input type="hidden" name="check_couponcode" id="checkout_couponcode" />
-                  <button value="submit" type="submit" onclick="Checkout()" style="background: <?= Session::get('site_color') ?> !important">
+                  <button value="submit" type="submit" onclick="Checkout()" style="background: {{site_color()}} !important">
                   {{__('messages.proceed_to_checkout')}}
                   </button>
             </div>

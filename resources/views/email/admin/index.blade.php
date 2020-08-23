@@ -43,16 +43,16 @@
    </head>
    <style type="text/css">
    .product-heading h1:before{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
    }
    .product-heading h1:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
    }
    .one-product-slider h1:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
    }
    .col-md-3.services:after{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
    }
 
 </style>

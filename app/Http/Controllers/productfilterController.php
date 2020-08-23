@@ -29,7 +29,7 @@ class productfilterController extends Controller {
           $setting=Setting::find(1);
          $shiping=Shipping::find(1);
          $res_curr=explode("-",$setting->default_currency);
-         Session::put("site_address",$setting->address);   
+         Session::put("site_address",$setting->address);
          Session::put("site_email",$setting->email);
          Session::put("site_phone",$setting->phone);
          Session::put("site_workinghour",$setting->working_day);
@@ -39,7 +39,7 @@ class productfilterController extends Controller {
          Session::put("google_active",$setting->google_active);
          Session::put("facebook_active",$setting->facebook_active);
          if(Session::get("site_color")==""){
-             Session::put("site_color","#f07f13");
+             Session::put("site_color","red");
              Session::put("colorid",'1');
         }
         if($shiping){
@@ -53,7 +53,7 @@ class productfilterController extends Controller {
     if($request->get("ca")!=""){
         $category_id=$request->get("ca");
     }
-      
+
       $search=$request->get("s");
       $code=$request->get("cd");
       if($category_id=="0"&&$subcategory_id=="0"&&$brand_id=="0"){//000
@@ -72,7 +72,7 @@ class productfilterController extends Controller {
                 else{
                       $product=Product::where("status",'1')->orderby("discount",'DESC')->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                 }
-            
+
            }
       }
       if($category_id=="0"&&$subcategory_id=="0"&&$brand_id!="0"){//001
@@ -82,14 +82,14 @@ class productfilterController extends Controller {
               }
               else{
                   $product=Product::where("brand",$brand_id)->where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby("id",'DESC')->where("is_deleted",'0')->get();
-              }              
+              }
          }else{
               if($search!=""){
                   $product=Product::where("brand",$brand_id)->where("status",'1')->orderby("discount",'DESC')->where("is_deleted",'0')->where("discount","<=",$discount)->get();
               }
               else{
                   $product=Product::where("brand",$brand_id)->where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby("discount",'DESC')->where("is_deleted",'0')->where("discount","<=",$discount)->get();
-              }              
+              }
          }
       }
       if($category_id=="0"&&$subcategory_id!="0"&&$brand_id=="0"){// 010
@@ -99,14 +99,14 @@ class productfilterController extends Controller {
               }
               else{
                    $product=Product::where("subcategory",$subcategory_id)->where("status",'1')->where("is_deleted",'0')->orderby("id",'DESC')->get();
-              }            
+              }
           }else{
              if($search!=""){
                 $product=Product::where("subcategory",$subcategory_id)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("is_deleted",'0')->orderby("discount",'DESC')->where("discount","<=",$discount)->get();
               }
               else{
                 $product=Product::where("subcategory",$subcategory_id)->where("status",'1')->where("is_deleted",'0')->orderby("discount",'DESC')->where("discount","<=",$discount)->get();
-              }            
+              }
           }
       }
       if($category_id=="0"&&$subcategory_id!="0"&&$brand_id!="0"){//011
@@ -124,12 +124,12 @@ class productfilterController extends Controller {
               }
               else{
                    $product=Product::where("subcategory",$subcategory_id)->where("brand",$brand_id)->where("is_deleted",'0')->where("status",'1')->orderby("discount",'DESC')->where("discount","<=",$discount)->get();
-              }             
+              }
           }
      }
      if($category_id!="0"&&$subcategory_id=="0"&&$brand_id=="0"){//100
          if($discount=="0"){
-             if($search!=""){              
+             if($search!=""){
                 $product=Product::where("category",$category_id)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("is_deleted",'0')->orderby("id",'DESC')->get();
              }
              else{
@@ -143,7 +143,7 @@ class productfilterController extends Controller {
              else{
                 $product=Product::where("category",$category_id)->where("status",'1')->where("is_deleted",'0')->orderby("discount",'DESC')->where("discount","<=",$discount)->get();
              }
-              
+
          }
       }
       if($category_id!="0"&&$subcategory_id=="0"&&$brand_id!="0"){//101
@@ -161,7 +161,7 @@ class productfilterController extends Controller {
               }
               else{
                 $product=Product::where("category",$category_id)->where("brand",$brand_id)->where("is_deleted",'0')->where("status",'1')->orderby("discount",'DESC')->where("discount","<=",$discount)->get();
-              }              
+              }
           }
      }
      if($category_id!="0"&&$subcategory_id!="0"&&$brand_id=="0"){//110
@@ -171,7 +171,7 @@ class productfilterController extends Controller {
               }
               else{
                    $product=Product::where("category",$category_id)->where("subcategory",$subcategory_id)->where("status",'1')->orderby("id",'DESC')->where("is_deleted",'0')->where("discount","<=",$discount)->get();
-              }           
+              }
         }
         else{
            if($search!=""){
@@ -190,7 +190,7 @@ class productfilterController extends Controller {
               else{
                      $product=Product::where("category",$category_id)->where("subcategory",$subcategory_id)->where("brand",$brand_id)->where("status",'1')->orderby("id",'DESC')->where("is_deleted",'0')->get();
               }
-           
+
          }
          else{
            if($search!=""){
@@ -199,18 +199,18 @@ class productfilterController extends Controller {
               else{
                      $product=Product::where("category",$category_id)->where("subcategory",$subcategory_id)->where("brand",$brand_id)->where("status",'1')->orderby("id",'DESC')->where("is_deleted",'0')->where("is_deleted",'0')->get();
               }
-           
+
          }
      }
      $pricelist=array();
-    
+
      if($code!=""){
             $getcode=Coupon::where("code",$code)->first();
             $date=date("Y-m-d");
-            $start_date=date("Y-m-d",strtotime($getcode->start_date)); 
+            $start_date=date("Y-m-d",strtotime($getcode->start_date));
             $end_date=date("Y-m-d",strtotime($getcode->end_date));
-            if(($date>=$start_date)&&($date<=$end_date)){ 
-                $searls=array();             
+            if(($date>=$start_date)&&($date<=$end_date)){
+                $searls=array();
                 if($getcode->coupon_on=='0'){//product
                     foreach ($product as $k) {
                       $products=explode(",",$getcode->product);
@@ -224,7 +224,7 @@ class productfilterController extends Controller {
                             $k->wish=count($wish);
                             $pricelist[]=$k->price;
                             $k->disper=$k->discount;
-                            $k->price=$k->selling_price;   
+                            $k->price=$k->selling_price;
                             $searls[]=$k;
                       }
                     }
@@ -244,7 +244,7 @@ class productfilterController extends Controller {
                             $k->wish=count($wish);
                             $pricelist[]=$k->price;
                             $k->disper=$k->discount;
-                            $k->price=$k->selling_price; 
+                            $k->price=$k->selling_price;
                              $searls[]=$k;
                         }
                     }
@@ -263,11 +263,11 @@ class productfilterController extends Controller {
             $k->wish=count($wish);
             $pricelist[]=$k->price;
             $k->disper=$k->discount;
-            $k->price=$k->selling_price;   
+            $k->price=$k->selling_price;
         }
      }
-   
-       
+
+
         $pricels=array();
         if(!empty($pricelist)){
              $pricels=$this->getpricelist($pricelist);
@@ -291,32 +291,32 @@ class productfilterController extends Controller {
                 foreach ($getbrand as $ge) {
                     $brand[]=$ge->brand_name;
                 }
-               
+
               }
         }
-       
+
         $bname="";
         $brandname=Brand::find($brand_id);
         if(isset($brandname->brand_name)){
            $bname=$brandname->brand_name;
         }
         $catgyname=Categories::find($category_id);
-        $brand=array_values(array_unique($brand));        
+        $brand=array_values(array_unique($brand));
         $getcat=$this->getheadermenu();
-        $productdata=$this->getproductlist(); 
+        $productdata=$this->getproductlist();
         $getcolorls=$this->getcolorls($category_id,$subcategory_id,$brand_id,'color');
         $getsize=$this->getsizls($category_id,$subcategory_id,$brand_id,'size');
-        $mywish=Wishlist::where("user_id",Auth::id())->get();   
-        
+        $mywish=Wishlist::where("user_id",Auth::id())->get();
+
         return view("user.product.productlist")->with("header_menu",$getcat)->with("productdata",$productdata)->with("productlist",$product)->with("lssub",$getsub)->with("brandls",$brand)->with("subcategory",$subcategory_id)->with("brand",$bname)->with("categorydata",$catgyname)->with("mywish",$mywish)->with("pricels",$pricels)->with("discount",$discount)->with("colorarr",$getcolorls)->with("sizearr",$getsize);
    }
     public function getheadermenu(){
-        $main_array=array(); 
+        $main_array=array();
         $category=Categories::where("parent_category",'0')->where('is_delete','0')->get();
-        foreach ($category as $ke) {          
-            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();            
+        foreach ($category as $ke) {
+            $subcategory=Categories::where("parent_category",$ke->id)->where('is_delete','0')->get();
             $sub_arr=array();
-            foreach ($subcategory as $sub) {    
+            foreach ($subcategory as $sub) {
                 $brand=Brand::where("category_id",$sub->id)->where('is_delete','0')->get();
                 $sub->brand=$brand;
                 $sub_arr[]=$sub;
@@ -331,11 +331,11 @@ class productfilterController extends Controller {
         return $product;
     }
     function headreadMoreHelper($story_desc, $chars =35) {
-        $story_desc = substr($story_desc,0,$chars);  
-        $story_desc = substr($story_desc,0,strrpos($story_desc,' '));  
-        $story_desc = $story_desc;  
-        return $story_desc;  
-    }  
+        $story_desc = substr($story_desc,0,$chars);
+        $story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+        $story_desc = $story_desc;
+        return $story_desc;
+    }
     public function getsubcat($category_id,$subcategory_id){
         $getsubcat=array();
         if($category_id==0&&$subcategory_id==0){//00
@@ -345,7 +345,7 @@ class productfilterController extends Controller {
            if($getparent){
             $getsubcat=Categories::where('parent_category',$getparent->parent_category)->where('is_delete','0')->get();
            }
-           
+
         }elseif($category_id!=0&&$subcategory_id==0){//10
            $getsubcat=Categories::where('parent_category',$category_id)->where('is_delete','0')->get();
         }
@@ -362,7 +362,7 @@ class productfilterController extends Controller {
               if($totaldived==1){
                   $a=strlen($pricelist[$totaldived*1])-2;
                   $pricels[]=ceil(($pricelist[($totaldived)-1*1]/pow(10,$a)))*pow(10,$a)."-Above";
-              } 
+              }
               if($totaldived==0){
                  $a=strlen($pricelist[$totaldived*1])-2;
                  $pricels[]=ceil(($pricelist[($totaldived)*1]/pow(10,$a)))*pow(10,$a)."-Above";
@@ -388,11 +388,11 @@ class productfilterController extends Controller {
             $price=$request->get("price");
             $ratting=$request->get("ratting");
             $sort=$request->get("sorttype");
-            $discount=$request->get("discount"); 
-            $color=$request->get("color"); 
-            $size=$request->get("size");  
-            $code=$request->get("code");    
-            $search=$request->get("search");     
+            $discount=$request->get("discount");
+            $color=$request->get("color");
+            $size=$request->get("size");
+            $code=$request->get("code");
+            $search=$request->get("search");
             $getbrand=$this->getbrandlist($category,$subcategory,$brand);
 
              if(!empty($getbrand)){
@@ -413,22 +413,22 @@ class productfilterController extends Controller {
                 }
             }
 
-            
+
             $getcolorls=$this->getcolorls($category,$subcategory,$brand,'color');
 
 
-            $getsize=$this->getsizls($category,$subcategory,$brand,'size');           
+            $getsize=$this->getsizls($category,$subcategory,$brand,'size');
             $product=$this->kls($category,$subcategory,$brand,$sort,$ratting,$discount,$price,$color,$size,$search);
-          
+
             $pro=array();
             $pricelist=array();
              if($code!="0"){
             $getcode=Coupon::where("code",$code)->first();
             $date=date("Y-m-d");
-            $start_date=date("Y-m-d",strtotime($getcode->start_date)); 
+            $start_date=date("Y-m-d",strtotime($getcode->start_date));
             $end_date=date("Y-m-d",strtotime($getcode->end_date));
-            if(($date>=$start_date)&&($date<=$end_date)){ 
-                $searls=array();             
+            if(($date>=$start_date)&&($date<=$end_date)){
+                $searls=array();
                 if($getcode->coupon_on=='0'){//product
                     foreach ($product as $k) {
                       $products=explode(",",$getcode->product);
@@ -442,7 +442,7 @@ class productfilterController extends Controller {
                             $k->wish=count($wish);
                             $pricelist[]=$k->price;
                             $k->disper=$k->discount;
-                            $k->price=$k->selling_price;   
+                            $k->price=$k->selling_price;
                             $searls[]=$k;
                       }
                     }
@@ -460,7 +460,7 @@ class productfilterController extends Controller {
                             $k->wish=count($wish);
                             $pricelist[]=$k->price;
                             $k->disper=$k->discount;
-                            $k->price=$k->selling_price; 
+                            $k->price=$k->selling_price;
                              $searls[]=$k;
                         }
                     }
@@ -479,7 +479,7 @@ class productfilterController extends Controller {
             $k->wish=count($wish);
             $pricelist[]=$k->price;
             $k->disper=$k->discount;
-            $k->price=$k->selling_price;   
+            $k->price=$k->selling_price;
         }
      }
 
@@ -497,7 +497,7 @@ class productfilterController extends Controller {
         $subcat=array();
         if($category!="0"){//11
             return $subcat=Categories::where("parent_category",$category)->where("is_delete",'0')->get();
-        }       
+        }
         elseif($category=="0"&&$subcategory!="0"){//01
            $getpar=Categories::find($subcategory);
            return $subcat=Categories::where("parent_category",$getpar->parent_category)->where("is_delete",'0')->get();
@@ -508,7 +508,7 @@ class productfilterController extends Controller {
               $getpar=Categories::find($getbrand->category_id);
              return  $subcat=Categories::where("parent_category",$getpar->parent_category)->where("is_delete",'0')->get();
            }
-          
+
         }
         else{//00
             return $subcat=Categories::where("parent_category","!=","0")->where("is_delete",'0')->get();
@@ -516,7 +516,7 @@ class productfilterController extends Controller {
         return $subcat;
     }
      public function getcolorls($category,$subcategory,$brand){
-     
+
         $colorls=array();
         $product=array();
           if($category!=0&&$subcategory==0&&$brand==0){//100
@@ -540,16 +540,16 @@ class productfilterController extends Controller {
            else if($category==0&&$subcategory==0&&$brand!=0){//001
               $product=Product::where("brand",$brand)->where("status",'1')->where("is_deleted",'0')->select("id","name","category","product_color")->get();
           }
-          
 
-        
-    
+
+
+
          foreach ($product as $k) {
               $colorls[]=$k->product_color;
          }
-        
+
        return array_values(array_unique(array_filter($colorls)));
-      
+
    }
 
        function getsizls($category,$subcategory,$brand,$fields){
@@ -576,7 +576,7 @@ class productfilterController extends Controller {
         $product=Product::with('optionls')->where("status",'1')->where("is_deleted",'0')->select("id","name","category")->whereHas('optionls', function($q)use($fields){$q->where('name', 'like', '%' .$fields. '%');})->get();
       }
 
-    
+
          foreach ($product as $k) {
             $str=explode(",",strtoupper($k->optionls->name));
           foreach ($str as $kt=>$val) {
@@ -586,11 +586,11 @@ class productfilterController extends Controller {
           }
              $value=explode("#",$k->optionls->label);
              $colorarr=explode(",",$value[$name]);
-             
+
              foreach ($colorarr as $co) {
               $colorls[]=$co;
              }
-             
+
          }
        return array_values(array_unique($colorls));
    }
@@ -635,7 +635,7 @@ class productfilterController extends Controller {
                 $field="id";
                 $orderby="ASC";
            }
-          
+
            $product=array();
            $data=array();
               if($category!="0"&&$subcategory=="0"&&$brand=="0"){//100
@@ -647,21 +647,21 @@ class productfilterController extends Controller {
                           else{
                            $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                           }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                           if($search!="0"){
                              $product=Product::where("category",$category)->where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                           }
                           else{
                              $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                          }                          
+                          }
                       }elseif($color!="0"&&$size=="0"){//10
                               if($search!="0"){
                                  $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                               }
                               else{
                                  $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
-                              }                          
+                              }
                       }
                       else if($color!="0"&&$size!="0"){//11
                               if($search!="0"){
@@ -669,8 +669,8 @@ class productfilterController extends Controller {
                               }
                               else{
                                 $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                              }                           
-                      }                    
+                              }
+                      }
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -681,30 +681,30 @@ class productfilterController extends Controller {
                               }
                               else{
                                  $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
-                              }                           
+                              }
                           }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                      $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                }                           
+                                }
                           }elseif($color!="0"&&$size=="0"){//10
                               if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                               }
                               else{
                                  $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
-                              }                              
+                              }
                           }else{//11
                               if($search!="0"){
                                  $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                               }
                               else{
                                  $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                              }                           
+                              }
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                               if($search!="0"){
@@ -712,14 +712,14 @@ class productfilterController extends Controller {
                               }
                               else{
                                 $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
-                              }                               
+                              }
                            }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                }                              
+                                }
                            }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -727,16 +727,16 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                 }
-                               
+
                            }else{//11
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                }                              
+                                }
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                   if($search!="0"){
@@ -744,7 +744,7 @@ class productfilterController extends Controller {
                                   }
                                   else{
                                     $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
-                                  }                                  
+                                  }
                                }elseif($color=="0"&&$size!="0"){//01
                                     if($search!="0"){
                                       $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -752,7 +752,7 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                     }
-                                    
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -760,7 +760,7 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                     }
-                                   
+
                                 }else{//11
                                       if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -768,9 +768,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -787,22 +787,22 @@ class productfilterController extends Controller {
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                }                             
+                                }
                         }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
-                                }                             
+                                }
                         }else{//11
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                }                              
-                        }                    
+                                }
+                        }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -813,14 +813,14 @@ class productfilterController extends Controller {
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
-                                }                            
+                                }
                          }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                }                              
+                                }
                           }elseif($color!="0"&&$size=="0"){//10
                                   if($search!="0"){
                                     $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -828,7 +828,7 @@ class productfilterController extends Controller {
                                   else{
                                     $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                   }
-                                 
+
                           }else{//11
                                    if($search!="0"){
                                        $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -836,9 +836,9 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                     }
-                              
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                                   if($search!="0"){
@@ -846,14 +846,14 @@ class productfilterController extends Controller {
                                   }
                                   else{
                                      $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
-                                  }                               
+                                  }
                            }elseif($color=="0"&&$size!="0"){//01
                                   if($search!="0"){
                                      $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                   }
                                   else{
                                      $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                  }                                 
+                                  }
                             }elseif($color!="0"&&$size=="0"){//10
                                       if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -861,16 +861,16 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                       if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                      }                                 
+                                      }
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                       if($search!="0"){
@@ -879,14 +879,14 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                        if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                        }
                                        else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                       }                                    
+                                       }
                                }elseif($color!="0"&&$size=="0"){//10
                                       if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -894,14 +894,14 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                    
+
                                }else{//11
                                      if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                      }                                  
+                                      }
                                }
                       }
                  }
@@ -913,7 +913,7 @@ class productfilterController extends Controller {
                                 else{
                                     $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                 }
-                         
+
                       }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                      $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -921,14 +921,14 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                          
+
                       }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
-                                }                          
+                                }
                       }else{//11
                                 if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -936,9 +936,9 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -950,14 +950,14 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                 }
-                             
+
                           }elseif($color=="0"&&$size!="0"){//01
                                   if($search!="0"){
                                       $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                   }
                                   else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                  }                            
+                                  }
                           }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -965,7 +965,7 @@ class productfilterController extends Controller {
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                     }
-                                
+
                           }else{//11
                                       if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -973,9 +973,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                    if($search!="0"){
@@ -984,7 +984,7 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                     }
-                                
+
                              }elseif($color=="0"&&$size!="0"){//01
                                     if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -992,7 +992,7 @@ class productfilterController extends Controller {
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                     }
-                                 
+
                              }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                       $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1000,16 +1000,16 @@ class productfilterController extends Controller {
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                     }
-                                   
+
                              }else{//11
                                       if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                      }                                   
+                                      }
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                     if($search!="0"){
@@ -1017,14 +1017,14 @@ class productfilterController extends Controller {
                                     }
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
-                                    }                                   
+                                    }
                               }elseif($color=="0"&&$size!="0"){//01
                                     if($search!="0"){
                                        $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                     }
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                    }                                  
+                                    }
                               }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1032,7 +1032,7 @@ class productfilterController extends Controller {
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                     }
-                                   
+
                               }else{//11
                                      if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1040,7 +1040,7 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                     }
-                                  
+
                               }
                       }
                  }
@@ -1051,7 +1051,7 @@ class productfilterController extends Controller {
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
-                                }                            
+                                }
                          }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1059,7 +1059,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                            
+
                          }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1067,7 +1067,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                 }
-                              
+
                          }else{//11
                                  if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1075,7 +1075,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
-                            
+
                          }
                  }
                  else{//111
@@ -1088,14 +1088,14 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                 }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                }                              
+                                }
                           }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1103,16 +1103,16 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                 }
-                                 
+
                           }else{//11
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                }                                
+                                }
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                 if($search!="0"){
@@ -1121,7 +1121,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                 }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                   if($search!="0"){
                                      $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1129,7 +1129,7 @@ class productfilterController extends Controller {
                                   else{
                                      $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                   }
-                               
+
                             }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                        $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1137,16 +1137,16 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                     }
-                               
+
                             }else{//11
                                     if($search!="0"){
                                       $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                     }
                                     else{
                                       $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                    }                                
+                                    }
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                                 if($search!="0"){
@@ -1155,7 +1155,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                 }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1163,7 +1163,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1171,7 +1171,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                 }
-                               
+
                           }else{//11
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1179,13 +1179,13 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
-                              
+
                           }
-                          
+
                       }
                  }
               }
-              if($category!="0"&&$subcategory=="0"&&$brand!="0"){//101   
+              if($category!="0"&&$subcategory=="0"&&$brand!="0"){//101
                 if($discount=="0"&&$ratting=="0"&&$price=="0"){ //000
                       if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -1194,7 +1194,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                 }
-                           
+
                       }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1202,8 +1202,8 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                        
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                                 if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -1211,7 +1211,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                 }
-                          
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                                if($search!="0"){
@@ -1220,9 +1220,9 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
-                           
+
                       }
-                    
+
                 }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -1234,7 +1234,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                 }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                   $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1242,7 +1242,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                            
+
                           }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -1250,16 +1250,16 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                 }
-                             
+
                           }else{//11
                                if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                 }
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                }                           
+                                }
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                                 if($search!="0"){
@@ -1268,7 +1268,7 @@ class productfilterController extends Controller {
                                 else{
                                   $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                 }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                    $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1276,7 +1276,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                 }
-                              
+
                            }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                      $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -1284,7 +1284,7 @@ class productfilterController extends Controller {
                                 else{
                                    $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                 }
-                              
+
                            }else{//11
                                   if($search!="0"){
                                        $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1292,9 +1292,9 @@ class productfilterController extends Controller {
                                   else{
                                      $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                   }
-                              
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                     if($search!="0"){
@@ -1303,7 +1303,7 @@ class productfilterController extends Controller {
                                     else{
                                        $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                     }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                       if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1311,7 +1311,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                      if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -1319,7 +1319,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                   
+
                                 }else{//11
                                        if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1327,9 +1327,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -1340,7 +1340,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                              
+
                         }elseif($color=="0"&&$size!="0"){//01
                                      if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1348,7 +1348,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                                     if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1356,7 +1356,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                            
+
                         }else{//11
                                  if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1364,9 +1364,9 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -1378,7 +1378,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                                     if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1386,7 +1386,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                                   if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1394,7 +1394,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                                  if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1402,9 +1402,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -1413,7 +1413,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1421,7 +1421,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                 
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1429,7 +1429,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1437,9 +1437,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -1448,7 +1448,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1456,7 +1456,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1464,7 +1464,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                    
+
                                }else{//11
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1483,7 +1483,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1491,7 +1491,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1499,7 +1499,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                          
+
                       }else{//11
                          if($search!="0"){
                                               $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1507,9 +1507,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -1521,7 +1521,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1529,7 +1529,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1537,7 +1537,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1545,9 +1545,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -1556,7 +1556,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                 
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1564,7 +1564,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1572,7 +1572,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                              }else{//11
                                if($search!="0"){
                                           $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where('name', 'LIKE', '%' . $search . '%')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1580,9 +1580,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -1591,7 +1591,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                   
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1599,7 +1599,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1607,7 +1607,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                               }else{//11
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1615,7 +1615,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                               }
                       }
                  }
@@ -1627,7 +1627,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                               if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1635,7 +1635,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1643,7 +1643,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                          }else{//11
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1651,7 +1651,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                          }
                  }
                  else{//111
@@ -1664,7 +1664,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1672,7 +1672,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1680,7 +1680,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1688,9 +1688,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -1699,7 +1699,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                                
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1707,7 +1707,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1715,7 +1715,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1723,9 +1723,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -1734,7 +1734,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1742,7 +1742,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -1750,7 +1750,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1758,13 +1758,13 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                          
+
                       }
                  }
               }
-               
+
               if($category!="0"&&$subcategory!="0"&&$brand=="0"){//110
 
                  if($discount=="0"&&$ratting=="0"&&$price=="0"){
@@ -1775,7 +1775,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("category",$category)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                         
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1783,8 +1783,8 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                        
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -1792,7 +1792,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                          
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -1801,9 +1801,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                          
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -1815,7 +1815,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1823,7 +1823,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -1831,7 +1831,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1839,9 +1839,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -1850,7 +1850,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1858,7 +1858,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -1866,7 +1866,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                               
+
                            }else{//11
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1874,9 +1874,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -1885,7 +1885,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1893,7 +1893,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -1901,7 +1901,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                   
+
                                 }else{//11
                                    if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1909,9 +1909,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -1924,8 +1924,8 @@ class productfilterController extends Controller {
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
 
-                             
-                             
+
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1933,7 +1933,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1941,7 +1941,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                         }else{//11
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1949,9 +1949,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -1963,7 +1963,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -1971,7 +1971,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -1979,7 +1979,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -1987,9 +1987,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -1998,7 +1998,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2006,7 +2006,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2014,7 +2014,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2022,9 +2022,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -2033,7 +2033,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2041,7 +2041,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2049,7 +2049,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                    
+
                                }else{//11
                                  if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2057,7 +2057,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                                }
                       }
                  }
@@ -2069,7 +2069,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2077,7 +2077,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2085,7 +2085,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                           
+
                       }else{//11
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2093,9 +2093,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -2107,7 +2107,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                             
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2115,7 +2115,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2123,7 +2123,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2131,9 +2131,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -2142,7 +2142,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                 
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2150,7 +2150,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2158,7 +2158,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                              }else{//11
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2166,9 +2166,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -2177,7 +2177,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("subcategory",$subcategory)->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                   
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2185,7 +2185,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2193,7 +2193,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                               }else{//11
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2201,7 +2201,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                               }
                       }
                  }
@@ -2213,7 +2213,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2221,7 +2221,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2229,7 +2229,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                          }else{//11
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2237,7 +2237,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                          }
                  }
                  else{//111
@@ -2250,7 +2250,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2258,7 +2258,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2266,7 +2266,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2274,9 +2274,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -2285,7 +2285,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                                
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2293,7 +2293,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2301,7 +2301,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2309,9 +2309,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -2320,7 +2320,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2328,7 +2328,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2336,7 +2336,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2344,14 +2344,14 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                          
+
                       }
-                
+
                  }
               }
-              
+
               if($category!="0"&&$subcategory!="0"&&$brand!="0"){//111
                  if($discount=="0"&&$ratting=="0"&&$price=="0"){//000
                       if($color=="0"&&$size=="0"){//00
@@ -2361,7 +2361,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                           
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2369,8 +2369,8 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                         
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -2378,7 +2378,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                           
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -2387,9 +2387,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("brand",$brand)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                          
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -2401,7 +2401,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2409,7 +2409,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -2417,7 +2417,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2425,9 +2425,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -2436,7 +2436,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2444,7 +2444,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -2452,7 +2452,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                               
+
                            }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2460,9 +2460,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -2471,7 +2471,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2479,7 +2479,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -2487,7 +2487,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }else{//11
                                    if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2495,9 +2495,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -2508,7 +2508,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2516,7 +2516,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2524,7 +2524,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                         }else{//11
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2532,9 +2532,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -2546,7 +2546,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2554,7 +2554,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2562,7 +2562,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2570,9 +2570,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -2581,7 +2581,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2589,7 +2589,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2597,7 +2597,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                  
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2605,9 +2605,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -2616,7 +2616,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2624,7 +2624,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2632,7 +2632,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                                }else{//11
                                  if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2640,7 +2640,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                                }
                       }
                  }
@@ -2652,7 +2652,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2660,7 +2660,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2668,7 +2668,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                           
+
                       }else{//11
                          if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2676,9 +2676,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -2686,11 +2686,11 @@ class productfilterController extends Controller {
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
                                           $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
-                                      } 
+                                      }
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2698,7 +2698,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2706,7 +2706,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2714,9 +2714,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -2725,7 +2725,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                 
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2733,7 +2733,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                 
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2741,7 +2741,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                              }else{//11
                                if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2749,9 +2749,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -2760,7 +2760,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("subcategory",$subcategory)->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                   
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2768,7 +2768,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2776,7 +2776,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                               }else{//11
                                  if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2784,7 +2784,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                               }
                       }
                  }
@@ -2796,7 +2796,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2804,7 +2804,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->where("subcategory",$subcategory)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2812,7 +2812,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                          }else{//11
                            if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2820,7 +2820,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("discount","<=",$discount)->where("subcategory",$subcategory)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                          }
                  }
                  else{//111
@@ -2833,7 +2833,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2841,7 +2841,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -2849,7 +2849,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2857,9 +2857,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -2868,7 +2868,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2876,7 +2876,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2884,7 +2884,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                             }else{//11
                                if($search!="0"){
                                            $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2892,9 +2892,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -2903,7 +2903,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("brand",$brand)->orderby($field,$orderby)->where("subcategory",$subcategory)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2911,7 +2911,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -2919,7 +2919,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("category",$category)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -2927,9 +2927,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("category",$category)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                          
+
                       }
                  }
               }
@@ -2942,7 +2942,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2950,8 +2950,8 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                        
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                  $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -2959,7 +2959,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                          
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -2968,9 +2968,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -2982,7 +2982,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                           
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -2990,7 +2990,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -2998,7 +2998,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3006,9 +3006,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -3017,7 +3017,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                              
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3025,7 +3025,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -3033,7 +3033,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                              
+
                            }else{//11
                              if($search!="0"){
                                       $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3041,9 +3041,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3052,7 +3052,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3060,7 +3060,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                           $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -3068,7 +3068,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }else{//11
                                    if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3076,9 +3076,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -3089,7 +3089,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3097,7 +3097,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3105,7 +3105,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                             
+
                         }else{//11
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3113,9 +3113,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -3127,7 +3127,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3135,7 +3135,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3143,7 +3143,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3151,9 +3151,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -3162,7 +3162,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3170,7 +3170,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3178,7 +3178,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3186,9 +3186,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3197,7 +3197,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3205,7 +3205,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                           $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3213,7 +3213,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                    
+
                                }else{//11
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3221,7 +3221,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                                }
                       }
                  }
@@ -3233,7 +3233,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                           
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3241,7 +3241,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                          
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3249,7 +3249,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                           
+
                       }else{//11
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3257,9 +3257,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                          
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -3271,7 +3271,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3279,7 +3279,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3287,7 +3287,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3295,9 +3295,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -3306,7 +3306,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3314,7 +3314,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3322,7 +3322,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                              }else{//11
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3330,9 +3330,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3341,7 +3341,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                   
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3356,7 +3356,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                               }else{//11
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3364,7 +3364,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                               }
                       }
                  }
@@ -3376,7 +3376,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3384,7 +3384,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                           $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3392,7 +3392,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                             
+
                          }else{//11
                            if($search!="0"){
                                          $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3400,7 +3400,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                          }
                  }
                  else{//111
@@ -3413,7 +3413,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3421,7 +3421,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3429,7 +3429,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3437,9 +3437,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -3448,7 +3448,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3456,7 +3456,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3464,7 +3464,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3472,9 +3472,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -3483,7 +3483,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3491,7 +3491,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3499,7 +3499,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3507,12 +3507,12 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                          
+
                       }
                  }
-              }              
+              }
               if($category=="0"&&$subcategory=="0"&&$brand!="0"){//001
                  if($discount=="0"&&$ratting=="0"&&$price=="0"){//000
                       if($color=="0"&&$size=="0"){//00
@@ -3522,7 +3522,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                           
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3530,8 +3530,8 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                         
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -3539,7 +3539,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                          
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -3548,9 +3548,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                          
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -3562,7 +3562,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3570,7 +3570,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                              $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -3578,7 +3578,7 @@ class productfilterController extends Controller {
                                       else{
                                            $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                           
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3586,9 +3586,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
 
                            if($color=="0"&&$size=="0"){//00
@@ -3598,7 +3598,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                             
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3606,7 +3606,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -3614,7 +3614,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                               
+
                            }else{//11
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3622,9 +3622,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3633,7 +3633,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                             $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3641,7 +3641,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -3649,17 +3649,17 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }else{//11
                                    if($search!="0"){
                                            $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
-                                      } 
+                                      }
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -3671,7 +3671,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3679,7 +3679,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3687,7 +3687,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                         }else{//11
                            if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3695,9 +3695,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -3709,7 +3709,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3717,7 +3717,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3725,7 +3725,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("brand",$brand)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3733,18 +3733,18 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
-                                      } 
+                                      }
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3752,7 +3752,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3760,7 +3760,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3768,9 +3768,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3779,7 +3779,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                  
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3787,7 +3787,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3795,7 +3795,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                                }else{//11
                                  if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3803,7 +3803,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                                }
                       }
                  }
@@ -3815,7 +3815,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                           
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3823,7 +3823,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3831,7 +3831,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                          
+
                       }else{//11
                          if($search!="0"){
                                       $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3839,9 +3839,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -3853,7 +3853,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3861,7 +3861,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3869,7 +3869,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3877,9 +3877,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -3888,7 +3888,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                 
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3896,7 +3896,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                            $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3904,7 +3904,7 @@ class productfilterController extends Controller {
                                       else{
                                            $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                              }else{//11
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3912,9 +3912,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -3923,7 +3923,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                  
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3931,7 +3931,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -3939,7 +3939,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                   
+
                               }else{//11
                                  if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3947,7 +3947,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                   
+
                               }
                       }
                  }
@@ -3959,7 +3959,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                           $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -3967,7 +3967,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -3975,7 +3975,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                          }else{//11
                            if($search!="0"){
                                         $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -3983,7 +3983,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                          }
                  }
                  else{//111
@@ -3996,7 +3996,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                            $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4004,7 +4004,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4012,7 +4012,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4020,9 +4020,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -4031,7 +4031,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4039,7 +4039,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4047,7 +4047,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4055,9 +4055,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4066,7 +4066,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4074,7 +4074,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4082,10 +4082,10 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                             
-                               
+
+
                           }else{//11
-                              
+
                                 if($search!="0"){
                                    $product=Product::where("brand",$brand)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
 
@@ -4094,10 +4094,10 @@ class productfilterController extends Controller {
                                          $product=Product::where("brand",$brand)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
                           }
-                          
+
                       }
                  }
-              } 
+              }
               if($category=="0"&&$subcategory!="0"&&$brand=="0"){//010
                  if($discount=="0"&&$ratting=="0"&&$price=="0"){//000
                       if($color=="0"&&$size=="0"){//00
@@ -4107,7 +4107,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4115,8 +4115,8 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                        
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                            $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -4124,7 +4124,7 @@ class productfilterController extends Controller {
                                       else{
                                            $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                        
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -4133,9 +4133,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -4147,7 +4147,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                           
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4155,7 +4155,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -4163,17 +4163,17 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
-                                      } 
+                                      }
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4182,7 +4182,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4190,7 +4190,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -4198,7 +4198,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                               
+
                            }else{//11
                              if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4206,9 +4206,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -4217,7 +4217,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4225,7 +4225,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -4233,7 +4233,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }else{//11
                                    if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4241,9 +4241,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
@@ -4254,7 +4254,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                              
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4262,7 +4262,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4270,7 +4270,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                             
+
                         }else{//11
                            if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4278,9 +4278,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -4292,7 +4292,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4300,7 +4300,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4308,7 +4308,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                 
+
                           }else{//11
                              if($search!="0"){
                                           $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4316,9 +4316,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4327,7 +4327,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4335,7 +4335,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4343,7 +4343,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4351,9 +4351,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -4362,7 +4362,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4370,7 +4370,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                           $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4378,7 +4378,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                    
+
                                }else{//11
                                  if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4386,7 +4386,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                                }
                       }
                  }
@@ -4398,7 +4398,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4406,7 +4406,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4414,7 +4414,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                          
+
                       }else{//11
                          if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4422,9 +4422,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -4436,7 +4436,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4444,7 +4444,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4452,7 +4452,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                            $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4460,9 +4460,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                             
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -4471,7 +4471,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                 
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                       $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4479,7 +4479,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                 
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4487,7 +4487,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                              }else{//11
                                if($search!="0"){
                                        $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4495,9 +4495,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                  
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -4506,7 +4506,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                  
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                           $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4514,7 +4514,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4522,7 +4522,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                               }else{//11
                                  if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4530,7 +4530,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                  
+
                               }
                       }
                  }
@@ -4542,7 +4542,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4550,7 +4550,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                          $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4558,7 +4558,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                          }else{//11
                            if($search!="0"){
                                          $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4566,7 +4566,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                          }
                  }
                  else{//111
@@ -4579,7 +4579,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4587,7 +4587,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4595,7 +4595,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4603,9 +4603,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -4614,7 +4614,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                          $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4622,7 +4622,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4630,7 +4630,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                             }else{//11
                                if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4638,9 +4638,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4649,7 +4649,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4657,7 +4657,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4665,7 +4665,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("subcategory",$subcategory)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4673,9 +4673,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("subcategory",$subcategory)->where("status",'1')->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                          
+
                       }
                  }
               }
@@ -4688,7 +4688,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->get();
                                       }
-                          
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4696,8 +4696,8 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                        
-                          
+
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                            $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
@@ -4705,7 +4705,7 @@ class productfilterController extends Controller {
                                       else{
                                            $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("product_color",$color)->get();
                                       }
-                        
+
                       }
                       else if($color!="0"&&$size!="0"){//11
                          if($search!="0"){
@@ -4714,9 +4714,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                           
+
                       }
-                    
+
                  }
                  else if($discount=="0"&&$ratting=="0"&&$price!="0"){//001
                      $str=explode("-",$price);
@@ -4728,7 +4728,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->get();
                                       }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                      $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4736,7 +4736,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
@@ -4744,7 +4744,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("product_color",$color)->get();
                                       }
-                             
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4752,9 +4752,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                           
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4763,7 +4763,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->get();
                                       }
-                               
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4771,7 +4771,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                            }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
@@ -4779,7 +4779,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("product_color",$color)->get();
                                       }
-                               
+
                            }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4787,9 +4787,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                            }
-                           
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -4798,7 +4798,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4806,7 +4806,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                                 }elseif($color!="0"&&$size=="0"){//10
                                    if($search!="0"){
                                            $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
@@ -4814,7 +4814,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("product_color",$color)->get();
                                       }
-                                   
+
                                 }else{//11
                                    if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4822,20 +4822,20 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                    
+
                                 }
-                           
+
                       }
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price=="0"){//010
                         if($color=="0"&&$size=="0"){//00
-                           if($search!="0"){  
+                           if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                         }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4843,7 +4843,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                             
+
                         }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4851,7 +4851,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                              
+
                         }else{//11
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4859,9 +4859,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                         }
-                    
+
                  }
                  elseif($discount=="0"&&$ratting!="0"&&$price!="0"){//011
                       $str=explode("-",$price);
@@ -4873,7 +4873,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                            
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4881,7 +4881,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                           $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4889,7 +4889,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4897,9 +4897,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                            if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -4908,7 +4908,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                
+
                            }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4916,15 +4916,15 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                 
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
-                                      } 
+                                      }
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                   
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4932,9 +4932,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                             }
-                          
+
                       }else{
                                if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -4943,7 +4943,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                                 
+
                                }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4951,7 +4951,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                    
+
                                }elseif($color!="0"&&$size=="0"){//10
                                  if($search!="0"){
                                             $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -4959,7 +4959,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                  
+
                                }else{//11
                                  if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -4967,7 +4967,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                                }
                       }
                  }
@@ -4979,7 +4979,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->get();
                                       }
-                         
+
                       }elseif($color=="0"&&$size!="0"){//01
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -4987,7 +4987,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                          
+
                       }elseif($color!="0"&&$size=="0"){//10
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -4995,7 +4995,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                          
+
                       }else{//11
                          if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5003,9 +5003,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                          
+
                       }
-                    
+
                  }
                  elseif($discount!="0"&&$ratting=="0"&&$price!="0"){//101
                      $str=explode("-",$price);
@@ -5017,7 +5017,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->get();
                                       }
-                            
+
                           }elseif($color=="0"&&$size!="0"){//01
                              if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5025,7 +5025,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                              
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -5033,7 +5033,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                               
+
                           }else{//11
                              if($search!="0"){
                                           $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5041,9 +5041,9 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                           }
-                         
+
                       }elseif($str[1]=="Above"){
                              if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -5052,7 +5052,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->get();
                                       }
-                                
+
                              }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5060,7 +5060,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                 
+
                              }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -5068,7 +5068,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                              }else{//11
                                    if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5076,9 +5076,9 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                              }
-                           
+
                       }else{
                               if($color=="0"&&$size=="0"){//00
                                  if($search!="0"){
@@ -5087,7 +5087,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->get();
                                       }
-                                   
+
                               }elseif($color=="0"&&$size!="0"){//01
                                  if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5095,15 +5095,15 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                                   
+
                               }elseif($color!="0"&&$size=="0"){//10
-                                 if($search!="0"){  
+                                 if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                  
+
                               }else{//11
                                  if($search!="0"){
                                           $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5111,7 +5111,7 @@ class productfilterController extends Controller {
                                       else{
                                           $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                 
+
                               }
                       }
                  }
@@ -5123,7 +5123,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                          $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5131,7 +5131,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                            
+
                          }elseif($color!="0"&&$size=="0"){//10
                            if($search!="0"){
                                         $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -5139,7 +5139,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                               
+
                          }else{//11
                            if($search!="0"){
                                        $product=Product::where("discount","<=",$discount)->where('name', 'LIKE', '%' . $search . '%')->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5147,7 +5147,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("discount","<=",$discount)->where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                            
+
                          }
                  }
                  else{//111
@@ -5160,7 +5160,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->get();
                                       }
-                             
+
                          }elseif($color=="0"&&$size!="0"){//01
                            if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5168,7 +5168,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
@@ -5176,7 +5176,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("product_color",$color)->get();
                                       }
-                                
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5184,9 +5184,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price","<=",$str[1])->where("discount","<=",$discount)->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                                
+
                           }
-                        
+
                       }elseif($str[1]=="Above"){
                             if($color=="0"&&$size=="0"){//00
                                if($search!="0"){
@@ -5195,7 +5195,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                               
+
                             }elseif($color=="0"&&$size!="0"){//01
                                if($search!="0"){
                                        $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5203,7 +5203,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                             }elseif($color!="0"&&$size=="0"){//10
                                if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -5211,7 +5211,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                                
+
                             }else{//11
                                if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5219,9 +5219,9 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->where("selling_price",">=",$str[0])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                               
+
                             }
-                            
+
                       }else{
                           if($color=="0"&&$size=="0"){//00
                              if($search!="0"){
@@ -5230,7 +5230,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->get();
                                       }
-                              
+
                           }elseif($color=="0"&&$size!="0"){//01
                                 if($search!="0"){
                                         $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
@@ -5238,7 +5238,7 @@ class productfilterController extends Controller {
                                       else{
                                         $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->get();
                                       }
-                               
+
                           }elseif($color!="0"&&$size=="0"){//10 if($search!="0"){
                                 if($search!="0"){
                                            $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
@@ -5246,7 +5246,7 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->where("product_color",$color)->get();
                                       }
-                              
+
                           }else{//11
                              if($search!="0"){
                                          $product=Product::where("status",'1')->where('name', 'LIKE', '%' . $search . '%')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
@@ -5255,14 +5255,14 @@ class productfilterController extends Controller {
                                       else{
                                          $product=Product::where("status",'1')->where("subcategory",$subcategory)->where("brand",$brand)->orderby($field,$orderby)->select("id","name","MRP","price","basic_image","selling_price","discount","product_color","category")->where("is_deleted",'0')->whereBetween("selling_price",[$str[0],$str[1]])->whereHas('rattingdata', function($q)use($ratting){$q->groupBy('ratting')->havingRaw('round(AVG(ratting)) = '.$ratting);})->where("discount","<=",$discount)->whereHas('optionls', function($q)use($size){$q->where('name', 'like', '%' ."size". '%')->where('label', 'like', '%' .$size. '%');})->where("product_color",$color)->get();
                                       }
-                              
+
                           }
-                          
+
                       }
                  }
-              }   
-              
-              
+              }
+
+
               return $product;
   }
 }

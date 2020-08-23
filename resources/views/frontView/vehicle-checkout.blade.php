@@ -90,7 +90,7 @@
     }
 
     .place-btn {
-        background-color: #f07f13;
+        background-color: red;
         text-align: center;
         margin-top: 30px;
     }

@@ -78,7 +78,7 @@
     }
  .Sort ul li a {
     font-size: 15px;
-} 
+}
 .shop-head h1 {
     font-size: 17px;
 }
@@ -87,7 +87,7 @@
     }
 .Sort ul li .active-2 {
     font-size:15px;
-    } 
+    }
 .shop-head p {
     font-size: 15px;
 }
@@ -129,7 +129,7 @@
     }
     .contact-content-box .contact-content-detail{
         padding: 10px 0px;
-        width: 42%; 
+        width: 42%;
     }
     .contact-content-box .contact-content-value{
         padding: 10px 15px;
@@ -152,10 +152,10 @@
     }
     tr.account-h th {
         font-size: 16px;
-    }   
+    }
     td.View a {
         font-size: 16px;
-    }     
+    }
     .progress {
         margin: 10px 110px;
     }
@@ -164,7 +164,7 @@
     }
     .sale-banner-3 .sale-b-text {
         top: 82px;
-    }    
+    }
     .customNavigation a.btn.prev {
         left: -14px;
     }
@@ -189,7 +189,7 @@
     }
     .banner-text a {
         padding: 7px 12px;
-        font-size: 9px;        
+        font-size: 9px;
     }
 
     .banner-2 .banner-text-1 h2 {
@@ -205,7 +205,7 @@
     }
     .banner-2 .banner-text-1 a {
         padding: 7px 12px;
-        font-size: 9px;        
+        font-size: 9px;
     }
     .slides .carousel-item img {
         position: relative;
@@ -244,7 +244,7 @@ td.place-text h1 {
     }
 .text-off a {
     font-size: 9px;
-    }    
+    }
 .text-off {
     padding: 45px 20px;
 }
@@ -324,10 +324,10 @@ td.spe-1 {
     }
     .detail-product-text .detail-add-cart{
         padding: 12px 24px;
-          margin: 0px 15px; 
+          margin: 0px 15px;
     }
     .detail-product-text a .detail-add-cart{
-      
+
         font-size: 14px;
     }
     input[type="text"]#qty-nu{
@@ -389,13 +389,13 @@ td.spe-1 {
     }
     .side{
         margin-bottom:80px;
-    } 
+    }
     #tab-1{
         margin-bottom: 50px;
-    }  
+    }
     .myaccount {
         margin-bottom: 0px;
-    }  
+    }
     .cart-heading p {
         font-size: 14px;
     }
@@ -422,10 +422,10 @@ td.spe-1 {
     }
     .info-text p {
         font-size: 14px;
-    }   
+    }
     .pro-text h1 {
         font-size: 15px;
-    }    
+    }
     .cart-heading h1 {
         font-size: 24px;
     }
@@ -441,7 +441,7 @@ td.spe-1 {
     .cart-detail h4 {
         font-size: 24px;
         margin-bottom: 20px;
-    }    
+    }
     .pay a img {
         width: 58px;
     }
@@ -450,16 +450,16 @@ td.spe-1 {
     }
     td.place-text {
         font-size: 15px;
-    }  
+    }
     td.place-text p {
         font-size: 14px;
-    } 
+    }
     .continue {
         font-size: 16px;
-    } 
+    }
     .address-info p {
         font-size: 14px;
-    }    
+    }
     .payment-text p {
         font-size: 14px;
     }
@@ -468,7 +468,7 @@ td.spe-1 {
     }
     .payment-text h1 {
         font-size: 18px;
-    }    
+    }
     .check-order-h h1 {
         font-size: 26px;
     }
@@ -543,11 +543,11 @@ td.spe-1 {
     .slides .carousel-item img {
         position: relative;
         min-height:237px;
-    } 
+    }
     .slides-text p {
         font-size: 14px;
         margin-bottom: 12px;
-    }   
+    }
     .slides-text h1 {
         font-size: 20px;
     }
@@ -558,15 +558,15 @@ td.spe-1 {
         padding: 8px 16px;
         font-size: 10px;
 
-    } 
+    }
     .slides-text {
         top: 25%;
     }
     .col-md-3.services:after {
         content: "";
         width: 1px;
-        height: 118px;    
-    }   
+        height: 118px;
+    }
 
     .services p {
         font-size: 14px;
@@ -591,7 +591,7 @@ td.spe-1 {
     }
     .sale-banner-1 .sale-b-text {
         top: 50px;
-    } 
+    }
     .sale-banner-2 .sale-b-text p {
         font-size: 13px;
         margin-bottom: 16px;
@@ -599,7 +599,7 @@ td.spe-1 {
     .sale-banner-2 .sale-b-text h1 {
         font-size: 16px;
         margin-bottom: 8px;
-    } 
+    }
     .sale-banner-2 .sale-b-text {
         top: 64px;
     }
@@ -607,7 +607,7 @@ td.spe-1 {
     .sale-banner-2 .sale-b-text a {
         font-size: 11px;
         padding: 9px 18px;
-    }    
+    }
     .sale-banner-3 .sale-b-text p {
         font-size: 13px;
         margin-bottom: 16px;
@@ -615,7 +615,7 @@ td.spe-1 {
     .sale-banner-3 .sale-b-text h1 {
         font-size: 16px;
         margin-bottom: 8px;
-    } 
+    }
     .sale-banner-3 .sale-b-text {
         top: 64px;
     }
@@ -625,11 +625,11 @@ td.spe-1 {
         padding: 9px 18px;
     }
     .sale-banner-1 img {
-        min-height: 445px;    
-    } 
+        min-height: 445px;
+    }
     .product-heading h1 {
         font-size: 24px;
-    } 
+    }
     .product-heading h1:after {
         top: 13px;
     }
@@ -642,7 +642,7 @@ td.spe-1 {
     }
     .carousel-control-next.text-dark {
         right:-22px;
-        font-size: 26px;    
+        font-size: 26px;
     }
     .summer-text p {
         font-size: 35px;
@@ -650,7 +650,7 @@ td.spe-1 {
     }
     .summer-text h1 {
         font-size: 26px;
-    } 
+    }
     .summer-text a {
         font-size: 14px;
         padding: 9px 19px;
@@ -659,8 +659,8 @@ td.spe-1 {
         padding: 68px 0px;
     }
     .one-product-slider h1 {
-        font-size: 24px;    
-    } 
+        font-size: 24px;
+    }
     .one-product-slider p {
         font-size: 13px;
         margin-top: 26px;
@@ -669,24 +669,24 @@ td.spe-1 {
     }
     .one-product-slider h1 {
         font-size: 24px;
-    }  
+    }
     .one-product-slider h1:after {
       bottom: -20px;
-  }   
+  }
   .one-product-text {
     padding: 20px 0px;
-}  
+}
 .one-product-text a {
     font-size: 12px;
     padding: 10px 22px;
-    border-radius: 30px;  
+    border-radius: 30px;
 }
 .contact {
     margin-bottom: 30px;
 }
 .main-menu ul {
     display: none;
-}    
+}
 .col-md-12.toggle ul {
     display: block;
 }
@@ -765,9 +765,9 @@ td.spe-1 {
 }
 .cart-img {
     width: 16%;
-}  
+}
 td.cartpro-text {
-    width: 27%; 
+    width: 27%;
     font-size: 12px;
 }
 td.price {
@@ -777,7 +777,7 @@ td.price {
 td.Quanitity {
     width: 18%;
     font-size: 12px;
-} 
+}
 .qut-box input {
     width: 34%;
 }
@@ -795,18 +795,18 @@ td.total {
     width: 90px;
     height: 34px;
     line-height: 31px;
-}  
+}
 .pro-heading th {
     font-size: 13px;
-} 
+}
 .continue a {
-    font-size: 16px;    
+    font-size: 16px;
 }
 .coupon-detail input {
     margin-right: 18px;
     width: 100%;
     margin-bottom: 20px;
-}     
+}
 .coupon-detail button {
     font-size: 13px;
 }
@@ -824,7 +824,7 @@ td.total {
 }
 .cart-totals h1 {
     font-size: 14px;
-}    
+}
 .cart-totals span {
     font-size: 14px;
 }
@@ -931,7 +931,7 @@ ul.dd-options li {
     margin-bottom: 15px;
 }
 .res-spe h1 {
-    background-color: #f07f13;
+    background-color: red;
     font-size: 18px;
     padding: 10px 15px;
     color: #fff;
@@ -957,7 +957,7 @@ ul.dd-options li {
     color: #555;
 }
 .res-spe{
-    border:1px solid #ddd; 
+    border:1px solid #ddd;
         margin-bottom: 30px;
 }
 .tital.tal h2 {
@@ -1028,7 +1028,7 @@ ul.dd-options li {
     }
 
     .detail-information-tab{
-        margin-top: 40px;   
+        margin-top: 40px;
     }
 
     .detail-information-tab .tab_drawer_heading {
@@ -1047,7 +1047,7 @@ ul.dd-options li {
         user-select: none;
     }
     .detail-information-tab .d_active {
-        background-color: #f07f13;
+        background-color: red;
         color: #fff;
     }
     .detail-information-tab .tab_content{
@@ -1106,7 +1106,7 @@ ul.dd-options li {
 }
 tr.account-detail td span{
     display: block;
-}  
+}
 tr.account-detail td {
     text-align: right;
     border-bottom: 1px solid #d7d7d7;
@@ -1118,15 +1118,15 @@ tr.account-detail td span{
    font-size: 16px;
    color: #000;
    text-transform: uppercase;
-}  
+}
 tr.account-h {
     display: none !important;
-} 
+}
 td.View a {
     padding: 3px 35px;
     display: inline-block;
     font-size: 17px;
-} 
+}
 tr.account-detail {
     background-color: #f5f5f5;
     margin-bottom: 30px;
@@ -1145,7 +1145,7 @@ td.Stock-text {
     font-weight: 600;
 }
 td.place-text{
-    width:100%; 
+    width:100%;
 }
 .address-info {
     margin-bottom: 30px;
@@ -1171,10 +1171,10 @@ td.place-text{
 }
 .process-info li:first-child {
     padding-left: 15px;
-}    
+}
 .cart-detail tr {
     background-color: #f5f5f5;
-} 
+}
 .check-order-h h1 {
     margin-bottom: 20px;
 }
@@ -1194,7 +1194,7 @@ td.place-text{
 }
 .check-order {
     margin-top: 30px;
-}  
+}
 .payment-text .pay a img {
     width: 48px;
     padding: 2px;
@@ -1245,7 +1245,7 @@ td {
 }
 .qut-box {
     text-align: center;
-}        
+}
 .banner-2 {
     padding: 45px 0px;
     padding-left: 35px;
@@ -1276,7 +1276,7 @@ td {
 }
 .banner-text {
     top: 45px;
-} 
+}
 
 .banner-2 .banner-text-1 h2 {
     font-size: 20px;
@@ -1292,19 +1292,19 @@ td {
 }
 .banner-2 .banner-text-1 {
     top: 45px;
-} 
+}
 .services-main {
     margin-bottom: 60px;
 }
 .col-md-3.services {
     margin-bottom: 20px;
-}               
+}
 .services-main .services:nth-child(2):after{
    display: none;
 }
 .ser-show{
     display: none;
-} 
+}
 .ser-hide{display: block;
 }
 .main-menu {
@@ -1345,7 +1345,7 @@ td {
 .sale-banner-2 .sale-b-text p {
     font-size: 16px;
     margin-bottom: 18px;
-}  
+}
 .sale-banner-2 .sale-b-text a {
     font-size: 12px;
     padding: 9px 18px;
@@ -1363,14 +1363,14 @@ td {
 .sale-banner-3 .sale-b-text p {
     font-size: 16px;
     margin-bottom: 18px;
-}  
+}
 .sale-banner-3 .sale-b-text a {
     font-size: 12px;
     padding: 9px 18px;
 }
 .sale-banner-1 .sale-b-text {
     top: 80px;
-}  
+}
 .sale-banner {
     margin-bottom: 50px;
 }
@@ -1393,14 +1393,14 @@ td {
 .summer-text p {
     font-size: 22px;
     margin-bottom: 10px;
-} 
+}
 .summer-text {
     padding: 53px 0px;
 }
 .summer-text a {
     font-size: 11px;
     padding: 8px 15px;
-} 
+}
 .one-product-text {
     /* padding: 20px 0px; */
     padding-bottom: 0px;
@@ -1426,12 +1426,12 @@ td {
 }
 .continue {
     font-size: 14px;
-}  
-  
+}
+
 .product {
     width: 100%;
 }
-    
+
 }
 @media only screen and (max-width: 767px)  {
 
@@ -1464,10 +1464,10 @@ td {
     td.cartpro-text  span{
         float: left;
         font-weight: 600;
-    }  
+    }
     .cart-img {
         width: 100%;
-        text-align: right; 
+        text-align: right;
     }
     .price span {
         float: left;
@@ -1493,7 +1493,7 @@ td {
 }
 .qut-box span {
     float: none !important;
-    padding:0px 20px !important;  
+    padding:0px 20px !important;
 }
 td.total span {
     float: left;
@@ -1502,7 +1502,7 @@ td.total span {
 .login {
     margin-top: 15px;
     margin-bottom: 10px;
-}    
+}
 td.place-text h1 {
     text-align: right;
     font-size: 14px;
@@ -1515,7 +1515,7 @@ td.place-text h1 {
 td.place-text span{
     float: left;
     font-weight: 600;
-} 
+}
 .order-num span {
     float: left;
     font-weight: 600;
@@ -1523,7 +1523,7 @@ td.place-text span{
 }
 td.order-num{
     text-align: right;
-}  
+}
 .personal-btn .update {
     padding: 8px 35px;
     font-size: 16px;
@@ -1597,15 +1597,15 @@ td.order-num{
     }
 .text-s-box span i {
     font-size: 11px;
-    }    
+    }
 .text-s-box h1 {
     font-size: 13px;
-    }    
+    }
 .price a {
     font-size: 9px;
     padding: 4px 9px;
     margin: 4px 0px;
-    }    
+    }
 
     .detail-content p{
         font-size: 14px;
@@ -1617,7 +1617,7 @@ td.order-num{
         margin-top: 40px;
     }
     .detail-information-tab .tab_content{
-        padding: 15px; 
+        padding: 15px;
     }
     .review-user-box .review-user-text{
         padding: 20px 0px 0px;
@@ -1699,7 +1699,7 @@ td.order-num{
     .login button {
         min-width: 100%;
         margin-bottom: 20px;
-    }    
+    }
     .product-heading h1:before {
         display: none;
     }
@@ -1717,11 +1717,11 @@ td.order-num{
     .search-btn {
         padding: 9px 30px;
         font-size: 14px;
-    } 
+    }
     .search input {
         padding: 8px 15px;
-        
-    } 
+
+    }
     .search input::placeholder{
         font-size: 14px;
     }
@@ -1866,7 +1866,7 @@ td.order-num{
     margin-bottom: 20px;
 }
 .summer-banner {
- background-size:cover; 
+ background-size:cover;
  background-position: center;
 }
 .coupon-detail button {
@@ -1878,21 +1878,21 @@ td.order-num{
 .cart-mt button {
     font-size: 15px;
 }
-.product-text h1 
+.product-text h1
 {    font-size: 15px;
 }
 .banner-1 {
     background-position: center;
-}  
+}
 .banner-2 {
     background-position: center;
-}   
+}
 .pro-text h1 {
     font-size: 12px;
 }
 .pro-text p {
     font-size: 10px;
-}  
+}
 .progress {
     margin: 10px 48px;
 }
@@ -1904,10 +1904,10 @@ td.order-num{
 }
 td.place-text h1 {
     font-size: 14px;
-} 
+}
 td.place-text p {
     font-size: 12px;
-}      
+}
 td.order-num {
     font-size: 14px;
 }
@@ -1931,11 +1931,11 @@ td.order-num {
 }
 .personal-btn .cancel {
     margin-right: 0px;
-    width: 100%; 
-    margin-bottom: 20px;  
+    width: 100%;
+    margin-bottom: 20px;
 }
 .personal-btn .update {
-    width: 100%;  
+    width: 100%;
 }
 .per-detail {
     padding: 40px 30px;
@@ -1952,11 +1952,11 @@ td.order-num {
     }
 .modal-content.logout {
     padding: 50px 30px;
-    }  
+    }
 .logout-btn .btn-danger {
     margin-bottom: 15px;
     width: 100%;
-    }  
+    }
 .logout .btn.log {
     width: 100%;
     }
@@ -1968,7 +1968,7 @@ td.order-num {
     }
     .help-tab-head h2{
         padding: 15px 15px;
-    }   
+    }
     .shop-head h1 {
     float: none;
  }
@@ -1995,10 +1995,10 @@ td.order-num {
 }
 .text-s-box span i {
     font-size: 12px;
-}  
+}
 .text-s-box h1 {
     font-size: 14px;
-}  
+}
 .top-logo {
     background-size: 96px;
     background-position-y: 6px;

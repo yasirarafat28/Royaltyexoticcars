@@ -15,7 +15,7 @@
     padding: 35px 0px;
 }
 .search-btn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 8px 30px;
     position: absolute;
     text-transform: uppercase;
@@ -39,7 +39,7 @@
     color: #96979d;
 }
 .e-nav-cricle{
-     background-color: #f07f13;
+     background-color: red;
      width: 15px;
      height: 15px;
 }
@@ -53,7 +53,7 @@
     position: relative;
 }
 .wish .e-nav-cricle {
-      background-color: #f07f13;
+      background-color: red;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -66,7 +66,7 @@
     position: relative;
 }
 .cart .e-nav-cricle {
-      background-color: #f07f13;
+      background-color: red;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -172,7 +172,7 @@ ul.sub-menu {
     border-radius: 50%;
 }
 .slides .carousel-indicators .active{
-        background-color:#f07f13;
+        background-color:red;
 }
 .slides .carousel-item img {
     position: relative;
@@ -191,7 +191,7 @@ ul.sub-menu {
 }
 .slides-text h2{
     font-size:30px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -200,7 +200,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .slides-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 9px 20px;
@@ -214,7 +214,7 @@ ul.sub-menu {
     right: 0px;
     text-align: center;
     width: 52%;
-}   
+}
 .banner-text.text-1{
     left:50px;
 }
@@ -230,7 +230,7 @@ ul.sub-menu {
 }
 .banner-text h2{
     font-size:20px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -239,7 +239,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .banner-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -254,7 +254,7 @@ ul.sub-menu {
     left: 0px;
     text-align: center;
     width: 52%;
-}   
+}
 
 .banner-2 {
     margin-bottom:0px;
@@ -266,7 +266,7 @@ ul.sub-menu {
     left: 0px;
     text-align: center;
     width: 52%;
-} 
+}
 .banner-2 .banner-text h1{
     font-size:16px;
     color: #abacb1;
@@ -275,7 +275,7 @@ ul.sub-menu {
 }
 .banner-2 .banner-text h2{
     font-size:20px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -284,7 +284,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .banner-2 .banner-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -317,7 +317,7 @@ ul.sub-menu {
     width: 1px;
     height: 140px;
     position: absolute;
-    background-color: #f07f13;
+    background-color: red;
     top: 0;
     right: 0;
 }
@@ -353,7 +353,7 @@ ul.sub-menu {
 }
 .sale-banner-1 .sale-b-text a {
     font-size: 18px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -389,7 +389,7 @@ margin-bottom: 30px;
 }
 .sale-banner-2 .sale-b-text a {
     font-size: 17px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -423,7 +423,7 @@ position: absolute;
 }
 .sale-banner-3 .sale-b-text a {
     font-size: 17px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -449,7 +449,7 @@ position: absolute;
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     right: -140px;
@@ -458,7 +458,7 @@ position: absolute;
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     left: -140px;
@@ -549,7 +549,7 @@ position: absolute;
     }
 .banner-text a {
     padding: 7px 12px;
-    font-size: 9px;        
+    font-size: 9px;
 }
 
 .banner-text-1 h2 {
@@ -565,7 +565,7 @@ position: absolute;
     }
 .banner-text-1 a {
     padding: 7px 12px;
-    font-size: 9px;        
+    font-size: 9px;
 }
 .slides .carousel-item img {
     position: relative;
@@ -615,7 +615,7 @@ position: absolute;
 .slides .carousel-item img {
     position: relative;
     min-height:237px;
-}   
+}
 
 
 

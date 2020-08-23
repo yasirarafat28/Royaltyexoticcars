@@ -106,7 +106,7 @@ figure.preview-image {
     margin: 0;
 }
 .compare .e-nav-cricle {
-    background-color: #f07f13;
+    background-color: red;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -145,7 +145,7 @@ figure.preview-image {
 
 .compare_table .add-to-cart {
     font-size: 13px;
-    background-color: #f07f13;
+    background-color: red;
     border-radius: 1000px;
     color: white;
     font-weight: bold;
@@ -222,7 +222,7 @@ a.compare img {
 .pop_up-checkout-b {
     padding: 25px 0px;
     width:100%;
-    background-color: #f07f13;
+    background-color: red;
     text-align: center;
     border: none;
     color: #fff;
@@ -245,7 +245,7 @@ a.compare img {
     line-height: 0px;
 }
 .cart .e-nav-cricle {
-    background-color: #f07f13;
+    background-color: red;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -256,7 +256,7 @@ a.compare img {
 }
 
 .wish .e-nav-cricle {
-    background-color: #f07f13;
+    background-color: red;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -373,7 +373,7 @@ a.compare img {
     border-radius: 100px;
     border: 1px solid transparent;
     padding: 5px 15px;
-    background-color: #f07f13;
+    background-color: red;
     font-weight: 500;
     color: white;
     cursor: pointer;
@@ -383,7 +383,7 @@ a.compare img {
 
 
 div#textbilling form input {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 8px 50px;
@@ -501,7 +501,7 @@ p#mrppro {
     padding: 10px;
 }
 .dd-select {
-   background-color: #f07f13 ;
+   background-color: red ;
     color: #fff;
     height: 40px;
     border-radius: 8px 0px 0px 8px !important;
@@ -737,7 +737,7 @@ a:hover {
     color: #fff;
 }
 div#textbilling form button {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 8px 50px;
@@ -756,7 +756,7 @@ div#textbilling {
 }
 
 div#textshipping form input {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 8px 50px;
@@ -767,7 +767,7 @@ div#textshipping form input {
 }
 
 div#textshipping form button {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 8px 50px;
@@ -807,7 +807,7 @@ div#textshipping {
 
 .contactbtn {
     display: inline;
-    background-color: #f07f13;
+    background-color: red;
     padding: 12px 58px;
     color: white;
     cursor: pointer;
@@ -892,14 +892,14 @@ ul.colors.colorslist-1.checkboxcolor {
 .rating>input:checked~label,
 .rating:not(:checked)>label:hover,
 .rating:not(:checked)>label:hover~label {
-    color: #f07f13;
+    color: red;
 }
 
 .rating>input:checked+label:hover,
 .rating>input:checked~label:hover,
 .rating>label:hover~input:checked~label,
 .rating>input:checked~label:hover~label {
-    color: #f07f13;
+    color: red;
 }
 
 td {
@@ -993,7 +993,7 @@ th {
 
 .reset-p {
     padding: 14px 20px;
-    background-color: #f07f13;
+    background-color: red;
     display: block;
 }
 
@@ -1033,7 +1033,7 @@ th {
 }
 
 .user-login-pop_up .button-sign_in-1 a {
-    background-color: #f07f13;
+    background-color: red;
     padding: 11px 29px;
     color: white;
     font-size: 15px;
@@ -1056,7 +1056,7 @@ th {
 
 .contactbtn {
     display: inline;
-    background-color: #f07f13;
+    background-color: red;
     padding: 12px 58px;
     color: white;
     cursor: pointer;
@@ -1094,7 +1094,7 @@ th {
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     left: -140px;
@@ -1125,13 +1125,13 @@ th {
 .text-off h1 {
     font-size: 22px;
     text-transform: uppercase;
-    color: #f07f13;
+    color: red;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
 .text-off a {
-    background-color: #f07f13;
+    background-color: red;
     padding: 7px 15px;
     border-radius: 25px;
     font-size: 11px;
@@ -1177,7 +1177,7 @@ th {
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     right: -140px;
@@ -1221,7 +1221,7 @@ th {
 .real-text h1 {
     font-family: "open sans";
     font-size: 35px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
     animation-delay: 0.5s;
 
@@ -1250,7 +1250,7 @@ th {
 }
 
 .real-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 11px 25px;
@@ -1286,7 +1286,7 @@ label.dd-option-text {
 }
 
 .regiterbtn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 11px 29px;
     color: white;
     font-size: 15px;
@@ -1295,7 +1295,7 @@ label.dd-option-text {
 }
 
 .check-shop lable .fa-star {
-    color: #f07f13;
+    color: red;
 }
 
 .check-shop lable i {
@@ -1383,7 +1383,7 @@ button:focus {
 .addre span {
     float: right;
     font-size: 21px;
-    color: #f07f13;
+    color: red;
     cursor: pointer;
 }
 
@@ -1433,7 +1433,7 @@ button:focus {
 }
 
 .user-login-pop_up .resent_pw {
-    background-color: #f07f13;
+    background-color: red;
     width: 100%;
     padding: 10px 0px;
     text-align: center;
@@ -1537,7 +1537,7 @@ button:focus {
 }
 
 .search-btn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 8px 15px;
     text-transform: uppercase;
     text-align: center;
@@ -1575,7 +1575,7 @@ div#style-switcher .tab-content {
 
 
 .e-nav-cricle {
-    background-color: #f07f13;
+    background-color: red;
     width: 15px;
     height: 15px;
 }
@@ -1718,7 +1718,7 @@ ul.sub-menu {
 }
 
 .slides .carousel-indicators .active {
-    background-color: #f07f13;
+    background-color: red;
 }
 
 .slides .carousel-item img {
@@ -1741,7 +1741,7 @@ ul.sub-menu {
 
 .slides-text h2 {
     font-size: 30px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
     margin: 5px 0px;
 }
@@ -1752,7 +1752,7 @@ ul.sub-menu {
 }
 
 .slides-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 9px 20px;
@@ -1791,7 +1791,7 @@ ul.sub-menu {
 
 .banner-text h2 {
     font-size: 20px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
     margin: 5px 0px;
 }
@@ -1802,7 +1802,7 @@ ul.sub-menu {
 }
 
 .banner-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -1834,7 +1834,7 @@ ul.sub-menu {
 
 .banner-2 .banner-text-1 h2 {
     font-size: 20px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
     margin: 5px 0px;
 }
@@ -1845,7 +1845,7 @@ ul.sub-menu {
 }
 
 .banner-2 .banner-text-1 a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -1882,7 +1882,7 @@ ul.sub-menu {
     width: 1px;
     height: 140px;
     position: absolute;
-    background-color: #f07f13;
+    background-color: red;
     top: 0;
     right: 0;
 }
@@ -1925,7 +1925,7 @@ ul.sub-menu {
 
 .sale-banner-1 .sale-b-text a {
     font-size: 18px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -1967,7 +1967,7 @@ ul.sub-menu {
 
 .sale-banner-2 .sale-b-text a {
     font-size: 17px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -2003,7 +2003,7 @@ ul.sub-menu {
 
 .sale-banner-3 .sale-b-text a {
     font-size: 17px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -2032,7 +2032,7 @@ ul.sub-menu {
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     right: -140px;
@@ -2042,7 +2042,7 @@ ul.sub-menu {
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     left: -140px;
@@ -2154,11 +2154,11 @@ ul.sub-menu {
 }
 
 .product-text .rating .fa-star {
-    color: #f07f13;
+    color: red;
 }
 
 .product-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 7px 12px;
@@ -2198,7 +2198,7 @@ ul.sub-menu {
 
 .summer-text a {
     font-size: 18px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -2227,7 +2227,7 @@ ul.sub-menu {
     content: "";
     width: 32%;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     bottom: -26px;
     left: 35%;
@@ -2243,7 +2243,7 @@ ul.sub-menu {
 
 .one-product-text a {
     font-size: 18px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -2329,7 +2329,7 @@ ul.sub-menu {
 }
 
 .go-btn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 11px 18px;
     position: absolute;
     text-transform: uppercase;
@@ -2545,7 +2545,7 @@ ul.sub-menu {
     text-align: center;
     background: #fff;
     cursor: pointer;
-    background-color: #f07f13;
+    background-color: red;
     padding: 7px 9px;
     font-size: 12px;
     z-index: 20;
@@ -2561,7 +2561,7 @@ ul.sub-menu {
 }
 
 .color1 {
-    background: #f07f13;
+    background: red;
 }
 
 .color2 {
@@ -2616,7 +2616,7 @@ ul#colorslist {
 /*theme color change*/
 
 .back-color-1 {
-    background: #f07f13;
+    background: red;
 }
 
 .back-color-2 {
@@ -3365,7 +3365,7 @@ td.total {
 }
 
 .cart-detail tr:first-child {
-    background-color: #f07f13;
+    background-color: red;
 }
 
 .pro-heading th {
@@ -3385,14 +3385,14 @@ td.total {
     font-family: "open sans";
     font-size: 20px;
     font-weight: 600;
-    color: #f07f13;
+    color: red;
     margin-bottom: 0;
     display: inline-block;
 }
 
 .continue i {
     font-size: 20px;
-    color: #f07f13;
+    color: red;
     vertical-align: middle;
     padding-left: 6px;
 }
@@ -3410,7 +3410,7 @@ td.total {
 }
 
 .coupon h1 {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     padding: 10px 15px;
     font-size: 20px;
@@ -3453,7 +3453,7 @@ td.total {
 }
 
 .coupon-detail button {
-    background-color: #f07f13;
+    background-color: red;
     border: none;
     color: #fff;
     font-size: 14px;
@@ -3508,7 +3508,7 @@ td.total {
 }
 
 .cart-mt button {
-    background-color: #f07f13;
+    background-color: red;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -3539,7 +3539,7 @@ td.total {
 .check-icon-box {
     width: 64px;
     height: 88px;
-    background-color: #f07f13;
+    background-color: red;
     text-align: center;
     padding: 25px 0px;
     display: inline-block;
@@ -3611,7 +3611,7 @@ td.total {
 .login button {
     min-width: 230px;
     height: 47px;
-    background-color: #f07f13;
+    background-color: red;
     text-align: center;
     border: none;
     font-family: 'open sans';
@@ -3757,7 +3757,7 @@ form.frm {
 }
 
 .check-order table tr th {
-    background-color: #f07f13;
+    background-color: red;
     font-family: 'open sans';
     font-weight: bold;
     font-size: 22px;
@@ -3870,7 +3870,7 @@ input:focus {
 }
 
 .place-btn {
-    background-color: #f07f13;
+    background-color: red;
     text-align: center;
     margin-top: 30px;
 }
@@ -3884,7 +3884,7 @@ input:focus {
 .process-1-circle {
     width: 36px;
     height: 36px;
-    border: 8.2px solid #f07f13;
+    border: 8.2px solid red;
     border-radius: 50%;
     display: inline-block;
     position: relative;
@@ -3908,7 +3908,7 @@ input:focus {
 }
 
 .progress-bar {
-    background-color: #f07f13 !important;
+    background-color: red !important;
 }
 
 .main-process {
@@ -3945,7 +3945,7 @@ input:focus {
 .pro-text p {
     font-family: 'open sans';
     font-size: 17px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
     margin-bottom: 0px;
 }
@@ -4035,7 +4035,7 @@ td.place-text p {
     font-family: "open sans";
     font-size: 20px;
     font-weight: 600;
-    color: #f07f13;
+    color: red;
     margin-bottom: 0;
     display: inline-block;
     width: 100%;
@@ -4047,7 +4047,7 @@ td.Stock-text {
 }
 
 .add a {
-    border: 1px solid #f07f13;
+    border: 1px solid red;
     padding: 7px 12px;
     font-family: 'open sans';
     text-transform: uppercase;
@@ -4059,7 +4059,7 @@ td.Stock-text {
 }
 
 .add a:hover {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff !important;
     text-decoration: none;
 }
@@ -4127,7 +4127,7 @@ ul.tabs li {
 }
 
 ul.tabs li.current {
-    background: #f07f13;
+    background: red;
     color: #fff;
     font-family: 'open sans';
     font-weight: 600;
@@ -4180,7 +4180,7 @@ td.View a {
     font-family: 'open sans';
     font-weight: 400;
     color: #000;
-    border: 1px solid #f07f13;
+    border: 1px solid red;
     padding: 3px 27px;
     display: block;
     text-align: center;
@@ -4188,7 +4188,7 @@ td.View a {
 }
 
 td.View a:hover {
-    background-color: #f07f13;
+    background-color: red;
     color: white;
     text-decoration: none;
 }
@@ -4231,7 +4231,7 @@ label.per-text {
 }
 
 .personal-btn .update {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 8px 50px;
@@ -4331,7 +4331,7 @@ label.per-text {
 
 .logout .btn.log {
     color: #fff;
-    background-color: #f07f13;
+    background-color: red;
     font-weight: 600;
     padding: 5px 26px;
     font-size: 16px;
@@ -4371,7 +4371,7 @@ label.per-text {
     margin-bottom: 6px;
 }
 .detail-review-star .fa-star:before {
-    color: #f07f13;
+    color: red;
 }
 .detail-product-text .detail-review-box {
     margin-top: 0px;
@@ -4399,7 +4399,7 @@ label.per-text {
 
 .detail-product-text .detail-qty-button {
     padding: 10px;
-    border: 2px solid #f07f13;
+    border: 2px solid red;
     border-radius: 1000px;
     display: inline-block;
     margin-top: 35px;
@@ -4418,7 +4418,7 @@ input[type="text"]#qty-nu {
 .detail-qty-button .qty-mp {
     padding: 5px 9px;
     border-radius: 100%;
-    background-color: #f07f13;
+    background-color: red;
     cursor: pointer;
     text-align: center;
     color: white;
@@ -4427,7 +4427,7 @@ input[type="text"]#qty-nu {
 
 .detail-product-text .detail-add-cart {
     padding: 12px 33px;
-    background-color: #f07f13;
+    background-color: red;
     display: inline;
     border-radius: 1000px;
     margin: 0px 30px;
@@ -4503,7 +4503,7 @@ input[type="text"]#qty-nu {
     float: left;
     margin-left: 20px;
     font-size: 16px;
-    color: #f07f13;
+    color: red;
 }
 
 .detail-review-form label {
@@ -4533,7 +4533,7 @@ optgroup {
 
 .detail-review-submit {
     padding: 10px 50px;
-    background-color: #f07f13;
+    background-color: red;
     border-radius: 1000px;
     display: inline;
     float: left;
@@ -4578,7 +4578,7 @@ optgroup {
 }
 
 .detail-information-tab ul.tabs li.active {
-    border-bottom: 3px solid #f07f13;
+    border-bottom: 3px solid red;
     background-color: transparent;
     color: #727272;
 }
@@ -4611,7 +4611,7 @@ optgroup {
 
 .detail-information-tab td.table-value {
     text-align: right;
-    color: #f07f13;
+    color: red;
     padding-right: 25px;
 }
 
@@ -4647,7 +4647,7 @@ optgroup {
 
 .review-user-text .detail-review-people-1 {
     font-size: 16px;
-    color: #f07f13;
+    color: red;
 }
 
 .review-user-text .review-user-content {
@@ -4776,7 +4776,7 @@ optgroup {
 
 .user-login-pop_up .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    background-color: #f07f13 !important;
+    background-color: red !important;
 }
 
 .user-login-pop_up li.nav-item {
@@ -4789,7 +4789,7 @@ optgroup {
 }
 
 .user-login-pop_up .nav-tabs .nav-link.active {
-    border-top: 3px solid #f07f13;
+    border-top: 3px solid red;
     color: white;
 }
 
@@ -4813,7 +4813,7 @@ optgroup {
 }
 
 .user-login-pop_up .button-sign_in a {
-    background-color: #f07f13;
+    background-color: red;
     padding: 11px 29px;
     color: white;
     font-size: 15px;
@@ -4943,7 +4943,7 @@ optgroup {
 .pop_up-detail-head .pop_up-delete {
     float: right;
     font-size: 20px;
-    color: #f07f13;
+    color: red;
 }
 
 .cart-pop_up-content p {
@@ -5073,7 +5073,7 @@ optgroup {
 .about-history h2 {
     font-family: 'open sans';
     text-align: center;
-    color: #f07f13;
+    color: red;
     font-weight: 400;
     font-size: 35px;
     margin-bottom: 20px;
@@ -5088,7 +5088,7 @@ optgroup {
 }
 
 .about-content-1 p span {
-    color: #f07f13;
+    color: red;
 }
 
 .about-image-1 {
@@ -5156,13 +5156,13 @@ optgroup {
 
 .contact-content-detail .call-icon {
     font-size: 20px;
-    color: #f07f13;
+    color: red;
     padding-bottom: 6px;
 }
 
 .contact-content-detail h3 {
     font-size: 15px;
-    color: #f07f13;
+    color: red;
     margin: 0px;
     font-weight: 600;
 }
@@ -5202,7 +5202,7 @@ textarea#contact-form {
 
 .contact-form-part3 .button {
     display: inline;
-    background-color: #f07f13;
+    background-color: red;
     padding: 12px 58px;
     color: white;
     cursor: pointer;
@@ -5289,7 +5289,7 @@ input[type="text"]#help-search-bar {
 }
 
 .help-tab-box .card-header {
-    background-color: #f07f13;
+    background-color: red;
     padding: 15px 23px;
     color: white;
     cursor: pointer;
@@ -5324,7 +5324,7 @@ input[type="text"]#help-search-bar {
 
 .recent-order-box a {
     padding: 10px 19px;
-    background-color: #f07f13;
+    background-color: red;
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -5340,7 +5340,7 @@ input[type="text"]#help-search-bar {
 
 .help-send-req-button a {
     padding: 10px 50px;
-    background-color: #f07f13;
+    background-color: red;
     font-size: 15px;
     color: white;
     text-decoration: none;
@@ -5409,7 +5409,7 @@ input.my-checkbox {
 }
 
 input.my-checkbox:checked {
-    background-color: #f07f13;
+    background-color: red;
     visibility: visible;
     border: none;
 }
@@ -5474,9 +5474,9 @@ input.my-checkbox:checked {
 .Sort ul li .active-2 {
     font-family: 'open sans';
     font-size: 17px;
-    color: #f07f13;
+    color: red;
     font-weight: 600;
-    border-bottom: 2px solid #f07f13;
+    border-bottom: 2px solid red;
     padding-bottom: 3px;
 }
 
@@ -5566,7 +5566,7 @@ input.my-checkbox:checked {
 }
 
 .text-s-box span .fa-star {
-    color: #f07f13;
+    color: red;
 }
 
 .text-s-box span i {
@@ -5596,7 +5596,7 @@ input.my-checkbox:checked {
 }
 
 .price a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     font-weight: 500;
     font-size: 10px;
@@ -5650,7 +5650,7 @@ input.my-checkbox:checked {
 
 .fancy-checkbox input[type="checkbox"]:checked~big:before {
     content: '\f004';
-    color: #f07f13;
+    color: red;
 }
 
 .img-text span {
@@ -5674,7 +5674,7 @@ input.my-checkbox:checked {
 
 .toggle-icon {
     display: inline-block;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     font-size: 22px;
     padding: 3px 10px;
@@ -5717,11 +5717,11 @@ input.my-checkbox:checked {
 }
 
 .product-text .fa-heart {
-    color: #f07f13;
+    color: red;
 }
 
 .img-text .fa-heart {
-    color: #f07f13;
+    color: red;
 }
 
 .product-text i {
@@ -5736,7 +5736,7 @@ input.my-checkbox:checked {
     -webkit-mask-image: url("../images/logo1.png");
     height: 61px;
     width: 160px;
-    background-color: #f07f13;
+    background-color: red;
     -webkit-mask-repeat: no-repeat;
 }
 
@@ -5744,7 +5744,7 @@ input.my-checkbox:checked {
     -webkit-mask-image: url("../images/logo.png");
     height: 61px;
     width: 160px;
-    background-color: #f07f13;
+    background-color: red;
     -webkit-mask-repeat: no-repeat;
     display: inline-block;
 }
@@ -5848,7 +5848,7 @@ p.detail-head {
 }
 
 .color-1 {
-    background: #f07f13;
+    background: red;
 }
 
 .color-2 {
@@ -5902,7 +5902,7 @@ p.detail-head {
 }
 
 .addi-h {
-    background-color: #f07f13;
+    background-color: red;
     width: 100%;
 }
 
@@ -6023,7 +6023,7 @@ table.addi-sub {
 .addre span {
     float: right;
     font-size: 21px;
-    color: #f07f13;
+    color: red;
     cursor: pointer;
 }
 
@@ -6048,7 +6048,7 @@ table.addi-sub {
 
 .fancy-checkbox input[type="checkbox"]:checked~span:before {
     content: '\f004';
-    color: #f07f13;
+    color: red;
 }
 
 .price a:hover {

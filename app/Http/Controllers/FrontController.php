@@ -107,10 +107,19 @@ class FrontController extends Controller {
          Session::put("set_show",$setting->set_show);
          Session::put("is_rtl",$setting->is_rtl);
          Session::put("is_web",$setting->is_web);
+
+         /*
          if(Session::get("site_color")==""){
-             Session::put("site_color","#f07f13");
+             Session::put("site_color","red");
              Session::put("colorid",'1');
-        }
+        }*/
+
+
+        Session::put("site_color","red");
+        Session::put("colorid",'1');
+
+
+
         if($shiping){
           Session::put("home_delivery",$shiping->id."#".$shiping->cost);
         }

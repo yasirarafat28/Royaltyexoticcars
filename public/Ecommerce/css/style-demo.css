@@ -16,7 +16,7 @@
 }
 
 .search-btn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 8px 30px;
     position: absolute;
     text-transform: uppercase;
@@ -40,7 +40,7 @@
     color: #96979d;
 }
 .e-nav-cricle{
-     background-color: #f07f13;
+     background-color: red;
      width: 15px;
      height: 15px;
 }
@@ -54,7 +54,7 @@
     position: relative;
 }
 .wish .e-nav-cricle {
-      background-color: #f07f13;
+      background-color: red;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -67,7 +67,7 @@
     position: relative;
 }
 .cart .e-nav-cricle {
-      background-color: #f07f13;
+      background-color: red;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -105,7 +105,7 @@ padding-left: 0px;
     margin-bottom: 40px;
         padding: 0px 15px;
      position: relative;
-    
+
 }
 .main-menu ul {
     margin: 0;
@@ -175,7 +175,7 @@ ul.sub-menu {
     border-radius: 50%;
 }
 .slides .carousel-indicators .active{
-        background-color:#f07f13;
+        background-color:red;
 }
 .slides .carousel-item img {
     position: relative;
@@ -194,7 +194,7 @@ ul.sub-menu {
 }
 .slides-text h2{
     font-size:30px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -203,7 +203,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .slides-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 9px 20px;
@@ -218,7 +218,7 @@ ul.sub-menu {
     text-align: center;
     display: inline-block;
 
-}   
+}
 .banner-text.text-1{
     left:50px;
 }
@@ -236,7 +236,7 @@ ul.sub-menu {
 }
 .banner-text h2{
     font-size:20px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -245,7 +245,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .banner-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -265,7 +265,7 @@ ul.sub-menu {
     left: 40px;
     text-align: center;
     display: inline-block;
-} 
+}
 .banner-2 .banner-text-1 h1{
     font-size:16px;
     color: #abacb1;
@@ -274,7 +274,7 @@ ul.sub-menu {
 }
 .banner-2 .banner-text-1 h2{
     font-size:20px;
-    color: #f07f13;
+    color: red;
     font-weight:600;
     margin: 5px 0px;
 }
@@ -283,7 +283,7 @@ ul.sub-menu {
     color: #96979d;
 }
 .banner-2 .banner-text-1 a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 15px;
@@ -316,7 +316,7 @@ ul.sub-menu {
     width: 1px;
     height: 140px;
     position: absolute;
-    background-color: #f07f13;
+    background-color: red;
     top: 0;
     right: 0;
 }
@@ -352,7 +352,7 @@ ul.sub-menu {
 }
 .sale-banner-1 .sale-b-text a {
     font-size: 18px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -389,7 +389,7 @@ margin-bottom: 30px;
 }
 .sale-banner-2 .sale-b-text a {
     font-size: 17px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -423,7 +423,7 @@ position: absolute;
 }
 .sale-banner-3 .sale-b-text a {
     font-size: 17px;
-     background-color: #f07f13;
+     background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -449,7 +449,7 @@ position: absolute;
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     right: -140px;
@@ -458,7 +458,7 @@ position: absolute;
     content: "";
     width: 112px;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     top: 22px;
     left: -140px;
@@ -512,10 +512,10 @@ position: absolute;
     margin-bottom: 70px;
 }
 .product-text .rating .fa-star{
-    color: #f07f13;
+    color: red;
 }
 .product-text a {
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 8px 14px;
@@ -551,7 +551,7 @@ position: absolute;
 }
 .summer-text a {
     font-size: 18px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -576,7 +576,7 @@ position: absolute;
     content: "";
     width: 32%;
     height: 4px;
-    background-color: #f07f13;
+    background-color: red;
     position: absolute;
     bottom: -26px;
     left: 35%;
@@ -590,7 +590,7 @@ position: absolute;
 }
 .one-product-text a {
     font-size: 18px;
-    background-color: #f07f13;
+    background-color: red;
     color: #fff;
     text-transform: uppercase;
     padding: 13px 30px;
@@ -665,7 +665,7 @@ position: absolute;
 
 
 .go-btn {
-    background-color: #f07f13;
+    background-color: red;
     padding: 11px 18px;
     position: absolute;
     text-transform: uppercase;
@@ -780,7 +780,7 @@ position: absolute;
     }
 .banner-text a {
     padding: 7px 12px;
-    font-size: 9px;        
+    font-size: 9px;
 }
 
 .banner-2 .banner-text-1 h2 {
@@ -796,7 +796,7 @@ position: absolute;
     }
 .banner-2 .banner-text-1 a {
     padding: 7px 12px;
-    font-size: 9px;        
+    font-size: 9px;
 }
 .slides .carousel-item img {
     position: relative;
@@ -872,11 +872,11 @@ position: absolute;
 .slides .carousel-item img {
     position: relative;
     min-height:237px;
-} 
+}
 .slides-text p {
     font-size: 14px;
      margin-bottom: 12px;
-}   
+}
 .slides-text h1 {
     font-size: 20px;
 }
@@ -886,16 +886,16 @@ position: absolute;
 .slides-text a {
     padding: 8px 16px;
     font-size: 10px;
-  
-} 
+
+}
 .slides-text {
     top: 25%;
     }
 .col-md-3.services:after {
     content: "";
     width: 1px;
-    height: 118px;    
-}   
+    height: 118px;
+}
 
 .services p {
     font-size: 14px;
@@ -920,7 +920,7 @@ position: absolute;
 }
 .sale-banner-1 .sale-b-text {
     top: 50px;
-    } 
+    }
 .sale-banner-2 .sale-b-text p {
     font-size: 13px;
     margin-bottom: 16px;
@@ -928,7 +928,7 @@ position: absolute;
 .sale-banner-2 .sale-b-text h1 {
     font-size: 16px;
     margin-bottom: 8px;
-} 
+}
 .sale-banner-2 .sale-b-text {
     top: 64px;
     }
@@ -936,7 +936,7 @@ position: absolute;
 .sale-banner-2 .sale-b-text a {
     font-size: 11px;
     padding: 9px 18px;
-}    
+}
 .sale-banner-3 .sale-b-text p {
     font-size: 13px;
     margin-bottom: 16px;
@@ -944,7 +944,7 @@ position: absolute;
 .sale-banner-3 .sale-b-text h1 {
     font-size: 16px;
     margin-bottom: 8px;
-} 
+}
 .sale-banner-3 .sale-b-text {
     top: 64px;
     }
@@ -954,11 +954,11 @@ position: absolute;
     padding: 9px 18px;
 }
 .sale-banner-1 img {
-    min-height: 445px;    
-} 
+    min-height: 445px;
+}
 .product-heading h1 {
     font-size: 24px;
-    } 
+    }
 .product-heading h1:after {
     top: 13px;
 }
@@ -971,7 +971,7 @@ position: absolute;
     }
 .carousel-control-next.text-dark {
     right:-22px;
-    font-size: 26px;    
+    font-size: 26px;
 }
 .summer-text p {
     font-size: 35px;
@@ -979,7 +979,7 @@ position: absolute;
     }
 .summer-text h1 {
     font-size: 26px;
-    } 
+    }
 .summer-text a {
     font-size: 14px;
     padding: 9px 19px;
@@ -988,8 +988,8 @@ position: absolute;
     padding: 68px 0px;
     }
 .one-product-slider h1 {
-    font-size: 24px;    
-} 
+    font-size: 24px;
+}
 .one-product-slider p {
     font-size: 13px;
     margin-top: 26px;
@@ -998,24 +998,24 @@ position: absolute;
 }
 .one-product-slider h1 {
     font-size: 24px;
-    }  
+    }
 .one-product-slider h1:after {
       bottom: -20px;
-}   
+}
 .one-product-text {
     padding: 20px 0px;
-}  
+}
 .one-product-text a {
     font-size: 12px;
     padding: 10px 22px;
-    border-radius: 30px;  
+    border-radius: 30px;
 }
 .contact {
     margin-bottom: 30px;
 }
 .main-menu ul {
     display: none;
-}    
+}
 .col-md-12.toggle ul {
     display: block;
 }
@@ -1109,7 +1109,7 @@ position: absolute;
     }
 .banner-text {
     top: 45px;
-    } 
+    }
 
 .banner-2 .banner-text-1 h2 {
     font-size: 20px;
@@ -1125,19 +1125,19 @@ position: absolute;
     }
 .banner-2 .banner-text-1 {
     top: 45px;
-    } 
+    }
 .services-main {
     margin-bottom: 60px;
 }
 .col-md-3.services {
     margin-bottom: 20px;
-}               
+}
 .services-main .services:nth-child(2):after{
  display: none;
 }
 .ser-show{
     display: none;
-} 
+}
 .ser-hide{display: block;
 }
 .main-menu {
@@ -1178,7 +1178,7 @@ position: absolute;
 .sale-banner-2 .sale-b-text p {
     font-size: 16px;
     margin-bottom: 18px;
-}  
+}
 .sale-banner-2 .sale-b-text a {
     font-size: 12px;
     padding: 9px 18px;
@@ -1196,14 +1196,14 @@ position: absolute;
 .sale-banner-3 .sale-b-text p {
     font-size: 16px;
     margin-bottom: 18px;
-}  
+}
 .sale-banner-3 .sale-b-text a {
     font-size: 12px;
     padding: 9px 18px;
 }
 .sale-banner-1 .sale-b-text {
     top: 80px;
-}  
+}
 .sale-banner {
     margin-bottom: 50px;
     }
@@ -1226,14 +1226,14 @@ position: absolute;
 .summer-text p {
     font-size: 22px;
     margin-bottom: 10px;
-} 
+}
 .summer-text {
     padding: 53px 0px;
 }
 .summer-text a {
     font-size: 11px;
     padding: 8px 15px;
-} 
+}
 .one-product-text {
     /* padding: 20px 0px; */
     padding-bottom: 0px;
@@ -1281,10 +1281,10 @@ position: absolute;
 .search-btn {
     padding: 9px 30px;
     font-size: 14px;
-} 
+}
 .search input {
     padding: 8px 15px;
-} 
+}
 .search input::placeholder{
     font-size: 14px;
 }
@@ -1425,9 +1425,9 @@ position: absolute;
     padding: 62px 0px;
 }
 .summer-banner {
-   background-size:cover; 
+   background-size:cover;
     background-position: center;
 }
-.product-text h1 
+.product-text h1
 {    font-size: 15px;
     }

@@ -5,10 +5,10 @@
 @section('content')
 <style>
     .off-heading h1:before{
-         background-color:<?= Session::get('site_color') ?> !important;
+         background-color:{{site_color()}} !important;
     }
     .off-heading h1:after{
-        background-color:<?= Session::get('site_color') ?> !important;
+        background-color:{{site_color()}} !important;
     }
 </style>
 <div class="container">
@@ -21,7 +21,7 @@
              <div class="overlay">
             </div>
             <div class="off-ban">
-            <h1 style="color: <?= Session::get('site_color') ?> !important">{{$no->title}}</h1>
+            <h1 style="color: {{site_color()}} !important">{{$no->title}}</h1>
             @if($no->is_product=='2')
             <p>{{__('messages.home_note_3')}}{{Session::get('currency')}}{{$no->new_price}}</p>
             @endif
@@ -32,18 +32,18 @@
             <p>{{$no->coupon_code}}</p>
             @endif
             @if($no->is_product=='2')
-            <a href="{{url('viewproduct').'/'.base64_encode($no->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('viewproduct').'/'.base64_encode($no->product_id)}}" style="background: {{site_color()}} !important">
             {{__('messages.shop_now')}}
             </a>
             @endif
             @if($no->is_product=='1')
-            <a href="{{url('productslist').'/0/'.$no->category_id.'/0'.'/'.$no->fixed}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('productslist').'/0/'.$no->category_id.'/0'.'/'.$no->fixed}}" style="background: {{site_color()}} !important">
             {{__('messages.shop_now')}}
             </a>
             @endif
              @if($no->is_product=='3')
 
-            <a href="{{url('productslist').'/0/0/0/0/'.'?cd='.$no->coupon_code}}" style="background: <?= Session::get('site_color') ?> !important">
+            <a href="{{url('productslist').'/0/0/0/0/'.'?cd='.$no->coupon_code}}" style="background: {{site_color()}} !important">
             {{__('messages.shop_now')}}
             </a>
             @endif
@@ -78,17 +78,17 @@
                                                  </div>
                       @endif
                   <div class="img-background" >
-            
+
 
                        <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->id}}')">
                               Quick View
-                           </button> 
+                           </button>
                         </div>
                      </figure>
-   
+
                      </a>
                      <div class="img-text">
                         <label class="fancy-checkbox">
@@ -110,10 +110,10 @@
                      <h1>{{$fe->name}}</h1>
                      <span class="rating">
                         <?php for($i=0;$i<$fe->avgStar;$i++){ ?>
-                        <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         <?php for($i=0;$i<(5-$fe->avgStar);$i++){ ?>
-                        <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         </span>
                      <span class="review">
@@ -126,7 +126,7 @@
                         <h2>{{Session::get('currency').$fe->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$fe->MRP}}</span>
                          @if($fe->stock=='1')
-                              <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                              <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                           @endif
                      </div>
                   </div>
