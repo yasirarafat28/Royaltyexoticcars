@@ -92,27 +92,177 @@
         margin-bottom: 0px !important;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .Accordions {
+        display: block;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .Accordion_item {
+        width: 100%;
+        height: auto;
+        margin: 5px 0;
+    }
+    .Accordion_item:first-child {
+        margin-top: 50px;
+    }
+    .Accordion_item .title_tab {
+        width: 100%;
+        background-color: #51adf6;
+        color: #fcfcfc;
+        padding: 12px 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in;
+        border-radius: 4px;
+    }
+    .Accordion_item .title_tab .title {
+        font-size: 24px;
+        letter-spacing: 1px;
+        position: relative;
+    }
+    .Accordion_item .title_tab .title .icon {
+        position: absolute;
+        right: 1%;
+        top: calc(50% - 8px);
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        transform: rotate(-90deg);
+        transition: transform 0.3s ease-in;
+    }
+    .Accordion_item .title_tab .title .icon:before, .Accordion_item .title_tab .title .icon:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        background-color: #fcfcfc;
+    }
+    .Accordion_item .title_tab .title .icon:before {
+        top: 0;
+        left: 2px;
+        transform: rotate(-45deg);
+    }
+    .Accordion_item .title_tab .title .icon:after {
+        top: 0;
+        right: 2px;
+        transform: rotate(45deg);
+    }
+
+    .inner_content {
+        width: 100%;
+        height: auto;
+        display: none;
+        overflow: hidden;
+    }
+    .inner_content p {
+        width: 98%;
+        margin: auto;
+        padding: 18px 15px;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        opacity: 0;
+        transform: translate3d(0px, 60px, 0px);
+        transition: transform 0.6s cubic-bezier(0, 0.99, 0.44, 1.01), opacity 0.8s 0.1s cubic-bezier(0, 0.99, 0.44, 1.01);
+    }
+
+    /* ================================= */
+    .Accordion_item .title_tab.active {
+        background-color: #2196f3;
+        transition: background-color 0.3s ease-in;
+    }
+    .Accordion_item .title_tab.active .title .icon {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in;
+    }
+    .Accordion_item .title_tab:hover {
+        background-color: #2196f3;
+        transition: background-color 0.3s ease-in;
+    }
+    .Accordion_item .inner_content p.show {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+        transition: opacity 0.8s cubic-bezier(0, 0.99, 0.44, 1.01), transform 0.6s 0.1s cubic-bezier(0, 0.99, 0.44, 1.01);
+    }
+
+    /* ================================= */
+    .inner_content p span {
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .inner_content p b {
+        color: #f44336;
+        font-size: 18px;
+    }
+
+
 </style>
   <div class="main">
 
     <div class="faqs__container">
       <h1 class="text-center my-5">Frequently Asked Questions</h1>
 
-        <div class="container">
-            <div class='faq'>
 
+        <div class="Accordions">
+            @foreach($faqs as $key=>$faq)
+                <div class="Accordion_item">
+                    <div class="title_tab">
+                        <h3 class="title">{{$faq->question}}<span class="icon"></span></h3>
+                    </div>
+                    <div class="inner_content">
+                        <p>
+                            {{$faq->descripton}}
 
-                @foreach($faqs as $key=>$faq)
-                <input id='faq-{{$key}}' type='checkbox'>
-                <label for='faq-{{$key}}'>
-                    <p class="faq-heading">{{$faq->question}}</p>
-                    <div class='faq-arrow'></div>
-                    <p class="faq-text">{{$faq->descripton}}</p>
-                </label>
-                @endforeach
-            </div>
+                        </p>
+                    </div>
+                </div>
+            @endforeach
         </div>
+
 
     </div>
   </div>
+@endsection
+@section('script')
+
+
+    <script>
+        var $titleTab = $(".title_tab");
+        $(".Accordion_item:eq(0)").find(".inner_content").find("p").addClass("show");
+        $titleTab.on("click", function (e) {
+            e.preventDefault();
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next().stop().slideUp(500);
+                $(this).next().find("p").removeClass("show");
+            } else {
+                $(this).addClass("active");
+                $(this).next().stop().slideDown(500);
+                $(this).parent().siblings().children(".title_tab").removeClass("active");
+                $(this).parent().siblings().children(".inner_content").slideUp(500);
+                $(this)
+                    .parent()
+                    .siblings()
+                    .children(".inner_content")
+                    .find("p")
+                    .removeClass("show");
+                $(this).next().find("p").addClass("show");
+            }
+        });
+
+    </script>
 @endsection
