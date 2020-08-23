@@ -5,7 +5,7 @@
 @section('content')
 <style type="text/css">
    input.my-checkbox:checked{
-      background-color:<?= Session::get('site_color') ?> !important;
+      background-color:{{site_color()}} !important;
    }
 </style>
  <div class="loader"  id="loader"></div>
@@ -83,51 +83,51 @@
                         <div class="check-shop">
                            <input type="radio" class="my-checkbox" value="5" name="ratting" id="ratting4" onclick="changefilter(2,4,5)">
                            <lable>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
                            </lable>
                         </div>
                         <div class="check-shop">
                            <input type="radio" class="my-checkbox" value="4" name="ratting" id="ratting3" onclick="changefilter(2,3,4)">
                            <lable>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important"aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important"aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important"aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important"aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
                            </lable>
                         </div>
                         <div class="check-shop">
                            <input type="radio" class="my-checkbox" value="3" name="ratting" id="ratting2" onclick="changefilter(2,2,3)">
                            <lable>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important"aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important"aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important"aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important"aria-hidden="true"></i>
                            </lable>
                         </div>
                         <div class="check-shop">
                            <input type="radio" class="my-checkbox" value="2" name="ratting" id="ratting1" onclick="changefilter(2,1,2)">
                            <lable>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important"aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important"aria-hidden="true"></i>
                            </lable>
                         </div>
                         <div class="check-shop">
                            <input type="radio" class="my-checkbox" value="1" name="ratting" id="ratting0" onclick="changefilter(2,0,1)">
                            <lable>
-                              <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
+                              <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
                            </lable>
                         </div>
                      </div>
@@ -178,7 +178,7 @@
             <div class="shop-head">
                <input type="hidden" name="categoryid" id="categoryid" value="<?=isset($categorydata->id)?$categorydata->id:'0'; ?>">
                <input type="hidden" name="discount" id="discount" value="{{$discount}}">
-               <h1><a href="{{url('/')}}" style="color: <?= Session::get('site_color') ?> !important">{{__('messages.home')}} </a>/<?=isset($categorydata->name)?$categorydata->name:''; ?> </h1>
+               <h1><a href="{{url('/')}}" style="color: {{site_color()}} !important">{{__('messages.home')}} </a>/<?=isset($categorydata->name)?$categorydata->name:''; ?> </h1>
                <p><span id="totalresult">{{__('messages.show_note1')}} {{count($productlist)}} {{__('messages.pro_of')}} {{count($productlist)}} {{__('messages.product')}} </span><span id="searchme"><?=isset($_GET['cd'])?"<b>".__('messages.coupon').":</b>".$_GET['cd']:''; ?></span><span id="search"><?=isset($_GET['s'])?"<b>".__('messages.search').":</b>".$_GET['s']:''; ?></span>
                <div class="Sort"></p>
                   <ul>
@@ -202,7 +202,7 @@
                      </div>
                     @endif
                      <div class="pro-img">
-                  
+
                           <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}"> <img src="{{asset('upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
@@ -211,7 +211,7 @@
                            </button>
                         </div>
                      </figure>
-                     
+
 
                         <div class="img-text">
                            <label class="fancy-checkbox">
@@ -230,10 +230,10 @@
                         <h1><a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}">{{$p->name}}</a></h1>
                         <span class="rating">
                         <?php for($i=0;$i<$p->avgStar;$i++){ ?>
-                        <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         <?php for($i=0;$i<(5-$p->avgStar);$i++){ ?>
-                        <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                        <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                         <?php }?>
                         </span>
                         <span class="review">
@@ -246,7 +246,7 @@
                            <h2>{{Session::get("currency")}}{{$p->price}}</h2>
                            <span >{{Session::get("currency")}}{{$p->MRP}}</span>
                              @if($p->stock!=='0')
-                               <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                               <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                            @endif
                         </div>
                      </div>

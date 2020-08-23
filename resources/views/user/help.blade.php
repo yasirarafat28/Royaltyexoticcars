@@ -5,7 +5,7 @@
 @section('content')
 <style>
       .help-tab-box .card-header{
-      background: <?= Session::get('site_color') ?>;
+      background: {{site_color()}};
    }
 </style>
 <div class="container">
@@ -27,7 +27,7 @@
                <?php $i=0;?>
                @foreach($getquestion as $ge)
                @if($i==0)
-               <li onclick="changehelp('tab-{{$ge->id}}','{{$i}}')" class="tab-link current" style="background: <?= Session::get('site_color') ?> !important" data-tab="tab-{{$ge->id}}" id="{{$i}}">
+               <li onclick="changehelp('tab-{{$ge->id}}','{{$i}}')" class="tab-link current" style="background: {{site_color()}} !important" data-tab="tab-{{$ge->id}}" id="{{$i}}">
                   @else
                <li class="tab-link" onclick="changehelp('tab-{{$ge->id}}','{{$i}}')" data-tab="tab-{{$ge->id}}" id="{{$i}}">
                   @endif

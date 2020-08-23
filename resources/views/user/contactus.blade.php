@@ -26,8 +26,8 @@
             <div class="col-lg-5 col-md-6">
                <div class="contact-content-box">
                   <div class="contact-content-detail">
-                     <i class="fa fa-phone call-icon" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
-                     <h3 style="color: <?= Session::get('site_color') ?> !important">{{__('messages.contact_us')}}</h3>
+                     <i class="fa fa-phone call-icon" aria-hidden="true" style="color: {{site_color()}} !important"></i>
+                     <h3 style="color: {{site_color()}} !important">{{__('messages.contact_us')}}</h3>
                   </div>
                   <div class="contact-content-value">
                      <p>{{Session::get('site_phone')}}</p>
@@ -35,8 +35,8 @@
                </div>
                <div class="contact-content-box">
                   <div class="contact-content-detail">
-                     <i class="fa fa-map-marker call-icon" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
-                     <h3 style="color: <?= Session::get('site_color') ?> !important">{{__('messages.address')}}</h3>
+                     <i class="fa fa-map-marker call-icon" aria-hidden="true" style="color: {{site_color()}} !important"></i>
+                     <h3 style="color: {{site_color()}} !important">{{__('messages.address')}}</h3>
                   </div>
                   <div class="contact-content-value">
                      <p>{{Session::get('site_address')}}</p>
@@ -44,8 +44,8 @@
                </div>
                <div class="contact-content-box">
                   <div class="contact-content-detail">
-                     <i class="fa fa-envelope-o call-icon" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
-                     <h3 style="color: <?= Session::get('site_color') ?> !important">{{__('messages.email')}}</h3>
+                     <i class="fa fa-envelope-o call-icon" aria-hidden="true" style="color: {{site_color()}} !important"></i>
+                     <h3 style="color: {{site_color()}} !important">{{__('messages.email')}}</h3>
                   </div>
                   <div class="contact-content-value">
                      <p>{{Session::get('site_email')}}</p>
@@ -89,7 +89,7 @@
                   <textarea id="message" class="inputtext" name="message"></textarea>
                </div>
                <div class="row con-btn">
-                  <input type="submit" class="contactbtn" value="{{__('messages.submit')}}" name="btnsubmit" style="background: <?= Session::get('site_color') ?> !important">
+                  <input type="submit" class="contactbtn" value="{{__('messages.submit')}}" name="btnsubmit" style="background: {{site_color()}} !important">
                </div>
             </div>
          </form>

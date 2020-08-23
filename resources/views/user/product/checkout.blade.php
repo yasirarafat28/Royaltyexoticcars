@@ -5,11 +5,11 @@
 @section('content')
 <style>
     #stripe button{
-       background-color:<?= Session::get('site_color') ?> !important;
+       background-color:{{site_color()}} !important;
    }
 </style>
 <div class="container">
-    
+
    <div class="cart-heading">
       <h1>{{__('messages.Checkout')}}</h1>
       <span><a href="{{url('/')}}">{{__('messages.home')}}</a> /<a href="{{url('cartdetail')}}">{{__('messages.My_Cart')}}</a> / {{__('messages.Checkout')}}</span>
@@ -24,11 +24,11 @@
                      </div>
                      @endif
    <div class="checkout-box">
-       
+
       <div class="row">
 
          <div class="chek-img">
-            <div class="check-icon-box" style="background: <?= Session::get('site_color') ?> !important">
+            <div class="check-icon-box" style="background: {{site_color()}} !important">
                <div class="icon-images"></div>
             </div>
          </div>
@@ -60,9 +60,9 @@
                </div>
             </div>
             <div class="login">
-               <button type="button" onclick="loginuser('check_')" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.sign_in')}}</button>
+               <button type="button" onclick="loginuser('check_')" style="background-color: {{site_color()}} !important">{{__('messages.sign_in')}}</button>
                <span>
-               <button type="button" onclick="openregsiter()"  data-toggle="modal" data-target="#myModal" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.sign_up')}}</button>
+               <button type="button" onclick="openregsiter()"  data-toggle="modal" data-target="#myModal" style="background-color: {{site_color()}} !important">{{__('messages.sign_up')}}</button>
                </span>
             </div>
          </div>
@@ -87,7 +87,7 @@
                            <label class="frm-name">{{__('messages.name')}} :<span class="reqfield">*</span></label>
                            <input type="text" name="order_firstname" id="order_firstname" value="<?=isset(Auth::user()->first_name)?Auth::user()->first_name:''; ?>">
                         </div>
-                      
+
                      </div>
                      <label class="frm-name">{{__('messages.address')}} :<span class="reqfield">*</span></label>
                      <textarea name="order_billing_address" id="order_billing_address"><?=isset(Auth::user()->billing_address)?Auth::user()->billing_address:''; ?></textarea>
@@ -102,9 +102,9 @@
                         </div>
                      </div>
                      <label class="frm-name">{{__('messages.phone')}} :<span class="reqfield">*</span></label>
-                     <input type="text" name="order_phone" id="order_phone" value="<?=isset(Auth::user()->phone)?Auth::user()->phone:''; ?>">	
+                     <input type="text" name="order_phone" id="order_phone" value="<?=isset(Auth::user()->phone)?Auth::user()->phone:''; ?>">
                      <label class="frm-name">{{__('messages.email')}} :<span class="reqfield">*</span></label>
-                     <input type="text" name="order_email" id="order_email" value="<?=isset(Auth::user()->email)?Auth::user()->email:''; ?>">	
+                     <input type="text" name="order_email" id="order_email" value="<?=isset(Auth::user()->email)?Auth::user()->email:''; ?>">
                      <div class="checkbox-container-1">
                         <input type="checkbox" name="to_ship" value="1" id="to_ship" onclick="changeship()">
                         <h1>{{__('messages.ship_different')}}</h1>
@@ -115,7 +115,7 @@
                               <label class="frm-name">{{__('messages.name')}} :<span class="reqfield">*</span></label>
                               <input type="text" name="order_ship_firstname" id="order_ship_firstname">
                            </div>
-                          
+
                         </div>
                         <label class="frm-name">{{__('messages.address')}} :<span class="reqfield">*</span></label>
                         <input type="text" name="order_shipping_address" id="order_shipping_address" value="<?=isset(Auth::user()->shipping_address)?Auth::user()->shipping_address:''; ?>">
@@ -143,8 +143,8 @@
                </div>
                <table>
                   <tr>
-                     <th style="background: <?= Session::get('site_color') ?> !important">{{__('messages.Detail')}}</th>
-                     <th style="background: <?= Session::get('site_color') ?> !important">{{__('messages.total')}}</th>
+                     <th style="background: {{site_color()}} !important">{{__('messages.Detail')}}</th>
+                     <th style="background: {{site_color()}} !important">{{__('messages.total')}}</th>
                   </tr>
                   <tr class="check-ord-text">
                      <td>
@@ -193,7 +193,7 @@
                      <td>
                         {{__('messages.total')}}
                      </td>
-                     <?php 
+                     <?php
                         $total=0;
                         foreach($product_tax as $pt){
                         	$total=$total+$pt['total'];
@@ -280,7 +280,7 @@
                   <input type="hidden" name="total_order_price" id="pay_total_order_price">
                   <input type="hidden" name="payment_method" id="pay_payment_method">
                   <input type="hidden" name="total_taxes" id="pay_total_taxes">
-                  <button type="submit" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.place_order')}}</button>
+                  <button type="submit" style="background: {{site_color()}} !important">{{__('messages.place_order')}}</button>
                </form>
             </div>
             <div class="place-btn" id="stripe">
@@ -343,7 +343,7 @@
                   <input type="hidden" name="total_order_price" id="cod_total_order_price">
                   <input type="hidden" name="payment_method" id="cod_payment_method">
                   <input type="hidden" name="total_taxes" id="cod_total_taxes">
-                  <button type="submit" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.place_order')}}</button>
+                  <button type="submit" style="background: {{site_color()}} !important">{{__('messages.place_order')}}</button>
                </form>
             </div>
          </div>

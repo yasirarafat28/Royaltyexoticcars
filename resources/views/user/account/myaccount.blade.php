@@ -25,7 +25,7 @@
             </div>
             <div class="profile-tab">
                <ul class="tabs">
-                  <li onclick="changetab('tab-1',1)" id="litab1" class="tab-link current" style="background: <?= Session::get('site_color') ?> !important" data-tab="tab-1">{{__('messages.my_order')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
+                  <li onclick="changetab('tab-1',1)" id="litab1" class="tab-link current" style="background: {{site_color()}} !important" data-tab="tab-1">{{__('messages.my_order')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-6',6)" id="litab6" class="tab-link" data-tab="tab-6">{{__('My Trips')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-2',2)" id="litab2" class="tab-link" data-tab="tab-2">{{__('messages.personal_detail')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-3',3)" id="litab3" class="tab-link" data-tab="tab-3">{{__('messages.address')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
@@ -89,7 +89,7 @@
                      </td>
                      <td class="View">
                         <span>{{__('messages.action')}} :</span>
-                        <a href="{{url('vieworder').'/'.$my->id}}" style="border-color: <?= Session::get('site_color') ?> !important" class="myordera" id="myordera{{$i}}">{{__('messages.view')}}</a>
+                        <a href="{{url('vieworder').'/'.$my->id}}" style="border-color: {{site_color()}} !important" class="myordera" id="myordera{{$i}}">{{__('messages.view')}}</a>
                      </td>
                   </tr>
                   <?php $i++;?>
@@ -146,7 +146,7 @@
                               {{Session::get('currency')}}{{number_format($my->grand_total,2)}}
                           </td>
                           <td class="View">
-                              <a href="{{url('vehicle-checkout-invoice/'.$my->txn_id)}}" target="_blank" style="border-color: <?= Session::get('site_color') ?> !important" class="myordera"><i class="fa fa-print"></i> {{__('Invoice')}}</a>
+                              <a href="{{url('vehicle-checkout-invoice/'.$my->txn_id)}}" target="_blank" style="border-color: {{site_color()}} !important" class="myordera"><i class="fa fa-print"></i> {{__('Invoice')}}</a>
                           </td>
                       </tr>
                       <?php $i++;?>
@@ -197,7 +197,7 @@
                         <textarea name="edit_address" id="edit_address">{{$userdata->address}}</textarea>
                      </div>
                      <div class="personal-btn">
-                        <button class="update" type="submit" name="btnsubmit" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.update')}}</button>
+                        <button class="update" type="submit" name="btnsubmit" style="background-color: {{site_color()}} !important">{{__('messages.update')}}</button>
                      </div>
                   </form>
                </div>
@@ -208,26 +208,26 @@
                </div>
                <div class="per-detail">
                   <div class="addre">
-                     <span><i onclick="editbilling()" style="color: <?= Session::get('site_color') ?> !important" class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                     <span><i onclick="editbilling()" style="color: {{site_color()}} !important" class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
                      <h1>{{__('messages.billing_address')}}</h1>
                      <p id="billing_address">{{$userdata->billing_address}}</p>
                      <div id="textbilling">
                         <form>
                            <textarea class="form-control"  id="bill">{{$userdata->billing_address}}</textarea>
-                           <input value="Save" type="button" onclick="SaveAddress('bill')" style="background-color: <?= Session::get('site_color') ?> !important">
-                           <button onclick="closebill()" type="button" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.cancel')}}</button>
+                           <input value="Save" type="button" onclick="SaveAddress('bill')" style="background-color: {{site_color()}} !important">
+                           <button onclick="closebill()" type="button" style="background-color: {{site_color()}} !important">{{__('messages.cancel')}}</button>
                         </form>
                      </div>
                   </div>
                   <div class="addre">
-                     <span><i onclick="editshipping()" style="color: <?= Session::get('site_color') ?> !important" class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                     <span><i onclick="editshipping()" style="color: {{site_color()}} !important" class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
                      <h1>{{__('messages.shipping_address')}}</h1>
                      <p id="shipping_address">{{$userdata->shipping_address}}</p>
                      <div id="textshipping">
                         <form>
                            <textarea class="form-control"  id="ship">{{$userdata->billing_address}}</textarea>
-                           <input value="Save" type="button" name="" onclick="SaveAddress('ship')" style="background-color: <?= Session::get('site_color') ?> !important">
-                           <button onclick="closeship()" type="button" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.cancel')}}</button>
+                           <input value="Save" type="button" name="" onclick="SaveAddress('ship')" style="background-color: {{site_color()}} !important">
+                           <button onclick="closeship()" type="button" style="background-color: {{site_color()}} !important">{{__('messages.cancel')}}</button>
                         </form>
                      </div>
                   </div>
@@ -254,7 +254,7 @@
                   </div>
                   <div class="personal-btn">
                      <button class="cancel" onclick="cancelpwd()">{{__('messages.cancel')}}</button>
-                     <button class="update" onclick="changepassword()" style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.update')}}</button>
+                     <button class="update" onclick="changepassword()" style="background-color: {{site_color()}} !important">{{__('messages.update')}}</button>
                   </div>
                </div>
             </div>

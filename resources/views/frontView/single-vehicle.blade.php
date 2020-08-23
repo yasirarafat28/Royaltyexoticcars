@@ -84,7 +84,7 @@ $setting = setting();
             margin-bottom: 6px;
         }
         .detail-review-star .fa-star:before {
-            color: #f07f13;
+            color: red;
         }
         .detail-product-text .detail-review-box {
             margin-top: 0px;
@@ -112,7 +112,7 @@ $setting = setting();
 
         .detail-product-text .detail-qty-button {
             padding: 10px;
-            border: 2px solid #f07f13;
+            border: 2px solid red;
             border-radius: 1000px;
             display: inline-block;
             margin-top: 35px;

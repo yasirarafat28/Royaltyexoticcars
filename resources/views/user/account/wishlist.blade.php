@@ -7,11 +7,11 @@
 <div class="container">
    <div class="cart-heading wish">
       <h1>{{__('messages.My_WishList')}}</h1>
-      <span><a href="{{url('/')}}" style="color: <?= Session::get('site_color') ?> !important">{{__('messages.home')}}</a> / {{__('messages.My_WishList')}}</span>
+      <span><a href="{{url('/')}}" style="color: {{site_color()}} !important">{{__('messages.home')}}</a> / {{__('messages.My_WishList')}}</span>
    </div>
    <div class="cart-detail">
       <table id="mywish">
-         <tr class="pro-heading" style="background: <?= Session::get('site_color') ?> !important">
+         <tr class="pro-heading" style="background: {{site_color()}} !important">
             <th>{{__('messages.del')}}</th>
             <th>{{__('messages.images')}}</th>
             <th>{{__('messages.product')}}</th>
@@ -50,7 +50,7 @@
                <span>{{__('messages.price')}} :</span>
             </td>
             <td class="add">
-               <a onclick="addwishtocart('{{$mw->product_id}}','{{$mw->productdata->name}}','1','{{$mw->productdata->price}}')" style="border-color: <?= Session::get('site_color') ?> !important">{{__('messages.add_to_cart')}}</a>
+               <a onclick="addwishtocart('{{$mw->product_id}}','{{$mw->productdata->name}}','1','{{$mw->productdata->price}}')" style="border-color: {{site_color()}} !important">{{__('messages.add_to_cart')}}</a>
             </td>
          </tr>
          @endforeach
@@ -59,11 +59,11 @@
                 <td colspan="6" class="emptywish">{{__('messages.Your wishlist is currently empty!')}}</td>
             </tr>
          @endif
-        
+
       </table>
       <div class="continue">
-         <a href="{{url('/')}}" style="color: <?= Session::get('site_color') ?> !important">{{__('messages.continue_shopping')}}
-         <i class="fa fa-long-arrow-right" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+         <a href="{{url('/')}}" style="color: {{site_color()}} !important">{{__('messages.continue_shopping')}}
+         <i class="fa fa-long-arrow-right" aria-hidden="true" style="color: {{site_color()}} !important"></i>
          </a>
       </div>
    </div>

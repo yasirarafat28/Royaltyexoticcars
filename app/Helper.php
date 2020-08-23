@@ -26,4 +26,8 @@ function getDatesFromRange($start, $end, $format = 'Y-m-d') {
     // Return the array elements
     return $array;
 }
+
+function site_color(){
+    return 'red';
+}
 ?>

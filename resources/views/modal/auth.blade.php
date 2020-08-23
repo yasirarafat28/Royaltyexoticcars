@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div id="forgotbody" class="forgotbody">
-                    <div class="reset-p" style="background-color:<?= Session::get('site_color') ?> !important;">
+                    <div class="reset-p" style="background-color:{{site_color()}} !important;">
                         <h1>{{__('messages.forgot_note')}}
                         </h1>
                     </div>
@@ -27,7 +27,7 @@
                             <input type="text" name="forgot_email"  placeholder="Email" id="value">
                         </form>
                         <div class="button-sign_in-1" >
-                            <a href="javascript:forgotpassword()" style="background-color:<?= Session::get('site_color') ?> !important;">
+                            <a href="javascript:forgotpassword()" style="background-color:{{site_color()}} !important;">
                                 {{__('messages.forgot_pwd')}}
                             </a>
                         </div>
@@ -58,7 +58,7 @@
                                 </div>
                             </form>
                             <div class="button-sign_in">
-                                <input type="button" name="btnlogin" onclick="loginuser('login_')" value="{{__('messages.login')}}" class="regiterbtn" style="background-color: <?= Session::get('site_color') ?> !important"/>
+                                <input type="button" name="btnlogin" onclick="loginuser('login_')" value="{{__('messages.login')}}" class="regiterbtn" style="background-color: {{site_color()}} !important"/>
                             </div>
                             @if(Session::get("facebook_active"))
                                 <div class="button-facebook">
@@ -90,7 +90,7 @@
                                 <input type="password" name="confirm_password" id="value" placeholder="{{__('messages.confirm_password')}}">
                             </form>
                             <div class="button-sign_in">
-                                <input type="button" name="btnsubmit" onclick="registeruser()" value="REGISTER" class="regiterbtn" style="background-color: <?= Session::get('site_color') ?> !important"/>
+                                <input type="button" name="btnsubmit" onclick="registeruser()" value="REGISTER" class="regiterbtn" style="background-color: {{site_color()}} !important"/>
                             </div>
                         </div>
                     </div>

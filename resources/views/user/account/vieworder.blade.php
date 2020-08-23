@@ -35,59 +35,59 @@
                   }
             ?>
          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $width;?>;background-color:<?= Session::get('site_color') ?> !important">
+            aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $width;?>;background-color:{{site_color()}} !important">
             <span class="sr-only">100% {{__('messages.completed')}}</span>
          </div>
       </div>
       <div class="main-process">
          <div class="process-pos">
             <div class="process-1">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important" ></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important" ></div>
                <div class="pro-text">
                   <h1>{{__('messages.orders')}} {{__("messages.pending")}}</h1>
-                  <p style="color: <?= Session::get('site_color') ?> !important">{{date("h:i  F d,Y ",strtotime($order->orderdate))}}</p>
+                  <p style="color: {{site_color()}} !important">{{date("h:i  F d,Y ",strtotime($order->orderdate))}}</p>
                </div>
             </div>
             @if(!$order->cancel_datetime)
             <div class="process-1">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
                   <h1>{{__('messages.orders')}} {{__("messages.processing")}}</h1>
-                  <p style="color: <?= Session::get('site_color') ?> !important">@if($order->processing_datetime!=0){{date("h:i  F d,Y ",strtotime($order->processing_datetime))}}@endif</p>
+                  <p style="color: {{site_color()}} !important">@if($order->processing_datetime!=0){{date("h:i  F d,Y ",strtotime($order->processing_datetime))}}@endif</p>
                </div>
             </div>
             <div class="process-1">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
                   <h1>{{__('messages.orders')}} {{__("messages.on_hold")}}</h1>
-                  <p style="color: <?= Session::get('site_color') ?> !important">@if($order->onhold_datetime!=0){{date("h:i  F d,Y ",strtotime($order->onhold_datetime))}}@endif</p>
+                  <p style="color: {{site_color()}} !important">@if($order->onhold_datetime!=0){{date("h:i  F d,Y ",strtotime($order->onhold_datetime))}}@endif</p>
                </div>
             </div>
             <div class="process-1">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
                   <h1>{{__('messages.orders')}} {{__('messages.Delivered')}}</h1>
-                  <p style="color: <?= Session::get('site_color') ?> !important">@if($order->completed_datetime!=0){{date("h:i  F d,Y ",strtotime($order->completed_datetime))}}@endif</p>
+                  <p style="color: {{site_color()}} !important">@if($order->completed_datetime!=0){{date("h:i  F d,Y ",strtotime($order->completed_datetime))}}@endif</p>
                </div>
             </div>
             @else
               <div class="process-1 visiable">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
-                 
+
                </div>
             </div>
             <div class="process-1 visiable" style="display: hidden">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
-                 
+
                </div>
             </div>
                 <div class="process-1">
-               <div class="process-1-circle" style="border-color: <?= Session::get('site_color') ?> !important"></div>
+               <div class="process-1-circle" style="border-color: {{site_color()}} !important"></div>
                <div class="pro-text">
                   <h1>{{__('messages.orders')}} {{__('messages.cancel')}}</h1>
-                  <p style="color: <?= Session::get('site_color') ?> !important">@if($order->cancel_datetime!=0){{date("h:i  F d,Y ",strtotime($order->cancel_datetime))}}@endif</p>
+                  <p style="color: {{site_color()}} !important">@if($order->cancel_datetime!=0){{date("h:i  F d,Y ",strtotime($order->cancel_datetime))}}@endif</p>
                </div>
             </div>
             @endif
@@ -148,7 +148,7 @@
                     {{__("messages.completed")}}
                @elseif($order->order_status==6)
                     {{__("messages.canceled")}}
-               @elseif($order->order_status==7)  
+               @elseif($order->order_status==7)
                     {{__("messages.refunded")}}
                @endif
             </p>
@@ -158,7 +158,7 @@
    <div class="cart-detail">
       <h4>{{__('messages.orders')}}</h4>
       <table>
-         <tr class="pro-heading" style="background-color: <?= Session::get('site_color') ?> !important">
+         <tr class="pro-heading" style="background-color: {{site_color()}} !important">
             <th>{{__('messages.order_id')}}</th>
             <th>{{__('messages.images')}}</th>
             <th>{{__('messages.product')}}</th>
@@ -213,7 +213,7 @@
       <div class="row">
          <div class="col-md-6">
             <div class="coupon">
-               <h1 style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.billing_address')}}</h1>
+               <h1 style="background-color: {{site_color()}} !important">{{__('messages.billing_address')}}</h1>
                <div class="address-info">
                   <p>{{$order->billing_first_name}}</p>
                   <p>{{$order->billing_address}}</p>
@@ -222,7 +222,7 @@
             </div>
             <div class="col-md-12 p-0 bill">
                <div class="coupon">
-                  <h1 style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.shipping_address')}}</h1>
+                  <h1 style="background-color: {{site_color()}} !important">{{__('messages.shipping_address')}}</h1>
                   <div class="address-info">
                      @if($order->to_ship=='0')
                      <p>{{__('messages.same_ship')}}</p>
@@ -238,7 +238,7 @@
          </div>
          <div class="col-md-6">
             <div class="coupon">
-               <h1 style="background-color: <?= Session::get('site_color') ?> !important">{{__('messages.cart_total')}}</h1>
+               <h1 style="background-color: {{site_color()}} !important">{{__('messages.cart_total')}}</h1>
             </div>
             <div class="cart-mt">
                <div class="subt-box">

@@ -7,22 +7,22 @@
 <div class="container">
 <style type="text/css">
     .product-heading h1:after{
-        background-color:<?= Session::get('site_color') ?> !important;
+        background-color:{{site_color()}} !important;
     }
     .product-heading h1:before{
-         background-color:<?= Session::get('site_color') ?> !important;
+         background-color:{{site_color()}} !important;
     }
     .detail-information-tab ul.tabs li.active{
-        border-bottom:3px solid <?= Session::get('site_color') ?> !important;
+        border-bottom:3px solid {{site_color()}} !important;
     }
     .detail-review-star .fa-star:before{
-         color:<?= Session::get('site_color') ?> !important;
+         color:{{site_color()}} !important;
     }
     .rating>input:checked~label, .rating:not(:checked)>label:hover, .rating:not(:checked)>label:hover~label{
-        color:<?= Session::get('site_color') ?> !important;
+        color:{{site_color()}} !important;
     }
     .detail-information-tab .d_active{
-        background-color:<?= Session::get('site_color') ?> !important;
+        background-color:{{site_color()}} !important;
     }
 </style>
 
@@ -84,10 +84,10 @@
                     <div class="detail-review-box">
                         <div class="detail-review-star">
                             <?php for($i=0;$i<$productstar;$i++){ ?>
-                                <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                                 <?php }?>
                                     <?php for($i=0;$i<(5-$productstar);$i++){ ?>
-                                        <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                                         <?php }?>
                         </div>
                         <div class="detail-review-people">
@@ -196,23 +196,23 @@
                         <?php  } } ?>
                             <input type="hidden" name="reqerror" id="reqerror" value="0">
                             <input type="hidden" name="total_option" id="total_option" value="{{$i}}" />
-                            <div class="detail-qty-button" style="border-color: <?= Session::get('site_color') ?> !important">
+                            <div class="detail-qty-button" style="border-color: {{site_color()}} !important">
                                 <div class="number">
-                                    <span class="qty-mp minus" onclick="changeqty('-1')" style="background: <?= Session::get('site_color') ?> !important"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    <span class="qty-mp minus" onclick="changeqty('-1')" style="background: {{site_color()}} !important"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                     <input type="text" value="1" id="qty-nu" name="pro_qty" onchange="changeproprice(this.value)" />
-                                    <span class="qty-mp plus" onclick="changeqty('1')" style="background: <?= Session::get('site_color') ?> !important"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="qty-mp plus" onclick="changeqty('1')" style="background: {{site_color()}} !important"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                 </div>
                             </div>
 
                                   @if($product->stock=='1')
                                      <a href="javascript:addtocart()">
-                                        <div class="detail-add-cart" style="background: <?= Session::get('site_color') ?> !important">
+                                        <div class="detail-add-cart" style="background: {{site_color()}} !important">
                                            {{__('messages.add_to_cart')}}
                                         </div>
                                     </a>
                                   @else
                                      <a href="#">
-                                       <div class="detail-add-cart " style="background: <?= Session::get('site_color') ?> !important">
+                                       <div class="detail-add-cart " style="background: {{site_color()}} !important">
                                            {{__('messages.outstock')}}
                                         </div>
                                     </a>
@@ -274,7 +274,7 @@
             <h3 class="tab_drawer_heading" rel="tab2" id="hredtab2" onclick="changeproducttab(2)">{{__('messages.add_info')}}</h3>
             <div id="tab2" class="tab_content">
                 <div class="addi">
-                    <table class="addi-h" style="background: <?= Session::get('site_color') ?> !important">
+                    <table class="addi-h" style="background: {{site_color()}} !important">
                         <tr>
                             <th class="spe">{{__('messages.attributeset')}}</th>
                             <th class="brand">{{__('messages.attribute')}}</th>
@@ -317,7 +317,7 @@
                   @if(isset($product->attributes))
                    @foreach($product->attributes as $attr)
                     <div class="res-spe">
-                        <h1 style="background-color:<?= Session::get('site_color') ?> !important;">{{__('messages.attributeset')}}</h1>
+                        <h1 style="background-color:{{site_color()}} !important;">{{__('messages.attributeset')}}</h1>
                         <div class="tital">
                             <h2>{{__('messages.attribute')}}</h2>
                             <p>{{__('messages.value')}}</p>
@@ -325,7 +325,7 @@
                     </div>
                     <div class="res-spe">
                         @foreach($product->attributes as $attr)
-                        <h1 style="background-color:<?= Session::get('site_color') ?> !important;">{{$attr->attributeset}}</h1>
+                        <h1 style="background-color:{{site_color()}} !important;">{{$attr->attributeset}}</h1>
                         <div class="tital tal">
                           <?php
                                   $labelarr=explode(",", $attr->attribute);
@@ -363,11 +363,11 @@
 
                                     <div class="detail-review-people-1">
                                         @for($i=0;$i<$re->ratting;$i++)
-                                         <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                                         <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                                         @endfor
 
                                           @for($i=0;$i<5-$re->ratting;$i++)
-                                         <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                                         <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                                         @endfor
                                     </div>
                                     <div class="review-user-content">
@@ -407,14 +407,14 @@
                     @if(isset($userdata->id))
                     <div class="deta-but">
 
-                        <button class="detail-review-submit" onclick="storereview()" style="background: <?= Session::get('site_color') ?> !important">
+                        <button class="detail-review-submit" onclick="storereview()" style="background: {{site_color()}} !important">
                             {{__('messages.submit')}}
                         </button>
 
                     </div>
                     @endif @if(!isset($userdata->id))
-                    <div class="detail-review-submit" style="background: <?= Session::get('site_color') ?> !important">
-                        <a href="#" data-toggle="modal" data-target="#myModal" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.submit')}}
+                    <div class="detail-review-submit" style="background: {{site_color()}} !important">
+                        <a href="#" data-toggle="modal" data-target="#myModal" style="background: {{site_color()}} !important">{{__('messages.submit')}}
                          </a>
                     </div>
                     @endif
@@ -473,10 +473,10 @@
 
                                     <span class="rating">
                          <?php for($i=0;$i<$realt->avgStar;$i++){ ?>
-                        <i class="fa fa-star" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
+                        <i class="fa fa-star" style="color: {{site_color()}} !important" aria-hidden="true"></i>
                         <?php }?>
                         <?php for($i=0;$i<(5-$realt->avgStar);$i++){ ?>
-                        <i class="fa fa-star-o" style="color: <?= Session::get('site_color') ?> !important" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" style="color: {{site_color()}} !important" aria-hidden="true"></i>
                         <?php }?>
                         </span>
                          <span class="compare_icon">
@@ -484,7 +484,7 @@
                      </span>
                                 </div>
                                   @if($realt->stock=='1')
-                                                <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                                                <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                                                 @endif
                             </div>
                             </div>
@@ -523,10 +523,10 @@
                      <h1>{{$realt->name}}</h1>
                      <span class="rating">
                      <?php for($i=0;$i<$realt->avgStar;$i++){ ?>
-                     <i class="fa fa-star" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                     <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                      <?php }?>
                      <?php for($i=0;$i<(5-$realt->avgStar);$i++){ ?>
-                     <i class="fa fa-star-o" aria-hidden="true" style="color: <?= Session::get('site_color') ?> !important"></i>
+                     <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
                      <?php }?>
                      </span>
                      <span class="review">
@@ -539,7 +539,7 @@
                         <h2>{{Session::get("currency")}}{{$realt->selling_price}}</h2>
                         <span >{{Session::get("currency")}}{{$realt->MRP}}</span>
                         @if($realt->stock=='1')
-                        <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: <?= Session::get('site_color') ?> !important">{{__('messages.shop_now')}}</a>
+                        <a href="{{url('viewproduct/').'/'.base64_encode($realt->id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
                         @endif
                      </div>
                   </div>
