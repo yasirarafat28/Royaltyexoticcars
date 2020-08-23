@@ -5,6 +5,76 @@
 @section('content')
 
 <div class="container">
+
+
+
+
+    <section>
+
+        <style>
+            .carousel-item {
+                height: 550px;
+                min-height: 350px;
+                background: no-repeat center center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .carousel-caption {
+                bottom: 25% !important;
+            }
+        </style>
+
+        @php
+            $sliders = \App\Slider::where('type','shop')->where('status','active')->get();
+
+        @endphp
+
+        @if(sizeof($sliders))
+
+            <div class="container-fluid p-0">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        @foreach($sliders??array() as $key=>$slider)
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" class="{{$key==0?'active':''}}"></li>
+                        @endforeach
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+
+                        @foreach($sliders??array() as $key=>$slider)
+                            <div class="carousel-item {{$key==0?'active':''}}" style="background-image: url({{url($slider->photo??'/')}})">
+                                <div class="carousel-caption">
+                                    <div class="row">
+
+                                        <div class="col-md-6 offset-md-6">
+
+                                            <div class="hero__content">
+                                                <h1 class=" animated fadeInDown" style="color: {{site_color()}};font-weight: bold;">{{$slider->title}}</h1>
+                                                <p class="lead ">{!! $slider->content !!}</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        @endif
+    </section>
+
+
    <div class="row nor-b">
       @foreach($offerdata as $fd)
       @if($fd->offer_type==2&&$fd->offer_id!=0)
