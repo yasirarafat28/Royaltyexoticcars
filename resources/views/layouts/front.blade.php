@@ -247,8 +247,8 @@
 	<header class="header">
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
-			<!--
-			<div class="info-container">
+
+            <div class="info-container">
 				<div class="info" style="">
 					<div class="left-side col-sm-6 col-md-8  d-none d-sm-flex">
 					<a target="_blank"
@@ -281,7 +281,6 @@
 
 				</div>
 			</div>
-			-->
 			<div class="nav-container" style="">
 
                 <!-- Image and text -->
