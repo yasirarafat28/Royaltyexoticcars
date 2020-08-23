@@ -145,11 +145,11 @@
             border: none;
         }
     </style>
-<div class="container">
+<div class="container  extra-top-margin">
    <div class="contact-main-box">
 
       <div class="contact-main-head">
-          <h1 class="text-center mt-5">Contact Us</h1>
+          <h1 class="text-center">Contact Us</h1>
       </div>
       @if(Session::has('message'))
       <div class="col-sm-12">

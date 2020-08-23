@@ -149,7 +149,7 @@ $setting = setting();
 
 @endsection
 @section('content')
-<div class="container mt-5">
+<div class="container extra-top-margin">
   <div class="row">
     <div class="col-sm-7">
         @php

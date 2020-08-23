@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
 	<div class="main">
-		<div class="container-fluid">
-			<div class="crumbsbar mt-5 clearfix">
+		<div class="container-fluid  extra-top-margin">
+			<div class="crumbsbar clearfix">
 				<div class="crumbsbar__wrapper">
 					<div data-delay="0" data-hover="1" class="crumbsbar__dropdown w-dropdown">
 						<div class="crumbsbar__toggle w-dropdown-toggle">

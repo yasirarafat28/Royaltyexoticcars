@@ -59,6 +59,10 @@
         body{
             font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif !important;
         }
+
+        .extra-top-margin{
+            margin-top: 5em !important;
+        }
         .nav__brand .logo{
             height:60px !important;
         }
