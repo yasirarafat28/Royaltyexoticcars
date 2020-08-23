@@ -176,6 +176,7 @@
 </head>
 
 <body>
+	<!--
 	<header class="header">
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
 			data-easing2="ease-out-quad" role="banner" class="navigation w-nav">
@@ -258,7 +259,7 @@
 																alt="Bugatti" class="quicklinks__logo" />
 															<div class="quicklinks__details">
 																<div class="quicklinks__title">{{ $brand->name }}</div>
-																<!-- <div class="quicklinks__desc">Veyron</div> -->
+																
 															</div>
 														</a>
 													</div>
@@ -553,14 +554,13 @@
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
 					</div>
-					<!--<div id="Nav-Drawer-Button" class="nav__button w-nav-button"><img
-							src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a5f41d75e7131000194c9d3_menu.svg"
-							alt="" class="navbar__icon" /></div>-->
+					
 				</div>
 			</div>
 
 		</div>
 	</header>
+	-->
 	@yield('content')
 	<footer>
         <!-- Footer top -->
