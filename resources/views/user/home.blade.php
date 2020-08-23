@@ -39,31 +39,88 @@
    </div>
 </div>
 <div class="container">
-   <div class="services-main">
-      <div class="row">
-         <div class="col-md-3 col-6 services">
-            <div class="ser-img" style="background: {{site_color()}} !important"></div>
-            <h1>{{__('messages.free_delivery')}}</h1>
-            <p>{{__('messages.home_note_4')}}</p>
-         </div>
-         <div class="col-md-3 col-6 services">
-            <div class="ser-img-1" style="background: {{site_color()}} !important"></div>
-            <h1>{{__('messages.home_note_5')}}</h1>
-            <p>{{__('messages.Feedbacks')}}</p>
-         </div>
-         <div class="col-md-3 col-6 services">
-            <div class="ser-img-2" style="background: {{site_color()}} !important"></div>
-            <h1>{{__('messages.Payment')}}</h1>
-            <p>{{__('messages.secured_sys')}}</p>
-         </div>
-         <div class="col-md-3 col-6 services">
-            <div class="ser-img-3" style="background: {{site_color()}} !important"></div>
-            <h1>{{__('messages.support')}}</h1>
-            <p>{{__('messages.helpline')}} -{{$setting->helpline}}</p>
+   <div class="product-heading">
+      <h1>{{__('messages.feature_product')}}</h1>
+   </div>
+   <p id="featurecompare">
+   <div class="product-slider">
+      <div id="demo">
+         <div class="row pos">
+            <div class="customNavigation">
+               <a class="btn prev" onclick="prevowl()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+               <a class="btn next" onclick="nextowl()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div id="owl-demo" class="owl-carousel">
+               <?php $k=1;?>
+               @foreach($featurepro as $fe)
+
+               <div class="item col-md-12">
+                  @if($fe->productdata->stock=='0')
+                           <div class="out_of_sb">
+                              <span>{{__('messages.outstock')}}</span>
+                           </div>
+                          @endif
+                  <div class="home-bg">
+                  <div class="img-background" >
+
+                     <figure class="preview-image">
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
+                        <div class="preview-image-overlay">
+                           <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
+                              {{__('messages.Quick View')}}
+                           </button>
+                        </div>
+                     </figure>
+
+                     <div class="img-text">
+                        <label class="fancy-checkbox">
+                             @if(Auth::id()!="")
+                              <input type="checkbox" id="checkfe{{$k}}" name="checkdata" onclick="changewishlist('{{$fe->productdata->id}}','checkfe{{$k}}')" <?=$fe->wish==1? ' checked="checked"' : '';?>/>
+                             @else
+                              <input type="checkbox" id="checkfe{{$k}}" name="checkdata"  onclick="removewishselect('checkfe{{$k}}')" data-toggle="modal" data-target="#myModal"/>
+                             @endif
+                        <big id="wishfavor{{$fe->productdata->id}}"></big>
+                        </label>
+                        <i class="fa fa-spinner loadlconwish" aria-hidden="true" id="loading{{$fe->productdata->id}}"></i>
+                        @if($fe->productdata->discount!=0)
+                        <span>{{$fe->productdata->discount}}%</span>
+                        @endif
+                     </div>
+                  </div>
+                  <div class="text-s-box text-s-box-2">
+                     <h1>{{$fe->productdata->name}}</h1>
+                     <span class="rating">
+                     <?php for($i=0;$i<$fe->productdata->avgStar;$i++){ ?>
+                     <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
+                     <?php }?>
+                     <?php for($i=0;$i<(5-$fe->productdata->avgStar);$i++){ ?>
+                     <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
+                     <?php }?>
+                     </span>
+                     <span class="review">
+                     ({{$fe->total_review}} {{__('messages.review')}})
+                     </span>
+                     <span class="compare_icon">
+                        <a href="javascript:addcomapre('<?=$fe->product_id?>','featurecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
+                     </span>
+                     <div class="price">
+                        <h2>{{Session::get("currency")}}{{$fe->productdata->selling_price}}</h2>
+                        <span >{{Session::get("currency")}}{{$fe->productdata->MRP}}</span>
+                        @if($fe->productdata->stock=='1')
+                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->product_id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
+                        @endif
+                     </div>
+                  </div>
+               </div>
+            </div>
+               <?php $k++;?>
+               @endforeach
+            </div>
          </div>
       </div>
    </div>
 </div>
+
 <div class="container">
    <div class="sale-banner">
       <div class="row">
@@ -242,83 +299,27 @@
 </div>
 @endif
 <div class="container">
-   <div class="product-heading">
-      <h1>{{__('messages.feature_product')}}</h1>
-   </div>
-   <p id="featurecompare">
-   <div class="product-slider">
-      <div id="demo">
-         <div class="row pos">
-            <div class="customNavigation">
-               <a class="btn prev" onclick="prevowl()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-               <a class="btn next" onclick="nextowl()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            </div>
-            <div id="owl-demo" class="owl-carousel">
-               <?php $k=1;?>
-               @foreach($featurepro as $fe)
-
-               <div class="item col-md-12">
-                  @if($fe->productdata->stock=='0')
-                           <div class="out_of_sb">
-                              <span>{{__('messages.outstock')}}</span>
-                           </div>
-                          @endif
-                  <div class="home-bg">
-                  <div class="img-background" >
-
-                     <figure class="preview-image">
-                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
-                        <div class="preview-image-overlay">
-                           <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
-                              {{__('messages.Quick View')}}
-                           </button>
-                        </div>
-                     </figure>
-
-                     <div class="img-text">
-                        <label class="fancy-checkbox">
-                             @if(Auth::id()!="")
-                              <input type="checkbox" id="checkfe{{$k}}" name="checkdata" onclick="changewishlist('{{$fe->productdata->id}}','checkfe{{$k}}')" <?=$fe->wish==1? ' checked="checked"' : '';?>/>
-                             @else
-                              <input type="checkbox" id="checkfe{{$k}}" name="checkdata"  onclick="removewishselect('checkfe{{$k}}')" data-toggle="modal" data-target="#myModal"/>
-                             @endif
-                        <big id="wishfavor{{$fe->productdata->id}}"></big>
-                        </label>
-                        <i class="fa fa-spinner loadlconwish" aria-hidden="true" id="loading{{$fe->productdata->id}}"></i>
-                        @if($fe->productdata->discount!=0)
-                        <span>{{$fe->productdata->discount}}%</span>
-                        @endif
-                     </div>
-                  </div>
-                  <div class="text-s-box text-s-box-2">
-                     <h1>{{$fe->productdata->name}}</h1>
-                     <span class="rating">
-                     <?php for($i=0;$i<$fe->productdata->avgStar;$i++){ ?>
-                     <i class="fa fa-star" aria-hidden="true" style="color: {{site_color()}} !important"></i>
-                     <?php }?>
-                     <?php for($i=0;$i<(5-$fe->productdata->avgStar);$i++){ ?>
-                     <i class="fa fa-star-o" aria-hidden="true" style="color: {{site_color()}} !important"></i>
-                     <?php }?>
-                     </span>
-                     <span class="review">
-                     ({{$fe->total_review}} {{__('messages.review')}})
-                     </span>
-                     <span class="compare_icon">
-                        <a href="javascript:addcomapre('<?=$fe->product_id?>','featurecompare')"><img src="{{asset('Ecommerce/images/compare.png')}}"></a>
-                     </span>
-                     <div class="price">
-                        <h2>{{Session::get("currency")}}{{$fe->productdata->selling_price}}</h2>
-                        <span >{{Session::get("currency")}}{{$fe->productdata->MRP}}</span>
-                        @if($fe->productdata->stock=='1')
-                        <a href="{{url('viewproduct/').'/'.base64_encode($fe->product_id)}}" style="background: {{site_color()}} !important">{{__('messages.shop_now')}}</a>
-                        @endif
-                     </div>
-                  </div>
-               </div>
-            </div>
-               <?php $k++;?>
-               @endforeach
-            </div>
+   <div class="services-main">
+      <div class="row">
+         <div class="col-md-3 col-6 services">
+            <div class="ser-img" style="background: {{site_color()}} !important"></div>
+            <h1>{{__('messages.free_delivery')}}</h1>
+            <p>{{__('messages.home_note_4')}}</p>
+         </div>
+         <div class="col-md-3 col-6 services">
+            <div class="ser-img-1" style="background: {{site_color()}} !important"></div>
+            <h1>{{__('messages.home_note_5')}}</h1>
+            <p>{{__('messages.Feedbacks')}}</p>
+         </div>
+         <div class="col-md-3 col-6 services">
+            <div class="ser-img-2" style="background: {{site_color()}} !important"></div>
+            <h1>{{__('messages.Payment')}}</h1>
+            <p>{{__('messages.secured_sys')}}</p>
+         </div>
+         <div class="col-md-3 col-6 services">
+            <div class="ser-img-3" style="background: {{site_color()}} !important"></div>
+            <h1>{{__('messages.support')}}</h1>
+            <p>{{__('messages.helpline')}} -{{$setting->helpline}}</p>
          </div>
       </div>
    </div>
