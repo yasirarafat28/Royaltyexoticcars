@@ -972,10 +972,11 @@
 							<li><a href="/"><span class="fa fa-play"></span> Home</a>
 							<li><a href="/vehicles"><span class="fa fa-play"></span> Our Fleet</a>
                             </li><li><a href="/shop"><span class="fa fa-play"></span> Shop</a>
+                            </li><li><a href="/contactus"><span class="fa fa-play"></span> Contact Us</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-                            </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a>
-                            </li></ul>
+                            </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a></li>
+                        </ul>
 
                     </div>
                 </div>
