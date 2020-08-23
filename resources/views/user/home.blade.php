@@ -13,7 +13,7 @@
 
         <style>
             .carousel-item {
-                height: 550px;
+                height: 400px;
                 min-height: 350px;
                 background: no-repeat center center scroll;
                 -webkit-background-size: cover;
@@ -25,10 +25,54 @@
             .carousel-caption {
                 bottom: 25% !important;
             }
+
+
+            .carousel-item img{
+                width: 100%;
+                height: 475px !important;
+            }
+
+            .carousel-control-prev:hover, .carousel-control-next:hover{
+                background: rgba(0,0,0,0.5) !important;
+            }
+            .carousel-indicators {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin-bottom: 0px;
+                left: 0;
+                z-index: 15;
+                margin-left: 0px;
+                margin-right: 0px;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-pack: center;
+                justify-content: center;
+                padding-left: 0;
+                list-style: none;
+                background: rgba(0,0,0,0.5) !important;
+                height: 40px;
+            }
+
+
+            .carousel-indicators li {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+
+
+
+
+
+
+
+
+
         </style>
 
         @php
-            $sliders = \App\Slider::where('type','shop')->where('status','active')->get();
+            $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
 
         @endphp
 
