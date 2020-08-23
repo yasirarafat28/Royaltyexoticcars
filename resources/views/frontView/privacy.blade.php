@@ -127,7 +127,9 @@ We may provide paid products and/or services within the Service. In that case, w
           <div class="policy__timestamp">Contact Us!</div>
           <p>If you have any questions about this Privacy Policy, please contact us:
 
-By email: Rentalexoticsbeasts By visiting this page on our website: <a href="www.rentalexoticsbeasts.com">www.rentalexoticsbeasts.com</a> </p><br><br>
+By email: Rentalexoticsbeasts By visiting this page on our website: <a href="www.rentalexoticsbeasts.com">www.rentalexoticsbeasts.com</a> </p>
+<br>{{ $setting->company_name }}<br>
+{{ $setting->address }}<br>{{ $setting->phone }}<br>{{ $setting->email }}<br><br>
         </div>
       </div>
     </div>
