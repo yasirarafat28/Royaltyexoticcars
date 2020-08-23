@@ -75,11 +75,11 @@
         
             @foreach($faqs as $faq)
             <div class="toggle">
-	            <div class="toggle-title ">
-		            <h3>
+	            <div class="toggle-title">
+		            <h4>
 		              <i></i>
 		                <span class="title-name">{{ $faq->question }}</span>
-		            </h3>
+		            </h4>
 	            </div>
 	            <div class="toggle-inner">
 		            <p>{{ $faq->descripton }}</p>
