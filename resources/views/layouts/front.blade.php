@@ -170,6 +170,51 @@
             background-color: red;
             border-color: red;
         }
+
+		.mmenu {
+
+			width: 25px;
+			margin-top: 45%;
+
+		}
+
+		nav ul {
+
+			position: fixed;
+			width: 50%;
+			top: 0;
+			right: 0;
+			text-align: left;
+			background: rgb(96, 240, 134);
+			padding-to: 3em;
+			padding-right: 1.5em;
+			height: 100;
+			z-index: 7;
+
+		}
+
+		nav ul li a {
+
+			color: white;
+			text-decoration: none;
+			display: block;
+			width: 100%;
+			padding: 1em 2em;
+			
+		}
+		.hide-desktop {
+			display: none;
+		}
+
+		@media only screen and (max-width:650px) {
+			.show-mobile {
+				display: block;
+			}
+			.hide-mobile {
+				display: none;
+			}
+		}
+
     </style>
 
 @yield('style')
@@ -220,8 +265,19 @@
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
 							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
-						</a></div>
-					<div class="nav__links">
+						</a>
+					</div>
+					<a href="#" class="show-mobile hide-desktop"><i class="fa fa-bars menu" id="mmenu"></i></a>
+					<ul class="hide-mobile hide-desktop">
+					
+						<li id="exit" class="exit-btn"> <i class="fa fa-times"></i> </li>
+						<li> <a href="/vehicles"">Rentals</a> </li>
+						<li> <a href="">Requirements</a> </li>
+						<li> <a href="">Shop</a> </li>
+						<li> <a href="">User</a> </li>
+					
+					</ul>
+					<div class="nav__links hide-mobile" id="dmenu">
 						<div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 							<div id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
 								<div>Rentals</div>
@@ -832,6 +888,27 @@
                 $("#feedback-form").toggle("slide");
             });
         });
+
+		var menu = document.getElementById('mmenu');
+
+		var nav = document.getElementById('nav');
+
+		var exit = document.getElementById('exit');
+
+		menu.addEventListener('click', function(e){
+
+			nav.classList.toggle('hide-mobile');
+			e.preventDefault();
+
+		});
+
+		menu.addEventListener('click', function(e){
+
+			nav.classList.add('hide-mobile');
+			e.preventDefault();
+
+		});
+
     </script>
 
 
