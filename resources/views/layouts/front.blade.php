@@ -85,7 +85,7 @@
             .nav__links {
                 margin-left: 0em;
 
-            };
+            }
         }
 
         .slider-left-content{
@@ -226,6 +226,13 @@
         a.nav__link{
             text-align: center !important;
             margin-bottom: 5px;
+        }
+
+
+        @media screen and (max-width: 479px) {
+            .nav__link {
+                position: unset !important;
+            }
         }
 	</style>
 
@@ -631,9 +638,9 @@
                             </li>
                             <li class="nav-item">
 
-                                <a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
+                                <a href="/login" class="user nav__link w-inline-block">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <span style="font-size: 18px;font-weight: 600;">Account</span>
+                                    <span class="">Account</span>
                                 </a>
                             </li>
                         </ul>
