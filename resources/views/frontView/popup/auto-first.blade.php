@@ -94,7 +94,7 @@
                 <a class="popup-close close" data-popup-close="popup-1"   data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" href="#">&times;</span></a>
 
-                <h2 class="text-center modal-title">Get upto 20% off on your first booking!</h2>
+                <h2 class="text-center modal-title">Get upto 10% off on your first booking!</h2>
                 <img src="/upload/vehicles/200809101630.jpg" alt="">
                 <br>
                 <div class="hero__note">Enjoy 10% unlimited discount on first booking! Use Voucher Code <span class="text-primary">NEWRENT10.</span></div>
