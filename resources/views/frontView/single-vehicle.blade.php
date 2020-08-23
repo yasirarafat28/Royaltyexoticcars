@@ -251,7 +251,6 @@ $setting = setting();
             <div>
                 {{ substr(strip_tags($vehicle->description),0,100) }} <a href="#information">Read More</a>
             </div>
-
             <div class="detail-info">
                 <div class="p-1 detail-information">
                     <h2>Category :</h2>
