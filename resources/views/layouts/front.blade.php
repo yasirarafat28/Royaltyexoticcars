@@ -170,7 +170,10 @@
             background-color: red;
             border-color: red;
         }
-    </style>
+        body {
+            padding-top: 3em;
+        }
+</style>
 
 @yield('style')
 </head>

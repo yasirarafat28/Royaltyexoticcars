@@ -44,7 +44,7 @@
                                                     <h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
                                                     <p class="lead ">{!! $slider->content !!}</p>
 
-                                                    
+
                                                     <br>
                                                     <div class="rental__cta">
                                                         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
