@@ -43,8 +43,8 @@
                                                 <div class="hero__content">
                                                     <h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
                                                     <p class="lead ">{!! $slider->content !!}</p>
-                                                    <div class="hero__note">Enjoy 10% unlimited discount on first booking! Use Voucher Code <span class="text-primary">NEWRENT10</span>.</div>
 
+                                                    
                                                     <br>
                                                     <div class="rental__cta">
                                                         <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
