@@ -216,7 +216,7 @@
                         <th class="text-right">TOTAL</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody">
                     <tr>
                         <td>1</td>
                         <td class="text-left"><strong>Fare :</strong></td>
