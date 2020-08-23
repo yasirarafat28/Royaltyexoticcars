@@ -633,7 +633,7 @@
 
                                 <a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <span style="font-size: 14px;font-weight: 600;">Account</span>
+                                    <span style="font-size: 18px;font-weight: 600;">Account</span>
                                 </a>
                             </li>
                         </ul>
