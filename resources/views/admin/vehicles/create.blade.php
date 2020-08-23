@@ -229,6 +229,7 @@
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.to')}}</label>
                                     <input name="available_to" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
+                                
                             </div>
                         </div>
                     </fieldset>
