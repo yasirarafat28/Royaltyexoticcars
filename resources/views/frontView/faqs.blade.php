@@ -113,38 +113,6 @@
             </div>
         </div>
 
-      <!--<div class="card card-default">
-
-        <div class="card-header">
-
-          FAQ's
-
-        </div>
-
-        <div class="card-body">
-
-          <ul class="list-group">
-
-            @foreach($faqs as $faq)
-            <div class="toggle" style="padding:10px; border-bottom: 1px solid lightgrey;">
-	            <div class="toggle-title">
-		            <h5>
-		              <i></i>
-		                <span class="title-name">{{ $faq->question }}</span>
-		            </h5>
-	            </div>
-	            <div class="toggle-inner">
-		            <p>{{ $faq->descripton }}</p>
-	            </div>
-            </div>
-            @endforeach
-
-          </ul>
-
-        </div>
-
-      </div>-->
-
     </div>
   </div>
 @endsection
