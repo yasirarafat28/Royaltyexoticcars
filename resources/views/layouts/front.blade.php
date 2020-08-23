@@ -260,7 +260,7 @@
 																alt="Bugatti" class="quicklinks__logo" />
 															<div class="quicklinks__details">
 																<div class="quicklinks__title">{{ $brand->name }}</div>
-																
+
 															</div>
 														</a>
 													</div>
@@ -555,7 +555,7 @@
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -830,6 +830,29 @@
         $(document).ready(function(){
             $("#feedback-tab").click(function() {
                 $("#feedback-form").toggle("slide");
+            });
+        });
+    </script>
+
+
+
+    <script>
+        $(function() {
+           /*if ($.cookie('autopopup') == null) {
+
+
+                $.cookie('autopopup', '7');
+            }*/
+
+            jQuery.noConflict();
+
+            $('#AutoStartModal').modal('show');
+
+            //----- CLOSE
+            $('.popup-close').on('click', function(e)  {
+                $('#auto-first-popup').fadeOut(350);
+
+                e.preventDefault();
             });
         });
     </script>

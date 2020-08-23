@@ -2,6 +2,7 @@
 @section('content')
     <main class="main">
 
+
         <section>
 
             <style>
@@ -123,4 +124,7 @@
             @endforeach
         </div>
     </main>
+
+
+    @include('frontView.popup.auto-first')
 @endsection
