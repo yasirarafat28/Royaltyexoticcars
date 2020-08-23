@@ -278,7 +278,7 @@
                     <div class="nav__brand navbar-brand"><a href="/" id="Header-Brand-Link" aria-current="page"
                                                class="brand w-nav-brand w--current">
                             <div class="brand__icon"></div>
-                            <div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
+                            <div style="font-size:20px;" class="brand__text text-uppercase d-none d-sm-block">Rental Exotic Beasts</div>
                         </a>
                     </div>
 
@@ -287,7 +287,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="nav__links navbar-nav mr-auto">
+                        <ul class="nav__links navbar-nav">
                             <li class="nav-item">
                                 <div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 
@@ -633,6 +633,7 @@
 
                                 <a href="/login" class="user nav__link w-inline-block" style="font-size: 20px;">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                    <span style="font-size: 14px;font-weight: 600;">Account</span>
                                 </a>
                             </li>
                         </ul>
