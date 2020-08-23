@@ -40,6 +40,7 @@ class SliderController extends Controller
         $this->validate($request,[
             'status'=>'required',
             'title'=>'required',
+            'type'=>'required',
             'photo'=>'required|mimes:jpg,jpeg,png,bmp',
         ]);
 
@@ -47,6 +48,7 @@ class SliderController extends Controller
         $slider->title = $request->title;
         $slider->content = $request->description;
         $slider->status = $request->status;
+        $slider->type = $request->type;
 
         if ($request->hasFile('photo')){
 
@@ -100,12 +102,14 @@ class SliderController extends Controller
         $this->validate($request,[
             'status'=>'required',
             'title'=>'required',
+            'type'=>'required',
         ]);
 
         $slider = Slider::find($id);
         $slider->title = $request->title;
         $slider->content = $request->description;
         $slider->status = $request->status;
+        $slider->type = $request->type;
 
         if ($request->hasFile('photo')){
 

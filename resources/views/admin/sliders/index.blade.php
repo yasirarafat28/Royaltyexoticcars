@@ -47,14 +47,13 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Create Schedule</h4>
+                                    <h4 class="modal-title">Create Sliders</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span></button>
                                 </div>
                                 <div class="modal-body">
                                     <form method="POST" action="{{ url('admin/slider') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                         {!! csrf_field() !!}
-
 
 
                                         <div class="form-group ">
@@ -70,6 +69,13 @@
                                         <div class="form-group ">
                                             <label for="name" class="control-label">Photo</label>
                                             <input class="form-control" name="photo" placeholder="Title" type="file" id="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="control-label">Type</label>
+                                            <select class="form-control" name="type">
+                                                <option>rental</option>
+                                                <option>shop</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="phone" class="control-label">Status</label>
