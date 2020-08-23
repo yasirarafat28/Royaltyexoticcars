@@ -1621,7 +1621,7 @@ function forgotpassword(){
          var owl = $("#owl-demo");
          owl.owlCarousel({
             autoPlay: 4000,
-           items : 5,
+           items : 4,
            itemsDesktop : [1200,4],
            itemsDesktopSmall : [991,3],
            itemsTablet: [767,2],
@@ -1633,7 +1633,7 @@ function forgotpassword(){
          var owl = $("#owl-demo2");
          owl.owlCarousel({
             autoPlay: 4000,
-           items : 5,
+           items : 4,
            itemsDesktop : [1200,4],
            itemsDesktopSmall : [991,3],
            itemsTablet: [767,2],
@@ -1661,7 +1661,7 @@ function forgotpassword(){
          var owl = $("#owl-demo1");
          owl.owlCarousel({
             autoPlay: 4000,
-           items : 5,
+           items : 4,
            itemsDesktop : [1200,4],
            itemsDesktopSmall : [991,3],
            itemsTablet: [767,2],
