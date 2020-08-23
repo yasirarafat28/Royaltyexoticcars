@@ -74,12 +74,12 @@
           <ul class="list-group">
         
             @foreach($faqs as $faq)
-            <div class="toggle">
+            <div class="toggle" style="padding:10px; border-bottom: 1px solid lightgrey;">
 	            <div class="toggle-title">
-		            <h4>
+		            <h5>
 		              <i></i>
 		                <span class="title-name">{{ $faq->question }}</span>
-		            </h4>
+		            </h5>
 	            </div>
 	            <div class="toggle-inner">
 		            <p>{{ $faq->descripton }}</p>
