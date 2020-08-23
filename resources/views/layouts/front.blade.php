@@ -868,7 +868,7 @@
             backgroundColor: '#666',
             fontSize: '18px',
             fontColor: 'white',
-            btnBackgroundColor: '#f2a920',
+            btnBackgroundColor: 'red',
             btnFontSize: '18px',
             btnFontColor: 'white',
             linkFontColor: '#ffff00'
