@@ -43,7 +43,7 @@
 @section('content')
   <div class="rental__hero">
 
-      <div class="container mt-4">
+      <div class="container mt-5">
           @include('frontView.partials.vehicle-booking')
 
           </div>
@@ -54,6 +54,8 @@
 
 @endsection
 @section('script')
+    <script src="/frontEnd/d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d5419.js?site=5a10aaa4d85f4b0001a53292"
+            type="text/javascript" ></script>
 
     <script src="/assets/plugins/fullcalendar/fullcalendarscripts.bundle.js"></script><!--/ calender javascripts -->
 

@@ -118,7 +118,7 @@
     @endphp
 <div class="rental__hero">
 
-    <div class="container mt-4">
+    <div class="container mt-5">
     	@include('frontView.partials.vehicle-checkout')
 
 
