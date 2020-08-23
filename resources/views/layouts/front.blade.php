@@ -211,7 +211,7 @@
 			}
 		} */
         body {
-            padding-top: 3em;
+            padding-top: 6em;
         }
 
         .nav__link{
