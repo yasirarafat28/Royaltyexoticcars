@@ -4,6 +4,10 @@
 @stop
 @section('content')
 <style type="text/css">
+   .preview-image{ 
+
+      height: 200px;
+   }
    input.my-checkbox:checked{
       background-color:{{site_color()}} !important;
    }
