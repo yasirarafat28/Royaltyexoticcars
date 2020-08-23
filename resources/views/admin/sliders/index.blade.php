@@ -111,6 +111,7 @@
                         <th>Photo</th>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Type</th>
                         <th>Status</th>
                         <th>Timestamp</th>
                         <th  class="action-td" >Action</th>
@@ -175,6 +176,14 @@
                                                             <label for="name" class="control-label">Description</label>
                                                             <textarea name="description"  class="form-control">{{$item->content}}</textarea>
 
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="phone" class="control-label">Type</label>
+                                                            <select class="form-control" name="type">
+                                                                <option>Select an option</option>
+                                                                <option {{$item->type=='rental'?'selected':''}}>rental</option>
+                                                                <option {{$item->type=='shop'?'selected':''}}>shop</option>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="phone" class="control-label">Status</label>
