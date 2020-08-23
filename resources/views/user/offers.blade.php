@@ -78,15 +78,17 @@
                                                  </div>
                       @endif
                   <div class="img-background" >
+            
 
                        <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->id}}')">
                               Quick View
-                           </button>
+                           </button> 
                         </div>
                      </figure>
+   
                      </a>
                      <div class="img-text">
                         <label class="fancy-checkbox">

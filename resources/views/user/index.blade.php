@@ -490,7 +490,7 @@
          <footer>
              <!-- Footer top -->
              <div class="container footer_top">
-                 <div class="row"><div class="col-md-3">
+                 <div class="row"><div class="col-md-4">
                          <div class="footer_item">
                              <h4>Explore link</h4>
                              <hr>
@@ -503,24 +503,8 @@
                                  </li></ul>
                          </div>
                      </div>
-                     <div class="col-md-3">
-                         <div class="footer_item">
-                             <h4>Rentals</h4>
-                             <hr>
-                             <ul class="list-unstyled footer_menu">
-
-                                 @foreach($categories??array(  ) as $category)
-
-                                     <li>
-                                         <a href="/vehicles?category={{ $category->slug }}"><span class="fa fa-play"></span>{{ $category->name }}</a>
-                                     </li>
-
-                                 @endforeach
-
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="col-md-3">
+                     
+                     <div class="col-md-4">
                          <div class="footer_item">
                              <h4>Social</h4>
                              <hr>
@@ -534,7 +518,7 @@
                          </div>
                      </div>
 
-                     <div class="col-md-3">
+                     <div class="col-md-4">
                          <div class="footer_item">
                              <h4>Local</h4>
                              <hr>

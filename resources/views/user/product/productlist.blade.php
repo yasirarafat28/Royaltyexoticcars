@@ -202,6 +202,7 @@
                      </div>
                     @endif
                      <div class="pro-img">
+                  
                           <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($p->id)}}"> <img src="{{asset('upload/product').'/'.$p->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
@@ -210,6 +211,7 @@
                            </button>
                         </div>
                      </figure>
+                     
 
                         <div class="img-text">
                            <label class="fancy-checkbox">

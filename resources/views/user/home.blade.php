@@ -3,70 +3,7 @@
 {{__('messages.site_name')}}
 @stop
 @section('content')
-@if(count($bestoffer)!=0)
-<div class="container">
-   <div id="demo" class="carousel slide off-slide" data-ride="carousel">
-      <ul class="carousel-indicators">
-         <?php $i=0;?>
-         @foreach($bestoffer as $fd)
-         @if($i==0)
-         <?php $class="active";?>
-         @else
-         <?php $class="";?>
-         @endif
-         <li data-target="#demo" data-slide-to="{{$i}}" class="{{$class}}"></li>
-         <?php $i++;?>
-         @endforeach
-      </ul>
-      <div class="carousel-inner">
-         <?php $i=0;?>
-         @foreach($bestoffer as $fd)
-         <?php
-            $active="";
-            if($i==0){
-               $active="active";
-            }
-            $i++;
-            ?>
-         @if($fd->offer_type==1)
-         <div class="carousel-item {{$active}}">
-            <div class="offer-img" style="background-image:url('{{asset('upload/offer/image').'/'.$fd->banner}}')">
-               <div class="off-text">
-                     <div class="real-text">
-                        <h1 class="animated slideInDown" style="color: <?= Session::get('site_color') ?> !important">{{$fd->title}}</h1>
-                        <h2 class="animated fadeInLeft">{{$fd->main_title}}</h2>
-                        @if($fd->is_product=='1')
-                        <p class="animated slideInDown">{{__('messages.home_note_1')}} {{$fd->fixed}}% {{__('messages.home_note_2')}}</p>
-                        @endif
-                        @if($fd->is_product=='2')
-                        <p class="animated fadeInRight">{{__('messages.home_note_3')}}{{$currency}}{{$fd->new_price}}</p>
-                        @endif
-                        @if($fd->is_product=='1')
-                        <a href="{{url('productslist').'/'.$fd->category_id.'/0/0'.'/'.$fd->fixed}}" style="background: <?= Session::get('site_color') ?> !important">
-                        {{__('messages.shop_now')}}
-                        </a>
-                        @endif
-                        @if($fd->is_product=='2')
-                        <a href="{{url('viewproduct').'/'.base64_encode($fd->product_id)}}" style="background: <?= Session::get('site_color') ?> !important">
-                        {{__('messages.shop_now')}}
-                        </a>
-                        @endif
-                     </div>
-               </div>
-            </div>
-         </div>
-         @endif
-         @endforeach
-      </div>
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-      </a>
-   </div>
-</div>
-@endif
+
 <div class="container">
    <div class="row nor-b">
       @foreach($offerdata as $fd)
@@ -202,7 +139,7 @@
                   <div class="home-bg">
 
                   <div class="img-background">
-
+            
                      <figure class="preview-image">
 
                         <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
@@ -214,6 +151,7 @@
                         </div>
 
                      </figure>
+               
 
                      <div class="img-text">
 
@@ -327,6 +265,7 @@
                           @endif
                   <div class="home-bg">
                   <div class="img-background" >
+               
                      <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
@@ -335,6 +274,7 @@
                            </button>
                         </div>
                      </figure>
+                  
                      <div class="img-text">
                         <label class="fancy-checkbox">
                              @if(Auth::id()!="")
