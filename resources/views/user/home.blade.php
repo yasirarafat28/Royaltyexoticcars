@@ -60,6 +60,11 @@
                 margin-bottom: auto;
             }
 
+            .lead{
+                color: #000;
+                font-weight: 600 !important;
+            }
+
 
 
 
