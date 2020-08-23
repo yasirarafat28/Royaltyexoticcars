@@ -12,6 +12,11 @@
     <section>
 
         <style>
+
+            .preview-image{
+
+               height: 200px;
+            }
             .carousel-item {
                 height: 400px;
                 min-height: 350px;
@@ -182,14 +187,14 @@
                   <div class="home-bg">
                   <div class="img-background" >
 
-                     <figure class="preview-image">
+                     <figure class="preview-image"> 
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
                            <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
                               {{__('messages.Quick View')}}
                            </button>
                         </div>
-                     </figure>
+                     </figure> 
 
                      <div class="img-text">
                         <label class="fancy-checkbox">
