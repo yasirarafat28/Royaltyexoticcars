@@ -360,8 +360,8 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell new_style">25+</div>
-                                                        <div class="table__cell new_style">21+</div>
+                                                        <div class="table__cell new_style">{{$car_requirement->local_age}}+</div>
+                                                        <div class="table__cell new_style">{{$moto_requirement->local_age}}+</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -379,14 +379,12 @@
                                                             </nav>
                                                         </div>
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">United States<br />Drivers License</div>
-                                                            <div class="table__cell table__cell--intl">International<br />Drivers
-                                                                License</div>
+                                                            <div class="table__cell">{{$car_requirement->local_driving_licence}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$car_requirement->international_driving_licence}}</div>
                                                         </div>
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">United States<br />Drivers License</div>
-                                                            <div class="table__cell table__cell--intl">International<br />Drivers
-                                                                License</div>
+                                                            <div class="table__cell">{{$moto_requirement->local_driving_licence}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$moto_requirement->international_driving_licence}}</div>
                                                         </div>
                                                     </div>
                                                     <div class="table__row">
@@ -405,7 +403,7 @@
                                                             <div data-delay="0" class="table__cell w-dropdown">
                                                                 <div id="Requirements-Insurance-Exotics-US-Tooltip"
                                                                      class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">Comp/Collision<br />100/300/50 ⓘ</div>
+                                                                    <div class="text-block">{{$car_requirement->local_insurance}}</div>
                                                                 </div>
                                                                 <nav class="table__dropdown--pane w-dropdown-list">
                                                                     <div><span>Each driver is required to provide their own car
@@ -422,7 +420,7 @@
                                                             <div data-delay="0" class="table__cell table__cell--intl w-dropdown">
                                                                 <div id="Requirements-Insurance-Exotics-Intl-Tooltip"
                                                                      class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">$199<br />Royalty Insurance ⓘ</div>
+                                                                    <div class="text-block">{{$car_requirement->international_insurance}}</div>
                                                                 </div>
                                                                 <nav class="table__dropdown--pane w-dropdown-list">
                                                                     <div><span>Covers any bodily injury claim up to $1,000,000 and
@@ -435,7 +433,7 @@
                                                         <div data-delay="0" class="table__cell w-dropdown">
                                                             <div id="Requirements-Insurance-Cycles-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">$29<br />Royalty Insurance ⓘ</div>
+                                                                <div class="text-block">{{$moto_requirement->local_insurance}}</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div><span>Each driver is required to purchase the Royalty Insurance
