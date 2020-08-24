@@ -68,18 +68,18 @@
 
                                         <div class="form-group ">
                                             <label for="name" class="control-label">Photo</label>
-                                            <input class="form-control" name="photo" placeholder="Title" type="file" id="name">
+                                            <input class="form-control" required name="photo" placeholder="Title" type="file" id="name">
                                         </div>
                                         <div class="form-group">
                                             <label for="phone" class="control-label">Type</label>
-                                            <select class="form-control" name="type">
+                                            <select class="form-control" name="type" required>
                                                 <option>rental</option>
                                                 <option>shop</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="phone" class="control-label">Status</label>
-                                            <select class="form-control" name="status">
+                                            <select class="form-control" name="status" required>
                                                 <option>Select an option</option>
                                                 <option value="active"  >Active</option>
                                                 <option value="inactive"  >Inactive</option>
@@ -180,7 +180,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="phone" class="control-label">Type</label>
-                                                            <select class="form-control" name="type">
+                                                            <select class="form-control" name="type" required>
                                                                 <option>Select an option</option>
                                                                 <option {{$item->type=='rental'?'selected':''}}>rental</option>
                                                                 <option {{$item->type=='shop'?'selected':''}}>shop</option>
@@ -188,7 +188,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="phone" class="control-label">Status</label>
-                                                            <select class="form-control" name="status">
+                                                            <select class="form-control" name="status" required>
                                                                 <option>Select an option</option>
                                                                 <option {{$item->status=='active'?'selected':''}} value="active"  >Active</option>
                                                                 <option {{$item->status=='inactive'?'selected':''}} value="inactive"  >Inactive</option>
