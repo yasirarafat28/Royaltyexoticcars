@@ -103,7 +103,7 @@
                 <form action="{{url('/newsletter')}}" method="POST" id="newsletterForm">
                     {{csrf_field()}}
                     <div class="input-group ">
-                        <input type="email" class="form-control border-danger" name="newsletter" placeholder="Enter your email to get exclusive deals">
+                        <input type="email" required class="form-control border-danger" name="newsletter" placeholder="Enter your email to get exclusive deals">
 
                         <div class="input-group-append bg-red ">
                             <a type="submit" onclick="$('#newsletterForm').submit()" href="#" class="input-group-text text-white border-0 text-uppercase font-weight-bold" style="background-color: red">
