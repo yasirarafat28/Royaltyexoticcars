@@ -47,7 +47,7 @@
 @section('content')
 <div class="inner_page">
 
-    <div class="container mt-5">
+    <div class="container " style="margin-top: 10rem !important;">
         <div class="card col-md-10 col-sm-12">
             <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
                 <i class="checkmark">✓</i>
