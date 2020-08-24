@@ -403,7 +403,7 @@
                                                             <div data-delay="0" class="table__cell w-dropdown">
                                                                 <div id="Requirements-Insurance-Exotics-US-Tooltip"
                                                                      class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">{{$car_requirement->local_insurance}}</div>
+                                                                    <div class="text-block">${{$car_requirement->local_insurance}}</div>
                                                                 </div>
                                                                 <nav class="table__dropdown--pane w-dropdown-list">
                                                                     <div><span>Each driver is required to provide their own car
@@ -420,7 +420,7 @@
                                                             <div data-delay="0" class="table__cell table__cell--intl w-dropdown">
                                                                 <div id="Requirements-Insurance-Exotics-Intl-Tooltip"
                                                                      class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">{{$car_requirement->international_insurance}}</div>
+                                                                    <div class="text-block">${{$car_requirement->international_insurance}}</div>
                                                                 </div>
                                                                 <nav class="table__dropdown--pane w-dropdown-list">
                                                                     <div><span>Covers any bodily injury claim up to $1,000,000 and
@@ -433,7 +433,7 @@
                                                         <div data-delay="0" class="table__cell w-dropdown">
                                                             <div id="Requirements-Insurance-Cycles-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">{{$moto_requirement->local_insurance}}</div>
+                                                                <div class="text-block">${{$moto_requirement->local_insurance}}</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div><span>Each driver is required to purchase the Royalty Insurance
@@ -460,8 +460,8 @@
                                                             </nav>
                                                         </div>
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">{{$car_requirement->local_liability_insurance}}</div>
-                                                            <div class="table__cell table__cell--intl">{{$car_requirement->international_liability_insurance}}</div>
+                                                            <div class="table__cell">${{$car_requirement->local_liability_insurance}}</div>
+                                                            <div class="table__cell table__cell--intl">${{$car_requirement->international_liability_insurance}}</div>
                                                         </div>
                                                         <div class="table__cell">--</div>
                                                     </div>
@@ -483,7 +483,7 @@
                                                         <div data-delay="0" class="table__cell w-dropdown">
                                                             <div id="Requirements-Damage-Waiver-Exotics-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">$99 ⓘ</div>
+                                                                <div class="text-block">${{$car_requirement->local_property_damage_waiver}} ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div>Protects against any damages up to a $3,500 (based on the
@@ -496,7 +496,7 @@
                                                         <div data-delay="0" class="table__cell w-dropdown">
                                                             <div id="Requirements-Damage-Waiver-Cycles-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">$49 ⓘ</div>
+                                                                <div class="text-block">${{$moto_requirement->local_property_damage_waiver}} ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div>Protects against any damages up to a $2,500 (based on the
@@ -522,8 +522,8 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">$49</div>
-                                                        <div class="table__cell">$35</div>
+                                                        <div class="table__cell">${{$car_requirement->local_tire_protection}}</div>
+                                                        <div class="table__cell">${{$moto_requirement->local_tire_protection}}</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -541,8 +541,8 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">$99</div>
-                                                        <div class="table__cell">$49</div>
+                                                        <div class="table__cell">${{$car_requirement->local_mechanical_breakdown_coverage}}</div>
+                                                        <div class="table__cell">${{$moto_requirement->local_mechanical_breakdown_coverage}}</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -559,8 +559,8 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">$99</div>
-                                                        <div class="table__cell">$49</div>
+                                                        <div class="table__cell">${{$car_requirement->local_fuel_credit}}</div>
+                                                        <div class="table__cell">${{$moto_requirement->local_fuel_credit}}</div>
                                                     </div>
                                                 </div>
                                             </div>
