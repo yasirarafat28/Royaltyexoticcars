@@ -55,8 +55,14 @@
                             @if($schedule->four_hour=='yes' && $schedule->vehicle->four_hour=='yes')
                                 <option value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
                             @endif
+                            @if($schedule->six_hour=='yes' && $schedule->vehicle->six_hour=='yes')
+                                <option value="six_hour" data-cost="{{$vehicle->six_hour_discount?$vehicle->six_hour_discount:$vehicle->six_hour_price}}" >6Hrs Rental</option>
+                            @endif
                             @if($schedule->eight_hour=='yes' && $schedule->vehicle->eight_hour=='yes')
                                 <option value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
+                            @endif
+                            @if($schedule->twelve_hour=='yes' && $schedule->vehicle->twelve_hour=='yes')
+                                <option value="twelve_hour" data-cost="{{$vehicle->twelve_hour_discount?$vehicle->twelve_hour_discount:$vehicle->twelve_hour_price}}" >12Hrs Rental</option>
                             @endif
                             @if($schedule->full_day=='yes' && $schedule->vehicle->full_day=='yes')
                                 <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
