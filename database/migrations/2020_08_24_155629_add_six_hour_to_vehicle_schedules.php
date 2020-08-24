@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSixHourAndTwelveHourToVehicleSchedule extends Migration
+class AddSixHourToVehicleSchedules extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddSixHourAndTwelveHourToVehicleSchedule extends Migration
     public function up()
     {
         Schema::table('vehicle_schedules', function (Blueprint $table) {
-            $table->text('six_hour')->nullable();
-            $table->text('twelve_hour')->nullable();
+            $table->enum('six_hour',['yes','no'])->default('yes');
+            $table->enum('twelve_hour',['yes','no'])->default('yes');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSixHourAndTwelveHourToVehicleSchedule extends Migration
      */
     public function down()
     {
-        Schema::table('vehicle_schedule', function (Blueprint $table) {
+        Schema::table('vehicle_schedules', function (Blueprint $table) {
             //
         });
     }
