@@ -172,6 +172,26 @@
 
                             <div class="row">
                                 <div class="form-group col-md-4" >
+                                    <label for="name" class="control-label mb-1">6 hours price<span class="reqfield">*</span>
+                                    </label>
+                                    <select name="six_hour" id="" class="form-control">
+                                        <option value="yes" >Yes</option>
+                                        <option value="no" >No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="name" class="control-label mb-1">Selling Price<span class="reqfield">*</span>
+                                    </label>
+                                    <input name="six_hour_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="selling price">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="name" class="control-label mb-1">Special Price</label>
+                                    <input name="six_hour_discount" type="number" class="form-control" aria-invalid="false" placeholder="special price">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-4" >
                                     <label for="name" class="control-label mb-1">8 hours price<span class="reqfield">*</span>
                                     </label>
                                     <select name="eight_hour" id="" class="form-control">
@@ -187,6 +207,26 @@
                                 <div class="form-group col-md-4">
                                     <label for="name" class="control-label mb-1">{{__('messages.spe_price')}}</label>
                                     <input name="eight_hour_discount" type="number" class="form-control" aria-invalid="false" placeholder="{{__('messages.spe_price')}}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-4" >
+                                    <label for="name" class="control-label mb-1">12 hours price<span class="reqfield">*</span>
+                                    </label>
+                                    <select name="twelve_hour" id="" class="form-control">
+                                        <option value="yes" >Yes</option>
+                                        <option value="no" >No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="name" class="control-label mb-1">Selling Price<span class="reqfield">*</span>
+                                    </label>
+                                    <input name="twelve_hour_price" type="number" step="any" class="form-control" aria-required="true" aria-invalid="false" placeholder="selling price">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="name" class="control-label mb-1">Special Price</label>
+                                    <input name="twelve_hour_discount" type="number" class="form-control" aria-invalid="false" placeholder="special price">
                                 </div>
                             </div>
 
