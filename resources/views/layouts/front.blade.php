@@ -199,6 +199,12 @@
                 width: 95vw !important;
             }
         }
+        @media screen and (max-width: 575px) {
+            .mobile-nopadding{
+                padding-left: 0px !important;
+                padding-right: 0px !important;;
+            }
+        }
 
         .w-dropdown, .w-dropdown-btn, .w-dropdown-link, .w-dropdown-toggle{
             margin-left: unset;
