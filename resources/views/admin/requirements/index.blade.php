@@ -13,7 +13,7 @@
 
         Requirements
 
-      </div> 
+      </div>
 
       <div class="card-body">
 
@@ -34,10 +34,10 @@
                 <td>#</td>
                 <td>type</td>
                 <td>local age</td>
-                
+
                 <td>international age</td>
                 <td>international driving licence</td>
-                
+
                 <td>international fuel credit</td>
                 <td>Action</td>
             </tr>
@@ -45,23 +45,23 @@
       <tbody>
 
 
-      @foreach($requires as $require) 
+      @foreach($requires as $require)
 
       <tr>
       <td>{{$loop->iteration}}</td>
       <td>{{$require->type}}</td>
       <td>{{$require->local_age}}</td>
-      
-      <td>{{$require->international_age}}</td> 
+
+      <td>{{$require->international_age}}</td>
       <td>{{$require->international_driving_licence}}</td>
-      
+
       <td>{{$require->international_fuel_credit}}</td>
 
       <td>
           <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
           <a href="/admin/vehicle_requirements/{{$require->id}}" class="btn btn-success"><i class="fa fa-eye f-s-25"></i> Show</a>
 
-            {!! Form::open([
+            <!--{!! Form::open([
                                                'method'=>'DELETE',
                                                'url' => ['/admin/vehicle_requirements', $require->id],
                                                'style' => 'display:inline'
@@ -73,6 +73,8 @@
                                     'data-type'=>'confirm',
                                  )) !!}
                             {!! Form::close() !!}
+
+          -->
 
           </td>
       </tr>

@@ -14,6 +14,7 @@
 
           <p>Each of our vehicles is thoroughly cleaned between every rental and backed with the Complete Clean Pledge. This includes washing, vacuuming, general wipe down, and sanitizing with a disinfectant that meets leading health authority requirements, with particular attention to more than 20-plus high-touch points including:</p>
 
+
           <p>1- Key / key fob<br>
             2-  Steering wheel<br>
             3-  Steering column<br>
