@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Model\VehicleRequirement;
 
 class vehicle_requirementsController extends Controller
 {
@@ -14,7 +16,7 @@ class vehicle_requirementsController extends Controller
     public function index()
     {
         $require = VehicleRequirement::all();
-        return view('admin.faq.index')->with('require', $require);
+        return view('admin.requirements.index')->with('requires', $require);
     }
 
     /**
@@ -46,7 +48,8 @@ class vehicle_requirementsController extends Controller
      */
     public function show($id)
     {
-        //
+        $require = VehicleRequirement::find($id);
+        return view('admin.requirements.show')->with('require', $require); 
     }
 
     /**
@@ -58,7 +61,7 @@ class vehicle_requirementsController extends Controller
     public function edit($id)
     {
         $require = VehicleRequirement::find($id);
-        return view('admin.requirements.update')->with('require', $require);
+        return view('admin.requirements.update')->with('require', $require); 
     }
 
     /**
@@ -70,9 +73,53 @@ class vehicle_requirementsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $this->validate(request(), [
 
+            'type' => 'required',
+            'local_driving_license' => 'required',
+            'local_insurance' => 'required',
+            'local_liability_insurance' => 'required',
+            'local_property_damage_waiver' => 'required',
+            'local_tire_protection' => 'required',
+            'local_mechanical_breakdown_coverage' => 'required',
+            'local_fuel_credit' => 'required',
+            'international_age' => 'required',
+            'internationl_driving_license' => 'required',
+            'international_insurance' => 'required',
+            'international_full_coverage_insurance_d1' => 'required',
+            'international_full_coverage_insurance_d2' => 'required',
+            'international_property_damage_waiver' => 'required',
+            'international_tire_protection' => 'required',
+            'international_mechanical_breakdown_coverage' => 'required',
+            'international_fuel_credit' => 'required'
+
+        ]);
+
+        $require = VehicleRequirement::find($id);
+
+        $require->type = $request->type;
+        $require->local_driving_license = $request->local_driving_license;
+        $require->local_insurance = $request->local_insurance;
+        $require->local_liability_insurance = $request->local_liability_insurance;
+        $require->local_property_damage_waiver = $request->local_property_damage_waiver;
+        $require->local_tire_protection = $request->local_tire_protection;
+        $require->local_mechanical_breakdown_coverage = $request->local_mechanical_breakdown_coverage;
+        $require->local_fuel_credit = $request->local_fuel_credit;
+        $require->international_age = $request->international_age;
+        $require->internationl_driving_license = $request->internationl_driving_license;
+        $require->international_insurance = $request->international_insurance;
+        $require->international_full_coverage_insurance_d1 = $request->international_full_coverage_insurance_d1;
+        $require->international_full_coverage_insurance_d2 = $request->international_full_coverage_insurance_d2;
+        $require->international_property_damage_waiver = $request->international_property_damage_waiver;
+        $require->international_tire_protection = $request->international_tire_protection;
+        $require->international_mechanical_breakdown_coverage = $request->international_mechanical_breakdown_coverage;
+        $require->international_fuel_credit = $request->international_fuel_credit;
+        
+
+        $require->save();
+        return redirect('admin/vehicle_requirements')->withSuccess('Requirements updated successfully!');
+    }
+ 
     /**
      * Remove the specified resource from storage.
      *
@@ -81,6 +128,7 @@ class vehicle_requirementsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $require = VehicleRequirement::destroy($id);
+        return back()->withSuccess('FAQ removed successfully!');
     }
 }

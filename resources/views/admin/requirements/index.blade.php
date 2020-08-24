@@ -56,7 +56,7 @@
       <tbody>
 
 
-      @foreach($require as $require)
+      @foreach($requires as $require) 
 
       <tr>
       <td>{{$loop->iteration}}</td>
@@ -68,7 +68,7 @@
       <td>{{$require->local_tire_protection}}</td>
       <td>{{$require->local_mechanical_breakdown_coverage}}</td>
       <td>{{$require->local_fuel_credit}}</td>
-      <td>{{$require->international_age}}</td>
+      <td>{{$require->international_age}}</td> 
       <td>{{$require->internationl_driving_license}}</td>
       <td>{{$require->international_insurance}}</td>
       <td>{{$require->international_full_coverage_insurance_d1}}</td>
@@ -79,7 +79,8 @@
       <td>{{$require->international_fuel_credit}}</td>
 
       <td>
-          <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
+          <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Show</a>
+          <a href="/admin/vehicle_requirements/{{$require->id}}" class="btn btn-success"><i class="fa fa-eye f-s-25"></i> Edit</a>
 
             {!! Form::open([
                                                'method'=>'DELETE',

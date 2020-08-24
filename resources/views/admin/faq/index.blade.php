@@ -44,7 +44,7 @@
       <tbody>
 
 
-      @foreach($faqs as $faq)
+      @foreach($faqs as $faq) 
 
       <tr>
       <td>{{$loop->iteration}}</td>
