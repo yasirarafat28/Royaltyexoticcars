@@ -341,8 +341,8 @@
                                                         <div
                                                             class="table__cell table__cell--dimension table__cell--dimension-header">
                                                         </div>
-                                                        <div class="table__cell">Exotic<br />Cars &amp; SUVs</div>
-                                                        <div class="table__cell">Auto &amp; Moto<br />Cycles</div>
+                                                        <div class="table__cell">Cars &amp; SUVs</div>
+                                                        <div class="table__cell">Auto &amp; Moto</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
