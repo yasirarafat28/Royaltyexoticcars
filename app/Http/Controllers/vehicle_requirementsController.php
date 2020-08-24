@@ -13,7 +13,8 @@ class vehicle_requirementsController extends Controller
      */
     public function index()
     {
-        
+        $require = VehicleRequirement::all();
+        return view('admin.faq.index')->with('require', $require);
     }
 
     /**
@@ -56,7 +57,8 @@ class vehicle_requirementsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $require = VehicleRequirement::find($id);
+        return view('admin.requirements.update')->with('require', $require);
     }
 
     /**

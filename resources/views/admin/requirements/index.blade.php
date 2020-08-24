@@ -7,17 +7,13 @@
 
     <h1 class="text-center my-5">Vehicle Requirements</h1>
 
-
-
     <div class="card card-default">
 
       <div class="card-header">
 
         Requirements
 
-        <a href="{{ url('admin/faq/create') }}" class="btn btn-primary">Create FAQ</a>
-
-      </div>
+      </div> 
 
       <div class="card-body">
 
@@ -60,7 +56,7 @@
       <tbody>
 
 
-      @foreach($requires as $require)
+      @foreach($require as $require)
 
       <tr>
       <td>{{$loop->iteration}}</td>
@@ -83,11 +79,11 @@
       <td>{{$require->international_fuel_credit}}</td>
 
       <td>
-          <a href="/admin/faq/{{$faq->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
+          <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
 
             {!! Form::open([
                                                'method'=>'DELETE',
-                                               'url' => ['/admin/faq', $faq->id],
+                                               'url' => ['/admin/vehicle_requirements', $require->id],
                                                'style' => 'display:inline'
                                             ]) !!}
                             {!! Form::button('<i class="fa fa-trash f-s-25"></i> Delete', array(
