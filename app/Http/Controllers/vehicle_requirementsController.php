@@ -76,7 +76,8 @@ class vehicle_requirementsController extends Controller
         $this->validate(request(), [
 
             'type' => 'required',
-            'local_driving_license' => 'required',
+            'local_age' => 'required',
+            'local_driving_licence' => 'required',
             'local_insurance' => 'required',
             'local_liability_insurance' => 'required',
             'local_property_damage_waiver' => 'required',
@@ -84,7 +85,7 @@ class vehicle_requirementsController extends Controller
             'local_mechanical_breakdown_coverage' => 'required',
             'local_fuel_credit' => 'required',
             'international_age' => 'required',
-            'internationl_driving_license' => 'required',
+            'international_driving_licence' => 'required',
             'international_insurance' => 'required',
             'international_full_coverage_insurance_d1' => 'required',
             'international_full_coverage_insurance_d2' => 'required',
@@ -98,7 +99,8 @@ class vehicle_requirementsController extends Controller
         $require = VehicleRequirement::find($id);
 
         $require->type = $request->type;
-        $require->local_driving_license = $request->local_driving_license;
+        $require->local_age = $request->local_age;
+        $require->local_driving_licence = $request->local_driving_licence;
         $require->local_insurance = $request->local_insurance;
         $require->local_liability_insurance = $request->local_liability_insurance;
         $require->local_property_damage_waiver = $request->local_property_damage_waiver;
@@ -106,7 +108,7 @@ class vehicle_requirementsController extends Controller
         $require->local_mechanical_breakdown_coverage = $request->local_mechanical_breakdown_coverage;
         $require->local_fuel_credit = $request->local_fuel_credit;
         $require->international_age = $request->international_age;
-        $require->internationl_driving_license = $request->internationl_driving_license;
+        $require->international_driving_licence = $request->international_driving_licence;
         $require->international_insurance = $request->international_insurance;
         $require->international_full_coverage_insurance_d1 = $request->international_full_coverage_insurance_d1;
         $require->international_full_coverage_insurance_d2 = $request->international_full_coverage_insurance_d2;

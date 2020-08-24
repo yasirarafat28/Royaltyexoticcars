@@ -54,6 +54,74 @@
                               <td>Type</td>
                               <td>{{$require->type}}</td>
                           </tr>
+                          <tr>
+                              <td>Local Age</td>
+                              <td>{{$require->local_age}}</td>
+                          </tr>
+                          <tr>
+                              <td>local driving license</td>
+                              <td>{{$require->local_driving_licence}}</td>
+                          </tr>
+                          <tr>
+                              <td>local insurance</td>
+                              <td>{{$require->local_insurance}}</td>
+                          </tr>
+                          <tr>
+                              <td>local liability insurance</td>
+                              <td>{{$require->local_liability_insurance}}</td>
+                          </tr>
+                          <tr>
+                              <td>local property damage waiver</td>
+                              <td>{{$require->local_property_damage_waiver}}</td>
+                          </tr>
+                          <tr>
+                              <td>local tire protection</td>
+                              <td>{{$require->local_tire_protection}}</td>
+                          </tr>
+                          <tr>
+                              <td>local mechanical breakdown coverage</td>
+                              <td>{{$require->local_mechanical_breakdown_coverage}}</td>
+                          </tr>
+                          <tr>
+                              <td>local fuel credit</td>
+                              <td>{{$require->local_fuel_credit}}</td>
+                          </tr>
+                          <tr>
+                              <td>international age</td>
+                              <td>{{$require->international_age}}</td>
+                          </tr>
+                          <tr>
+                              <td>internationl driving license</td>
+                              <td>{{$require->international_driving_licence}}</td>
+                          </tr>
+                          <tr>
+                              <td>international insurance</td>
+                              <td>{{$require->international_insurance}}</td>
+                          </tr>
+                          <tr>
+                              <td>international full coverage insurance_d1</td>
+                              <td>{{$require->international_full_coverage_insurance_d1}}</td>
+                          </tr>
+                          <tr>
+                              <td>international full coverage insurance d2</td>
+                              <td>{{$require->international_full_coverage_insurance_d2}}</td>
+                          </tr>
+                          <tr>
+                              <td>international property damage waiver</td>
+                              <td>{{$require->international_property_damage_waiver}}</td>
+                          </tr>
+                          <tr>
+                              <td>international tire protection</td>
+                              <td>{{$require->international_tire_protection}}</td>
+                          </tr>
+                          <tr>
+                              <td>international mechanical breakdown coverage</td>
+                              <td>{{$require->international_mechanical_breakdown_coverage}}</td>
+                          </tr>
+                          <tr>
+                              <td>international fuel credit</td>
+                              <td>{{$require->international_fuel_credit}}</td>
+                          </tr>
                       </tbody>
                   </table>
                   </div>

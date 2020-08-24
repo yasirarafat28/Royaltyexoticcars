@@ -55,8 +55,12 @@
                               <input class="form-control" name="type" type="text" value="{{$require->type}}">
                           </div>
                           <div class="form-group col-md-6">
+                              <label for="name" class="control-label">Local Age</label>
+                              <input class="form-control" name="local_age" type="text" value="{{$require->local_age}}">
+                          </div>
+                          <div class="form-group col-md-6">
                               <label for="name" class="control-label">local driving license</label>
-                              <input class="form-control" name="local_driving_license" type="text" value="{{$require->local_driving_license}}">
+                              <input class="form-control" name="local_driving_licence" type="text" value="{{$require->local_driving_licence}}">
                           </div>
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">local insurance</label>
@@ -88,7 +92,7 @@
                           </div>
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">internationl driving license</label>
-                              <input class="form-control" name="internationl_driving_license" type="text" value="{{$require->internationl_driving_license}}">
+                              <input class="form-control" name="international_driving_licence" type="text" value="{{$require->international_driving_licence}}">
                           </div>
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">international insurance</label>

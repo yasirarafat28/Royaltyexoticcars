@@ -33,23 +33,12 @@
             <tr>
                 <td>#</td>
                 <td>type</td>
-                <td>local_age</td>
-                <td>local_driving_license</td>
-                <td>local_insurance</td>
-                <td>local_liability_insurance</td>
-                <td>local_property_damage_waiver</td>
-                <td>local_tire_protection</td>
-                <td>local_mechanical_breakdown_coverage</td>
-                <td>local_fuel_credit</td>
-                <td>international_age</td>
-                <td>internationl_driving_license</td>
-                <td>international_insurance</td>
-                <td>international_full_coverage_insurance_d1</td>
-                <td>international_full_coverage_insurance_d2</td>
-                <td>international_property_damage_waiver</td>
-                <td>international_tire_protection</td>
-                <td>international_mechanical_breakdown_coverage</td>
-                <td>international_fuel_credit</td>
+                <td>local age</td>
+                
+                <td>international age</td>
+                <td>international driving licence</td>
+                
+                <td>international fuel credit</td>
                 <td>Action</td>
             </tr>
         </thead>
@@ -61,26 +50,16 @@
       <tr>
       <td>{{$loop->iteration}}</td>
       <td>{{$require->type}}</td>
-      <td>{{$require->local_driving_license}}</td>
-      <td>{{$require->local_insurance}}</td>
-      <td>{{$require->local_liability_insurance}}</td>
-      <td>{{$require->local_property_damage_waiver}}</td>
-      <td>{{$require->local_tire_protection}}</td>
-      <td>{{$require->local_mechanical_breakdown_coverage}}</td>
-      <td>{{$require->local_fuel_credit}}</td>
+      <td>{{$require->local_age}}</td>
+      
       <td>{{$require->international_age}}</td> 
-      <td>{{$require->internationl_driving_license}}</td>
-      <td>{{$require->international_insurance}}</td>
-      <td>{{$require->international_full_coverage_insurance_d1}}</td>
-      <td>{{$require->international_full_coverage_insurance_d2}}</td>
-      <td>{{$require->international_property_damage_waiver}}</td>
-      <td>{{$require->international_tire_protection}}</td>
-      <td>{{$require->international_mechanical_breakdown_coverage}}</td>
+      <td>{{$require->international_driving_licence}}</td>
+      
       <td>{{$require->international_fuel_credit}}</td>
 
       <td>
-          <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Show</a>
-          <a href="/admin/vehicle_requirements/{{$require->id}}" class="btn btn-success"><i class="fa fa-eye f-s-25"></i> Edit</a>
+          <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
+          <a href="/admin/vehicle_requirements/{{$require->id}}" class="btn btn-success"><i class="fa fa-eye f-s-25"></i> Show</a>
 
             {!! Form::open([
                                                'method'=>'DELETE',
