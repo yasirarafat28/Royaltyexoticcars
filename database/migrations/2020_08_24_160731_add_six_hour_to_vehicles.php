@@ -15,11 +15,11 @@ class AddSixHourToVehicles extends Migration
     {
         Schema::table('vehicles', function (Blueprint $table) {
             $table->enum('six_hour',['yes','no'])->default('no');
-            $table->string('six_hour_price');
-            $table->string('six_hour_discount');
+            $table->integer('six_hour_price');
+            $table->integer('six_hour_discount');
             $table->enum('twelve_hour',['yes','no'])->default('no');
-            $table->string('twelve_hour_price');
-            $table->string('twelve_hour_discount');
+            $table->integer('twelve_hour_price');
+            $table->integer('twelve_hour_discount');
         });
     }
 
