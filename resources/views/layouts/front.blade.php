@@ -627,8 +627,8 @@
                                                        class="nav__about--link w-dropdown-link">Terms & Conditions</a>
                                                     <a href="/privacy" id="Nav-Privacy-Link"
                                                        class="nav__about--link w-dropdown-link">Privacy</a>
-                                                    <a href="/covid" id="Nav-Privacy-Link"
-                                                       class="nav__about--link w-dropdown-link">Covid-19</a>
+                                                    <a href="/covid-19-update" id="Nav-Privacy-Link"
+                                                       class="nav__about--link w-dropdown-link">COVID-19 Update</a>
                                                     <a href="/term" id="Nav-Privacy-Link"
                                                        class="nav__about--link w-dropdown-link">Terms & Conditions</a>
                                                     <a href="mailto:{{$setting->email}}"
@@ -653,13 +653,13 @@
                                     <span class="">Account</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
 
                                 <a href="/covid-19-update" class="user nav__link w-inline-block bg-danger text-white" style="padding: .05rem 1.25rem; border-radius: 10px;width: max-content;margin-left: 15px;">
 
                                     <span class="">COVID-19 UPDATE</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </nav>
@@ -1028,7 +1028,7 @@
                             </li><li><a href="/contactus"><span class="fa fa-play"></span> Contact Us</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-                            </li><li><a href="/covid-19-update"><span class="fa fa-play"></span> Covid-19 Update</a>
+                            </li><li><a href="/covid-19-update"><span class="fa fa-play"></span> COVID-19 Update</a>
                             </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a></li>
                         </ul>
 
