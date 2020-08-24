@@ -384,7 +384,7 @@ $setting = setting();
                     @if( $vehicle->actual_msrp)
                     <tr>
                         <th>Actual Price</th>
-                        <td>{{$vehicle->actual_msrp}}</td>
+                        <td>${{$vehicle->actual_msrp}}</td>
                     </tr>
                     @endif
                     @if( $vehicle->body)
