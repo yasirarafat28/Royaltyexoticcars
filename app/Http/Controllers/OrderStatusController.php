@@ -32,7 +32,7 @@ class OrderStatusController extends Controller
         $order->status=$request->status;
         $order->save();
 
-        Mail::to($order->email)->send(new OrderStatusUpdate($order,$status));
+        //Mail::to($order->email)->send(new OrderStatusUpdate($order,$status));
         return back()->withSuccess('Order status updated!');
     }
 }
