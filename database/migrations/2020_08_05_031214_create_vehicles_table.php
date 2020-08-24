@@ -39,16 +39,16 @@ class CreateVehiclesTable extends Migration
             $table->string('gear_ratio')->nullable();
 
             $table->enum('four_hour',['yes','no'])->default('yes');
-            $table->integer('four_hour_price')->default(0);
-            $table->integer('four_hour_discount')->default(0);
+            $table->double('four_hour_price')->default(0);
+            $table->double('four_hour_discount')->default(0);
 
             $table->enum('eight_hour',['yes','no'])->default('yes');
-            $table->integer('eight_hour_price')->default(0);
-            $table->integer('eight_hour_discount')->default(0);
+            $table->double('eight_hour_price')->default(0);
+            $table->double('eight_hour_discount')->default(0);
 
             $table->enum('full_day',['yes','no'])->default('yes');
-            $table->integer('full_day_price')->default(0);
-            $table->integer('full_day_discount')->default(0);
+            $table->double('full_day_price')->default(0);
+            $table->double('full_day_discount')->default(0);
 
 
             $table->dateTime('available_from')->nullable();
