@@ -173,8 +173,14 @@
                                 @if($item->four_hour=='yes')
                                     4Hr Offer Available<br>
                                 @endif
+                                @if($item->six_hour=='yes')
+                                    6Hr Offer  Available<br>
+                                @endif
                                 @if($item->eight_hour=='yes')
                                     8Hr Offer  Available<br>
+                                @endif
+                                @if($item->twelve_hour=='yes')
+                                    12Hr Offer  Available<br>
                                 @endif
                                 @if($item->full_day=='yes')
                                     24Hr Offer  Available<br>

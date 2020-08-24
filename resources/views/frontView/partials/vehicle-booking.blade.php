@@ -32,11 +32,23 @@
                             @else
                                 ${{number_format($vehicle->four_hour_price)}}
                             @endif
+                        @elseif($vehicle->six_hour=='yes')
+                            @if($vehicle->six_hour_discount)
+                                ${{number_format($vehicle->six_hour_discount)}}
+                            @else
+                                ${{number_format($vehicle->six_hour_price)}}
+                            @endif
                         @elseif($vehicle->eight_hour=='yes')
                             @if($vehicle->eight_hour_discount)
                                 ${{number_format($vehicle->eight_hour_discount)}}
                             @else
                                 ${{number_format($vehicle->eight_hour_price)}}
+                            @endif
+                        @elseif($vehicle->twelve_hour=='yes')
+                            @if($vehicle->twelve_hour_discount)
+                                ${{number_format($vehicle->twelve_hour_discount)}}
+                            @else
+                                ${{number_format($vehicle->twelve_hour_price)}}
                             @endif
                         @elseif($vehicle->full_day=='yes')
                             @if($vehicle->full_day_discount)
@@ -53,8 +65,16 @@
                             4 Hrs,
                         @endif
 
+                        @if($vehicle->six_hour=='yes')
+                            6 Hrs,
+                        @endif
+
                         @if($vehicle->eight_hour=='yes')
                             8 Hrs,
+                        @endif
+
+                        @if($vehicle->twelve_hour=='yes')
+                            12 Hrs,
                         @endif
 
                         @if($vehicle->full_day=='yes')
