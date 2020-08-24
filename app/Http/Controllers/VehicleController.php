@@ -100,10 +100,24 @@ class VehicleController extends Controller
             ]);
         }
 
+        if ($request->six_hour=='yes')
+        {
+            $this->validate($request,[
+                'six_hour_price'=>'required',
+            ]);
+        }
+
         if ($request->eight_hour=='yes')
         {
             $this->validate($request,[
                 'eight_hour_price'=>'required',
+            ]);
+        }
+
+        if ($request->twelve_hour=='yes')
+        {
+            $this->validate($request,[
+                'twelve_hour_price'=>'required',
             ]);
         }
 
@@ -130,9 +144,15 @@ class VehicleController extends Controller
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
         $vehicle->four_hour_discount = $request->four_hour_discount??0;
+        $vehicle->six_hour = $request->six_hour;
+        $vehicle->six_hour_price = $request->six_hour_price;
+        $vehicle->six_hour_discount = $request->six_hour_discount??0;
         $vehicle->eight_hour = $request->eight_hour??'no';
         $vehicle->eight_hour_price = $request->eight_hour_price;
         $vehicle->eight_hour_discount = $request->eight_hour_discount??0;
+        $vehicle->twelve_hour = $request->twelve_hour;
+        $vehicle->twelve_hour_price = $request->twelve_hour_price;
+        $vehicle->twelve_hour_discount = $request->twelve_hour_discount??0;
         $vehicle->full_day = $request->full_day;
         $vehicle->full_day_price = $request->full_day_price;
         $vehicle->full_day_discount = $request->full_day_discount??0;
@@ -249,6 +269,20 @@ class VehicleController extends Controller
             ]);
         }
 
+        if ($request->six_hour=='yes')
+        {
+            $this->validate($request,[
+                'six_hour_price'=>'required',
+            ]);
+        }
+
+        if ($request->twelve_hour=='yes')
+        {
+            $this->validate($request,[
+                'twelve_hour_price'=>'required',
+            ]);
+        }
+
         if ($request->eight_hour=='yes')
         {
             $this->validate($request,[
@@ -279,9 +313,15 @@ class VehicleController extends Controller
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
         $vehicle->four_hour_discount = $request->four_hour_discount??0;
+        $vehicle->six_hour = $request->six_hour;
+        $vehicle->six_hour_price = $request->six_hour_price;
+        $vehicle->six_hour_discount = $request->six_hour_discount??0;
         $vehicle->eight_hour = $request->eight_hour??'no';
         $vehicle->eight_hour_price = $request->eight_hour_price;
         $vehicle->eight_hour_discount = $request->eight_hour_discount??0;
+        $vehicle->twelve_hour = $request->twelve_hour;
+        $vehicle->twelve_hour_price = $request->twelve_hour_price;
+        $vehicle->twelve_hour_discount = $request->twelve_hour_discount??0;
         $vehicle->full_day = $request->full_day;
         $vehicle->full_day_price = $request->full_day_price;
         $vehicle->full_day_discount = $request->full_day_discount??0;
