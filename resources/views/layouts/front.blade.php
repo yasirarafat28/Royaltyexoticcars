@@ -633,6 +633,13 @@
                                     <span class="">Account</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+
+                                <a href="/covid-19-update" class="user nav__link w-inline-block bg-danger text-white" style="padding: .05rem 1.25rem; border-radius: 10px;width: max-content;margin-left: 15px;">
+
+                                    <span class="">COVID-19 UPDATE</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

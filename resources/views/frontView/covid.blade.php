@@ -8,13 +8,12 @@
           <div class="policy__timestamp">Updated Aug 23, 2020</div>
           <div class="policy__note">*If you have any questions about these Terms of Use, please contact us at<br>
             {{ $setting->email }}.<br>{{ $setting->address }}.</div>
-        </div> 
+        </div>
         <div class="policy__richtext w-richtext">
           <div class="policy__timestamp">Cleaning of all Vehicles</div>
-          
+
           <p>Each of our vehicles is thoroughly cleaned between every rental and backed with the Complete Clean Pledge. This includes washing, vacuuming, general wipe down, and sanitizing with a disinfectant that meets leading health authority requirements, with particular attention to more than 20-plus high-touch points including:</p>
-          
-          
+
           <p>1- Key / key fob<br>
             2-  Steering wheel<br>
             3-  Steering column<br>
