@@ -253,7 +253,13 @@
                   <li class="active">
                      <a href="{{url('admin/faq')}}">
                      <i class="menu-icon fa fa-image"></i>
-                        FAQs
+                        FAQs 
+                     </a>
+                  </li>
+                  <li class="active">
+                     <a href="{{url('admin/vehicle_requirements')}}">
+                     <i class="menu-icon fa fa-image"></i>
+                        Vehicle Requirements
                      </a>
                   </li>
 
