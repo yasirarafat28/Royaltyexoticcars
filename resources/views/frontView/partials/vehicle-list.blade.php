@@ -44,12 +44,28 @@
                             $ <span>{{number_format( $record->four_hour_price ,2)}}</span>
                         @endif
 
+                    @elseif($record->six_hour=='yes')
+                        @if($record->six_hour_discount)
+                            $<span>{{number_format( $record->six_discount ,2)}}</span>
+                            <small><s>${{number_format( $record->six_price ,2)}}</s></small>
+                        @else
+                            $ <span>{{number_format( $record->six_price ,2)}}</span>
+                        @endif
+
                     @elseif($record->eight_hour=='yes')
-                        @if($record->four_hour_discount)
+                        @if($record->eight_hour_discount)
                             $<span>{{number_format( $record->eight_hour_discount ,2)}}</span>
                             <small><s>${{number_format( $record->eight_hour_price ,2)}}</s></small>
                         @else
                             $ <span>{{number_format( $record->eight_hour_price ,2)}}</span>
+                        @endif
+
+                    @elseif($record->twelve_hour=='yes')
+                        @if($record->twelve_hour_discount)
+                            $<span>{{number_format( $record->twelve_hour_discount ,2)}}</span>
+                            <small><s>${{number_format( $record->twelve_hour_price ,2)}}</s></small>
+                        @else
+                            $ <span>{{number_format( $record->twelve_hour_price ,2)}}</span>
                         @endif
                     @elseif($record->full_day=='yes')
                         @if($record->four_hour_discount)

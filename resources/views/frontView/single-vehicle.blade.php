@@ -191,7 +191,7 @@ $setting = setting();
                 <input type="hidden" name="productname" id="productname" value="Heckle chain">
                 <h2 class="home__h2">{{$vehicle->name}}</h2>
                 <br>
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
 
                     @if($vehicle->four_hour=='yes')
                         <div class="vehicle-price mr-5">
@@ -210,6 +210,23 @@ $setting = setting();
                         </div>
                     @endif
 
+                    @if($vehicle->six_hour=='yes')
+                        <div class="vehicle-price mr-5">
+                            <h4 class="title">6 Hrs Price</h4>
+                            <hr>
+
+                            @if($vehicle->six_hour_discount)
+                                <h5 class="td1">${{number_format($vehicle->six_hour_discount,1)}}
+                                    <small><s id="order_price">${{number_format($vehicle->six_hour_price,1)}}</s></small>
+                                </h5>
+                            @else
+                                <h5 class="td1">${{number_format($vehicle->six_hour_price,1)}}
+                                </h5>
+                            @endif
+
+                        </div>
+                    @endif
+
                     @if($vehicle->eight_hour=='yes')
                         <div class="vehicle-price mr-5">
                             <h4 class="title">8 Hrs Price</h4>
@@ -221,6 +238,24 @@ $setting = setting();
                                 </h5>
                             @else
                                 <h5 class="td1">${{number_format($vehicle->eight_hour_price,1)}}
+                                </h5>
+                            @endif
+
+                        </div>
+                    @endif
+
+
+                    @if($vehicle->twelve_hour=='yes')
+                        <div class="vehicle-price mr-5">
+                            <h4 class="title">12 Hrs Price</h4>
+                            <hr>
+
+                            @if($vehicle->twelve_hour_discount)
+                                <h5 class="td1">${{number_format($vehicle->twelve_hour_discount,1)}}
+                                    <small><s id="order_price">${{number_format($vehicle->twelve_hour_price,1)}}</s></small>
+                                </h5>
+                            @else
+                                <h5 class="td1">${{number_format($vehicle->twelve_hour_price,1)}}
                                 </h5>
                             @endif
 

@@ -14,7 +14,7 @@ class VehicleScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function index(Request $request)
     {
         $records = VehicleSchedule::where(function ($q) use($request){
@@ -48,7 +48,9 @@ class VehicleScheduleController extends Controller
             'vehicle_id'=>'required',
             'start_time'=>'required',
             'four_hour'=>'required',
+            'six_hour'=>'required',
             'eight_hour'=>'required',
+            'twelve_hour'=>'required',
             'full_day'=>'required',
         ]);
 
@@ -58,7 +60,9 @@ class VehicleScheduleController extends Controller
         $item->register_number = $request->register_number;
         $item->color = $request->color;
         $item->four_hour = $request->four_hour;
+        $item->six_hour = $request->six_hour;
         $item->eight_hour = $request->eight_hour;
+        $item->twelve_hour = $request->twelve_hour;
         $item->full_day = $request->full_day;
         $item->save();
         return back()->withSuccess('Schedule created successfully!');
@@ -98,7 +102,9 @@ class VehicleScheduleController extends Controller
         $this->validate($request,[
             'start_time'=>'required',
             'four_hour'=>'required',
+            'six_hour'=>'required',
             'eight_hour'=>'required',
+            'twelve_hour'=>'required',
             'full_day'=>'required',
             'status'=>'required',
         ]);
@@ -108,7 +114,9 @@ class VehicleScheduleController extends Controller
         $item->register_number = $request->register_number;
         $item->color = $request->color;
         $item->four_hour = $request->four_hour;
+        $item->six_hour = $request->six_hour;
         $item->eight_hour = $request->eight_hour;
+        $item->twelve_hour = $request->twelve_hour;
         $item->full_day = $request->full_day;
         $item->save();
         return back()->withSuccess('Schedule saved successfully!');

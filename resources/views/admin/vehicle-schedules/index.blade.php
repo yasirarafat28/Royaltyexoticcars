@@ -93,10 +93,24 @@
                                                 <option value="no"  >No</option>
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="control-label">Six Hour</label>
+                                            <select class="form-control" name="six_hour">
+                                                <option value="yes"  >Yes</option>
+                                                <option value="no"  >No</option>
+                                            </select>
+                                        </div>
 
                                         <div class="form-group">
                                             <label for="phone" class="control-label">Eight Hour</label>
                                             <select class="form-control" name="eight_hour">
+                                                <option value="yes"  >Yes</option>
+                                                <option value="no"  >No</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="control-label">Twelve Hour</label>
+                                            <select class="form-control" name="twelve_hour">
                                                 <option value="yes"  >Yes</option>
                                                 <option value="no"  >No</option>
                                             </select>
@@ -224,12 +238,26 @@
                                                                 <option value="no" {{$item->four_hour=='no'?'selected':''}}  >No</option>
                                                             </select>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="phone" class="control-label">Six Hour</label>
+                                                            <select class="form-control" name="six_hour">
+                                                                <option value="yes" {{$item->six_hour=='yes'?'selected':''}}  >Yes</option>
+                                                                <option value="no" {{$item->six_hour=='no'?'selected':''}}  >No</option>
+                                                            </select>
+                                                        </div>
 
                                                         <div class="form-group">
                                                             <label for="phone" class="control-label">Eight Hour</label>
                                                             <select class="form-control" name="eight_hour">
                                                                 <option value="yes" {{$item->eight_hour=='yes'?'selected':''}}  >Yes</option>
                                                                 <option value="no" {{$item->eight_hour=='no'?'selected':''}}  >No</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="phone" class="control-label">Twelve Hour</label>
+                                                            <select class="form-control" name="twelve_hour">
+                                                                <option value="yes" {{$item->twelve_hour=='yes'?'selected':''}}  >Yes</option>
+                                                                <option value="no" {{$item->twelve_hour=='no'?'selected':''}}  >No</option>
                                                             </select>
                                                         </div>
 
