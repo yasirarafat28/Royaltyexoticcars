@@ -460,8 +460,8 @@
                                                             </nav>
                                                         </div>
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">$99</div>
-                                                            <div class="table__cell table__cell--intl">Included</div>
+                                                            <div class="table__cell">{{$car_requirement->local_liability_insurance}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$car_requirement->international_liability_insurance}}</div>
                                                         </div>
                                                         <div class="table__cell">--</div>
                                                     </div>
