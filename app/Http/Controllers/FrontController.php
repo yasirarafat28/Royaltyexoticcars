@@ -475,6 +475,9 @@ class FrontController extends Controller {
     public function terms() {
         return view('frontView.terms');
     }
+    public function requirements() {
+        return view('frontView.requirements');
+    }
     public function privacy() {
         $setting=Setting();
         return view('frontView.privacy')->with('setting', $setting);

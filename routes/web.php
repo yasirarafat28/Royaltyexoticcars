@@ -49,6 +49,7 @@ Route::get('/lamborghini-rentals', 'FrontController@lamborghiniRentals');
 Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamborghiniAventador');
 
 
+Route::get('/requirements', 'FrontController@requirements');
 Route::get('/team', 'FrontController@team');
 Route::get('/privacy', 'FrontController@privacy');
 Route::get('/covid-19-update', 'FrontController@covid');
