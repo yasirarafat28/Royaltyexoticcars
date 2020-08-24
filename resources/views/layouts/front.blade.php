@@ -350,7 +350,7 @@
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div>Age ⓘ</div>
+                                                                <div class="new_style">Age ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div>Minimum Age requirements are strictly enforced and ensure
@@ -360,8 +360,8 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">25+</div>
-                                                        <div class="table__cell">21+</div>
+                                                        <div class="table__cell new_style">25+</div>
+                                                        <div class="table__cell new_style">21+</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
