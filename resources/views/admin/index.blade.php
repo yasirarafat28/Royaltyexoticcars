@@ -253,7 +253,7 @@
                   <li class="active">
                      <a href="{{url('admin/faq')}}">
                      <i class="menu-icon fa fa-image"></i>
-                        FAQs 
+                        FAQs
                      </a>
                   </li>
                   <li class="active">
@@ -374,11 +374,11 @@
                      {{__('messages.localization')}}
                      </a>
                      <ul class="sub-menu children dropdown-menu">
-                        <li>
+                        <!--<li>
                            <a href="{{url('admin/translations')}}">
                            {{__('messages.translation')}}
                            </a>
-                        </li>
+                        </li>-->
                         <li>
                            <a href="{{url('admin/taxes')}}">
                            {{__('messages.taxes')}}
