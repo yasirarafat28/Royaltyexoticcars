@@ -51,6 +51,7 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 
 Route::get('/team', 'FrontController@team');
 Route::get('/privacy', 'FrontController@privacy');
+Route::get('/covid', 'FrontController@covid');
 Route::get('/terms', 'FrontController@terms');
 Route::get('/team/houston', 'FrontController@teamMembers');
 Route::get('/term', 'FrontController@termsconditions');

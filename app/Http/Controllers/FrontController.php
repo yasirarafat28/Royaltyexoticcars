@@ -477,7 +477,11 @@ class FrontController extends Controller {
     }
     public function privacy() {
         $setting=Setting();
-        return view('frontView.privacy')->with('setting', $setting);;
+        return view('frontView.privacy')->with('setting', $setting);
+    }
+    public function covid() {
+        $setting=Setting();
+        return view('frontView.covid')->with('setting', $setting);
     }
     public function termsconditions() {
         $setting=Setting();
