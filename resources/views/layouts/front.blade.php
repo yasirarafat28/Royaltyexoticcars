@@ -1028,7 +1028,7 @@
                             </li><li><a href="/contactus"><span class="fa fa-play"></span> Contact Us</a>
                             </li><li><a href="/faqs"><span class="fa fa-play"></span> FAQ's</a>
                             </li><li><a href="/privacy"><span class="fa fa-play"></span> Privacy</a>
-                            </li><li><a href="/covid"><span class="fa fa-play"></span> Covid-19</a>
+                            </li><li><a href="/covid-19-update"><span class="fa fa-play"></span> Covid-19 Update</a>
                             </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a></li>
                         </ul>
 
