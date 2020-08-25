@@ -6,6 +6,7 @@
 
     $car_requirement = App\Model\VehicleRequirement::where('type','car_suv')->first();
     $moto_requirement = App\Model\VehicleRequirement::where('type','auto_moto')->first();
+    $requirements = App\Model\VehicleRequirement::all();
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="www.rentalexoticsbeasts.com" data-wf-page="5eab2e688db14a5dd693300b"
@@ -383,13 +384,14 @@
                                                         <div
                                                             class="table__cell table__cell--dimension table__cell--dimension-header">
                                                         </div>
-                                                        <div class="table__cell">Cars &amp; SUVs</div>
-                                                        <div class="table__cell">Auto &amp; Moto</div>
+                                                        @foreach($requirements as $requirement)
+                                                            <div class="table__cell">{{ $requirement->type }}</div> 
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
-                                                                 class="table__dropdown--toggle w-dropdown-toggle">
+                                                                    class="table__dropdown--toggle w-dropdown-toggle">
                                                                 <div class="new_style">Age ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
@@ -400,8 +402,12 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell new_style">{{$car_requirement->local_age}}+</div>
-                                                        <div class="table__cell new_style">{{$moto_requirement->local_age}}+</div>
+                                                        @foreach($requirements as $requirement)
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">{{$requirement->local_age}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
+                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -418,14 +424,12 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
+                                                        @foreach($requirements as $requirement)
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">{{$car_requirement->local_driving_licence}}</div>
-                                                            <div class="table__cell table__cell--intl">{{$car_requirement->international_driving_licence}}</div>
+                                                            <div class="table__cell">{{$requirement->local_driving_licence}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_driving_licence}}</div>
                                                         </div>
-                                                        <div class="table__cell--wrapper">
-                                                            <div class="table__cell">{{$moto_requirement->local_driving_licence}}</div>
-                                                            <div class="table__cell table__cell--intl">{{$moto_requirement->international_driving_licence}}</div>
-                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -439,113 +443,51 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
+                                                        @foreach($requirements as $requirement)
                                                         <div class="table__cell--wrapper">
-                                                            <div data-delay="0" class="table__cell w-dropdown">
-                                                                <div id="Requirements-Insurance-Exotics-US-Tooltip"
-                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">${{$car_requirement->local_insurance}}</div>
-                                                                </div>
-                                                                <nav class="table__dropdown--pane w-dropdown-list">
-                                                                    <div><span>Each driver is required to provide their own car
-																	insurance that covers any liability claim up to
-																	$100k/$300k/$50k and has full comprehensive &amp;
-																	collision coverage with a maximum $1,000
-																	deductible.<br /><strong>Note:</strong> Your insurance
-																	policy still requires Comp/Collision coverage even if
-																	you decide to purchase an optional insurance
-																	upgrade.</span></div>
-                                                                    <div class="table__dropdown--arrow"></div>
-                                                                </nav>
-                                                            </div>
-                                                            <div data-delay="0" class="table__cell table__cell--intl w-dropdown">
-                                                                <div id="Requirements-Insurance-Exotics-Intl-Tooltip"
-                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="text-block">${{$car_requirement->international_insurance}}</div>
-                                                                </div>
-                                                                <nav class="table__dropdown--pane w-dropdown-list">
-                                                                    <div><span>Covers any bodily injury claim up to $1,000,000 and
-																	has full comprehensive and collision coverage with a
-																	$15,000 deductible.</span></div>
-                                                                    <div class="table__dropdown--arrow"></div>
-                                                                </nav>
-                                                            </div>
+                                                            <div class="table__cell">{{$requirement->local_insurance}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_insurance}}</div>
                                                         </div>
-                                                        <div data-delay="0" class="table__cell w-dropdown">
-                                                            <div id="Requirements-Insurance-Cycles-Tooltip"
-                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">${{$moto_requirement->local_insurance}}</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div><span>Each driver is required to purchase the Royalty Insurance
-																Policy that covers any bodily injury claim up to $15k/$30k
-																and has full comprehensive &amp; collision coverage with a
-																$2,500 deductible.</span></div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__divider">Upgrade Options</div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
-                                                            <div id="Requirements-Supplemental-Insurance-Tooltip"
+                                                            <div id="Requirements-Insurance-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Supplemental<br />Liability Insurance ⓘ
-                                                                </div>
+                                                                <div class="text-block">Supplemental<br />Liability Insurance ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any bodily injury incurred during your rental
-                                                                    period up to the combined value of $1,000,000 for any passenger
-                                                                    or passerby regardless of who is at fault.</div>
+                                                                <div>Every driver is required to have an active car insurance policy
+                                                                    before driving one of our rental vehicles.</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
+                                                        @foreach($requirements as $requirement)
                                                         <div class="table__cell--wrapper">
-                                                            <div class="table__cell">${{$car_requirement->local_liability_insurance}}</div>
-                                                            <div class="table__cell table__cell--intl">${{$car_requirement->international_liability_insurance}}</div>
+                                                            <div class="table__cell">{{$requirement->local_liability_insurance}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_liability_insurance}}</div>
                                                         </div>
-                                                        <div class="table__cell">--</div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
-                                                            <div id="Requirements-Damage-Waiver-Tooltip"
+                                                            <div id="Requirements-Insurance-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
                                                                 <div class="text-block">Property Damage<br />Waiver ⓘ</div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against common damages up to a specified limit
-                                                                    including curbed wheels, windshield cracks, minor
-                                                                    scuffs/scratches, etc.<br /><strong>Note: </strong>If damages
-                                                                    exceed the specified limit and results in an insurance claim,
-                                                                    this will act as a deductible waiver.</div>
+                                                                <div>Every driver is required to have an active car insurance policy
+                                                                    before driving one of our rental vehicles.</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div data-delay="0" class="table__cell w-dropdown">
-                                                            <div id="Requirements-Damage-Waiver-Exotics-Tooltip"
-                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">${{$car_requirement->local_property_damage_waiver}} ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any damages up to a $3,500 (based on the
-                                                                    actual cost of repair).<br />If the damage exceeds $3,500 and
-                                                                    results in an insurance claim, this will act as a deductible
-                                                                    waiver.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
+                                                        @foreach($requirements as $requirement)
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">{{$requirement->local_property_damage_waiver}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_property_damage_waiver}}</div>
                                                         </div>
-                                                        <div data-delay="0" class="table__cell w-dropdown">
-                                                            <div id="Requirements-Damage-Waiver-Cycles-Tooltip"
-                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">${{$moto_requirement->local_property_damage_waiver}} ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any damages up to a $2,500 (based on the
-                                                                    actual cost of repair).<br />If the damage exceeds $2,500 and
-                                                                    results in an insurance claim, this will act as a deductible
-                                                                    waiver.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -562,8 +504,13 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">${{$car_requirement->local_tire_protection}}</div>
-                                                        <div class="table__cell">${{$moto_requirement->local_tire_protection}}</div>
+                                                        @foreach($requirements as $requirement)
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">{{$requirement->local_tire_protection}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_tire_protection}}</div>
+                                                        </div>
+                                                        @endforeach
+                                                        
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -581,8 +528,12 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">${{$car_requirement->local_mechanical_breakdown_coverage}}</div>
-                                                        <div class="table__cell">${{$moto_requirement->local_mechanical_breakdown_coverage}}</div>
+                                                        @foreach($requirements as $requirement)
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">{{$requirement->local_mechanical_breakdown_coverage}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_mechanical_breakdown_coverage}}</div>
+                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -599,8 +550,13 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell">${{$car_requirement->local_fuel_credit}}</div>
-                                                        <div class="table__cell">${{$moto_requirement->local_fuel_credit}}</div>
+                                                        @foreach($requirements as $requirement)
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">{{$requirement->local_fuel_credit}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_fuel_credit}}</div>
+                                                        </div>
+                                                        @endforeach
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
