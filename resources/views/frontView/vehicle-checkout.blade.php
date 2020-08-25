@@ -106,6 +106,37 @@
         vertical-align: middle; !important;
     }
 
+
+    @media screen and (max-width: 992px) {
+        .checkout-container{
+            max-width: unset;
+        }
+    }
+
+    .checkout-sidebar .card{
+        border-radius: .5rem !important;
+    }
+    .checkout-sidebar .card-header{
+        background-color: transparent;
+    }
+    .checkout-sidebar .card-body td{
+        width: 50%;
+        font-size: 18px;
+    }
+    .checkout-sidebar .card-body td.title{
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .booking{
+        background-color: #ddd;
+    }
+    .booking .checkout-info{
+        border: 1px solid #ddd;
+        border-radius: 9px;
+        background-color: #fff;
+    }
+
 </style>
 <link rel="stylesheet" href="/assets/plugins/fullcalendar/fullcalendar.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -118,7 +149,7 @@
     @endphp
 <div class="rental__hero">
 
-    <div class="container mt-5">
+    <div class=" container checkout-container mt-5">
     	@include('frontView.partials.vehicle-checkout')
 
 

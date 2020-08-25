@@ -15,12 +15,12 @@ class faqController extends Controller
     public function index(Request $request)
     {
 
-        return $faqs = Faq::all();
-        
+        $faqs = Faq::all();
+
         return view('admin.faq.index',compact('faqs'));
     }
-        
-    
+
+
 
 
     public function create()
@@ -70,7 +70,7 @@ class faqController extends Controller
     public function edit($id)
     {
         $faqs = Faq::find($id);
-        return view('admin.faq.edit')->with('faqs', $faqs); 
+        return view('admin.faq.edit')->with('faqs', $faqs);
     }
 
     /**
@@ -106,6 +106,6 @@ class faqController extends Controller
     public function destroy($id)
     {
         $faqs = Faq::destroy($id);
-        return back()->withSuccess('FAQ removed successfully!'); 
+        return back()->withSuccess('FAQ removed successfully!');
     }
 }
