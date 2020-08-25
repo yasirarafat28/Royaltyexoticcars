@@ -4,8 +4,6 @@
 	$brands = App\Model\VehicleBrand::where('status','active')->get();
 	$categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
 
-    $car_requirement = App\Model\VehicleRequirement::where('type','car_suv')->first();
-    $moto_requirement = App\Model\VehicleRequirement::where('type','auto_moto')->first();
     $requirements = App\Model\VehicleRequirement::all();
 @endphp
 <!DOCTYPE html><!-- Last Published: Sat Jul 18 2020 22:29:29 GMT+0000 (Coordinated Universal Time) -->
