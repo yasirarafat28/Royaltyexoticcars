@@ -8,7 +8,7 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
 @endphp
 
 
-
+<!--
 @if($country=='international')
     <div class="form-group">
         <label for="international_full_coverage_insurance" class="form-label">International Full Coverage Insurance</label>
@@ -49,7 +49,7 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
         <option value="{{$requirement->$property_damage_insurance}}">${{number_format($requirement->$property_damage_insurance,2)}} | Yes I would like to purchase Property Damage Waiver</option>
         <option value="0">$0.00 | No I dont want to to purchase Property Damage Waiver</option>
     </select>
-</div>
+</div>-->
 
 <div class="form-group">
     <label for="tire_protection" class="form-label">Tire Protection</label>
@@ -64,7 +64,7 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
     </small>
 </div>
 
-<div class="form-group">
+<!--<div class="form-group">
     <label for="mechanical_breakdown_coverage" class="form-label">Mechanical Break Down Insurance</label>
     <select id="mechanical_breakdown_coverage" name="mechanical_breakdown_coverage" class="form-control selectpicker"
             data-live-search="true">
@@ -78,7 +78,7 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
         Covers cost of Mechanical Parts due to wear and tear, tow charges, and loss of rental time up to $1000. Mechanical Failure can take up to several hours depending on the location of incident, traffic conditions, and availability.
         *This coverage EXCLUDES mechanical failure due to customer mis-use or gross negligence operating the vehicle and customers are fully responsible for their own actions while operating a Royalty Exotic Cars vehicle.
     </small>
-</div>
+</div>-->
 
 <div class="form-group">
     <label for="fuel_credit" class="form-label">Prepaid Gas Credit</label>
