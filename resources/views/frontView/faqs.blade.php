@@ -122,8 +122,8 @@
     }
     .Accordion_item .title_tab {
         width: 100%;
-        background-color: #51adf6;
-        color: #fcfcfc;
+        
+        color: black;
         padding: 12px 30px;
         cursor: pointer;
         transition: background-color 0.3s ease-in;
@@ -182,7 +182,7 @@
 
     /* ================================= */
     .Accordion_item .title_tab.active {
-        background-color: #2196f3;
+        background-color: lightgreen;
         transition: background-color 0.3s ease-in;
     }
     .Accordion_item .title_tab.active .title .icon {
@@ -190,7 +190,7 @@
         transition: transform 0.3s ease-in;
     }
     .Accordion_item .title_tab:hover {
-        background-color: #2196f3;
+        background-color: lightgreen;
         transition: background-color 0.3s ease-in;
     }
     .Accordion_item .inner_content p.show {
