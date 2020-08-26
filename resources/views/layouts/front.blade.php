@@ -171,7 +171,9 @@
             height: 100% !important;
         }
 
-
+        .body_div {
+            margin: 10px 0px;
+        }
         .btn-outline-success:hover {
             color: #fff;
             background-color: red;
@@ -272,19 +274,17 @@
 					</div>
                     <div class="right-side col-sm-6 col-md-4">
 						<div class="info__search pull-right">
-						<form action="/vehicles" id="Header-Search-Form"
-							class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
-								name="q" placeholder="Search fleets"
-								title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
-								required="" />
+                            <form action="/vehicles" id="Header-Search-Form"
+                                class="search w-form"><input type="search" class="search__input w-input" maxlength="256"
+                                    name="q" placeholder="Search Here"
+                                    title="Search cars, motorcycles, destinations, faqs, rental requirements, reviews, etc"
+                                    required="" />
 
-                            <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: red;background-image: none"><i class="fa fa-search"></i>
-                            </button>
-                        </form>
+                                <button type="submit"  value=" " class="search__submit w-button" style="border-radius:0px 5px 5px 0px;background-color:#EE7;color: red;background-image: none"><i class="fa fa-search"></i>
+                                </button>
+                            </form>
+					    </div>
 					</div>
-					</div>
-
-
 				</div>
 			</div>
 			<div class="nav-container" style="">
@@ -610,7 +610,6 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-
 
                                 <a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
                                     <div>Shop</div>
