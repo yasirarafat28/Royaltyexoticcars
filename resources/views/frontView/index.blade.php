@@ -65,7 +65,7 @@
 
                                                 <div class="hero__content">
                                                     <div class="modalparentdiv">
-                                                        <h4 class="animated fadeInDown" style="color: whitel">Search By</h4>
+                                                        <h4 class="animated fadeInDown">Search By</h4>
                                                         <div class="modal-div">
                                                             <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal1">
                                                                 Body style
@@ -164,7 +164,6 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Body style</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
@@ -172,13 +171,13 @@
                                                                     <div class="modal-body">
                                                                     @foreach($categories??array(  ) as $category)
                                                                         <a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
-                                                                            <div class="nav__categories--graphic">
+                                                                            
                                                                                 <img src="{{url($category->photo??'')}}"
                                                                                     alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
-                                                                            </div>
-                                                                            <div class="nav__categories--text">
+                                                                            
+                                                                            
                                                                                 <div class="nav__categories--heading">{{ $category->name }}</div>
-                                                                            </div>
+                                                                            
                                                                         </a>
                                                                     @endforeach
                                                                     </div>
@@ -189,20 +188,16 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Make & model</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <div class="nav__categories--quicklinks">
-                                                                            <div class="quicklinks__collection w-dyn-list">
-                                                                                <div role="list"
-                                                                                    class="quicklinks__list quicklinks__list--grid w-dyn-items">
+                                                                        
+                                                                            
+                                                                                
                                                                                     @foreach($brands??array() as $brand)
-                                                                                        <div role="listitem"
-                                                                                            class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
-                                                                                                id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
+                                                                                        <a id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
                                                                                                 class="quicklinks__link w-inline-block"><img
                                                                                                     src="{{url($brand->photo??'')}}"
                                                                                                     alt="Bugatti" class="quicklinks__logo" />
@@ -210,12 +205,12 @@
                                                                                                     <div class="quicklinks__title">{{ $brand->name }}</div>
 
                                                                                                 </div>
-                                                                                            </a>
-                                                                                        </div>
+                                                                                        </a>
+                                                                                        
                                                                                     @endforeach
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                                
+                                                                            
+                                                                        
                                                                     </div>
                                                                 </div>
                                                             </div>
