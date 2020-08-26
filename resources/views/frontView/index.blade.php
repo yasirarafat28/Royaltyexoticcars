@@ -193,29 +193,19 @@
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        
-                                                                            
-                                                                                
-                                                                                    @foreach($brands??array() as $brand)
-                                                                                        <a id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
-                                                                                                class="quicklinks__link w-inline-block"><img
-                                                                                                    src="{{url($brand->photo??'')}}"
-                                                                                                    alt="Bugatti" class="quicklinks__logo" />
-                                                                                                <div class="quicklinks__details">
-                                                                                                    <div class="quicklinks__title">{{ $brand->name }}</div>
-
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        
-                                                                                    @endforeach
-                                                                                
-                                                                            
-                                                                        
+                                                                        @foreach($brands??array() as $brand)
+                                                                            <a id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
+                                                                                class="quicklinks__link w-inline-block"><img
+                                                                                        src="{{url($brand->photo??'')}}"
+                                                                                        alt="Bugatti" class="quicklinks__logo" />
+                                                                                <div class="quicklinks__details">
+                                                                                    <div class="quicklinks__title">{{ $brand->name }}</div>
+                                                                                </div>
+                                                                            </a>
+                                                                        @endforeach 
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
     @include('frontView.popup.auto-first')
 @endsection
