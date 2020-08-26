@@ -32,8 +32,8 @@
                     padding: 5px;
                     color: white;
                     width: 200px;
-                    font-size: 22px;
-                    border: 2px solid white;
+                    font-size: 25px;
+                    border: 4px solid white;
                     border-radius: 10px;
                 }
             </style>
