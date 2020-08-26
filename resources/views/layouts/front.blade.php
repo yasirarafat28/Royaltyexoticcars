@@ -382,15 +382,21 @@
                                                         <div
                                                             class="table__cell table__cell--dimension table__cell--dimension-header">
                                                         </div>
-                                                        @foreach($requirements as $requirement)
+                                                        <!--@foreach($requirements as $requirement)
                                                             <div class="table__cell">{{ $requirement->type }}</div> 
-                                                        @endforeach
+                                                        @endforeach-->
+                                                        <div class="table__cell">Age ⓘ</div> 
+                                                        <div class="table__cell">Drivers License ⓘ</div> 
                                                     </div>
+                                                    @foreach($requirements as $requirement)
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="new_style">Age ⓘ</div>
+                                                                
+                                                                    <div class="table__cell"><h6>{{ $requirement->type }}</h6></div> 
+                                                                
+                                                                <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
                                                                 <div>Minimum Age requirements are strictly enforced and ensure
@@ -400,14 +406,20 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        @foreach($requirements as $requirement)
+                                                        
                                                         <div class="table__cell--wrapper">
                                                             <div class="table__cell">{{$requirement->local_age}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
+                                                            
                                                         </div>
-                                                        @endforeach
+                                                        <div class="table__cell--wrapper">
+                                                            
+                                                            <div class="table__cell">{{$requirement->local_driving_licence}}</div>
+                                                            <div class="table__cell table__cell--intl">{{$requirement->international_driving_licence}}</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="table__row">
+                                                    @endforeach
+                                                    <!--<div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-License-Tooltip"
                                                                  class="table__dropdown--toggle w-dropdown-toggle">
@@ -555,7 +567,7 @@
                                                         </div>
                                                         @endforeach
                                                        
-                                                    </div>
+                                                    </div>-->
                                                 </div>
                                             </div>
                                         </div>
