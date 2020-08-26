@@ -385,8 +385,8 @@
                                                         <!--@foreach($requirements as $requirement)
                                                             <div class="table__cell">{{ $requirement->type }}</div> 
                                                         @endforeach-->
-                                                        <div class="table__cell">Age ⓘ</div> 
-                                                        <div class="table__cell">Drivers License ⓘ</div> 
+                                                        <div class="table__cell">Age</div> 
+                                                        <div class="table__cell">Drivers License</div> 
                                                     </div>
                                                     @foreach($requirements as $requirement)
                                                     <div class="table__row">
@@ -394,7 +394,7 @@
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
                                                                 
-                                                                    <div class="table__cell"><h6>{{ $requirement->type }}</h6></div> 
+                                                                    <div class="table__cell"><h6>{{ $requirement->type }} ⓘ</h6></div> 
                                                                 
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
@@ -402,7 +402,11 @@
                                                                 <div>Minimum Age requirements are strictly enforced and ensure
                                                                     proper insurance protection. All renters who allow an underage
                                                                     driver will be fined $2,500 and their rental will be immediately
-                                                                    canceled.</div>
+                                                                    canceled. Every driver is required to be listed on the rental agreement
+                                                                    and provide a VALID and NON-EXPIRED drivers license with the
+                                                                    name matching EXACTLY the name on the rental
+                                                                    agreement.<br /><strong>Note:</strong> International Drivers
+                                                                    Licenses are accepted.</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
