@@ -171,13 +171,9 @@
                                                                     <div class="modal-body">
                                                                     @foreach($categories??array(  ) as $category)
                                                                         <a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
-                                                                            
                                                                                 <img src="{{url($category->photo??'')}}"
                                                                                     alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
-                                                                            
-                                                                            
                                                                                 <div class="nav__categories--heading">{{ $category->name }}</div>
-                                                                            
                                                                         </a>
                                                                     @endforeach
                                                                     </div>
