@@ -201,7 +201,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <select class="js-example-basic-single button3" name="state">
+                    <select class="js-example-basic-single button3" name="state" id="test">
                         @foreach($brands??array() as $brand)
                             <option>
                                 <div role="listitem" class="quicklinks__item quicklinks__item--nav w-dyn-item" style="width: 300px;">
@@ -223,7 +223,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            $('.js-example-basic-single').select2();
+            $("#test").select2(); 
         });
     </script>
     @include('frontView.popup.auto-first')
