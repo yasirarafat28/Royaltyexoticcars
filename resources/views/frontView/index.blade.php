@@ -74,13 +74,13 @@
                                                     <div class="modalparentdiv">
                                                         <h4 class="animated fadeInDown">Search By</h4>
                                                         <div class="modal-div">
-                                                            <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal1">
+                                                            <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
                                                                 Body style
                                                             </button>
                                                         </div>
 
                                                         <div class="modal-div">
-                                                            <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal2">
+                                                            <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
                                                                 Make & Model
                                                             </button>
                                                         </div>
