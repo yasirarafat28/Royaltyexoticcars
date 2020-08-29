@@ -382,7 +382,7 @@
                                                 <div class="table reqs__table--nav">
                                                     <div class="table__row table__row--header">
                                                         <div
-                                                            class="table__cell table__cell--dimension table__cell--dimension-header">
+                                                            class="table__cell table__cell--dimension table__cell--dimension-header">All Custom
                                                         </div>
                                                         <!--@foreach($requirements as $requirement)
                                                             <div class="table__cell">{{ $requirement->type }}</div>
@@ -396,7 +396,7 @@
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
 
-                                                                    <div class="table__cell"><h6>{{ $requirement->type }} ⓘ</h6></div>
+                                                                    <div class="table__cell"><h6>{{$requirement->category->name??$requirement->type }} ⓘ</h6></div>
 
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
@@ -1083,7 +1083,7 @@
                                              target="_blank" class="navdrawer__shop--button w-inline-block"><img
                                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5c13df34d3261aa1bbc46af7_icon-open.svg"
                                     alt="" class="navdrawer__shop--icon" />
-                                <div>Visit our Merch Shop!</div>
+                                <div>Visit our Shop!</div>
                             </a></div>
                     </div>
                     <div class="drawer__section">
