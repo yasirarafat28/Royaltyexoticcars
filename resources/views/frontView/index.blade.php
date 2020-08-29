@@ -39,8 +39,8 @@
                     height: 50px;
                     padding: 5px;
                     width: 400px;
-                    font-size: 25px;
-                    border: 4px solid white;
+                    font-size: 18px;
+                    border: 2px solid white;
                     border-radius: 10px;
                 }
             </style>
@@ -278,19 +278,20 @@
 
                         </div>
                         <br>
+                        <h5><strong>Popular Makes</strong></h5>
                         <ul class="list-group brand-list-searchable" id="myList">
 
                             @forelse($brands??array() as $brand)
-                                <li class="list-group-item">
-                                    <a href="/vehicles?brand={{ $brand->slug }}" class="col-md-12 nav__categories--link w-inline-block">
+                                <li class="list-group-item p-0" style="cursor: pointer">
+                                    <span  class="col-md-12 nav__categories--link w-inline-block search-brand-item" data-brandname="{{$brand->name}}" data-slug="{{$brand->slug}}" data-brand="{{$brand->id}}">
                                         <img style="height: 50px !important;width: 50px !important;" src="{{url($brand->photo??'')}}"
                                              alt="" class="nav__categories--img mr-3" onerror="this.src='/no-image.png';" />
 
                                         <div class="nav__categories--heading">{{ $brand->name }}</div>
-                                    </a>
+                                    </span>
                                 </li>
                             @empty
-                                <li class="list-group-item">
+                                <li class="list-group-item brand-search-empty">
 
                                     <p class="text-danger text-center">
                                         <strong>Sorry!</strong> No record found!
@@ -306,9 +307,147 @@
                                 </li>
                         </ul>
                     </div>
+
+                    <div class="container model-search-container" style="display: none;">
+                        <div class="input-group" >
+                            <div class="input-group-prepend">
+                                <span class="input-group-text text-center" style="width: 50px;">
+                                    <i class="fa fa-search icon ml-auto mr-auto"></i>
+                                </span>
+                            </div>
+
+                            <input style="height: 47px" class="form-control model-search-input" id="myInput" type="text" placeholder="Search..">
+
+                        </div>
+                        <br>
+                        <h5><strong>Popular Models</strong></h5>
+                        <ul class="list-group model-list-searchable" id="myList">
+
+
+                                <li class="list-group-item model-search-empty" style="display: none;">
+
+                                    <p class="text-danger text-center">
+                                        <strong>Sorry!</strong> No record found!
+                                    </p>
+                                </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <form action="/vehicles" method="GET" id="custom-search-form">
+        <input type="hidden" id="custom-search-brand" name="brand">
+        <input type="hidden" id="custom-search-model" name="model">
+    </form>
     @include('frontView.popup.auto-first')
+@endsection
+@section('script')
+
+    <script>
+
+
+        $('.search-brand-item').on('click',function (event) {
+            event.preventDefault();
+            let brand_id = $(this).data('brand');
+            let brand_slug = $(this).data('slug');
+            let brand_name = $(this).data('brandname');
+            $('#custom-search-brand').val(brand_slug);
+
+
+            $.ajax({
+                url: '/get-model-by-brand/'+brand_id,
+                type: 'GET',
+                data: "",
+                success: function (data) {
+                    let content='';
+                    let modelList = $('.model-list-searchable');
+                    modelList.empty();
+
+                    jQuery.each(data, function(index, item) {
+                        content = '<li style="cursor: pointer" class="list-group-item p-0">\n' +
+                            '                                    <a onclick="searchmodelselect($(this).text())" class="col-md-12 nav__categories--link w-inline-block search-model-item">\n' +
+                            '                                        ' +
+                            '<div class="nav__categories--heading">'+item+'</div>\n' +
+                            '                                    </a>\n' +
+                            '                                </li>';
+
+                        modelList.append(content);
+
+                    });
+                    let emptycontent  = '<li class="list-group-item model-search-empty" style="display: none;">\n' +
+                        '\n' +
+                        '                                    <p class="text-danger text-center">\n' +
+                        '                                        <strong>Sorry!</strong> No record found!\n' +
+                        '                                    </p>\n' +
+                        '                                </li>';
+                    modelList.append(emptycontent);
+
+
+
+
+                    $('.brand-search-container').hide();
+                    //$('.model-search-container').show("slide", { direction: "right" }, 400);
+                    $('.model-search-container').show();
+                },
+                error: function (error) {
+                    console.log(error);
+
+                }
+            });
+
+        })
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".brand-search-input").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                let norecord = true;
+                $(".brand-list-searchable li").filter(function() {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1)
+                        norecord = false;
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+
+                });
+                if (norecord){
+                    $('.brand-search-empty').show();
+                }else{
+
+                    $('.brand-search-empty').hide();
+                }
+            });
+        });
+
+        $(document).ready(function(){
+            $(".model-search-input").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                let norecord = true;
+                $(".model-list-searchable li").filter(function() {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1)
+                        norecord = false;
+
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+
+                });
+                if (norecord){
+                    $('.model-search-empty').show();
+                }else{
+
+                    $('.model-search-empty').hide();
+                }
+            });
+        });
+
+        function searchmodelselect(model){
+
+
+            $('#custom-search-model').val(model);
+            $('#custom-search-form').submit();
+        }
+
+    </script>
 @endsection

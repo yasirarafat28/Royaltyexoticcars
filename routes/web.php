@@ -66,6 +66,9 @@ Route::get('/PaypalCheckoutCallBack', 'FrontController@PaypalCheckoutCallBack')-
 Route::get('/vehicle-checkout-success/{txn_id}', 'FrontController@vehicleCheckoutSuccess')->name('vehicleCheckoutSuccess');
 Route::get('/vehicle-checkout-invoice/{txn_id}', 'FrontController@vehicleCheckoutInvoice')->name('vehicleCheckoutInvoice');
 
+//Ajax
+Route::get('/get-model-by-brand/{brand_id}', 'FrontController@getModelByBrand')->name('getModelByBrand');
+
 
 Route::get("privacy_policy","Admincontroller@privacy");
 

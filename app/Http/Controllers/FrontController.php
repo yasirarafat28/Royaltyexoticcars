@@ -277,6 +277,12 @@ class FrontController extends Controller {
     }
 
 
+    public function getModelByBrand($brand_id){
+
+        return $models = Vehicle::where('brand_id',$brand_id)->groupBy('model')->distinct()->get('model')->pluck('model');
+    }
+
+
 
     public function checkoutstore(Request $request,$vehicle_id) {
 
