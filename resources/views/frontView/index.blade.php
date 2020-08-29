@@ -171,60 +171,96 @@
         </div>
     </main>
     <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h4 class="title text-center">Select Body Style</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                @foreach($categories??array(  ) as $category)
-                    <a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
-                            <img src="{{url($category->photo??'')}}"
-                                alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
-                            <div class="nav__categories--heading">{{ $category->name }}</div>
-                    </a>
-                @endforeach
+                    <div class="container">
+
+
+                        <div class="row">
+                            @foreach($categories??array() as $group)
+                                <div class="col-sm-6 mb-5 rent__nav--link w-inline-block" >
+
+                                    <a href="/vehicles?category={{$group->slug}}"
+                                       class="">
+                                        <div class="vehicle-group">
+
+                                            <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
+                                            <div class="rent__nav--label">{{$group->name}}</div>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content ">
                 <div class="modal-header">
+                    <h4 class="header-title">Select Make and Model</h4>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <select class="js-example-basic-single button3" name="state" id="test">
-                        @foreach($brands??array() as $brand)
-                            <option>
-                                <div role="listitem" class="quicklinks__item quicklinks__item--nav w-dyn-item" style="width: 300px;">
-                                    <a id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
-                                        class="quicklinks__link w-inline-block"><img
-                                                src="{{url($brand->photo??'')}}"
-                                                alt="Bugatti" class="quicklinks__logo" />
-                                        <div class="quicklinks__details">
-                                            <div class="quicklinks__title">{{ $brand->name }}</div>
-                                        </div>
+
+                    <div class="container brand-search-container">
+                        <div class="input-group" >
+                            <div class="input-group-prepend">
+                                <span class="input-group-text text-center" style="width: 50px;">
+                                    <i class="fa fa-search icon ml-auto mr-auto"></i>
+                                </span>
+                            </div>
+
+                            <input style="height: 47px" class="form-control brand-search-input" id="myInput" type="text" placeholder="Search..">
+
+                        </div>
+                        <br>
+                        <ul class="list-group brand-list-searchable" id="myList">
+
+                            @forelse($brands??array() as $brand)
+                                <li class="list-group-item">
+                                    <a href="/vehicles?brand={{ $brand->slug }}" class="col-md-12 nav__categories--link w-inline-block">
+                                        <img style="height: 50px !important;width: 50px !important;" src="{{url($brand->photo??'')}}"
+                                             alt="" class="nav__categories--img mr-3" onerror="this.src='/no-image.png';" />
+
+                                        <div class="nav__categories--heading">{{ $brand->name }}</div>
                                     </a>
-                                </div>
-                            </option>
-                        @endforeach
-                    </select>
+                                </li>
+                            @empty
+                                <li class="list-group-item">
+
+                                    <p class="text-danger text-center">
+                                        <strong>Sorry!</strong> No record found!
+                                    </p>
+                                </li>
+                            @endforelse
+
+                                <li class="list-group-item brand-search-empty" style="display: none;">
+
+                                    <p class="text-danger text-center">
+                                        <strong>Sorry!</strong> No record found!
+                                    </p>
+                                </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $("#test").select2();
-        });
-    </script>
     @include('frontView.popup.auto-first')
 @endsection

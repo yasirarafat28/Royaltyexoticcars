@@ -1224,6 +1224,28 @@
         });
 
     </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".brand-search-input").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                let norecord = true;
+                $(".brand-list-searchable li").filter(function() {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1)
+                        norecord = false;
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+
+                });
+                if (norecord){
+                    $('.brand-search-empty').show();
+                }else{
+
+                    $('.brand-search-empty').hide();
+                }
+            });
+        });
+    </script>
     <script>
         $.cookieMessage({
             'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
