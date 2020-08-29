@@ -19,17 +19,15 @@
                     margin-bottom: 10px;
                 }
                 .modalparentdiv {
-                    background-color: #101010;
-                    padding-bottom: 10px;
-                    opacity: 0.5;
+                    background-color: rgba(0,0,0,0.5);
+                    padding: 5em 2em;
                     color: white;
                     border-radius: 10px;
                 }
 
                 .button1 {
                     height: 50px;
-                    background-color: #101010;
-                    opacity: 0.5;
+                    background-color: transparent;
                     padding: 5px;
                     color: white;
                     width: 200px;
@@ -80,28 +78,30 @@
                                                                 Body style
                                                             </button>
                                                         </div>
-                                                        
+
                                                         <div class="modal-div">
                                                             <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal2">
                                                                 Make & Model
                                                             </button>
                                                         </div>
+
+
+                                                        <div class="rental__cta">
+                                                            <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
+                                                                <div class="rental__cta--embed w-embed">
+                                                                    <a href="/vehicles" class="rental__cta--text text-uppercase">
+                                                                        Book Now
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
-                                                    <h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
+                                                    <!--<h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
                                                     <p class="lead ">{!! $slider->content !!}</p>
 
 
-                                                    <br>
-                                                    <div class="rental__cta">
-                                                        <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
-                                                            <div class="rental__cta--embed w-embed">
-                                                                <a href="/vehicles" class="rental__cta--text text-uppercase">
-                                                                    Book Now
-                                                                </a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
+                                                    <br>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -190,12 +190,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -223,7 +223,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            $("#test").select2(); 
+            $("#test").select2();
         });
     </script>
     @include('frontView.popup.auto-first')

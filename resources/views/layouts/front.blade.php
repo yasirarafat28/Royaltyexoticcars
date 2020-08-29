@@ -55,7 +55,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    
+
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css'><link rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js'></script>
     <style>
@@ -101,7 +101,7 @@
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 25% !important;
+            bottom: 15% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
@@ -385,19 +385,19 @@
                                                             class="table__cell table__cell--dimension table__cell--dimension-header">
                                                         </div>
                                                         <!--@foreach($requirements as $requirement)
-                                                            <div class="table__cell">{{ $requirement->type }}</div> 
+                                                            <div class="table__cell">{{ $requirement->type }}</div>
                                                         @endforeach-->
-                                                        <div class="table__cell">Age</div> 
-                                                        <div class="table__cell">Drivers License</div> 
+                                                        <div class="table__cell">Age</div>
+                                                        <div class="table__cell">Drivers License</div>
                                                     </div>
                                                     @foreach($requirements as $requirement)
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-                                                                
-                                                                    <div class="table__cell"><h6>{{ $requirement->type }} ⓘ</h6></div> 
-                                                                
+
+                                                                    <div class="table__cell"><h6>{{ $requirement->type }} ⓘ</h6></div>
+
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
@@ -412,14 +412,14 @@
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-                                                        
+
                                                         <div class="table__cell--wrapper">
                                                             <div class="table__cell">{{$requirement->local_age}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
-                                                            
+
                                                         </div>
                                                         <div class="table__cell--wrapper">
-                                                            
+
                                                             <div class="table__cell">{{$requirement->local_driving_licence}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_driving_licence}}</div>
                                                         </div>
@@ -526,7 +526,7 @@
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_tire_protection}}</div>
                                                         </div>
                                                         @endforeach
-                                                        
+
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
@@ -572,7 +572,7 @@
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_fuel_credit}}</div>
                                                         </div>
                                                         @endforeach
-                                                       
+
                                                     </div>-->
                                                 </div>
                                             </div>
