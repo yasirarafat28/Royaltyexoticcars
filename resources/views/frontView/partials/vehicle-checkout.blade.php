@@ -49,7 +49,7 @@
                         <input type="hidden" name="schedule_id" id="vehicle_id" value="{{$schedule->id}}">
                         <input type="hidden" name="payment_method" value="stripe">
 
-                        <!--<div class="col-md-6 align-self-center">
+                        <div class="col-md-6 align-self-center">
                             <div class="input-group">
                                 <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
                                     <option value="">Select an Option</option>
@@ -73,7 +73,7 @@
                                     <span class="input-group-text">$  &nbsp;<span id="rental-cost-append"> 0.00</span></span>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
 
                         <div class="form-group">
 
@@ -439,27 +439,25 @@
                         <h2 class="home__h2 text-danger">Booking Information</h2>
                     </div>
                     <div class="card-body p-0">
+                        @php
 
-                        <table class="table">
+                        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time))
+
+                        @endphp
+
+                        <table class="table booking-info-table">
                             <tbody>
                             <tr>
-                                <td>Total</td>
+                                <td class="title text-muted" style="width: 30% !important;">Pick Up</td>
+                                <!--<td>{{date("l, F d Y @ h:iA",strtotime($pickup_timestamp))}}</td>-->
+                                <td>{{date("d M, Y h:iA",strtotime($pickup_timestamp))}}</td>
+                            </tr>
+                            <tr>
+                                <td class="title text-muted">Drop Off</td>
                                 <td>50.00</td>
                             </tr>
                             <tr>
-                                <td>Total</td>
-                                <td>50.00</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>50.00</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>50.00</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
+                                <td class="title text-muted">Rent for</td>
                                 <td>50.00</td>
                             </tr>
                             </tbody>
@@ -514,23 +512,23 @@
                     </div>
                     <div class="card-body p-0">
 
-                        <table class="table">
+                        <table class="table payment-info-table">
                             <tbody>
                             <tr>
                                 <td class="title text-muted">Subtotal</td>
-                                <td>50.00$</td>
+                                <td>$ <span id="subtotal-text">0.00</span></td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Taxes</td>
-                                <td>50.00$</td>
+                                <td>$ <span id="discount-text">0.00</span></td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Discount</td>
-                                <td>50.00$</td>
+                                <td>$ <span id="tax-text">0.00</span></td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Grand Total</td>
-                                <td>50.00$</td>
+                                <td>$ <span id="total-text">0.00</span></td>
                             </tr>
                             </tbody>
                         </table>

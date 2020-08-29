@@ -119,9 +119,12 @@
     .checkout-sidebar .card-header{
         background-color: transparent;
     }
-    .checkout-sidebar .card-body td{
+    .payment-info-table td{
         width: 50%;
         font-size: 18px;
+    }
+    .booking-info-table td{
+        font-size: 14px !important;
     }
     .checkout-sidebar .card-body td.title{
         font-weight: bold;
@@ -160,20 +163,11 @@
 @endsection
 @section('script')
 
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
-
     <script>
-        jQuery.validator.setDefaults({
-            debug: true,
-            success: "valid"
-        });
-
-
-
 
         $('#stripe-submit').on('click',function (event) {
             event.preventDefault();
+            console.log('test');
             let form = $( "#checkout-form" );
             form.validate({
                 rules: {},
@@ -332,8 +326,6 @@
             $('#couponError').hide();
             $('#couponSuccess').hide();
 
-            var formData = $('#CouponApplyForm').serialize();
-
             $.ajax({
                 type: "POST",
                 url: "{{ route('VehicleCouponApply') }}",
@@ -344,8 +336,8 @@
                     'total' : $('#sub_total').val(),
                 },
                 success:function(data) {
-                    that.prop("disabled", false);
                     console.log(data);
+                    that.prop("disabled", false);
                     if (data==='not_available'){
                         that.html("Apply");
                         $('#couponError').text('Entered coupon is not available now!').show();
