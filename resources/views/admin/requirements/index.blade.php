@@ -61,7 +61,7 @@
           <a href="/admin/vehicle_requirements/{{$require->id}}/edit" class="btn btn-success"><i class="fa fa-pencil f-s-25"></i> Edit</a>
           <a href="/admin/vehicle_requirements/{{$require->id}}" class="btn btn-success"><i class="fa fa-eye f-s-25"></i> Show</a>
 
-            <!--{!! Form::open([
+            {!! Form::open([
                                                'method'=>'DELETE',
                                                'url' => ['/admin/vehicle_requirements', $require->id],
                                                'style' => 'display:inline'
@@ -73,9 +73,7 @@
                                     'data-type'=>'confirm',
                                  )) !!}
                             {!! Form::close() !!}
-
-          -->
-
+ 
           </td>
       </tr>
 

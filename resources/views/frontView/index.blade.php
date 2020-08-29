@@ -15,10 +15,42 @@
                     -o-background-size: cover;
                     background-size: cover;
                 }
+                .modal-div {
+                    margin-bottom: 10px;
+                }
+                .modalparentdiv {
+                    background-color: #101010;
+                    padding-bottom: 10px;
+                    opacity: 0.5;
+                    color: white;
+                    border-radius: 10px;
+                }
+
+                .button1 {
+                    height: 50px;
+                    background-color: #101010;
+                    opacity: 0.5;
+                    padding: 5px;
+                    color: white;
+                    width: 200px;
+                    font-size: 25px;
+                    border: 4px solid white;
+                    border-radius: 10px;
+                }
+                .button3 {
+                    height: 50px;
+                    padding: 5px;
+                    width: 400px;
+                    font-size: 25px;
+                    border: 4px solid white;
+                    border-radius: 10px;
+                }
             </style>
 
             @php
-            $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
+                $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
+                $brands = App\Model\VehicleBrand::where('status','active')->get();
+                $categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
 
             @endphp
 
@@ -41,6 +73,20 @@
                                             <div class="col-md-6 offset-md-6">
 
                                                 <div class="hero__content">
+                                                    <div class="modalparentdiv">
+                                                        <h4 class="animated fadeInDown">Search By</h4>
+                                                        <div class="modal-div">
+                                                            <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal1">
+                                                                Body style
+                                                            </button>
+                                                        </div>
+                                                        
+                                                        <div class="modal-div">
+                                                            <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal2">
+                                                                Make & Model
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                     <h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
                                                     <p class="lead ">{!! $slider->content !!}</p>
 
@@ -124,7 +170,61 @@
             @endforeach
         </div>
     </main>
-
-
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                @foreach($categories??array(  ) as $category)
+                    <a href="/vehicles?category={{ $category->slug }}" id="Nav-Car-Rentals-Link" class="nav__categories--link w-inline-block">
+                            <img src="{{url($category->photo??'')}}"
+                                alt="" class="nav__categories--img" onerror="this.src='/no-image.png';" />
+                            <div class="nav__categories--heading">{{ $category->name }}</div>
+                    </a>
+                @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="js-example-basic-single button3" name="state" id="test">
+                        @foreach($brands??array() as $brand)
+                            <option>
+                                <div role="listitem" class="quicklinks__item quicklinks__item--nav w-dyn-item" style="width: 300px;">
+                                    <a id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
+                                        class="quicklinks__link w-inline-block"><img
+                                                src="{{url($brand->photo??'')}}"
+                                                alt="Bugatti" class="quicklinks__logo" />
+                                        <div class="quicklinks__details">
+                                            <div class="quicklinks__title">{{ $brand->name }}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#test").select2(); 
+        });
+    </script>
     @include('frontView.popup.auto-first')
 @endsection

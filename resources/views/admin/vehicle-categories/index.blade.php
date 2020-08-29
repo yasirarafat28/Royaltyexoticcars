@@ -22,8 +22,6 @@
         <div class="col-12">
             <div class="pb-4">
                 @if($level <4)
-
-
                     <a class="btn btn-primary"  data-toggle="modal" data-target="#modal-create" ><i class="fa fa-plus" aria-hidden="true"></i> Create Category</a>
                 @endif
 

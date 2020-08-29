@@ -5,9 +5,7 @@
 
   <div class="col-12">
 
-    <h1 class="text-center my-5">Frequently Asked Questions</h1> 
-
-
+    <h1 class="text-center my-5">Frequently Asked Questions</h1>
 
     <div class="card card-default">
 
