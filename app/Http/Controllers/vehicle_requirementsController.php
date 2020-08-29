@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Model\VehicleCategory;
 use Illuminate\Http\Request;
 use App\Model\VehicleRequirement;
 
@@ -49,7 +50,7 @@ class vehicle_requirementsController extends Controller
     public function show($id)
     {
         $require = VehicleRequirement::find($id);
-        return view('admin.requirements.show')->with('require', $require); 
+        return view('admin.requirements.show')->with('require', $require);
     }
 
     /**
@@ -61,7 +62,8 @@ class vehicle_requirementsController extends Controller
     public function edit($id)
     {
         $require = VehicleRequirement::find($id);
-        return view('admin.requirements.update')->with('require', $require); 
+        $categories = VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
+        return view('admin.requirements.update')->with('require', $require)->with('categories',$categories);
     }
 
     /**
@@ -98,7 +100,7 @@ class vehicle_requirementsController extends Controller
 
         $require = VehicleRequirement::find($id);
 
-        $require->type = $request->type;
+        $require->category_id = $request->category_id;
         $require->local_age = $request->local_age;
         $require->local_driving_licence = $request->local_driving_licence;
         $require->local_insurance = $request->local_insurance;
@@ -116,12 +118,12 @@ class vehicle_requirementsController extends Controller
         $require->international_tire_protection = $request->international_tire_protection;
         $require->international_mechanical_breakdown_coverage = $request->international_mechanical_breakdown_coverage;
         $require->international_fuel_credit = $request->international_fuel_credit;
-        
+
 
         $require->save();
         return redirect('admin/vehicle_requirements')->withSuccess('Requirements updated successfully!');
     }
- 
+
     /**
      * Remove the specified resource from storage.
      *

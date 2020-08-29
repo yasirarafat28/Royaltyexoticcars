@@ -52,7 +52,12 @@
                           {{method_field('PATCH')}}
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">Type</label>
-                              <input class="form-control" name="type" type="text" value="{{$require->type}}">
+                              <select name="category_id" id="" class="form-control">
+                                  <option value="">Select an option</option>
+                                  @foreach($categories??array() as $category)
+                                      <option {{$require->category_id==$category->id?'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                                  @endforeach
+                              </select>
                           </div>
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">Local Age</label>
