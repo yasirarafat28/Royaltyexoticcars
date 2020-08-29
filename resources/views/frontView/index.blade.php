@@ -49,6 +49,7 @@
                 $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
                 $brands = App\Model\VehicleBrand::where('status','active')->get();
                 $categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
+                $setting = \App\Model\Setting::first();
 
             @endphp
 
@@ -126,21 +127,22 @@
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5b2542c4a3234f310ba98fdb_logo-youtube-red.svg"
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><a
-                    href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
+                    href="{{$setting->utube_link}}" target="_blank"
                     class="reviews__youtube w-inline-block"><img
                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe.png"
                         srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe.png 1660w"
                         sizes="(max-width: 479px) 20vw, 8vw" alt="" class="reviews__youtube--img"></a>
                 <div class="reviews__text">269 videos, 400K subs, 40M views &amp; counting!</div>
-                <a href="https://www.youtube.com/channel/UC9uIfxBZsokLzeqqgMv_qYw" target="_blank"
-                   id="Watch-Our-Vlog-Link" class="reviews__link">Watch our Vlog!</a></div>
+                <a href="{{$setting->utube_link}}" target="_blank"
+                   id="Watch-Our-Vlog-Link" class="reviews__link">Watch our Vlog!</a>
+            </div>
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e9e6fc00011a8e3e_reviews-tripadvisor-light-bg.svg"
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a535ce_trip-advisor-stars.svg"
                     alt="" class="reviews__stars">
                 <div class="reviews__text">5 star average rating based on <strong>1,550</strong>&nbsp;reviews</div>
-                <a href="https://www.tripadvisor.com/Attraction_Review-g45963-d8765047-Reviews-Royalty_Exotic_Cars-Las_Vegas_Nevada.html"
+                <a href="{{$setting->insta_link}}"
                    target="_blank" id="TripAdvisor-Review-Link" class="reviews__link">Leave a TripAdvisor Review</a>
             </div>
             <div class="reviews__item"><img
@@ -149,7 +151,7 @@
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5360b_google-reviews-stars.svg"
                     alt="" class="reviews__stars">
                 <div class="reviews__text">5 star average rating based on <strong>571</strong>&nbsp;reviews</div>
-                <a href="https://goo.gl/maps/Bxth6drQDFqZTnvF9" target="_blank" id="Google-Review-Link"
+                <a href="{{$setting->tweeet_link}}" target="_blank" id="Google-Review-Link"
                    class="reviews__link">Leave a Google Review</a></div>
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e1788700018e6cd1_reviews-facebook-light-bg-2.svg"
@@ -157,7 +159,7 @@
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a62817bae7e6500016b012c_stars-facebook.svg"
                     alt="" class="reviews__stars">
                 <div class="reviews__text">5 star average rating based on <strong>230</strong> reviews</div>
-                <a href="https://www.facebook.com/pg/RoyaltySupercarRentals/reviews/" target="_blank"
+                <a href="{{$setting->fb_link}}" target="_blank"
                    id="Facebook-Review-Link" class="reviews__link">Leave a Facebook Review</a></div>
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a626d74e9e6fc00011a8e3d_reviews-yelp-light-bg.svg"
@@ -165,7 +167,7 @@
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5372b_yelp-reviews-stars.svg"
                     alt="" class="reviews__stars">
                 <div class="reviews__text">5 star average rating based on <strong>169</strong> reviews</div>
-                <a href="https://www.yelp.com/biz/royalty-exotic-cars-las-vegas-5?hrid=Y6HEV_AYvUQs5RMwUD5guw&amp;rh_type=phrase&amp;rh_ident=unlimited_mile"
+                <a href="{{$setting->pinter_link}}"
                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a></div>
         </div>
         <br>

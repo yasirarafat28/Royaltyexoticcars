@@ -1027,10 +1027,10 @@
                         <h4>Social</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Instagram</a>
+                            <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Trip Advisor</a>
                             </li><li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
-                            </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Twitter</a>
-                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Pinterest</a>
+                            </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Google Plus</a>
+                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Yelp</a>
                             </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
                             </li></ul>
                     </div>
@@ -1120,9 +1120,9 @@
                                     href="{{$setting->insta_link}}" target="_blank"
                                     id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
+                                            src="images/trip-advisor.png"
                                             alt="Instagram" class="navdrawer__link--image" /></div>
-                                    <div>Follow us on Instagram</div>
+                                    <div>Follow us on Trip Advisor</div>
                                 </a><a href="{{$setting->fb_link}}"
                                        target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
@@ -1132,9 +1132,9 @@
                                 </a><a href="{{$setting->tweeet_link}}" target="_blank"
                                        id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
-                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
+                                            src="images/google-plus.png"
                                             alt="Twitter" class="navdrawer__link--image" /></div>
-                                    <div>Follow us on Twitter</div>
+                                    <div>Connect on Google Plus</div>
                                 </a>
 
                                 <a href="{{$setting->pinter_link}}" target="_blank"
@@ -1142,7 +1142,7 @@
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
                                             alt="Pinterest" class="navdrawer__link--image" /></div>
-                                    <div>Follow us on Pinterest</div>
+                                    <div>Follow us on Yelp</div>
                                 </a><a href="{{$setting->utube_link}}" target="_blank"
                                        id="Drawer-Youtube-Link"
                                        class="navdrawer__link navdrawer__link--no-border w-inline-block">
