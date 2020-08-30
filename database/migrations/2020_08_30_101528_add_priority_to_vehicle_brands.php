@@ -14,7 +14,7 @@ class AddPriorityToVehicleBrands extends Migration
     public function up()
     {
         Schema::table('vehicle_brands', function (Blueprint $table) {
-            //
+            $table->integer('priority')->default(0);
         });
     }
 
