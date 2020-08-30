@@ -482,7 +482,7 @@
                               </div>
                            </li>
                            @endforeach
-                           <li><a href="{{url('Offers')}}">{{__('messages.offers')}}</a>
+                           <li style="text-align: left;"><a href="{{url('Offers')}}">{{__('messages.offers')}}</a>
                            </li>
                         </ul>
                      </div>
