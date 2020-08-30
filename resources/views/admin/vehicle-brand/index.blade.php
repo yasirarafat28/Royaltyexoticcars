@@ -34,6 +34,7 @@
                                 <th>{{__('messages.id')}}</th>
                                 <th>Image</th>
                                 <th>{{__('messages.name')}}</th>
+                                <th>{{__('messages.priority')}}</th>
                                 <th>{{__('messages.action')}}</th>
                             </tr>
                             </thead>
