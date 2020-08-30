@@ -247,7 +247,7 @@
             </div>
          </div>
       </div>
-      <div class="user-login-pop_up">
+      <div class="user-login-pop_up" >
 
           @include('modal.auth')
 
@@ -463,7 +463,7 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                            @foreach($header_menu as $category)
-                           <li class="nav-item dropdown">
+                           <li class="nav-item dropdown" style="text-align: left;">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                               {{$category->name}}
                               </a>
