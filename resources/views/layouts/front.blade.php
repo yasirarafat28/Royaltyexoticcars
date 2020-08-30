@@ -1094,7 +1094,7 @@
                                     <div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
                                         <div class="navdrawer__links--wrapper"><a href="tel:18669841187"
                                                                                   id="Drawer-Call-US-Link" class="navdrawer__link w-inline-block">
-                                                <div class="navdrawer__link--icon"><img
+                                                <div class="navdrawer__link--icon" style="background-color: red;"><img
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7253fa2651bb0001cd5c5c_icon-sms-white.svg"
                                                         alt="US Main Phone Number" class="navdrawer__link--image" />
                                                 </div>
@@ -1103,7 +1103,7 @@
                                             </a><a
                                                 href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
                                                 id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
-                                                <div class="navdrawer__link--icon"><img
+                                                <div class="navdrawer__link--icon" style="background-color: red;"><img
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
                                                         alt="Reservations Email" class="navdrawer__link--image" /></div>
                                                 <div>{{$setting->email}}</div>
@@ -1119,19 +1119,19 @@
                             <div class="navdrawer__links--wrapper"><a
                                     href="{{$setting->insta_link}}" target="_blank"
                                     id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
-                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="images/trip-advisor.png"
                                             alt="Instagram" class="navdrawer__link--image" /></div>
                                     <div>Follow us on Trip Advisor</div>
                                 </a><a href="{{$setting->fb_link}}"
                                        target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
-                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
                                             alt="Facebook" class="navdrawer__link--image" /></div>
                                     <div>Like us on Facebook</div>
                                 </a><a href="{{$setting->tweeet_link}}" target="_blank"
                                        id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
-                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="images/google-plus.png"
                                             alt="Twitter" class="navdrawer__link--image" /></div>
                                     <div>Connect on Google Plus</div>
@@ -1139,14 +1139,14 @@
 
                                 <a href="{{$setting->pinter_link}}" target="_blank"
                                    id="Drawer-Pinterest-Link" class="navdrawer__link w-inline-block">
-                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
                                             alt="Pinterest" class="navdrawer__link--image" /></div>
                                     <div>Follow us on Yelp</div>
                                 </a><a href="{{$setting->utube_link}}" target="_blank"
                                        id="Drawer-Youtube-Link"
                                        class="navdrawer__link navdrawer__link--no-border w-inline-block">
-                                    <div class="navdrawer__link--icon navdrawer__link--icon-social"><img
+                                    <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53631_youtube.svg"
                                             alt="Youtube" class="navdrawer__link--image" /></div>
                                     <div>Subscribe to our YouTube</div>
