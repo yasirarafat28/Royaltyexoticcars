@@ -47,6 +47,11 @@
                                     </div>
 
                                     <div class="form-group ">
+                                        <label for="name" class="control-label">Priority</label>
+                                        <input class="form-control" name="priority" type="integer" id="priority">
+                                    </div>
+
+                                    <div class="form-group ">
                                         <label for="name" class="control-label">Description</label>
                                         <textarea name="description"   class="form-control"></textarea>
 
@@ -133,6 +138,11 @@
                                                     <div class="form-group">
                                                         <label for="name" class="control-label">Name</label>
                                                         <input class="form-control" name="name" type="text" value="{{$item->name}}"  id="edit-name">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="name" class="control-label">Priority</label>
+                                                        <input class="form-control" name="priority" type="text" value="{{$item->priority}}"  id="edit-priority">
                                                     </div>
 
                                                     <div class="form-group ">
