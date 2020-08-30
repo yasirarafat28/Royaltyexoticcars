@@ -142,7 +142,7 @@
 
                                                     <div class="form-group">
                                                         <label for="name" class="control-label">Priority</label>
-                                                        <input class="form-control" name="priority" type="text" value="{{$item->priority}}"  id="edit-priority">
+                                                        <input class="form-control" name="priority" type="integer" value="{{$item->priority}}"  id="edit-priority">
                                                     </div>
 
                                                     <div class="form-group ">
