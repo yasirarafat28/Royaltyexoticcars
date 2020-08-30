@@ -309,8 +309,8 @@
                             <li class="nav-item">
                                 <div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 
-                                    <a  id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-                                        <div>Rentals</div>
+                                    <a id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
+                                        <div style="font-size: 15px; margin-left: -5px;">Rentals</div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--categories w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
