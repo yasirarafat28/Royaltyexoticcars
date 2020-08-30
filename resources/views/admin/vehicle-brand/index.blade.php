@@ -83,7 +83,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="cc-payment" class="control-label mb-1">Priority</label>
-                                                            <input id="edit_priority" name="priority" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$item->priority}}" placeholder="{{__('messages.brand_name')}}" required>
+                                                            <input id="edit_priority" name="priority" type="integer" class="form-control" aria-required="true" aria-invalid="false" value="{{$item->priority}}" placeholder="{{__('messages.brand_name')}}" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="cc-payment" class="control-label mb-1">
@@ -153,6 +153,12 @@
                                 {{__('messages.brand_name')}}
                             </label>
                             <input id="name" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" placeholder="{{__('messages.brand_name')}}" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-payment" class="control-label mb-1">
+                                Priority
+                            </label>
+                            <input id="priority" name="priority" type="integer" class="form-control" aria-required="true" aria-invalid="false" value="" placeholder="priority" required="">
                         </div>
                         <div class="form-group">
                             <label for="cc-payment" class="control-label mb-1">
