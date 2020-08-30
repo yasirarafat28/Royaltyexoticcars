@@ -1,8 +1,8 @@
 @php
 
 	$setting = \App\Model\Setting::first();
-	$brands = App\Model\VehicleBrand::where('status','active')->get();
-	$categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
+	$brands = App\Model\VehicleBrand::where('status','active')->orderBy('priority', ASC)->get();
+	$categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->orderBy('priority', ASC)->get();
 
     $requirements = App\Model\VehicleRequirement::all();
 @endphp

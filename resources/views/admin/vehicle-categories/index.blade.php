@@ -95,6 +95,7 @@
                         <th>Image</th>
                     @endif
                     <th>Name</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Timestamp</th>
                     <th  class="action-td" >Action</th>
@@ -109,6 +110,7 @@
                             <td><img src="{{asset($item->photo)}}" height="42" width="42"></td>
                         @endif
                         <td>{{$item->name}}</td>
+                        <td>{{$item->priority}}</td>
                         <td>{{$item->status}}</td>
                         <td>{{$item->created_at}}</td>
                         <td id="action" class="action-td">
