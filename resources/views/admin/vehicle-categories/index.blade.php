@@ -47,6 +47,11 @@
                                     </div>
 
                                     <div class="form-group ">
+                                        <label for="name" class="control-label">Priority</label>
+                                        <input class="form-control" name="priority" type="integer" id="priority">
+                                    </div>
+
+                                    <div class="form-group ">
                                         <label for="name" class="control-label">Description</label>
                                         <textarea name="description"   class="form-control"></textarea>
 
@@ -90,6 +95,7 @@
                         <th>Image</th>
                     @endif
                     <th>Name</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Timestamp</th>
                     <th  class="action-td" >Action</th>
@@ -104,6 +110,7 @@
                             <td><img src="{{asset($item->photo)}}" height="42" width="42"></td>
                         @endif
                         <td>{{$item->name}}</td>
+                        <td>{{$item->priority}}</td>
                         <td>{{$item->status}}</td>
                         <td>{{$item->created_at}}</td>
                         <td id="action" class="action-td">
@@ -133,6 +140,11 @@
                                                     <div class="form-group">
                                                         <label for="name" class="control-label">Name</label>
                                                         <input class="form-control" name="name" type="text" value="{{$item->name}}"  id="edit-name">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="name" class="control-label">Priority</label>
+                                                        <input class="form-control" name="priority" type="integer" value="{{$item->priority}}"  id="edit-priority">
                                                     </div>
 
                                                     <div class="form-group ">

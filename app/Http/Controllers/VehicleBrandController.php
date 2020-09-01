@@ -44,6 +44,7 @@ class VehicleBrandController extends Controller
 
         $category = new VehicleBrand();
         $category->name = $request->name;
+        $category->priority = $request->priority;
         $category->slug = str_replace([' ','/'],'-',$request->name).'-'.uniqid();
         //$category->status = $request->status;
 
@@ -102,6 +103,7 @@ class VehicleBrandController extends Controller
 
         $category = VehicleBrand::find($id);
         $category->name = $request->name;
+        $category->priority = $request->priority;
         $category->status = $request->status;
 
         if ($request->hasFile('photo')) {

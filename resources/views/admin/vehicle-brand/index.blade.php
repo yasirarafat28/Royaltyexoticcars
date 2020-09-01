@@ -34,6 +34,7 @@
                                 <th>{{__('messages.id')}}</th>
                                 <th>Image</th>
                                 <th>{{__('messages.name')}}</th>
+                                <th>Priority</th>
                                 <th>{{__('messages.action')}}</th>
                             </tr>
                             </thead>
@@ -45,6 +46,7 @@
                                 <td>
                                     <img src="{{asset($item->photo)}}" height="42" width="42"></td>
                                 <td>{{$item->name}}</td>
+                                <td>{{$item->priority}}</td>
                                 <td>
                                     <a class="btn btn-primary"  data-toggle="modal" data-target="#editBrand{{$item->id}}" href="#" title="Edit Service"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 
@@ -78,6 +80,10 @@
                                                         <div class="form-group">
                                                             <label for="cc-payment" class="control-label mb-1">{{__('messages.brand_name')}}</label>
                                                             <input id="edit_brand" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$item->name}}" placeholder="{{__('messages.brand_name')}}" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="cc-payment" class="control-label mb-1">Priority</label>
+                                                            <input id="edit_priority" name="priority" type="integer" class="form-control" aria-required="true" aria-invalid="false" value="{{$item->priority}}" placeholder="{{__('messages.brand_name')}}" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="cc-payment" class="control-label mb-1">
@@ -147,6 +153,12 @@
                                 {{__('messages.brand_name')}}
                             </label>
                             <input id="name" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" placeholder="{{__('messages.brand_name')}}" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-payment" class="control-label mb-1">
+                                Priority
+                            </label>
+                            <input id="priority" name="priority" type="integer" class="form-control" aria-required="true" aria-invalid="false" value="" placeholder="priority" required="">
                         </div>
                         <div class="form-group">
                             <label for="cc-payment" class="control-label mb-1">

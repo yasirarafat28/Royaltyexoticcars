@@ -105,6 +105,7 @@
                               </label>
                               <input type="text" id="company_name" placeholder="{{__('messages.company_name')}}" class="form-control" name="company_name" required value="{{$data->company_name}}">
                            </div>
+                           <small>Note: Dont forget to use PROTOCOL ( http, https, etc. ). example(https://www.tripadvisor.com/)</small>
                            <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
                                  Trip Advisor
