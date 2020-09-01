@@ -1,6 +1,6 @@
 
 @php
-$country_type='usa'
+$country_type='usa';
  $tire_protection = $country_type.'_tire_protection';
 $property_damage_insurance = $country_type.'_liability_insurance';
 $liability_insurance = $country_type.'_liability_insurance';
