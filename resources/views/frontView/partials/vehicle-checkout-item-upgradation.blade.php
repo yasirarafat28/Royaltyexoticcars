@@ -52,16 +52,14 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
 </div>-->
 
 <div class="form-group">
-    <label for="tire_protection" class="form-label">Tire Protection</label>
+    <label for="tire_protection" class="form-label">Tire Protection <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+        data-original-title="Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability."></i></label>
     <select id="tire_protection" name="tire_protection" class="form-control selectpicker"
             data-live-search="true">
         <option value="{{$requirement->$tire_protection}}"> $ {{number_format($requirement->$tire_protection,2)}} | Yes I would like to buy Tire Protection</option>
         <option value="0">$0.00 | No I dont want to buy Tire Protection</option>
     </select>
 
-    <small id="passwordHelpBlock" class="form-text text-muted">
-        Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability.
-    </small>
 </div>
 
 <!--<div class="form-group">

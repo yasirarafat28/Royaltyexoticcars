@@ -108,7 +108,7 @@
                                     data-live-search="true" required>
 
                                 @foreach (App\Model\Country::get() as $country)
-                                    <option {{$country->iso3=='USA'?'selected':''}} value="{{$country->iso3}}">{{ucfirst($country->nicename)}}</option>
+                                    <option {{$country->iso3=='USA'?'selected':''}} value="{{$country->iso3??'USA'}}">{{ucfirst($country->nicename??'USA')}}</option>
 
                                 @endforeach
                             </select>
