@@ -92,6 +92,7 @@
         @media screen and (max-width: 479px) {
             .nav__links {
                 margin-left: 0em;
+                font-size: 11px;
 
             }
         }
@@ -199,11 +200,13 @@
             a.nav__link{
                 text-align: left !important;
                 margin-bottom:10px;
+                
             }
         }
         @media screen and (max-width: 767px) {
             .nav__link {
                 position: unset !important;
+                
             }
 
             .dropdown__list.dropdown__list--table, .dropdown__list.dropdown__list--categories {
@@ -223,6 +226,7 @@
         @media screen and (max-width: 479px) {
             .nav__link {
                 position: unset !important;
+                
             }
 
             .dropdown__list.dropdown__list--table, .dropdown__list.dropdown__list--categories {
