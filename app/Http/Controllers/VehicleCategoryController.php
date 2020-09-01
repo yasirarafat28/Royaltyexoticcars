@@ -83,9 +83,6 @@ class VehicleCategoryController extends Controller {
 
         $category->save();
 
-
-        $require->local_property_damage_waiver = '99';
-        $require->international_full_coverage_insurance_d2 = '199';
         if($request->level==1){
 
             $require = new VehicleRequirement();
