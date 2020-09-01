@@ -116,10 +116,10 @@
             text-overflow: '';
         }
 
-        .booking-option{
+        /*.booking-option{
             font-size: 18px !important;
             height: 55px !important;
-        }
+        }*/
         .input-group {
             margin-bottom: 1rem;
         }
@@ -246,6 +246,8 @@
             margin-left: unset;
             margin-right: unset;
         }
+
+
 	</style>
 
 @yield('style')
@@ -1243,6 +1245,14 @@
 
 
         });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip({
+                animation:true,
+                html:true,
+                boundary: 'viewport',
+                template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner text-bold"></div></div>'
+            })
+        })
 
     </script>
 

@@ -1,15 +1,16 @@
 
 @php
- $tire_protection = $country.'_tire_protection';
-$property_damage_insurance = $country.'_liability_insurance';
-$liability_insurance = $country.'_liability_insurance';
-$fuel_credit = $country.'_fuel_credit';
-$mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
+$country_type='usa';
+ $tire_protection = $country_type.'_tire_protection';
+$property_damage_insurance = $country_type.'_liability_insurance';
+$liability_insurance = $country_type.'_liability_insurance';
+$fuel_credit = $country_type.'_fuel_credit';
+$mechanical_breakdown = $country_type.'_mechanical_breakdown_coverage';
 @endphp
 
 
 <!--
-@if($country=='international')
+@if($country_type=='international')
     <div class="form-group">
         <label for="international_full_coverage_insurance" class="form-label">International Full Coverage Insurance</label>
         <select id="international_full_coverage_insurance" name="international_full_coverage_insurance" class="form-control selectpicker"
@@ -52,16 +53,14 @@ $mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
 </div>-->
 
 <div class="form-group">
-    <label for="tire_protection" class="form-label">Tire Protection</label>
+    <label for="tire_protection" class="form-label">Tire Protection <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+        data-original-title="Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability."></i></label>
     <select id="tire_protection" name="tire_protection" class="form-control selectpicker"
             data-live-search="true">
         <option value="{{$requirement->$tire_protection}}"> $ {{number_format($requirement->$tire_protection,2)}} | Yes I would like to buy Tire Protection</option>
         <option value="0">$0.00 | No I dont want to buy Tire Protection</option>
     </select>
 
-    <small id="passwordHelpBlock" class="form-text text-muted">
-        Covers cost of tire replacement, tow charges, and loss of rental time up to $1000. Tire replacement can take up to several hours depending on the location of incident, traffic conditions, and availability.
-    </small>
 </div>
 
 <!--<div class="form-group">

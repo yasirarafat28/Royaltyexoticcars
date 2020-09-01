@@ -165,6 +165,25 @@
 
     <script>
 
+        $(document).ready(function(){
+            $('#reservation_for').val($(this).val());
+            let cost = $('#rental_type option:selected').data('cost');
+            if (isNaN(cost)){
+                $('#online-booking-container').hide();
+                $('#online-booking-error-container').show();
+                $('#rental-cost-append').text('0.00');
+                $('#rental_cost').val(0);
+            }else{
+                $('#online-booking-container').show();
+                $('#online-booking-error-container').hide();
+
+                $('#rental-cost-append').text(parseFloat(cost).toFixed(2));
+                $('#rental_cost').val(cost);
+            }
+
+            calculation();
+        });
+
         $('#stripe-submit').on('click',function (event) {
             event.preventDefault();
             console.log('test');
@@ -310,10 +329,20 @@
             $('#tax_total').val(tax.toFixed(2));
             $('#grand_total').val(grand_total.toFixed(2));
 
-            $('#subtotal-text').text(sub_total.toFixed(2));
-            $('#discount-text').text(discount.toFixed(2));
-            $('#tax-text').text(tax.toFixed(2));
-            $('#total-text').text(grand_total.toFixed(2));
+            if(!rental_cost){
+                $('#subtotal-text').text('0.00');
+                $('#discount-text').text('0.00');
+                $('#tax-text').text('0.00');
+                $('#total-text').text('0.00');
+
+            }else{
+
+                $('#subtotal-text').text(sub_total.toFixed(2));
+                $('#discount-text').text(discount.toFixed(2));
+                $('#tax-text').text(tax.toFixed(2));
+                $('#total-text').text(grand_total.toFixed(2));
+            }
+
         }
     </script>
 

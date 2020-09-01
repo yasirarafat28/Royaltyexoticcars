@@ -207,6 +207,9 @@ class FrontController extends Controller {
             if (isset($request->q) && $request->q){
                 $q->where('name', 'LIKE', '%' . $request->q . '%');
             }
+            if (isset($request->model) && $request->model){
+                $q->where('model', 'LIKE', '%' . $request->model . '%');
+            }
         });
 
         $brand_ids = $records->distinct('brand_id')
@@ -271,7 +274,8 @@ class FrontController extends Controller {
         $schedule = VehicleSchedule::where('id',$schedule_id)->first();
         $date = base64_decode($date);
 
-        $requirement = VehicleRequirement::where('type',$vehicle->type)->first();
+        //$requirement = VehicleRequirement::where('type',$vehicle->type)->first();
+        $requirement = VehicleRequirement::first();
         $country='local';
         return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country'));
     }

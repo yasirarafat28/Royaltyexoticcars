@@ -106,19 +106,26 @@
             events: [
                 @foreach($dates??array() as $date)
                     @foreach($schedules??array() as $schedule)
-                        {
-                            title: '<span style="color: #0a6ece;" class="schedule-time">{{date("h:i a",strtotime($schedule->start_time))}}</span>\n' +
-                                '  <span class="schedule-title">{{$schedule->vehicle->name??null}} - ({{$schedule->color}}) -  ({{$schedule->register_number}})</span>\n' +
-                                '    @if($schedule->four_hour=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 4 Hrs Rental  </p> @endif ' +
-                                '    @if($schedule->eight_hour=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 8 Hrs Rental  </p> @endif ' +
-                                '    @if($schedule->full_day=="yes")<p style="color: #5a6672;"  class="schedule-offer"> 24 Hrs Rental  </p> @endif ',
-                            start: "{{$date}}",
-                            className: 'b-l b-2x b-greensea',
-                            url: "{{url('/vehicle-checkout',array(
+
+                    @php
+                    $checkoutUrl =  url('/vehicle-checkout',array(
                                 'vehicle'=>base64_encode($vehicle->id),
                                 'schedule'=>base64_encode($schedule->id),
                                 'date'=>base64_encode($date),
-                            ))}}",
+                            ));
+
+                    @endphp
+                        {
+                            title: '<span style="color: #0a6ece;" class="schedule-time">{{date("h:i a",strtotime($schedule->start_time))}}</span>\n' +
+                                '  <span class="schedule-title">{{$schedule->vehicle->name??null}} - ({{$schedule->color}}) -  ({{$schedule->register_number}})</span>\n' +
+                                '    @if($schedule->four_hour=="yes"&& $schedule->vehicle->four_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=four_hour">  <p style="color: red;"  class="schedule-offer"> 4 Hrs Rental  </p> </a> @endif ' +
+                                '    @if($schedule->six_hour=="yes"&& $schedule->vehicle->six_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=six_hour">  <p style="color: red;"  class="schedule-offer"> 6 Hrs Rental  </p> </a> @endif ' +
+                                '    @if($schedule->eight_hour=="yes"&& $schedule->vehicle->eight_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=eight_hour">  <p style="color: red;"  class="schedule-offer"> 8 Hrs Rental  </p> </a> @endif ' +
+                                '    @if($schedule->twelve_hour=="yes"&& $schedule->vehicle->twelve_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=twelve_hour">  <p style="color: red;"  class="schedule-offer"> 12 Hrs Rental  </p> </a> @endif ' +
+                                '    @if($schedule->full_day=="yes"&& $schedule->vehicle->full_day=='yes')<a href="{{$checkoutUrl}}?reservation_for=full_day">  <p style="color: red;"  class="schedule-offer"> 24 Hrs Rental  </p> </a> @endif ',
+                            start: "{{$date}}",
+                            className: 'b-l b-2x b-greensea',
+                            url: "{{$checkoutUrl}}",
                         },
                     @endforeach
                 @endforeach

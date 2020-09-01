@@ -49,60 +49,68 @@
                         <input type="hidden" name="schedule_id" id="vehicle_id" value="{{$schedule->id}}">
                         <input type="hidden" name="payment_method" value="stripe">
 
-                        <div class="col-md-6 align-self-center">
+
+                        <div class="form-group" style="display: {{isset($_GET['reservation_for'])?'block':'block'}}">
+                            <label for="fname" class="form-label">Reservation for
+
+                                <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                 data-original-title="It is required that the name of your booking matches your Identification Card and Payment Card at time of check-in."></i> :
+                                </label>
                             <div class="input-group">
-                                <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
+                                <select required name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
                                     <option value="">Select an Option</option>
                                     @if($schedule->four_hour=='yes' && $schedule->vehicle->four_hour=='yes')
-                                        <option value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour'?'selected':''}} value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
                                     @endif
                                     @if($schedule->six_hour=='yes' && $schedule->vehicle->six_hour=='yes')
-                                        <option value="six_hour" data-cost="{{$vehicle->six_hour_discount?$vehicle->six_hour_discount:$vehicle->six_hour_price}}" >6Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour'?'selected':''}} value="six_hour" data-cost="{{$vehicle->six_hour_discount?$vehicle->six_hour_discount:$vehicle->six_hour_price}}" >6Hrs Rental</option>
                                     @endif
                                     @if($schedule->eight_hour=='yes' && $schedule->vehicle->eight_hour=='yes')
-                                        <option value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour'?'selected':''}} value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
                                     @endif
                                     @if($schedule->twelve_hour=='yes' && $schedule->vehicle->twelve_hour=='yes')
-                                        <option value="twelve_hour" data-cost="{{$vehicle->twelve_hour_discount?$vehicle->twelve_hour_discount:$vehicle->twelve_hour_price}}" >12Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour'?'selected':''}} value="twelve_hour" data-cost="{{$vehicle->twelve_hour_discount?$vehicle->twelve_hour_discount:$vehicle->twelve_hour_price}}" >12Hrs Rental</option>
                                     @endif
                                     @if($schedule->full_day=='yes' && $schedule->vehicle->full_day=='yes')
-                                        <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day'?'selected':''}} value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
                                     @endif
                                 </select>
                                 <div class="input-group-append">
                                     <span class="input-group-text">$  &nbsp;<span id="rental-cost-append"> 0.00</span></span>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="form-group">
 
-                            <label for="fname" class="form-label">Primary Driver's Full Name:</label>
+                            <label for="fname" class="form-label">Primary Driver's Full Name:
+                                <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                 data-original-title="It is required that the name of your booking matches your Identification Card and Payment Card at time of check-in."></i>
+                            </label>
                             <input class="form-control" type="text" id="fname" name="primary_driver_name"
                                    placeholder="As it appears on Driver's license" required>
 
-                            <small id="passwordHelpBlock" class="form-text text-muted">
-                                *It is required that the name of your booking matches your Identification Card and Payment Card at time of check-in.
-                            </small>
 
                         </div>
                         <div class="form-group">
 
 
-                            <label for="lname" class="form-label">Additional Driver's Full Name:</label>
+                            <label for="lname" class="form-label">Additional Driver's Full Name: <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                data-original-title="Rentals are limited to 2 drivers."></i></label>
                             <input type="text" id="lname" name="additional_driver_name" class="form-control"
                                    placeholder="As it appears on Driver's license">
 
-                            <small id="passwordHelpBlock" class="form-text text-muted">
-                                *Rentals are limited to 2 drivers.
-                            </small>
                         </div>
                         <div class="form-group">
                             <label for="country" class="form-label">Country of Residence</label>
                             <select id="country" name="country" class="form-control selectpicker"
                                     data-live-search="true" required>
-                                <option value="usa">USA</option>
-                                <option value="international"> International & Canada </option>
+
+                                @foreach (App\Model\Country::get() as $country)
+                                    <option {{$country->iso3=='USA'?'selected':''}} value="{{$country->iso3??'USA'}}">{{ucfirst($country->nicename??'USA')}}</option>
+
+                                @endforeach
                             </select>
                         </div>
                         <div id="upgrade-items">
@@ -116,24 +124,30 @@
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" value="" name="age_agreement" required></div>
                                 <div style="padding-left: 10px;"> I am over the age of 25
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">All drivers must be over the age of 25.
 
-                                            *Passengers must be at least 4' 9" or weigh more than 40lbs.</p>
-                                    </span></div>
+
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="All drivers must be over the age of 25.
+
+                                     *Passengers must be at least 4' 9inch <br> or weigh more than 40lbs."></i>
+
+                                </div>
                             </label>
                         </div>
 
-                        <!--<div class="checkbox checkbox-with-content" >
+                        <div class="checkbox checkbox-with-content" >
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" value="" name="licence_agreement" required></div>
                                 <div style="padding-left: 10px;"> I have a valid driver's license
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">All drivers must have a valid driver's license from their country of
-                                            citizenship.
 
-                                            *International driver's must have passport present.</p>
-                                    </span></div>
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="All drivers must have a valid driver's license from their country of
+                                     citizenship.
+                                     <br>
+
+                                     *International driver's must have passport present."></i>
+
+                                </div>
                             </label>
                         </div>
 
@@ -141,12 +155,14 @@
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" value="" name="law_agreement" required></div>
                                 <div style="padding-left: 10px;"> I agree to follow all state and federal laws
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">Please drive in a safe, responsible, and legal manner.
 
-                                            *Unsafe operation may result in fines/early termination of rental agreement.
-                                        </p>
-                                    </span></div>
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="Please drive in a safe, responsible, and legal manner.
+                                     <br>
+
+                                     *Unsafe operation may result in fines/early termination of rental agreement."></i>
+
+                                </div>
                             </label>
                         </div>
 
@@ -154,12 +170,16 @@
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" value="" name="mile_policy_agreement" required></div>
                                 <div style="padding-left: 10px;"> I accept the Unlimited Miles Policy
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">All car rentals include unlimited mileage within a 100 mile radius of pickup
-                                            location.
 
-                                            *Driving outside the 100 mile radius service area is subject to fees.</p>
-                                    </span></div>
+
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="All car rentals include unlimited mileage within a 100 mile radius of pickup
+                                     location.
+                                     <br>
+
+                                     *Driving outside the 100 mile radius service area is subject to fees."></i>
+
+                                </div>
                             </label>
                         </div>
 
@@ -175,11 +195,14 @@
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" value="" name="late_return_agreement" required></div>
                                 <div style="padding-left: 10px;"> I accept the Late Returns Policy
-                                    <span>
-                                        <p  style="font-weight: normal; font-size: 90%;">Please ensure you have adequate time for your drive back to the showroom.
 
-                                            *Late returns are subject to $250+proration fee.</p>
-                                    </span></div>
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="Please ensure you have adequate time for your drive back to the showroom.
+
+                                     <br>
+                                     *Late returns are subject to $250+proration fee."></i>
+
+                                </div>
                             </label>
                         </div>
 
@@ -188,29 +211,32 @@
                                 <div><input type="checkbox" value="" name="reservation_change_agreement" required></div>
                                 <div style="padding-left: 10px;"> I understand that my reservation may change at any
                                     time
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">Please be aware that car accidents, breakdowns, or other disruptive events
-                                            can happen at any time.
 
-                                            *We will always do our best to ensure you are in a car of equal or greater
-                                            value when available.</p>
-                                    </span></div>
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"
+                                     data-original-title="Please be aware that car accidents, breakdowns, or other disruptive events
+                                     can happen at any time.
+
+                                     <br>
+                                     *We will always do our best to ensure you are in a car of equal or greater
+                                     value when available."></i>
+
+                                </div>
                             </label>
                         </div>
 
-                        <div class="checkbox checkbox-with-content" >
+                        <div class="checkbox checkbox-with-content col-md-12" >
                             <label style="display: flex; padding: 5px;">
                                 <div><input type="checkbox" name="risk_agreement" value="" required></div>
-                                <div style="padding-left: 10px;"> I accept responsibility for injuries and assume all
+                                <div style="padding-left: 10px;" > I accept responsibility for injuries and assume all
                                     risk
-                                    <span>
-                                        <p style="font-weight: normal; font-size: 90%;">I hereby waive and release Royalty Exotic Cars, its owners, agents and
-                                            employees from any liability and/or claim for personal injury, property
-                                            damage, or death that may arise from my use of this car rental even if such
-                                            cause can be associated in any way by the acts or failures to act of the
-                                            Company, or any of its agents, or employees in the inspection, maintenance
-                                            and/or from other customer's use of this vehicle.</p>
-                                    </span></div>
+
+                                    <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top" data-original-title="I hereby waive and release Royalty Exotic Cars, its owners, agents and
+                                    employees from any liability and/or claim for personal injury, property
+                                    damage, or death that may arise from my use of this car rental even if such
+                                    cause can be associated in any way by the acts or failures to act of the
+                                    Company, or any of its agents, or employees in the inspection, maintenance
+                                    and/or from other customer's use of this vehicle."></i>
+                                </div>
                             </label>
                         </div>
 
@@ -219,71 +245,6 @@
                             <textarea class="form-control" rows="5" id="comment"
                                       placeholder="Please include rental specific requests." name="note"></textarea>
                         </div>
-
-                        <div class="middle-container row" style="padding: 5px;border: 1px solid #ddd; border-radius: 10px; margin: 1px; justify-content: space-between;">
-
-                            <div class="gidt-card col-md-6">
-
-                                <label for="fname" class="form-label">Gift card number:</label>
-
-                                <div class="gift" style="display: flex;">
-                                    <div class="form-group">
-
-                                        <input class="form-control" type="text" name="coupon_code" id="coupon_code"
-                                               placeholder="Enter your Gift card number here">
-
-                                    </div>
-
-                                    <div class="btnfr ml-2">
-
-                                        <button type="button" id="btn-coupon-apply" class="btn btn-success">Apply</button>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="alerts">
-
-                                    <div class="alert alert-danger col-md-12" style="display: none;" id="couponError"></div>
-                                    <div class="alert alert-primary col-md-12" style="display: none;" id="couponSuccess"></div>
-                                </div>
-
-                            </div>
-
-                            <div class="cashf col-md-6">
-
-                                <div class="subtot" style="display: flex; justify-content: space-between;">
-
-                                    <p>Subtotal</p>
-                                    <p>$ <span id="subtotal-text">0.00</span></p>
-
-                                </div>
-
-                                <div class="subtot" style="display: flex; justify-content: space-between;">
-
-                                    <p>Discount</p>
-                                    <p>$ <span id="discount-text">0.00</span></p>
-
-                                </div>
-
-                                <div class="taxest" style="display: flex; justify-content: space-between;">
-
-                                    <p>Taxes & Fees</p>
-                                    <p>$ <span id="tax-text">0.00</span></p>
-
-                                </div>
-
-                                <div class="tot" style="display: flex; color: blue; justify-content: space-between;">
-
-                                    <p style="padding: 5px;">Total</p>
-                                    <h3>$ <span id="total-text">0.00</span></h3>
-
-                                </div>
-
-                            </div>
-
-                        </div>-->
 
                         <div class="row" style="display: flex; justify-content: space-between; margin-top: 20px;">
 
@@ -423,7 +384,7 @@
                                 <img src="{{url($vehicle->brand->photo??'')}}" width="50px" height="50px" alt="{{$vehicle->brand->name??'}}" class="rentals__logo" title="{{$vehicle->brand->name??'}}">
 
                                 <div class="trending__embed w-embed">
-                                    <div class="rentals__label">{{ $vehicle->body??'' }}</div>
+                                    <div class="rentals__label">{{ $vehicle->category->name??'' }}</div>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +402,23 @@
                     <div class="card-body p-0">
                         @php
 
-                        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time))
+
+                        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time));
+                        $dropoff_time = false;
+                        if (isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour') {
+                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 4 hours"));
+                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour') {
+                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 6 hours"));
+
+                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour') {
+                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 8 hours"));
+                        }
+                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour') {
+                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 12 hours"));
+                        }
+                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day') {
+                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 24 hours"));
+                        }
 
                         @endphp
 
@@ -454,11 +431,24 @@
                             </tr>
                             <tr>
                                 <td class="title text-muted">Drop Off</td>
-                                <td>50.00</td>
+                                <td>{{$dropoff_time}}</td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Rent for</td>
-                                <td>50.00</td>
+                                <td>
+                                    @if(isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour')
+                                        4 Hour Offer
+                                    @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour')
+                                        6 Hour Offer
+                                    @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour')
+                                        8 Hour Offer
+                                    @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour')
+                                        12 Hour Offer
+                                    @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day')
+                                        24 Hour Offer
+                                    @endif
+
+                                </td>
                             </tr>
                             </tbody>
                         </table>

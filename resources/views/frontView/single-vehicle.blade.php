@@ -387,10 +387,10 @@ $setting = setting();
                         <td>${{$vehicle->actual_msrp}}</td>
                     </tr>
                     @endif
-                    @if( $vehicle->body)
+                    @if( $vehicle->category->name)
                     <tr>
                         <th>Body</th>
-                        <td>{{$vehicle->body}}</td>
+                        <td>{{$vehicle->category->name}}</td>
                     </tr>
                     @endif
                     </tbody></table>
