@@ -403,6 +403,7 @@
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
+                                                            
                                                                 <div>Minimum Age requirements are strictly enforced and ensure
                                                                     proper insurance protection. All renters who allow an underage
                                                                     driver will be fined $2,500 and their rental will be immediately
