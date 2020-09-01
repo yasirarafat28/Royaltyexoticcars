@@ -1,15 +1,16 @@
 
 @php
- $tire_protection = $country.'_tire_protection';
-$property_damage_insurance = $country.'_liability_insurance';
-$liability_insurance = $country.'_liability_insurance';
-$fuel_credit = $country.'_fuel_credit';
-$mechanical_breakdown = $country.'_mechanical_breakdown_coverage';
+$country_type='usa'
+ $tire_protection = $country_type.'_tire_protection';
+$property_damage_insurance = $country_type.'_liability_insurance';
+$liability_insurance = $country_type.'_liability_insurance';
+$fuel_credit = $country_type.'_fuel_credit';
+$mechanical_breakdown = $country_type.'_mechanical_breakdown_coverage';
 @endphp
 
 
 <!--
-@if($country=='international')
+@if($country_type=='international')
     <div class="form-group">
         <label for="international_full_coverage_insurance" class="form-label">International Full Coverage Insurance</label>
         <select id="international_full_coverage_insurance" name="international_full_coverage_insurance" class="form-control selectpicker"
