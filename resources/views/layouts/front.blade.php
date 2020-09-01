@@ -95,6 +95,14 @@
                 font-size: 11px;
 
             }
+
+            .phonehide {
+                display: none;
+            }
+
+            .mobhide {
+                margin-top: 50px;
+            }
         }
 
         .slider-left-content{
@@ -1075,10 +1083,10 @@
 
                     <div class="drawer__section">
                         <div class="drawer__location">
-                            <div class="drawer__location--info"><img
+                            <div class="drawer__location--info mobhide"><img
                                     src="/logo.png" style="width: unset !important;"
                                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
-                                <div class="drawer__location--title">Rental Exotic Beasts Rentals</div>
+                                <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
                             <div class="location__map"></div>
