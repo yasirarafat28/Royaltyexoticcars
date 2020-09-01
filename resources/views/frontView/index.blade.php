@@ -215,6 +215,7 @@
                             <a id="Browse-All-Motorcycles-Link" href="/vehicles?category={{$group->slug}}" class="btn btn-outline-success view-more-btn ">Browse all {{ucwords($group->name)}}</a>
 
                         </div>
+
                     </div>
                 </div>
             @endforeach
@@ -236,7 +237,6 @@
                         <div class="row">
                             @foreach($categories??array() as $group)
                                 <div class="col-sm-6 mb-5 rent__nav--link w-inline-block" >
-
                                     <a href="/vehicles?category={{$group->slug}}"
                                        class="">
                                         <div class="vehicle-group">
@@ -245,9 +245,7 @@
                                             <div class="rent__nav--label">{{$group->name}}</div>
                                         </div>
                                     </a>
-
                                 </div>
-
                             @endforeach
                         </div>
                     </div>

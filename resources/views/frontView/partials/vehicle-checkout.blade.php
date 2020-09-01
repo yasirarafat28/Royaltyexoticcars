@@ -54,19 +54,19 @@
                                 <select name="rental_type" id="rental_type" class="form-control no-appearance booking-option">
                                     <option value="">Select an Option</option>
                                     @if($schedule->four_hour=='yes' && $schedule->vehicle->four_hour=='yes')
-                                        <option value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour'?'selected':''}} value="four_hour" data-cost="{{$vehicle->four_hour_discount?$vehicle->four_hour_discount:$vehicle->four_hour_price}}">4Hrs Rental</option>
                                     @endif
                                     @if($schedule->six_hour=='yes' && $schedule->vehicle->six_hour=='yes')
-                                        <option value="six_hour" data-cost="{{$vehicle->six_hour_discount?$vehicle->six_hour_discount:$vehicle->six_hour_price}}" >6Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour'?'selected':''}} value="six_hour" data-cost="{{$vehicle->six_hour_discount?$vehicle->six_hour_discount:$vehicle->six_hour_price}}" >6Hrs Rental</option>
                                     @endif
                                     @if($schedule->eight_hour=='yes' && $schedule->vehicle->eight_hour=='yes')
-                                        <option value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour'?'selected':''}} value="eight_hour" data-cost="{{$vehicle->eight_hour_discount?$vehicle->eight_hour_discount:$vehicle->eight_hour_price}}" >8Hrs Rental</option>
                                     @endif
                                     @if($schedule->twelve_hour=='yes' && $schedule->vehicle->twelve_hour=='yes')
-                                        <option value="twelve_hour" data-cost="{{$vehicle->twelve_hour_discount?$vehicle->twelve_hour_discount:$vehicle->twelve_hour_price}}" >12Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour'?'selected':''}} value="twelve_hour" data-cost="{{$vehicle->twelve_hour_discount?$vehicle->twelve_hour_discount:$vehicle->twelve_hour_price}}" >12Hrs Rental</option>
                                     @endif
                                     @if($schedule->full_day=='yes' && $schedule->vehicle->full_day=='yes')
-                                        <option value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
+                                        <option {{isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day'?'selected':''}} value="full_day" data-cost="{{$vehicle->full_day_discount?$vehicle->full_day_discount:$vehicle->full_day_price}}">24Hrs Rental</option>
                                     @endif
                                 </select>
                                 <div class="input-group-append">
@@ -423,7 +423,7 @@
                                 <img src="{{url($vehicle->brand->photo??'')}}" width="50px" height="50px" alt="{{$vehicle->brand->name??'}}" class="rentals__logo" title="{{$vehicle->brand->name??'}}">
 
                                 <div class="trending__embed w-embed">
-                                    <div class="rentals__label">{{ $vehicle->body??'' }}</div>
+                                    <div class="rentals__label">{{ $vehicle->category->name??'' }}</div>
                                 </div>
                             </div>
                         </div>
