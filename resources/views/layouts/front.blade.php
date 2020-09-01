@@ -310,7 +310,7 @@
                                 <div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 
                                     <a id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-                                        <div style="font-size: 15px; margin-left: -5px;">Rentals</div>
+                                        <div>Rentals <img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /> </div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--categories w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -364,8 +364,8 @@
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
 
 
-                                    <a  id="Requirements-Menu" class="nav__link w-dropdown-toggle">
-                                        <div>Requirements</div>
+                                    <a  id="Requirements-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
+                                        <div>Requirements<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--table w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -584,8 +584,8 @@
 
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
 
-                                    <a  id="About-Menu" class="nav__link w-dropdown-toggle">
-                                        <div>About</div>
+                                    <a  id="About-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
+                                        <div>About <img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--about w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -613,15 +613,15 @@
                             </li>
                             <li class="nav-item">
 
-                                <a id="Shop-Link-Nav" href="/shop" class="nav__link w-inline-block">
-                                    <div>Shop</div>
+                                <a id="Shop-Link-Nav" href="/shop" class="nav__link nav__link--mobile w-inline-block">
+                                    <div>Shop<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                 </a>
                             </li>
                             <li class="nav-item">
 
-                                <a href="/login" class="user nav__link w-inline-block">
+                                <a href="/login" class="user nav__link nav__link--mobile w-inline-block">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <span class="">Account</span>
+                                    <span class="">Account<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></span>
                                 </a>
                             </li>
                             <!--<li class="nav-item">

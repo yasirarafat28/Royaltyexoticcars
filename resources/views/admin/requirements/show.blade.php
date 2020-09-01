@@ -55,6 +55,10 @@
                               <td>{{$require->type}}</td>
                           </tr>
                           <tr>
+                              <td>Category ID</td>
+                              <td>{{$require->category_id}}</td>
+                          </tr>
+                          <tr>
                               <td>Local Age</td>
                               <td>{{$require->local_age}}</td>
                           </tr>

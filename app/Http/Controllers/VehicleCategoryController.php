@@ -86,6 +86,7 @@ class VehicleCategoryController extends Controller {
 
         $require = new VehicleRequirement();
         $require->type = $request->name;
+        $require->category_id = $request->id;
         $require->local_age = '25';
         $require->local_driving_licence = 'United States Drivers License';
         $require->local_insurance = 'Camp/ Collision 100/300/500';
@@ -139,6 +140,27 @@ class VehicleCategoryController extends Controller {
         }
 
         $category->save();
+        $require = new VehicleRequirement();
+        $require->type = $request->name;
+        $require->category_id = $request->id;
+        $require->local_age = '25';
+        $require->local_driving_licence = 'United States Drivers License';
+        $require->local_insurance = 'Camp/ Collision 100/300/500';
+        $require->local_liability_insurance = '99';
+        $require->local_property_damage_waiver = '99';
+        $require->local_tire_protection = '99';
+        $require->local_mechanical_breakdown_coverage = '49';
+        $require->local_fuel_credit = '99';
+        $require->international_age = '25';
+        $require->international_driving_licence = 'International Drivers License';
+        $require->international_insurance = '199 Royalty Insurance';
+        $require->international_full_coverage_insurance_d1 = '99';
+        $require->international_full_coverage_insurance_d2 = '199';
+        $require->international_property_damage_waiver = '49';
+        $require->international_tire_protection = '99';
+        $require->international_mechanical_breakdown_coverage = '49';
+        $require->international_fuel_credit = '49';
+        $require->save();
 
 
 

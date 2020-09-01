@@ -101,6 +101,7 @@ class vehicle_requirementsController extends Controller
         $require = VehicleRequirement::find($id);
 
         $require->category_id = $request->category_id;
+        $require->type = $request->type;
         $require->local_age = $request->local_age;
         $require->local_driving_licence = $request->local_driving_licence;
         $require->local_insurance = $request->local_insurance;
