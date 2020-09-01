@@ -100,9 +100,7 @@
                 display: none;
             }
 
-            .mobhide {
-                margin-top: 50px;
-            }
+        
         }
 
         .slider-left-content{
@@ -123,6 +121,10 @@
             -moz-appearance: none;
             text-indent: 1px;
             text-overflow: '';
+        }
+
+        .drawer__location--info {
+            margin-top: 120px;
         }
 
         /*.booking-option{
