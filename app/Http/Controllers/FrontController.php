@@ -207,6 +207,9 @@ class FrontController extends Controller {
             if (isset($request->q) && $request->q){
                 $q->where('name', 'LIKE', '%' . $request->q . '%');
             }
+            if (isset($request->model) && $request->model){
+                $q->where('model', 'LIKE', '%' . $request->model . '%');
+            }
         });
 
         $brand_ids = $records->distinct('brand_id')

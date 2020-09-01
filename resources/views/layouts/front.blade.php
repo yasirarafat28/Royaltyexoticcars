@@ -246,6 +246,8 @@
             margin-left: unset;
             margin-right: unset;
         }
+
+
 	</style>
 
 @yield('style')

@@ -24,13 +24,18 @@
                     color: white;
                     border-radius: 10px;
                 }
+                @media screen and (max-width: 479px) {
+                    .modalparentdiv {
+                        padding: 2em 2em;
+                    }
+                }
 
                 .button1 {
                     height: 50px;
                     background-color: transparent;
                     padding: 5px;
                     color: white;
-                    width: 200px;
+                    width: 100%;
                     font-size: 25px;
                     border: 4px solid white;
                     border-radius: 10px;
