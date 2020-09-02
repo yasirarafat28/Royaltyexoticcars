@@ -1351,6 +1351,9 @@
             #feedback-form {
                 width: 253px;
             }
+            .navbar-expand-lg {
+                padding: 0px !important;
+            }
         }
 
 
