@@ -18,6 +18,14 @@
                 .modal-div {
                     margin-bottom: 1.6em;
                 }
+
+                .tiles {
+                    background: url(images/Untjkgnerjgegtitled.png);
+                    background-size:100% auto;
+                    padding: 30px 30px;;
+                    margin: 30px 10px;;
+                    color: white;
+                }
                 .modalparentdiv {
                     background-color: rgba(0,0,0,0.5);
                     padding: 2em 5em;
@@ -176,6 +184,47 @@
                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a></div>
         </div>
         <br>
+
+        <div class="tiles">
+            <div class="row">
+                <div class="col-sm">
+                    
+                    <img src="images/bus-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+
+                </div>
+                <div class="col-sm">
+                    
+                        <div><h4>UNLIMITED MILES</h4></div>
+                        <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
+                        <h6>Yes! You get to drive UNLIMITED miles within Nevada.</h6>
+                    
+                </div>
+                <div class="col-sm">
+                    
+                    <img src="images/us-dollar-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+
+                </div>
+                <div class="col-sm">
+                    
+                        <div><h4>BEST PRICE</h4></div>
+                        <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
+                        <h6>We’ll beat or match any price in town!</h6>
+                    
+                </div>
+                <div class="col-sm">
+                    
+                    <img src="images/phone-17-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+
+                </div>
+                <div class="col-sm">
+                    
+                        <div><h4>LOCAL DELIVERY</h4></div>
+                        <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
+                        <h6>We’ll deliver to your hotel, airport, casino and Las Vegas area.</h6>
+                    
+                </div>
+            </div>
+        </div>
 
         <div class="rentals">
             <h2 class="home__h2 rental-section-title">Browse fleet by Category</h2>
