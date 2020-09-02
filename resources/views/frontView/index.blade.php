@@ -20,7 +20,8 @@
                 }
 
                 .tiles {
-                    background-color: #238aeb;
+                    background: url(images/Untjkgnerjgegtitled.png);
+                    background-size:100% auto;
                     padding: 30px 30px;;
                     margin: 30px 10px;;
                     color: white;
