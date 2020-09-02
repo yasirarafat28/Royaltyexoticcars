@@ -2,27 +2,13 @@
 
     <header class="card-header">
         <div class="pull-right">
-            <!-- ngIf: lightframe.isLightframe() || backUrl -->
-            <div class="ben-flyout-wrap" ng-if="lightframe.isLightframe() || backUrl">
-                <a class="btn btn-dark" href="/vehicle-booking/{{base64_encode($vehicle->id)}}">
-
-                    <span class="visually-hidden"> Choose a different schedule</span>
-                </a>
-            </div>
         </div>
         <div class="pull-left">
-            <button class="btn btn-outline-info" type="button" ng-toggle="secureFlyout"
-                    ng-toggle-group="ben-flyouts" ng-toggle-group-closeable="" ng-toggle-auto-close=""
-                    aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" id="icon-svg-lock"
-                     class="icon-svg-lock" width="11" height="14" viewBox="0 0 11.02 14" ng-svg="icon-svg-lock">
-                    <path d="M7.66,3.88a2.15,2.15,0,0,0-4.3,0v2h4.3Z" style="fill:none"></path>
-                    <path
-                        d="M9.39,5.85v-2a3.88,3.88,0,0,0-7.76,0v2A1.72,1.72,0,0,0,0,7.56v4.73A1.72,1.72,0,0,0,1.71,14h7.6A1.72,1.72,0,0,0,11,12.29V7.56A1.71,1.71,0,0,0,9.39,5.85Zm-6-2a2.15,2.15,0,0,1,4.3,0v2H3.36Z">
-                    </path>
-                </svg>
-                Secured
-            </button>
+
+            <a class="btn btn-dark" href="/vehicle-booking/{{base64_encode($vehicle->id)}}">
+
+                <span class="visually-hidden"> Choose a different schedule</span>
+            </a>
         </div>
     </header>
     <main class="card-body booking">
@@ -400,27 +386,6 @@
                         <h2 class="home__h2 text-danger">Booking Information</h2>
                     </div>
                     <div class="card-body p-0">
-                        @php
-
-
-                        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time));
-                        $dropoff_time = false;
-                        if (isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 4 hours"));
-                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 6 hours"));
-
-                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 8 hours"));
-                        }
-                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 12 hours"));
-                        }
-                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 24 hours"));
-                        }
-
-                        @endphp
 
                         <table class="table booking-info-table">
                             <tbody>
@@ -431,11 +396,11 @@
                             </tr>
                             <tr>
                                 <td class="title text-muted">Drop Off</td>
-                                <td>{{$dropoff_time}}</td>
+                                <td class="dropoff-time-text">{{$dropoff_time}}</td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Rent for</td>
-                                <td>
+                                <td class="rent-for-text">
                                     @if(isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour')
                                         4 Hour Offer
                                     @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour')

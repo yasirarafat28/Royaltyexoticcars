@@ -274,10 +274,10 @@ class FrontController extends Controller {
         $schedule = VehicleSchedule::where('id',$schedule_id)->first();
         $date = base64_decode($date);
 
-        //$requirement = VehicleRequirement::where('type',$vehicle->type)->first();
-        $requirement = VehicleRequirement::first();
-        $country='local';
-        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country'));
+        $requirement = VehicleRequirement::where('category_id',$vehicle->category_id)->first();
+        //$requirement = VehicleRequirement::first();
+        $country_type='local';
+        return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country_type'));
     }
 
 
@@ -467,12 +467,13 @@ class FrontController extends Controller {
             'vehicle_id'=>'required',
         ]);
 
-        $country = $request->country=='international'?$request->country:'local';
+        $country_type = $request->country!='USA'?'international':'local';
+
         $vehicle = Vehicle::find($request->vehicle_id);
 
-        $requirement = VehicleRequirement::first();
+        $requirement = VehicleRequirement::where('category_id',$vehicle->category_id)->first();
 
-        return view('frontView.partials.vehicle-checkout-item-upgradation',compact('country','vehicle','requirement'));
+        return view('frontView.partials.vehicle-checkout-item-upgradation',compact('country_type','vehicle','requirement'));
 
     }
 

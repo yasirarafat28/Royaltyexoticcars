@@ -49,7 +49,7 @@
 
       <tr>
       <td>{{$loop->iteration}}</td>
-      <td>{{$require->type}}</td>
+      <td>{{$require->category->name??$require->type}}</td>
       <td>{{$require->local_age}}</td>
 
       <td>{{$require->international_age}}</td>
@@ -73,7 +73,7 @@
                                     'data-type'=>'confirm',
                                  )) !!}
                             {!! Form::close() !!}
- 
+
           </td>
       </tr>
 

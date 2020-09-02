@@ -104,6 +104,7 @@ class VehicleCategoryController extends Controller {
             $require->international_tire_protection = '99';
             $require->international_mechanical_breakdown_coverage = '49';
             $require->international_fuel_credit = '49';
+            $require->category_id = $category->id;
             $require->save();
         }
 
@@ -139,7 +140,7 @@ class VehicleCategoryController extends Controller {
             $category->parent_category_id = $request->parent_id;
         }
 
-        $category->save();
+        /*$category->save();
         $require = new VehicleRequirement();
         $require->type = $request->name;
         $require->category_id = $request->id;
@@ -160,7 +161,7 @@ class VehicleCategoryController extends Controller {
         $require->international_tire_protection = '99';
         $require->international_mechanical_breakdown_coverage = '49';
         $require->international_fuel_credit = '49';
-        $require->save();
+        $require->save();*/
 
 
 

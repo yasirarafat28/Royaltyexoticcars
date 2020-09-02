@@ -59,14 +59,14 @@
                                   @endforeach
                               </select>
                           </div>
-                          <div class="form-group col-md-6">
+                          <!--<div class="form-group col-md-6">
                               <label for="name" class="control-label">Type</label>
                               <input class="form-control" name="type" type="text" value="{{$require->type}}">
-                          </div>
-                          <div class="form-group col-md-6">
+                          </div>-->
+                          <!--<div class="form-group col-md-6">
                               <label for="name" class="control-label">Category ID</label>
                               <input class="form-control" name="category_id" type="integer" value="{{$require->category_id}}">
-                          </div>
+                          </div>-->
                           <div class="form-group col-md-6">
                               <label for="name" class="control-label">Local Age</label>
                               <input class="form-control" name="local_age" type="text" value="{{$require->local_age}}">

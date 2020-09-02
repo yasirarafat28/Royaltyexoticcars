@@ -149,6 +149,25 @@
     @php
         $payment_method = \App\Model\PaymentMethod::get();
 
+
+
+        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time));
+        $dropoff_time = false;
+        if (isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour') {
+            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 4 hours"));
+        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour') {
+            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 6 hours"));
+
+        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour') {
+            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 8 hours"));
+        }
+        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour') {
+            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 12 hours"));
+        }
+        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day') {
+            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 24 hours"));
+        }
+
     @endphp
 <div class="rental__hero">
 
@@ -166,6 +185,7 @@
     <script>
 
         $(document).ready(function(){
+
             $('#reservation_for').val($(this).val());
             let cost = $('#rental_type option:selected').data('cost');
             if (isNaN(cost)){
@@ -182,6 +202,7 @@
             }
 
             calculation();
+
         });
 
         $('#stripe-submit').on('click',function (event) {
@@ -228,7 +249,8 @@
 
         $('#rental_type').on('change',function (event) {
             event.preventDefault();
-            $('#reservation_for').val($(this).val());
+            let reservation_for = $(this).val();
+            $('#reservation_for').val(reservation_for);
             let cost = $('#rental_type option:selected').data('cost');
             if (isNaN(cost)){
                 $('#online-booking-container').hide();
@@ -236,6 +258,30 @@
                 $('#rental-cost-append').text('0.00');
                 $('#rental_cost').val(0);
             }else{
+
+
+                if (reservation_for==='four_hour'){
+                    let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 4);
+                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.rent-for-text').text('4 Hours Offer');
+                }else if (reservation_for==='six_hour'){
+                    let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 6);
+                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.rent-for-text').text('6 Hours Offer');
+                }else if (reservation_for==='eight_hour'){
+                    let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 8);
+                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.rent-for-text').text('8 Hours Offer');
+                }else if (reservation_for==='twelve_hour'){
+                    let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 12);
+                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.rent-for-text').text('12 Hours Offer');
+                }else if (reservation_for==='full_day'){
+                    let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 24);
+                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.rent-for-text').text('24 Hours Offer');
+                }
+
                 $('#online-booking-container').show();
                 $('#online-booking-error-container').hide();
 
@@ -407,5 +453,11 @@
 
 
         });
+    </script>
+
+    <script>
+        function add_hours(dt, hours) {
+            return new Date(dt.getTime() + hours*60000*60);
+        }
     </script>
 @endsection
