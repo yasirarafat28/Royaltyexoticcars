@@ -416,7 +416,7 @@
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
 
-                                                                    <div class="table__cell">{{$requirement->category->name??$requirement->type }} ⓘ</div>
+                                                                    <div class="table__cell" style="font-size: 1.2em;">{{$requirement->category->name??$requirement->type }} ⓘ</div>
 
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
