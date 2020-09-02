@@ -116,6 +116,10 @@
             margin-bottom: 5px;
         }
 
+        .footer_top {
+            text-align: left;
+        }
+
         .no-appearance {
             -webkit-appearance: caps-lock-indicator;
             -moz-appearance: none;
