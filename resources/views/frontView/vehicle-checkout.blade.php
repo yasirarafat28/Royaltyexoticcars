@@ -181,6 +181,7 @@
 
 @endsection
 @section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
 
     <script>
 
@@ -262,23 +263,23 @@
 
                 if (reservation_for==='four_hour'){
                     let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 4);
-                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.dropoff-time-text').text(moment(dropoff_time).format('DD MMM, YYYY hh:mmA'));
                     $('.rent-for-text').text('4 Hours Offer');
                 }else if (reservation_for==='six_hour'){
                     let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 6);
-                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.dropoff-time-text').text(moment(dropoff_time).format('DD MMM, YYYY hh:mmA'));
                     $('.rent-for-text').text('6 Hours Offer');
                 }else if (reservation_for==='eight_hour'){
                     let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 8);
-                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.dropoff-time-text').text(moment(dropoff_time).format('DD MMM, YYYY hh:mmA'));
                     $('.rent-for-text').text('8 Hours Offer');
                 }else if (reservation_for==='twelve_hour'){
                     let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 12);
-                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.dropoff-time-text').text(moment(dropoff_time).format('DD MMM, YYYY hh:mmA'));
                     $('.rent-for-text').text('12 Hours Offer');
                 }else if (reservation_for==='full_day'){
                     let dropoff_time = add_hours(new Date('{{date("Y-m-d H:i:s",strtotime($pickup_timestamp))}}'), 24);
-                    $('.dropoff-time-text').text(dropoff_time.toString());
+                    $('.dropoff-time-text').text(moment(dropoff_time).format('DD MMM, YYYY hh:mmA'));
                     $('.rent-for-text').text('24 Hours Offer');
                 }
 
@@ -459,5 +460,22 @@
         function add_hours(dt, hours) {
             return new Date(dt.getTime() + hours*60000*60);
         }
+
+        function formatted_date(d){
+
+            var curr_day = d.getDate();
+            var curr_month = d.getMonth();
+            var curr_year = d.getFullYear();
+
+            var curr_hour = d.getHours();
+            var curr_min = d.getMinutes();
+            var curr_sec = d.getSeconds();
+
+            curr_month++ ; // In js, first month is 0, not 1
+            year_2d = curr_year.toString().substring(2, 4);
+            return curr_day + " " + curr_month + " " + year_2d;
+        }
+
+
     </script>
 @endsection
