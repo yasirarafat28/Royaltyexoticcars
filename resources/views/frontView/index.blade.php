@@ -18,6 +18,10 @@
                 .modal-div {
                     margin-bottom: 1.6em;
                 }
+
+                .tiles {
+                    
+                }
                 .modalparentdiv {
                     background-color: rgba(0,0,0,0.5);
                     padding: 2em 5em;
@@ -176,6 +180,20 @@
                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a></div>
         </div>
         <br>
+
+        <div class="container tiles">
+            <div class="row">
+                <div class="col-sm">
+                    One of three columns
+                </div>
+                <div class="col-sm">
+                    One of three columns
+                </div>
+                <div class="col-sm">
+                    One of three columns
+                </div>
+            </div>
+        </div>
 
         <div class="rentals">
             <h2 class="home__h2 rental-section-title">Browse fleet by Category</h2>
