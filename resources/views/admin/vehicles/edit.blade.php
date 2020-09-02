@@ -358,10 +358,10 @@
                                                         <td>Class</td>
                                                         <td><input required class="form-control" type="text" name="vehicle_class" value="{{$vehicle->vehicle_class}}"></td>
                                                     </tr>
-                                                    <tr id="attrrow01">
+                                                    <!--<tr id="attrrow01">
                                                         <td>Body</td>
                                                         <td><input required class="form-control" type="text" name="body" value="{{$vehicle->body}}"></td>
-                                                    </tr>
+                                                    </tr>-->
                                                     <tr id="attrrow01">
                                                         <td>Seat</td>
                                                         <td><input required class="form-control" type="text" name="seat" value="{{$vehicle->seat}}"></td>

@@ -47,16 +47,12 @@
                   </div>
 
                   <div class="padding-30">
-                      
+
                   <table class="table">
                       <tbody>
                           <tr>
                               <td>Type</td>
-                              <td>{{$require->type}}</td>
-                          </tr>
-                          <tr>
-                              <td>Category ID</td>
-                              <td>{{$require->category_id}}</td>
+                              <td>{{$require->category->name??$require->type}}</td>
                           </tr>
                           <tr>
                               <td>Local Age</td>

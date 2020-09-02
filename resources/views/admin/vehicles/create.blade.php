@@ -269,7 +269,7 @@
                                     <label for="name" class="control-label mb-1">Availability {{__('messages.to')}}</label>
                                     <input name="available_to" type="date" class="form-control" aria-required="true" aria-invalid="false">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </fieldset>
@@ -359,10 +359,10 @@
                                                 <td>Class</td>
                                                 <td><input  class="form-control" type="text" name="vehicle_class"></td>
                                             </tr>
-                                            <tr id="attrrow01">
+                                            <!--<tr id="attrrow01">
                                                 <td>Body</td>
                                                 <td><input  class="form-control" type="text" name="body"></td>
-                                            </tr>
+                                            </tr>-->
                                             <tr id="attrrow01">
                                                 <td>Seat</td>
                                                 <td><input  class="form-control" type="text" name="seat"></td>

@@ -274,8 +274,8 @@ class FrontController extends Controller {
         $schedule = VehicleSchedule::where('id',$schedule_id)->first();
         $date = base64_decode($date);
 
-        //$requirement = VehicleRequirement::where('type',$vehicle->type)->first();
-        $requirement = VehicleRequirement::first();
+        $requirement = VehicleRequirement::where('category_id',$vehicle->category_id)->first();
+        //$requirement = VehicleRequirement::first();
         $country='local';
         return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country'));
     }

@@ -100,7 +100,7 @@
                 display: none;
             }
 
-        
+
         }
 
         .slider-left-content{
@@ -210,13 +210,13 @@
             a.nav__link{
                 text-align: left !important;
                 margin-bottom:10px;
-                
+
             }
         }
         @media screen and (max-width: 767px) {
             .nav__link {
                 position: unset !important;
-                
+
             }
 
             .dropdown__list.dropdown__list--table, .dropdown__list.dropdown__list--categories {
@@ -236,7 +236,7 @@
         @media screen and (max-width: 479px) {
             .nav__link {
                 position: unset !important;
-                
+
             }
 
             .dropdown__list.dropdown__list--table, .dropdown__list.dropdown__list--categories {
@@ -417,17 +417,10 @@
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                            @php 
+                                                            @php
 
                                                             @endphp
-                                                                <div>Minimum Age requirements are strictly enforced and ensure
-                                                                    proper insurance protection. All renters who allow an underage
-                                                                    driver will be fined $2,500 and their rental will be immediately
-                                                                    canceled. Every driver is required to be listed on the rental agreement
-                                                                    and provide a VALID and NON-EXPIRED drivers license with the
-                                                                    name matching EXACTLY the name on the rental
-                                                                    agreement.<br /><strong>Note:</strong> International Drivers
-                                                                    Licenses are accepted.</div>
+                                                                <div>{{$requirement->category->description??''}}</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
