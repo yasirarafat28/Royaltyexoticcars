@@ -1132,7 +1132,7 @@
                                     href="{{$setting->insta_link}}" target="_blank"
                                     id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
-                                            src="images/trip-advisor.png"
+                                            src="images/tumblr-3-24.png"
                                             alt="Instagram" class="navdrawer__link--image" /></div>
                                     <div>Follow us on Trip Advisor</div>
                                 </a><a href="{{$setting->fb_link}}"
@@ -1144,7 +1144,7 @@
                                 </a><a href="{{$setting->tweeet_link}}" target="_blank"
                                        id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
-                                            src="images/google-plus.png"
+                                            src="images/google-plus-24.png"
                                             alt="Twitter" class="navdrawer__link--image" /></div>
                                     <div>Connect on Google Plus</div>
                                 </a>
