@@ -386,27 +386,6 @@
                         <h2 class="home__h2 text-danger">Booking Information</h2>
                     </div>
                     <div class="card-body p-0">
-                        @php
-
-
-                        $pickup_timestamp = date('Y-m-d',strtotime($date)).' '.date("H:i:s",strtotime($schedule->start_time));
-                        $dropoff_time = false;
-                        if (isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 4 hours"));
-                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 6 hours"));
-
-                        }elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='eight_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 8 hours"));
-                        }
-                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='twelve_hour') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 12 hours"));
-                        }
-                        elseif (isset($_GET['reservation_for']) && $_GET['reservation_for']=='full_day') {
-                            $dropoff_time = date('d M, Y h:iA',strtotime($pickup_timestamp." + 24 hours"));
-                        }
-
-                        @endphp
 
                         <table class="table booking-info-table">
                             <tbody>
@@ -417,11 +396,11 @@
                             </tr>
                             <tr>
                                 <td class="title text-muted">Drop Off</td>
-                                <td>{{$dropoff_time}}</td>
+                                <td class="dropoff-time-text">{{$dropoff_time}}</td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Rent for</td>
-                                <td>
+                                <td class="rent-for-text">
                                     @if(isset($_GET['reservation_for']) && $_GET['reservation_for']=='four_hour')
                                         4 Hour Offer
                                     @elseif(isset($_GET['reservation_for']) && $_GET['reservation_for']=='six_hour')
