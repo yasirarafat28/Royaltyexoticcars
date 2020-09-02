@@ -311,10 +311,10 @@ class FrontController extends Controller {
         $order->country                 = $request->country;
         $order->international_full_coverage_insurance = $request->international_full_coverage_insurance??'';
         $order->liability_insurance     = $request->liability_insurance??'';
-        $order->property_damage_waiver  = $request->property_damage_waiver;
-        $order->tire_protection         = $request->tire_protection;
-        $order->mechanical_breakdown_coverage = $request->mechanical_breakdown_coverage;
-        $order->gas_credit              = $request->fuel_credit;
+        $order->property_damage_waiver  = $request->property_damage_waiver??0;
+        $order->tire_protection         = $request->tire_protection??0;
+        $order->mechanical_breakdown_coverage = $request->mechanical_breakdown_coverage??0;
+        $order->gas_credit              = $request->fuel_credit??0;
         //$order->destination_package     = $request->reservation_for;
         $order->customer_note           = $request->note;
         $order->voucher_code            = $request->coupon_code;
