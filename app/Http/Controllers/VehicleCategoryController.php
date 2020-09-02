@@ -107,9 +107,6 @@ class VehicleCategoryController extends Controller {
             $require->save();
         }
 
->>>>>>> 44d58de35b3227c5444a094332d0726767d84976
-
-
         return back()->withSuccess('Product Category Successfully Added!');
     }
 
