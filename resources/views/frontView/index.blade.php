@@ -188,7 +188,7 @@
             <div class="row">
                 <div class="col-sm">
                     
-                    <img src="images/bus-64.png" style="width: 150px; height: 150px; float: left; margin-right: 3px; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+                    <img src="images/bus-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
@@ -200,7 +200,7 @@
                 </div>
                 <div class="col-sm">
                     
-                    <img src="images/us-dollar-64.png" style="width: 150px; height: 150px; float: left; margin-right: 3px; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+                    <img src="images/us-dollar-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
@@ -212,7 +212,7 @@
                 </div>
                 <div class="col-sm">
                     
-                    <img src="images/phone-17-64.png" style="width: 150px; height: 150px; float: left; margin-right: 3px; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
+                    <img src="images/phone-17-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
