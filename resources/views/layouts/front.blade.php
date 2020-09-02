@@ -416,14 +416,12 @@
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
 
-                                                                    <div class="table__cell"><h6>{{$requirement->category->name??$requirement->type }} ⓘ</h6></div>
+                                                                    <div class="table__cell">{{$requirement->category->name??$requirement->type }} ⓘ</div>
 
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                            @php
-
-                                                            @endphp
+                                                            
                                                                 <div>{{$requirement->category->description??''}}</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
