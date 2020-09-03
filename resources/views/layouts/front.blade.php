@@ -1003,7 +1003,6 @@
                             <!-- </li><li><a href="/covid-19-update"><span class="fa fa-play"></span> COVID-19 Update</a> -->
                             </li><li><a href="/terms"><span class="fa fa-play"></span> Terms & Conditions</a></li>
                         </ul>
-
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -1011,7 +1010,7 @@
                         <h4>Rentals</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-
+                        
 							@foreach($categories??array(  ) as $category)
 
 								<li>
