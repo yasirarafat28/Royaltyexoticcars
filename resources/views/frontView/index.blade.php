@@ -26,7 +26,7 @@
                     margin: 30px 10px;;
                     color: white;
                 }
-                
+
                 .modalparentdiv {
                     background-color: rgba(0,0,0,0.5);
                     padding: 2em 5em;
@@ -241,8 +241,6 @@
                             <div class="rent__nav--label">{{$group->name}}</div>
                         </div>
                     </a>
-
-
                 @endforeach
             </div>
 
