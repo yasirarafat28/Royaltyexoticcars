@@ -415,9 +415,7 @@
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-
                                                                     <div class="table__cell" style="font-size: 1.2em;">{{$requirement->category->name??$requirement->type }} ⓘ</div>
-
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
