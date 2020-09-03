@@ -26,12 +26,14 @@
                     margin: 30px 10px;;
                     color: white;
                 }
+                
                 .modalparentdiv {
                     background-color: rgba(0,0,0,0.5);
                     padding: 2em 5em;
                     color: white;
                     border-radius: 10px;
                 }
+
                 @media screen and (max-width: 479px) {
                     .modalparentdiv {
                         padding: 2em 2em;
