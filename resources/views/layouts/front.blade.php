@@ -380,10 +380,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
-
-
                                     <a  id="Requirements-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
                                         <div>Requirements<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
