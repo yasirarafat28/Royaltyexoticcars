@@ -419,12 +419,10 @@
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                            
                                                                 <div>{{$requirement->category->description??''}}</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
-
                                                         <div class="table__cell--wrapper">
                                                             <div class="table__cell">{{$requirement->local_age}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
