@@ -425,7 +425,6 @@
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
                                                         </div>
                                                         <div class="table__cell--wrapper">
-
                                                             <div class="table__cell">{{$requirement->local_driving_licence}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_driving_licence}}</div>
                                                         </div>
@@ -587,9 +586,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
-
                                     <a  id="About-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
                                         <div>About <img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
