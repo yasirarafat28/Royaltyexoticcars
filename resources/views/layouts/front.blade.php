@@ -1010,7 +1010,7 @@
                         <h4>Rentals</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                        
+
 							@foreach($categories??array(  ) as $category)
 
 								<li>
@@ -1058,8 +1058,6 @@
         </div><!-- Footer bottom end -->
         @include('modal.auth')
     </footer>
-
-
 
     <div class="side-tray">
         <div id="feedback-form" style='display:none;' class=" panel panel-danger text-center">
