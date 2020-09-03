@@ -430,7 +430,6 @@
                                                         <div class="table__cell--wrapper">
                                                             <div class="table__cell">{{$requirement->local_age}}</div>
                                                             <div class="table__cell table__cell--intl">{{$requirement->international_age}}</div>
-
                                                         </div>
                                                         <div class="table__cell--wrapper">
 
