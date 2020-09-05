@@ -65,8 +65,8 @@
                                         <label for="phone" class="control-label">Status</label>
                                         <select class="form-control" name="status">
                                             <option>Select an option</option>
-                                            <option value="active"  >Active</option>
-                                            <option value="inactive"  >Inactive</option>
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
                                         </select>
                                     </div>
 

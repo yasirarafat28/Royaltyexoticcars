@@ -10,6 +10,7 @@ use Session;
 use DataTables;
 use App\Model\VehicleCategory;
 use App\Model\VehicleBrand;
+use App\Model\Vehicle;
 use App\Model\VehicleRequirement;
 use Image;
 use Hash;
@@ -168,12 +169,15 @@ class VehicleCategoryController extends Controller {
         return back()->withSuccess('Product Category Successfully Updated!');
     }
 
-
-
     public function CategoryDelete( $id)
     {
         $review = VehicleCategory::destroy($id);
+        $vehicle = Vehicle::where('category_id',$id)->update([
+            'category_id' => 0
+        ]);
+        $sub = VehicleCategory::where('parent_category_id', $id)->delete();
         return back()->withSuccess('Successfully Deleted!');
+        
     }
 
 }
