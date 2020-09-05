@@ -305,7 +305,7 @@ class FrontController extends Controller {
         $order->schedule_id             = $request->schedule_id;
         $order->vehicle_id             = $vehicle_id;
         $order->reservation_time         = $request->reservation_time;
-        $order->reservation_for         = $request->reservation_for;
+        $order->reservation_for         = $request->reservation_for??$request->rental_type;
         $order->primary_driver_name     = $request->primary_driver_name;
         $order->additional_driver_name  = $request->additional_driver_name;
         $order->country                 = $request->country;
