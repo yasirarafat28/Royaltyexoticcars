@@ -292,6 +292,14 @@
                 padding: 1em;
             }
         }
+
+        @media screen and (max-width: 991px) {
+
+            .checkout-container{
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
         .why-us-block .card-box{
             padding: 2rem;
             text-align: center;
