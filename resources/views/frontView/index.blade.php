@@ -236,7 +236,6 @@
                     <a id="Browse-Supercar-Rentals-Link" href="/vehicles?category={{$group->slug}}"
                            class="rent__nav--link w-inline-block">
                         <div class="vehicle-group">
-
                             <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
                             <div class="rent__nav--label">{{$group->name}}</div>
                         </div>
