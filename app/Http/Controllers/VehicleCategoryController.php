@@ -169,8 +169,6 @@ class VehicleCategoryController extends Controller {
         return back()->withSuccess('Product Category Successfully Updated!');
     }
 
-
-
     public function CategoryDelete( $id)
     {
         $review = VehicleCategory::destroy($id);
