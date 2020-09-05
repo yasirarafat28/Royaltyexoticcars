@@ -179,6 +179,17 @@
             width: 20%;
             margin-top: -2px;
         }
+        hr.center-hr:before{
+            display: flex;
+            height: 3px;
+            background-color: red;
+            content: "";
+            position: absolute;
+            width: 20%;
+            margin-top: -2px;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
 
         .info__search {
             width: 100%;
@@ -263,6 +274,30 @@
         .w-dropdown, .w-dropdown-btn, .w-dropdown-link, .w-dropdown-toggle{
             margin-left: unset;
             margin-right: unset;
+        }
+
+        .why-us-section{
+            background-color: #ddd;
+        }
+
+        .why-us-block .card-img img{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 575px) {
+
+            .why-us-block .card-img{
+                padding: 1em;
+            }
+        }
+        .why-us-block .card-box{
+            padding: 2rem;
+            text-align: center;
+        }
+        .why-us-block{
+            margin-bottom: 5px;
         }
 
 

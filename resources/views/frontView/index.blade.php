@@ -187,49 +187,138 @@
         </div>
         <br>
 
-        <div class="tiles">
+        <!--<div class="tiles">
             <div class="row">
                 <div class="col-sm">
-                    
+
                     <img src="images/bus-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
-                    
+
                         <div><h4>UNLIMITED MILES</h4></div>
                         <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
                         <h6>Yes! You get to drive UNLIMITED miles within Nevada.</h6>
-                    
+
                 </div>
                 <div class="col-sm">
-                    
+
                     <img src="images/us-dollar-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
-                    
+
                         <div><h4>BEST PRICE</h4></div>
                         <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
                         <h6>We’ll beat or match any price in town!</h6>
-                    
+
                 </div>
                 <div class="col-sm">
-                    
+
                     <img src="images/phone-17-64.png" style="width: 150px; height: 150px; float: left; padding: 10px; border: 6px solid white; border-radius: 50%;" alt="">
 
                 </div>
                 <div class="col-sm">
-                    
+
                         <div><h4>LOCAL DELIVERY</h4></div>
                         <hr style="height: 5px; text-align: left; border-width: 0; color: white; background-color: white;"">
                         <h6>We’ll deliver to your hotel, airport, casino and Las Vegas area.</h6>
-                    
+
                 </div>
             </div>
+        </div>-->
+
+
+
+
+        <div class="rentals why-us-section" style="background-image: url(https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg)">
+            <h2 class="home__h2 rental-section-title text-center">Why Chose us?</h2>
+            <hr class="center-hr" style="color: #fff !important;">
+
+
+            <div class="row pt-4 pb-4">
+                <div class="col-md-3 col-6 why-us-block">
+
+                    <div class="card ">
+                        <div class="card-img pb-3">
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/custom.png">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                                Custom Vehicle</h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                We offer the most aggressive and custom vehicles for rent
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-6 why-us-block">
+
+                    <div class="card">
+                        <div class="card-img pb-3">
+
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/extend-time.png">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                                Flexible Time</h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                We understand traffic issues, and we give you 10 minutes additional time on your car rental return.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-6 why-us-block">
+
+                    <div class="card ">
+                        <div class="card-img pb-3">
+
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/cheap.png">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                                Cheap in Price
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                We will beat or match any competitor price in town
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-6 why-us-block">
+
+                    <div class="card ">
+                        <div class="card-img pb-3">
+
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/2.png">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                                Unlimited Miles
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Yes! You get to drive unlimited miles within Nevada
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <br>
         </div>
 
+
+
+
         <div class="rentals">
-            <h2 class="home__h2 rental-section-title">Browse fleet by Category</h2>
+
+            <!--<h2 class="home__h2 rental-section-title">Browse fleet by Category</h2>
             <hr>
             <div class="rent__nav">
                 @foreach($groups??array() as $group)
@@ -242,7 +331,7 @@
                         </div>
                     </a>
                 @endforeach
-            </div>
+            </div>-->
 
             @foreach($groups??array() as $group)
                 @if(!sizeof($group->vehicles))
