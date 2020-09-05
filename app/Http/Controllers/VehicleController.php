@@ -397,8 +397,6 @@ class VehicleController extends Controller
         return back()->withSuccess('Vehicle removed successfully!');
     }
 
-
-
     public function getsubcategory($id){
         $data=VehicleCategory::where("parent_category_id",$id)->where("status",'active')->get();
         return json_encode($data);

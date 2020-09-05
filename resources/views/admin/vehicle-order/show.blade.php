@@ -63,6 +63,17 @@
                                             </td>
                                             <td><span class="badge badge-danger">{{$order->status}}</span></td>
                                         </tr>
+                                        
+                                        <tr>
+                                            <td class="text-right">
+                                                Vehicle Name:
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-primary">
+                                                    {{$item->vehicle->name??'Unknown'}}
+                                                </span>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td class="text-right">
                                                 Payment Status:
