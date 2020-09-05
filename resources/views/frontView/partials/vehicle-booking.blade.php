@@ -87,7 +87,7 @@
         <br>
         @if(sizeof($schedules))
 
-            <div class="container-fluid">
+            <div class="container-full">
                 <div id="calendar"></div>
 
             </div>
