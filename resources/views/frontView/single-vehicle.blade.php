@@ -445,7 +445,8 @@ $setting = setting();
   <h2 class="rental__h2">Pickup Location</h2>
   <div class="form-group row googlemap">
     <div class="col-sm-12">
-      <div id="map-canvas" style="height: 500px"></div>
+      <div id="map-canvas" style="height: 500px">https://maps.google.com/?q=[{{$setting->latitude}}],[{{$setting->longitude}}]
+        </div>
     </div>
   </div>
   <address class="profile__location--details">
