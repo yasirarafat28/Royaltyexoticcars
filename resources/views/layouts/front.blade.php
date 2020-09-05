@@ -300,6 +300,10 @@
             margin-bottom: 5px;
         }
 
+        .rental__hero {
+            padding: 2em 0;
+        }
+
 
 	</style>
 
