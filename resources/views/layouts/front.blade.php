@@ -338,7 +338,7 @@
                             {{$setting->email}} &nbsp; |
 						</a>
 					</div>
-					<a href="https://www.google.com/maps/place/Royalty+Exotic+Car+Rentals/@36.1109615,-115.1838642,17z/data=!3m1!4b1!4m5!3m4!1s0x80c8c425f445f48d:0x7b51ef32201743d6!8m2!3d36.1109615!4d-115.1816755?hl=en"
+					<a href="#"
 						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i> 9am - 7pm Daily</a>
 					</div>
                     <div class="right-side col-sm-6 col-md-4">
