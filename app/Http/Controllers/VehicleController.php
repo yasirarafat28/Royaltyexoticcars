@@ -6,6 +6,7 @@ use App\Model\Taxes;
 use App\Model\Vehicle;
 use App\Model\VehicleBrand;
 use App\Model\VehicleCategory;
+use App\Model\VehicleSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
@@ -393,6 +394,7 @@ class VehicleController extends Controller
     {
 
         $vehicle = Vehicle::destroy($id);
+        $schedule = VehicleSchedule::where('vehicle_id', $id)->delete();
         return back()->withSuccess('Vehicle removed successfully!');
     }
 
