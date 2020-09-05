@@ -292,6 +292,14 @@
                 padding: 1em;
             }
         }
+
+        @media screen and (max-width: 991px) {
+
+            .checkout-container{
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
         .why-us-block .card-box{
             padding: 2rem;
             text-align: center;
@@ -369,7 +377,7 @@
                                 <div data-delay="0" data-hover="1" class="dropdown dropdown__mobile w-dropdown">
 
                                     <a id="Rentals-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-                                        <div>Rentals <img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /> </div>
+                                        <div>Rentals <img src="/images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /> </div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--categories w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -421,7 +429,7 @@
                             <li class="nav-item">
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
                                     <a  id="Requirements-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-                                        <div>Requirements<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
+                                        <div>Requirements<img src="/images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--table w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
@@ -627,7 +635,7 @@
                             <li class="nav-item">
                                 <div data-delay="0" data-hover="1" class="dropdown  dropdown__mobile w-dropdown">
                                     <a  id="About-Menu" class="nav__link nav__link--mobile w-dropdown-toggle">
-                                        <div>About <img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
+                                        <div>About <img src="/images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
                                     </a>
                                     <nav class="dropdown__list dropdown__list--about w-dropdown-list"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5baebde8ad0c8ab1cfd622ef_icon-arrow-up-gray.svg"
