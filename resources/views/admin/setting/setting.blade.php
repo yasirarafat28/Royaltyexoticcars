@@ -197,14 +197,14 @@
                         </div> 
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
-                           latitude
+                              latitude
                            <span class="reqfield">*</span>
                            </label>
                            <textarea  id="latitude" placeholder="latitude" class="form-control h150" name="latitude" required >{{$data->latitude}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
-                           longitude
+                              longitude
                            <span class="reqfield">*</span>
                            </label>
                            <textarea  id="longitude" placeholder="longitude" class="form-control h150" name="longitude" required >{{$data->longitude}}</textarea>

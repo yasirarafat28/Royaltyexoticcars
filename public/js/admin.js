@@ -1372,6 +1372,9 @@ $(document).ready(function() {
                   var pinter_link=$("#pinter_link").val();
                   var utube_link=$("#utube_link").val();
                   var fb_link=$("#fb_link").val();
+
+                  var longitude=$("#longitude").val();
+                  var latitude=$("#latitude").val();
                   var is_customer_order=0;
                   if ($("#is_customer_order").prop("checked")) {
                             is_customer_order=1;
@@ -1409,7 +1412,9 @@ $(document).ready(function() {
                              tweeet_link:tweeet_link,
                              pinter_link:pinter_link,
                              utube_link:utube_link,
-                             fb_link:fb_link
+                             fb_link:fb_link,
+                             longitude:longitude,
+                            latitude:latitude
                          },
                          success: function( data ) {
                             $("#general").removeClass('in show active');
