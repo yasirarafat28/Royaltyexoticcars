@@ -76,6 +76,17 @@
                                         </tr>
                                         <tr>
                                             <td class="text-right">
+                                                Total:
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-primary">
+                                                    {{$item->grand_total??'n/a'}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="text-right">
                                                 Payment Status:
                                             </td>
                                             <td>
