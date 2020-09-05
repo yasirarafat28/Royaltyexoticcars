@@ -194,20 +194,20 @@
                            <span class="reqfield">*</span>
                            </label>
                            <textarea  id="address" placeholder="{{__('messages.address')}}" class="form-control h150" name="address" required >{{$data->address}}</textarea>
-                        </div>
+                        </div> 
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
                            latitude
                            <span class="reqfield">*</span>
                            </label>
-                           <textarea  id="address" placeholder="latitude" class="form-control h150" name="latitude" required >{{$data->latitude}}</textarea>
+                           <textarea  id="latitude" placeholder="latitude" class="form-control h150" name="latitude" required >{{$data->latitude}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
                            longitude
                            <span class="reqfield">*</span>
                            </label>
-                           <textarea  id="address" placeholder="longitude" class="form-control h150" name="longitude" required >{{$data->longitude}}</textarea>
+                           <textarea  id="longitude" placeholder="longitude" class="form-control h150" name="longitude" required >{{$data->longitude}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">

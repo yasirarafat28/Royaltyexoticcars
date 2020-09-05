@@ -20,11 +20,11 @@ use Image;
 use Artisan;
 use Hash;
 class SettingController extends Controller {
-       public function __construct() {
-         parent::callschedule();
+    public function __construct() {
+        parent::callschedule();
     }
      public function indexpage(){
-         return view("admin.setting.page");
+        return view("admin.setting.page");
      }
 
      public function getcountrylist(){
@@ -211,7 +211,7 @@ class SettingController extends Controller {
          $setting->newsletter=$request->get("newsletter");
          $setting->company_name = $request->get("company_name");
          $setting->insta_link = $request->get("insta_link");
-         $setting->fb_link = $request->get("fb_link");
+         $setting->fb_link = $request->get("fb_link"); 
          $setting->tweeet_link = $request->get("tweeet_link");
          $setting->pinter_link = $request->get("pinter_link");
          $setting->utube_link = $request->get("utube_link");
