@@ -57,7 +57,7 @@
             <br>
 
 
-            <!--<a href="/vehicle-checkout-invoice/{{$order->txn_id}}" class="btn btn-success rental__cta--text text-uppercase" style="font-weight: bold;padding: 10px 50px;"> <i class="fa fa-print text-white"> </i> Invoice</a>-->
+            <a href="/vehicle-checkout-invoice/{{$order->txn_id}}" class="btn btn-success rental__cta--text text-uppercase" style="font-weight: bold;padding: 10px 50px;"> <i class="fa fa-print text-white"> </i> Invoice</a>
         </div>
 
 
