@@ -655,13 +655,13 @@
                             </li>
                             <li class="nav-item">
                                 <a id="Shop-Link-Nav" href="/shop" class="nav__link nav__link--mobile w-inline-block">
-                                    <div>Shop<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></div>
+                                    <div>Shop</div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/login" class="user nav__link nav__link--mobile w-inline-block">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <span class="">Account<img src="images/angle-right-solid.svg" alt="" style="float: right; padding: 3px;" class="nav__arrow" /></span>
+                                    <span class="">Account</span>
                                 </a>
                             </li>
                             <!--<li class="nav-item">
