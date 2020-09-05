@@ -392,7 +392,6 @@ class VehicleController extends Controller
      */
     public function destroy($id)
     {
-
         $vehicle = Vehicle::destroy($id);
         $schedule = VehicleSchedule::where('vehicle_id', $id)->delete();
         return back()->withSuccess('Vehicle removed successfully!');
