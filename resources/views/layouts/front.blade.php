@@ -1377,8 +1377,8 @@
                 min-width: 253px !important;
             }
             #feedback-form {
-                width: 253px;
-                padding-top: -300px !important;
+                width: 200px;
+                
             }
             .navbar-expand-lg {
                 padding: 0px !important;
