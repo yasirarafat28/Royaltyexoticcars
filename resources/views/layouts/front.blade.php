@@ -1382,7 +1382,7 @@
             .navbar-expand-lg {
                 
                 padding: 0px !important;
-                margin-bottom: -10px !important;
+                margin-bottom: -12px !important;
                 margin-top: -14px;
                 margin-right: -7px;
                 margin-left: -7px;
