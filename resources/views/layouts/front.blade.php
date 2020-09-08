@@ -1380,10 +1380,10 @@
                 width: 253px;
             }
             .navbar-expand-lg {
+                
                 padding: 0px !important;
-                margin-bottom: 18px !important;
-                height: 50px !important;
-                margin-top: -12px;
+                margin-bottom: -10px !important;
+                margin-top: -14px;
                 
             }
             
