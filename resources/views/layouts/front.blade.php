@@ -1117,7 +1117,7 @@
                                     src="/logo.png" style="width: unset !important;"
                                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
                                 <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
-                                <div class="drawer__location--desc phonehide">{{$setting->address}}</div>
+                                <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
                             <div class="location__map"></div>
                         </div>
