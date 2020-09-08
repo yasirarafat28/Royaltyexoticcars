@@ -1377,7 +1377,7 @@
                 min-width: 253px !important;
             }
             #feedback-form {
-                width: 200px;
+                width: 253px;
                 
             }
             .navbar-expand-lg {
