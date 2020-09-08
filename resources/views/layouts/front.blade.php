@@ -1116,10 +1116,10 @@
                             <div class="drawer__location--info mobhide"><img
                                     src="/logo.png" style="width: unset !important;"
                                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
-                                <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
+                                
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
-                            <div class="location__map"></div>
+                            <div class="location__map"> https://maps.google.com/?q=[{{$setting->latitude}}],[{{$setting->longitude}}] </div>
                         </div>
                     </div>
 
@@ -1373,7 +1373,7 @@
         @media screen and (max-width: 479px) {
 
             .drawer {
-                width: 210px !important;
+                width: 253px !important;
                 min-width: 253px !important;
                 padding-top: 0px !important;
             }
