@@ -1382,10 +1382,10 @@
             .navbar-expand-lg {
                 
                 padding: 0px !important;
-                margin-bottom: -11px !important;
-                margin-top: -14px;
-                margin-right: -7px;
-                margin-left: -7px;
+                margin-bottom: -12px !important;
+                margin-top: -15px;
+                margin-right: -8px;
+                margin-left: -8px;
             }
             
         }
