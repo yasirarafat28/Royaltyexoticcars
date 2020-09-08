@@ -1373,8 +1373,9 @@
         @media screen and (max-width: 479px) {
 
             .drawer {
-                width: 253px !important;
+                width: 210px !important;
                 min-width: 253px !important;
+                padding-top: 0px !important;
             }
             #feedback-form {
                 width: 253px;
