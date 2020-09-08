@@ -38,6 +38,7 @@
                     .modalparentdiv {
                         padding: 2em 2em;
                     }
+                    
                 }
 
                 .button1 {
