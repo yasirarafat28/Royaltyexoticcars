@@ -1119,7 +1119,7 @@
                                 
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
-                            <div class="location__map"> https://maps.google.com/?q=[{{$setting->latitude}}],[{{$setting->longitude}}] </div>
+                            <div class="location__map" >  </div>
                         </div>
                     </div>
 
