@@ -1380,7 +1380,6 @@
                 width: 253px;
             }
             .navbar-expand-lg {
-                
                 padding: 0px !important;
                 margin-bottom: -12px !important;
                 margin-top: -15px;
