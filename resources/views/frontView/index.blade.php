@@ -50,7 +50,7 @@
                         padding: 0px 10px 10px 10px;;
                         text-align: center;
                     }
-                    
+
                 }
 
                 .button1 {
@@ -160,7 +160,7 @@
                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe.png"
                         srcset="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe-p-500.png 500w, https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5e1258524b55b0f3303c2605_youtube-subscribe.png 1660w"
                         sizes="(max-width: 479px) 20vw, 8vw" alt="" class="reviews__youtube--img"></a>
-                
+
                 <a href="{{$setting->utube_link}}" target="_blank"
                    id="Watch-Our-Vlog-Link" class="reviews__link">Watch our Vlog!</a>
             </div>
@@ -169,7 +169,7 @@
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a535ce_trip-advisor-stars.svg"
                     alt="" class="reviews__stars">
-                
+
                 <a href="{{$setting->insta_link}}"
                    target="_blank" id="TripAdvisor-Review-Link" class="reviews__link">Leave a TripAdvisor Review</a>
             </div>
@@ -178,7 +178,7 @@
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5360b_google-reviews-stars.svg"
                     alt="" class="reviews__stars">
-                
+
                 <a href="{{$setting->tweeet_link}}" target="_blank" id="Google-Review-Link"
                    class="reviews__link">Leave a Google Review</a></div>
             <div class="reviews__item"><img
@@ -186,7 +186,7 @@
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a62817bae7e6500016b012c_stars-facebook.svg"
                     alt="" class="reviews__stars">
-                
+
                 <a href="{{$setting->fb_link}}" target="_blank"
                    id="Facebook-Review-Link" class="reviews__link">Leave a Facebook Review</a></div>
             <div class="reviews__item"><img
@@ -194,7 +194,7 @@
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5372b_yelp-reviews-stars.svg"
                     alt="" class="reviews__stars">
-                
+
                 <a href="{{$setting->pinter_link}}"
                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a></div>
         </div>
@@ -360,7 +360,7 @@
                                     @if($key>=12)
                                         @break
                                     @endif
-                                    <div class=" col-lg-3 col-md-4  col-sm-6   mb-1 mt-1 mobile-nopadding">
+                                    <div class=" col-lg-3 col-md-4  col-sm-6   mb-2 mt-1 mobile-nopadding">
                                         @include('frontView.partials.vehicle-list')
                                     </div>
                                 @endforeach

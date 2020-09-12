@@ -77,14 +77,20 @@
 }
 /* car list */
 .single-car-wrap {
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    /*-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);*/
     color: #7f7f7f;
     line-height: 1.8;
 }
 
 .single-car-info{
-    padding: 25px;
+    padding: 25px 5px;
+}
+.single-car-thumb{
+    padding: 0px 5px;
+}
+.single-car-thumb img{
+    border-radius: 10px;
 }
 .car-list-style .single-car-info{
     padding: 10px;
