@@ -293,6 +293,17 @@
             .why-us-block .card-img{
                 padding: 1em;
             }
+
+
+            .checkout-sidebar{
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .checkout-main-section{
+                padding-left: 5px;
+                padding-right: 5px;
+            }
         }
 
         @media screen and (max-width: 991px) {

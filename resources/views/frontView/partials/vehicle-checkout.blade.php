@@ -14,7 +14,7 @@
     <main class="card-body booking">
         <div class="row">
 
-            <div class="col-sm-8">
+            <div class="col-sm-8 checkout-main-section">
 
 
                 <div class="p-3 mb-3 checkout-info">
@@ -475,11 +475,11 @@
                             </tr>
                             <tr>
                                 <td class="title text-muted">Taxes</td>
-                                <td>$ <span id="discount-text">0.00</span></td>
+                                <td>$ <span id="tax-text">0.00</span></td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Discount</td>
-                                <td>$ <span id="tax-text">0.00</span></td>
+                                <td>$ <span id="discount-text">0.00</span></td>
                             </tr>
                             <tr>
                                 <td class="title text-muted">Grand Total</td>
