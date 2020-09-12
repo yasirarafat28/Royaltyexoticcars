@@ -9,7 +9,13 @@ $setting = setting();
     <style>
         .carousel-item img{
             width: 100%;
-            height: 475px !important;
+            min-height: 475px !important;
+        }
+
+        @media screen and (max-width: 575px) {
+            .carousel-item img{
+                min-height: 250px !important;
+            }
         }
 
         .carousel-control-prev:hover, .carousel-control-next:hover{
