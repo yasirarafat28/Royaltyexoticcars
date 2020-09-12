@@ -666,7 +666,7 @@
                                     <div>Shop</div>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="padding: 0px 0px 15px 12px;">
                                 <a href="/login" class="user nav__link nav__link--mobile w-inline-block">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
                                     <span class="">Account</span>
@@ -1382,7 +1382,7 @@
                 
             }
             .navbar-expand-lg {
-                padding: 0px !important;
+                padding: 0px 0px 0px 0px !important;
                 margin-bottom: -12px !important;
                 margin-top: -15px;
                 margin-right: -8px;
