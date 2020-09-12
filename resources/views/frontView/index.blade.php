@@ -38,6 +38,19 @@
                     .modalparentdiv {
                         padding: 2em 2em;
                     }
+
+                    .why-us-block {
+
+                        padding: 10px;
+                        margin: 0px;
+                        font-size: 80%;
+                    }
+
+                    .customcard {
+                        padding: 0px 10px 10px 10px;;
+                        text-align: center;
+                    }
+                    
                 }
 
                 .button1 {
@@ -240,11 +253,11 @@
                 <div class="col-md-3 col-6 why-us-block">
 
                     <div class="card ">
-                        <div class="card-img pb-3">
+                        <div class="card-img">
                             <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/custom.png">
                         </div>
-                        <div class="card-box">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
                                 Custom Vehicle</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 We offer the most aggressive and custom vehicles for rent
@@ -256,12 +269,12 @@
                 <div class="col-md-3 col-6 why-us-block">
 
                     <div class="card">
-                        <div class="card-img pb-3">
+                        <div class="card-img">
 
                             <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/extend-time.png">
                         </div>
-                        <div class="card-box">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
                                 Flexible Time</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 We understand traffic issues, and we give you 10 minutes additional time on your car rental return.
@@ -273,12 +286,12 @@
                 <div class="col-md-3 col-6 why-us-block">
 
                     <div class="card ">
-                        <div class="card-img pb-3">
+                        <div class="card-img">
 
                             <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/cheap.png">
                         </div>
-                        <div class="card-box">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
                                 Cheap in Price
                             </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
@@ -291,12 +304,12 @@
                 <div class="col-md-3 col-6 why-us-block">
 
                     <div class="card ">
-                        <div class="card-img pb-3">
+                        <div class="card-img">
 
                             <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/2.png">
                         </div>
-                        <div class="card-box">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
                                 Unlimited Miles
                             </h4>
                             <p class="mbr-text mbr-fonts-style display-7">

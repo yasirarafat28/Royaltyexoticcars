@@ -263,6 +263,8 @@
                 left: 58%;
 
             }
+
+            
         }
         @media screen and (max-width: 575px) {
             .mobile-nopadding{
@@ -341,8 +343,6 @@
 					<div class="left-side col-sm-6 col-md-8  d-none d-sm-flex">
 					<a target="_blank"
 						href="tel:{{$setting->phone}}" id="Header-Phone-Link" class="info__link"><i class="fa fa-phone mr-2"></i> {{$setting->phone}} &nbsp;  |</a>
-
-
 
 					<div class="info__embed w-embed"><a id="Email-Link-Footer" class="info__link"
 							href="mailto:{{$setting->email}}"> <i class="fa fa-envelope mr-2"></i>
@@ -1383,17 +1383,23 @@
 
         @media screen and (max-width: 479px) {
 
-
             .drawer {
                 width: 253px !important;
                 min-width: 253px !important;
+                padding-top: 0px !important;
             }
             #feedback-form {
                 width: 253px;
+                
             }
             .navbar-expand-lg {
                 padding: 0px !important;
+                margin-bottom: -12px !important;
+                margin-top: -15px;
+                margin-right: -8px;
+                margin-left: -8px;
             }
+            
         }
 
 
