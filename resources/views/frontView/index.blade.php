@@ -34,6 +34,11 @@
                     border-radius: 10px;
                 }
 
+                .customcard {
+                    padding: 20px;
+                    text-align: center;
+                }
+
                 @media screen and (max-width: 479px) {
                     .modalparentdiv {
                         padding: 2em 2em;
@@ -47,7 +52,8 @@
                     }
 
                     .customcard {
-                        padding: 0px 10px 10px 10px;;
+                        padding: 0px 10px 10px 10px;
+
                         text-align: center;
                     }
                     
