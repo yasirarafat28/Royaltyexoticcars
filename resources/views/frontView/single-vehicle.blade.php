@@ -31,12 +31,12 @@ $setting = setting();
             padding-left: 0;
             list-style: none;
             background: rgba(0,0,0,0.5) !important;
-            height: 40px;
+            height: 50px;
         }
 
 
         .carousel-indicators li {
-            margin-top: auto;
+            margin-top: 5px;
             margin-bottom: auto;
         }
 
@@ -158,9 +158,14 @@ $setting = setting();
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators mx-auto">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                    <img src="{{url($vehicle->feature_image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
+                </li>
                 @foreach($additional_images??array() as $key=>$image)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}">
+
+                        <img src="{{url($image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
+                    </li>
                 @endforeach
             </ol>
             <div class="carousel-inner">
@@ -443,7 +448,7 @@ $setting = setting();
 </div>
 <div class="container">
   <h2 class="rental__h2">Pickup Location</h2>
-  <div class="form-group row googlemap"> 
+  <div class="form-group row googlemap">
     <div class="col-sm-12">
       <div id="map-canvas" style="height: 500px">https://maps.google.com/?q=[floatval({{$setting->latitude}})],[floatval({{$setting->longitude}})]
         </div>

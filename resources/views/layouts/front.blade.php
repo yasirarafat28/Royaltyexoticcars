@@ -64,7 +64,16 @@
         }
 
         .extra-top-margin{
+
             margin-top: 5em !important;
+        }
+
+        @media screen and (max-width: 479px) {
+            .extra-top-margin {
+
+                margin-top: 0em !important;
+
+            }
         }
         .nav__brand .logo{
             height:60px !important;
@@ -108,7 +117,7 @@
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 15% !important;
+            bottom: 20% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
@@ -264,7 +273,7 @@
 
             }
 
-            
+
         }
         @media screen and (max-width: 575px) {
             .mobile-nopadding{
@@ -323,6 +332,24 @@
 
         .rental__hero {
             padding: 2em 0;
+        }
+
+        .single-car-info p{
+            min-height: 58px !important;
+        }
+
+        .carousel-indicators li {
+            box-sizing: content-box;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            width: 50px;
+            height: auto;
+            border-top: 0px;
+        }
+
+        .carousel-indicators li img {
+            height: 40px;
+            border: 1px solid #ddd;
         }
 
 
@@ -1390,7 +1417,7 @@
             }
             #feedback-form {
                 width: 253px;
-                
+
             }
             .navbar-expand-lg {
                 padding: 0px 0px 0px 0px !important;
@@ -1399,7 +1426,7 @@
                 margin-right: -8px;
                 margin-left: -8px;
             }
-            
+
         }
 
 
