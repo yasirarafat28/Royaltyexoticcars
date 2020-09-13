@@ -176,12 +176,12 @@ $setting = setting();
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{url($vehicle->feature_image??'')}}" class="d-block w-100" alt="...">
+                    <img src="{{url($vehicle->feature_image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
                 </div>
 
                 @foreach($additional_images??array() as $key=>$image)
                     <div class="carousel-item">
-                        <img src="{{url($image??'')}}" class="d-block w-100" alt="...">
+                        <img src="{{url($image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
                     </div>
                 @endforeach
             </div>
