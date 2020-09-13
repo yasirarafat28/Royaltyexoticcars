@@ -137,7 +137,7 @@
         }
 
         .drawer__location--info {
-            margin-top: 120px;
+            margin-top: 75px;
         }
 
         /*.booking-option{
@@ -179,7 +179,7 @@
             text-align: left;
         }
 
-        .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
+        .description-section hr:before,.rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
             display: flex;
             height: 3px;
             background-color: red;
@@ -350,6 +350,20 @@
         .carousel-indicators li img {
             height: 40px;
             border: 1px solid #ddd;
+        }
+
+        .drawer__location--logo {
+            margin-bottom: 0px;
+            width: 130px !important;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .drawer__location--info {
+            padding: .8em 0em !important;
+        }
+        .navdrawer__shop--button {
+            font-size: 1em;
         }
 
 
@@ -702,6 +716,11 @@
                             <li class="nav-item">
                                 <a id="Shop-Link-Nav" href="/shop" class="nav__link nav__link--mobile w-inline-block">
                                     <div>Shop</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="Shop-Link-Nav" target="_blank" href="{{$setting->utube_link}}" class="nav__link nav__link--mobile w-inline-block">
+                                    <div> Vlog</div>
                                 </a>
                             </li>
                             <li class="nav-item" style="padding: 0px 0px 5px 0px;">
@@ -1152,7 +1171,7 @@
                     <div class="drawer__section">
                         <div class="drawer__location">
                             <div class="drawer__location--info mobhide"><img
-                                    src="/logo.png" style="width: unset !important;"
+                                    src="/logo.png"
                                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
                                 <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
