@@ -718,6 +718,11 @@
                                     <div>Shop</div>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a id="Shop-Link-Nav" target="_blank" href="{{$setting->utube_link}}" class="nav__link nav__link--mobile w-inline-block">
+                                    <div> Vlog</div>
+                                </a>
+                            </li>
                             <li class="nav-item" style="padding: 0px 0px 5px 0px;">
                                 <a href="/login" class="user nav__link nav__link--mobile w-inline-block">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
