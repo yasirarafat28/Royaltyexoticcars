@@ -137,7 +137,7 @@
         }
 
         .drawer__location--info {
-            margin-top: 120px;
+            margin-top: 75px;
         }
 
         /*.booking-option{
@@ -350,6 +350,20 @@
         .carousel-indicators li img {
             height: 40px;
             border: 1px solid #ddd;
+        }
+
+        .drawer__location--logo {
+            margin-bottom: 0px;
+            width: 130px !important;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .drawer__location--info {
+            padding: .8em 0em !important;
+        }
+        .navdrawer__shop--button {
+            font-size: 1em;
         }
 
 
@@ -1152,7 +1166,7 @@
                     <div class="drawer__section">
                         <div class="drawer__location">
                             <div class="drawer__location--info mobhide"><img
-                                    src="/logo.png" style="width: unset !important;"
+                                    src="/logo.png"
                                     alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
                                 <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
