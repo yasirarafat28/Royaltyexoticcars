@@ -61,6 +61,22 @@
       border-color:{{site_color()}} !important;
       color:{{site_color()}} !important;
       }
+      @media screen and (max-width: 479px) {
+         .customdiv {
+            margin-bottom: -40px;
+         }
+
+         .top-logo {
+            height: 50px;
+            width: 96px;
+            margin-top: -5px;
+            background-color: red;
+            -webkit-mask-repeat: no-repeat;    background-image: url('/logo.png');
+            -webkit-mask-image: url('/logo.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+      }
 
       .top-logo {
           height: 70px;
@@ -270,7 +286,7 @@
          ?>
       <div class="{{$myclass}}">
          <div class="e-nav">
-            <div class="row">
+            <div class="row customdiv">
                <div class="col-lg-4 col-md-4 col-8">
                   <a href="{{url('/')}}" class="d-flex">
                       <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent"></div>
