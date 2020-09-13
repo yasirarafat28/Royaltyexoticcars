@@ -361,19 +361,24 @@ $setting = setting();
                             <td>{{$vehicle->cylinders}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->type)
+                    @if( $vehicle->fuel_type)
                         <tr>
-                            <th>Type</th>
-                            <td>{{$vehicle->type}}</td>
+                            <th>Fuel Type</th>
+                            <td>{{$vehicle->fuel_type}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->type)
+                    @if( $vehicle->highway_mpg)
                         <tr>
-                            <th>Type</th>
-                            <td>{{$vehicle->type}}</td>
+                            <th>Highway MPG</th>
+                            <td>{{$vehicle->highway_mpg}}</td>
                         </tr>
                     @endif
-                    
+                    @if( $vehicle->city_mpg)
+                        <tr>
+                            <th>Highway MPG</th>
+                            <td>{{$vehicle->city_mpg}}</td>
+                        </tr>
+                    @endif
                     
                     </tbody>
                 </table>
