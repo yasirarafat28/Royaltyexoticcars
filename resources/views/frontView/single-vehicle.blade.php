@@ -464,7 +464,7 @@ $setting = setting();
                 <div>Rental Exotic Beasts</div>
                 <div>{{ $setting->company_name }}</div>
                 <div>{{ $setting->address }}</div>
-                <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
+                <div>9am – 7pm Daily</div><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a><a
                     href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
             </div>
         </address>
