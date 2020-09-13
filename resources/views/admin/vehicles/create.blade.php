@@ -387,6 +387,26 @@
                                             </thead>
                                             <tbody id="morerow0">
                                             <tr id="attrrow01">
+                                                <td>Engine</td>
+                                                <td><input  class="form-control" type="text" name="engine"></td>
+                                            </tr>
+                                            <tr id="attrrow01">
+                                                <td>Cylinders</td>
+                                                <td><input  class="form-control" type="text" name="cylinders"></td>
+                                            </tr>
+                                            <tr id="attrrow01">
+                                                <td>Fuel type</td>
+                                                <td><input  class="form-control" type="text" name="fuel_type"></td>
+                                            </tr>
+                                            <tr id="attrrow01">
+                                                <td>Highway MPG</td>
+                                                <td><input  class="form-control" type="text" name="highway_mpg"></td>
+                                            </tr>
+                                            <tr id="attrrow01">
+                                                <td>City MPG</td>
+                                                <td><input  class="form-control" type="text" name="city_mpg"></td>
+                                            </tr>
+                                            <tr id="attrrow01">
                                                 <td>Horse Power</td>
                                                 <td><input  class="form-control" type="text" name="horse_power"></td>
                                             </tr>
