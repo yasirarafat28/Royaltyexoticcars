@@ -137,7 +137,7 @@
         }
 
         .drawer__location--info {
-            margin-top: 75px;
+            margin-top: 120px;
         }
 
         /*.booking-option{
@@ -235,6 +235,10 @@
                 text-align: left !important;
                 margin-bottom:10px;
 
+            }
+
+            .drawer__location--info {
+                margin-top: 75px;
             }
         }
         @media screen and (max-width: 767px) {
