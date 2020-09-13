@@ -406,8 +406,8 @@
                                                         <td><input required class="form-control" type="text" name="highway_mpg" value="{{$vehicle->highway_mpg}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
-                                                        <td>Horse Power</td>
-                                                        <td><input required class="form-control" type="text" name="horse_power" value="{{$vehicle->horse_power}}"></td>
+                                                        <td>City MPG</td>
+                                                        <td><input required class="form-control" type="text" name="city_mpg" value="{{$vehicle->city_mpg}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Torque</td>
