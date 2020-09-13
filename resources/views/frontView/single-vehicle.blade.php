@@ -443,6 +443,7 @@ $setting = setting();
         </div>
 
     </div>
+    <br>
 
 
     <div class="container-full description-section" id="information">
@@ -452,6 +453,7 @@ $setting = setting();
             {!! $vehicle->description !!}
         </div>
     </div>
+    <br>
     <div class="container-full description-section">
         <h2 >Pickup Location</h2>
         <hr>
