@@ -65,7 +65,7 @@
                     padding: 5px;
                     color: white;
                     width: 100%;
-                    font-size: 25px;
+                    font-size: 18px;
                     border: 4px solid white;
                     border-radius: 10px;
                 }
