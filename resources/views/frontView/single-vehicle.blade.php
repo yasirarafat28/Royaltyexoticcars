@@ -212,14 +212,17 @@ $setting = setting();
                     width: 100%;
                     height: auto;
                 }
+                .owl-theme .owl-controls{
+                    margin-top: 2px !important;
+                }
                 .owl-theme .owl-controls .owl-page {
                     position: relative;
                     display: inline-block;
-                    width: 6em;
                     height: 3em;
                     margin: 0 0.25em;
                     outline: none;
                     transition: all 0.1s ease-in-out;
+                    border: 1px solid #ddd;
                 }
                 .owl-theme .owl-controls .owl-page:focus {
                     outline: none;
