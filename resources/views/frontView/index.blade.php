@@ -39,6 +39,15 @@
                     text-align: center;
                 }
 
+                @media screen and (max-width: 767px) {
+                    .carousel-item {
+                        height: unset;
+                        min-height: 350px;
+                    }
+                    .carousel-caption {
+                        bottom: 0% !important;
+                    }
+                }
                 @media screen and (max-width: 479px) {
                     .modalparentdiv {
                         padding: 2em 2em;
@@ -107,14 +116,14 @@
 
                                                 <div class="hero__content">
                                                     <div class="modalparentdiv">
-                                                        <h4 class="animated fadeInDown">Search By</h4>
-                                                        <div class="modal-div">
+                                                        <h4 class="animated fadeInDown d-none d-md-block">Search By</h4>
+                                                        <div class="modal-div d-none d-md-block">
                                                             <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
                                                                 Body style
                                                             </button>
                                                         </div>
 
-                                                        <div class="modal-div">
+                                                        <div class="modal-div d-none d-md-block">
                                                             <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
                                                                 Make & Model
                                                             </button>
