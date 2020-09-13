@@ -446,7 +446,7 @@ $setting = setting();
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="information">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
           {!! $vehicle->description !!}

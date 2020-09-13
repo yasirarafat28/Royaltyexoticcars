@@ -157,7 +157,7 @@
             @endif
         </section>
         <br>
-        <div class="reviews">
+        <!--<div class="reviews">
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5b2542c4a3234f310ba98fdb_logo-youtube-red.svg"
                     alt="TripAdvisor Top Rated Company" class="reviews__logo"><a
@@ -204,7 +204,7 @@
                 <a href="{{$setting->pinter_link}}"
                    target="_blank" id="Yelp-Review-Link" class="reviews__link">Leave a Yelp Review</a></div>
         </div>
-        <br>
+        <br>-->
 
         <!--<div class="tiles">
             <div class="row">
