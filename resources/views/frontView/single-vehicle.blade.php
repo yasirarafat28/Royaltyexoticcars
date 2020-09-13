@@ -164,25 +164,36 @@ $setting = setting();
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators mx-auto">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-                    <img src="{{url($vehicle->feature_image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
-                </li>
-                @foreach($additional_images??array() as $key=>$image)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}">
-
-                        <img src="{{url($image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
+                @if($vehicle->feature_image)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                        <img src="{{url($vehicle->feature_image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
                     </li>
+                @endif
+                @foreach($additional_images??array() as $key=>$image)
+
+                    @if($image)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{$key+1}}">
+
+                            <img src="{{url($image??'')}}" alt="" onerror="this.src='/no-image.png';" width="80px">
+                        </li>
+                    @endif
                 @endforeach
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{url($vehicle->feature_image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
-                </div>
+
+                @if($vehicle->feature_image)
+                    <div class="carousel-item active">
+                        <img src="{{url($vehicle->feature_image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
+                    </div>
+                @endif
 
                 @foreach($additional_images??array() as $key=>$image)
-                    <div class="carousel-item">
-                        <img src="{{url($image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
-                    </div>
+
+                    @if($image)
+                        <div class="carousel-item">
+                            <img src="{{url($image??'')}}" onerror="this.src='/no-image.png';" class="d-block w-100" alt="...">
+                        </div>
+                    @endif
                 @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -379,7 +390,7 @@ $setting = setting();
                             <td>{{$vehicle->city_mpg}}</td>
                         </tr>
                     @endif
-                    
+
                     </tbody>
                 </table>
             </div>
