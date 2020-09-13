@@ -13,7 +13,7 @@
 
         <style>
 
-            .preview-image{ 
+            .preview-image{
 
                height: 200px;
             }
@@ -187,14 +187,14 @@
                   <div class="home-bg">
                   <div class="img-background" >
 
-                     <figure class="preview-image"> 
+                     <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->productdata->id)}}"> <img src="{{asset('upload/product').'/'.$fe->productdata->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
-                           <button type="button" onclick="quickview('{{$fe->productdata->id}}')">
+                           <button type="button" onclick="quickview('{{base64_encode($fe->productdata->id)}}')">
                               {{__('messages.Quick View')}}
                            </button>
                         </div>
-                     </figure> 
+                     </figure>
 
                      <div class="img-text">
                         <label class="fancy-checkbox">
@@ -326,7 +326,7 @@
                         <a href="{{url('viewproduct/').'/'.base64_encode($bt['id'])}}"> <img src="{{asset('upload/product').'/'.$bt['basic_image']}}" class="img-responsive"></a>
 
                         <div class="preview-image-overlay">
-                           <button type="button" onclick="quickview('<?=$bt["id"]?>')">
+                           <button type="button" onclick="quickview('<?=base64_encode($bt["id"])?>')">
                                {{__('messages.Quick View')}}
                            </button>
                         </div>

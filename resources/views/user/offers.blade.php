@@ -4,7 +4,7 @@
 @stop
 @section('content')
 <style>
-      .preview-image{ 
+      .preview-image{
 
          height: 200px;
       }
@@ -87,7 +87,7 @@
                        <figure class="preview-image">
                         <a href="{{url('viewproduct/').'/'.base64_encode($fe->id)}}"> <img src="{{asset('upload/product').'/'.$fe->basic_image}}" class="img-responsive"></a>
                         <div class="preview-image-overlay">
-                           <button type="button" onclick="quickview('{{$fe->id}}')">
+                           <button type="button" onclick="quickview('{{base64_encode($fe->id)}}')">
                               Quick View
                            </button>
                         </div>
