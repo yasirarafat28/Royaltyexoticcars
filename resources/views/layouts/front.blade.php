@@ -179,7 +179,7 @@
             text-align: left;
         }
 
-        .rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
+        .description-section hr:before,.rentals hr:before, .rentals__section hr:before, .checkout-header hr:before, .vehicle-price hr:before , .vehicle-spec hr:before {
             display: flex;
             height: 3px;
             background-color: red;

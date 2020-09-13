@@ -442,17 +442,19 @@ $setting = setting();
             </div>
         </div>
 
-</div>
+    </div>
 
 
-    <div class="row pl-3 pr-3" id="information">
-        <h2 class="rental__h2">Description</h2>
+    <div class="container-full description-section" id="information">
+        <h4 >Description</h4>
+        <hr>
         <div class="rental__description--long w-richtext">
             {!! $vehicle->description !!}
         </div>
     </div>
-    <div class="row pl-3 pr-3">
-        <h2 class="rental__h2">Pickup Location</h2>
+    <div class="container-full description-section">
+        <h2 >Pickup Location</h2>
+        <hr>
         <div class="form-group row googlemap">
             <div class="col-sm-12">
                 <div id="map-canvas" style="height: 500px">https://maps.google.com/?q=[floatval({{$setting->latitude}})],[floatval({{$setting->longitude}})]
