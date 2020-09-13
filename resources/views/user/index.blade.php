@@ -288,8 +288,9 @@
          <div class="e-nav">
             <div class="row customdiv">
                <div class="col-lg-4 col-md-4 col-8">
-            <div class="row">
+               
                <div class="col-lg-5 col-md-5 col-8">
+
                   <a href="{{url('/')}}" class="d-flex">
                       <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent;    background-size: contain;
     background-position: center;"></div>
