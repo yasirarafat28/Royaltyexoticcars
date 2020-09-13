@@ -390,6 +390,26 @@
                                                         <td><input required class="form-control" type="text" name="horse_power" value="{{$vehicle->horse_power}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
+                                                        <td>Engine</td>
+                                                        <td><input required class="form-control" type="text" name="engine" value="{{$vehicle->engine}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
+                                                        <td>Cylinders</td>
+                                                        <td><input required class="form-control" type="text" name="cylinders" value="{{$vehicle->cylinders}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
+                                                        <td>Fuel Type</td>
+                                                        <td><input required class="form-control" type="text" name="fuel_type" value="{{$vehicle->fuel_type}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
+                                                        <td>Highway MPG</td>
+                                                        <td><input required class="form-control" type="text" name="highway_mpg" value="{{$vehicle->highway_mpg}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
+                                                        <td>Horse Power</td>
+                                                        <td><input required class="form-control" type="text" name="horse_power" value="{{$vehicle->horse_power}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
                                                         <td>Torque</td>
                                                         <td><input required class="form-control" type="text" name="torque" value="{{$vehicle->torque}}"></td>
                                                     </tr>
