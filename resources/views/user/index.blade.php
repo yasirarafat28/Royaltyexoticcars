@@ -72,6 +72,10 @@
           background-size: cover;
       }
 
+      .cartbar_pop_mcon a i {
+         
+      }
+
       .brand__text {
            color: #000;
            font-size: 1.3em;
@@ -292,17 +296,17 @@
                   <div class="cartbar_pop_mcon">
                      @if(Auth::check())
                      <a href="{{url('myaccount')}}" class="user" >
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                      </a>
                      @else
                      <a href="/login" class="user" >
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                      </a>
                      @endif
 
                      <div class="popover__wrapper">
                         <a href="#" class="cart hover-popup" data-modal-target="modal1" id="cart-1">
-                           <i class="fa fa-shopping-cart popover__title" aria-hidden="true"></i>
+                           <i class="fa fa-shopping-cart popover__title fa-2x" aria-hidden="true"></i>
                            <?php $cartCollection = Cart::getContent();?>
                            <div class="e-nav-cricle" style="background: {{site_color()}} !important">
                               <h1 id="totalcart">{{$cartCollection->count()}}</h1>
@@ -328,7 +332,7 @@
                                              <div class="pop_up-detail-head">
                                                 <h2>{{$item->name}}</h2>
                                                 <div class="cart-pop_up-cross">
-                                                   <i class="fa fa-times" aria-hidden="true"></i>
+                                                   <i class="fa fa-times fa-2x" aria-hidden="true"></i>
                                                    <span>{{$item->quantity}}</span>
                                                 </div>
                                                 <a href="javascript:deletecartitem('{{$item->id}}')"><i class="fa fa-trash-o pop_up-delete" aria-hidden="true" style="color: {{site_color()}} !important"></i></a>
@@ -392,13 +396,13 @@
                        </div>
                      </div>
                      <a href="{{url('mywishlist')}}" class="wish">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
                         <div class="e-nav-cricle" style="background: {{site_color()}} !important">
                            <h1 id="totalwish">{{count($mywish)}}</h1>
                         </div>
                      </a>
                      <a class="compare" href="{{url('compare')}}">
-                        <img src="{{asset('Ecommerce/images/compareheader.png')}}">
+                        <img style="width: 2em; height: 2em; padding-left: 15px; padding-bottom: 5px;" src="{{asset('Ecommerce/images/compareheader.png')}}">
                          <div class="e-nav-cricle comparesp" style="background: {{site_color()}} !important">
                            <?php $arr=explode(",",Session::get("compare"));?>
                            <h1 id="totalcompare">{{count(array_filter($arr))}}</h1>
