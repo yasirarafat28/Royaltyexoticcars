@@ -439,10 +439,40 @@ $setting = setting();
             <div class="tech-info-table">
                 <table class="table table-bordered table-hover">
                     <tbody>
+                    @if( $vehicle->engine)
+                        <tr>
+                            <th>Engine</th>
+                            <td>{{$vehicle->engine}}</td>
+                        </tr>
+                    @endif
                     @if( $vehicle->horse_power)
                         <tr>
                             <th>Horse Power</th>
                             <td>{{$vehicle->horse_power}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->cylinders)
+                        <tr>
+                            <th>Cylinders</th>
+                            <td>{{$vehicle->cylinders}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->fuel_type)
+                        <tr>
+                            <th>Fuel Type</th>
+                            <td>{{$vehicle->fuel_type}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->highway_mpg)
+                        <tr>
+                            <th>Highway MPG</th>
+                            <td>{{$vehicle->highway_mpg}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->city_mpg)
+                        <tr>
+                            <th>City MPG</th>
+                            <td>{{$vehicle->city_mpg}}</td>
                         </tr>
                     @endif
                     @if( $vehicle->torque)

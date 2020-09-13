@@ -177,6 +177,11 @@ class VehicleController extends Controller
         $vehicle->clearance = $request->clearance;
         $vehicle->differential = $request->differential;
         $vehicle->gear_ratio = $request->gear_ratio;
+        $vehicle->cylinders = $request->cylinders;
+        $vehicle->engine = $request->engine;
+        $vehicle->fuel_type = $request->fuel_type;
+        $vehicle->highway_mpg = $request->highway_mpg;
+        $vehicle->city_mpg = $request->city_mpg;
         if ($request->hasFile('feature_image')){
 
             $upload_folder = 'upload';
@@ -350,7 +355,11 @@ class VehicleController extends Controller
         $vehicle->suspension = $request->suspension;
         $vehicle->clearance = $request->clearance;
         $vehicle->differential = $request->differential;
-        $vehicle->gear_ratio = $request->gear_ratio;
+        $vehicle->cylinders = $request->cylinders;
+        $vehicle->engine = $request->engine;
+        $vehicle->fuel_type = $request->fuel_type;
+        $vehicle->highway_mpg = $request->highway_mpg;
+        $vehicle->city_mpg = $request->city_mpg;
         if ($request->hasFile('feature_image')){
 
             $upload_folder = 'upload';
