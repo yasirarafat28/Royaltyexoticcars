@@ -236,9 +236,11 @@
                 margin-bottom:10px;
 
             }
+        }
 
+        @media screen and (max-width: 575px) {
             .drawer__location--info {
-                margin-top: 75px;
+                margin-top: 90px;
             }
         }
         @media screen and (max-width: 767px) {
