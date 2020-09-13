@@ -9,7 +9,7 @@ $setting = setting();
     <style>
         .carousel-item img{
             width: 100%;
-            min-height: 475px !important;
+            /*min-height: 475px !important;*/
         }
 
         @media screen and (max-width: 575px) {
@@ -27,7 +27,7 @@ $setting = setting();
             bottom: 0;
             margin-bottom: 0px;
             left: 0;
-            z-index: 15;
+            z-index: 2;
             margin-left: 0px;
             margin-right: 0px;
             display: -ms-flexbox;
@@ -155,8 +155,8 @@ $setting = setting();
 
 @endsection
 @section('content')
-<div class="container extra-top-margin">
-  <div class="row">
+<div class="container-md extra-top-margin">
+    <div class="row">
     <div class="col-sm-7">
         @php
             $additional_images = explode(',',$vehicle->additional_image);
@@ -332,10 +332,9 @@ $setting = setting();
 
     </div>
   </div>
-</div>
-<br>
-<br>
-<div class="container">
+    <br>
+    <br>
+
     <div class="row">
         <div class="col-sm-4 vehicle-spec">
             <h4>About</h4>
@@ -345,31 +344,31 @@ $setting = setting();
                 <table class="table table-bordered table-hover">
                     <tbody>
                     @if( $vehicle->type)
-                    <tr>
-                        <th>Type</th>
-                        <td>{{$vehicle->type}}</td>
-                    </tr>
+                        <tr>
+                            <th>Type</th>
+                            <td>{{$vehicle->type}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->driver_wheel)
-                    <tr>
-                        <th>Driver Wheel</th>
-                        <td>{{$brand->driver_wheel}}</td>
-                    </tr>
+                        <tr>
+                            <th>Driver Wheel</th>
+                            <td>{{$brand->driver_wheel}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->suspension)
-                    <tr>
-                        <th>Suspension</th>
-                        <td>{{$vehicle->suspension}}</td>
-                    </tr>
+                        <tr>
+                            <th>Suspension</th>
+                            <td>{{$vehicle->suspension}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->clearance)
-                    <tr>
-                        <th>Clearence</th>
-                        <td>{{$vehicle->clearance}}</td>
-                    </tr>
+                        <tr>
+                            <th>Clearence</th>
+                            <td>{{$vehicle->clearance}}</td>
+                        </tr>
                     @endif
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
 
@@ -381,28 +380,28 @@ $setting = setting();
                 <table class="table table-bordered table-hover">
                     <tbody>
                     @if( $vehicle->color)
-                    <tr>
-                        <th>Color</th>
-                        <td>{{$vehicle->color}}</td>
-                    </tr>
+                        <tr>
+                            <th>Color</th>
+                            <td>{{$vehicle->color}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->seat)
-                    <tr>
-                        <th>Seat</th>
-                        <td>{{$vehicle->seat}}-seater</td>
-                    </tr>
+                        <tr>
+                            <th>Seat</th>
+                            <td>{{$vehicle->seat}}-seater</td>
+                        </tr>
                     @endif
                     @if( $vehicle->actual_msrp)
-                    <tr>
-                        <th>Actual Price</th>
-                        <td>${{$vehicle->actual_msrp}}</td>
-                    </tr>
+                        <tr>
+                            <th>Actual Price</th>
+                            <td>${{$vehicle->actual_msrp}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->category->name)
-                    <tr>
-                        <th>Body</th>
-                        <td>{{$vehicle->category->name}}</td>
-                    </tr>
+                        <tr>
+                            <th>Body</th>
+                            <td>{{$vehicle->category->name}}</td>
+                        </tr>
                     @endif
                     </tbody></table>
             </div>
@@ -416,71 +415,61 @@ $setting = setting();
                 <table class="table table-bordered table-hover">
                     <tbody>
                     @if( $vehicle->horse_power)
-                    <tr>
-                        <th>Horse Power</th>
-                        <td>{{$vehicle->horse_power}}</td>
-                    </tr>
+                        <tr>
+                            <th>Horse Power</th>
+                            <td>{{$vehicle->horse_power}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->torque)
-                    <tr>
-                        <th>Tourque</th>
-                        <td>{{$vehicle->torque}}</td>
-                    </tr>
+                        <tr>
+                            <th>Tourque</th>
+                            <td>{{$vehicle->torque}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->gear_ratio)
-                    <tr>
-                        <th>Gear Ratio</th>
-                        <td>{{$vehicle->gear_ratio}}</td>
-                    </tr>
+                        <tr>
+                            <th>Gear Ratio</th>
+                            <td>{{$vehicle->gear_ratio}}</td>
+                        </tr>
                     @endif
                     @if( $vehicle->transmission)
-                    <tr>
-                        <th>Transmission</th>
-                        <td>{{$vehicle->transmission}}</td>
-                    </tr>
+                        <tr>
+                            <th>Transmission</th>
+                            <td>{{$vehicle->transmission}}</td>
+                        </tr>
                     @endif
                     </tbody></table>
             </div>
         </div>
 
-    </div>
 </div>
 
-<div class="container" id="information">
+
+    <div class="row pl-3 pr-3" id="information">
         <h2 class="rental__h2">Description</h2>
         <div class="rental__description--long w-richtext">
-          {!! $vehicle->description !!}
-        </div>
-</div>
-<div class="container">
-  <h2 class="rental__h2">Pickup Location</h2>
-  <div class="form-group row googlemap">
-    <div class="col-sm-12">
-      <div id="map-canvas" style="height: 500px">https://maps.google.com/?q=[floatval({{$setting->latitude}})],[floatval({{$setting->longitude}})]
+            {!! $vehicle->description !!}
         </div>
     </div>
-  </div>
-  <address class="profile__location--details">
-    <div class="profile__location--address">
-      <div>Rental Exotic Beasts</div>
-      <div>{{ $setting->company_name }}</div>
-      <div>{{ $setting->address }}</div>
-      <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
-        href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
+    <div class="row pl-3 pr-3">
+        <h2 class="rental__h2">Pickup Location</h2>
+        <div class="form-group row googlemap">
+            <div class="col-sm-12">
+                <div id="map-canvas" style="height: 500px">https://maps.google.com/?q=[floatval({{$setting->latitude}})],[floatval({{$setting->longitude}})]
+                </div>
+            </div>
+        </div>
+        <address class="profile__location--details">
+            <div class="profile__location--address">
+                <div>Rental Exotic Beasts</div>
+                <div>{{ $setting->company_name }}</div>
+                <div>{{ $setting->address }}</div>
+                <div>9am – 7pm Daily</div><a href="tel:+1-866-984-1187">{{ $setting->phone }}</a><a
+                    href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
+            </div>
+        </address>
     </div>
-  </address>
 </div>
-  <!-- Modal -->
-  <div class="modal fade" id="BookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-          <div class="modal-content">
-              <div class="container p-0">
-
-              </div>
-          </div>
-      </div>
-  </div>
-
 
 @endsection
 @section('script')

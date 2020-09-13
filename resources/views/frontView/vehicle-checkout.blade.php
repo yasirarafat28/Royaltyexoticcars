@@ -171,7 +171,7 @@
     @endphp
 <div class="rental__hero">
 
-    <div class=" container checkout-container mt-5">
+    <div class=" container-md checkout-container extra-top-margin">
     	@include('frontView.partials.vehicle-checkout')
 
 
