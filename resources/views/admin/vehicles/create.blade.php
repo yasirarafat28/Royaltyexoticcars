@@ -409,7 +409,7 @@
                                             <tr id="attrrow01">
                                                 <td>City MPG</td>
                                                 <td><input  class="form-control" type="text" name="city_mpg"></td>
-                                            </tr>
+                                            </tr> 
                                             <tr id="attrrow01">
                                                 <td>Torque</td>
                                                 <td><input  class="form-control" type="text" name="torque"></td>
