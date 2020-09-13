@@ -89,7 +89,7 @@
       }
 
       .cartbar_pop_mcon a i {
-         
+
       }
 
       .brand__text {
@@ -237,11 +237,11 @@
           width: 100%;
           height: 230px;
       }
-      .top-logo {
+      /*.top-logo {
           height: 53px;
           width: 72px;
-          
-      }
+
+      }*/
 
 
    </style>
@@ -289,12 +289,13 @@
             <div class="row customdiv">
                <div class="col-lg-4 col-md-4 col-8">
                   <a href="{{url('/')}}" class="d-flex">
-                      <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent"></div>
+                      <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent;    background-size: contain;
+    background-position: center;"></div>
                       <div class="brand__text d-none d-lg-block">Rental Exotic Beasts</div>
                      <!---->
                   </a>
                </div>
-               <div class="col-lg-5 col-md-5 ser-show">
+               <div class="col-lg-4 col-md-4 ser-show">
                   <form action="{{url('searchproduct')}}" method="post">
                      {{csrf_field()}}
                      <div class="search">

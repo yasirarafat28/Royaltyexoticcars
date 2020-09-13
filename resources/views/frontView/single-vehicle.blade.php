@@ -149,9 +149,80 @@ $setting = setting();
         }
 
 
+        #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .owl-theme .owl-controls{
+            margin-top: 2px !important;
+        }
+        .owl-theme .owl-controls .owl-page {
+            position: relative;
+            display: inline-block;
+            height: 3em;
+            margin: 0 0.25em;
+            outline: none;
+            transition: all 0.1s ease-in-out;
+            border: 1px solid #ddd;
+        }
 
+        @media screen and (max-width: 767px) {
+
+            .owl-theme .owl-controls .owl-page {
+                height: 2em;
+            }
+        }
+        .owl-theme .owl-controls .owl-page:focus {
+            outline: none;
+        }
+        .owl-theme .owl-controls .owl-page span {
+            display: none;
+        }
+        /*
+        .owl-theme .owl-controls .owl-page.active {
+            transform: scale(1.1);
+        }
+        .owl-theme .owl-controls .owl-page:not(.active) {
+            transform: scale(0.8);
+            -webkit-box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, .75);
+            box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, .75);
+        }
+        .owl-theme .owl-controls .owl-page:not(.active):hover {
+            transform: scale(0.9);
+        }*/
+        .owl-theme .owl-controls .owl-buttons .owl-prev, .owl-theme .owl-controls .owl-buttons .owl-next {
+            font-size: 3.5em;
+            display: block;
+            position: absolute;
+            line-height: 0.75em;
+            width: 1em;
+            height: 1em;
+            border-radius: 1px;
+            background-color: rgba(0,0,0,0.5) !important;
+            top: 30%;
+            color: #fff;
+            text-align: center;
+        }
+        .owl-theme .owl-controls .owl-buttons .owl-prev:focus, .owl-theme .owl-controls .owl-buttons .owl-next:focus {
+            -webkit-box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, .75);
+            box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, .75);
+        }
+        .owl-theme .owl-controls .owl-buttons .owl-prev {
+            left: 0.25em;
+        }
+        .owl-theme .owl-controls .owl-buttons .owl-next {
+            right: 0.25em;
+        }
+        .owl-pagination{
+            text-align: center;
+        }
+        .owl-pagination .own-page img{
+            height: 100% !important;
+        }
 
     </style>
+
 
 @endsection
 @section('content')
@@ -206,73 +277,6 @@ $setting = setting();
             </a>
         </div>-->
 
-            <style>
-                #owl-demo .item img {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                }
-                .owl-theme .owl-controls{
-                    margin-top: 2px !important;
-                }
-                .owl-theme .owl-controls .owl-page {
-                    position: relative;
-                    display: inline-block;
-                    height: 3em;
-                    margin: 0 0.25em;
-                    outline: none;
-                    transition: all 0.1s ease-in-out;
-                    border: 1px solid #ddd;
-                }
-                .owl-theme .owl-controls .owl-page:focus {
-                    outline: none;
-                }
-                .owl-theme .owl-controls .owl-page span {
-                    display: none;
-                }
-                /*
-                .owl-theme .owl-controls .owl-page.active {
-                    transform: scale(1.1);
-                }
-                .owl-theme .owl-controls .owl-page:not(.active) {
-                    transform: scale(0.8);
-                    -webkit-box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, .75);
-                    box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, .75);
-                }
-                .owl-theme .owl-controls .owl-page:not(.active):hover {
-                    transform: scale(0.9);
-                }*/
-                .owl-theme .owl-controls .owl-buttons .owl-prev, .owl-theme .owl-controls .owl-buttons .owl-next {
-                    font-size: 3.5em;
-                    display: block;
-                    position: absolute;
-                    line-height: 0.75em;
-                    width: 1em;
-                    height: 1em;
-                    border-radius: 1px;
-                    background-color: rgba(0,0,0,0.5) !important;
-                    top: 30%;
-                    color: #fff;
-                    text-align: center;
-                }
-                .owl-theme .owl-controls .owl-buttons .owl-prev:focus, .owl-theme .owl-controls .owl-buttons .owl-next:focus {
-                    -webkit-box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, .75);
-                    box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, .75);
-                }
-                .owl-theme .owl-controls .owl-buttons .owl-prev {
-                    left: 0.25em;
-                }
-                .owl-theme .owl-controls .owl-buttons .owl-next {
-                    right: 0.25em;
-                }
-                .owl-pagination{
-                    text-align: center;
-                }
-                .owl-pagination .own-page img{
-                    height: 100% !important;
-                }
-
-            </style>
 
             <div id="owl-demo" class="owl-carousel owl-theme">
 
@@ -293,42 +297,6 @@ $setting = setting();
                 <!--<div class="item"><img src="http://www.lorempixel.com/960/350?3"></div>-->
 
             </div>
-
-            <script>
-                $(document).ready(function () {
-
-
-                    $("#owl-demo").owlCarousel({
-                        loop: true,
-                        items: 1,
-                        autoplay: true,
-                        autoplayHoverPause: true,
-                        autoplayTimeout: 2000,
-                        nav: true,
-                        dots: true,
-                        dotsEach: true,
-                        animateOut: 'fadeOut',
-                        animateIn: 'fadeIn',
-
-                        navigation: true,
-                        navigationText: ['&lsaquo;','&rsaquo;'],
-                        slideSpeed: 300,
-                        paginationSpeed: 400,
-                        singleItem: true,
-                        afterInit: makePages,
-                        afterUpdate: makePages
-                    });
-                    function makePages() {
-                        $.each(this.owl.userItems, function(i) {
-                            $('.owl-controls .owl-page').eq(i).html('<img style="height:100%" src="'+ $(this).find('img').attr('src')+'"/>')
-                                /*.css({
-                                    'background': 'url(' + $(this).find('img').attr('src') + ')',
-                                    'background-size': 'cover'
-                                })*/
-                        });
-                    }
-                });
-            </script>
     </div>
     <div class="col-sm-5">
 
@@ -676,12 +644,12 @@ $setting = setting();
 
     <link href="/assets/css/owl.carousel.min.css" rel="stylesheet">
 
-    <!--<script src="//maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCyYM0wdvmHA5KRhEAl1R7rMp28eCHoGlo"  type="text/javascript"></script>
+    <script src="//maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCyYM0wdvmHA5KRhEAl1R7rMp28eCHoGlo"  type="text/javascript"></script>
 
 
     <script>
         $(document).ready(function(){
-            $(".car-preview-crousel").owlCarousel({
+            /*$(".car-preview-crousel").owlCarousel({
                 loop: true,
                 items: 1,
                 autoplay: true,
@@ -692,7 +660,37 @@ $setting = setting();
                 dotsEach: true,
                 animateOut: 'fadeOut',
                 animateIn: 'fadeIn'
+            });*/
+
+            $("#owl-demo").owlCarousel({
+                loop: true,
+                items: 1,
+                autoplay: true,
+                autoplayHoverPause: true,
+                autoplayTimeout: 2000,
+                nav: true,
+                dots: true,
+                dotsEach: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+
+                navigation: true,
+                navigationText: ['&lsaquo;','&rsaquo;'],
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                afterInit: makePages,
+                afterUpdate: makePages
             });
+            function makePages() {
+                $.each(this.owl.userItems, function(i) {
+                    $('.owl-controls .owl-page').eq(i).html('<img style="height:100%" src="'+ $(this).find('img').attr('src')+'"/>')
+                    /*.css({
+                        'background': 'url(' + $(this).find('img').attr('src') + ')',
+                        'background-size': 'cover'
+                    })*/
+                });
+            }
         });
     </script>
 
@@ -724,5 +722,5 @@ $setting = setting();
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
-    </script>-->
+    </script>
 @endsection
