@@ -349,24 +349,37 @@ $setting = setting();
                             <td>{{$vehicle->type}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->driver_wheel)
+                    @if( $vehicle->engine)
                         <tr>
-                            <th>Driver Wheel</th>
-                            <td>{{$brand->driver_wheel}}</td>
+                            <th>Engine</th>
+                            <td>{{$vehicle->engine}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->suspension)
+                    @if( $vehicle->cylinders)
                         <tr>
-                            <th>Suspension</th>
-                            <td>{{$vehicle->suspension}}</td>
+                            <th>Cylinders</th>
+                            <td>{{$vehicle->cylinders}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->clearance)
+                    @if( $vehicle->fuel_type)
                         <tr>
-                            <th>Clearence</th>
-                            <td>{{$vehicle->clearance}}</td>
+                            <th>Fuel Type</th>
+                            <td>{{$vehicle->fuel_type}}</td>
                         </tr>
                     @endif
+                    @if( $vehicle->highway_mpg)
+                        <tr>
+                            <th>Highway MPG</th>
+                            <td>{{$vehicle->highway_mpg}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->city_mpg)
+                        <tr>
+                            <th>Highway MPG</th>
+                            <td>{{$vehicle->city_mpg}}</td>
+                        </tr>
+                    @endif
+                    
                     </tbody>
                 </table>
             </div>
@@ -401,6 +414,18 @@ $setting = setting();
                         <tr>
                             <th>Body</th>
                             <td>{{$vehicle->category->name}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->clearance)
+                        <tr>
+                            <th>Clearence</th>
+                            <td>{{$vehicle->clearance}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->driver_wheel)
+                        <tr>
+                            <th>Driver Wheel</th>
+                            <td>{{$brand->driver_wheel}}</td>
                         </tr>
                     @endif
                     </tbody></table>
@@ -466,6 +491,12 @@ $setting = setting();
                         <tr>
                             <th>Transmission</th>
                             <td>{{$vehicle->transmission}}</td>
+                        </tr>
+                    @endif
+                    @if( $vehicle->suspension)
+                        <tr>
+                            <th>Suspension</th>
+                            <td>{{$vehicle->suspension}}</td>
                         </tr>
                     @endif
                     </tbody></table>
