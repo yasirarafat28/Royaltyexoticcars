@@ -35,13 +35,14 @@
                 }
 
                 .customcard {
-                    padding: 20px;
+                    padding: 10px;
                     text-align: center;
+                    min-height: 150px;
                 }
 
                 @media screen and (max-width: 767px) {
                     .modalparentdiv {
-                        padding: 0px;
+                        padding: 0px; 
                         background-color: transparent;
                     }
                     .carousel-item {

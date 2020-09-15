@@ -19,7 +19,7 @@ class AddEngineToVehicles extends Migration
             $table->text('fuel_type')->nullable();
             $table->text('highway_mpg')->nullable();
             $table->text('city_mpg')->nullable();
-            
+
         });
     }
 

@@ -257,6 +257,12 @@
                      </a>
                   </li>
                   <li class="active">
+                     <a href="{{url('admin/news')}}">
+                     <i class="menu-icon fa fa-image"></i>
+                        News
+                     </a>
+                  </li>
+                  <li class="active">
                      <a href="{{url('admin/vehicle_requirements')}}">
                      <i class="menu-icon fa fa-image"></i>
                         Vehicle Requirements
