@@ -287,8 +287,7 @@
       <div class="{{$myclass}}">
          <div class="e-nav">
             <div class="row customdiv">
-               <div class="col-lg-4 col-md-4 col-8">
-               
+
                <div class="col-lg-5 col-md-5 col-8">
 
                   <a href="{{url('/')}}" class="d-flex">
