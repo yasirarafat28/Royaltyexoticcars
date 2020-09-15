@@ -300,7 +300,8 @@
         .why-us-block .card-img img{
             margin-left: auto;
             margin-right: auto;
-            width: 100%;
+            /*width: 100%;*/
+            padding: 20px !important;
         }
 
         @media screen and (max-width: 575px) {
@@ -1224,25 +1225,30 @@
                     </div>
                     <div class="drawer__section">
                         <div class="card card__table">
-                            <div class="navdrawer__links--wrapper"><a
+                            <div class="navdrawer__links--wrapper">
+                                <a
                                     href="{{$setting->insta_link}}" target="_blank"
                                     id="Drawer-Instagram-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
-                                            src="/images/tumblr-3-24.png"
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533c2_instagram.svg"
                                             alt="Instagram" class="navdrawer__link--image" /></div>
-                                    <div>Follow us on Trip Advisor</div>
-                                </a><a href="{{$setting->fb_link}}"
+                                    <div>Follow us on Instagram</div>
+                                </a>
+                                <a href="{{$setting->fb_link}}"
                                        target="_blank" id="Drawer-Facebook-Link" class="navdrawer__link w-inline-block">
+
+
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533b4_53f333fd1b92a02f2f930a05_facebook_footer.svg"
-                                            alt="Facebook" class="navdrawer__link--image" /></div>
+                                            alt="Pinterest" class="navdrawer__link--image" /></div>
                                     <div>Like us on Facebook</div>
-                                </a><a href="{{$setting->tweeet_link}}" target="_blank"
+                                </a>
+                                <a href="{{$setting->tweeet_link}}" target="_blank"
                                        id="Drawer-Twitter-Link" class="navdrawer__link w-inline-block">
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
-                                            src="/images/google-plus-24.png"
-                                            alt="Twitter" class="navdrawer__link--image" /></div>
-                                    <div>Connect on Google Plus</div>
+                                            src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a53477_53f33417144ad8302fd73d6a_twitter_footer.svg"
+                                            alt="Pinterest" class="navdrawer__link--image" /></div>
+                                    <div>Connect on Twitter</div>
                                 </a>
 
                                 <a href="{{$setting->pinter_link}}" target="_blank"
@@ -1250,7 +1256,8 @@
                                     <div class="navdrawer__link--icon navdrawer__link--icon-social" style="background-color: red;"><img
                                             src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a536cd_pinterest.svg"
                                             alt="Pinterest" class="navdrawer__link--image" /></div>
-                                    <div>Follow us on Yelp</div>
+
+                                    <div>Follow us on Pinterest</div>
                                 </a><a href="{{$setting->utube_link}}" target="_blank"
                                        id="Drawer-Youtube-Link"
                                        class="navdrawer__link navdrawer__link--no-border w-inline-block">

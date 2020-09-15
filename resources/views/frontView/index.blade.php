@@ -40,6 +40,10 @@
                 }
 
                 @media screen and (max-width: 767px) {
+                    .modalparentdiv {
+                        padding: 0px;
+                        background-color: transparent;
+                    }
                     .carousel-item {
                         height: unset;
                         min-height: 350px;
@@ -49,9 +53,9 @@
                     }
                 }
                 @media screen and (max-width: 479px) {
-                    .modalparentdiv {
+                    /*.modalparentdiv {
                         padding: 2em 2em;
-                    }
+                    }*/
 
                     .why-us-block {
 
@@ -290,7 +294,7 @@
                         </div>
                         <div class="customcard">
                             <h4 class="card-title mbr-fonts-style display-5">
-                                Flexible Time</h4>
+                                Extra Time</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 We understand traffic issues, and we give you 10 minutes additional time on your car rental return.
                             </p>
