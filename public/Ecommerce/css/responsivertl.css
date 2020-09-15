@@ -223,12 +223,12 @@
 }
 @media(max-width: 991px){
     .compare .e-nav-cricle{
-        top: -27px;
-        right: -24px;
+        top: -11px;
+        right: 3px;
     }
 
     .wish .e-nav-cricle{
-        top: -27px;
+        top: -7px;
         right: -24px;
     }
 .text-off h1 {
@@ -1992,9 +1992,31 @@ td.order-num {
     font-size: 16px;
 }
 }
+@media(max-width: 768px){
+
+    .compare .e-nav-cricle{
+        top: -27px;
+        right: -24px;
+    }
+
+    .customNavigation a.btn.prev {
+        left: 25px;
+        z-index: 30;
+    }
+
+    .customNavigation a.btn.next {
+        right: 25px;
+        z-index: 30;
+    }
+}
 @media(max-width: 320px){
     .user-login-pop_up .button-facebook{
         padding-left: 7px;
+    }
+
+    .compare .e-nav-cricle{
+        top: -7px;
+        right: -24px;
     }
 
     .wish .e-nav-cricle {

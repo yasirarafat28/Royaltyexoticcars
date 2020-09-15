@@ -243,6 +243,14 @@
 
       }*/
 
+      @media (max-width: 768px){
+          body .container {
+              max-width: 100% !important;
+              padding-right: 5px;
+              padding-left: 5px;
+          }
+      }
+
 
    </style>
    <body class="rtl">
@@ -279,9 +287,9 @@
       <input id="settings-btn" type="checkbox" class="settings-btn">
 
       <?php   if(strpos($_SERVER['REQUEST_URI'],"productslist")){
-         $myclass="container my-container";
+         $myclass="container my-container  shop-main-container";
          }else{
-         $myclass="container";
+         $myclass="container  shop-main-container";
          }
          ?>
       <div class="{{$myclass}}">
