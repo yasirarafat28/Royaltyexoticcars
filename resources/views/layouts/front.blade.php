@@ -415,6 +415,12 @@
             width: 150px;
         }
 
+        .btn-rounded{
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+
 
 
     </style>

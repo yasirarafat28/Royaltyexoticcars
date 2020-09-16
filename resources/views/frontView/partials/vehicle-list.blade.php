@@ -7,7 +7,7 @@
 	<div class="single-car-info">
 
 		<div class="rentals__header">
-			<img src="{{url($record->brand->photo??'')}}" width="50px" height="50px" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
+			<img src="{{url($record->brand->photo??'')}}" width="" height="50px" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
 
 			<div class="trending__embed w-embed">
 				<div class="rentals__label">{{ $record->category->name??'' }}</div>
@@ -89,8 +89,8 @@
         <div style="display: flex;flex-flow: wrap;">
 
 
-            <a href="/vehicle-booking/{{base64_encode($record->id)}}" class="rental__cta--text btn-success text-uppercase mr-auto" > <i class="fa fa-plus mr-2"> </i> Book Now</a>
-            <a href="/vehicle/{{base64_encode($record->id)}}/{{$record->slug}}" class="rental__cta--text btn-secondary text-uppercase ml-auto" > <i class="fa fa-eye mr-2"> </i> Details</a>
+            <a href="/vehicle-booking/{{base64_encode($record->id)}}" class="rental__cta--text btn-success text-uppercase mr-auto btn-rounded" > <i class="fa fa-plus mr-2"> </i> Book Now</a>
+            <a href="/vehicle/{{base64_encode($record->id)}}/{{$record->slug}}" class="rental__cta--text btn-secondary text-uppercase ml-auto btn-rounded" > <i class="fa fa-eye mr-2"> </i> Details</a>
 
         </div>
 
