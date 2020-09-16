@@ -42,7 +42,7 @@
 
                 @media screen and (max-width: 767px) {
                     .modalparentdiv {
-                        padding: 0px; 
+                        padding: 0px;
                         background-color: transparent;
                     }
                     .carousel-item {
@@ -270,7 +270,7 @@
 
 
             <div class="row pt-4 pb-4">
-                <div class="col-md-3 col-6 why-us-block">
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
 
                     <div class="card ">
                         <div class="card-img">
@@ -286,7 +286,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3 col-6 why-us-block">
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
 
                     <div class="card">
                         <div class="card-img">
@@ -303,7 +303,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3 col-6 why-us-block">
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
 
                     <div class="card ">
                         <div class="card-img">
@@ -321,7 +321,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3 col-6 why-us-block">
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
 
                     <div class="card ">
                         <div class="card-img">
@@ -334,6 +334,42 @@
                             </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 Yes! You get to drive unlimited miles within Nevada
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
+
+                    <div class="card ">
+                        <div class="card-img">
+
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/delivery.png">
+                        </div>
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
+                                Local Delivery
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                We’ll deliver to your hotel, airport, casino and Las Vegas area.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 col-sm-4 col-6 why-us-block">
+
+                    <div class="card ">
+                        <div class="card-img">
+
+                            <img class="mbr-iconfont mbri-users" src="/frontEnd/why-us/no-deposit.png">
+                        </div>
+                        <div class="customcard">
+                            <h4 class="card-title mbr-fonts-style display-5">
+                                No Deposit Fee
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Yes! Rental Exotics Beast has no Deposit fee.
                             </p>
                         </div>
                     </div>

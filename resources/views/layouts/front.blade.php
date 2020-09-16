@@ -302,6 +302,7 @@
             margin-right: auto;
             /*width: 100%;*/
             padding: 20px !important;
+            min-height: 150px;
         }
 
         @media screen and (max-width: 575px) {
