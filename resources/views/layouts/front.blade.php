@@ -312,6 +312,11 @@
             }
 
 
+            .why-us-block .card-img img{
+                padding: 0px !important;
+            }
+
+
             .checkout-sidebar{
                 padding-left: 5px;
                 padding-right: 5px;

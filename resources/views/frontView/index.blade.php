@@ -200,6 +200,12 @@
                     -ms-flex: 0 0 100px;
                     flex: 0 0 100px;
                 }
+
+
+
+                h4.mbr-fonts-style{
+                    font-size: 15px !important;
+                }
         </style>
 
             @php
