@@ -91,9 +91,119 @@
                     border: 2px solid white;
                     border-radius: 10px;
                 }
-            </style>
+
+                .retro-layout-2 .h-entry {
+                    display: block;
+                    position: relative;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    background-size: cover;
+                    background-position: center center; }
+                .retro-layout-2 .h-entry .post-category {
+                    color: #fff; }
+                .retro-layout-2 .h-entry.mb-30 {
+                    margin-bottom: 30px; }
+                .retro-layout-2 .h-entry .date {
+                    font-size: 15px; }
+                .retro-layout-2 .h-entry.gradient {
+                    position: relative;
+                    height: 320px;
+                }
+                .retro-layout-2 .text {
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 10;
+                    padding: 20px;
+                    max-width: 350px; }
+                .retro-layout-2 .text h2 {
+                    color: #fff;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    margin-bottom: 0; }
+                .retro-layout-2 .text span {
+                    color: rgba(255, 255, 255, 0.5); }
+                .retro-layout-2 .text.text-sm h2 {
+                    font-size: 18px;
+                    line-height: 1.5; }
+
+                .retro-layout-2 .gradient {
+                    position: relative; }
+                .retro-layout-2 .gradient:before {
+                    z-index: 1;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: -moz-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+                    background: -webkit-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+                    background: -o-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+                    background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); }
+
+                .entry2 img {
+                    margin-bottom: 30px; }
+
+                .entry2 h2 {
+                    font-size: 24px;
+                    margin-bottom: 30px;
+                    font-weight: 700; }
+                .entry2 h2 a {
+                    color: #000; }
+
+                .entry2 .excerpt {
+                    padding-left: 20px;
+                    padding-right: 20px; }
+
+                .entry2 .post-meta {
+                    color: #b3b3b3;
+                    font-size: 13px;
+                    width: 100%;
+                    display: block; }
+                .entry2 .post-meta a {
+                    color: #000; }
+                .entry2 .post-meta .author-figure img {
+                    width: 30px;
+                    border-radius: 50%; }
+
+                .entry3, .entry4 {
+                    margin-bottom: 30px; }
+                .entry3 .text h2, .entry4 .text h2 {
+                    font-size: 18px;
+                    line-height: 1.5;
+                    font-weight: 700; }
+                .entry3 .text h2 a, .entry4 .text h2 a {
+                    color: #000; }
+                .entry3 .figure, .entry4 .figure {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 150px;
+                    flex: 0 0 150px;
+                    -webkit-transition: .3s all ease;
+                    -o-transition: .3s all ease;
+                    transition: .3s all ease;
+                    opacity: 1; }
+                .entry3:hover figure, .entry3:focus figure, .entry4:hover figure, .entry4:focus figure {
+                    opacity: .5; }
+
+                .entry4 {
+                    margin-bottom: 30px; }
+                .entry4 .text h2 {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    font-weight: 700; }
+                .entry4 .text h2 a {
+                    color: #000; }
+                .entry4 .figure {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 100px;
+                    flex: 0 0 100px;
+                }
+        </style>
 
             @php
+                $posts = \App\News::where('status','active')->orderBy('created_at','DESC')->limit(3)->get();
                 $sliders = \App\Slider::where('type','rental')->where('status','active')->get();
                 $brands = App\Model\VehicleBrand::where('status','active')->get();
                 $categories = App\Model\VehicleCategory::where('parent_category_id',0)->where('status','active')->get();
@@ -432,145 +542,31 @@
             @endforeach
         </div>
 
-        <style>
-
-            .retro-layout-2 .h-entry {
-                display: block;
-                position: relative;
-                border-radius: 4px;
-                overflow: hidden;
-                background-size: cover;
-                background-position: center center; }
-            .retro-layout-2 .h-entry .post-category {
-                color: #fff; }
-            .retro-layout-2 .h-entry.mb-30 {
-                margin-bottom: 30px; }
-            .retro-layout-2 .h-entry .date {
-                font-size: 15px; }
-            .retro-layout-2 .h-entry.gradient {
-                position: relative;
-                height: 320px;
-            }
-            .retro-layout-2 .text {
-                position: absolute;
-                bottom: 0;
-                z-index: 10;
-                padding: 20px;
-                max-width: 350px; }
-            .retro-layout-2 .text h2 {
-                color: #fff;
-                font-size: 18px;
-                line-height: 1.5;
-                margin-bottom: 0; }
-            .retro-layout-2 .text span {
-                color: rgba(255, 255, 255, 0.5); }
-            .retro-layout-2 .text.text-sm h2 {
-                font-size: 18px;
-                line-height: 1.5; }
-
-            .retro-layout-2 .gradient {
-                position: relative; }
-            .retro-layout-2 .gradient:before {
-                z-index: 1;
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background: -moz-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-                background: -webkit-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-                background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
-                background: -o-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-                background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); }
-
-            .entry2 img {
-                margin-bottom: 30px; }
-
-            .entry2 h2 {
-                font-size: 24px;
-                margin-bottom: 30px;
-                font-weight: 700; }
-            .entry2 h2 a {
-                color: #000; }
-
-            .entry2 .excerpt {
-                padding-left: 20px;
-                padding-right: 20px; }
-
-            .entry2 .post-meta {
-                color: #b3b3b3;
-                font-size: 13px;
-                width: 100%;
-                display: block; }
-            .entry2 .post-meta a {
-                color: #000; }
-            .entry2 .post-meta .author-figure img {
-                width: 30px;
-                border-radius: 50%; }
-
-            .entry3, .entry4 {
-                margin-bottom: 30px; }
-            .entry3 .text h2, .entry4 .text h2 {
-                font-size: 18px;
-                line-height: 1.5;
-                font-weight: 700; }
-            .entry3 .text h2 a, .entry4 .text h2 a {
-                color: #000; }
-            .entry3 .figure, .entry4 .figure {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 150px;
-                flex: 0 0 150px;
-                -webkit-transition: .3s all ease;
-                -o-transition: .3s all ease;
-                transition: .3s all ease;
-                opacity: 1; }
-            .entry3:hover figure, .entry3:focus figure, .entry4:hover figure, .entry4:focus figure {
-                opacity: .5; }
-
-            .entry4 {
-                margin-bottom: 30px; }
-            .entry4 .text h2 {
-                font-size: 16px;
-                line-height: 1.5;
-                font-weight: 700; }
-            .entry4 .text h2 a {
-                color: #000; }
-            .entry4 .figure {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 100px;
-                flex: 0 0 100px; }
-        </style>
-
-        <div class="rentals why-us-section" style="background-size:cover;background-image: url(https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,h_610,q_75,w_1510/v1/clients/lasvegas/strip3_d7b175ef-3642-41a4-9dad-33b9be2b00a9.jpg)">
-            <h2 class="home__h2 rental-section-title text-center text-white">Where to go?</h2>
-            <p class="text-center text-white">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, maxime?.</p>
-            <hr class="center-hr" style="color: #fff !important;">
 
 
-            <div class="row align-items-stretch retro-layout-2">
-                @for($i=0;$i<3;$i++)
-
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div href="single.html" class="h-entry mb-30 gradient" style="background-image: url('/upload/vehicles/200809103711.jpg');">
-                            <div class="text">
-                                <h2 class="font-weight-bold text-underline">The AI magically removes moving objects from videos.</h2>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut commodi consequatur magnam possimus. Accusantium dolorem eius, illo magnam non officiis sint sunt suscipit ullam. <a href="#" class="link">Read more &gt;&gt;</a></p>
-
-                                <!--<span class="date">July 19, 2019</span>-->
-                            </div>
+        @if (sizeof($posts))
+            <div class="rentals why-us-section" style="background-size:cover;background-image: url(https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,h_610,q_75,w_1510/v1/clients/lasvegas/strip3_d7b175ef-3642-41a4-9dad-33b9be2b00a9.jpg)">
+                <h2 class="home__h2 rental-section-title text-center text-white">Where to go?</h2>
+                <p class="text-center text-white">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, maxime?.</p>
+                <hr class="center-hr" style="color: #fff !important;">
+                <div class="row align-items-stretch retro-layout-2">
+                    @foreach ($posts as $post)
+                        <div class="col-md-4 col-sm-6 col-12">
+                            @include('frontView.partials.news-list')
                         </div>
-                    </div>
-                @endfor
 
+                    @endforeach
+
+                </div>
+
+
+
+
+                <br>
             </div>
 
 
-
-
-            <br>
-        </div>
+        @endif
 
 
 

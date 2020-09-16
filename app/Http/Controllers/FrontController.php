@@ -5,6 +5,7 @@ use App\Model\Vehicle;
 use App\Faq;
 use App\Model\VehicleCategory;
 use App\Model\VehicleRequirement;
+use App\News;
 use Illuminate\Support\Str;
 
 
@@ -177,6 +178,21 @@ class FrontController extends Controller {
         $faqs = Faq::all();
 
         return view('frontView.faqs')->with('faqs', $faqs);
+    }
+
+    public function news_list(){
+        $posts  = News::where('status','active')->orderBy('created_at','DESC')->paginate(12);
+        return view('frontView.news-list',compact('posts'));
+    }
+
+    public function news($id,$slug=''){
+        $post  = News::where('status','active')->where('id',$id)->first();
+        if(!$post)
+            return back();
+
+        $related_items = News::where('status','active')->where('id','!=',$id)->orderBy('created_at','DESC')->limit(5)->get();
+
+        return view('frontView.news-details',compact('post'));
     }
 
     public function faqsShow($faqID) {

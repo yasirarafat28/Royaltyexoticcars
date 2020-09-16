@@ -15,6 +15,7 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->integer('order')->default(0);
             $table->integer('category_id')->default(0);
             $table->text('title')->nullable();
             $table->text('description')->nullable();

@@ -50,6 +50,8 @@ Route::get('/car-rentals/lamborghini-aventador', 'FrontController@carRentalsLamb
 
 
 Route::get('/requirements', 'FrontController@requirements');
+Route::get('/news-list', 'FrontController@news_list');
+Route::get('/news/{id}/{slug?}', 'FrontController@news')->name('newsDetails');
 Route::get('/team', 'FrontController@team');
 Route::get('/privacy', 'FrontController@privacy');
 Route::get('/covid-19-update', 'FrontController@covid');
