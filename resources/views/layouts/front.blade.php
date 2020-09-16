@@ -313,7 +313,7 @@
 
 
             .why-us-block .card-img img{
-                padding: 0px !important;
+                /*padding: 0px !important;*/
             }
 
 
@@ -1347,6 +1347,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous"></script>
 
     <script src="/js/jquery.cookieMessage.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 
     <!--Start of Tawk.to Script-->
@@ -1374,7 +1375,6 @@
             $('.preloader').fadeOut();
             $('.preloader-spinner').delay(350).fadeOut('slow');
             $('body').removeClass('loader-active');
-            $(".popular-car-gird").isotope();
         }); //window load End
 
 
@@ -1385,8 +1385,11 @@
     <script>
         $(function() {
             jQuery.noConflict();
+            if (!$.cookie("first-notice-accepted")) {
+                $('#AutoStartModal').modal('show');
+                $.cookie("first-notice-accepted", 1, { expires : 30 });
+            }
 
-            $('#AutoStartModal').modal('show');
 
             //----- CLOSE
             $('.popup-close').on('click', function(e)  {
