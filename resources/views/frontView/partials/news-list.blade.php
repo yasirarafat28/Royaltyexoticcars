@@ -1,4 +1,4 @@
-<div href="single.html" class="h-entry mb-30 gradient" style="background-image: url({{url($post->image??'')}});">
+<div class="h-entry mb-30 gradient" style="background-image: url({{url($post->image??'')}});">
     <div class="text">
         <h2 class="font-weight-bold text-underline">{{$post->title}}</h2>
         <p class="text-white">

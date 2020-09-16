@@ -134,12 +134,19 @@
             margin-bottom: 10px;
             text-transform: uppercase;
         }
+        ul.recent-tips li {
+            list-style-type: none;
+        }
 
     </style>
 @endsection
 @section('content')
+    @php
+
+	    $setting = \App\Model\Setting::first();
+    @endphp
     <div class="main" style="padding-top:30px;">
-        <div class="container-fluid  extra-top-margin">
+        <div class="container  extra-top-margin">
             <div class="row">
 
                 <div class="col-lg-8">
@@ -161,8 +168,10 @@
                         <div class="single-sidebar">
                             <h3>For More Informations</h3>
                             <div class="sidebar-body">
-                                <p><i class="fa fa-mobile"></i> +8801816 277 243</p>
-                                <p><i class="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</p>
+                                <a style="color: #575757;" href="tel:{{$setting->phone}}"><i class="fa fa-mobile"></i> {{$setting->phone}}</a>
+                                <br>
+                                <a style="color: #575757;" href="mailto:{{$setting->email}}"><i class="fa fa-envelope"></i> {{$setting->email}}</a>
+                                <p><i class="fa fa-clock-o"></i> Mon - Sun  9am - 7pm</p>
                             </div>
                         </div>
 
@@ -171,42 +180,23 @@
                             <h3>Rental Tips</h3>
                             <div class="sidebar-body">
                                 <ul class="recent-tips">
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service1-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service3-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service2-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service3-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
+                                    @forelse($related_items??array() as $item)
+                                        <li class="single-recent-tips">
+                                            <div class="recent-tip-thum">
+                                                <a href="{{route('newsDetails',[$item->id,$item->slug])}}"><img src="{{url($item->image??'')}}" onerror="this.src='/no-image.png';" alt="JSOFT"></a>
+                                            </div>
+                                            <div class="recent-tip-body">
+                                                <h4><a href="{{route('newsDetails',[$item->id,$item->slug])}}">{{$item->title}}</a></h4>
+                                                <span class="date">{{date("l, F d Y h:i:a",strtotime($item->created_at))}}</span>
+                                            </div>
+                                        </li>
+                                    @empty
+                                        <li class="single-recent-tips text-center">
+
+                                            No more items
+                                        </li>
+                                    @endforelse
+
                                 </ul>
                             </div>
                         </div>

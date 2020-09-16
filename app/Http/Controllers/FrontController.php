@@ -192,7 +192,7 @@ class FrontController extends Controller {
 
         $related_items = News::where('status','active')->where('id','!=',$id)->orderBy('created_at','DESC')->limit(5)->get();
 
-        return view('frontView.news-details',compact('post'));
+        return view('frontView.news-details',compact('post','related_items'));
     }
 
     public function faqsShow($faqID) {
