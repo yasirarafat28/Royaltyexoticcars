@@ -439,7 +439,7 @@ $setting = setting();
     <br>
 
     <div class="row">
-        <div class="col-sm-4 vehicle-spec">
+        <div class="col-sm-6 vehicle-spec">
             <h4>About</h4>
             <hr>
 
@@ -483,18 +483,6 @@ $setting = setting();
                         </tr>
                     @endif
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="col-sm-4 vehicle-spec">
-            <h4>Style</h4>
-            <hr>
-
-            <div class="tech-info-table">
-                <table class="table table-bordered table-hover">
-                    <tbody>
                     @if( $vehicle->color)
                         <tr>
                             <th>Color</th>
@@ -535,7 +523,7 @@ $setting = setting();
             </div>
         </div>
 
-        <div class="col-sm-4 vehicle-spec">
+        <div class="col-sm-6 vehicle-spec">
             <h4>Performance</h4>
             <hr>
 
