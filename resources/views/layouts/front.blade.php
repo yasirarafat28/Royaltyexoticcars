@@ -375,13 +375,58 @@
         }
 
 
-	</style>
+
+
+
+        body.loader-active {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .preloader {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        .preloader-spinner {
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+
+        .loader-content {
+            width: 150px;
+        }
+
+
+
+    </style>
 
 @yield('style')
 
 </head>
 
-<body>
+<body class="loader-active">
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="/frontEnd/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
+    </div>
+
 
 	<header class="header">
 		<div data-collapse="all" data-animation="over-right" data-duration="200" data-easing="ease-out-quad"
@@ -1319,6 +1364,13 @@
                 $("#feedback-form").toggle("slide");
             });
         });
+
+        $(window).on('load',function () {
+            $('.preloader').fadeOut();
+            $('.preloader-spinner').delay(350).fadeOut('slow');
+            $('body').removeClass('loader-active');
+            $(".popular-car-gird").isotope();
+        }); //window load End
 
 
     </script>
