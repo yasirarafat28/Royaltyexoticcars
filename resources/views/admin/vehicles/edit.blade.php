@@ -348,15 +348,15 @@
                                                     <tbody id="morerow0">
                                                     <tr id="attrrow01">
                                                         <td>Model</td>
-                                                        <td><input required class="form-control" type="text" name="model" value="{{$vehicle->model}}"></td>
+                                                        <td><input  class="form-control" type="text" name="model" value="{{$vehicle->model}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Color</td>
-                                                        <td><input required class="form-control" type="text" name="color" value="{{$vehicle->color}}"></td>
+                                                        <td><input  class="form-control" type="text" name="color" value="{{$vehicle->color}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Class</td>
-                                                        <td><input required class="form-control" type="text" name="vehicle_class" value="{{$vehicle->vehicle_class}}"></td>
+                                                        <td><input  class="form-control" type="text" name="vehicle_class" value="{{$vehicle->vehicle_class}}"></td>
                                                     </tr>
                                                     <!--<tr id="attrrow01">
                                                         <td>Body</td>
@@ -364,11 +364,11 @@
                                                     </tr>-->
                                                     <tr id="attrrow01">
                                                         <td>Seat</td>
-                                                        <td><input required class="form-control" type="text" name="seat" value="{{$vehicle->seat}}"></td>
+                                                        <td><input  class="form-control" type="text" name="seat" value="{{$vehicle->seat}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Actual MSRP</td>
-                                                        <td><input required class="form-control" type="text" name="actual_msrp" value="{{$vehicle->actual_msrp}}"></td>
+                                                        <td><input  class="form-control" type="text" name="actual_msrp" value="{{$vehicle->actual_msrp}}"></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -407,51 +407,51 @@
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Horse Power</td>
-                                                        <td><input required class="form-control" type="text" name="horse_power" value="{{$vehicle->horse_power}}"></td>
+                                                        <td><input  class="form-control" type="text" name="horse_power" value="{{$vehicle->horse_power}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Engine</td>
-                                                        <td><input required class="form-control" type="text" name="engine" value="{{$vehicle->engine}}"></td>
+                                                        <td><input  class="form-control" type="text" name="engine" value="{{$vehicle->engine}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Cylinders</td>
-                                                        <td><input required class="form-control" type="text" name="cylinders" value="{{$vehicle->cylinders}}"></td>
+                                                        <td><input  class="form-control" type="text" name="cylinders" value="{{$vehicle->cylinders}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Fuel Type</td>
-                                                        <td><input required class="form-control" type="text" name="fuel_type" value="{{$vehicle->fuel_type}}"></td>
+                                                        <td><input  class="form-control" type="text" name="fuel_type" value="{{$vehicle->fuel_type}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Highway MPG</td>
-                                                        <td><input required class="form-control" type="text" name="highway_mpg" value="{{$vehicle->highway_mpg}}"></td>
+                                                        <td><input  class="form-control" type="text" name="highway_mpg" value="{{$vehicle->highway_mpg}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
-                                                        <td>City MPG</td> 
-                                                        <td><input required class="form-control" type="text" name="city_mpg" value="{{$vehicle->city_mpg}}"></td>
+                                                        <td>City MPG</td>
+                                                        <td><input  class="form-control" type="text" name="city_mpg" value="{{$vehicle->city_mpg}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Torque</td>
-                                                        <td><input required class="form-control" type="text" name="torque" value="{{$vehicle->torque}}"></td>
+                                                        <td><input  class="form-control" type="text" name="torque" value="{{$vehicle->torque}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Transmission</td>
-                                                        <td><input required class="form-control" type="text" name="transmission" value="{{$vehicle->transmission}}"></td>
+                                                        <td><input  class="form-control" type="text" name="transmission" value="{{$vehicle->transmission}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Suspension</td>
-                                                        <td><input required class="form-control" type="text" name="suspension" value="{{$vehicle->suspension}}"></td>
+                                                        <td><input  class="form-control" type="text" name="suspension" value="{{$vehicle->suspension}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Clearance</td>
-                                                        <td><input required class="form-control" type="text" name="clearance" value="{{$vehicle->clearance}}"></td>
+                                                        <td><input  class="form-control" type="text" name="clearance" value="{{$vehicle->clearance}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Differential</td>
-                                                        <td><input required class="form-control" type="text" name="differential" value="{{$vehicle->differential}}"></td>
+                                                        <td><input  class="form-control" type="text" name="differential" value="{{$vehicle->differential}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
                                                         <td>Gear Ratio</td>
-                                                        <td><input required class="form-control" type="text" name="gear_ratio" value="{{$vehicle->gear_ratio}}"></td>
+                                                        <td><input  class="form-control" type="text" name="gear_ratio" value="{{$vehicle->gear_ratio}}"></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
