@@ -139,12 +139,12 @@
 @endsection
 @section('content')
     <div class="main" style="padding-top:30px;">
-        <div class="container  extra-top-margin">
+        <div class="container-fluid  extra-top-margin">
             <div class="row">
 
                 <div class="col-lg-8">
                     <div class="car-details-content">
-                        <h2>{{$post->title}}</h2>
+                        <h2 class="text-uppercase">{{$post->title}}</h2>
                         <div class="car-preview-crousel">
                             <img src="{{url($post->image??'')}}" onerror="this.src='/no-image.png';" alt="">
                         </div>

@@ -107,14 +107,14 @@
                     font-size: 15px; }
                 .retro-layout-2 .h-entry.gradient {
                     position: relative;
-                    height: 320px;
+                    height: 250px;
                 }
                 .retro-layout-2 .text {
                     position: absolute;
                     bottom: 0;
                     z-index: 10;
                     padding: 20px;
-                    max-width: 350px; }
+                }
                 .retro-layout-2 .text h2 {
                     color: #fff;
                     font-size: 18px;
@@ -545,9 +545,9 @@
 
 
         @if (sizeof($posts))
-            <div class="rentals why-us-section" style="background-size:cover;background-image: url(https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,h_610,q_75,w_1510/v1/clients/lasvegas/strip3_d7b175ef-3642-41a4-9dad-33b9be2b00a9.jpg)">
-                <h2 class="home__h2 rental-section-title text-center text-white">Where to go?</h2>
-                <p class="text-center text-white">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, maxime?.</p>
+            <div class="rentals why-us-section" style="background-position: center center;background-size:cover;background-image: url(/frontEnd/why-us/page-title.jpg)">
+                <h2 class="home__h2 rental-section-title text-center text-white text-uppercase">Latest Rental Tips?</h2>
+                <p class="text-center text-white">Follow our rental tips for gift announcements, feature updates, user stories, and technical posts about rental.</p>
                 <hr class="center-hr" style="color: #fff !important;">
                 <div class="row align-items-stretch retro-layout-2">
                     @foreach ($posts as $post)
