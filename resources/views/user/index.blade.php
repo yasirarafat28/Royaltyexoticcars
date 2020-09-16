@@ -61,9 +61,45 @@
       border-color:{{site_color()}} !important;
       color:{{site_color()}} !important;
       }
+      .cartbar_pop_mcon .popover__wrapper{
+          margin-top: -3px !important;
+      }
+
+      .cartbar_pop_mcon a{
+          margin-left: 5px !important;
+      }
+
+      .cartbar_pop_mcon a i{
+          font-size: 20px !important;
+      }
+      a.compare img {
+          width: 17px !important;
+      }
+
+      .cart .e-nav-cricle {
+          right: -6px;
+          top: -10px;
+      }
+      .wish .e-nav-cricle {
+          top: -12px;
+          right: -15px;
+      }
+      .compare .e-nav-cricle {
+          top: -14px;
+          right: 11px;
+      }
+      @media screen and (max-width: 768px) {
+
+          .compare .e-nav-cricle {
+              top: -29px;
+              right: -10px;
+          }
+      }
+
+
       @media screen and (max-width: 479px) {
          .customdiv {
-            margin-bottom: -40px;
+            margin-bottom: -25px;
          }
 
          .top-logo {
@@ -296,7 +332,7 @@
          <div class="e-nav">
             <div class="row customdiv">
 
-               <div class="col-lg-5 col-md-5 col-8">
+               <div class="col-lg-5 col-md-5 col-sm-5 col-8">
 
                   <a href="{{url('/')}}" class="d-flex">
                       <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent;    background-size: contain;
