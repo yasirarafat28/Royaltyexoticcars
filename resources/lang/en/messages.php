@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'site_name' => 'Rental Exotic Beasts Shop',
+  'site_name' => 'Rental Exotics Beasts Shop',
   'short_code' => 'SH',
   'dashboard' => 'Dashboard',
   'product' => 'Products',

@@ -4,7 +4,7 @@
     <div class="position">
       <div class="position__info position__info--ceo">
         <h2 class="position__info--title-h2">Founder</h2>
-        <p class="paragraph-3">Being the founder of a company like Rental Exotic Beasts, there is so much overlap in my
+        <p class="paragraph-3">Being the founder of a company like Rental Exotics Beasts, there is so much overlap in my
           life, so professionally and personally I am extremely passionate about cars. The constant evolution of the
           automotive business is what I like to replicate my business after, never being in a stalemate and constantly
           making something good, great. Outside of vehicles, my main passion is family. My wife, my daughter and of

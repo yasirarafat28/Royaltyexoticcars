@@ -629,7 +629,7 @@ $setting = setting();
         </div>
         <address class="profile__location--details">
             <div class="profile__location--address">
-                <div>Rental Exotic Beasts</div>
+                <div>Rental Exotics Beasts</div>
                 <div>{{ $setting->company_name }}</div>
                 <div>{{ $setting->address }}</div>
                 <div>9am – 7pm Daily</div><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a><a
@@ -708,7 +708,7 @@ $setting = setting();
                 zoom: 20,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-            var branchName = 'Rental Exotic Beasts';
+            var branchName = 'Rental Exotics Beasts';
 
             var dictionary = { lat: mylat, lng: mylong, name: branchName };
 

@@ -337,7 +337,7 @@
                   <a href="{{url('/')}}" class="d-flex">
                       <div class="top-logo mr-2" style="background-image: url('/logo.png');-webkit-mask-image: none;background-color: transparent;    background-size: contain;
     background-position: center;"></div>
-                      <div class="brand__text d-none d-lg-block">Rental Exotic Beasts</div>
+                      <div class="brand__text d-none d-lg-block">Rental Exotics Beasts</div>
                      <!---->
                   </a>
                </div>

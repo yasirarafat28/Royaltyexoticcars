@@ -11,16 +11,16 @@
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Rental Exotic Beasts - Las Vegas</title>
+	<title>Rental Exotics Beasts - Las Vegas</title>
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		name="description" />
-	<meta content="Rental Exotic Beasts - Las Vegas" property="og:title" />
+	<meta content="Rental Exotics Beasts - Las Vegas" property="og:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="og:description" />
 
-	<meta content="Rental Exotic Beasts - Las Vegas" property="twitter:title" />
+	<meta content="Rental Exotics Beasts - Las Vegas" property="twitter:title" />
 	<meta
 		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
 		property="twitter:description" />
@@ -468,7 +468,7 @@
                     <div class="nav__brand navbar-brand"><a href="/" id="Header-Brand-Link" aria-current="page"
                                                class="brand w-nav-brand w--current">
                             <div class="brand__icon"></div>
-                            <div style="font-size:20px;" class="brand__text text-uppercase d-none d-sm-block">Rental Exotic Beasts</div>
+                            <div style="font-size:20px;" class="brand__text text-uppercase d-none d-sm-block">Rental Exotics Beasts</div>
                         </a>
                     </div>
 
@@ -697,7 +697,7 @@
                                                                     $1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
                                                                     failure due to customer mis-use or gross negligence operating
                                                                     the vehicle. You are fully responsible for your own actions
-                                                                    while operating a Rental Exotic Beasts vehicle.</div>
+                                                                    while operating a Rental Exotics Beasts vehicle.</div>
                                                                 <div class="table__dropdown--arrow"></div>
                                                             </nav>
                                                         </div>
@@ -799,7 +799,7 @@
 					<!--<div class="nav__brand"><a href="/" id="Header-Brand-Link" aria-current="page"
 							class="brand w-nav-brand w--current">
 							<div class="brand__icon"></div>
-							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotic Beasts</div>
+							<div style="font-size:20px;" class="brand__text text-uppercase d-none d-lg-block">Rental Exotics Beasts</div>
 						</a>
 					</div>
 					<div class="nav__links hide-mobile" id="dmenu">
@@ -1070,7 +1070,7 @@
 															$1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
 															failure due to customer mis-use or gross negligence operating
 															the vehicle. You are fully responsible for your own actions
-															while operating a Rental Exotic Beasts vehicle.</div>
+															while operating a Rental Exotics Beasts vehicle.</div>
 														<div class="table__dropdown--arrow"></div>
 													</nav>
 												</div>
@@ -1225,8 +1225,8 @@
                         <div class="drawer__location">
                             <div class="drawer__location--info mobhide"><img
                                     src="/logo.png"
-                                    alt="Rental Exotic Beasts Logo" class="drawer__location--logo" />
-                                <div class="drawer__location--title phonehide">Rental Exotic Beasts Rentals</div>
+                                    alt="Rental Exotics Beasts Logo" class="drawer__location--logo" />
+                                <div class="drawer__location--title phonehide">Rental Exotics Beasts Rentals</div>
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
                             <div class="location__map"></div>
