@@ -338,7 +338,7 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <label for="" class="form-label">Style</label>
+                                        <label for="" class="form-label">About</label>
                                         <table class="table table-striped table-bordered cmr1">
                                             <thead>
                                             <tr>
@@ -347,19 +347,19 @@
                                             </tr>
                                             </thead>
                                             <tbody id="morerow0">
-                                            <tr id="attrrow01">
+                                            <!--<tr id="attrrow01">
                                                 <td>Model</td>
                                                 <td><input  class="form-control" type="text" name="model"></td>
-                                            </tr>
+                                            </tr>-->
                                             <tr id="attrrow01">
                                                 <td>Color</td>
                                                 <td><input  class="form-control" type="text" name="color"></td>
                                             </tr>
-                                            <tr id="attrrow01">
+                                            <!--<tr id="attrrow01">
                                                 <td>Class</td>
                                                 <td><input  class="form-control" type="text" name="vehicle_class"></td>
                                             </tr>
-                                            <!--<tr id="attrrow01">
+                                            <tr id="attrrow01">
                                                 <td>Body</td>
                                                 <td><input  class="form-control" type="text" name="body"></td>
                                             </tr>-->
@@ -411,26 +411,6 @@
                                                 <td><input  class="form-control" type="text" name="horse_power"></td>
                                             </tr>
                                             <tr id="attrrow01">
-                                                <td>Engine</td>
-                                                <td><input  class="form-control" type="text" name="engine"></td>
-                                            </tr>
-                                            <tr id="attrrow01">
-                                                <td>Cylinders</td>
-                                                <td><input  class="form-control" type="text" name="cylinders"></td>
-                                            </tr>
-                                            <tr id="attrrow01">
-                                                <td>Fuel Type</td>
-                                                <td><input  class="form-control" type="text" name="fuel_type"></td>
-                                            </tr>
-                                            <tr id="attrrow01">
-                                                <td>Highway MPG</td>
-                                                <td><input  class="form-control" type="text" name="highway_mpg"></td>
-                                            </tr>
-                                            <tr id="attrrow01">
-                                                <td>City MPG</td>
-                                                <td><input  class="form-control" type="text" name="city_mpg"></td>
-                                            </tr> 
-                                            <tr id="attrrow01"> 
                                                 <td>Torque</td>
                                                 <td><input  class="form-control" type="text" name="torque"></td>
                                             </tr>
@@ -442,7 +422,7 @@
                                                 <td>Suspension</td>
                                                 <td><input  class="form-control" type="text" name="suspension"></td>
                                             </tr>
-                                            <tr id="attrrow01">
+                                            <!--<tr id="attrrow01">
                                                 <td>Clearance</td>
                                                 <td><input  class="form-control" type="text" name="clearance"></td>
                                             </tr>
@@ -453,7 +433,7 @@
                                             <tr id="attrrow01">
                                                 <td>Gear Ratio</td>
                                                 <td><input class="form-control" type="text" name="gear_ratio"></td>
-                                            </tr>
+                                            </tr>-->
                                             </tbody>
                                         </table>
                                     </td>

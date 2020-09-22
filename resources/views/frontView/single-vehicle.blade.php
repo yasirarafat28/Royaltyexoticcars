@@ -414,7 +414,7 @@ $setting = setting();
             <div class="detail-info">
                 <ul class="car-info-list d-flex">
                     <li>{{$brand->name}}</li>
-                    <li>{{$vehicle->model}}</li>
+                    <!--<li>{{$vehicle->model}}</li>-->
                     <li>{{$vehicle->vehicle_class}}</li>
                     <li>{{$vehicle->color}}</li>
                 </ul>
@@ -452,36 +452,6 @@ $setting = setting();
                             <td>{{$vehicle->type}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->engine)
-                        <tr>
-                            <th>Engine</th>
-                            <td>{{$vehicle->engine}}</td>
-                        </tr>
-                    @endif
-                    @if( $vehicle->cylinders)
-                        <tr>
-                            <th>Cylinders</th>
-                            <td>{{$vehicle->cylinders}}</td>
-                        </tr>
-                    @endif
-                    @if( $vehicle->fuel_type)
-                        <tr>
-                            <th>Fuel Type</th>
-                            <td>{{$vehicle->fuel_type}}</td>
-                        </tr>
-                    @endif
-                    @if( $vehicle->highway_mpg)
-                        <tr>
-                            <th>Highway MPG</th>
-                            <td>{{$vehicle->highway_mpg}}</td>
-                        </tr>
-                    @endif
-                    @if( $vehicle->city_mpg)
-                        <tr>
-                            <th>Highway MPG</th>
-                            <td>{{$vehicle->city_mpg}}</td>
-                        </tr>
-                    @endif
 
                     @if( $vehicle->color)
                         <tr>
@@ -497,7 +467,7 @@ $setting = setting();
                     @endif
                     @if( $vehicle->actual_msrp)
                         <tr>
-                            <th>Actual Price</th>
+                            <th>Actual MSRP Price</th>
                             <td>${{$vehicle->actual_msrp}}</td>
                         </tr>
                     @endif
@@ -507,13 +477,13 @@ $setting = setting();
                             <td>{{$vehicle->category->name}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->clearance)
+                    @if( $vehicle->clearance && false)
                         <tr>
                             <th>Clearence</th>
                             <td>{{$vehicle->clearance}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->driver_wheel)
+                    @if( $vehicle->driver_wheel && false)
                         <tr>
                             <th>Driver Wheel</th>
                             <td>{{$brand->driver_wheel}}</td>
@@ -572,7 +542,7 @@ $setting = setting();
                             <td>{{$vehicle->torque}}</td>
                         </tr>
                     @endif
-                    @if( $vehicle->gear_ratio)
+                    @if( $vehicle->gear_ratio && false)
                         <tr>
                             <th>Gear Ratio</th>
                             <td>{{$vehicle->gear_ratio}}</td>

@@ -141,7 +141,6 @@ class VehicleController extends Controller
         $vehicle->sub_category_id = $request->sub_category_id;
         $vehicle->brand_id = $request->brand_id;
         $vehicle->tax_id = $request->tax_id??0;
-        $vehicle->color = $request->color;
         $vehicle->four_hour = $request->four_hour;
         $vehicle->four_hour_price = $request->four_hour_price;
         $vehicle->four_hour_discount = $request->four_hour_discount??0;
@@ -160,28 +159,26 @@ class VehicleController extends Controller
         $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
+
         $vehicle->vehicle_class = $request->vehicle_class;
-        $vehicle->model = $request->model;
-        $vehicle->body = $request->body;
+        $vehicle->color = $request->color;
+        //$vehicle->model = $request->model;
+        //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
         $vehicle->actual_msrp = $request->actual_msrp;
         $vehicle->horse_power = $request->horse_power;
-        $vehicle->engine = $request->engine;
-        $vehicle->cylinders = $request->cylinders;
-        $vehicle->fuel_type = $request->fuel_type;
-        $vehicle->highway_mpg = $request->highway_mpg;
-        $vehicle->city_mpg = $request->city_mpg;
         $vehicle->torque = $request->torque;
         $vehicle->transmission = $request->transmission;
         $vehicle->suspension = $request->suspension;
-        $vehicle->clearance = $request->clearance;
-        $vehicle->differential = $request->differential;
-        $vehicle->gear_ratio = $request->gear_ratio;
+        //$vehicle->clearance = $request->clearance;
+        //$vehicle->differential = $request->differential;
+        //$vehicle->gear_ratio = $request->gear_ratio;
         $vehicle->cylinders = $request->cylinders;
         $vehicle->engine = $request->engine;
         $vehicle->fuel_type = $request->fuel_type;
         $vehicle->highway_mpg = $request->highway_mpg;
         $vehicle->city_mpg = $request->city_mpg;
+
         if ($request->hasFile('feature_image')){
 
             $upload_folder = 'upload';
@@ -339,27 +336,29 @@ class VehicleController extends Controller
         $vehicle->stock = $request->stock??0;
         $vehicle->available_from = $request->available_from;
         $vehicle->available_to = $request->available_to;
+
+
+
         $vehicle->vehicle_class = $request->vehicle_class;
-        $vehicle->model = $request->model;
-        $vehicle->body = $request->body;
+        $vehicle->color = $request->color;
+        //$vehicle->model = $request->model;
+        //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
         $vehicle->actual_msrp = $request->actual_msrp;
         $vehicle->horse_power = $request->horse_power;
-        $vehicle->engine = $request->engine;
-        $vehicle->cylinders = $request->cylinders;
-        $vehicle->fuel_type = $request->fuel_type;
-        $vehicle->highway_mpg = $request->highway_mpg;
-        $vehicle->city_mpg = $request->city_mpg;
         $vehicle->torque = $request->torque;
         $vehicle->transmission = $request->transmission;
         $vehicle->suspension = $request->suspension;
-        $vehicle->clearance = $request->clearance;
-        $vehicle->differential = $request->differential;
+        //$vehicle->clearance = $request->clearance;
+        //$vehicle->differential = $request->differential;
+        //$vehicle->gear_ratio = $request->gear_ratio;
         $vehicle->cylinders = $request->cylinders;
         $vehicle->engine = $request->engine;
         $vehicle->fuel_type = $request->fuel_type;
         $vehicle->highway_mpg = $request->highway_mpg;
         $vehicle->city_mpg = $request->city_mpg;
+
+
         if ($request->hasFile('feature_image')){
 
             $upload_folder = 'upload';
