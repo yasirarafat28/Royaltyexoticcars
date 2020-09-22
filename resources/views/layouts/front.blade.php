@@ -575,7 +575,7 @@
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Age-Tooltip"
                                                                     class="table__dropdown--toggle w-dropdown-toggle">
-                                                                    <div class="table__cell" style="font-size: 1.2em;">{{$requirement->category->name??$requirement->type }} ⓘ</div>
+                                                                    <div class="table__cell" style="font-size: 1.2em;">{{$requirement->type?$requirement->type:$requirement->category->name}} ⓘ</div>
                                                                 <!--<div class="new_style">Age ⓘ</div>-->
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
@@ -767,8 +767,6 @@
                                                        class="nav__about--link w-dropdown-link">Privacy</a>
                                                     <a href="/covid-19-update" id="Nav-Privacy-Link"
                                                        class="nav__about--link w-dropdown-link">COVID-19 Update</a>
-                                                    <a href="/term" id="Nav-Privacy-Link"
-                                                       class="nav__about--link w-dropdown-link">Terms & Conditions</a>
                                                     <a href="mailto:{{$setting->email}}"
                                                        id="Nav-Feedback-Link" class="nav__about--link w-dropdown-link">Feedback</a>
                                                 </div>
@@ -1391,10 +1389,12 @@
     <script>
         $(function() {
             jQuery.noConflict();
-            if (!$.cookie("first-notice-accepted")) {
+
+            $('#AutoStartModal').modal('show');
+            /*if (!$.cookie("first-notice-accepted")) {
                 $('#AutoStartModal').modal('show');
                 $.cookie("first-notice-accepted", 1, { expires : 30 });
-            }
+            }*/
 
 
             //----- CLOSE

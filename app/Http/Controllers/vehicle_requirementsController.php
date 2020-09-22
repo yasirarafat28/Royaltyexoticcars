@@ -80,17 +80,17 @@ class vehicle_requirementsController extends Controller
             'category_id' => 'required',
             'local_age' => 'required',
             'local_driving_licence' => 'required',
-            'local_insurance' => 'required',
-            'local_liability_insurance' => 'required',
+            //'local_insurance' => 'required',
+            //'local_liability_insurance' => 'required',
             'local_property_damage_waiver' => 'required',
             'local_tire_protection' => 'required',
             'local_mechanical_breakdown_coverage' => 'required',
             'local_fuel_credit' => 'required',
             'international_age' => 'required',
             'international_driving_licence' => 'required',
-            'international_insurance' => 'required',
-            'international_full_coverage_insurance_d1' => 'required',
-            'international_full_coverage_insurance_d2' => 'required',
+            //'international_insurance' => 'required',
+            //'international_full_coverage_insurance_d1' => 'required',
+            //'international_full_coverage_insurance_d2' => 'required',
             'international_property_damage_waiver' => 'required',
             'international_tire_protection' => 'required',
             'international_mechanical_breakdown_coverage' => 'required',
@@ -101,6 +101,7 @@ class vehicle_requirementsController extends Controller
         $require = VehicleRequirement::find($id);
 
         $require->category_id = $request->category_id;
+        $require->type = $request->type;
         $require->local_age = $request->local_age;
         $require->local_driving_licence = $request->local_driving_licence;
         $require->local_insurance = $request->local_insurance;

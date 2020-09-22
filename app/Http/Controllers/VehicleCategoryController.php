@@ -177,7 +177,7 @@ class VehicleCategoryController extends Controller {
         ]);
         $sub = VehicleCategory::where('parent_category_id', $id)->delete();
         return back()->withSuccess('Successfully Deleted!');
-        
+
     }
 
 }
