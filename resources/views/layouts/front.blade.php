@@ -568,7 +568,7 @@
                                                             <div class="table__cell">{{ $requirement->type }}</div>
                                                         @endforeach-->
                                                         <div class="table__cell">Age</div>
-                                                        <div class="table__cell">Drivers License</div>
+                                                        <div class="table__cell">Documents</div>
                                                     </div>
                                                     @foreach($requirements as $requirement)
                                                     <div class="table__row">

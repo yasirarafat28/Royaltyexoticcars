@@ -122,7 +122,7 @@
     }
     .Accordion_item .title_tab {
         width: 100%;
-        
+
         color: black;
         padding: 12px 30px;
         cursor: pointer;
@@ -220,7 +220,7 @@
         <div class="Accordions">
             @foreach($faqs as $key=>$faq)
                 <div class="Accordion_item">
-                    <div class="title_tab">
+                    <div class="title_tab bg-primary">
                         <h3 class="title">{{$faq->question}}<span class="icon"></span></h3>
                     </div>
                     <div class="inner_content">
