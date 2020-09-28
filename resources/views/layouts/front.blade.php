@@ -426,6 +426,14 @@
             max-width: 40% !important;
         }
 
+        .table__row {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-height: 3.4em;
+            height: auto;
+        }
+
 
 
     </style>
@@ -748,124 +756,42 @@
 
                                                     </div>-->
 
-                                                    <div class="table__divider">Upgrade Options</div>
-                                                    <div class="table__row">
-                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                    <div class="table__row table__divider">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown" style="border: none">
                                                             <div id="Requirements-Supplemental-Insurance-Tooltip"
                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Supplemental<br />Liability Insurance ⓘ
+                                                                <div class="text-block">VEHICLE RENTAL INSURANCE ⓘ
                                                                 </div>
                                                             </div>
                                                             <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any bodily injury incurred during your rental
-                                                                    period up to the combined value of $1,000,000 for any passenger
-                                                                    or passerby regardless of who is at fault.</div>
-                                                                <div class="table__dropdown--arrow"></div>
+                                                                <div>All drivers must have their vehicle rental insurance before making any vehicle reservation and provide the policy number at the pickup location or delivery address.</div>
+                                                                <br>
+                                                                <div class=""><strong>NOTE:</strong> Making the vehicle reservation without an insurance can result in the cancellation of your vehicle reservation.</div>
                                                             </nav>
                                                         </div>
-                                                        <div class="table__cell--wrapper">
-                                                            <div class="table__cell">$99</div>
-                                                            <div class="table__cell table__cell--intl">Included</div>
-                                                        </div>
-                                                        <div class="table__cell">--</div>
                                                     </div>
                                                     <div class="table__row">
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Damage-Waiver-Tooltip"
                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Property Damage<br />Waiver ⓘ</div>
+                                                                <div class="text-block">MINIMUM VEHICLE RENTAL <br> COVERAGE REQUIREMENT </div>
                                                             </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against common damages up to a specified limit
-                                                                    including curbed wheels, windshield cracks, minor
-                                                                    scuffs/scratches, etc.<br /><strong>Note: </strong>If damages
-                                                                    exceed the specified limit and results in an insurance claim,
-                                                                    this will act as a deductible waiver.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
                                                         </div>
-                                                        <div data-delay="0" class="table__cell w-dropdown">
-                                                            <div id="Requirements-Damage-Waiver-Exotics-Tooltip"
-                                                                class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">$99 ⓘ</div>
+
+
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell text-left">
+                                                                <ul>
+                                                                    <li>$40.000 Rental vehicle damage and theft coverage.</li>
+                                                                    <li>$1.000 Baggage and personal property lost.</li>
+                                                                    <li>$1.000 lost key reimbursement.</li>
+                                                                    <li>$500 towing charges</li>
+                                                                    <li>and all others options that can better protect you and the rental vehicle in case of an accident.</li>
+                                                                </ul>
                                                             </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any damages up to a $3,500 (based on the
-                                                                    actual cost of repair).<br />If the damage exceeds $3,500 and
-                                                                    results in an insurance claim, this will act as a deductible
-                                                                    waiver.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
-                                                        <div data-delay="0" class="table__cell w-dropdown">
-                                                            <div id="Requirements-Damage-Waiver-Cycles-Tooltip"
-                                                                class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">$49 ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Protects against any damages up to a $2,500 (based on the
-                                                                    actual cost of repair).<br />If the damage exceeds $2,500 and
-                                                                    results in an insurance claim, this will act as a deductible
-                                                                    waiver.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
                                                         </div>
                                                     </div>
-                                                    <div class="table__row">
-                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
-                                                            <div id="Requirements-Tire-Protection-Tooltip"
-                                                                class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Tire<br />Protection ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Covers cost of tire replacement, tow charges, and loss of
-                                                                    rental time up to $1,000.<br /><strong>Note:</strong> Tire
-                                                                    replacement can take up to several hours depending on the
-                                                                    location of incident, traffic conditions, and availability.
-                                                                </div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
-                                                        <div class="table__cell">$49</div>
-                                                        <div class="table__cell">$35</div>
-                                                    </div>
-                                                    <div class="table__row">
-                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
-                                                            <div id="Requirements-Breakdown-Coverage-Tooltip"
-                                                                class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Mechanical<br />Breakdown Coverage ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Covers cost of Mechanical Parts due to wear and tear, tow
-                                                                    charges, and loss of rental time up to
-                                                                    $1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
-                                                                    failure due to customer mis-use or gross negligence operating
-                                                                    the vehicle. You are fully responsible for your own actions
-                                                                    while operating a Rental Exotics Beasts vehicle.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
-                                                        <div class="table__cell">$99</div>
-                                                        <div class="table__cell">$49</div>
-                                                    </div>
-                                                    <div class="table__row">
-                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
-                                                            <div id="Requirements-Prepaid-Fuel-Tooltip"
-                                                                class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">Prepaid<br />Fuel Credit ⓘ</div>
-                                                            </div>
-                                                            <nav class="table__dropdown--pane w-dropdown-list">
-                                                                <div>Allows you to return the vehicle without needing to refuel
-                                                                    beforehand. <br /><strong>Note:</strong> ALL vehicles (including
-                                                                    auto/moto cycles) require 91 OCTANE RATING fuel. Anyone caught
-                                                                    using lower quality fuel will be fined $2,500 and responsible
-                                                                    for any subsequent damages resulting from improper fuel.</div>
-                                                                <div class="table__dropdown--arrow"></div>
-                                                            </nav>
-                                                        </div>
-                                                        <div class="table__cell">$99</div>
-                                                        <div class="table__cell">$49</div>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
