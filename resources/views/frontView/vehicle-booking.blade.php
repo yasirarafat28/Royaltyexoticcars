@@ -143,7 +143,10 @@
 
                     @php
 
-                        $checkBook = App\VehicleCheckout::where(\DB::raw('date(reservation_time)'),$date)->count();
+                        $checkBook = App\VehicleCheckout::where(\DB::raw('date(reservation_time)'),$date)
+                        ->whereIn('status',['pending','on_trip'])
+                        ->where('vehicle_id',$vehicle->id)
+                        ->count();
 
 
                         $checkoutUrl =  url('/vehicle-checkout',array(
