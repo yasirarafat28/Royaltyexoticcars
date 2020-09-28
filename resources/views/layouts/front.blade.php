@@ -774,7 +774,7 @@
                                                         <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
                                                             <div id="Requirements-Damage-Waiver-Tooltip"
                                                                 class="table__dropdown--toggle w-dropdown-toggle">
-                                                                <div class="text-block">MINIMUM VEHICLE RENTAL <br> COVERAGE REQUIREMENT </div>
+                                                                <div class="text-block">Minimum Vehicle Rental <br> Coverage Requirements </div>
                                                             </div>
                                                         </div>
 
