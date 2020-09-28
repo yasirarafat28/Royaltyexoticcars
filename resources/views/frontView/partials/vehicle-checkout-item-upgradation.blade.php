@@ -9,7 +9,7 @@ $mechanical_breakdown = $country_type.'_mechanical_breakdown_coverage';
 @endphp
 
 
-
+@if (false)
 <!--
 @if($country_type=='international')
     <div class="form-group">
@@ -52,6 +52,9 @@ $mechanical_breakdown = $country_type.'_mechanical_breakdown_coverage';
         <option value="0">$0.00 | No I dont want to to purchase Property Damage Waiver</option>
     </select>
 </div>-->
+
+
+@endif
 
 <div class="form-group">
     <label for="tire_protection" class="form-label">Tire Protection <i class="info-tooltip fa fa-question-circle  text-danger" data-toggle="tooltip" data-animation="true" data-placement="top"

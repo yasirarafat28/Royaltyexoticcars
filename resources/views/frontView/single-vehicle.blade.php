@@ -600,7 +600,7 @@ $setting = setting();
 @endsection
 @section('script')
 
-    <link href="/assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="/frontEnd/css/owl.carousel.css" rel="stylesheet">
 
     <script src="//maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCyYM0wdvmHA5KRhEAl1R7rMp28eCHoGlo"  type="text/javascript"></script>
 
@@ -620,7 +620,9 @@ $setting = setting();
                 animateIn: 'fadeIn'
             });*/
 
-            $("#owl-demo").owlCarousel({
+
+        });
+        $("#owl-demo").owlCarousel({
                 loop: true,
                 items: 1,
                 autoplay: true,
@@ -649,7 +651,6 @@ $setting = setting();
                     })*/
                 });
             }
-        });
     </script>
 
 

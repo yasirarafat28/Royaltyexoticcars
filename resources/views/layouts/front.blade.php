@@ -1497,8 +1497,8 @@
         });
 
         $(window).on('load',function () {
-            $('.preloader').fadeOut();
-            $('.preloader-spinner').delay(350).fadeOut('slow');
+            $('.preloader').hide();
+            $('.preloader-spinner').delay(350).hide();
             $('body').removeClass('loader-active');
         }); //window load End
 
