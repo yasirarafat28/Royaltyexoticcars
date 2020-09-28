@@ -367,10 +367,10 @@
                                                 <td>Seat</td>
                                                 <td><input  class="form-control" type="text" name="seat"></td>
                                             </tr>
-                                            <tr id="attrrow01">
+                                            <!--<tr id="attrrow01">
                                                 <td>Actual MSRP</td>
                                                 <td><input  class="form-control" type="text" name="actual_msrp"></td>
-                                            </tr>
+                                            </tr>-->
                                             </tbody>
                                         </table>
                                     </td>

@@ -165,7 +165,7 @@ class VehicleController extends Controller
         //$vehicle->model = $request->model;
         //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
-        $vehicle->actual_msrp = $request->actual_msrp;
+        //$vehicle->actual_msrp = $request->actual_msrp;
         $vehicle->horse_power = $request->horse_power;
         $vehicle->torque = $request->torque;
         $vehicle->transmission = $request->transmission;
@@ -344,7 +344,7 @@ class VehicleController extends Controller
         //$vehicle->model = $request->model;
         //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
-        $vehicle->actual_msrp = $request->actual_msrp;
+        //$vehicle->actual_msrp = $request->actual_msrp;
         $vehicle->horse_power = $request->horse_power;
         $vehicle->torque = $request->torque;
         $vehicle->transmission = $request->transmission;

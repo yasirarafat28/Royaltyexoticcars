@@ -465,7 +465,7 @@ $setting = setting();
                             <td>{{$vehicle->seat}}-seater</td>
                         </tr>
                     @endif
-                    @if( $vehicle->actual_msrp)
+                    @if( $vehicle->actual_msrp && false)
                         <tr>
                             <th>Actual MSRP Price</th>
                             <td>${{$vehicle->actual_msrp}}</td>
