@@ -587,7 +587,7 @@ $setting = setting();
         </div>
         <address class="profile__location--details">
             <div class="profile__location--address">
-                <div>Rental Exotics Beasts</div>
+                <!--<div>Rental Exotics Beasts</div>-->
                 <div>{{ $setting->company_name }}</div>
                 <div>{{ $setting->address }}</div>
                 <div>9am – 7pm Daily</div><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a><a
