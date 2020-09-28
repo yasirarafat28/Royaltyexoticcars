@@ -1387,15 +1387,14 @@
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7253fa2651bb0001cd5c5c_icon-sms-white.svg"
                                                         alt="US Main Phone Number" class="navdrawer__link--image" />
                                                 </div>
-                                                <div>Call Toll Free: </div>
-                                                <div>{{$setting->phone}}</div>
+                                                <div>Call us:  <br>{{$setting->phone}}</div>
                                             </a><a
-                                                href="mailto:reservations@rentalexoticsbeasts.com?subject=I&#x27;d%20like%20to%20rent%20an%20exotic%20car!%20%3A)"
+                                                href="mailto:{{$setting->email}}"
                                                 id="Drawer-Email-US-Link" class="navdrawer__link w-inline-block">
                                                 <div class="navdrawer__link--icon" style="background-color: red;"><img
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
                                                         alt="Reservations Email" class="navdrawer__link--image" /></div>
-                                                <div>{{$setting->email}}</div>
+                                                <div class="text-smaller">Send E-mail us</div>
                                             </a>
                                         </div>
                                     </div>
