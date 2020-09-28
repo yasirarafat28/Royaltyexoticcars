@@ -421,6 +421,10 @@
             border-radius: 6px;
         }
 
+        .quicklinks__item_brand{
+            max-width: 40% !important;
+        }
+
 
 
     </style>
@@ -522,7 +526,7 @@
                                                              class="quicklinks__list quicklinks__list--grid w-dyn-items">
                                                             @foreach($brands??array() as $brand)
                                                                 <div role="listitem"
-                                                                     class="quicklinks__item quicklinks__item--nav w-dyn-item"><a
+                                                                     class="quicklinks__item quicklinks__item_brand quicklinks__item--nav w-dyn-item"><a
                                                                         id="Nav-Quicklink" href="/vehicles?brand={{ $brand->slug }}"
                                                                         class="quicklinks__link w-inline-block"><img
                                                                             src="{{url($brand->photo??'')}}"
@@ -742,6 +746,125 @@
                                                         @endforeach
 
                                                     </div>-->
+
+                                                    <div class="table__divider">Upgrade Options</div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Supplemental-Insurance-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Supplemental<br />Liability Insurance ⓘ
+                                                                </div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any bodily injury incurred during your rental
+                                                                    period up to the combined value of $1,000,000 for any passenger
+                                                                    or passerby regardless of who is at fault.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell--wrapper">
+                                                            <div class="table__cell">$99</div>
+                                                            <div class="table__cell table__cell--intl">Included</div>
+                                                        </div>
+                                                        <div class="table__cell">--</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Property Damage<br />Waiver ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against common damages up to a specified limit
+                                                                    including curbed wheels, windshield cracks, minor
+                                                                    scuffs/scratches, etc.<br /><strong>Note: </strong>If damages
+                                                                    exceed the specified limit and results in an insurance claim,
+                                                                    this will act as a deductible waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div data-delay="0" class="table__cell w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Exotics-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">$99 ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any damages up to a $3,500 (based on the
+                                                                    actual cost of repair).<br />If the damage exceeds $3,500 and
+                                                                    results in an insurance claim, this will act as a deductible
+                                                                    waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div data-delay="0" class="table__cell w-dropdown">
+                                                            <div id="Requirements-Damage-Waiver-Cycles-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">$49 ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Protects against any damages up to a $2,500 (based on the
+                                                                    actual cost of repair).<br />If the damage exceeds $2,500 and
+                                                                    results in an insurance claim, this will act as a deductible
+                                                                    waiver.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Tire-Protection-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Tire<br />Protection ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Covers cost of tire replacement, tow charges, and loss of
+                                                                    rental time up to $1,000.<br /><strong>Note:</strong> Tire
+                                                                    replacement can take up to several hours depending on the
+                                                                    location of incident, traffic conditions, and availability.
+                                                                </div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$49</div>
+                                                        <div class="table__cell">$35</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Breakdown-Coverage-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Mechanical<br />Breakdown Coverage ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Covers cost of Mechanical Parts due to wear and tear, tow
+                                                                    charges, and loss of rental time up to
+                                                                    $1,000.<br /><strong>Note:</strong> Does NOT cover mechanical
+                                                                    failure due to customer mis-use or gross negligence operating
+                                                                    the vehicle. You are fully responsible for your own actions
+                                                                    while operating a Rental Exotics Beasts vehicle.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$99</div>
+                                                        <div class="table__cell">$49</div>
+                                                    </div>
+                                                    <div class="table__row">
+                                                        <div data-delay="0" class="table__cell table__cell--dimension w-dropdown">
+                                                            <div id="Requirements-Prepaid-Fuel-Tooltip"
+                                                                class="table__dropdown--toggle w-dropdown-toggle">
+                                                                <div class="text-block">Prepaid<br />Fuel Credit ⓘ</div>
+                                                            </div>
+                                                            <nav class="table__dropdown--pane w-dropdown-list">
+                                                                <div>Allows you to return the vehicle without needing to refuel
+                                                                    beforehand. <br /><strong>Note:</strong> ALL vehicles (including
+                                                                    auto/moto cycles) require 91 OCTANE RATING fuel. Anyone caught
+                                                                    using lower quality fuel will be fined $2,500 and responsible
+                                                                    for any subsequent damages resulting from improper fuel.</div>
+                                                                <div class="table__dropdown--arrow"></div>
+                                                            </nav>
+                                                        </div>
+                                                        <div class="table__cell">$99</div>
+                                                        <div class="table__cell">$49</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1385,16 +1508,33 @@
     </script>
 
 
+<script type="text/javascript">
+    function setCookie(key, value, expiry) {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (60 * 1000));
+        document.cookie = key + '=' + value + ';path=/' + ';expires=' + expires.toUTCString();
+    }
+
+    function getCookie(key) {
+        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+        return keyValue ? keyValue[2] : false;
+    }
+
+    function eraseCookie(key) {
+        var keyValue = getCookie(key);
+        setCookie(key, keyValue, '-1');
+    }
+
+</script>
 
     <script>
         $(function() {
             jQuery.noConflict();
-
-            $('#AutoStartModal').modal('show');
-            /*if (!$.cookie("first-notice-accepted")) {
+            if (getCookie('first-notice-accepted')===false) {
+                console.log(getCookie('first-notice-accepted'));
                 $('#AutoStartModal').modal('show');
-                $.cookie("first-notice-accepted", 1, { expires : 30 });
-            }*/
+                setCookie('first-notice-accepted','test-cookie');
+            }
 
 
             //----- CLOSE
@@ -1406,6 +1546,7 @@
         });
 
     </script>
+
     <script>
         $.cookieMessage({
             'mainMessage':'This website uses cookies. By using this website you consent to our use of these cookies. For more information visit our <a target="_blank" href="{{url('privacy')}}">Privacy Policy</a>. ',
