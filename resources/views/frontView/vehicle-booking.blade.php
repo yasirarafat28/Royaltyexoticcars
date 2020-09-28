@@ -50,6 +50,40 @@
       </div>
 
 
+      <div class="modal fade" id="vehicle-not-available-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title text-center">Select Body Style</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+
+
+                        <div class="row">
+                            @foreach($categories??array() as $group)
+                                <div class="col-sm-6 mb-5 rent__nav--link w-inline-block" >
+                                    <a href="/vehicles?category={{$group->slug}}"
+                                       class="">
+                                        <div class="vehicle-group">
+
+                                            <img style="width: 100%;" src="{{url($group->photo??'')}}" alt="" onerror="this.src='/no-image.png';" height="150px"/>
+                                            <div class="rent__nav--label">{{$group->name}}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 @endsection
@@ -108,24 +142,34 @@
                     @foreach($schedules??array() as $schedule)
 
                     @php
-                    $checkoutUrl =  url('/vehicle-checkout',array(
-                                'vehicle'=>base64_encode($vehicle->id),
-                                'schedule'=>base64_encode($schedule->id),
-                                'date'=>base64_encode($date),
-                            ));
+
+                        $checkBook = App\VehicleCheckout::where(\DB::raw('date(reservation_time)'),$date)->count();
+
+
+                        $checkoutUrl =  url('/vehicle-checkout',array(
+                                    'vehicle'=>base64_encode($vehicle->id),
+                                    'schedule'=>base64_encode($schedule->id),
+                                    'date'=>base64_encode($date),
+                                ));
 
                     @endphp
                         {
-                            title: '<span style="color: #0a6ece;" class="schedule-time">{{date("h:i a",strtotime($schedule->start_time))}}</span>\n' +
-                                '  <span class="schedule-title">{{$schedule->vehicle->name??null}} - ({{$schedule->color}}) -  ({{$schedule->register_number}})</span>\n' +
-                                '    @if($schedule->four_hour=="yes"&& $schedule->vehicle->four_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=four_hour">  <p style="color: red;"  class="schedule-offer"> 4 Hrs Rental  </p> </a> @endif ' +
-                                '    @if($schedule->six_hour=="yes"&& $schedule->vehicle->six_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=six_hour">  <p style="color: red;"  class="schedule-offer"> 6 Hrs Rental  </p> </a> @endif ' +
-                                '    @if($schedule->eight_hour=="yes"&& $schedule->vehicle->eight_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=eight_hour">  <p style="color: red;"  class="schedule-offer"> 8 Hrs Rental  </p> </a> @endif ' +
-                                '    @if($schedule->twelve_hour=="yes"&& $schedule->vehicle->twelve_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=twelve_hour">  <p style="color: red;"  class="schedule-offer"> 12 Hrs Rental  </p> </a> @endif ' +
-                                '    @if($schedule->full_day=="yes"&& $schedule->vehicle->full_day=='yes')<a href="{{$checkoutUrl}}?reservation_for=full_day">  <p style="color: red;"  class="schedule-offer"> 24 Hrs Rental  </p> </a> @endif ',
-                            start: "{{$date}}",
-                            className: 'b-l b-2x b-greensea',
-                            url: "{{$checkoutUrl}}",
+                            @if(!$checkBook)
+                                title: '<span style="color: #0a6ece;" class="schedule-time">{{date("h:i a",strtotime($schedule->start_time))}}</span>\n' +
+                                    '  <span class="schedule-title">{{$schedule->vehicle->name??null}} - ({{$schedule->color}}) -  ({{$schedule->register_number}})</span>\n' +
+                                    '    @if($schedule->four_hour=="yes"&& $schedule->vehicle->four_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=four_hour">  <p style="color: red;"  class="schedule-offer"> 4 Hrs Rental  </p> </a> @endif ' +
+                                    '    @if($schedule->six_hour=="yes"&& $schedule->vehicle->six_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=six_hour">  <p style="color: red;"  class="schedule-offer"> 6 Hrs Rental  </p> </a> @endif ' +
+                                    '    @if($schedule->eight_hour=="yes"&& $schedule->vehicle->eight_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=eight_hour">  <p style="color: red;"  class="schedule-offer"> 8 Hrs Rental  </p> </a> @endif ' +
+                                    '    @if($schedule->twelve_hour=="yes"&& $schedule->vehicle->twelve_hour=='yes')<a href="{{$checkoutUrl}}?reservation_for=twelve_hour">  <p style="color: red;"  class="schedule-offer"> 12 Hrs Rental  </p> </a> @endif ' +
+                                    '    @if($schedule->full_day=="yes"&& $schedule->vehicle->full_day=='yes')<a href="{{$checkoutUrl}}?reservation_for=full_day">  <p style="color: red;"  class="schedule-offer"> 24 Hrs Rental  </p> </a> @endif ',
+                                start: "{{$date}}",
+                                className: 'b-l b-2x b-greensea',
+                                url: "{{$checkoutUrl}}",
+                            @else
+                                title: 'This vehicle is not available for this day',
+                                start: "{{$date}}",
+                                className: 'text-danger vehicle-not-available',
+                            @endif
                         },
                     @endforeach
                 @endforeach
@@ -138,6 +182,12 @@
                     element.find('.fc-list-item-title').html(event.title);
                 //
             }
+        });
+
+        $('.vehicle-not-available').on('click',function(event){
+            event.preventDefault();
+            //$('#vehicle-not-available-modal').modal('show');
+
         });
     </script>
 @endsection
