@@ -682,15 +682,23 @@
                     </div>
 
                     <div class="container model-search-container" style="display: none;">
-                        <div class="input-group" >
-                            <div class="input-group-prepend">
-                                <span class="input-group-text text-center" style="width: 50px;">
-                                    <i class="fa fa-search icon ml-auto mr-auto"></i>
+                        <div class="container-full d-flex">
+                            <a href="#" id="modelModalBackBtn" class="btn btn-outline-secondary mr-3 pl-5 pr-5" style="height: 45px">
+
+                                <span class="visually-hidden" style="vertical-align: -moz-middle-with-baseline;">
+                                    <i class="fa fa-arrow-left"> </i>
                                 </span>
+                            </a>
+                            <div class="input-group" >
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text text-center" style="width: 50px;">
+                                        <i class="fa fa-search icon ml-auto mr-auto"></i>
+                                    </span>
+                                </div>
+
+                                <input style="height: 47px" class="form-control model-search-input" id="myInput" type="text" placeholder="Search..">
+
                             </div>
-
-                            <input style="height: 47px" class="form-control model-search-input" id="myInput" type="text" placeholder="Search..">
-
                         </div>
                         <br>
                         <h5><strong>Popular Models</strong></h5>
@@ -721,6 +729,14 @@
     <script>
 
 
+        $('#modelModalBackBtn').on('click',function(event){
+            event.preventDefault();
+
+            $('.brand-search-container').show();
+            $('.model-search-container').hide();
+            $(".brand-search-input").val("").keyup();
+
+        })
         $('.search-brand-item').on('click',function (event) {
             event.preventDefault();
             let brand_id = $(this).data('brand');
