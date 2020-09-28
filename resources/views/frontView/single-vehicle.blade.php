@@ -153,6 +153,7 @@ $setting = setting();
             display: block;
             width: 100%;
             height: auto;
+            border-radius: 10px;
         }
         .owl-theme .owl-controls{
             margin-top: 2px !important;
