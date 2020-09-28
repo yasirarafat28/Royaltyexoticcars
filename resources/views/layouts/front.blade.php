@@ -302,18 +302,19 @@
             margin-right: auto;
             /*width: 100%;*/
             padding: 20px !important;
-            min-height: 150px;
+            min-height: 100px;
         }
 
         @media screen and (max-width: 575px) {
 
             .why-us-block .card-img{
-                padding: 1em;
+                padding: 0.5em;
             }
 
 
             .why-us-block .card-img img{
-                /*padding: 0px !important;*/
+                height: 100px;
+                padding: 10px !important;
             }
 
 
@@ -1316,10 +1317,11 @@
                         <h4>Social</h4>
                         <hr>
                         <ul class="list-unstyled footer_menu">
-                            <li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Trip Advisor</a>
-                            </li><li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                            <li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                            <!--<li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Trip Advisor</a></li>
+
                             </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Google Plus</a>
-                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Yelp</a>
+                            </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Yelp</a>-->
                             </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
                             </li></ul>
                     </div>

@@ -583,12 +583,13 @@
                              <h4>Social</h4>
                              <hr>
                              <ul class="list-unstyled footer_menu">
-                                 <li><a href="{{$setting->insta_link?? ''}}"><span class="fa fa-play"></span>Instagram</a>
-                                 </li><li><a href="{{$setting->fb_link?? ''}}"><span class="fa fa-play"></span>Facebook</a>
-                                 </li><li><a href="{{$setting->tweeet_link?? ''}}"><span class="fa fa-play"></span>Twitter</a>
-                                 </li><li><a href="{{$setting->pinter_link?? ''}}"><span class="fa fa-play"></span>Pinterest</a>
-                                 </li><li><a href="{{$setting->utube_link?? ''}}"><span class="fa fa-play"></span>Youtube</a>
-                                 </li></ul>
+                                <li><a href="{{$setting->fb_link}}"><span class="fa fa-play"></span>Facebook</a>
+                                <!--<li><a href="{{$setting->insta_link}}"><span class="fa fa-play"></span>Trip Advisor</a></li>
+
+                                </li><li><a href="{{$setting->tweeet_link}}"><span class="fa fa-play"></span>Google Plus</a>
+                                </li><li><a href="{{$setting->pinter_link}}"><span class="fa fa-play"></span>Yelp</a>-->
+                                </li><li><a href="{{$setting->utube_link}}"><span class="fa fa-play"></span>Youtube</a>
+                                </li></ul>
                          </div>
                      </div>
 
