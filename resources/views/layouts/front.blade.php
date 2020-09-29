@@ -480,6 +480,13 @@
         }
 
 
+        .table.reqs__table--nav{
+            max-height: 60vh !important;
+            overflow-y: scroll !important;
+        }
+
+
+
 
 
 
