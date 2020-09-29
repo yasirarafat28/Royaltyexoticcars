@@ -145,7 +145,7 @@
                             <div class="row">
 
                                 @foreach($records as $record)
-                                    <div class="col-md-6 col-sm-6 mb-2 mt-1 mobile-nopadding">
+                                    <div class=" lg-three-column-vehicle mb-2 mt-1 mobile-nopadding">
 
 										@include('frontView.partials.vehicle-list')
 

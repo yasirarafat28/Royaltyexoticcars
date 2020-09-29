@@ -532,7 +532,7 @@
                                     @if($key>=12)
                                         @break
                                     @endif
-                                    <div class=" col-lg-4 col-md-4  col-sm-6   mb-2 mt-1 mobile-nopadding">
+                                    <div class="lg-four-column-vehicle mb-2 mt-1 mobile-nopadding">
                                         @include('frontView.partials.vehicle-list')
                                     </div>
                                 @endforeach

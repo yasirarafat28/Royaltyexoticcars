@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<h2><a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}">{{ $record->name }}</a></h2>
-		<div class="rentals__info">
+		<div class="rentals__info ">
             <!--
             @if($record->four_hour=='yes')
                 <div>4 Hrs: $</div>
@@ -80,12 +80,12 @@
                 </h5>
 
 	    </div>
-		<p>{{ substr(strip_tags($record->description),0,100) }} ...</p>
-		<!--<ul class="car-info-list">
-			<li>AC</li>
-			<li>Diesel</li>
-			<li>Auto</li>
-		</ul>-->
+        <!--<p>{{ substr(strip_tags($record->description),0,100) }} ...</p>-->
+		<ul class=" mt-2 car-info-list d-flex">
+            <li>{{$record->brand->name}}</li>
+            <li>{{$record->category->name}}</li>
+            <li>{{$record->color}}</li>
+        </ul>
         <div style="display: flex;flex-flow: wrap;">
 
 
