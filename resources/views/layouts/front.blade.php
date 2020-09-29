@@ -1562,7 +1562,8 @@
             position: fixed;
             right: 0;
             bottom: 40px;
-            height: 100vh;
+            /*height: 100vh;*/
+            height: 200px;
             margin-left: -3px;
             margin-bottom: -3px;
             z-index: 2;
@@ -1596,7 +1597,8 @@
             width: 150px;
             height: 42px;
             background-color: rgba(0,0,0,0.5);
-            margin-top: 80vh;
+            /*margin-top: 80vh;*/
+            margin-top: 4vh;
             margin-right: -54px;
             padding-top: 5px;
             -moz-border-radius: 3px;
