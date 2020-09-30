@@ -15,8 +15,8 @@
 			</div>
 		</div>
         <h2>
-            <a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}" style="display: flex;">
-                <img src="{{url($record->model_image??'')}}" height="25px" style="margin-right: 7px" alt="{{$record->model??'}}" class="rentals__logo" title="{{$record->model??'}}">
+            <a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}" style="display: flex">
+                <img src="{{url($record->model_image??'')}}" height="25px" style="margin-right: 7px" class="rentals__logo" title="{{$record->model??'}}">
                 {{ $record->name }}
                 </a>
                 </h2>
