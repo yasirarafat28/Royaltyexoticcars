@@ -1315,6 +1315,7 @@
                             <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
                             <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
                             <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
+                            <li><a><span class="fa fa-clock-o mr-2"></span><p>9am - 7pm Daily</p></a></li>
 
                         </ul>
                     </div>
