@@ -179,6 +179,20 @@ class VehicleController extends Controller
         $vehicle->highway_mpg = $request->highway_mpg;
         $vehicle->city_mpg = $request->city_mpg;
 
+
+        if ($request->hasFile('model_image')){
+
+            $upload_folder = 'upload';
+            $file      = $request->file('model_image');
+            $fileName  = date('ymdhis').'.'.$file->getClientOriginalExtension();
+            $path       = $upload_folder.'/vehicles/';
+
+            $file->move($path, $fileName);
+            $fileUrl   = $path . $fileName;
+            $vehicle->model_image = $fileUrl;
+
+        }
+
         if ($request->hasFile('feature_image')){
 
             $upload_folder = 'upload';
@@ -357,6 +371,20 @@ class VehicleController extends Controller
         $vehicle->fuel_type = $request->fuel_type;
         $vehicle->highway_mpg = $request->highway_mpg;
         $vehicle->city_mpg = $request->city_mpg;
+
+
+        if ($request->hasFile('model_image')){
+
+            $upload_folder = 'upload';
+            $file      = $request->file('model_image');
+            $fileName  = date('ymdhis').'.'.$file->getClientOriginalExtension();
+            $path       = $upload_folder.'/vehicles/';
+
+            $file->move($path, $fileName);
+            $fileUrl   = $path . $fileName;
+            $vehicle->model_image = $fileUrl;
+
+        }
 
 
         if ($request->hasFile('feature_image')){

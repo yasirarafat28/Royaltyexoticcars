@@ -347,10 +347,10 @@
                                             </tr>
                                             </thead>
                                             <tbody id="morerow0">
-                                            <!--<tr id="attrrow01">
+                                            <tr id="attrrow01">
                                                 <td>Model</td>
                                                 <td><input  class="form-control" type="text" name="model"></td>
-                                            </tr>-->
+                                            </tr>
                                             <tr id="attrrow01">
                                                 <td>Color</td>
                                                 <td><input  class="form-control" type="text" name="color"></td>
