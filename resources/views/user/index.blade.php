@@ -137,6 +137,11 @@
           text-transform: uppercase;
           margin-top: 20px;
        }
+       @media (max-width: 1199px){
+            .brand__text {
+                font-size: 1.15em !important;
+            }
+       }
 
 
 
@@ -286,6 +291,15 @@
               padding-left: 5px;
           }
       }
+
+      .profile-img {
+            width: auto;
+            height: auto;
+        }
+
+        .profile-img img {
+            width: 100%;
+        }
 
 
    </style>

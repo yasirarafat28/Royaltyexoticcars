@@ -21,7 +21,7 @@
                   <img src="{{$image}}">
                </div>
                <h1>{{$userdata->first_name}}</h1>
-               <p>{{$userdata->email}}</p>
+            <a href="mailto:{{$userdata->email}}">{{$userdata->email}}</a>
             </div>
             <div class="profile-tab">
                <ul class="tabs">
@@ -35,12 +35,12 @@
             </div>
          </div>
          <div class="col-md-9 side">
-            <div id="tab-1" class="tab-content current account">
+            <div id="tab-1" class="tab-content current account table-responsive">
                @if(count($myorder)!=0)
                <div class="tab-heading">
                   <h1>{{__('messages.my_order')}}</h1>
                </div>
-               <table>
+               <table class="table table-stripped">
                   <tr class="account-h">
                      <th>{{__('messages.order_id')}}.</th>
                      <th>{{__('messages.date')}}</th>
