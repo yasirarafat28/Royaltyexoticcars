@@ -351,6 +351,10 @@
                                                         <td><input  class="form-control" type="text" name="model" value="{{$vehicle->model}}"></td>
                                                     </tr>
                                                     <tr id="attrrow01">
+                                                        <td>Model Image</td>
+                                                        <td><input  class="form-control" type="file" name="model_image" value="{{$vehicle->model_image}}"></td>
+                                                    </tr>
+                                                    <tr id="attrrow01">
                                                         <td>Color</td>
                                                         <td><input  class="form-control" type="text" name="color" value="{{$vehicle->color}}"></td>
                                                     </tr>

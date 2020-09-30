@@ -10,10 +10,16 @@
 			<img src="{{url($record->brand->photo??'')}}" style="max-width: 100px !important;" alt="{{$record->brand->name??'}}" class="rentals__logo" title="{{$record->brand->name??'}}">
 
 			<div class="trending__embed w-embed">
-				<div class="rentals__label">{{ $record->category->name??'' }}</div>
+                <div class="rentals__label">
+                     {{ $record->category->name??'' }}</div>
 			</div>
 		</div>
-		<h2><a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}">{{ $record->name }}</a></h2>
+        <h2>
+            <a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}" style="display: flex;">
+                <img src="{{url($record->model_image??'')}}" height="25px" style="margin-right: 7px" alt="{{$record->model??'}}" class="rentals__logo" title="{{$record->model??'}}">
+                {{ $record->name }}
+                </a>
+                </h2>
 		<div class="rentals__info ">
             <!--
             @if($record->four_hour=='yes')

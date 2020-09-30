@@ -414,9 +414,9 @@ $setting = setting();
 
             <div class="detail-info">
                 <ul class="car-info-list d-flex">
-                    <li>{{$record->model}}</li>
-                    <li>{{$record->transmission}}</li>
-                    <li>{{$record->color}}</li>
+                    <li>{{$vehicle->model}}</li>
+                    <li>{{$vehicle->transmission}}</li>
+                    <li>{{$vehicle->color}}</li>
                 </ul>
             </div>
             <br>
