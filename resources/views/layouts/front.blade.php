@@ -485,6 +485,17 @@
             overflow-y: scroll !important;
         }
 
+        .nav__link {
+            padding: 0 0.5em;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        @media (max-width: 1199px){
+            .nav-container {
+                padding: 0px !important;
+            }
+        }
+
 
 
 
