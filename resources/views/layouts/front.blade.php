@@ -495,12 +495,6 @@
                 padding: 0px !important;
             }
         }
-
-
-
-
-
-
     </style>
 
 @yield('style')
