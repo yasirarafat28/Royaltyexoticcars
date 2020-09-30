@@ -206,6 +206,12 @@
                 h4.mbr-fonts-style{
                     font-size: 15px !important;
                 }
+
+                .carousel-control-prev-icon, .carousel-control-next-icon{
+                    background: none !important;
+                    font-size: 40px;
+                    color: #000;
+                }
         </style>
 
             @php
@@ -275,11 +281,11 @@
                             @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"> ‹ </span>
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"> › </span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>

@@ -200,9 +200,9 @@ $setting = setting();
             width: 1em;
             height: 1em;
             border-radius: 1px;
-            background-color: rgba(0,0,0,0.5) !important;
+            /*background-color: rgba(0,0,0,0.5) !important;*/
             top: 30%;
-            color: #fff;
+            color: #111113;
             text-align: center;
         }
         .owl-theme .owl-controls .owl-buttons .owl-prev:focus, .owl-theme .owl-controls .owl-buttons .owl-next:focus {
