@@ -495,6 +495,12 @@
                 padding: 0px !important;
             }
         }
+
+        .rentals__logo {
+            z-index: 2;
+            width: auto;
+            height: 1.8em;
+        }
     </style>
 
 @yield('style')
