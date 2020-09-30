@@ -82,8 +82,8 @@
 	    </div>
         <!--<p>{{ substr(strip_tags($record->description),0,100) }} ...</p>-->
 		<ul class=" mt-2 car-info-list d-flex">
-            <li>{{$record->brand->name}}</li>
-            <li>{{$record->category->name}}</li>
+            <li>{{$record->model}}</li>
+            <li>{{$record->transmission}}</li>
             <li>{{$record->color}}</li>
         </ul>
         <div style="display: flex;flex-flow: wrap;">
