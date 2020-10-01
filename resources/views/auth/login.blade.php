@@ -40,7 +40,7 @@
         }
 
         .inputdiv {
-            
+
         }
 
 
@@ -48,6 +48,10 @@
     </style>
 @endsection
 @section('content')
+@php
+
+    $setting = \App\Model\Setting::first();
+@endphp
 
     <div class="inner_page">
         <div class="container">
@@ -57,9 +61,9 @@
                         <div class="card-header d-flex ">
                             <h3 class="mr-auto mt-auto mb-auto">Sign In</h3>
                             <div class="justify-content-end social_icon ml-auto text-success inputdiv">
-                                <span><a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style="color: red;"></i></a></span>
-                                <span><a href="https://myaccount.google.com/profile"><i class="fa fa-google-plus-square"  style="color: red;"></i></a></span>
-                                <span><a href="https://www.twitter.com/"><i class="fa fa-twitter-square"  style="color: red;"></i></a></span>
+                                <span><a href="{{$setting->fb_link}}"><i class="fa fa-facebook-square" style="color: red;"></i></a></span>
+                                <!--<span><a href="https://myaccount.google.com/profile"><i class="fa fa-google-plus-square"  style="color: red;"></i></a></span>-->
+                                <span><a href="{{$setting->tweeet_link}}"><i class="fa fa-twitter-square"  style="color: red;"></i></a></span>
                             </div>
                         </div>
                         <div class="card-body">

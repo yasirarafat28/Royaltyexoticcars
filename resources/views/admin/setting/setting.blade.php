@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('content')   
+@section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <div class="breadcrumbs " >
    <div class="col-sm-4 float-right-1">
@@ -29,9 +29,10 @@
                   <li class="nav-item">
                      <a class="nav-link active show" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">{{__('messages.general_sec')}}</a>
                   </li>
+                  <!--
                   <li class="nav-item">
                      <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">{{__('messages.soical_sec')}}</a>
-                  </li>
+                  </li>-->
                   <li class="nav-item">
                      <a class="nav-link" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="true">{{__('messages.shipping')}} {{__('messages.section')}}</a>
                   </li>
@@ -42,7 +43,7 @@
                <div class="tab-content pl-3 p-1" id="myTabContent">
                   <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
                      <div class="cmr1">
-                        
+
                         <div class="form-group col-md-12">
                            <div class="form-group col-md-6">
                               <label for="name" class=" form-control-label">
@@ -53,7 +54,7 @@
                                  <div class="upload-btn-wrapper">
                                     <button class="btn imgcatlog">
                                        <input type="hidden" name="real_logo" id="real_logo" value="<?= isset($data->logo)?$data->logo:""?>"/>
-                                                   <?php 
+                                                   <?php
                                                          if(isset($data->logo)){
                                                              $path=asset('Ecommerce/images/')."/".$data->logo;
                                                          }
@@ -77,7 +78,7 @@
                                    @else
                                       <i class="fa fa-toggle-on" style="font-size: xx-large;font-weight: bolder;color: blue;"></i>
                                    @endif
-                                   
+
                                </a>
                               </label>
                                 </br>
@@ -93,11 +94,11 @@
                                    @endif
                               </a>
                               @endif
-                             
+
                            </div>
-                         
+
                         </div>
-                           
+
                            <div class="form-group col-md-12">
                               <label for="name" class=" form-control-label">
                               {{__('messages.company_name')}}
@@ -157,7 +158,7 @@
                               <input type="text" id="phone" placeholder="{{__('messages.phone')}}" class="form-control" name="phone" required value="{{$data->phone}}">
                            </div>
                         </div>
-                        
+
                         <div class="form-group col-md-12 paddiv">
                            <div class="col-md-6">
                               <label for="name" class=" form-control-label">
@@ -194,7 +195,7 @@
                            <span class="reqfield">*</span>
                            </label>
                            <textarea  id="address" placeholder="{{__('messages.address')}}" class="form-control h150" name="address" required >{{$data->address}}</textarea>
-                        </div> 
+                        </div>
                         <div class="form-group col-md-12">
                            <label for="name" class=" form-control-label">
                               latitude
@@ -281,15 +282,15 @@
                               </div>
                            </div>
                         </div>
-                        <div class="col-md-12"> 
+                        <div class="col-md-12">
                                 @if(Session::get("is_demo")=='1')
                                         <button type="button" onclick="return alert('This function is currently disable as it is only a demo website, in your admin it will work perfect')" class="btn btn-primary florig">
                                                {{__('messages.save')}}
                                         </button>
                                      @else
                                          <button class="btn btn-primary florig" type="button" onclick="savegeneralinfo()" > {{__('messages.update')}}</button>
-                                     @endif 
-                         
+                                     @endif
+
                         </div>
                      </div>
                   </div>
@@ -328,7 +329,7 @@
                            </div>
                         </div>
                         <div class="form-group col-md-12 cmr1">
-                          
+
                               <div class="form-check">
                                  <div class="status">
                                     <label for="checkbox1" class="form-check-label ">
@@ -343,7 +344,7 @@
                                     {{__('messages.enable_google_login')}}</label>
                                  </div>
                               </div>
-                         
+
                         </div>
                         <p>{{__('messages.soical_note')}} :- </p>
                             <span><b>{{__('messages.facebook_redirect_url')}}:- {{url('/')}}/auth/facebook/callback</b></span><br>
@@ -355,8 +356,8 @@
                                         </button>
                                      @else
                                              <button class="btn btn-primary florig" type="button" onclick="savesoicallogin()" >{{__('messages.update')}}</button>
-                                     @endif 
-                      
+                                     @endif
+
                         </div>
                      </div>
                   </div>
@@ -460,8 +461,8 @@
                                         </button>
                                      @else
                                              <button class="btn btn-primary florig" type="button" onclick="changepayment(1)" >{{__('messages.update')}}</button>
-                                     @endif 
-                                  
+                                     @endif
+
                                  </div>
                               </div>
                            </div>
@@ -521,8 +522,8 @@
                                         </button>
                                      @else
                                                <button class="btn btn-primary florig" type="button"  onclick="changepayment(2)" >{{__('messages.update')}}</button>
-                                     @endif 
-                                 
+                                     @endif
+
                                  </div>
                               </div>
                            </div>
@@ -567,7 +568,7 @@
                                      @else
                                                <button class="btn btn-primary florig" type="button"  onclick="changepayment(3)" >{{__('messages.update')}}</button>
                                      @endif
-                                   
+
                                  </div>
                               </div>
                            </div>
