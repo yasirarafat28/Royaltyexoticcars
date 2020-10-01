@@ -212,6 +212,23 @@
                     font-size: 40px;
                     color: #000;
                 }
+
+                .carousel-caption .hero__content {
+                    width: 30em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    -webkit-perspective: 1000px;
+                    perspective: 1000px;
+                }
+                .modalparentdiv {
+                    background-color: none;
+                    padding: 0px;
+                    color: white;
+                    border-radius: 10px;
+                }
+                .modalparentdiv .rental__cta{
+                    margin-left: unset;
+                }
         </style>
 
             @php
@@ -238,42 +255,28 @@
                                 <div class="carousel-item {{$key==0?'active':''}}" style="background-image: url({{url($slider->photo??'/')}})">
                                     <div class="carousel-caption">
                                         <div class="row">
-
-                                            <div class="col-md-6 offset-md-6">
-
-                                                <div class="hero__content">
-                                                    <div class="modalparentdiv">
-                                                        <h4 class="animated fadeInDown d-none d-md-block">Search By</h4>
-                                                        <div class="modal-div d-none d-md-block">
-                                                            <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
-                                                                Body style
-                                                            </button>
-                                                        </div>
-
-                                                        <div class="modal-div d-none d-md-block">
-                                                            <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
-                                                                Make & Model
-                                                            </button>
-                                                        </div>
+                                            <div class="hero__content">
+                                                <div class="modalparentdiv">
 
 
-                                                        <div class="rental__cta">
-                                                            <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
-                                                                <div class="rental__cta--embed w-embed">
-                                                                    <a href="/vehicles" class="rental__cta--text text-uppercase">
-                                                                        Book Now
-                                                                    </a>
-                                                                </div>
+
+                                                    <div class="rental__cta">
+                                                        <div data-ix="display-booking-lightbox-on-click" class="button rental__cta">
+                                                            <div class="rental__cta--embed w-embed">
+                                                                <a href="/vehicles" class="rental__cta--text text-uppercase">
+                                                                    Book Now
+                                                                </a>
                                                             </div>
 
                                                         </div>
+
                                                     </div>
-                                                    <!--<h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
-                                                    <p class="lead ">{!! $slider->content !!}</p>
-
-
-                                                    <br>-->
                                                 </div>
+                                                <!--<h1 class="hero__h1 animated fadeInDown">{{$slider->title}}</h1>
+                                                <p class="lead ">{!! $slider->content !!}</p>
+
+
+                                                <br>-->
                                             </div>
                                         </div>
                                     </div>
@@ -293,6 +296,24 @@
             @endif
         </section>
         <br>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <h4 class="animated fadeInDown d-none d-md-block">Search By</h4>
+                    <div class="modal-div d-none d-md-block">
+                        <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
+                            Body style
+                        </button>
+                    </div>
+
+                    <div class="modal-div d-none d-md-block">
+                        <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
+                            Make & Model
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!--<div class="reviews">
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5b2542c4a3234f310ba98fdb_logo-youtube-red.svg"
