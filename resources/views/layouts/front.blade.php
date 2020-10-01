@@ -1356,7 +1356,7 @@
                             <div class="drawer__location--info mobhide"><img
                                     src="/logo.png"
                                     alt="Rental Exotics Beasts Logo" class="drawer__location--logo" />
-                                <div class="drawer__location--title phonehide">Rental Exotics Beasts Rentals</div>
+                                <div class="drawer__location--title phonehide">Rental Exotics Beasts</div>
                                 <div class="drawer__location--desc">{{$setting->address}}</div>
                             </div>
                             <div class="location__map"></div>
