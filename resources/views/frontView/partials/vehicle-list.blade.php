@@ -16,7 +16,7 @@
 		</div>
         <h2>
             <a href="/vehicle/{{base64_encode($record->id)}}/{{ $record->slug }}" style="display: flex">
-                <img src="{{url($record->model_image??'')}}" onerror="this.remove()" height="25px" style="margin-right: 7px" class="rentals__logo" title="{{$record->model??''}}">
+                <img src="{{url($record->model_image??'')}}" style="height: 1em !important" onerror="this.remove()" height="25px" style="margin-right: 7px" class="rentals__logo" title="{{$record->model??''}}">
                 {{ $record->name }}
                 </a>
                 </h2>
