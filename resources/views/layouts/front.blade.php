@@ -533,7 +533,7 @@
 						</a>
 					</div>
 					<a href="#"
-						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i> 9am - 7pm Daily</a>
+						id="Header-Map-Link" target="_blank" class="info__link infobar__link--nolink"> <i class="fa fa-clock-o mr-2"></i>{{$setting->working_day}}</a>
 					</div>
                     <div class="right-side col-sm-6 col-md-4">
 						<div class="info__search pull-right">
@@ -1326,7 +1326,7 @@
                             <li><a href=""><span class="fa fa-map-marker"></span>{{$setting->address}}</a></li>
                             <li><a href="mailto:{{$setting->email}}"><span class="fa fa-envelope"></span>{{$setting->email}}</a></li>
                             <li><a><span class="fa fa-mobile"></span><p>{{$setting->phone}}</p></a></li>
-                            <li><a><span class="fa fa-clock-o mr-2"></span><p>9am - 7pm Daily</p></a></li>
+                            <li><a><span class="fa fa-clock-o mr-2"></span><p>{{$setting->working_day}}</p></a></li>
 
                         </ul>
                     </div>
@@ -1376,7 +1376,7 @@
                                         <div class="navdrawer__links--wrapper"><a href="tel:18669841187"
                                                                                   id="Drawer-Call-US-Link" class="navdrawer__link w-inline-block">
                                                 <div class="navdrawer__link--icon" style="background-color: red;"><img
-                                                        src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a7253fa2651bb0001cd5c5c_icon-sms-white.svg"
+                                                        src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg"
                                                         alt="US Main Phone Number" class="navdrawer__link--image" />
                                                 </div>
                                                 <div>Call us:  <br>{{$setting->phone}}</div>
@@ -1386,7 +1386,7 @@
                                                 <div class="navdrawer__link--icon" style="background-color: red;"><img
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a533e1_mail-white.svg"
                                                         alt="Reservations Email" class="navdrawer__link--image" /></div>
-                                                <div class="text-smaller">Send E-mail us</div>
+                                                <div class="text-smaller">Send us E-Mail</div>
                                             </a>
                                         </div>
                                     </div>
