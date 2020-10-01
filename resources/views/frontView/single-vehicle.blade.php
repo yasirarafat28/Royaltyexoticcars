@@ -221,6 +221,9 @@ $setting = setting();
         .owl-pagination .own-page img{
             height: 100% !important;
         }
+        .extra-top-margin {
+            margin-top: 2em !important;
+        }
 
     </style>
 
