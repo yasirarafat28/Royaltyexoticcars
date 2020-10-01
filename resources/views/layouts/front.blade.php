@@ -196,7 +196,7 @@
             position: absolute;
             width: 20%;
             margin-top: -2px;
-            margin-left: 40%;
+            margin-left: 36%;
             margin-right: 40%;
         }
 
