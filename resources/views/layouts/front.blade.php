@@ -100,7 +100,7 @@
 
         @media screen and (max-width: 479px) {
             .nav__links {
-                margin-left: 0em;
+                margin-left: 2em;
                 font-size: 11px;
 
             }
