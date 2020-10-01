@@ -162,7 +162,7 @@ class VehicleController extends Controller
 
         $vehicle->vehicle_class = $request->vehicle_class;
         $vehicle->color = $request->color;
-        //$vehicle->model = $request->model;
+        $vehicle->model = $request->model;
         //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
         //$vehicle->actual_msrp = $request->actual_msrp;
@@ -355,7 +355,7 @@ class VehicleController extends Controller
 
         $vehicle->vehicle_class = $request->vehicle_class;
         $vehicle->color = $request->color;
-        //$vehicle->model = $request->model;
+        $vehicle->model = $request->model;
         //$vehicle->body = $request->body;
         $vehicle->seat = $request->seat;
         //$vehicle->actual_msrp = $request->actual_msrp;
