@@ -221,6 +221,13 @@
                     -webkit-perspective: 1000px;
                     perspective: 1000px;
                 }
+                @media screen and (max-width: 768px){
+                    .carousel-caption .hero__content {
+                        width: 12em !important;
+                    -webkit-perspective: 1000px;
+                    perspective: 1000px;
+                    }
+                }
                 .modalparentdiv {
                     background-color: none;
                     padding: 0px;
