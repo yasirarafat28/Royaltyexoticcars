@@ -449,7 +449,17 @@ $setting = setting();
                     @if( $vehicle->type)
                         <tr>
                             <th>Type</th>
-                            <td>{{$vehicle->type}}</td>
+                            <td>
+                                @if ($vehicle->type=='auto_moto')
+                                    Autocycle
+                                @elseif($vehicle->type=='car_suv')
+                                    Car and SUVs
+                                @else
+                                    N/A
+                                @endif
+
+
+                            </td>
                         </tr>
                     @endif
 
