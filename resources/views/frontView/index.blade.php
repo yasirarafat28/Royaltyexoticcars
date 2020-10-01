@@ -215,7 +215,7 @@
                 }
 
                 .carousel-caption .hero__content {
-                    width: 30em;
+                    width: 18em;
                     margin-left: auto;
                     margin-right: auto;
                     -webkit-perspective: 1000px;

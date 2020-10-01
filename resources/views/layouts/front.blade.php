@@ -117,7 +117,7 @@
             background: linear-gradient(#94ccdb, #7673ea, transparent) !important;
         }
         .carousel-caption{
-            bottom: 20% !important;
+            bottom: 5% !important;
         }
         .slider-left-content .heading{
             font-size: 20px;
@@ -1377,7 +1377,7 @@
 
                                 <div class="tabs__content w-tab-content">
                                     <div data-w-tab="US Residents" class="tabs__pane w-tab-pane w--tab-active">
-                                        <div class="navdrawer__links--wrapper"><a href="tel:18669841187"
+                                        <div class="navdrawer__links--wrapper"><a href="tel:{{$setting->phone}}"
                                                                                   id="Drawer-Call-US-Link" class="navdrawer__link w-inline-block">
                                                 <div class="navdrawer__link--icon" style="background-color: red;"><img
                                                         src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a10aaa4d85f4b0001a5356d_contact-white.svg"
