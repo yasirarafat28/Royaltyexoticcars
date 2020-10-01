@@ -296,10 +296,8 @@
                 </div>
             @endif
         </section>
-        <br>
-
         <div class="rentals why-us-section" style="background-image: url()">
-            <h2 class="home__h2 rental-section-title text-center">Ssearch by</h2>
+            <h2 class="home__h2 rental-section-title text-center">Search by</h2>
             <hr class="center-hr" style="color: #fff !important;">
 
 
