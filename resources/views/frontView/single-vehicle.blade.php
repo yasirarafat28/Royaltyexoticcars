@@ -455,7 +455,7 @@ $setting = setting();
                                 @elseif($vehicle->type=='car_suv')
                                     Car and SUVs
                                 @else
-                                    N/A
+                                    {{$vehicle->type}}
                                 @endif
 
 

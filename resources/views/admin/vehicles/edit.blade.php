@@ -84,8 +84,12 @@
                                         <label for="category" class="control-label mb-1">{{__('Type')}}<span class="reqfield">*</span>
                                         </label>
                                         <select name="type" required  class="form-control" >
-                                            <option {{$vehicle->type=='car_suv'?'selected':''}} value="car_suv"> Car & SUVs</option>
-                                            <option {{$vehicle->type=='auto_moto'?'selected':''}} value="auto_moto"> Auto & Motors</option>
+                                            <option {{$vehicle->type=='SUVs'?'selected':''}} value="SUVs"> SUVs</option>
+                                            <option {{$vehicle->type=='Autocycle'?'selected':''}} value="Autocycle"> Autocycle</option>
+                                            <option {{$vehicle->type=='Coupe'?'selected':''}} value="Coupe"> Coupe</option>
+                                            <option {{$vehicle->type=='Sedan'?'selected':''}} value="Sedan"> Sedan</option>
+                                            <option {{$vehicle->type=='Convertible'?'selected':''}} value="Convertible"> Convertible</option>
+                                            <option {{$vehicle->type=='Truck'?'selected':''}} value="Truck"> Truck</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
