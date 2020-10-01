@@ -75,13 +75,14 @@
 
                 .button1 {
                     height: 50px;
-                    background-color: transparent;
+                    background-color: red;
                     padding: 5px;
                     color: white;
                     width: 100%;
                     font-size: 18px;
                     border: 4px solid white;
                     border-radius: 10px;
+                    margin-bottom: 3px;
                 }
                 .button3 {
                     height: 50px;
@@ -296,24 +297,30 @@
             @endif
         </section>
         <br>
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <h4 class="animated fadeInDown d-none d-md-block">Search By</h4>
-                    <div class="modal-div d-none d-md-block">
-                        <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
-                            Body style
-                        </button>
-                    </div>
 
-                    <div class="modal-div d-none d-md-block">
-                        <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
-                            Make & Model
-                        </button>
-                    </div>
+        <div class="rentals why-us-section" style="background-image: url()">
+            <h2 class="home__h2 rental-section-title text-center">Ssearch by</h2>
+            <hr class="center-hr" style="color: #fff !important;">
+
+
+            <div class="row pt-4 pb-4">
+                <div class="offset-lg-4 col-lg-2 offset-md-2 col-md-4 col-sm-6">
+                    <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
+                        Body style
+                    </button>
                 </div>
+
+                <div class=" col-lg-2 col-md-4  col-sm-6">
+                    <button type="button" class="button1 btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
+                        Make & Model
+                    </button>
+                </div>
+
+
+
             </div>
-        </section>
+            <br>
+        </div>
         <!--<div class="reviews">
             <div class="reviews__item"><img
                     src="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5b2542c4a3234f310ba98fdb_logo-youtube-red.svg"
