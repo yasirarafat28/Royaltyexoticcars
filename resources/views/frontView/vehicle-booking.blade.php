@@ -170,6 +170,7 @@
                                 url: "{{$checkoutUrl}}",
                             @else
                                 title: 'This vehicle is not available for this day',
+                                title: '<a href="tel: {{setting()->phone??null}}"> Call to book</a>',
                                 start: "{{$date}}",
                                 className: 'text-danger vehicle-not-available',
                             @endif
