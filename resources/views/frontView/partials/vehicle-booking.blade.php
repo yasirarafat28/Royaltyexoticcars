@@ -92,7 +92,7 @@
             </div>
         @else
             <div class="error-error" style="padding: 100px 10px;">
-                <h2>Sorry, there is no online availability for this booking.</h2>
+                <h2>Sorry, there is no online availability for this vehicle.</h2>
                 <div>Please call us at {{setting()->phone}}.</div>
             </div>
         @endif
