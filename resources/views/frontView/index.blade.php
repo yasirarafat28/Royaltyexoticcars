@@ -524,7 +524,7 @@
                                 No Deposit Fee
                             </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Yes! Rental Exotics Beast has no Deposit fee.
+                                Yes! Rental Exotics Beasts has no Deposit fee.
                             </p>
                         </div>
                     </div>
