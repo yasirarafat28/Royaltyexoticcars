@@ -73,6 +73,8 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
+
+use SEO;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class FrontController extends Controller {
@@ -169,6 +171,11 @@ class FrontController extends Controller {
         return redirect()->back();
     }
     public function home(Request $request){
+
+
+        SEO::setTitle('Rental Exotics Beasts - Las Vegas');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
         $groups =  VehicleCategory::where('status','active')->where('parent_category_id',0)->get();
         return view("frontView.index",compact('groups'));
     }
@@ -177,20 +184,39 @@ class FrontController extends Controller {
     public function faqs() {
         $faqs = Faq::all();
 
+
+        SEO::setTitle('Rental Exotics Beasts - Frequently asked questions');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
+
         return view('frontView.faqs')->with('faqs', $faqs);
     }
 
     public function news_list(){
+
+
+        SEO::setTitle('Rental Exotics Beasts - Blogs');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         $posts  = News::where('status','active')->orderBy('created_at','DESC')->paginate(12);
         return view('frontView.news-list',compact('posts'));
     }
 
     public function news($id,$slug=''){
+
+
         $post  = News::where('status','active')->where('id',$id)->first();
         if(!$post)
             return back();
 
         $related_items = News::where('status','active')->where('id','!=',$id)->orderBy('created_at','DESC')->limit(5)->get();
+
+
+        SEO::setTitle('Rental Exotics Beasts - '.$post->title??'');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
 
         return view('frontView.news-details',compact('post','related_items'));
     }
@@ -255,6 +281,15 @@ class FrontController extends Controller {
             $current_category = null;
 
 
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - Browse vehicles');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
+
+
         return view('frontView.vehicle-browse',compact('records','brands','categories','sub_categories','cat','current_brand','current_category'));
     }
 
@@ -265,6 +300,13 @@ class FrontController extends Controller {
         $vehicle =  Vehicle::find($vehicleID);
         $setting = Setting();
         $brand = VehicleBrand::find($vehicle->brand_id);
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - '.$vehicle->name??'');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.single-vehicle',compact('vehicle','brand','setting'));
     }
 
@@ -273,6 +315,14 @@ class FrontController extends Controller {
         $vehicle = \App\Vehicle::where('id',$id)->first();
         $dates = getDatesFromRange(date('Y-m-d'),date('Y-m-d',strtotime('+ 30 days')));
         $schedules = VehicleSchedule::where('vehicle_id',$id)->where('status','active')->get();
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - '.$vehicle->name??''.' - Booking');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
+
         return view('frontView.vehicle-booking',compact('dates','schedules','vehicle'));
     }
     public function vehiclecheckout($vehicle,$schedule,$date) {
@@ -293,6 +343,13 @@ class FrontController extends Controller {
         $requirement = VehicleRequirement::where('category_id',$vehicle->category_id)->first();
         //$requirement = VehicleRequirement::first();
         $country_type='local';
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - '.$vehicle->name??''.' - Checkout');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.vehicle-checkout',compact('vehicle','schedule','date','requirement','country_type'));
     }
 
@@ -459,6 +516,13 @@ class FrontController extends Controller {
 
     public function vehicleCheckoutSuccess($txn_id){
 
+
+
+        SEO::setTitle('Rental Exotics Beasts - Checkout Success');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
+
         $order = VehicleCheckout::where('txn_id',$txn_id)->first();
         return view('frontView.vehicle-checkout-success',compact('order'));
     }
@@ -500,21 +564,53 @@ class FrontController extends Controller {
         return view('frontView.team.houston');
     }
     public function terms() {
+
+
+        SEO::setTitle('Rental Exotics Beasts - Terms and Conditions');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.terms');
     }
     public function requirements() {
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - Requirements');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.requirements');
     }
     public function privacy() {
         $setting=Setting();
+
+
+
+        SEO::setTitle('Rental Exotics Beasts - Privacy policy');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.privacy')->with('setting', $setting);
     }
     public function covid() {
         $setting=Setting();
+
+
+        SEO::setTitle('Rental Exotics Beasts - COVID-19 update');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.covid')->with('setting', $setting);
     }
     public function termsconditions() {
         $setting=Setting();
+
+
+        SEO::setTitle('Rental Exotics Beasts - Tearms and Conditions');
+        SEO::setDescription('Largest selection of exotic custom cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text '.setting()->phone??''.' to book!');
+
+
         return view('frontView.terms')->with('setting', $setting);
     }
     public function shop(){

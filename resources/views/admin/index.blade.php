@@ -292,6 +292,14 @@
                   </li>-->
 
 
+                  <li class="active">
+                    <a href="{{url('admin/customers')}}">
+                    <i class="menu-icon fa fa-address-book"></i>
+                    {{__('Customers')}}
+                    </a>
+                  </li>
+
+
 
                   <li class="menu-item-has-children dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

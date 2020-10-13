@@ -201,6 +201,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('homebanner', 'homebannerController');
         Route::resource('vehicle_requirements', 'vehicle_requirementsController');
         Route::resource('news', 'NewsController');
+        Route::resource('customers', 'CustomerController');
 
 
 

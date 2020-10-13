@@ -181,7 +181,9 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        MasterRO\LaravelXSSFilter\XSSFilterServiceProvider::class
+        MasterRO\LaravelXSSFilter\XSSFilterServiceProvider::class,
+
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
     ],
 
@@ -241,7 +243,10 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'XSSCleaner' => MasterRO\LaravelXSSFilter\XSSCleanerFacade::class
+        'XSSCleaner' => MasterRO\LaravelXSSFilter\XSSCleanerFacade::class,
+
+
+        'SEO'       => Artesaos\SEOTools\Facades\SEOTools::class,
 
     ],
 

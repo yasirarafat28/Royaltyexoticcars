@@ -11,24 +11,10 @@
 	data-wf-site="5a10aaa4d85f4b0001a53292" lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Rental Exotics Beasts - Las Vegas</title>
-	<meta
-		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
-		name="description" />
-	<meta content="Rental Exotics Beasts - Las Vegas" property="og:title" />
-	<meta
-		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
-		property="og:description" />
 
-	<meta content="Rental Exotics Beasts - Las Vegas" property="twitter:title" />
-	<meta
-		content="Las Vegas&#x27; largest selection of exotic cars, suvs, autocycles &amp; motorcycles for rent. NO mileage limits, governors, security deposits, or hidden fees. Call or text +1-866-984-1187 to book!"
-		property="twitter:description" />
-	<meta
-		content="https://assets-global.website-files.com/5a10aaa4d85f4b0001a53292/5a823c1c32f0d300017e7fa0_Royalty%20Exotic%20Cars%20Website%20Banner%20-%20small.gif"
-		property="twitter:image" />
-	<meta property="og:type" content="website" />
-	<meta content="summary_large_image" name="twitter:card" />
+
+    {!! SEO::generate() !!}
+
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta content="1ergY3uaEZfUno4hRzE8xunDKWbi2nV6QnZa2CZZDYM" name="google-site-verification" />
 	<link href="/frontEnd/css/rentalexoticsbeasts.16f3cbba0.min.css" rel="stylesheet" type="text/css" />
