@@ -51,6 +51,7 @@
     }
 
 </style>
+
 @endsection
 @section('content')
 
@@ -94,15 +95,35 @@
                             <p><strong>Validity: </strong><br> 12 November 2020</p>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="#" class="btn btn-outline-danger text-uppercase">Buy Now</a>
+                            <a href="#" class="btn btn-outline-danger text-uppercase" onclick="event.preventDefault();$(this).text('Processing...'); $('.stripe-button-el').click();"  >Buy Now</a>
                         </div>
                     </div>
 
                 </div>
 
             </div>
+
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{Session::get('stripe_key')}}"
+                data-amount=""
+                data-id="stripid"
+                data-name="{{__('messages.site_name')}}"
+                data-label="{{__('messages.place_order')}}"
+                data-description=""
+                data-image="{{asset('logo.png')}}"
+                data-locale="auto"></script>
         </div>
 
     </div>
 </div>
+
+
+<style>
+
+    .stripe-button-el{
+        visibility: hidden !important;
+    }
+
+</style>
 @endsection
