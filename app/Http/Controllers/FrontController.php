@@ -613,6 +613,10 @@ class FrontController extends Controller {
 
         return view('frontView.terms')->with('setting', $setting);
     }
+
+    public function gift_cards(){
+        return view('frontView.gift-cards');
+    }
     public function shop(){
         $setting=Setting::find(1);
         Session::put("is_web",$setting->is_web);

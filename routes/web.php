@@ -141,12 +141,16 @@ Route::group(['prefix' => '/'], function (){
           Route::get('paypal', array('as' => 'status','uses' => 'PaypalController@getPaymentStatus',));
 
 
+
      });
      Route::group(['middleware' => ['auth']], function () {
 
          Route::any("checkout","FrontController@checkout")->name("checkout");
          Route::get('/vehicle-checkout/{vehicle}/{schedule}/{date}', 'FrontController@vehiclecheckout');
          Route::post('/checkoutstore/{vehicle_id}', 'FrontController@checkoutstore')->name('checkoutstore');
+
+
+         Route::get('gift-cards', "FrontController@gift_cards");
 
      });
 });
@@ -202,6 +206,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('vehicle_requirements', 'vehicle_requirementsController');
         Route::resource('news', 'NewsController');
         Route::resource('customers', 'CustomerController');
+        Route::resource('gift-card/packages', 'GiftCardPackageController');
 
 
 

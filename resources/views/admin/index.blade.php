@@ -248,6 +248,20 @@
                            </li>
                        </ul>
                    </li>
+                   <li class="menu-item-has-children dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="menu-icon  fa fa-tags"></i>
+                           Gift Card
+                       </a>
+                       <ul class="sub-menu children dropdown-menu">
+                           <li>
+                               <a href="{{url('admin/gift-card/packages')}}">Packages</a>
+                           </li>
+                           <li>
+                               <a href="{{url('admin/vehicle-coupon')}}">History</a>
+                           </li>
+                       </ul>
+                   </li>
                  @if(Session::get("is_web")==1)
                   <li class="active">
                      <a href="{{url('admin/sepical_category')}}">

@@ -877,6 +877,11 @@
                                 </div>
                             </li>
                             <li class="nav-item">
+                                <a id="Shop-Link-Nav" href="/gift-cards" class="nav__link nav__link--mobile w-inline-block">
+                                    <div>Gift Card</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a id="Shop-Link-Nav" href="/shop" class="nav__link nav__link--mobile w-inline-block">
                                     <div>Shop</div>
                                 </a>
