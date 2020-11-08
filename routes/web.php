@@ -151,6 +151,7 @@ Route::group(['prefix' => '/'], function (){
 
 
          Route::get('gift-cards', "FrontController@gift_cards");
+         Route::post('buy-gift-cards', "FrontController@buyGiftCard")->name('buyGiftCard');
 
      });
 });

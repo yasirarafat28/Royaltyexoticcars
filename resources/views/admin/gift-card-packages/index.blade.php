@@ -34,7 +34,7 @@
                 @endif
 
 
-                <a class="btn btn-primary btn-flat m-b-30 m-t-30" href="{{ url('admin/vehicle-coupon/create') }}">{{__('messages.add_coupon')}}</a>
+                <a class="btn btn-primary btn-flat m-b-30 m-t-30" href="{{ url('admin/gift-card/packages/create') }}">{{__('Add package')}}</a>
                 <div class="table-responsive dtdiv">
                     <table id="dt" class="table table-striped table-bordered dttablewidth">
                         <thead>
@@ -66,7 +66,7 @@
                                 <td>{{$item->end_at}}</td>
                                 <td id="action" class="action-td">
                                     <a class="btn btn-primary" href="{{url('admin/gift-card/packages/'.$item->id.'/edit')}}" title="Edit Coupon/Voucher"><i class="fa fa-eye" aria-hidden="true"></i> Edit</a>
-                                    <a class="btn btn-primary" data-toggle="modal" data-target="#modal-show{{$item->id}}" title="Show Coupon/Voucher"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>
+                                    <!--<a class="btn btn-primary" data-toggle="modal" data-target="#modal-show{{$item->id}}" title="Show Coupon/Voucher"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>-->
                                     {!! Form::open([
                                                                                                'method'=>'DELETE',
                                                                                                'url' => ['admin/gift-card/packages/'.$item->id],

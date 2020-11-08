@@ -312,13 +312,11 @@
                                             </div>
                                             <div class="payment-text">
                                                 <div class="pay">
-                                                <!--<a href="#"><img src="{{asset('Ecommerce/images/pay-2.jpg')}}"></a>
-                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-3.jpg')}}"></a>
-                                            <a href="#"><img src="{{asset('Ecommerce/images/pay-4.jpg')}}"></a>-->
                                                     <a href="#"><img src="/stripe_credit-card-logos.png"></a>
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <script
                                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -329,7 +327,8 @@
                                             data-label="{{__('messages.place_order')}}"
                                             data-description=""
                                             data-image="{{asset('logo.png')}}"
-                                            data-locale="auto"></script>
+                                            data-locale="auto">
+                                        </script>
                                     @endif
                                 </div>
                             </div>

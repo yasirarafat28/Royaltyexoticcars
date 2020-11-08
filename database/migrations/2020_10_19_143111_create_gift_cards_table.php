@@ -15,11 +15,15 @@ class CreateGiftCardsTable extends Migration
     {
         Schema::create('gift_cards', function (Blueprint $table) {
             $table->id();
+            $table->text('txn_id')->nullable();
             $table->integer('package_id')->default(0);
             $table->integer('user_id')->default(0);
             $table->enum('transaction_type',['incoming','outgoing'])->default('incoming');
             $table->double('amount')->default(0);
             $table->char('flag')->nullable();
+            $table->text('stripe_payment_id')->nullable();
+            $table->text('stripeToken')->nullable();
+            $table->text('stripeTokenType')->nullable();
             $table->text('note')->nullable();
             $table->enum('status',['pending','cancelled','confirmed'])->default('pending');
             $table->timestamps();

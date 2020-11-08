@@ -64,59 +64,69 @@
       </div>
     <div class="row">
 
-        <div class="col-md-6">
-            <div class="g-card">
-                <div class="gc-body text-white">
-                    <div class="pull-left">
-                        <h3 class="home__h2">Gift Card</h3>
-                        <h4 class="card-title mbr-fonts-style"> Test Gift Card</h4>
-                    </div>
-                    <div class="pull-right">
-                        <h2 class="home__h2 rental-section-title"><strong>Value:</strong> 10 USD</h2>
-                        <h4 class=""><strong>Price:</strong> 10 USD</h2>
-                    </div>
-                    <div class="clearfix"></div>
-                    <br>
-                    <div class="gc-content">
+        @foreach ($cards??array() as $card)
+            <div class="col-md-6">
+                <div class="g-card">
+                    <div class="gc-body text-white">
+                        <div class="pull-left">
+                            <h3 class="home__h2">Gift Card</h3>
+                            <h4 class="card-title mbr-fonts-style"> Test Gift Card</h4>
+                        </div>
+                        <div class="pull-right">
+                            <h2 class="home__h2 rental-section-title"><strong>Value:</strong> 10 USD</h2>
+                            <h4 class=""><strong>Price:</strong> 10 USD</h2>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="gc-content">
 
-                        <p class="gc-warninng">[Please Note]: Converting to cash is not possible. You can use this card balance for rental and shopping along this site.</p>
+                            <p class="gc-warninng">[Please Note]: Converting to cash is not possible. You can use this card balance for rental and shopping along this site.</p>
+
+                        </div>
+
+                    </div>
+                    <div class="gc-footer pl-3 pr-3 pt-2 pb-2">
+
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img src="/logo.png" alt="" class="gc-logo" height="80px">
+                            </div>
+                            <div class="col-4">
+                                <p><strong>Expiration date: </strong><br> Never expired</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="#" data-package="{{base64_encode($card->id)}}" class="btn btn-outline-danger text-uppercase buy-now-btn"  >Buy Now</a>
+                            </div>
+                        </div>
 
                     </div>
 
                 </div>
-                <div class="gc-footer pl-3 pr-3 pt-2 pb-2">
-
-                    <div class="row">
-
-                        <div class="col-4">
-                            <img src="/logo.png" alt="" class="gc-logo" height="80px">
-                        </div>
-                        <div class="col-4">
-                            <p><strong>Validity: </strong><br> 12 November 2020</p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <a href="#" class="btn btn-outline-danger text-uppercase" onclick="event.preventDefault();$(this).text('Processing...'); $('.stripe-button-el').click();"  >Buy Now</a>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
 
-            <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="{{Session::get('stripe_key')}}"
-                data-amount=""
-                data-id="stripid"
-                data-name="{{__('messages.site_name')}}"
-                data-label="{{__('messages.place_order')}}"
-                data-description=""
-                data-image="{{asset('logo.png')}}"
-                data-locale="auto"></script>
-        </div>
+        @endforeach
+
 
     </div>
 </div>
+
+<form action="{{route('buyGiftCard')}}" id="checkout-form" method="POST">
+    @csrf
+    <input type="hidden" class="package_id" name="package_id">
+
+
+    <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{Session::get('stripe_key')}}"
+    data-amount=""
+    data-id="stripid"
+    data-name="{{__('messages.site_name')}}"
+    data-label="{{__('messages.place_order')}}"
+    data-description=""
+    data-image="{{asset('logo.png')}}"
+    data-locale="auto"></script>
+</form>
 
 
 <style>
@@ -126,4 +136,18 @@
     }
 
 </style>
+@endsection
+@section('script')
+
+<script>
+    $('.buy-now-btn').on('click',function(event){
+        event.preventDefault();
+        let package = $(this).data('package');
+        $(this).text('Processing...');
+
+        $('#checkout-form .package_id').val(package);
+        $('.stripe-button-el').click();
+    });
+</script>
+
 @endsection

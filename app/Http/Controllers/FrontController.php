@@ -48,6 +48,7 @@ use App\Model\QueryAns;
 use App\Model\QueryTopic;
 use App\Model\Coupon;
 use App\User;
+use App\GiftCardPackage;
 use App\Model\Pages;
 use App\Model\Shipping;
 use Mail;
@@ -615,7 +616,52 @@ class FrontController extends Controller {
     }
 
     public function gift_cards(){
-        return view('frontView.gift-cards');
+
+      $pay=PaymentMethod::find(2);
+      Session::put("stripe_key",$pay->payment_key);
+      Session::put("stripe_secert",$pay->payment_secret);
+        $cards = GiftCardPackage::where('status','active')->get();
+        return view('frontView.gift-cards',compact('cards'));
+    }
+
+    public function buyGiftCard(Request $request){
+
+        $this->validate($request,[
+            'package_id'=>'required'
+        ]);
+
+        $package = GiftCardPackage::find(base64_decode($request->package_id));
+
+        $point = new GiftCard();
+        $point->txn_id = uniqid();
+        $point->package_id = $package->id;
+        $point->user_id =   Auth::id();
+        $point->save();
+
+
+
+
+        try{
+            \Stripe\Stripe::setApiKey(Session::get("stripe_secert"));
+            $charge = \Stripe\Charge::create(array(
+                'description' => "Amount: ".$package->price.' - '. $point->txn_id,
+                'source' => $request->stripeToken,
+                'amount' => (int)($package->price * 100),
+                'currency' => 'USD'
+            ));
+            $point->stripe_payment_id=$charge->id;
+            $point->stripeToken= $request->stripeToken;
+            $point->stripeTokenType= $request->stripeTokenType;
+            $point->payment_status='paid';
+            $point->status='pending';
+            $point->save();
+
+
+            return back()->withSuccess('Payment is confirmed successfully!');
+        }catch (\Exception $e) {
+            return back()->withErrors('Payment is not confirmed successfully!');
+        }
+
     }
     public function shop(){
         $setting=Setting::find(1);
