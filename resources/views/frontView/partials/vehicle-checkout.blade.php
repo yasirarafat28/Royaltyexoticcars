@@ -330,6 +330,21 @@
                                             data-locale="auto">
                                         </script>
                                     @endif
+
+
+                                    <div class="check-payment">
+                                        <div class="c-box">
+                                            <input type="radio" name="payment_method" required id="payment_method_3" value="gift_card" onclick="orderpaymentOption(this.value)">
+                                        </div>
+                                        <div class="payment-text">
+                                            <div class="pay">
+                                                Gift Card (Balance: {{number_format(\App\GiftCard::balance(),2)}} USD)
+                                            </div>
+                                        </div>
+
+
+                                        <div class="alert alert-danger col-md-12" style="display: none;" id="giftCardError"></div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -425,19 +440,19 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="home__h2 text-danger">Gift Card</h2>
+                        <h2 class="home__h2 text-danger">Voucher Code</h2>
                     </div>
                     <div class="card-body">
 
                         <div class="gidt-card">
 
-                            <label for="fname" class="form-label">Gift card number:</label>
+                            <label for="fname" class="form-label">Voucher code number:</label>
 
                             <div class="gift" style="display: flex;">
                                 <div class="input-group">
 
                                     <input class="form-control" type="text" name="coupon_code" id="coupon_code"
-                                           placeholder="Enter your Gift card number here">
+                                           placeholder="Enter your voucher vode number here">
 
                                 </div>
 
@@ -496,6 +511,7 @@
 
 
             <a href="#"  class="button text-white col-sm-6 offset-sm-3 mt-5" style="display: block;"  id="stripe-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
+            <a href="#"  class="button text-white col-sm-6 offset-sm-3 mt-5" style="display: none;"  id="giftcard-submit"><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</a>
 
         </div>
     </main>

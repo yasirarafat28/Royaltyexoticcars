@@ -1,6 +1,9 @@
 @extends('layouts.front')
 @section('style')
 <style>
+    .gc-container{
+        margin-bottom: 10px !important;
+    }
     .g-card{
         border: 1px solid #ddd;
         border-radius: 20px;
@@ -57,24 +60,36 @@
 
 <div class="container-md extra-top-margin mb-5">
 
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            {{ $errors->first() }}
+        </div>
+    @endif
+
+
     <div class="policy__heading mt-5">
         <h2 class="home__h2 rental-section-title text-center">Gift Cards</h2>
         <hr class="center-hr" style="color: #fff !important;">
 
       </div>
     <div class="row">
-
         @foreach ($cards??array() as $card)
-            <div class="col-md-6">
+            <div class="col-md-6 gc-container">
                 <div class="g-card">
                     <div class="gc-body text-white">
                         <div class="pull-left">
                             <h3 class="home__h2">Gift Card</h3>
-                            <h4 class="card-title mbr-fonts-style"> Test Gift Card</h4>
+                            <h4 class="card-title mbr-fonts-style"> {{$card->name}}</h4>
                         </div>
                         <div class="pull-right">
-                            <h2 class="home__h2 rental-section-title"><strong>Value:</strong> 10 USD</h2>
-                            <h4 class=""><strong>Price:</strong> 10 USD</h2>
+                            <h2 class="home__h2 rental-section-title"><strong>Value:</strong> {{$card->equivalend_amount}} USD</h2>
+                            <h4 class=""><strong>Price:</strong> {{number_format($card->price,2)}} USD</h4>
                         </div>
                         <div class="clearfix"></div>
                         <br>

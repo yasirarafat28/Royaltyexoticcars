@@ -25,7 +25,8 @@
             </div>
             <div class="profile-tab">
                <ul class="tabs">
-                  <li onclick="changetab('tab-1',1)" id="litab1" class="tab-link current" style="background: {{site_color()}} !important" data-tab="tab-1">{{__('messages.my_order')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
+                  <li onclick="changetab('tab-1',1)" id="litab1" class="tab-link" style="background: {{site_color()}} !important" data-tab="tab-1">{{__('messages.my_order')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
+                  <li onclick="changetab('tab-7',7)" id="litab7" class="tab-link" data-tab="tab-7">{{__('Gift Card')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-6',6)" id="litab6" class="tab-link" data-tab="tab-6">{{__('My Trips')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-2',2)" id="litab2" class="tab-link" data-tab="tab-2">{{__('messages.personal_detail')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
                   <li onclick="changetab('tab-3',3)" id="litab3" class="tab-link" data-tab="tab-3">{{__('messages.address')}}<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></li>
@@ -35,68 +36,70 @@
             </div>
          </div>
          <div class="col-md-9 side">
-            <div id="tab-1" class="tab-content current account table-responsive">
+             <div id="tab-1" class="tab-content current">
                @if(count($myorder)!=0)
                <div class="tab-heading">
                   <h1>{{__('messages.my_order')}}</h1>
                </div>
-               <table class="table table-stripped">
-                  <tr class="account-h">
-                     <th>{{__('messages.order_id')}}.</th>
-                     <th>{{__('messages.date')}}</th>
-                     <th>{{__('messages.status')}}</th>
-                     <th>{{__('messages.total')}}</th>
-                     <th>{{__('messages.action')}}</th>
-                  </tr>
-                  <?php $i=1;?>
-                  @foreach($myorder as $my)
-                  <tr class="account-detail" data-aos="zoom-in">
-                     <td>
-                        <span>{{__('messages.order_id')}}. :</span>
-                        {{$i}}
-                     </td>
-                     <td>
-                        <span>{{__('messages.date')}} :</span>
-                        {{date('F d,Y', strtotime($my->orderdate))}}
-                     </td>
-                     <td>
-                        <span>{{__('messages.status')}} :</span>
-                        @if($my->order_status=='1')
-                        {{__("messages.processing")}}
-                        @endif
-                        @if($my->order_status=='2')
-                        {{__("messages.on_hold")}}
-                        @endif
-                        @if($my->order_status=='3')
-                        {{__("messages.pending")}}
-                        @endif
-                        @if($my->order_status=='5')
-                        {{__("messages.completed")}}
-                        @endif
-                        @if($my->order_status=='6')
-                        {{__("messages.canceled")}}
-                        @endif
-                        @if($my->order_status=='7')
-                        {{__("messages.refunded")}}
-                        @endif
-                        @if($my->order_status=='4')
-                        {{__("messages.out_of_delivery")}}
-                        @endif
-                     </td>
-                     <td>
-                        <span>{{__('messages.total')}} :</span>
-                        {{Session::get('currency')}}{{$my->total}} {{__('messages.for')}} {{$my->total_item}} {{__('messages.item')}}
-                     </td>
-                     <td class="View">
-                        <span>{{__('messages.action')}} :</span>
-                        <a href="{{url('vieworder').'/'.$my->id}}" style="border-color: {{site_color()}} !important" class="myordera" id="myordera{{$i}}">{{__('messages.view')}}</a>
-                     </td>
-                  </tr>
-                  <?php $i++;?>
-                  @endforeach
-               </table>
-               @endif
-               @if(count($myorder)==0)
+                 <div class="table-responsive">
+                     <table class="table table-stripped">
+                         <tr class="account-h">
+                             <th>{{__('messages.order_id')}}.</th>
+                             <th>{{__('messages.date')}}</th>
+                             <th>{{__('messages.status')}}</th>
+                             <th>{{__('messages.total')}}</th>
+                             <th>{{__('messages.action')}}</th>
+                         </tr>
+                         <?php $i=1;?>
+                         @foreach($myorder as $my)
+                             <tr class="account-detail" data-aos="zoom-in">
+                                 <td>
+                                     <span>{{__('messages.order_id')}}. :</span>
+                                     {{$i}}
+                                 </td>
+                                 <td>
+                                     <span>{{__('messages.date')}} :</span>
+                                     {{date('F d,Y', strtotime($my->orderdate))}}
+                                 </td>
+                                 <td>
+                                     <span>{{__('messages.status')}} :</span>
+                                     @if($my->order_status=='1')
+                                         {{__("messages.processing")}}
+                                     @endif
+                                     @if($my->order_status=='2')
+                                         {{__("messages.on_hold")}}
+                                     @endif
+                                     @if($my->order_status=='3')
+                                         {{__("messages.pending")}}
+                                     @endif
+                                     @if($my->order_status=='5')
+                                         {{__("messages.completed")}}
+                                     @endif
+                                     @if($my->order_status=='6')
+                                         {{__("messages.canceled")}}
+                                     @endif
+                                     @if($my->order_status=='7')
+                                         {{__("messages.refunded")}}
+                                     @endif
+                                     @if($my->order_status=='4')
+                                         {{__("messages.out_of_delivery")}}
+                                     @endif
+                                 </td>
+                                 <td>
+                                     <span>{{__('messages.total')}} :</span>
+                                     {{Session::get('currency')}}{{$my->total}} {{__('messages.for')}} {{$my->total_item}} {{__('messages.item')}}
+                                 </td>
+                                 <td class="View">
+                                     <span>{{__('messages.action')}} :</span>
+                                     <a href="{{url('vieworder').'/'.$my->id}}" style="border-color: {{site_color()}} !important" class="myordera" id="myordera{{$i}}">{{__('messages.view')}}</a>
+                                 </td>
+                             </tr>
+                             <?php $i++;?>
+                         @endforeach
+                     </table>
+                 </div>
+
+               @else
                <div class="order-em">
                   <img src="{{asset('Ecommerce/images/empty.png')}}">
                   <h1>{{__('messages.no_order')}}</h1>
@@ -104,7 +107,7 @@
                @endif
             </div>
 
-             <div id="tab-6" class="tab-content account">
+             <div id="tab-6" class="tab-content">
                @if(count($my_trips))
                <div class="tab-heading">
                   <h1>{{__('My Trips')}}</h1>
@@ -159,9 +162,7 @@
                </div>
                @endif
             </div>
-
-
-            <div id="tab-2" class="tab-content">
+             <div id="tab-2" class="tab-content">
                <div class="tab-heading">
                   <h1>{{__('messages.personal_detail')}}</h1>
                </div>
@@ -202,7 +203,7 @@
                   </form>
                </div>
             </div>
-            <div id="tab-3" class="tab-content">
+             <div id="tab-3" class="tab-content">
                <div class="tab-heading">
                   <h1>{{__('messages.address')}}</h1>
                </div>
@@ -258,6 +259,56 @@
                   </div>
                </div>
             </div>
+             <div id="tab-7" class="tab-content">
+                 <div class="tab-heading bg-default clearfix">
+                     <div class="pull-left">
+
+                         <h5>{{__('Gift Card History')}}</h5>
+                     </div>
+                     <div class="pull-right">
+                         <h5 class="text-success"><strong>Balance: </strong> {{number_format(\App\GiftCard::balance(),2)}} USD</h5>
+                     </div>
+                 </div>
+                 <br>
+
+                 <div class="table-responsive">
+                     <table class="table table-stripped">
+                         <tr class="account-h">
+                             <th>{{__('Txn ID')}}.</th>
+                             <th>Type</th>
+                             <th>Amount</th>
+                             <th>Status</th>
+                             <th>Timestamp</th>
+                         </tr>
+                         @forelse($transactions??array() as $row)
+                             <tr class="account-detail" data-aos="zoom-in">
+                                 <td>{{$row->txn_id}}</td>
+                                 <td>{{ucwords(str_replace('_',' ',$row->flag))}}</td>
+                                 <td>
+                                     @if($row->transaction_type=='incoming')
+                                         <p class="text-success"> + {{$row->amount}}</p>
+                                    @else
+
+                                         <p class="text-danger"> - {{$row->amount}}</p>
+                                     @endif
+                                 </td>
+                                 <td>{{$row->status}}</td>
+                                 <td>
+                                     {{date('F d,Y', strtotime($my->created_at))}}
+                                 </td>
+                             </tr>
+                             <?php $i++;?>
+                        @empty
+                             <tr>
+                                 <td class="text-center" colspan="5"> Sorry! No record found!</td>
+                             </tr>
+
+                         @endforelse
+                     </table>
+                 </div>
+
+
+             </div>
          </div>
       </div>
    </div>

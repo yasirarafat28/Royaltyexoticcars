@@ -62,8 +62,8 @@
                           <div class="form-group col-md-6">
                               <label class="form-label">Code</label>
                               <div class="controls input-group">
-                                  <input type="text" class="form-control" id="coupon_code_0" name="code">
-                                  <span class="input-group-addon" onclick="generate_code(0);" style="cursor: pointer"><i class="fa fa-magic"></i></span>
+                                  <input type="text" class="form-control" id="coupon_code" name="code">
+                                  <span class="input-group-addon" onclick="generate_code();" style="cursor: pointer"><i class="fa fa-magic"></i></span>
                               </div>
                           </div>
                           <div class="form-group  col-md-6">
@@ -121,7 +121,7 @@
     <script type="text/javascript" src="/js/bootstrap-material-datetimepicker.js"></script>
 
     <script>
-        function generate_code(id) {
+        function generate_code() {
             var result           = 'G';
             var length           = 8;
             var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -130,7 +130,7 @@
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
 
-            $('#coupon_code_'+id).val(result);
+            $('#coupon_code').val(result);
         }
 
 

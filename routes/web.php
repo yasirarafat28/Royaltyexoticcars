@@ -70,6 +70,7 @@ Route::get('/vehicle-checkout-invoice/{txn_id}', 'FrontController@vehicleCheckou
 
 //Ajax
 Route::get('/get-model-by-brand/{brand_id}', 'FrontController@getModelByBrand')->name('getModelByBrand');
+Route::get('/get-giftcard-balance', 'FrontController@getGiftCardBalance')->name('getGiftCardBalance');
 
 
 Route::get("privacy_policy","Admincontroller@privacy");

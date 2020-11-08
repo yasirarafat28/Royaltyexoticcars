@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\GiftCard;
 use App\Http\Controllers\Controller as Controller;
 use App\Model\Vehicle;
 use App\Faq;
@@ -375,7 +376,7 @@ class FrontController extends Controller {
 
         $order = new VehicleCheckout();
         $order->txn_id                  = uniqid();
-        $order->customer_id             = 0;
+        $order->customer_id             = Auth::id();
         $order->schedule_id             = $request->schedule_id;
         $order->vehicle_id             = $vehicle_id;
         $order->reservation_time         = $request->reservation_time;
@@ -407,7 +408,31 @@ class FrontController extends Controller {
 
 
         $redirect_url = url();
-        if ($request->payment_method=='paypal'){
+        if ($request->payment_method=='gift_card'){
+            if (GiftCard::balance() < $grand_total){
+                VehicleCheckout::destroy($order->id);
+                return back()->withErrors('You don\'t have enough gift card balance!');
+            }
+
+
+            $point = new GiftCard();
+            $point->txn_id = uniqid();
+            $point->transaction_type = 'outgoing';
+            $point->amount = $grand_total;
+            $point->user_id =   Auth::id();
+            $point->flag = 'booking_using_giftcard';
+            $point->status = 'confirmed';
+            $point->save();
+
+
+
+            $order->payment_status='paid';
+            $order->status='pending';
+            $order->save();
+            $order->save();
+            return Redirect::route('vehicleCheckoutSuccess',$order->txn_id)->withOrdersuccess('confirmed');
+
+        }elseif ($request->payment_method=='paypal'){
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
             $amount = new Amount();
@@ -634,33 +659,43 @@ class FrontController extends Controller {
 
         $point = new GiftCard();
         $point->txn_id = uniqid();
-        $point->package_id = $package->id;
         $point->user_id =   Auth::id();
+        $point->package_id = $package->id;
+        $point->amount = $package->equivalend_amount;
+        $point->flag = 'gift_card_purchase';
         $point->save();
+
+        \Stripe\Stripe::setApiKey(Session::get("stripe_secert"));
+        $charge = \Stripe\Charge::create(array(
+            'description' => "Amount: ".$package->price.' - '. $point->txn_id,
+            'source' => $request->stripeToken,
+            'amount' => (int)($package->price * 100),
+            'currency' => 'USD'
+        ));
 
 
 
 
         try{
-            \Stripe\Stripe::setApiKey(Session::get("stripe_secert"));
-            $charge = \Stripe\Charge::create(array(
-                'description' => "Amount: ".$package->price.' - '. $point->txn_id,
-                'source' => $request->stripeToken,
-                'amount' => (int)($package->price * 100),
-                'currency' => 'USD'
-            ));
             $point->stripe_payment_id=$charge->id;
             $point->stripeToken= $request->stripeToken;
             $point->stripeTokenType= $request->stripeTokenType;
-            $point->payment_status='paid';
-            $point->status='pending';
+            $point->status='confirmed';
             $point->save();
-
 
             return back()->withSuccess('Payment is confirmed successfully!');
         }catch (\Exception $e) {
             return back()->withErrors('Payment is not confirmed successfully!');
         }
+
+    }
+
+    public  function getGiftCardBalance(Request $request){
+        $this->validate($request,[
+            'user_id'=>'required',
+        ]);
+
+        return GiftCard::balance($request->user_id);
 
     }
     public function shop(){
@@ -1008,6 +1043,7 @@ class FrontController extends Controller {
         $myorder=Order::where("user_id",Auth::id())->orderby("id","DESC")->get();
         $my_trips=VehicleCheckout::where("customer_id",Auth::id())->where('status','!=','temporary')->orderby("id","DESC")->get();
 
+        $transactions = GiftCard::where('user_id',Auth::id())->where('status','confirmed')->orderBy('created_at','DESC')->get();
         foreach ($myorder as $k) {
             $getdata=OrderData::where('order_id',$k->id)->get();
 
@@ -1023,7 +1059,7 @@ class FrontController extends Controller {
         Session::put("name",$user->first_name);
         Session::put("email",$user->email);
          $mywish=Wishlist::where("user_id",Auth::id())->get();
-        return view("user.account.myaccount")->with("header_menu",$getcat)->with("userdata",$user)->with("my_trips",$my_trips)->with("productdata",$productdata)->with("mywish",$mywish)->with("myorder",$myorder);
+        return view("user.account.myaccount",compact('transactions'))->with("header_menu",$getcat)->with("userdata",$user)->with("my_trips",$my_trips)->with("productdata",$productdata)->with("mywish",$mywish)->with("myorder",$myorder);
     }
 
     public function storecontact(Request $request){

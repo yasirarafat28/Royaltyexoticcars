@@ -40,7 +40,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        @yield('style')
    </head>
    <style type="text/css">

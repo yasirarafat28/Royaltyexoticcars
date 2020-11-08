@@ -18,9 +18,9 @@ class GiftCard extends Model
             $user_id = Auth::id();
         }
         $totalCreadit  = GiftCard::where('transaction_type','incoming')->where('user_id',$user_id)
-            ->where('status','confirmed')->sum('point');
+            ->where('status','confirmed')->sum('amount');
         $totalDebit  = GiftCard::where('transaction_type','outgoing')->where('user_id',$user_id)
-            ->sum('point');
+            ->sum('amount');
 
         $balance = $totalCreadit-$totalDebit;
         return $balance;

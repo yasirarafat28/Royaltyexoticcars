@@ -235,15 +235,55 @@
             }
         });
 
+        $('#giftcard-submit').on('click',function (event) {
+            event.preventDefault();
+            let btn = $(this);
+            btn.text('Processing...').attr('disabled','disabled');
+
+            $.ajax({
+                type: "GET",
+                url: "{{ route('getGiftCardBalance') }}",
+                data: {
+                    'user_id' : "{{\Illuminate\Support\Facades\Auth::id()}}",
+                },
+                success:function(data) {
+                    console.log(data);
+                    if (parseFloat(data) < parseFloat($('#total-text').text() ) ){
+
+                        btn.prop("disabled", false);
+                        btn.html("Proceed Payment");
+
+                        $('#giftCardError').text('You don\'t have enough gift card balance !').show();
+                    }else{
+
+                        btn.html("Success");
+
+
+                        let form = $( "#checkout-form" );
+                        form.submit();
+                    }
+                },
+
+            });
+
+        });
+
         function orderpaymentOption(option){
 
             if (option==='paypal')
             {
                 $('#paypal-submit').show();
                 $('#stripe-submit').hide();
-            }else{
+                $('#giftcard-submit').hide();
+            }else if (option==='stripe')
+            {
                 $('#paypal-submit').hide();
                 $('#stripe-submit').show();
+                $('#giftcard-submit').hide();
+            }else{
+                $('#paypal-submit').hide();
+                $('#stripe-submit').hide();
+                $('#giftcard-submit').show();
             }
 
         }
