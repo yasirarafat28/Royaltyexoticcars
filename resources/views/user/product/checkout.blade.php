@@ -252,10 +252,18 @@
                      <input type="radio" name="payment_method" id="payment_method_3" value="3" onclick="orderpayment(this.value)">
                   </div>
                   <div class="payment-text">
-                     <h1>{{__('messages.case_on_delivery')}}</h1>
+                     <h1>{{__('Cash on delivery')}}</h1>
                   </div>
                </div>
                @endif
+               <div class="check-payment">
+                   <div class="c-box">
+                       <input type="radio" name="payment_method" id="payment_method_4" value="4" onclick="orderpayment(this.value)">
+                   </div>
+                   <div class="payment-text">
+                       <h1>Gift Card (Balance: {{number_format(\App\GiftCard::balance(),2)}} USD)</h1>
+                   </div>
+               </div>
             </div>
             <div class="place-btn" id="paypal">
                <form action="{{url('paywithpaypal')}}" method="post">
@@ -346,6 +354,33 @@
                   <button type="submit" style="background: {{site_color()}} !important">{{__('messages.place_order')}}</button>
                </form>
             </div>
+
+             <div class="place-btn" id="giftcard_order">
+                 <form action="{{url('giftcard_order')}}" method="post">
+                     {{csrf_field()}}
+                     <input type="hidden" name="order_firstname" id="gc_order_firstname">
+                     <input type="hidden" name="order_billing_address" id="gc_order_billing_address">
+                     <input type="hidden" name="order_billing_city" id="gc_order_billing_city">
+                     <input type="hidden" name="order_billing_pincode" id="gc_order_billing_pincode">
+                     <input type="hidden" name="order_phone" id="gc_order_phone">
+                     <input type="hidden" name="order_email" id="gc_order_email">
+                     <input type="hidden" name="to_ship" id="gc_order_to_ship">
+                     <input type="hidden" name="order_ship_firstname" id="gc_order_ship_firstname">
+                     <input type="hidden" name="order_shipping_address" id="gc_order_shipping_address">
+                     <input type="hidden" name="order_shipping_city" id="gc_order_shipping_city">
+                     <input type="hidden" name="order_shipping_pincode" id="gc_order_shipping_pincode">
+                     <input type="hidden" name="order_notes" id="gc_order_notes">
+                     <input type="hidden" name="couponcode" id="gc_couponcode">
+                     <input type="hidden" name="freeshipping" id="gc_freeshipping">
+                     <input type="hidden" name="couponval" id="gc_couponval">
+                     <input type="hidden" name="shipping_type" id="gc_shipping_type">
+                     <input type="hidden" name="shipping_charges" id="gc_shipping_charges">
+                     <input type="hidden" name="total_order_price" id="gc_total_order_price">
+                     <input type="hidden" name="payment_method" id="gc_payment_method">
+                     <input type="hidden" name="total_taxes" id="gc_total_taxes">
+                     <button type="submit" style="background: {{site_color()}} !important">{{__('messages.place_order')}}</button>
+                 </form>
+             </div>
          </div>
       </div>
    </div>

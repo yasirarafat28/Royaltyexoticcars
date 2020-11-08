@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\GiftCard;
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -725,6 +726,114 @@ class OrderController extends Controller {
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
            }
+     }
+
+     public function giftcard_order(Request $request){
+        $setting=Setting::find(1);
+        $cartCollection = Cart::getContent();
+        $gettimezone=$this->gettimezonename($setting->default_timezone);
+        date_default_timezone_set($gettimezone);
+        $input = $request->input();
+        DB::beginTransaction();
+
+        $grand_total = $request->total_order_price;
+
+        if(GiftCard::balance() < $grand_total){
+            Session::flash('message','You don\'t have enough gift card balance');
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        }
+        try {
+            $store=new Order();
+            $store->user_id=Auth::id();
+            $store->orderdate=date("d-m-Y h:i:s");
+            $store->shipping_method=$request->get("shipping_method");
+            $store->payment_method=$request->get("payment_method");
+            $store->billing_first_name=$request->get("order_firstname");
+            $store->billing_address=$request->get("order_billing_address");
+            $store->billing_city=$request->get("order_billing_city");
+            $store->billing_pincode=$request->get("order_billing_pincode");
+            $store->phone=$request->get("order_phone");
+            $store->email=$request->get("order_email");
+            $store->to_ship=$request->get("to_ship");
+            $store->notes=$request->get("order_notes");
+            $store->shipping_city=$request->get("order_shipping_city");
+            $store->shipping_pincode=$request->get("order_shipping_pincode");
+            $store->shipping_first_name=$request->get("order_ship_firstname");
+            $store->shipping_address=$request->get("order_shipping_address");
+            $store->subtotal=number_format(Cart::gettotal(), 2, '.', '');
+            $store->shipping_method=$request->get("shipping_type");
+            $store->shipping_charge=$request->get("shipping_charges");
+            $store->is_freeshipping=$request->get("freeshipping");
+            $store->taxes_charge=$request->get("total_taxes");
+            $store->total=number_format($request->get("total_order_price"), 2, '.', '');
+            $store->coupon_code=$request->get("couponcode");
+            $store->coupon_price=$request->get("couponval");
+            $store->order_status='3';
+            $store->save();
+            $storeres=new OrderResponse();
+            $storeres->order_id=$store->id;
+            $storeres->desc=json_encode($this->getorderjson());
+            $storeres->save();
+            $jsondata=$this->getorderjson();
+
+            foreach($jsondata["order"] as $k) {
+              $add=new OrderData();
+              $add->order_id=$store->id;
+              $add->product_id=$k["ProductId"];
+              $add->quantity=$k["ProductQty"];
+              $add->price=$k["ProductAmt"];
+              $add->total_amount=$k["ProductTotal"];
+              $add->tax_charges=$k["tax_amount"];
+              $add->tax_name=$k["tax_name"];
+              $add->option_name=$k["exterdata"]["option"];
+              $add->label=$k["exterdata"]["label"];
+              $add->option_price=$k["exterdata"]["price"];
+              $add->save();
+            }
+
+
+
+            $point = new GiftCard();
+            $point->txn_id = uniqid();
+            $point->transaction_type = 'outgoing';
+            $point->amount = $grand_total;
+            $point->user_id =   Auth::id();
+            $point->flag = 'shopping_using_giftcard';
+            $point->status = 'confirmed';
+            $point->save();
+
+
+
+
+
+            $data=array();
+            $data['email']=$setting->email;
+            $data['name']="Shop";
+            $data['customer_name']=$request->get("order_firstname")." ".$request->get("order_lastname");
+            $data['order_amount']=$request->get("total_order_price");
+            try {
+                if(Config::get('mail.username')!=""&&$$setting->admin_order_mail=='1'){
+                         Mail::send('email.orderdetail', ['user' => $data], function($message) use ($data){
+                             $message->to($data['email'],$data['name'])->subject('shop on');
+                         });
+                }
+            } catch (\Exception $e) {
+
+            }
+
+            DB::commit();
+            Cart::clear();
+            Session::flash('message',__('messages_error_success.order_place_success'));
+            Session::flash('alert-class', 'alert-success');
+            return redirect("vieworder/".$store->id);
+        }catch (\Exception $e)
+        {
+            DB::rollback();
+            Session::flash('message',$e);
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        }
      }
 
      function headreadMoreHelper($story_desc, $chars =35) {

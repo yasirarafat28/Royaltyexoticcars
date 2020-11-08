@@ -136,8 +136,9 @@ Route::group(['prefix' => '/'], function (){
           Route::get("deletewishlist","UserController@deletewishlist");
           Route::get("saveaddress","UserController@saveaddress");
           Route::get("vieworder/{id}","FrontController@vieworder");
-          Route::post("cashorder","OrderController@cashorder");
           Route::post("paywithpaypal","PaypalController@postPaymentWithpaypal");
+          Route::post("cashorder","OrderController@cashorder");
+          Route::post("giftcard_order","OrderController@giftcard_order");
           Route::post('paypal', array('as' => 'paypal','uses' => 'PaypalController@postPaymentWithpaypal',));
           Route::get('paypal', array('as' => 'status','uses' => 'PaypalController@getPaymentStatus',));
 

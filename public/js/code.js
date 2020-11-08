@@ -538,16 +538,26 @@ function orderpayment(pay_type) {
           document.getElementById("paypal").style.display = "block";
           document.getElementById("stripe").style.display = "none";
           document.getElementById("cod").style.display = "none";
+          document.getElementById("giftcard_order").style.display = "none";
         } else if (pay_type == 2) {
           prefix = "stri_";
           document.getElementById("paypal").style.display = "none";
           document.getElementById("stripe").style.display = "block";
           document.getElementById("cod").style.display = "none";
-        } else {
+            document.getElementById("giftcard_order").style.display = "none";
+        } else if (pay_type == 4) {
+            prefix = "gc_";
+            document.getElementById("paypal").style.display = "none";
+            document.getElementById("stripe").style.display = "none";
+            document.getElementById("cod").style.display = "none";
+            document.getElementById("giftcard_order").style.display = "block";
+        }
+        else {
           prefix = "cod_";
           document.getElementById("paypal").style.display = "none";
           document.getElementById("stripe").style.display = "none";
           document.getElementById("cod").style.display = "block";
+            document.getElementById("giftcard_order").style.display = "none";
         }
         $("#" + prefix + "order_firstname").val(order_firstname);
         $("#" + prefix + "order_billing_address").val(order_billing_address);
