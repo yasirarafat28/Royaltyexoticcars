@@ -210,6 +210,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('news', 'NewsController');
         Route::resource('customers', 'CustomerController');
         Route::resource('gift-card/packages', 'GiftCardPackageController');
+        Route::get('gift-card/history', 'GiftCardHistoryController@history');
 
 
 

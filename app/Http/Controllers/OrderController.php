@@ -70,6 +70,8 @@ class OrderController extends Controller {
                     return __('messages.paypal');
                  }elseif($order->payment_method=="2"){
                     return __('messages.stripe');
+                 }elseif($order->payment_method=="4"){
+                     return __('Gift Card');
                  }else{
                     return __('messages.case_on_delivery');
                  }
