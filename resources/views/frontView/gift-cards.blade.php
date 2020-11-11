@@ -35,21 +35,49 @@
 
     .gc-warninng{
         bottom: 0;
+        font-size: .9em;
     }
 
 
+    @media screen and (max-width: 1200px) {
+        .gc-body{
+            height: 70% !important;
+            padding: 2em;
+
+        }
+    }
     @media screen and (max-width: 991px) {
 
         .gc-body{
             padding: 2em;
 
         }
-    }
-    @media screen and (max-width: 768px) {
+
+
+        .g-card{
+            height: 250px;
+        }
 
         .gc-body{
             padding: 1em;
 
+        }
+
+        .gc-body .home__h2 {
+            font-size: 1em;
+        }
+        .gc-body .card-title {
+            font-size: 1em;
+        }
+    }
+
+
+    @media screen and (max-width: 320px) {
+        .gc-body .home__h2 {
+            font-size: 0.8em;
+        }
+        .gc-body .card-title {
+            font-size: 0.8em;
         }
     }
 
@@ -89,11 +117,10 @@
                         </div>
                         <div class="pull-right">
                             <h2 class="home__h2 rental-section-title"><strong>Value:</strong> {{$card->equivalend_amount}} USD</h2>
-                            <h4 class=""><strong>Price:</strong> {{number_format($card->price,2)}} USD</h4>
+                            <h4 class="card-title"><strong>Price:</strong> {{number_format($card->price,2)}} USD</h4>
                         </div>
                         <div class="clearfix"></div>
-                        <br>
-                        <div class="gc-content">
+                        <div class="gc-content mt-2">
 
                             <p class="gc-warninng">[Please Note]: Converting to cash is not possible. You can use this card balance for rental and shopping along this site.</p>
 
@@ -104,13 +131,13 @@
 
                         <div class="row">
 
-                            <div class="col-4">
+                            <div class="col-6">
                                 <img src="/logo.png" alt="" class="gc-logo" height="80px">
                             </div>
-                            <div class="col-4">
+                            <!--<div class="col-4">
                                 <p><strong>Expiration date: </strong><br> Never expired</p>
-                            </div>
-                            <div class="col-4 text-right">
+                            </div>-->
+                            <div class="col-6 text-right">
                                 <a href="#" data-package="{{base64_encode($card->id)}}" class="btn btn-outline-danger text-uppercase buy-now-btn"  >Buy Now</a>
                             </div>
                         </div>
